@@ -1,7 +1,9 @@
 INCLUDE "src/hardware.asm"
 INCLUDE "src/memory.asm"
 
-DEF FIX_BUGS EQU 0
+DEF FIX_BUGS EQU 0 ; Self explainatory
+DEF KEEP_PCM EQU 1 ; Keep the unused PCM functionality
+DEF HOOK_PCM EQU 0 ; Hooks up the PCM handler to the timer
 
 ; 
 ; BANK $00 - ???
@@ -68,6 +70,12 @@ INCLUDE "src/bank09.asm"
 ; 
 SECTION "bank0A", ROMX, BANK[$0A]
 INCLUDE "src/bank0A.asm"
+
+; 
+; BANK $0F - ???
+; 
+SECTION "bank0F", ROMX, BANK[$0A]
+INCLUDE "src/bank0F.asm"
 
 ; 
 ; BANK $11 - ???

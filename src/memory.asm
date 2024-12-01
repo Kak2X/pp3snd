@@ -44,7 +44,7 @@ DEF SNDSW_SET    EQU 1 << SNDSWB_SET
 ;DEF SNDY_5 EQU 1 << SNDYB_5
 DEF SNDFB1_EXEC EQU 0 ; Marks the sound driver as being executed.
 DEF SNDFB1_PAUSE EQU 1
-DEF SNDFB1_CLRTAC EQU 2
+DEF SNDFB1_PCMON EQU 2 ; PCM enabled
 DEF SNDFB1_3 EQU 3
 DEF SNDFB1_FADEOUT EQU 4 ; Fade in or out?
 DEF SNDFB1_FADE EQU 5 ; Fade enabled (all slots)
@@ -52,7 +52,7 @@ DEF SNDFB1_6 EQU 6
 DEF SNDFB1_7 EQU 7
 DEF SNDF1_EXEC EQU 1 << SNDFB1_EXEC
 DEF SNDF1_PAUSE EQU 1 << SNDFB1_PAUSE
-DEF SNDF1_CLRTAC EQU 1 << SNDFB1_CLRTAC
+DEF SNDF1_PCMON EQU 1 << SNDFB1_PCMON
 DEF SNDF1_3 EQU 1 << SNDFB1_3
 DEF SNDF1_FADEOUT EQU 1 << SNDFB1_FADEOUT
 DEF SNDF1_FADE EQU 1 << SNDFB1_FADE
@@ -64,7 +64,7 @@ DEF SNDXB_CH123 EQU 0 ; Slot contains channels 1-3 data
 DEF SNDXB_CH4 EQU 1 ; Slot contains channel 4 data 
 DEF SNDXB_3 EQU 3
 DEF SNDXB_4 EQU 4 ; SNDXB_SHORTINST Forces the initial note instrument data to be used. (Forces the conditional loops enabled)
-DEF SNDXB_5 EQU 5 
+DEF SNDXB_5 EQU 5 ; If set, the lower priority slots above should be paused.
 DEF SNDXB_6 EQU 6
 DEF SNDX_CH123 EQU 1 << SNDXB_CH123
 DEF SNDX_CH4 EQU 1 << SNDXB_CH4
@@ -92,8 +92,8 @@ DEF SNDB_NS EQU 1 << SNDBB_NS
 
 ; iSndChInfo_0C flags
 DEF SNDCB_PITCHBEND EQU 0 ; Enable pitch bend
-DEF SNDCB_5 EQU 5
-DEF SNDCB_PAUSE EQU 6 ; Better to say SNDCB_MUTED? doublecheck ???
+DEF SNDCB_PCM EQU 5 ; PCM played in slot
+DEF SNDCB_MUTED EQU 6 ; Slot is processed but won't play audio
 
 ; iSndChInfo_14
 DEF SND14B_END EQU 7 ; If set, the target is relative to the end of the note
@@ -147,19 +147,20 @@ wSndSetQueue              :ds 8   ; EQU $D000
 wSndSetQueueSec           :ds 8   ; EQU $D008
 
 wSndSavedSoundID          :db     ; EQU $D010 ; Last preserved Sound ID, when a sound slot ends with the SoundDataCmd_EndSaveID command.
-wSnd_D011_Flags                :db     ; EQU $D011
+wSnd_D011_Flags           :db     ; EQU $D011
 wSndSetLength             :db     ; EQU $D012
 wSndFadeIncSpeedSub       :db     ; EQU $D013 ; Global fade speed
 wSndFadeTimerSub          :db     ; EQU $D014 ; Global fade timer (low byte)
 wSndFadeVolumeTarget      :db     ; EQU $D015 ; Global fade target (high byte)
 wSndFadeVolume            :db     ; EQU $D016 ; Global fade timer (high byte) 
 ds 1
-wSndChInfoVolume        :db     ; EQU $D018 ; Volume for the currently processed sound slot
-wSndBankMain            :db     ; EQU $D019 ; Primary driver core bank
-wSndBankSec             :db     ; EQU $D01A ; Secondary driver core bank
-wTAC                      :db     ; EQU $D01B
-w_Unk_TimerRelated_D01C                     :db     ; EQU $D01C
-wTIMAOverride             :db     ; EQU $D01D
+wSndChInfoVolume          :db     ; EQU $D018 ; Volume for the currently processed sound slot
+wSndBankMain              :db     ; EQU $D019 ; Primary driver core bank
+wSndBankPcmDef            :db     ; EQU $D01A ; Secondary driver core bank
+wSndPcmPlaying            :db     ; EQU $D01B ; If set, a PCM sample is currently playing,
+wSndPcmIDSet              :db     ; EQU $D01C ; PCM ID to be played, reset on every frame.
+wSndPcmSpeedSet           :db     ; EQU $D01D ; Playback speed for the above, also reset on every frame.
+                                              ; Doubles as flag that, if set, marks that PCM playback can continue.
 ds 2
 
 wNR51_ChMask1   :db     ; EQU $D020
@@ -245,12 +246,12 @@ DEF iSndChInfo_20 EQU $20 ; Noise channel frequency. [wNR43]
 DEF iSndChInfo_21 EQU $21 ; Fade speed
 DEF iSndChInfo_22 EQU $22 ; Fade timer
 DEF iSndChInfo_23 EQU $23 ; Fade target volume
-DEF iSndChInfo_24 EQU $24 ; 
+DEF iSndChInfo_24 EQU $24 ; Negative offset when increasing the base note ID through SoundDataCmd_9C.
 DEF iSndChInfo_25 EQU $25 ; 
 DEF iSndChInfo_26 EQU $26 ; Data Pointer return address, low byte.
 DEF iSndChInfo_27 EQU $27 ; Data Pointer return address, high byte.
 DEF iSndChInfo_28 EQU $28 ; Data Pointer, Bank Number
-DEF iSndChInfo_29 EQU $29 ; ??? Initial envelope [wNRx2]
+DEF iSndChInfo_29 EQU $29 ; Slot-specific PCM sample ID. 
 DEF iSndChInfo_2A EQU $2A ; 
 DEF iSndChInfo_2B EQU $2B ; 
 DEF iSndChInfo_2C EQU $2C ; 
@@ -262,12 +263,19 @@ SECTION "Hardware", HRAM[$FF90]
 hROMBank                  :db     ; EQU $FF90
 
 SECTION "Sound HRAM", HRAM[$FFE0]
-wNRx3Data         :db     ; EQU $FFE0 ; Value to write to rNR*3 during sound slot processing.
-wNRx4Data         :db     ; EQU $FFE1 ; Value to write to rNR*4 during sound slot processing.
+wNRx3Data                 :db     ; EQU $FFE0 ; Value to write to rNR*3 during sound slot processing.
+wNRx4Data                 :db     ; EQU $FFE1 ; Value to write to rNR*4 during sound slot processing.
 
-hSndChInfoStatus      :db     ; EQU $FFE2 ; Flags copied from the current SndChInfo
-h_Unk_SndChInfo_B  :db     ; EQU $FFE3 ; Low byte of pointer at SndChInfo[B]
-h_Unk_SndChInfo_C :db     ; EQU $FFE4 ; High byte of pointer at SndChInfo[B] (C actually)
-h_Unk_FFE5_Flags           :db     ; EQU $FFE5
-hSndChInfoPtrBakLow :db     ; EQU $FFE6 ; Backup of the base pointer for the current sound slot.
-wNRx2Data           :db     ; EQU $FFE7 ; Value to write to rNR*2 during sound slot processing.
+hSndChInfoStatus          :db     ; EQU $FFE2 ; Flags copied from the current SndChInfo
+h_Unk_SndChInfo_B         :db     ; EQU $FFE3 ; Low byte of pointer at SndChInfo[B]
+h_Unk_SndChInfo_C         :db     ; EQU $FFE4 ; High byte of pointer at SndChInfo[B] (C actually)
+h_Unk_FFE5_Flags          :db     ; EQU $FFE5
+hSndChInfoPtrBakLow       :db     ; EQU $FFE6 ; Backup of the base pointer for the current sound slot.
+hNRx2Data                 :db     ; EQU $FFE7 ; Value to write to rNR*2 during sound slot processing.
+DEF hSndTmpSongPcm EQU hNRx2Data              ; Temporary location for the argument when starting a new song
+hPCMVolData               :db     ; EQU $FFE8 ; Current set of PCM data, as 4 pairs of 2 bits each [NR32]
+hPCMVolPairsLeft          :db     ; EQU $FFE9 ; Number of pairs left before fetching the next byte
+hPCMDataBank              :db     ; EQU $FFEA ; PCM Data pointer, Bank Number
+hPCMDataPtrHigh           :db     ; EQU $FFEB ; PCM Data pointer, High byte
+hPCMDataPtrLow            :db     ; EQU $FFEC ; PCM Data pointer, Low byte
+hPCMDataLeft              :db     ; EQU $FFED ; Remaining bytes of PCM data to fetch before the sample ends.

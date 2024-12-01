@@ -69,14 +69,21 @@ L00004C: db $40;X
 L00004D: db $F1;X
 L00004E: db $D9;X
 L00004F: db $00;X
-L000050: db $F5;X
-L000051: db $97;X
-L000052: db $E0;X
-L000053: db $07;X
-L000054: db $18;X
-L000055: db $6F;X
-L000056: db $00;X
-L000057: db $00;X
+
+SECTION "Timer Interrupt", ROM0[$0050]
+; =============== Timer_Int ===============
+Timer_Int:
+IF HOOK_PCM && KEEP_PCM
+	; In Yon this pointed to RAM instead, to allow multiple modes
+	jp   Sound_PCMHandler
+ELSE
+	push af
+		sub  a
+		ldh  [rTAC], a
+		jr   Timer_End
+ENDC
+SECTION "End of Timer Interrupt", ROM0[$0058]
+
 L000058: db $F5;X
 L000059: db $E5;X
 L00005A: db $C3;X
@@ -186,15 +193,12 @@ L0000C1: db $81;X
 L0000C2: db $C1;X
 L0000C3: db $18;X
 L0000C4: db $D0;X
-L0000C5: db $3E;X
-L0000C6: db $81;X
-L0000C7: db $E0;X
-L0000C8: db $02;X
-L0000C9: db $EA;X
-L0000CA: db $85;X
-L0000CB: db $C1;X
-L0000CC: db $F1;X
-L0000CD: db $D9;X
+	Timer_End:
+		ld   a, START_TRANSFER_INTERNAL_CLOCK
+		ldh  [rSC], a
+		ld   [$C185], a
+	pop  af
+	reti
 L0000CE: db $00;X
 L0000CF: db $00;X
 L0000D0: db $00;X
@@ -10676,22 +10680,19 @@ Sound_Do:
 	ret  nz
 	set  SNDFB1_EXEC, [hl]
 	
-	;--
-	; [TCRF] Unreachable timer nonsense.
-	;        Worth noting that the version of the driver used in Tsuu does not have any of this.
-	;        The timer in this game is hooked up to something else anyway.
-	ld   a, [wTAC]
-	and  a
-	jr   z, .doQueue
-	db $FA
-	db $11
-	db $D0
-	db $CB
-	db $57
-	db $CC
-	db $BB
-	db $3B
-	;--
+IF KEEP_PCM
+	;
+	; [TCRF] PCM Self-check.
+	; If a PCM sample is marked as currently playing, but PCM isn't enabled,
+	; clear the former for consistency.
+	;
+	ld   a, [wSndPcmPlaying]
+	and  a								; Some PCM currently playing?
+	jr   z, .doQueue					; If not, skip
+	ld   a, [wSnd_D011_Flags]
+	bit  SNDFB1_PCMON, a				; Is PCM support enabled in the driver?
+	call z, Sound_DisablePCMPlayback	; If not, disable playback
+ENDC
 	
 .doQueue:
 	; Check if there's anything new that we want to play
@@ -10706,8 +10707,9 @@ Sound_Do:
 	
 	;
 	; Process the individual sound slots, from last to first.
-	; Usually, the 8 normal slots (wSndChInfo0-7) get processed in a loop as normal.
+	; Going backwards helps give priority to later slots, which typically contain sound effects.
 	;
+	; Usually, the 8 normal slots (wSndChInfo0-7) get processed in a loop as normal.
 	; However, when something plays on the ninth channel (wSndChInfoEx0), it takes "exclusive control",
 	; as all other channels get paused. They resume as normal only when the sound ends.
 	;
@@ -11074,28 +11076,32 @@ DEF SOUND_PAUSING  EQU 1 << SOUNDB_PAUSING
 	bit  SOUNDB_PAUSING, b	; Are we paused or playing an exclusive sound?
 	jr   nz, .eosPause		; If so, jump
 	
+	;--
+	; [POI] Nothing sets this flag.
 	ld   a, [de]
-	bit  SNDXB_5, a			; ???
+	bit  SNDXB_5, a			; Pause the remaining channels?
 	jr   z, .eosNorm		; If not, jump
+	;--
 	
 .eosPause:
 	;
 	; Pause mode.
 	;
-	; Pause every other sound slot above the current one.
+	; Since we're not processing the remaining slots (which is how pausing works),
+	; mute them all to prevent their notes from hanging.
 	;
 	
-	res  SOUNDB_PAUSING, b		; Clear pause flag, it gets in the way
+	res  SOUNDB_PAUSING, b		; Filter out flags from counter
 	dec  b						; From the previous slot... (1/2)
 	jr   z, .chkFade			; Skip ahead if there are none left
 	
-	ld   a, e					; HL = DE + $0C (Starting address)
+	ld   a, e					; Seek to iSndChInfo_0C, the starting address
 	add  iSndChInfo_0C
 	ld   l, a
-	ld   de, -wSndChInfo_Size	; DE = -$30 (to seek back to previous slot)
-	add  hl, de					; From the previous slot... (2/2)
+	ld   de, -wSndChInfo_Size	; From the previous slot... (2/2)
+	add  hl, de					; ""
 .pauseLoop:
-	set  SNDCB_PAUSE, [hl]		; Pause flag likely
+	set  SNDCB_MUTED, [hl]		; No audio out from this
 	add  hl, de					; Seek to previous slot
 	dec  b						; SlotsLeft--
 	jr   nz, .pauseLoop			; Done? If not, loop
@@ -11192,9 +11198,7 @@ Sound_UpdateRegs:
 	; Pulse 1
 	;
 	;
-	; Update NR12 only if the channel is retriggered.
-	; ??? Is this actually necessary? Writing there without retriggering it does nothing.
-	;     This also counts for other retrigger checks in this subroutine.
+	; Update NR12 only if the channel is retriggered, as those changes wouldn't do anything.
 	; Always update NR10 though.
 	ld   hl, wNR12
 	ld   a, [wNR14]
@@ -11230,7 +11234,7 @@ Sound_UpdateRegs:
 	;
 	; Pulse 2
 	;
-	;
+	
 	; Update NR22 only if the channel is retriggered.
 	inc  l ; Seek to wNR21
 	inc  l ; Seek to wNR22
@@ -11247,144 +11251,185 @@ Sound_UpdateRegs:
 	ld   a, [wNR21]
 	ldh  [rNR21], a
 	
-	;##
-	; [TCRF] Large amount of nonsense dedicated to the timer interrupt,
-	;        which you should NEVER USE with a sound driver, EVER.
-	;        (I'm not disassembling this unreachable code)
-	ld   hl, wTIMAOverride
-	ldd  a, [hl]
-	and  a
-	jr   z, .noTimerOverride
+IF KEEP_PCM
+
+.pcm:
+	;
+	; [TCRF] Wave Channel - PCM Mode.
+	;
+	; This is pulled off by having the waveform set to all $FF (Sound_ClearWave will do that)
+	; and altering the wave channel's volume at a very fast rate, through the GB's timer interrupt.
+	;
+	; However... the feature isn't used, the timer interrupt doesn't ever call the PCM handler, 
+	; and the bank intended to contain PCM definitions is completely blank.
+	;
+	; Either this feature was never fully implemented, or it got cut for performance issues on the DMG.
+	; Worth noting that the GBC-only sequel *does* have PCM samples.
+	;
+	
+	;
+	; If we want to play a new PCM sample, wSndPcmSpeedSet and wSndPcmIDSet must be set.
+	;
+	; wSndPcmIDSet     -> PCM Sample ID
+	; wSndPcmSpeedSet  -> Playback speed. The lower it is, the lower rate the sample plays.
+	;                     This is because it maps to rTMA, marking how the timer interrupt (new PCM data)
+	;                     should happen every ($100 - wSndPcmSpeedSet) rTIMA overflows.
+	;                     Note that the base clock speed (rTAC) is hardcoded to the max possible frequency.
+	;
+	
+	; This check right below has two purposes:
+	; - If a new PCM has been requested, it checks if a speed has been set
+	; - If existing PCM is playing, it checks if it can continue. (!)
+	;   This is because Sound_UpdateWorkRegsFromSlot sets it to $01 when it passes validation.
+	; Note that wSndPcmSpeedSet and wSndPcmIDSet are reset at the start of the frame.
+	ld   hl, wSndPcmSpeedSet
+	ldd  a, [hl]				; A = wSndPcmSpeedSet, seek to wSndPcmIDSet
+	and  a						; A == 0? (PCM can continue? / Is a PCM speed set?)
+	jr   z, .pcm_tryEnd			; If not, jump (always happens, end PCM playback)
+	; We never get here
+	
+	; Check if a new PCM has been set or not.
+	; If it hasn't, skip to ch4 and don't alter anything. This is the normal behaviour when PCM is playing.
+	ld   a, [hl] 				; A = wSndPcmIDSet
+	and  a						; A == 0?
+	jr   z, .pcm_noChange		; If so, skip this (nothing to do)
+	
+.pcm_new:
+	;
+	; Index the table of PCM settings and copy them over.
+	; Each entry in the table is 5 bytes long:
+	; - 0-1: Data Pointer
+	; - 2: Data Bank Number
+	; - 3: Number of samples / 4
+	; - 4: Playback speed [rTMA]
+	;
+	
+	; HL = Sound_PCMTable[wSndPcmIDSet]
+	add  a ; *2
+	add  a ; *2
+	add  a, [hl] ; +1
+	ld   l, a
+	ld   h, HIGH(Sound_PCMTable)	; + table base
+	; Switch to the bank supposed to contain this data.
+	ld   a, [wSndBankPcmDef]
+	ldh  [hROMBank], a
+	ld   [MBC1RomBank], a
+	
+	; We don't want the interrupt to trigger in the middle of changing the PCM state.
+	; [POI] Yon opts to fully disable it from rIE
+	ld   a, rTAC_262144_HZ			; Disable timer interrupt
+	ldh  [rTAC], a
+
+	; Read out the far pointer
+	ldi  a, [hl]	; C = byte0
+	ld   c, a
+	ldi  a, [hl]	; B = byte1
+	ld   b, a
+	ld   e, l		; DE = Ptr to byte2
+	ld   d, h
+	
+	; Initialize data byte to nothing
+	ld   hl, hPCMVolData
+	ld   [hl], $00 ; hPCMVolData = 0
+	inc  l
+	; Make Sound_PCMHandler fetch the next byte immediately
+	ld   [hl], $01 ; hPCMVolPairsLeft = 1
+	inc  l
+	
+	ld   a, [de]	; A = byte2
+	inc  de 		; Seek to byte3
+	
+	; Save data pointer
+	ldi  [hl], a	; hPCMDataBank = byte2
+	ld   [hl], b	; hPCMDataPtrHigh = byte1
+	inc  l
+	ld   [hl], c	; hPCMDataPtrLow = byte0
+	inc  l			; Seek to hPCMDataLeft
+	
+	; Save sample length
+	ld   a, [de]	; A = byte3
+	inc  de			; Seek to byte4
+	ld   [hl], a	; hPCMDataLeft = byte3
+	
+	;
+	; If a custom playback speed isn't being specified (wSndPcmSpeedSet == $FF), use the one from the entry's byte4.
+	; As a side effect of how this check works, the custom speed is offset by 1.
+	;
+	ld   a, [wSndPcmSpeedSet]
+	inc  a					; wSndPcmSpeedSet + 1 != 0?
+	jr   nz, .pcm_setTimer	; If so, jump (use override)
+	ld   a, [de] 			; Otherwise, A = byte4
+.pcm_setTimer:
+	ldh  [rTMA], a 			; Set new modulo
+	ldh  [rTIMA], a 		; Does this do anything ???
+	
+	;
+	; Prepare the wave channel for PCM playback.
+	;
+.pcm_prepCh3:
+	; Disable ch3, in preparation for potentially clearing wave data
+	sub  a
+	ldh  [rNR30], a
+	ldh  [rNR34], a
+	ldh  [rNR32], a
+	
+	; Clear the wave data to all $FF if it isn't already.
+	ld   a, [wWaveCurId]
+	cp   $FF					; Wave data is already cleared?
+	call nz, Sound_ClearWave	; If not, do that
+	
+	; A will always be $FF when we get here.
+	
+	; Set max period value
+	ldh  [rNR33], a
+	; Enable the channel
+	ld   a, SNDCH3_ON + $07
+	ldh  [rNR30], a
+	; And save the changes with a retrigger
+	ldh  [rNR34], a
+	; Always use the longest possible length (NR31 = 0)
+	sub  a
+	ldh  [rNR31], a
+
+	; Finally, enable the timer, at the max possible base frequency
+	ld   a, (1 << rTAC_ON) | rTAC_262144_HZ
+	ldh  [rTAC], a
+	; And flag that a PCM sample is currently playing (!= 0)
+	ld   [wSndPcmPlaying], a
+
+.pcm_noChange:
+	; PCM being enabled implies that the wave channel cannot be used for its normal purpose.
+	ld   hl, wNR42			; So skip to ch4
+	jr   .ch4
+	
+.pcm_tryEnd:
+	; End PCM playback if PCM is currently playing.
+	ld   a, [wSndPcmPlaying]
+	and  a					; Is it?
+	jr   z, .ch3			; If not, jump
 	;--
 	; We never get here
-.xx31B0:
-	db $7E
-	db $A7
-	db $28
-	db $57
-	db $87
-	db $87
-	db $86
-	db $6F
-	db $26
-	db $40
-	db $FA
-	db $1A
-	db $D0
-	db $E0
-	db $90
-	db $EA
-	db $00
-	db $20
-	db $3E
-	db $01
-	db $E0
-	db $07
-	db $2A
-	db $4F
-	db $2A
-	db $47
-	db $5D
-	db $54
-	db $21
-	db $E8
-	db $FF
-	db $36
-	db $00
-	db $2C
-	db $36
-	db $01
-	db $2C
-	db $1A
-	db $13
-	db $22
-	db $70
-	db $2C
-	db $71
-	db $2C
-	db $1A
-	db $13
-	db $77
-	db $FA
-	db $1D
-	db $D0
-	db $3C
-	db $20
-	db $01
-	db $1A
-	db $E0
-	db $06
-	db $E0
-	db $05
-	db $97
-	db $E0
-	db $1A
-	db $E0
-	db $1E
-	db $E0
-	db $1C
-	db $FA
-	db $36
-	db $D0
-	db $FE
-	db $FF
-	db $C4
-	db $C0
-	db $3B
-	db $E0
-	db $1D
-	db $3E
-	db $87
-	db $E0
-	db $1A
-	db $E0
-	db $1E
-	db $97
-	db $E0
-	db $1B
-	db $3E
-	db $05
-	db $E0
-	db $07
-	db $EA
-	db $1B
-	db $D0
-	db $21
-	db $31
-	db $D0
-	db $18
-	db $68
-.noTimerOverride:
-	ld   a, [wTAC]
-	and  a
-	jr   z, .ch3
-	;--
-	; We never get here
-	db $CD
-	db $B1
-	db $3B
+	call Sound_DisablePCM
 	;--
 	;##
+ENDC
 .ch3:
 
 	;
-	; Wave Channel
+	; Wave Channel - Normal Mode
 	;
 	
 	; First, switch waveforms if needed.
-	
 	ld   hl, wWaveSetId
-	ldi  a, [hl]		; A = New waveform ID
-	cp   [hl]		; Does it match the current one?
+	ldi  a, [hl]		; A = New waveform ID, seek to wWaveCurId
+	cp   [hl]			; Does it match the current one?
 	jr   z, .ch3_regs	; If not, skip
 .ch3_newWave:			; Otherwise...
-	;
 	; Update current value (wWaveCurId)
-	;
 	ld   [hl], a		
 	
 	;
-	; Index the wave table and copy over the entry to the registers
+	; Index the wave table and copy over the entry to the registers.
 	;
 	
 	; BC = A * $10
@@ -11396,17 +11441,16 @@ Sound_UpdateRegs:
 	and  $0F
 	ld   b, a
 	
-	; $4008 contains a pointer to the wave table.
-	; Read it to HL.
-	ld   hl, $4008
+	; Read out to HL the base wave table ptr.
+	ld   hl, Sound_WaveTablePtr
 	ldi  a, [hl]
 	ld   h, [hl]
 	ld   l, a
 	
-	; Offset the wave table
+	; Offset it
 	add  hl, bc
 	
-	; Copy its $10 bytes out
+	; Copy the $10 bytes of wave data to the regs
 	ld   c, LOW(rWave)  ; C = Destination
 	ld   b, $04			; B = Loop count
 	sub  a				; Disable ch3 during this
@@ -11429,22 +11473,16 @@ ENDR
 	; Copy over the other ch3 registers
 	;
 	
-	; TODO: speculation ???
-	; Unlike other channels, this one gets manually muted when the channel stops being processed.
-	; This may be due to the long/hardcoded length timer used.
-	
-	;;;; This goes along with the check in .enabled.
-	;;;; Unlike other channels (but why???), this one mutes itself immediately
-	;;;; when it stops being processed.
+	; Cut off the channel if it isn't being processed.
 	ld   hl, wNR51_ChMask3
 	ldi  a, [hl]		; read, seek to wNR30
 	and  a				; Has the channel been processed? (wNR51_ChMask3 == 0)
 	jr   z, .ch3_onSet	; If so, jump
 .ch3_onClear:
-	ld   [hl], $00		; Mark the channel as processed,
+	ld   [hl], $00		; Mark the channel as processed
 	ldh  [rNR30], a		; Disable its hardware channel
 	ld   l, LOW(wNR42)
-	jr   .ch4
+	jr   .ch4			; Don't do anything else
 .ch3_onSet:
 
 	; Do the write to enable the channel rNR30 only if we're retriggering it
@@ -11493,73 +11531,93 @@ ENDR
 	ldh  [rNR51], a
 	ret
 	
-L00328C: db $F5;X
-L00328D: db $F0;X
-L00328E: db $E8;X
-L00328F: db $E0;X
-L003290: db $1C;X
-L003291: db $07;X
-L003292: db $07;X
-L003293: db $E0;X
-L003294: db $E8;X
-L003295: db $F0;X
-L003296: db $E9;X
-L003297: db $3D;X
-L003298: db $28;X
-L003299: db $04;X
-L00329A: db $E0;X
-L00329B: db $E9;X
-L00329C: db $F1;X
-L00329D: db $D9;X
-L00329E: db $E5;X
-L00329F: db $21;X
-L0032A0: db $E9;X
-L0032A1: db $FF;X
-L0032A2: db $36;X
-L0032A3: db $04;X
-L0032A4: db $2C;X
-L0032A5: db $2A;X
-L0032A6: db $EA;X
-L0032A7: db $00;X
-L0032A8: db $20;X
-L0032A9: db $2A;X
-L0032AA: db $6E;X
-L0032AB: db $67;X
-L0032AC: db $2A;X
-L0032AD: db $E0;X
-L0032AE: db $E8;X
-L0032AF: db $F0;X
-L0032B0: db $90;X
-L0032B1: db $EA;X
-L0032B2: db $00;X
-L0032B3: db $20;X
-L0032B4: db $7D;X
-L0032B5: db $A7;X
-L0032B6: db $E0;X
-L0032B7: db $EC;X
-L0032B8: db $28;X
-L0032B9: db $03;X
-L0032BA: db $E1;X
-L0032BB: db $F1;X
-L0032BC: db $D9;X
-L0032BD: db $7C;X
-L0032BE: db $21;X
-L0032BF: db $EB;X
-L0032C0: db $FF;X
-L0032C1: db $22;X
-L0032C2: db $2C;X
-L0032C3: db $35;X
-L0032C4: db $E1;X
-L0032C5: db $20;X
-L0032C6: db $06;X
-L0032C7: db $97;X
-L0032C8: db $EA;X
-L0032C9: db $1B;X
-L0032CA: db $D0;X
-L0032CB: db $E0;X
-L0032CC: db $07;X
-L0032CD: db $F1;X
-L0032CE: db $D9;X
+IF KEEP_PCM
+; =============== Sound_PCMHandler ===============
+; [TCRF] Interrupt handler for feeding new PCM data through the wave channel's volume.
+; This is supposed to be hooked up by the sound driver's init code as in Yon, but it doesn't happen in this game.
+Sound_PCMHandler:
+	;
+	; PCM data has a bit depth of 2, allowing four pairs to fit in a byte
+	; (hPCMVolData), ordered from top to bottom.
+	; 
+	; Only the topmost two bits of NR32 matter, so we can set to it the
+	; current data byte directly, then shift left the next pair in place.
+	;
+	push af
+		; Set PCM data
+		ldh  a, [hPCMVolData]
+		ldh  [rNR32], a
+		; << 2 the next data in-place
+		rlca 
+		rlca 
+		ldh  [hPCMVolData], a
+		
+		; PairsLeft--
+		ldh  a, [hPCMVolPairsLeft]
+		dec  a						; Shifted out all 4 pairs?
+		jr   z, .fetchNext			; If so, fetch some more
+		ldh  [hPCMVolPairsLeft], a
+	pop  af
+	reti
+	
+	.fetchNext:
+		push hl
+		
+			; Reset the pair counter
+			ld   hl, hPCMVolPairsLeft
+			ld   [hl], $04			; 4 pairs of 2 bits
+			
+			; Bankswitch to the bank with this PCM data
+			inc  l					; Seek to hPCMDataBank
+			ldi  a, [hl]			; Read bank number, seek to hPCMDataPtrHigh
+			ld   [MBC1RomBank], a
+			
+				; Read out the data pointer to HL
+				ldi  a, [hl]			
+				ld   l, [hl]			; L = hPCMDataPtrLow
+				ld   h, a				; H = hPCMDataPtrHigh
+				
+				; Get the next PCM byte and increment the data pointer
+				ldi  a, [hl]
+				ldh  [hPCMVolData], a
+			
+			; Bankswitch back
+			ldh  a, [hROMBank]
+			ld   [MBC1RomBank], a
+			
+			; Save back updated data pointer
+		.setLowByte:
+			ld   a, l
+			and  a						; Low byte overflowed?	
+			ldh  [hPCMDataPtrLow], a	; (Write low byte)
+			jr   z, .setHighByte		; If so, jump
+		pop  hl
+	pop  af
+	reti 
+		.setHighByte:
+			ld   a, h
+			ld   hl, hPCMDataPtrHigh
+			ldi  [hl], a				; Write high byte, seek to hPCMDataPtrLow
+		.decBytesLeft:
+			; Decrement the number of pairs left.
+			; If there's nothing left, end PCM playback.
+			inc  l						; Seek to hPCMDataLeft
+			dec  [hl]					; hPCMDataLeft--
+		pop  hl
+		jr   nz, .end					; hPCMDataLeft != 0? If so, skip
+		
+		; Otherwise, mark PCM playback as ended.
+		; This causes Sound_UpdateWorkRegsFromSlot to tell Sound_UpdateRegs that PCM playback should end.
+		sub  a
+		ld   [wSndPcmPlaying], a	
+		; And disable the timer counter.
+		; This prevents the interrupt from firing.
+		ldh  [rTAC], a
+	.end:
+	pop  af
+	reti 
+	;--
+ENDC
 
 ; =============== Sound_ReadNextData ===============
 ; Handles the next command in the song data.
@@ -11704,8 +11762,10 @@ Sound_DataCmdPtrTable:
 	dw SoundDataCmd_A1    ; $A1
 	dw SoundDataCmd_A2    ; $A2
 	dw SoundDataCmd_A3    ; $A3
+IF KEEP_PCM
 	dw SoundDataCmd_A4;X  ; $A4
 	dw SoundDataCmd_A5;X  ; $A5
+ENDC
 
 ; =============== SoundDataCmdS_JpCustom ===============
 ; Loops the sound slot without loop limit, to the specified location.
@@ -12120,7 +12180,7 @@ SoundDataCmd_85:
 	pop  bc
 	ret
 
-; =============== SoundDataCmd_91 ===============
+; =============== SoundDataCmd_OrSnd ===============
 ; [TCRF] Merges the specified value into wSndSavedSoundID.
 ;
 ; FORMAT:
@@ -12132,50 +12192,58 @@ SoundDataCmd_91:
 	ld   [hl], a
 	ret
 
-; =============== SoundDataCmd_9C ===============
-; [TCRF] ???
-;
-; iSndChInfo_04 = *(byte23 + (byte1 - iSndChInfo_24))
-;
-; This command isn't used by songs, so we don't know what it's pointing to.
+; =============== SoundDataCmd_IncBaseNote ===============
+; [TCRF] Increases the base note ID, off the following:
+; iSndChInfo_04 += byte23[byte1 - iSndChInfo_24]
 ;
 ; FORMAT:
 ; - 0: Command ID ($9C)
-; - 1: Value
-; - 2-3: Pointer to ??? 
+; - 1: Note table index
+; - 2-3: Pointer to a Note ID offset table
 SoundDataCmd_9C:
-	; Seek HL to iSndChInfo_24
+	
+	;
+	; Seek DE to the note ID.
+	; DE = byte23[byte1 - iSndChInfo_24]
+	;
+	
+	; Seek HL to iSndChInfo_24 
 	ld   h, d
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_24
 	ld   l, a
 	
+	; Generate the index to the table.
 	; E = byte1 - iSndChInfo_24
-	ld   a, e
-	sub  [hl]
+	ld   a, e		; Get byte1, the index
+	sub  [hl]		; Subtract iSndChInfo_24
 	ld   e, a
 	
+	; Index the note ID offset table byte2-3 is pointing to
 	; E = byte2 + E
 	inc  bc			; Seek to byte2
-	ld   a, [bc]
-	add  e			
-	ld   e, a
-	
+	ld   a, [bc]	; Read low byte
+	add  e			; Add index
+	ld   e, a		; Save back
 	; D = byte3 + (carry)
 	inc  bc			; Seek to byte3
-	ld   a, [bc]
-	adc  a, $00
-	ld   d, a
+	ld   a, [bc]	; Read high byte
+	adc  a, $00		; Add carry
+	ld   d, a		; Save back
 	
-	; Seek HL to iSndChInfo_04
+	;
+	; Increment the base note ID by whatever DE is pointing to.
+	;
+	
+	; Seek HL to current note ID
 	ld   a, l
 	add  iSndChInfo_04 - iSndChInfo_24
 	ld   l, a
 	
 	; iSndChInfo_04 += *DE
-	ld   a, [de]
-	add  [hl]
-	ld   [hl], a
+	ld   a, [de]		; Read offset
+	add  [hl]			; Add base ID
+	ld   [hl], a		; Save back
 	
 	; Restore pointer
 	ld   d, h
@@ -12328,47 +12396,45 @@ SoundDataCmd_95:
 	jp   z, SoundDataCmd_80.readHi	; If not, loop
 	ret
 	
-; =============== SoundDataCmd_99 ===============
-; ???
+; =============== SoundDataCmd_ToggleShortInst ===============
+; Toggles short instrument loops.
 ;
 ; FORMAT:
 ; - 0: Command ID ($99)
 SoundDataCmd_99:
-	; Toggle SNDX_4 
+	; Toggle short instruments 
 	ldh  a, [hSndChInfoStatus]
 	xor  SNDX_4
 	ldh  [hSndChInfoStatus], a
 	
-	; If we set it, also set SNDDF_3
-	and  SNDX_4		; Did we set SNDX_4?
-	jr   z, .end	; If not, skip (never taken)
+	; If they are now enabled, also reset instrument data on NoteEx
+	and  SNDX_4					; Did we set SNDX_4?
+	jr   z, .end				; If not, skip (never taken)
 .setBit3:
-	ldh  a, [h_Unk_FFE5_Flags]
+	ldh  a, [h_Unk_FFE5_Flags]	; Enable reset
 	or   SNDDF_3
 	ldh  [h_Unk_FFE5_Flags], a
 .end:
 	dec  bc	; no args
 	ret
 	
-; =============== SoundDataCmd_A2 ===============
-; ???
+; =============== SoundDataCmd_SetS3 ===============
+; Sets the otherwise unused flag SNDX_3.
 ;
 ; FORMAT:
 ; - 0: Command ID ($A2)
 SoundDataCmd_A2:
-	; Set SNDX_3
 	ldh  a, [hSndChInfoStatus]
 	or   SNDX_3
 	ldh  [hSndChInfoStatus], a
 	jr   SoundDataCmd_99.setBit3
 	
-; =============== SoundDataCmd_A3 ===============
-; ???
+; =============== SoundDataCmd_ClrS3 ===============
+; Clears the otherwise unused flag SNDX_3.
 ;
 ; FORMAT:
 ; - 0: Command ID ($A3)
 SoundDataCmd_A3:
-	; Clear SNDX_3
 	ldh  a, [hSndChInfoStatus]
 	and  $FF^SNDX_3
 	ldh  [hSndChInfoStatus], a
@@ -12501,56 +12567,60 @@ SoundDataCmd_9F:
 	; Otherwise, treat the next two bytes like a jump command
 	jp   SoundDataCmdS_JpCustom
 
-; =============== SoundDataCmd_A5 ===============
-; [TCRF] ???
+IF KEEP_PCM
+; =============== SoundDataCmd_PlaySlotPcm ===============
+; [TCRF] Plays the slot-specific PCM sample, which was passed when creating the slot.
 ;
-; Timer nonsense.
+; Identical to SoundDataCmd_PlayPcm otherwise.
 ;
 ; FORMAT:
 ; - 0: Command ID ($A5)
-; - 1: 
+; - 1: Pla
 SoundDataCmd_A5:
-	db $F0;X
-	db $E6;X
-	db $C6;X
-	db $29;X
-	db $5F;X
-	db $1A;X
-	db $18;X
-	db $02;X
+	; A = iSndChInfo_29
+	ldh  a, [hSndChInfoPtrBakLow]
+	add  a, iSndChInfo_29
+	ld   e, a
+	ld   a, [de]
+	
+	jr   SoundDataCmd_A4.setPcm
 
-; =============== SoundDataCmd_A4 ===============
-; [TCRF] ???
+; =============== SoundDataCmd_PlayPcm ===============
+; [TCRF] Plays the specified PCM sample.
 ;
-; Timer nonsense.
+; This is the only way to play a PCM sample in Sun's driver, unlike Yon there's no special
+; command (SoundCmd_*) to play a PCM sample by ID.
 ;
 ; FORMAT:
 ; - 0: Command ID ($A4)
-; - 1: 
+; - 1: PCM Sample ID
+; - 2: Playback speed
+; --- rest from normal note
+; - 3: Note length ID + "Contains extension offset" marker.
+; - 4: Custom note length value [Optional, if \1 is $DE or $EF]
+; - 5: Mid-note instrument extension delay [Optional, if \1 is between $DE-$EE] 
 SoundDataCmd_A4:
-	db $03;X
-	db $7B;X
-;L003508:
-	db $EA;X
-	db $1C;X
-	db $D0;X
-	db $0A;X
-	db $EA;X
-	db $1D;X
-	db $D0;X
-	db $03;X
-	db $21;X
-	db $E4;X
-	db $FF;X
-	db $CB;X
-	db $EE;X
-	db $3E;X
-	db $01;X
-	db $E0;X
-	db $E1;X
-	db $C3;X
-	db $C3;X
-	db $35;X
+	inc  bc					; Seek to byte2
+	ld   a, e				; wSndPcmIDSet = byte1
+.setPcm:
+	ld   [wSndPcmIDSet], a
+	ld   a, [bc]			; wSndPcmSpeedSet = byte2
+	ld   [wSndPcmSpeedSet], a
+	inc  bc					; Seek to byte3
+	
+	; Flag PCM as played in this slot.
+	ld   hl, h_Unk_SndChInfo_C
+	set  SNDCB_PCM, [hl]
+	
+	; Channels can optionally turn themselves off.
+	; This feature must be disabled while playing PCM, as the $FF wave data has to play continuously.
+	ld   a, $01
+	ldh  [wNRx4Data], a
+	
+	; Skip past the point it tries to set frequency data
+	jp   SoundDataCmd_Note.tryNoteLen
+	
+ENDC
 
 ; =============== SoundDataCmd_NoteEx ===============
 ; Superset of the normal SoundDataCmd_Note.
@@ -13060,7 +13130,7 @@ ENDM
 	
 	; We're no longer muted, if we were before
 	ldh  a, [h_Unk_SndChInfo_C]
-	res  SNDCB_PAUSE, a
+	res  SNDCB_MUTED, a
 	ldh  [h_Unk_SndChInfo_C], a
 	
 	; Back to the main loop
@@ -13295,7 +13365,7 @@ Sound_FreqDataTbl:
 ;
 ; Overrall, this needs to set up two fields in particular:
 ; - The slot's volume to wSndChInfoVolume
-; - The note's volume/envelope settings to wNRx2Data
+; - The note's volume/envelope settings to hNRx2Data
 Sound_DoInstrument:
 
 	;
@@ -13353,11 +13423,11 @@ Sound_DoInstrument:
 .direct:
 	rrca 					; /2 with carry shifted back, to restore original
 	or   ($0F<<4)			; Force max volume
-	ldh  [wNRx2Data], a
+	ldh  [hNRx2Data], a
 	ret
 .directInc:
 	ld   a, ($0F<<4)|SNDENV_INC	; Force max volume, *incrementing* envelope
-	ldh  [wNRx2Data], a
+	ldh  [hNRx2Data], a
 	ret
 	
 .chkTimer:
@@ -13371,7 +13441,7 @@ Sound_DoInstrument:
 	; Otherwise...
 	inc  l				; Seek to iSndChInfo_11
 	ld   a, [hl]		; and use it as current NRx2 data
-	ldh  [wNRx2Data], a
+	ldh  [hNRx2Data], a
 	ret
 	
 .useNew:
@@ -13449,9 +13519,9 @@ Sound_DoInstrument:
 		inc  l				; Seek to iSndChInfo_11
 		
 		; Copy the NRx2 data.
-		; byte1 -> wNRx2Data, iSndChInfo_11
+		; byte1 -> hNRx2Data, iSndChInfo_11
 		ld   a, [bc]		; Read byte1
-		ldh  [wNRx2Data], a	; Write to the current NRx2 data
+		ldh  [hNRx2Data], a	; Write to the current NRx2 data
 		cp   [hl]
 		ld   [hl], a		; Write to iSndChInfo_11 too, so that it will be remembered the next frames
 		ret  z
@@ -13616,11 +13686,6 @@ ENDC
 ;
 ; Code-wise, this is extremely similar to Sound_DoInstrument and even uses the same commands.
 Sound_DoVibrato:
-
-	;
-	; Massive table mapping each possible NR10 value to ???
-	;
-	;
 
 	; Prepare args
 	; DE = Ptr to iSndChInfo_03
@@ -14211,9 +14276,12 @@ Sound_InitWorkRegs:
 	ld   [wNR10], a
 	ld   [wNR32], a
 	ld   [wNR34], a
-	ld   [w_Unk_TimerRelated_D01C], a
-	ld   [wTIMAOverride], a
-	
+IF KEEP_PCM
+	; These are temporary
+	ld   [wSndPcmIDSet], a
+	ld   [wSndPcmSpeedSet], a
+ENDC
+
 	ld   a, $08
 	ld   [wNR12], a
 	ld   [wNR22], a
@@ -14243,75 +14311,102 @@ Sound_InitWorkRegs:
 ; Saves the changes from the sound slot into the sound registers in the WRAM mirror.
 Sound_UpdateWorkRegsFromSlot:
 
-	; If we're muted don't do anything
+	; If we're muted, audio won't play so don't bother setting up the registers
 	ldh  a, [h_Unk_SndChInfo_C]
-	bit  SNDCB_PAUSE, a
+	bit  SNDCB_MUTED, a
 	ret  nz
 	
-	; [TCRF] This bit is never set, the logic inside contiains timer nonsense.
-	bit  SNDCB_5, a
-	jr   z, .noTimer
-	db $21;X
-	db $2A;X
-	db $D0;X
-	db $F0;X
-	db $E5;X
-	db $CB;X
-	db $7F;X
-	db $28;X
-	db $11;X
-	db $FA;X
-	db $11;X
-	db $D0;X
-	db $E6;X
-	db $04;X
-	db $28;X
-	db $04;X
-	db $7E;X
-	db $A7;X
-	db $20;X
-	db $15;X
-	db $EA;X
-	db $1D;X
-	db $D0;X
-	db $C3;X
-	db $39;X
-	db $3A;X
-	db $FA;X
-	db $1B;X
-	db $D0;X
-	db $A7;X
-	db $28;X
-	db $7A;X
-	db $7E;X
-	db $A7;X
-	db $28;X
-	db $76;X
-	db $3E;X
-	db $01;X
-	db $EA;X
-	db $1D;X
-	db $D0;X
-	db $FA;X
-	db $34;X
-	db $D0;X
-	db $AE;X
-	db $47;X
-	db $F0;X
-	db $E6;X
-	db $C6;X
-	db $0A;X
-	db $5F;X
-	db $1A;X
-	db $A6;X
-	db $B0;X
-	db $EA;X
-	db $34;X
-	db $D0;X
-	db $36;X
-	db $00;X
-	db $C9;X
-.noTimer:
+IF KEEP_PCM
+	;
+	; Verify if PCM playback on this slot can start/continue.
+	; This mostly involves writing to wSndPcmSpeedSet, which here counts as a marker for keeping PCM enabled.
+	; Sound_UpdateRegs will make use of that.
+	;
+	; - At the start of the frame it's set to $00. 
+	; - If a new PCM is requested, it's set to the requested speed, which will definitely be > $00.
+	;   -> This should be left untouched if it's allowed to start, reset to $00 if not.
+	; - If nothing new is requested, it stays at $00.
+	;   -> This should be changed to != 0 if it's allowed to start.
+	;
+	
+	; Skip all of this if this slot doesn't use PCM.
+	bit  SNDCB_PCM, a			; Slot using song PCM?
+	jr   z, .noPcm				; If not, skip
+	;--
+	; We never get here.
+	; This also assumes the current slot handles the wave channel.
+	ld   hl, wNR51_ChMask3		; HL = NR51 mask
+	
+	; Playing a new PCM from song data also always plays a new note.
+	ldh  a, [h_Unk_FFE5_Flags]
+	bit  SNDDFB_NEWNOTE, a		; Is a new PCM requested?
+	jr   z, .pcmNotNew			; If not, jump
+	
+.pcmNew:
+	; Cancel the request if...
+	
+	; ...PCM isn't globally enabled at a sound driver level
+	ld   a, [wSnd_D011_Flags]
+	and  SNDF1_PCMON			; PCM enabled?
+	jr   z, .pcmCancelReq		; If not, jump
+
+	; ...the wave channel is in use (by an higher priority sound)
+	ld   a, [hl]
+	and  a						; Processed ch3 yet? (wNR51_ChMask3 == 0)
+	jr   nz, .pcmSetNR51		; If not, jump
+	
+.pcmCancelReq:
+	; Don't allow the PCM to start.
+	; A side effect is that if what was previously using the wave channel was itself PCM, that will get disabled too.
+	ld   [wSndPcmSpeedSet], a
+	; And mute the slot so next time this subroutine returns immediately.
+	jp   .muted
+	
+.pcmNotNew:
+	; Stop the channel and PCM playback if...
+
+	; ...a PCM sample isn't playing anymore
+	ld   a, [wSndPcmPlaying]
+	and  a
+	jr   z, .muted
+	
+	; ...the wave channel is in use (by an higher priority sound)
+	ld   a, [hl]
+	and  a					; Processed ch3 yet? (wNR51_ChMask3 == 0)
+	jr   z, .muted			; If so, jump
+	
+	; Otherwise, mark the validation as passed
+	ld   a, $01
+	ld   [wSndPcmSpeedSet], a
+	
+.pcmSetNR51:
+	;
+	; Apply stereo panning, identically to .setNR51.
+	;
+	
+	; B = Bits for the other channels
+	ld   a, [wNR51]
+	xor  [hl]
+	ld   b, a
+	
+	; A = Stereo panning bits
+	ldh  a, [hSndChInfoPtrBakLow]
+	add  iSndChInfo_0A
+	ld   e, a
+	ld   a, [de]
+	
+	; Extract the relevant channel bits.
+	and  [hl]
+	
+	; Merge back the bits for other channels & save
+	or   b				
+	ld   [wNR51], a
+	
+	; Wipe out the mask
+	ld   [hl], $00
+	ret
+.noPcm:
+ENDC
 	;
 	; Sync the sound slot's wNRx3/4 data with the working values.
 	;
@@ -14332,7 +14427,7 @@ Sound_UpdateWorkRegsFromSlot:
 	; Apply the volume settings.
 	;
 	; The final volume is the sum between the sound slot's base volume (wSndChInfoVolume),
-	; the negative fade value, and the instrument's volume (upper nybble of wNRx2Data).
+	; the negative fade value, and the instrument's volume (upper nybble of hNRx2Data).
 	;
 	; The result is subtracted by $0F to allow fades to work without relying on negative numbers, and because
 	; we only have a single nybble to store the final result.
@@ -14370,7 +14465,7 @@ Sound_UpdateWorkRegsFromSlot:
 .applyVol:
 	; The upper nybble of NRx2 contains the volume settings.
 	; Swap it to the lower nybble, that makes it easier to calculate stuff.
-	ldh  a, [wNRx2Data]
+	ldh  a, [hNRx2Data]
 	swap a
 	; Keep a copy to preserve the other nybble
 	ld   b, a
@@ -14394,7 +14489,7 @@ Sound_UpdateWorkRegsFromSlot:
 	; Finally, swap them back in place
 	swap a
 .setNRx2:
-	ldh  [wNRx2Data], a
+	ldh  [hNRx2Data], a
 	;##
 	
 	;
@@ -14435,16 +14530,16 @@ Sound_UpdateWorkRegsFromSlot:
 .procCh4:
 	ld   hl, wNR51_ChMask4
 .procCh:
-	; If the sound channel is muted, skip updating the WRAM registers.
-	; This goes off the channel-specific wNR51_ChMask*, which can get disabled by ???
-	ld   a, [hl] 			; A = wNR51_ChMask*
-	and  a					; A != 0?
-	jr   nz, .setNR51		; If so, OK, process it
+	; Only process each sound channel once.
+	; If multiple slots want to update the same channel, only the first one goes through.
+	ld   a, [hl]
+	and  a					; wNR51_ChMask* != 0?
+	jr   nz, .setNR51		; If so, ok. it hasn't been processed yet
 	
 .muted:
 	; Mark the current slot as muted
 	ldh  a, [h_Unk_SndChInfo_C]
-	set  SNDCB_PAUSE, a
+	set  SNDCB_MUTED, a
 	ldh  [h_Unk_SndChInfo_C], a
 	ret
 	
@@ -14455,11 +14550,14 @@ Sound_UpdateWorkRegsFromSlot:
 	; Apply the stereo panning options from iSndChInfo_0A to wNR51.
 	; This should only affect the bits for the current channel.
 	;
+	; This also flags the sound channel as processed.
+	;
 	
 	; B = Bits for the other channels
 	; When doing bitwise negation like this, we'd normally have to do an "and" after the "xor".
-	; However, we can skip that since wNR51 is reset to $FF at the start of the frame and
-	; further calls to the same channel will xor against $00, which does nothing.
+	; However, we can skip that since when we get here:
+	; - wNR51 is reset to $FF at the start of the frame
+	; - wNR51_ChMask* will always have the bits for the current channel set
 	ld   a, [wNR51]		; A = Channel playback settings
 	xor  [hl]			; Mask unrelated bits using wNR51_ChMask*
 	ld   b, a			; Save to B
@@ -14477,10 +14575,7 @@ Sound_UpdateWorkRegsFromSlot:
 	or   b				; Merge back the bits for other channels
 	ld   [wNR51], a		; Save everything back
 	
-	; Wipe out the mask, which doubles as a marker that the sound channel will be processed.
-	; This makes sure to preserve NR51 settings if any further slots target the same sound channel,
-	; since xoring against $00 does nothing.
-	; Note that the wave channel explicitly checks if this is zeroed out when saving these changes to the actual registers.
+	; Wipe out the mask, which doubles as a marker that the sound channel has been processed.
 	sub  a
 	ldi  [hl], a		; Seek to the first register for the channel
 	;--
@@ -14513,9 +14608,9 @@ Sound_UpdateWorkRegsFromSlot:
 	;--
 	;
 	; Volume control
-	; Upper 2 bits of wNRx2Data -> wNR32
+	; Upper 2 bits of hNRx2Data -> wNR32
 	;
-	; They are stored inside wNRx2Data in a logical way (0 -> mute, 3 -> max volume),
+	; They are stored inside hNRx2Data in a logical way (0 -> mute, 3 -> max volume),
 	; but that's not how the hardware works:
 	;
 	; DRV -> xor -> GB  |
@@ -14528,7 +14623,7 @@ Sound_UpdateWorkRegsFromSlot:
 	;
 	
 	; Read source
-	ldh  a, [wNRx2Data]
+	ldh  a, [hNRx2Data]
 	; Move bits down to their proper location
 	rrca
 	; Flipping bits almost yields the correct result, except offset down by 1
@@ -14572,8 +14667,8 @@ Sound_UpdateWorkRegsFromSlot:
 	ldi  [hl], a				; Save it to wNRx1, seek to wNRx2 
 	
 	;--
-	; wNRx2Data -> wNRx2
-	ldh  a, [wNRx2Data]			; Read wNRx2Data
+	; hNRx2Data -> wNRx2
+	ldh  a, [hNRx2Data]			; Read hNRx2Data
 	ldi  [hl], a				; Write to wNRx2, seek to wNRx3
 	
 	;--
@@ -14710,8 +14805,10 @@ Sound_DoQueue:
 			jr   .seekNext
 		.song:
 			ld   c, a			; C = Sound ID
-			ld   a, [hl]		; wNRx2Data = ??? Arguments
-			ldh  [wNRx2Data], a
+		IF KEEP_PCM
+			ld   a, [hl]		; hSndTmpSongPcm = Command argument, PCM sample ID
+			ldh  [hSndTmpSongPcm], a
+		ENDC
 			call Sound_StartNew
 			
 		.seekNext:
@@ -14743,7 +14840,7 @@ Sound_Init:
 	ldh  [hROMBank], a
 	ld   [MBC1RomBank], a
 	ld   a, b
-	ld   [wSndBankSec], a
+	ld   [wSndBankPcmDef], a
 	
 	; Clear sound queue (only the index matters)
 	sub  a
@@ -14789,12 +14886,18 @@ SoundCmd_ResetAll:
 ; Disables the sound sets, which mutes everything.
 SoundCmd_StopAll:
 
-	;--
-	; [TCRF] Timer support not used
+	IF KEEP_PCM
+	; [TCRF] Reset everything except for PCM support.
 	ld   a, [wSnd_D011_Flags]
-	and  SNDF1_CLRTAC
+	and  SNDF1_PCMON
 	ld   [wSnd_D011_Flags], a
-	;--
+	ENDC
+	
+	; [POI] Yon's driver would hook up the timer interrupt to Sound_PCMHandler here,
+	;       by writing to its WRAM address, as well as setting up the timer settings.
+	;IF YON_PCM
+	;	; ...
+	;ENDC
 	
 	; Disable the nine slots by clearing the first byte of each
 	ld   hl, wSndChInfo0				; HL = Starting address
@@ -14812,13 +14915,16 @@ SoundCmd_StopAll:
 	ld   [wSndFadeVolume], a
 	
 	call Sound_InitWorkRegs
-	call Sound_ResetTAC
+	call Sound_DisablePCM
 	jp   Sound_UpdateRegs
 	
 ; =============== Sound_ReqPlayId ===============
+; Command ID: $8B
+;
 ; Requests playback for a new sound ID, adding it to the end of the queue.
-; IN
-; - A: Sound ID to play
+; FORMAT / IN
+; - 0: Command ID ($8B)
+; - A / 1: Sound ID to play
 SoundDataCmd_8B:
 Sound_ReqPlayId:	
 	push bc
@@ -14882,7 +14988,7 @@ Sound_ReqPlayId:
 			jr   .retry
 			
 ; =============== Sound_ReqPlayIdWithArg ===============
-; Requests playback for a new sound ID.
+; Requests playback for a new sound ID with arguments.
 ; IN
 ; - B: Sound ID to play	
 ; - C: Arguments	
@@ -14933,22 +15039,28 @@ Sound_FadeInTargetReached:
 	pop  de
 	ret
 	
-; =============== Sound_ResetTAC ===============
-; Clears the Timer Control values.
-; [TCRF] Can be deleted, timer support is not used.
-Sound_ResetTAC:
+IF KEEP_PCM
+; =============== Sound_DisablePCM ===============
+; [TCRF] Disables PCM completely.
+Sound_DisablePCM:
+	; If PCM support is enabled, disable the timer interrupt
 	ld   a, [wSnd_D011_Flags]
-	bit  SNDFB1_CLRTAC, a	; Do we want to clear the register too?
-	jr   z, .clearW			; If not, skip
+	bit  SNDFB1_PCMON, a	; Is PCM support still enabled?
+	jr   z, .clrPlay		; If not, skip
 	;--
-	sub  a					; We never get here
+	; We never get here
+	sub  a					
 	ldh  [rTAC], a
 	;--
-.clearW:
+.clrPlay:
+; =============== Sound_DisablePCMPlayback ===============
+; [TCRF] Marks that no PCM sample is currently playing.
+Sound_DisablePCMPlayback:
 	sub  a
-	ld   [wTAC], a
+	ld   [wSndPcmPlaying], a
 	ret
-	
+ENDC
+
 ; =============== Sound_ClearWave ===============
 ; Initializes / wipes out the complete set of wave data.
 Sound_ClearWave:
@@ -15132,9 +15244,10 @@ SoundCmd_Unpause:
 	jp   Sound_StartNew
 	
 ;================ Sound_StartNew ================
+; Plays a new song with an optional sample.
 ; IN
 ; - C: Sound ID
-; - wNRx2Data: Initial envelope/NRx2 data ??? Not sure since it goes into iSndChInfo_29 . Uses wNRx2Data
+; - hSndTmpSongPcm: PCM Sample ID
 Sound_StartNew:
 
 	;
@@ -15144,8 +15257,7 @@ Sound_StartNew:
 	; BC = Song ID
 	ld   b, $00
 	
-	; $4000 contains a pointer to the song header pointer table.
-	; Read it to HL.
+	; Read to HL the base table pointer.
 	ld   hl, Sound_SndHeaderPtrTablePtr ; BANK $06
 	ldi  a, [hl]
 	ld   h, [hl]
@@ -15295,8 +15407,15 @@ Sound_StartNew:
 	
 	ldh  a, [hROMBank] ; iSndChInfo_28 = Bank ID for Song data
 	ldi  [hl], a
-	ldh  a, [wNRx2Data] ; iSndChInfo_29 = Initial note timer???
+	
+IF KEEP_PCM
+	;
+	; [TCRF] The command argument when starting a new song is the ID to a PCM sample.
+	;        This can be used alongside SoundDataCmd_PlaySlotPcm to play it at the specified speed.
+	;
+	ldh  a, [hSndTmpSongPcm] ; iSndChInfo_29 = hSndTmpSongPcm
 	ld   [hl], a
+ENDC
 .chkNext:
 	; Restore the song header ptr to HL
 	ld   l, e

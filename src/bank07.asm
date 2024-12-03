@@ -1,53 +1,54 @@
-SndHeader_1F: db $04
-L074001: db $00
-L074002: db $01
-L074003: db $0F
-L074004: db $00
-L074005: db $00
-L074006: db $E8
-L074007: db $C4
-L074008: db $00
-L074009: db $31
-L07400A: db $40
-L07400B: db $00
-L07400C: db $FF
-L07400D: db $01
-L07400E: db $01
-L07400F: db $0F
-L074010: db $00
-L074011: db $00
-L074012: db $E8
-L074013: db $C4
-L074014: db $01
-L074015: db $A7
-L074016: db $40
-L074017: db $00
-L074018: db $FF
-L074019: db $02
-L07401A: db $01
-L07401B: db $0F
-L07401C: db $00
-L07401D: db $00
-L07401E: db $F4
-L07401F: db $C4
-L074020: db $02
-L074021: db $E3
-L074022: db $40
-L074023: db $00
-L074024: db $FF
-L074025: db $03
-L074026: db $01
-L074027: db $0F
-L074028: db $00
-L074029: db $00
-L07402A: db $00
-L07402B: db $C4
-L07402C: db $03
-L07402D: db $07
-L07402E: db $41
-L07402F: db $00
-L074030: db $FF
-L074031: db $A0
+SndHeader_1F:
+	db 4 ; Number of slots
+.slot0:
+	db SNDSLOT0 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -24 ; iSndChInfo_04
+	db 196 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_1F_Ch1 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT1 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -24 ; iSndChInfo_04
+	db 196 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_1F_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT2 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 196 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_1F_Ch3 ; Data pointer
+	db WAVE_00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot3:
+	db SNDSLOT3 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 196 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_1F_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_1F_Ch1: db $A0
 L074032: db $C0
 L074033: db $32
 L074034: db $DF
@@ -165,7 +166,7 @@ L0740A3: db $30
 L0740A4: db $00
 L0740A5: db $EE
 L0740A6: db $82
-L0740A7: db $A0
+SndData_1F_Ch2: db $A0
 L0740A8: db $40
 L0740A9: db $2E
 L0740AA: db $E1
@@ -225,7 +226,7 @@ L0740DF: db $34
 L0740E0: db $00
 L0740E1: db $EE
 L0740E2: db $82
-L0740E3: db $A0
+SndData_1F_Ch3: db $A0
 L0740E4: db $02
 L0740E5: db $88
 L0740E6: db $05
@@ -261,7 +262,7 @@ L074103: db $00
 L074104: db $DE
 L074105: db $2D
 L074106: db $82
-L074107: db $A0
+SndData_1F_Ch4: db $A0
 L074108: db $01
 L074109: db $00
 L07410A: db $E9
@@ -347,56 +348,57 @@ L074159: db $00
 L07415A: db $DE
 L07415B: db $25
 L07415C: db $82
-SndHeader_03: db $04
-L07415E: db $00
-L07415F: db $01
-L074160: db $0F
-L074161: db $00
-L074162: db $00
-L074163: db $E8
-L074164: db $68
-L074165: db $00
-L074166: db $8E
-L074167: db $41
-L074168: db $80
-L074169: db $FF
-L07416A: db $01
-L07416B: db $01
-L07416C: db $0C
-L07416D: db $00
-L07416E: db $00
-L07416F: db $F4
-L074170: db $68
-L074171: db $02
-L074172: db $3E
-L074173: db $43
-L074174: db $0D
-L074175: db $FF
-L074176: db $02
-L074177: db $01
-L074178: db $0A
-L074179: db $00
-L07417A: db $00
-L07417B: db $F4
-L07417C: db $68
-L07417D: db $01
-L07417E: db $B9
-L07417F: db $43
-L074180: db $00
-L074181: db $FF
-L074182: db $03
-L074183: db $01
-L074184: db $0F
-L074185: db $00
-L074186: db $00
-L074187: db $00
-L074188: db $68
-L074189: db $03
-L07418A: db $69
-L07418B: db $46
-L07418C: db $00
-L07418D: db $FF
-L07418E: db $88
+SndHeader_03:
+	db 4 ; Number of slots
+.slot0:
+	db SNDSLOT0 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -24 ; iSndChInfo_04
+	db 104 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_03_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT1 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 104 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_03_Ch3 ; Data pointer
+	db WAVE_0D ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT2 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 104 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_03_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot3:
+	db SNDSLOT3 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 104 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_03_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_03_Ch1: db $88
 L07418F: db $56
 L074190: db $3C
 L074191: db $E2
@@ -828,7 +830,7 @@ L07433A: db $0D
 L07433B: db $80
 L07433C: db $8E
 L07433D: db $41
-L07433E: db $88
+SndData_03_Ch3: db $88
 L07433F: db $56
 L074340: db $20
 L074341: db $E1
@@ -951,7 +953,7 @@ L0743B5: db $E9
 L0743B6: db $80
 L0743B7: db $3E
 L0743B8: db $43
-L0743B9: db $00
+SndData_03_Ch2: db $00
 L0743BA: db $E9
 L0743BB: db $00
 L0743BC: db $00
@@ -1639,7 +1641,7 @@ L074665: db $0A
 L074666: db $80
 L074667: db $B9
 L074668: db $43
-L074669: db $8D
+SndData_03_Ch4: db $8D
 L07466A: db $25
 L07466B: db $02
 L07466C: db $8D
@@ -1688,56 +1690,57 @@ L074696: db $46
 L074697: db $80
 L074698: db $69
 L074699: db $46
-SndHeader_0E: db $04
-L07469B: db $00
-L07469C: db $01
-L07469D: db $0F
-L07469E: db $00
-L07469F: db $00
-L0746A0: db $0C
-L0746A1: db $77
-L0746A2: db $02
-L0746A3: db $CB
-L0746A4: db $46
-L0746A5: db $00
-L0746A6: db $FF
-L0746A7: db $01
-L0746A8: db $01
-L0746A9: db $08
-L0746AA: db $00
-L0746AB: db $00
-L0746AC: db $00
-L0746AD: db $77
-L0746AE: db $01
-L0746AF: db $10
-L0746B0: db $48
-L0746B1: db $00
-L0746B2: db $FF
-L0746B3: db $02
-L0746B4: db $01
-L0746B5: db $0C
-L0746B6: db $00
-L0746B7: db $00
-L0746B8: db $F4
-L0746B9: db $77
-L0746BA: db $00
-L0746BB: db $50
-L0746BC: db $4A
-L0746BD: db $00
-L0746BE: db $FF
-L0746BF: db $03
-L0746C0: db $01
-L0746C1: db $0F
-L0746C2: db $00
-L0746C3: db $00
-L0746C4: db $00
-L0746C5: db $77
-L0746C6: db $03
-L0746C7: db $C6
-L0746C8: db $4B
-L0746C9: db $00
-L0746CA: db $FF
-L0746CB: db $A0
+SndHeader_0E:
+	db 4 ; Number of slots
+.slot0:
+	db SNDSLOT0 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 12 ; iSndChInfo_04
+	db 119 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_0E_Ch3 ; Data pointer
+	db WAVE_00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT1 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 8 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 119 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_0E_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT2 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 119 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_0E_Ch1 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot3:
+	db SNDSLOT3 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 119 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_0E_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_0E_Ch3: db $A0
 L0746CC: db $0D
 L0746CD: db $8A
 L0746CE: db $05
@@ -2062,7 +2065,7 @@ L07480C: db $E1
 L07480D: db $8A
 L07480E: db $FE
 L07480F: db $9B
-L074810: db $A0
+SndData_0E_Ch2: db $A0
 L074811: db $40
 L074812: db $97
 L074813: db $FF
@@ -2638,7 +2641,7 @@ L074A4C: db $00
 L074A4D: db $83
 L074A4E: db $00
 L074A4F: db $9B
-L074A50: db $A0
+SndData_0E_Ch1: db $A0
 L074A51: db $00
 L074A52: db $83
 L074A53: db $5D
@@ -3012,7 +3015,7 @@ L074BC2: db $00
 L074BC3: db $80
 L074BC4: db $50
 L074BC5: db $4A
-L074BC6: db $9A
+SndData_0E_Ch4: db $9A
 L074BC7: db $0B
 L074BC8: db $4C
 L074BC9: db $9A
@@ -3235,56 +3238,57 @@ L074CA1: db $00
 L074CA2: db $C2
 L074CA3: db $00
 L074CA4: db $9B
-SndHeader_0F: db $04
-L074CA6: db $00
-L074CA7: db $01
-L074CA8: db $0D
-L074CA9: db $00
-L074CAA: db $00
-L074CAB: db $F4
-L074CAC: db $99
-L074CAD: db $00
-L074CAE: db $D6
-L074CAF: db $4C
-L074CB0: db $00
-L074CB1: db $FF
-L074CB2: db $01
-L074CB3: db $01
-L074CB4: db $0F
-L074CB5: db $00
-L074CB6: db $00
-L074CB7: db $00
-L074CB8: db $99
-L074CB9: db $02
-L074CBA: db $54
-L074CBB: db $4E
-L074CBC: db $00
-L074CBD: db $FF
-L074CBE: db $02
-L074CBF: db $01
-L074CC0: db $0B
-L074CC1: db $00
-L074CC2: db $00
-L074CC3: db $F4
-L074CC4: db $99
-L074CC5: db $01
-L074CC6: db $35
-L074CC7: db $4F
-L074CC8: db $00
-L074CC9: db $FF
-L074CCA: db $03
-L074CCB: db $01
-L074CCC: db $0F
-L074CCD: db $00
-L074CCE: db $00
-L074CCF: db $00
-L074CD0: db $99
-L074CD1: db $03
-L074CD2: db $96
-L074CD3: db $50
-L074CD4: db $00
-L074CD5: db $FF
-L074CD6: db $A0
+SndHeader_0F:
+	db 4 ; Number of slots
+.slot0:
+	db SNDSLOT0 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 153 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_0F_Ch1 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT1 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 153 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_0F_Ch3 ; Data pointer
+	db WAVE_00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT2 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 153 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_0F_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot3:
+	db SNDSLOT3 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 153 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_0F_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_0F_Ch1: db $A0
 L074CD7: db $00
 L074CD8: db $8A
 L074CD9: db $FA
@@ -3666,7 +3670,7 @@ L074E50: db $9B
 L074E51: db $00
 L074E52: db $E9
 L074E53: db $9B
-L074E54: db $A0
+SndData_0F_Ch3: db $A0
 L074E55: db $09
 L074E56: db $97
 L074E57: db $FE
@@ -3891,7 +3895,7 @@ L074F31: db $17
 L074F32: db $16
 L074F33: db $E3
 L074F34: db $9B
-L074F35: db $A0
+SndData_0F_Ch2: db $A0
 L074F36: db $00
 L074F37: db $00
 L074F38: db $E9
@@ -4244,7 +4248,7 @@ L075092: db $0C
 L075093: db $80
 L075094: db $3A
 L075095: db $4F
-L075096: db $9A
+SndData_0F_Ch4: db $9A
 L075097: db $0F
 L075098: db $51
 L075099: db $8A
@@ -4663,56 +4667,57 @@ L075235: db $07
 L075236: db $C0
 L075237: db $C4
 L075238: db $9B
-SndHeader_20: db $04
-L07523A: db $00
-L07523B: db $01
-L07523C: db $0E
-L07523D: db $00
-L07523E: db $00
-L07523F: db $F4
-L075240: db $66
-L075241: db $00
-L075242: db $6A
-L075243: db $52
-L075244: db $00
-L075245: db $FF
-L075246: db $01
-L075247: db $01
-L075248: db $0C
-L075249: db $00
-L07524A: db $00
-L07524B: db $F4
-L07524C: db $66
-L07524D: db $01
-L07524E: db $32
-L07524F: db $53
-L075250: db $00
-L075251: db $FF
-L075252: db $02
-L075253: db $01
-L075254: db $0F
-L075255: db $00
-L075256: db $00
-L075257: db $00
-L075258: db $66
-L075259: db $02
-L07525A: db $89
-L07525B: db $53
-L07525C: db $00
-L07525D: db $FF
-L07525E: db $03
-L07525F: db $01
-L075260: db $0F
-L075261: db $00
-L075262: db $00
-L075263: db $00
-L075264: db $66
-L075265: db $03
-L075266: db $07
-L075267: db $54
-L075268: db $00
-L075269: db $FF
-L07526A: db $A0
+SndHeader_20:
+	db 4 ; Number of slots
+.slot0:
+	db SNDSLOT0 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 102 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_20_Ch1 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT1 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 102 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_20_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT2 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 102 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_20_Ch3 ; Data pointer
+	db WAVE_00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot3:
+	db SNDSLOT3 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 102 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_20_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_20_Ch1: db $A0
 L07526B: db $80
 L07526C: db $88
 L07526D: db $60
@@ -4912,7 +4917,7 @@ L07532E: db $36
 L07532F: db $38
 L075330: db $E5
 L075331: db $9B
-L075332: db $A0
+SndData_20_Ch2: db $A0
 L075333: db $00
 L075334: db $97
 L075335: db $FF
@@ -4999,7 +5004,7 @@ L075385: db $01
 L075386: db $80
 L075387: db $32
 L075388: db $53
-L075389: db $A0
+SndData_20_Ch3: db $A0
 L07538A: db $0D
 L07538B: db $88
 L07538C: db $62
@@ -5125,7 +5130,7 @@ L075403: db $14
 L075404: db $00
 L075405: db $E7
 L075406: db $9B
-L075407: db $9A
+SndData_20_Ch4: db $9A
 L075408: db $19
 L075409: db $54
 L07540A: db $9A
@@ -5296,56 +5301,57 @@ L0754AE: db $C2
 L0754AF: db $C0
 L0754B0: db $C2
 L0754B1: db $9B
-SndHeader_21: db $04
-L0754B3: db $00
-L0754B4: db $01
-L0754B5: db $0D
-L0754B6: db $00
-L0754B7: db $00
-L0754B8: db $F4
-L0754B9: db $66
-L0754BA: db $00
-L0754BB: db $E3
-L0754BC: db $54
-L0754BD: db $00
-L0754BE: db $FF
-L0754BF: db $01
-L0754C0: db $01
-L0754C1: db $08
-L0754C2: db $00
-L0754C3: db $00
-L0754C4: db $F4
-L0754C5: db $66
-L0754C6: db $01
-L0754C7: db $EE
-L0754C8: db $55
-L0754C9: db $00
-L0754CA: db $FF
-L0754CB: db $02
-L0754CC: db $01
-L0754CD: db $0F
-L0754CE: db $00
-L0754CF: db $00
-L0754D0: db $00
-L0754D1: db $66
-L0754D2: db $02
-L0754D3: db $05
-L0754D4: db $57
-L0754D5: db $00
-L0754D6: db $FF
-L0754D7: db $03
-L0754D8: db $01
-L0754D9: db $0F
-L0754DA: db $00
-L0754DB: db $00
-L0754DC: db $00
-L0754DD: db $66
-L0754DE: db $03
-L0754DF: db $52
-L0754E0: db $58
-L0754E1: db $00
-L0754E2: db $FF
-L0754E3: db $A0
+SndHeader_21:
+	db 4 ; Number of slots
+.slot0:
+	db SNDSLOT0 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 102 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_21_Ch1 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT1 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 8 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 102 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_21_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT2 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 102 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_21_Ch3 ; Data pointer
+	db WAVE_00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot3:
+	db SNDSLOT3 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 102 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_21_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_21_Ch1: db $A0
 L0754E4: db $40
 L0754E5: db $8A
 L0754E6: db $FF
@@ -5612,7 +5618,7 @@ L0755EA: db $02
 L0755EB: db $80
 L0755EC: db $E3
 L0755ED: db $54
-L0755EE: db $A0
+SndData_21_Ch2: db $A0
 L0755EF: db $40
 L0755F0: db $8A
 L0755F1: db $FB
@@ -5891,7 +5897,7 @@ L075701: db $05
 L075702: db $80
 L075703: db $EE
 L075704: db $55
-L075705: db $A0
+SndData_21_Ch3: db $A0
 L075706: db $0D
 L075707: db $8A
 L075708: db $05
@@ -6224,7 +6230,7 @@ L07584E: db $FB
 L07584F: db $80
 L075850: db $05
 L075851: db $57
-L075852: db $9A
+SndData_21_Ch4: db $9A
 L075853: db $7C
 L075854: db $58
 L075855: db $9A
@@ -6469,56 +6475,57 @@ L075943: db $C2
 L075944: db $C4
 L075945: db $C0
 L075946: db $9B
-SndHeader_15: db $04
-L075948: db $00
-L075949: db $01
-L07594A: db $0E
-L07594B: db $00
-L07594C: db $00
-L07594D: db $00
-L07594E: db $63
-L07594F: db $00
-L075950: db $78
-L075951: db $59
-L075952: db $00
-L075953: db $FF
-L075954: db $01
-L075955: db $01
-L075956: db $0F
-L075957: db $00
-L075958: db $00
-L075959: db $00
-L07595A: db $63
-L07595B: db $02
-L07595C: db $87
-L07595D: db $5A
-L07595E: db $00
-L07595F: db $FF
-L075960: db $02
-L075961: db $01
-L075962: db $0D
-L075963: db $00
-L075964: db $00
-L075965: db $F4
-L075966: db $63
-L075967: db $01
-L075968: db $A8
-L075969: db $5A
-L07596A: db $00
-L07596B: db $FF
-L07596C: db $03
-L07596D: db $01
-L07596E: db $0E
-L07596F: db $00
-L075970: db $00
-L075971: db $00
-L075972: db $63
-L075973: db $03
-L075974: db $68
-L075975: db $5B
-L075976: db $00
-L075977: db $FF
-L075978: db $8A
+SndHeader_15:
+	db 4 ; Number of slots
+.slot0:
+	db SNDSLOT0 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 99 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_15_Ch1 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT1 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 99 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_15_Ch3 ; Data pointer
+	db WAVE_00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT2 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 99 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_15_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot3:
+	db SNDSLOT3 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 99 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_15_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_15_Ch1: db $8A
 L075979: db $FE
 L07597A: db $A0
 L07597B: db $80
@@ -6789,7 +6796,7 @@ L075A83: db $E3
 L075A84: db $25
 L075A85: db $E3
 L075A86: db $9B
-L075A87: db $8A
+SndData_15_Ch3: db $8A
 L075A88: db $FC
 L075A89: db $A0
 L075A8A: db $01
@@ -6822,7 +6829,7 @@ L075AA4: db $6B
 L075AA5: db $1B
 L075AA6: db $ED
 L075AA7: db $82
-L075AA8: db $A0
+SndData_15_Ch2: db $A0
 L075AA9: db $80
 L075AAA: db $89
 L075AAB: db $0C
@@ -7014,7 +7021,7 @@ L075B64: db $40
 L075B65: db $42
 L075B66: db $3F
 L075B67: db $9B
-L075B68: db $00
+SndData_15_Ch4: db $00
 L075B69: db $E9
 L075B6A: db $00
 L075B6B: db $00
@@ -7128,56 +7135,57 @@ L075BD6: db $C3
 L075BD7: db $C2
 L075BD8: db $C3
 L075BD9: db $9B
-SndHeader_11: db $04
-L075BDB: db $00
-L075BDC: db $01
-L075BDD: db $09
-L075BDE: db $00
-L075BDF: db $00
-L075BE0: db $DC
-L075BE1: db $88
-L075BE2: db $00
-L075BE3: db $0B
-L075BE4: db $5C
-L075BE5: db $00
-L075BE6: db $FF
-L075BE7: db $01
-L075BE8: db $01
-L075BE9: db $09
-L075BEA: db $00
-L075BEB: db $00
-L075BEC: db $DC
-L075BED: db $88
-L075BEE: db $01
-L075BEF: db $44
-L075BF0: db $5C
-L075BF1: db $00
-L075BF2: db $FF
-L075BF3: db $02
-L075BF4: db $01
-L075BF5: db $0F
-L075BF6: db $00
-L075BF7: db $00
-L075BF8: db $F4
-L075BF9: db $88
-L075BFA: db $02
-L075BFB: db $81
-L075BFC: db $5C
-L075BFD: db $00
-L075BFE: db $FF
-L075BFF: db $03
-L075C00: db $01
-L075C01: db $0F
-L075C02: db $00
-L075C03: db $00
-L075C04: db $00
-L075C05: db $88
-L075C06: db $03
-L075C07: db $AF
-L075C08: db $5C
-L075C09: db $00
-L075C0A: db $FF
-L075C0B: db $A0
+SndHeader_11:
+	db 4 ; Number of slots
+.slot0:
+	db SNDSLOT0 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 9 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -36 ; iSndChInfo_04
+	db 136 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_11_Ch1 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT1 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 9 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -36 ; iSndChInfo_04
+	db 136 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_11_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT2 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 136 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_11_Ch3 ; Data pointer
+	db WAVE_00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot3:
+	db SNDSLOT3 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 136 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_11_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_11_Ch1: db $A0
 L075C0C: db $40
 L075C0D: db $84
 L075C0E: db $14
@@ -7234,7 +7242,7 @@ L075C40: db $47
 L075C41: db $80
 L075C42: db $0B
 L075C43: db $5C
-L075C44: db $A0
+SndData_11_Ch2: db $A0
 L075C45: db $40
 L075C46: db $84
 L075C47: db $14
@@ -7295,7 +7303,7 @@ L075C7D: db $02
 L075C7E: db $80
 L075C7F: db $44
 L075C80: db $5C
-L075C81: db $A0
+SndData_11_Ch3: db $A0
 L075C82: db $0D
 L075C83: db $88
 L075C84: db $62
@@ -7341,7 +7349,7 @@ L075CAB: db $26
 L075CAC: db $80
 L075CAD: db $81
 L075CAE: db $5C
-L075CAF: db $8D
+SndData_11_Ch4: db $8D
 L075CB0: db $24
 L075CB1: db $10
 L075CB2: db $C1
@@ -7384,56 +7392,57 @@ L075CD6: db $5C
 L075CD7: db $80
 L075CD8: db $AF
 L075CD9: db $5C
-SndHeader_12: db $04
-L075CDB: db $00
-L075CDC: db $01
-L075CDD: db $0C
-L075CDE: db $00
-L075CDF: db $00
-L075CE0: db $E8
-L075CE1: db $4B
-L075CE2: db $00
-L075CE3: db $0B
-L075CE4: db $5D
-L075CE5: db $00
-L075CE6: db $FF
-L075CE7: db $01
-L075CE8: db $01
-L075CE9: db $0B
-L075CEA: db $00
-L075CEB: db $00
-L075CEC: db $E8
-L075CED: db $4B
-L075CEE: db $01
-L075CEF: db $81
-L075CF0: db $5D
-L075CF1: db $00
-L075CF2: db $FF
-L075CF3: db $02
-L075CF4: db $01
-L075CF5: db $0F
-L075CF6: db $00
-L075CF7: db $00
-L075CF8: db $E8
-L075CF9: db $4B
-L075CFA: db $02
-L075CFB: db $EE
-L075CFC: db $5D
-L075CFD: db $00
-L075CFE: db $FF
-L075CFF: db $03
-L075D00: db $01
-L075D01: db $0F
-L075D02: db $00
-L075D03: db $00
-L075D04: db $00
-L075D05: db $4B
-L075D06: db $03
-L075D07: db $01
-L075D08: db $5E
-L075D09: db $00
-L075D0A: db $FF
-L075D0B: db $A0
+SndHeader_12:
+	db 4 ; Number of slots
+.slot0:
+	db SNDSLOT0 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -24 ; iSndChInfo_04
+	db 75 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_12_Ch1 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT1 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -24 ; iSndChInfo_04
+	db 75 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_12_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT2 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -24 ; iSndChInfo_04
+	db 75 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_12_Ch3 ; Data pointer
+	db WAVE_00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot3:
+	db SNDSLOT3 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 75 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_12_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_12_Ch1: db $A0
 L075D0C: db $40
 L075D0D: db $97
 L075D0E: db $FF
@@ -7551,7 +7560,7 @@ L075D7D: db $00
 L075D7E: db $00
 L075D7F: db $EE
 L075D80: db $9B
-L075D81: db $9A
+SndData_12_Ch2: db $9A
 L075D82: db $9F
 L075D83: db $5D
 L075D84: db $9A
@@ -7660,7 +7669,7 @@ L075DEA: db $00
 L075DEB: db $00
 L075DEC: db $EE
 L075DED: db $9B
-L075DEE: db $A0
+SndData_12_Ch3: db $A0
 L075DEF: db $01
 L075DF0: db $8A
 L075DF1: db $FD
@@ -7679,7 +7688,7 @@ L075DFD: db $E3
 L075DFE: db $00
 L075DFF: db $EE
 L075E00: db $82
-L075E01: db $9A
+SndData_12_Ch4: db $9A
 L075E02: db $0E
 L075E03: db $5E
 L075E04: db $9A
@@ -7736,56 +7745,57 @@ L075E36: db $E3
 L075E37: db $00
 L075E38: db $EC
 L075E39: db $9B
-SndHeader_08: db $04
-L075E3B: db $00
-L075E3C: db $01
-L075E3D: db $0E
-L075E3E: db $00
-L075E3F: db $00
-L075E40: db $F4
-L075E41: db $41
-L075E42: db $00
-L075E43: db $6B
-L075E44: db $5E
-L075E45: db $00
-L075E46: db $FF
-L075E47: db $01
-L075E48: db $01
-L075E49: db $0C
-L075E4A: db $00
-L075E4B: db $00
-L075E4C: db $E8
-L075E4D: db $41
-L075E4E: db $01
-L075E4F: db $02
-L075E50: db $5F
-L075E51: db $00
-L075E52: db $FF
-L075E53: db $02
-L075E54: db $01
-L075E55: db $0E
-L075E56: db $00
-L075E57: db $00
-L075E58: db $F4
-L075E59: db $41
-L075E5A: db $02
-L075E5B: db $B5
-L075E5C: db $5F
-L075E5D: db $00
-L075E5E: db $FF
-L075E5F: db $03
-L075E60: db $01
-L075E61: db $0C
-L075E62: db $00
-L075E63: db $00
-L075E64: db $00
-L075E65: db $41
-L075E66: db $03
-L075E67: db $0E
-L075E68: db $60
-L075E69: db $00
-L075E6A: db $FF
-L075E6B: db $A0
+SndHeader_08:
+	db 4 ; Number of slots
+.slot0:
+	db SNDSLOT0 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 65 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_08_Ch1 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT1 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -24 ; iSndChInfo_04
+	db 65 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_08_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT2 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 65 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_08_Ch3 ; Data pointer
+	db WAVE_00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot3:
+	db SNDSLOT3 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 65 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_08_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_08_Ch1: db $A0
 L075E6C: db $80
 L075E6D: db $00
 L075E6E: db $EA
@@ -7936,7 +7946,7 @@ L075EFE: db $07
 L075EFF: db $97
 L075F00: db $01
 L075F01: db $9B
-L075F02: db $A0
+SndData_08_Ch2: db $A0
 L075F03: db $80
 L075F04: db $97
 L075F05: db $FF
@@ -8115,7 +8125,7 @@ L075FB1: db $0E
 L075FB2: db $97
 L075FB3: db $FF
 L075FB4: db $9B
-L075FB5: db $A0
+SndData_08_Ch3: db $A0
 L075FB6: db $09
 L075FB7: db $00
 L075FB8: db $EA
@@ -8204,7 +8214,7 @@ L07600A: db $0D;X
 L07600B: db $E3;X
 L07600C: db $14;X
 L07600D: db $9B;X
-L07600E: db $9A
+SndData_08_Ch4: db $9A
 L07600F: db $2C
 L076010: db $60
 L076011: db $9A
@@ -8280,20 +8290,21 @@ L076056: db $C5
 L076057: db $C6
 L076058: db $C2
 L076059: db $9B
-SndHeader_53: db $01
-L07605B: db $04
-L07605C: db $01
-L07605D: db $0F
-L07605E: db $00
-L07605F: db $00
-L076060: db $F3
-L076061: db $00
-L076062: db $01
-L076063: db $67
-L076064: db $60
-L076065: db $80
-L076066: db $FF
-L076067: db $2B
+SndHeader_53:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -13 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_53_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_53_Ch2: db $2B
 L076068: db $DF
 L076069: db $37
 L07606A: db $43
@@ -8303,20 +8314,21 @@ L07606D: db $8A
 L07606E: db $FA
 L07606F: db $5B
 L076070: db $82
-SndHeader_54: db $01
-L076072: db $08
-L076073: db $01
-L076074: db $0F
-L076075: db $00
-L076076: db $00
-L076077: db $F3
-L076078: db $00
-L076079: db $02
-L07607A: db $7E
-L07607B: db $60
-L07607C: db $10
-L07607D: db $FF
-L07607E: db $A2
+SndHeader_54:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOTPAUSE ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -13 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_54_Ch3 ; Data pointer
+	db WAVE_10 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_54_Ch3: db $A2
 L07607F: db $41
 L076080: db $DF
 L076081: db $43
@@ -8337,32 +8349,33 @@ L07608F: db $3E
 L076090: db $A3
 L076091: db $00
 L076092: db $82
-SndHeader_55: db $02
-L076094: db $04
-L076095: db $02
-L076096: db $0F
-L076097: db $00
-L076098: db $00
-L076099: db $00
-L07609A: db $00
-L07609B: db $03
-L07609C: db $AC
-L07609D: db $60
-L07609E: db $80
-L07609F: db $FF
-L0760A0: db $05
-L0760A1: db $01
-L0760A2: db $0F
-L0760A3: db $00
-L0760A4: db $00
-L0760A5: db $E7
-L0760A6: db $00
-L0760A7: db $01
-L0760A8: db $D5
-L0760A9: db $60
-L0760AA: db $80
-L0760AB: db $FF
-L0760AC: db $93
+SndHeader_55:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_55_Ch4 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -25 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_55_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_55_Ch4: db $93
 L0760AD: db $80
 L0760AE: db $90
 L0760AF: db $92
@@ -8403,7 +8416,7 @@ L0760D1: db $95
 L0760D2: db $AF
 L0760D3: db $60;X
 L0760D4: db $82
-L0760D5: db $94
+SndData_55_Ch2: db $94
 L0760D6: db $30
 L0760D7: db $8D
 L0760D8: db $24
@@ -8419,20 +8432,21 @@ L0760E1: db $24
 L0760E2: db $DA
 L0760E3: db $60
 L0760E4: db $82
-SndHeader_56: db $01
-L0760E6: db $04
-L0760E7: db $01
-L0760E8: db $0F
-L0760E9: db $00
-L0760EA: db $00
-L0760EB: db $EC
-L0760EC: db $00
-L0760ED: db $01
-L0760EE: db $F2
-L0760EF: db $60
-L0760F0: db $80
-L0760F1: db $FF
-L0760F2: db $93
+SndHeader_56:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -20 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_56_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_56_Ch2: db $93
 L0760F3: db $80
 L0760F4: db $B0
 L0760F5: db $A2
@@ -8460,32 +8474,33 @@ L07610A: db $34
 L07610B: db $31
 L07610C: db $2F
 L07610D: db $82
-SndHeader_57: db $02
-L07610F: db $04
-L076110: db $01
-L076111: db $0F
-L076112: db $00
-L076113: db $00
-L076114: db $F3
-L076115: db $FF
-L076116: db $01
-L076117: db $27
-L076118: db $61
-L076119: db $80
-L07611A: db $FF
-L07611B: db $05
-L07611C: db $02
-L07611D: db $04
-L07611E: db $00
-L07611F: db $00
-L076120: db $F3
-L076121: db $FF
-L076122: db $03
-L076123: db $3B
-L076124: db $61
-L076125: db $80
-L076126: db $FF
-L076127: db $00
+SndHeader_57:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -13 ; iSndChInfo_04
+	db 255 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_57_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 4 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -13 ; iSndChInfo_04
+	db 255 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_57_Ch4 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_57_Ch2: db $00
 L076128: db $E2
 L076129: db $A2
 L07612A: db $8D
@@ -8505,7 +8520,7 @@ L076137: db $24
 L076138: db $2D
 L076139: db $61
 L07613A: db $82
-L07613B: db $92
+SndData_57_Ch4: db $92
 L07613C: db $45
 L07613D: db $25
 L07613E: db $DF
@@ -8525,32 +8540,33 @@ L07614B: db $8A
 L07614C: db $04
 L07614D: db $25
 L07614E: db $82
-SndHeader_58: db $02
-L076150: db $04
-L076151: db $01
-L076152: db $0A
-L076153: db $00
-L076154: db $00
-L076155: db $00
-L076156: db $96
-L076157: db $01
-L076158: db $68
-L076159: db $61
-L07615A: db $80
-L07615B: db $FF
-L07615C: db $05
-L07615D: db $02
-L07615E: db $0F
-L07615F: db $00
-L076160: db $00
-L076161: db $00
-L076162: db $96
-L076163: db $03
-L076164: db $7F
-L076165: db $61
-L076166: db $80
-L076167: db $FF
-L076168: db $00
+SndHeader_58:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 150 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_58_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 150 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_58_Ch4 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_58_Ch2: db $00
 L076169: db $EA
 L07616A: db $A2
 L07616B: db $47
@@ -8573,7 +8589,7 @@ L07617B: db $24
 L07617C: db $76
 L07617D: db $61
 L07617E: db $82
-L07617F: db $92
+SndData_58_Ch4: db $92
 L076180: db $32
 L076181: db $8D
 L076182: db $24
@@ -8588,61 +8604,62 @@ L07618A: db $24
 L07618B: db $84
 L07618C: db $61
 L07618D: db $82
-SndHeader_59: db $04
-L07618F: db $04
-L076190: db $C1
-L076191: db $0F
-L076192: db $00
-L076193: db $00
-L076194: db $EE
-L076195: db $9D
-L076196: db $00
-L076197: db $C4
-L076198: db $61
-L076199: db $80
-L07619A: db $FF
-L07619B: db $05
-L07619C: db $81
-L07619D: db $0F
-L07619E: db $00
-L07619F: db $00
-L0761A0: db $FA
-L0761A1: db $9D
-L0761A2: db $02
-L0761A3: db $E0
-L0761A4: db $61
-L0761A5: db $80
-L0761A6: db $FF
-L0761A7: db $06
-L0761A8: db $81
-L0761A9: db $0A
-L0761AA: db $00
-L0761AB: db $00
-L0761AC: db $EE
-L0761AD: db $9D
-L0761AE: db $01
-L0761AF: db $BF
-L0761B0: db $61
-L0761B1: db $80
-L0761B2: db $FF
-L0761B3: db $07
-L0761B4: db $82
-L0761B5: db $00
-L0761B6: db $00
-L0761B7: db $00
-L0761B8: db $00
-L0761B9: db $9D
-L0761BA: db $03
-L0761BB: db $FC
-L0761BC: db $61
-L0761BD: db $80
-L0761BE: db $FF
-L0761BF: db $00
+SndHeader_59:
+	db 4 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123|SNDX_6|SNDX_7 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -18 ; iSndChInfo_04
+	db 157 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_59_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123|SNDX_7 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -6 ; iSndChInfo_04
+	db 157 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_59_Ch3 ; Data pointer
+	db $80 ; [PLACEHOLDER] ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123|SNDX_7 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -18 ; iSndChInfo_04
+	db 157 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_59_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot3:
+	db SNDSLOT7 ; Slot location
+	db SNDX_CH4|SNDX_7 ; iSndChInfo_Status
+	db 0 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 157 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_59_Ch4 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_59_Ch2: db $00
 L0761C0: db $DE
 L0761C1: db $05
 L0761C2: db $97
 L0761C3: db $FE
-L0761C4: db $A0
+SndData_59_Ch1: db $A0
 L0761C5: db $40
 L0761C6: db $2F
 L0761C7: db $E1
@@ -8670,7 +8687,7 @@ L0761DC: db $2F
 L0761DD: db $34
 L0761DE: db $38
 L0761DF: db $82
-L0761E0: db $A0
+SndData_59_Ch3: db $A0
 L0761E1: db $09
 L0761E2: db $34
 L0761E3: db $E1
@@ -8698,61 +8715,64 @@ L0761F8: db $34
 L0761F9: db $38
 L0761FA: db $3B
 L0761FB: db $82
-L0761FC: db $25
+SndData_59_Ch4: db $25
 L0761FD: db $DE
 L0761FE: db $3F
 L0761FF: db $82
-SndHeader_29: db $01
-L076201: db $04
-L076202: db $01
-L076203: db $0C
-L076204: db $00
-L076205: db $00
-L076206: db $E7
-L076207: db $00
-L076208: db $01
-L076209: db $0D
-L07620A: db $62
-L07620B: db $80
-L07620C: db $FF
-L07620D: db $A2
+SndHeader_29:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -25 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_29_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_29_Ch2: db $A2
 L07620E: db $50
 L07620F: db $DF
 L076210: db $8A
 L076211: db $FB
 L076212: db $44
 L076213: db $82
-SndHeader_2A: db $01
-L076215: db $04
-L076216: db $41
-L076217: db $0B
-L076218: db $00
-L076219: db $00
-L07621A: db $F4
-L07621B: db $00
-L07621C: db $01
-L07621D: db $21
-L07621E: db $62
-L07621F: db $80
-L076220: db $FF
-L076221: db $4D
+SndHeader_2A:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_2A_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_2A_Ch2: db $4D
 L076222: db $DF
 L076223: db $40
 L076224: db $82
-SndHeader_2B: db $01
-L076226: db $05
-L076227: db $01
-L076228: db $0C
-L076229: db $00
-L07622A: db $00
-L07622B: db $F5
-L07622C: db $00
-L07622D: db $01
-L07622E: db $32
-L07622F: db $62
-L076230: db $80
-L076231: db $FF
-L076232: db $8D
+SndHeader_2B:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -11 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_2B_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_2B_Ch2: db $8D
 L076233: db $24
 L076234: db $03
 L076235: db $A2
@@ -8768,20 +8788,21 @@ L07623E: db $24
 L07623F: db $35
 L076240: db $62
 L076241: db $82
-SndHeader_2C: db $01
-L076243: db $04
-L076244: db $02
-L076245: db $0B
-L076246: db $00
-L076247: db $00
-L076248: db $F4
-L076249: db $00
-L07624A: db $03
-L07624B: db $4F
-L07624C: db $62
-L07624D: db $80
-L07624E: db $FF
-L07624F: db $8E
+SndHeader_2C:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_2C_Ch4 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_2C_Ch4: db $8E
 L076250: db $30
 L076251: db $92
 L076252: db $B0
@@ -8794,36 +8815,37 @@ L076258: db $00
 L076259: db $68
 L07625A: db $E1
 L07625B: db $82
-SndHeader_2D: db $02
-L07625D: db $05
-L07625E: db $02
-L07625F: db $0F
-L076260: db $00
-L076261: db $00
-L076262: db $F4
-L076263: db $00
-L076264: db $03
-L076265: db $79
-L076266: db $62
-L076267: db $00
-L076268: db $FF
-L076269: db $06
-L07626A: db $01
-L07626B: db $0D
-L07626C: db $00
-L07626D: db $00
-L07626E: db $F4
-L07626F: db $00
-L076270: db $01
-L076271: db $75
-L076272: db $62
-L076273: db $00
-L076274: db $FF
-L076275: db $1D
+SndHeader_2D:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_2D_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_2D_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_2D_Ch2: db $1D
 L076276: db $DF
 L076277: db $19
 L076278: db $82
-L076279: db $00
+SndData_2D_Ch4: db $00
 L07627A: db $E0
 L07627B: db $92
 L07627C: db $37
@@ -8833,20 +8855,21 @@ L07627F: db $C9
 L076280: db $DE
 L076281: db $1E
 L076282: db $82
-SndHeader_2E: db $01
-L076284: db $05
-L076285: db $01
-L076286: db $0D
-L076287: db $00
-L076288: db $00
-L076289: db $E8
-L07628A: db $00
-L07628B: db $01
-L07628C: db $90
-L07628D: db $62
-L07628E: db $80
-L07628F: db $FF
-L076290: db $99
+SndHeader_2E:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -24 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_2E_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_2E_Ch2: db $99
 L076291: db $93
 L076292: db $84
 L076293: db $FF
@@ -8858,20 +8881,21 @@ L076298: db $85
 L076299: db $20
 L07629A: db $E4
 L07629B: db $82
-SndHeader_2F: db $01
-L07629D: db $07
-L07629E: db $01
-L07629F: db $0F
-L0762A0: db $00
-L0762A1: db $00
-L0762A2: db $F4
-L0762A3: db $00
-L0762A4: db $01
-L0762A5: db $A9
-L0762A6: db $62
-L0762A7: db $80
-L0762A8: db $FF
-L0762A9: db $8A
+SndHeader_2F:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT7 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_2F_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_2F_Ch2: db $8A
 L0762AA: db $FB
 L0762AB: db $93
 L0762AC: db $81
@@ -8899,98 +8923,105 @@ L0762C1: db $95
 L0762C2: db $B0
 L0762C3: db $62
 L0762C4: db $82
-SndHeader_30: db $01
-L0762C6: db $07
-L0762C7: db $01
-L0762C8: db $0F
-L0762C9: db $00
-L0762CA: db $00
-L0762CB: db $F6
-L0762CC: db $00
-L0762CD: db $01
-L0762CE: db $A9
-L0762CF: db $62
-L0762D0: db $80
-L0762D1: db $FF
-SndHeader_31: db $01
-L0762D3: db $07
-L0762D4: db $01
-L0762D5: db $0F
-L0762D6: db $00
-L0762D7: db $00
-L0762D8: db $F8
-L0762D9: db $00
-L0762DA: db $01
-L0762DB: db $A9
-L0762DC: db $62
-L0762DD: db $80
-L0762DE: db $FF
-SndHeader_32: db $01
-L0762E0: db $07
-L0762E1: db $01
-L0762E2: db $0F
-L0762E3: db $00
-L0762E4: db $00
-L0762E5: db $FA
-L0762E6: db $00
-L0762E7: db $01
-L0762E8: db $A9
-L0762E9: db $62
-L0762EA: db $80
-L0762EB: db $FF
-SndHeader_33: db $01
-L0762ED: db $07
-L0762EE: db $01
-L0762EF: db $0F
-L0762F0: db $00
-L0762F1: db $00
-L0762F2: db $FB
-L0762F3: db $00
-L0762F4: db $01
-L0762F5: db $A9
-L0762F6: db $62
-L0762F7: db $80
-L0762F8: db $FF
-SndHeader_34: db $01
-L0762FA: db $07
-L0762FB: db $01
-L0762FC: db $0F
-L0762FD: db $00
-L0762FE: db $00
-L0762FF: db $FD
-L076300: db $00
-L076301: db $01
-L076302: db $A9
-L076303: db $62
-L076304: db $80
-L076305: db $FF
-SndHeader_35: db $01
-L076307: db $07
-L076308: db $01
-L076309: db $0F
-L07630A: db $00
-L07630B: db $00
-L07630C: db $FF
-L07630D: db $00
-L07630E: db $01
-L07630F: db $A9
-L076310: db $62
-L076311: db $80
-L076312: db $FF
-SndHeader_36: db $01
-L076314: db $07
-L076315: db $41
-L076316: db $0A
-L076317: db $00
-L076318: db $00
-L076319: db $EE
-L07631A: db $00
-L07631B: db $01
-L07631C: db $20
-L07631D: db $63
-L07631E: db $80
-L07631F: db $FF
-L076320: db $8D
+SndHeader_30:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT7 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -10 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_2F_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndHeader_31:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT7 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -8 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_2F_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndHeader_32:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT7 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -6 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_2F_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndHeader_33:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT7 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -5 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_2F_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndHeader_34:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT7 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -3 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_2F_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndHeader_35:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT7 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -1 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_2F_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndHeader_36:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT7 ; Slot location
+	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -18 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_36_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_36_Ch2: db $8D
 L076321: db $24
 L076322: db $0C
 L076323: db $94
@@ -9004,20 +9035,21 @@ L07632A: db $24
 L07632B: db $23
 L07632C: db $63
 L07632D: db $82
-SndHeader_37: db $01
-L07632F: db $04
-L076330: db $01
-L076331: db $09
-L076332: db $00
-L076333: db $00
-L076334: db $F4
-L076335: db $00
-L076336: db $01
-L076337: db $3B
-L076338: db $63
-L076339: db $80
-L07633A: db $FF
-L07633B: db $94
+SndHeader_37:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 9 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_37_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_37_Ch2: db $94
 L07633C: db $02
 L07633D: db $55
 L07633E: db $E1
@@ -9027,36 +9059,37 @@ L076341: db $8A
 L076342: db $FB
 L076343: db $31
 L076344: db $82
-SndHeader_38: db $02
-L076346: db $06
-L076347: db $01
-L076348: db $0C
-L076349: db $00
-L07634A: db $00
-L07634B: db $EA
-L07634C: db $00
-L07634D: db $01
-L07634E: db $62
-L07634F: db $63
-L076350: db $80
-L076351: db $FF
-L076352: db $07
-L076353: db $01
-L076354: db $06
-L076355: db $00
-L076356: db $00
-L076357: db $EA
-L076358: db $00
-L076359: db $00
-L07635A: db $5E
-L07635B: db $63
-L07635C: db $80
-L07635D: db $FF
-L07635E: db $00
+SndHeader_38:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -22 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_38_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT7 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 6 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -22 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_38_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_38_Ch1: db $00
 L07635F: db $E5
 L076360: db $97
 L076361: db $FE
-L076362: db $A2
+SndData_38_Ch2: db $A2
 L076363: db $93
 L076364: db $81
 L076365: db $40
@@ -9080,20 +9113,21 @@ L076376: db $24
 L076377: db $71
 L076378: db $63
 L076379: db $82
-SndHeader_39: db $01
-L07637B: db $04
-L07637C: db $01
-L07637D: db $09
-L07637E: db $00
-L07637F: db $00
-L076380: db $F7
-L076381: db $00
-L076382: db $01
-L076383: db $87
-L076384: db $63
-L076385: db $80
-L076386: db $FF
-L076387: db $97
+SndHeader_39:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 9 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -9 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_39_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_39_Ch2: db $97
 L076388: db $F9
 L076389: db $93
 L07638A: db $8C
@@ -9104,46 +9138,47 @@ L07638E: db $4B
 L07638F: db $52
 L076390: db $E2
 L076391: db $82
-SndHeader_3A: db $03
-L076393: db $04
-L076394: db $41
-L076395: db $0C
-L076396: db $00
-L076397: db $00
-L076398: db $F4
-L076399: db $00
-L07639A: db $00
-L07639B: db $B9
-L07639C: db $63
-L07639D: db $80
-L07639E: db $FF
-L07639F: db $05
-L0763A0: db $41
-L0763A1: db $0C
-L0763A2: db $00
-L0763A3: db $00
-L0763A4: db $F4
-L0763A5: db $00
-L0763A6: db $01
-L0763A7: db $B7
-L0763A8: db $63
-L0763A9: db $80
-L0763AA: db $FF
-L0763AB: db $06
-L0763AC: db $41
-L0763AD: db $08
-L0763AE: db $00
-L0763AF: db $00
-L0763B0: db $EC
-L0763B1: db $00
-L0763B2: db $02
-L0763B3: db $C7
-L0763B4: db $63
-L0763B5: db $00
-L0763B6: db $FF
-L0763B7: db $00
+SndHeader_3A:
+	db 3 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_3A_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_3A_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot2:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db 8 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -20 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_3A_Ch3 ; Data pointer
+	db WAVE_00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_3A_Ch2: db $00
 L0763B8: db $E2
-L0763B9: db $83
+SndData_3A_Ch1: db $83
 L0763BA: db $09
 L0763BB: db $31
 L0763BC: db $DE
@@ -9157,7 +9192,7 @@ L0763C3: db $20
 L0763C4: db $DE
 L0763C5: db $30
 L0763C6: db $82
-L0763C7: db $8D
+SndData_3A_Ch3: db $8D
 L0763C8: db $24
 L0763C9: db $04
 L0763CA: db $94
@@ -9173,52 +9208,54 @@ L0763D3: db $24
 L0763D4: db $CA
 L0763D5: db $63
 L0763D6: db $82
-SndHeader_3B: db $01
-L0763D8: db $04
-L0763D9: db $02
-L0763DA: db $0C
-L0763DB: db $00
-L0763DC: db $00
-L0763DD: db $F4
-L0763DE: db $00
-L0763DF: db $01
-L0763E0: db $E4
-L0763E1: db $63
-L0763E2: db $80
-L0763E3: db $FF
-L0763E4: db $8E
+SndHeader_3B:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_3B_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_3B_Ch2: db $8E
 L0763E5: db $07
 L0763E6: db $33
 L0763E7: db $DF
 L0763E8: db $6A
 L0763E9: db $62
 L0763EA: db $82
-SndHeader_3C: db $02
-L0763EC: db $05
-L0763ED: db $01
-L0763EE: db $0A
-L0763EF: db $00
-L0763F0: db $00
-L0763F1: db $F4
-L0763F2: db $00
-L0763F3: db $00
-L0763F4: db $04
-L0763F5: db $64
-L0763F6: db $80
-L0763F7: db $FF
-L0763F8: db $06
-L0763F9: db $01
-L0763FA: db $0A
-L0763FB: db $00
-L0763FC: db $00
-L0763FD: db $FA
-L0763FE: db $00
-L0763FF: db $01
-L076400: db $28
-L076401: db $64
-L076402: db $80
-L076403: db $FF
-L076404: db $5F
+SndHeader_3C:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_3C_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -6 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_3C_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_3C_Ch1: db $5F
 L076405: db $DF
 L076406: db $90
 L076407: db $02
@@ -9254,7 +9291,7 @@ L076424: db $95
 L076425: db $1D
 L076426: db $64
 L076427: db $82
-L076428: db $A2
+SndData_3C_Ch2: db $A2
 L076429: db $29
 L07642A: db $DF
 L07642B: db $27
@@ -9283,38 +9320,39 @@ L076441: db $24
 L076442: db $38
 L076443: db $64
 L076444: db $82
-SndHeader_3D: db $02
-L076446: db $04
-L076447: db $01
-L076448: db $0D
-L076449: db $00
-L07644A: db $06
-L07644B: db $F4
-L07644C: db $00
-L07644D: db $01
-L07644E: db $64
-L07644F: db $64
-L076450: db $80
-L076451: db $FF
-L076452: db $05
-L076453: db $01
-L076454: db $0D
-L076455: db $00
-L076456: db $06
-L076457: db $F4
-L076458: db $00
-L076459: db $00
-L07645A: db $62
-L07645B: db $64
-L07645C: db $80
-L07645D: db $FF
+SndHeader_3D:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_06 ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_3D_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_06 ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_3D_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
 L07645E: db $00;X
 L07645F: db $E0;X
 L076460: db $97;X
 L076461: db $F9;X
-L076462: db $97
+SndData_3D_Ch1: db $97
 L076463: db $FC
-L076464: db $3F
+SndData_3D_Ch2: db $3F
 L076465: db $E0
 L076466: db $88
 L076467: db $00
@@ -9325,36 +9363,38 @@ L07646B: db $D0
 L07646C: db $4B
 L07646D: db $E7
 L07646E: db $82
-SndHeader_3E: db $01
-L076470: db $05
-L076471: db $01
-L076472: db $0B
-L076473: db $00
-L076474: db $07
-L076475: db $F4
-L076476: db $00
-L076477: db $01
-L076478: db $7C
-L076479: db $64
-L07647A: db $80
-L07647B: db $FF
-L07647C: db $42
+SndHeader_3E:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_07 ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_3E_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_3E_Ch2: db $42
 L07647D: db $E0
 L07647E: db $82
-SndHeader_3F: db $01
-L076480: db $05
-L076481: db $01
-L076482: db $0C
-L076483: db $00
-L076484: db $00
-L076485: db $F4
-L076486: db $00
-L076487: db $01
-L076488: db $8C
-L076489: db $64
-L07648A: db $80
-L07648B: db $FF
-L07648C: db $1D
+SndHeader_3F:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_3F_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_3F_Ch2: db $1D
 L07648D: db $DF
 L07648E: db $90
 L07648F: db $02
@@ -9369,32 +9409,33 @@ L076497: db $8A
 L076498: db $FB
 L076499: db $31
 L07649A: db $82
-SndHeader_40: db $02
-L07649C: db $05
-L07649D: db $02
-L07649E: db $0C
-L07649F: db $00
-L0764A0: db $00
-L0764A1: db $F4
-L0764A2: db $00
-L0764A3: db $00
-L0764A4: db $B4
-L0764A5: db $64
-L0764A6: db $80
-L0764A7: db $FF
-L0764A8: db $06
-L0764A9: db $01
-L0764AA: db $0C
-L0764AB: db $00
-L0764AC: db $00
-L0764AD: db $F4
-L0764AE: db $00
-L0764AF: db $01
-L0764B0: db $C4
-L0764B1: db $64
-L0764B2: db $80
-L0764B3: db $FF
-L0764B4: db $8E
+SndHeader_40:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_40_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_40_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_40_Ch1: db $8E
 L0764B5: db $07
 L0764B6: db $25
 L0764B7: db $DF
@@ -9410,7 +9451,7 @@ L0764C0: db $A0
 L0764C1: db $4D
 L0764C2: db $EB
 L0764C3: db $82
-L0764C4: db $3A
+SndData_40_Ch2: db $3A
 L0764C5: db $DF
 L0764C6: db $00
 L0764C7: db $2E
@@ -9421,32 +9462,33 @@ L0764CB: db $FB
 L0764CC: db $80
 L0764CD: db $BE
 L0764CE: db $64
-SndHeader_41: db $02
-L0764D0: db $05
-L0764D1: db $01
-L0764D2: db $0F
-L0764D3: db $00
-L0764D4: db $00
-L0764D5: db $E0
-L0764D6: db $00
-L0764D7: db $01
-L0764D8: db $E8
-L0764D9: db $64
-L0764DA: db $80
-L0764DB: db $FF
-L0764DC: db $06
-L0764DD: db $02
-L0764DE: db $0F
-L0764DF: db $00
-L0764E0: db $00
-L0764E1: db $EE
-L0764E2: db $00
-L0764E3: db $03
-L0764E4: db $F6
-L0764E5: db $64
-L0764E6: db $80
-L0764E7: db $FF
-L0764E8: db $8D
+SndHeader_41:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -32 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_41_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -18 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_41_Ch4 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_41_Ch2: db $8D
 L0764E9: db $24
 L0764EA: db $0C
 L0764EB: db $29
@@ -9460,7 +9502,7 @@ L0764F2: db $24
 L0764F3: db $EB
 L0764F4: db $64
 L0764F5: db $82
-L0764F6: db $99
+SndData_41_Ch4: db $99
 L0764F7: db $92
 L0764F8: db $80
 L0764F9: db $93
@@ -9472,40 +9514,42 @@ L0764FE: db $95
 L0764FF: db $FC
 L076500: db $64
 L076501: db $82
-SndHeader_42: db $01
-L076503: db $06
-L076504: db $01
-L076505: db $0A
-L076506: db $00
-L076507: db $00
-L076508: db $F4
-L076509: db $00
-L07650A: db $01
-L07650B: db $0F
-L07650C: db $65
-L07650D: db $80
-L07650E: db $FF
-L07650F: db $94
+SndHeader_42:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_42_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_42_Ch2: db $94
 L076510: db $83
 L076511: db $2E
 L076512: db $E0
 L076513: db $31
 L076514: db $E3
 L076515: db $82
-SndHeader_43: db $01
-L076517: db $05
-L076518: db $01
-L076519: db $0C
-L07651A: db $00
-L07651B: db $04
-L07651C: db $F4
-L07651D: db $00
-L07651E: db $00
-L07651F: db $23
-L076520: db $65
-L076521: db $80
-L076522: db $FF
-L076523: db $2E
+SndHeader_43:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_04 ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_43_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_43_Ch1: db $2E
 L076524: db $DF
 L076525: db $33
 L076526: db $E0
@@ -9514,20 +9558,21 @@ L076528: db $E1
 L076529: db $42
 L07652A: db $EA
 L07652B: db $82
-SndHeader_44: db $01
-L07652D: db $05
-L07652E: db $41
-L07652F: db $0F
-L076530: db $00
-L076531: db $00
-L076532: db $F4
-L076533: db $00
-L076534: db $01
-L076535: db $39
-L076536: db $65
-L076537: db $80
-L076538: db $FF
-L076539: db $99
+SndHeader_44:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_44_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_44_Ch2: db $99
 L07653A: db $31
 L07653B: db $DF
 L07653C: db $25
@@ -9546,48 +9591,50 @@ L076548: db $95
 L076549: db $42
 L07654A: db $65
 L07654B: db $82
-SndHeader_45: db $01
-L07654D: db $04
-L07654E: db $01
-L07654F: db $0C
-L076550: db $00
-L076551: db $08
-L076552: db $F4
-L076553: db $00
-L076554: db $00
-L076555: db $59
-L076556: db $65
-L076557: db $80
-L076558: db $FF
-L076559: db $3A
+SndHeader_45:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_08 ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_45_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_45_Ch1: db $3A
 L07655A: db $ED
 L07655B: db $82
-SndHeader_46: db $02
-L07655D: db $05
-L07655E: db $02
-L07655F: db $0F
-L076560: db $00
-L076561: db $00
-L076562: db $F4
-L076563: db $00
-L076564: db $00
-L076565: db $75
-L076566: db $65
-L076567: db $80
-L076568: db $FF
-L076569: db $06
-L07656A: db $01
-L07656B: db $0F
-L07656C: db $00
-L07656D: db $00
-L07656E: db $F4
-L07656F: db $00
-L076570: db $01
-L076571: db $9D
-L076572: db $65
-L076573: db $80
-L076574: db $FF
-L076575: db $8E
+SndHeader_46:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_46_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_46_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_46_Ch1: db $8E
 L076576: db $10
 L076577: db $48
 L076578: db $E0
@@ -9627,7 +9674,7 @@ L076599: db $95
 L07659A: db $8D
 L07659B: db $65
 L07659C: db $82
-L07659D: db $27
+SndData_46_Ch2: db $27
 L07659E: db $DF
 L07659F: db $1B
 L0765A0: db $18
@@ -9645,20 +9692,21 @@ L0765AB: db $24
 L0765AC: db $A6
 L0765AD: db $65
 L0765AE: db $82
-SndHeader_47: db $01
-L0765B0: db $06
-L0765B1: db $01
-L0765B2: db $0B
-L0765B3: db $00
-L0765B4: db $00
-L0765B5: db $F4
-L0765B6: db $00
-L0765B7: db $01
-L0765B8: db $BC
-L0765B9: db $65
-L0765BA: db $80
-L0765BB: db $FF
-L0765BC: db $A2
+SndHeader_47:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_47_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_47_Ch2: db $A2
 L0765BD: db $27
 L0765BE: db $DF
 L0765BF: db $33
@@ -9674,36 +9722,37 @@ L0765C8: db $95
 L0765C9: db $C6
 L0765CA: db $65
 L0765CB: db $82
-SndHeader_48: db $02
-L0765CD: db $05
-L0765CE: db $01
-L0765CF: db $0D
-L0765D0: db $03
-L0765D1: db $00
-L0765D2: db $EE
-L0765D3: db $00
-L0765D4: db $01
-L0765D5: db $E9
-L0765D6: db $65
-L0765D7: db $80
-L0765D8: db $FF
-L0765D9: db $06
-L0765DA: db $01
-L0765DB: db $0A
-L0765DC: db $03
-L0765DD: db $00
-L0765DE: db $EE
-L0765DF: db $00
-L0765E0: db $00
-L0765E1: db $E5
-L0765E2: db $65
-L0765E3: db $80
-L0765E4: db $FF
-L0765E5: db $00
+SndHeader_48:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_01
+	db INSTR_03 ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -18 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_48_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_01
+	db INSTR_03 ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -18 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_48_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_48_Ch1: db $00
 L0765E6: db $E4
 L0765E7: db $97
 L0765E8: db $FC
-L0765E9: db $49
+SndData_48_Ch2: db $49
 L0765EA: db $E1
 L0765EB: db $3D
 L0765EC: db $41
@@ -9712,36 +9761,37 @@ L0765EE: db $4B
 L0765EF: db $50
 L0765F0: db $EB
 L0765F1: db $82
-SndHeader_49: db $02
-L0765F3: db $05
-L0765F4: db $01
-L0765F5: db $0F
-L0765F6: db $00
-L0765F7: db $00
-L0765F8: db $F2
-L0765F9: db $00
-L0765FA: db $00
-L0765FB: db $0F
-L0765FC: db $66
-L0765FD: db $80
-L0765FE: db $FF
-L0765FF: db $06
-L076600: db $01
-L076601: db $0B
-L076602: db $00
-L076603: db $00
-L076604: db $F2
-L076605: db $00
-L076606: db $01
-L076607: db $0B
-L076608: db $66
-L076609: db $80
-L07660A: db $FF
-L07660B: db $00
+SndHeader_49:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -14 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_49_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -14 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_49_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_49_Ch2: db $00
 L07660C: db $EA
 L07660D: db $97
 L07660E: db $FE
-L07660F: db $8A
+SndData_49_Ch1: db $8A
 L076610: db $FC
 L076611: db $94
 L076612: db $04
@@ -9768,20 +9818,21 @@ L076626: db $3D
 L076627: db $44
 L076628: db $49
 L076629: db $82
-SndHeader_4A: db $01
-L07662B: db $06
-L07662C: db $01
-L07662D: db $0C
-L07662E: db $00
-L07662F: db $00
-L076630: db $00
-L076631: db $00
-L076632: db $01
-L076633: db $37
-L076634: db $66
-L076635: db $80
-L076636: db $FF
-L076637: db $89
+SndHeader_4A:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_4A_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_4A_Ch2: db $89
 L076638: db $FE
 L076639: db $0F
 L07663A: db $DF
@@ -9806,34 +9857,35 @@ L07664C: db $24
 L07664D: db $45
 L07664E: db $66
 L07664F: db $82
-SndHeader_4B: db $02
-L076651: db $05
-L076652: db $01
-L076653: db $0C
-L076654: db $00
-L076655: db $00
-L076656: db $F4
-L076657: db $00
-L076658: db $00
-L076659: db $6B
-L07665A: db $66
-L07665B: db $80
-L07665C: db $FF
-L07665D: db $06
-L07665E: db $01
-L07665F: db $07
-L076660: db $00
-L076661: db $00
-L076662: db $F4
-L076663: db $00
-L076664: db $01
-L076665: db $69
-L076666: db $66
-L076667: db $80
-L076668: db $FF
-L076669: db $00
+SndHeader_4B:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_4B_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 7 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_4B_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_4B_Ch2: db $00
 L07666A: db $E2
-L07666B: db $93
+SndData_4B_Ch1: db $93
 L07666C: db $84
 L07666D: db $60
 L07666E: db $83
@@ -9841,20 +9893,21 @@ L07666F: db $02
 L076670: db $33
 L076671: db $ED
 L076672: db $82
-SndHeader_4C: db $01
-L076674: db $05
-L076675: db $01
-L076676: db $0F
-L076677: db $00
-L076678: db $00
-L076679: db $F4
-L07667A: db $00
-L07667B: db $01
-L07667C: db $80
-L07667D: db $66
-L07667E: db $80
-L07667F: db $FF
-L076680: db $19
+SndHeader_4C:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_4C_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_4C_Ch2: db $19
 L076681: db $DF
 L076682: db $00
 L076683: db $90
@@ -9868,36 +9921,37 @@ L07668A: db $81
 L07668B: db $31
 L07668C: db $EB
 L07668D: db $82
-SndHeader_4D: db $02
-L07668F: db $05
-L076690: db $05
-L076691: db $0D
-L076692: db $00
-L076693: db $00
-L076694: db $F4
-L076695: db $00
-L076696: db $00
-L076697: db $AB
-L076698: db $66
-L076699: db $80
-L07669A: db $FF
-L07669B: db $06
-L07669C: db $05
-L07669D: db $0A
-L07669E: db $00
-L07669F: db $00
-L0766A0: db $F4
-L0766A1: db $00
-L0766A2: db $01
-L0766A3: db $A7
-L0766A4: db $66
-L0766A5: db $80
-L0766A6: db $FF
-L0766A7: db $00
+SndHeader_4D:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123|SNDX_2 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_4D_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123|SNDX_2 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_4D_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_4D_Ch2: db $00
 L0766A8: db $E1
 L0766A9: db $97
 L0766AA: db $FF
-L0766AB: db $88
+SndData_4D_Ch1: db $88
 L0766AC: db $05
 L0766AD: db $83
 L0766AE: db $02
@@ -9905,36 +9959,37 @@ L0766AF: db $5C
 L0766B0: db $DE
 L0766B1: db $73
 L0766B2: db $82
-SndHeader_4E: db $02
-L0766B4: db $05
-L0766B5: db $01
-L0766B6: db $0B
-L0766B7: db $00
-L0766B8: db $00
-L0766B9: db $F4
-L0766BA: db $00
-L0766BB: db $00
-L0766BC: db $D0
-L0766BD: db $66
-L0766BE: db $80
-L0766BF: db $FF
-L0766C0: db $06
-L0766C1: db $01
-L0766C2: db $08
-L0766C3: db $00
-L0766C4: db $00
-L0766C5: db $F4
-L0766C6: db $00
-L0766C7: db $01
-L0766C8: db $CC
-L0766C9: db $66
-L0766CA: db $80
-L0766CB: db $FF
-L0766CC: db $00
+SndHeader_4E:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_4E_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 8 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_4E_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_4E_Ch2: db $00
 L0766CD: db $E1
 L0766CE: db $97
 L0766CF: db $FF
-L0766D0: db $89
+SndData_4E_Ch1: db $89
 L0766D1: db $03
 L0766D2: db $88
 L0766D3: db $04
@@ -9963,20 +10018,21 @@ L0766E9: db $24
 L0766EA: db $D9
 L0766EB: db $66
 L0766EC: db $82
-SndHeader_4F: db $01
-L0766EE: db $05
-L0766EF: db $02
-L0766F0: db $05
-L0766F1: db $00
-L0766F2: db $00
-L0766F3: db $F4
-L0766F4: db $00
-L0766F5: db $01
-L0766F6: db $FA
-L0766F7: db $66
-L0766F8: db $80
-L0766F9: db $FF
-L0766FA: db $8E
+SndHeader_4F:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 5 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_4F_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_4F_Ch2: db $8E
 L0766FB: db $07
 L0766FC: db $A2
 L0766FD: db $93
@@ -9994,36 +10050,37 @@ L076708: db $24
 L076709: db $03
 L07670A: db $67
 L07670B: db $82
-SndHeader_50: db $02
-L07670D: db $05
-L07670E: db $01
-L07670F: db $0E
-L076710: db $00
-L076711: db $00
-L076712: db $F4
-L076713: db $00
-L076714: db $00
-L076715: db $29
-L076716: db $67
-L076717: db $80
-L076718: db $FF
-L076719: db $06
-L07671A: db $01
-L07671B: db $0C
-L07671C: db $00
-L07671D: db $00
-L07671E: db $F4
-L07671F: db $00
-L076720: db $01
-L076721: db $25
-L076722: db $67
-L076723: db $80
-L076724: db $FF
-L076725: db $00
+SndHeader_50:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_50_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_50_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_50_Ch2: db $00
 L076726: db $E1
 L076727: db $97
 L076728: db $01
-L076729: db $94
+SndData_50_Ch1: db $94
 L07672A: db $81
 L07672B: db $93
 L07672C: db $84
@@ -10035,53 +10092,55 @@ L076731: db $95
 L076732: db $2E
 L076733: db $67
 L076734: db $82
-SndHeader_51: db $02
-L076736: db $05
-L076737: db $61
-L076738: db $0B
-L076739: db $00
-L07673A: db $00
-L07673B: db $F4
-L07673C: db $00
-L07673D: db $00
-L07673E: db $50
-L07673F: db $67
-L076740: db $80
-L076741: db $FF
-L076742: db $06
-L076743: db $01
-L076744: db $0B
-L076745: db $00
-L076746: db $00
-L076747: db $F4
-L076748: db $00
-L076749: db $01
-L07674A: db $4E
-L07674B: db $67
-L07674C: db $80
-L07674D: db $FF
-L07674E: db $97
+SndHeader_51:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123|SNDX_5|SNDX_6 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_51_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_51_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_51_Ch2: db $97
 L07674F: db $0A
-L076750: db $25
+SndData_51_Ch1: db $25
 L076751: db $E3
 L076752: db $00
 L076753: db $25
 L076754: db $E7
 L076755: db $82
-SndHeader_52: db $01
-L076757: db $06
-L076758: db $01
-L076759: db $0C
-L07675A: db $00
-L07675B: db $00
-L07675C: db $F4
-L07675D: db $00
-L07675E: db $01
-L07675F: db $63
-L076760: db $67
-L076761: db $80
-L076762: db $FF
-L076763: db $94
+SndHeader_52:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_52_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_52_Ch2: db $94
 L076764: db $81
 L076765: db $93
 L076766: db $84
@@ -10093,20 +10152,21 @@ L07676B: db $95
 L07676C: db $68
 L07676D: db $67
 L07676E: db $82
-SndHeader_5A: db $01
-L076770: db $04
-L076771: db $02
-L076772: db $0D
-L076773: db $00
-L076774: db $00
-L076775: db $00
-L076776: db $C8
-L076777: db $03
-L076778: db $7C
-L076779: db $67
-L07677A: db $40
-L07677B: db $FF
-L07677C: db $92
+SndHeader_5A:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 200 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_5A_Ch4 ; Data pointer
+	nrx1 SNDDUTY_25, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_5A_Ch4: db $92
 L07677D: db $37
 L07677E: db $19
 L07677F: db $DF
@@ -10127,20 +10187,21 @@ L07678D: db $00
 L07678E: db $19
 L07678F: db $E1
 L076790: db $82
-SndHeader_5B: db $01
-L076792: db $04
-L076793: db $01
-L076794: db $0C
-L076795: db $00
-L076796: db $15
-L076797: db $EE
-L076798: db $C8
-L076799: db $01
-L07679A: db $9E
-L07679B: db $67
-L07679C: db $80
-L07679D: db $FF
-L07679E: db $34
+SndHeader_5B:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_15 ; iSndChInfo_03
+	db -18 ; iSndChInfo_04
+	db 200 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_5B_Ch2 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_5B_Ch2: db $34
 L07679F: db $E1
 L0767A0: db $40
 L0767A1: db $DF
@@ -10149,20 +10210,21 @@ L0767A3: db $0A
 L0767A4: db $3A
 L0767A5: db $E5
 L0767A6: db $82
-SndHeader_5C: db $01
-L0767A8: db $04
-L0767A9: db $02
-L0767AA: db $0F
-L0767AB: db $1E
-L0767AC: db $00
-L0767AD: db $0A
-L0767AE: db $DC
-L0767AF: db $03
-L0767B0: db $B4
-L0767B1: db $67
-L0767B2: db $80
-L0767B3: db $FF
-L0767B4: db $92
+SndHeader_5C:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_1E ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 10 ; iSndChInfo_04
+	db 220 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_5C_Ch4 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_5C_Ch4: db $92
 L0767B5: db $27
 L0767B6: db $19
 L0767B7: db $E2
@@ -10180,20 +10242,21 @@ L0767C2: db $24
 L0767C3: db $BD
 L0767C4: db $67
 L0767C5: db $82
-SndHeader_5D: db $01
-L0767C7: db $04
-L0767C8: db $01
-L0767C9: db $0F
-L0767CA: db $00
-L0767CB: db $00
-L0767CC: db $00
-L0767CD: db $DC
-L0767CE: db $01
-L0767CF: db $D3
-L0767D0: db $67
-L0767D1: db $40
-L0767D2: db $FF
-L0767D3: db $8D
+SndHeader_5D:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 220 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_5D_Ch2 ; Data pointer
+	nrx1 SNDDUTY_25, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_5D_Ch2: db $8D
 L0767D4: db $24
 L0767D5: db $0A
 L0767D6: db $19
@@ -10215,20 +10278,21 @@ L0767E5: db $0F;X
 L0767E6: db $0D;X
 L0767E7: db $E9;X
 L0767E8: db $82;X
-SndHeader_5E: db $01
-L0767EA: db $05
-L0767EB: db $01
-L0767EC: db $0F
-L0767ED: db $00
-L0767EE: db $00
-L0767EF: db $0A
-L0767F0: db $DC
-L0767F1: db $03
-L0767F2: db $F6
-L0767F3: db $67
-L0767F4: db $80
-L0767F5: db $FF
-L0767F6: db $92
+SndHeader_5E:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 10 ; iSndChInfo_04
+	db 220 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_5E_Ch4 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_5E_Ch4: db $92
 L0767F7: db $67
 L0767F8: db $19
 L0767F9: db $E3
@@ -10268,20 +10332,21 @@ L07681A: db $24
 L07681B: db $FD
 L07681C: db $67
 L07681D: db $82
-SndHeader_5F: db $01
-L07681F: db $06
-L076820: db $21
-L076821: db $0B
-L076822: db $00
-L076823: db $16
-L076824: db $00
-L076825: db $5A
-L076826: db $00
-L076827: db $2B
-L076828: db $68
-L076829: db $80
-L07682A: db $FF
-L07682B: db $25
+SndHeader_5F:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123|SNDX_5 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_16 ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 90 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_5F_Ch1 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_5F_Ch1: db $25
 L07682C: db $DF
 L07682D: db $93
 L07682E: db $8F
@@ -10289,53 +10354,55 @@ L07682F: db $20
 L076830: db $20
 L076831: db $E2
 L076832: db $82
-SndHeader_60: db $02
-L076834: db $04
-L076835: db $01
-L076836: db $0F
-L076837: db $00
-L076838: db $17
-L076839: db $01
-L07683A: db $64
-L07683B: db $01
-L07683C: db $4C
-L07683D: db $68
-L07683E: db $00
-L07683F: db $FF
-L076840: db $05
-L076841: db $01
-L076842: db $0F
-L076843: db $00
-L076844: db $17
-L076845: db $01
-L076846: db $64
-L076847: db $00
-L076848: db $4F
-L076849: db $68
-L07684A: db $00
-L07684B: db $FF
-L07684C: db $49
+SndHeader_60:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_17 ; iSndChInfo_03
+	db 1 ; iSndChInfo_04
+	db 100 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_60_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_17 ; iSndChInfo_03
+	db 1 ; iSndChInfo_04
+	db 100 ; iSndChInfo_05
+	db SNDCH_PULSE1 ; iSndChInfo_06
+	dw SndData_60_Ch1 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_60_Ch2: db $49
 L07684D: db $ED
 L07684E: db $82
-L07684F: db $97
+SndData_60_Ch1: db $97
 L076850: db $FF
 L076851: db $4A
 L076852: db $ED
 L076853: db $82
-SndHeader_61: db $01
-L076855: db $05
-L076856: db $01
-L076857: db $0F
-L076858: db $00
-L076859: db $00
-L07685A: db $00
-L07685B: db $DC
-L07685C: db $01
-L07685D: db $61
-L07685E: db $68
-L07685F: db $40
-L076860: db $FF
-L076861: db $8D
+SndHeader_61:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 220 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_61_Ch2 ; Data pointer
+	nrx1 SNDDUTY_25, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_61_Ch2: db $8D
 L076862: db $24
 L076863: db $0F
 L076864: db $16
@@ -10349,32 +10416,33 @@ L07686B: db $24
 L07686C: db $64
 L07686D: db $68
 L07686E: db $82
-SndHeader_62: db $02
-L076870: db $04
-L076871: db $01
-L076872: db $0F
-L076873: db $00
-L076874: db $00
-L076875: db $00
-L076876: db $00
-L076877: db $01
-L076878: db $88
-L076879: db $68
-L07687A: db $40
-L07687B: db $FF
-L07687C: db $05
-L07687D: db $01
-L07687E: db $0F
-L07687F: db $00
-L076880: db $00
-L076881: db $00
-L076882: db $00
-L076883: db $03
-L076884: db $9A
-L076885: db $68
-L076886: db $00
-L076887: db $FF
-L076888: db $A2
+SndHeader_62:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_62_Ch2 ; Data pointer
+	nrx1 SNDDUTY_25, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_62_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_62_Ch2: db $A2
 L076889: db $14
 L07688A: db $DF
 L07688B: db $24
@@ -10392,7 +10460,7 @@ L076896: db $24
 L076897: db $8F
 L076898: db $68
 L076899: db $82
-L07689A: db $92
+SndData_62_Ch4: db $92
 L07689B: db $37
 L07689C: db $25
 L07689D: db $DF
@@ -10400,20 +10468,21 @@ L07689E: db $92
 L07689F: db $31
 L0768A0: db $25
 L0768A1: db $82
-SndHeader_63: db $01
-L0768A3: db $04
-L0768A4: db $01
-L0768A5: db $0F
-L0768A6: db $00
-L0768A7: db $00
-L0768A8: db $F1
-L0768A9: db $00
-L0768AA: db $03
-L0768AB: db $AF
-L0768AC: db $68
-L0768AD: db $80
-L0768AE: db $FF
-L0768AF: db $93
+SndHeader_63:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -15 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_63_Ch4 ; Data pointer
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_63_Ch4: db $93
 L0768B0: db $80
 L0768B1: db $FF
 L0768B2: db $92
@@ -10449,20 +10518,21 @@ L0768CF: db $30
 L0768D0: db $19
 L0768D1: db $E0
 L0768D2: db $82
-SndHeader_64: db $01
-L0768D4: db $04
-L0768D5: db $01
-L0768D6: db $0F
-L0768D7: db $00
-L0768D8: db $00
-L0768D9: db $E8
-L0768DA: db $00
-L0768DB: db $01
-L0768DC: db $E0
-L0768DD: db $68
-L0768DE: db $00
-L0768DF: db $FF
-L0768E0: db $45
+SndHeader_64:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT4 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -24 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_64_Ch2 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_64_Ch2: db $45
 L0768E1: db $DF
 L0768E2: db $48
 L0768E3: db $47
@@ -10484,20 +10554,21 @@ L0768F2: db $24
 L0768F3: db $E9
 L0768F4: db $68
 L0768F5: db $82
-SndHeader_65: db $01
-L0768F7: db $06
-L0768F8: db $01
-L0768F9: db $0F
-L0768FA: db $00
-L0768FB: db $00
-L0768FC: db $00
-L0768FD: db $00
-L0768FE: db $03
-L0768FF: db $03
-L076900: db $69
-L076901: db $00
-L076902: db $FF
-L076903: db $92
+SndHeader_65:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_65_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_65_Ch4: db $92
 L076904: db $06
 L076905: db $8A
 L076906: db $FD
@@ -10534,20 +10605,21 @@ L076924: db $24
 L076925: db $1C
 L076926: db $69
 L076927: db $82
-SndHeader_66: db $01
-L076929: db $06
-L07692A: db $01
-L07692B: db $0C
-L07692C: db $00
-L07692D: db $00
-L07692E: db $00
-L07692F: db $00
-L076930: db $03
-L076931: db $35
-L076932: db $69
-L076933: db $00
-L076934: db $FF
-L076935: db $A2
+SndHeader_66:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_66_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_66_Ch4: db $A2
 L076936: db $92
 L076937: db $42
 L076938: db $19
@@ -10559,34 +10631,35 @@ L07693D: db $44
 L07693E: db $19
 L07693F: db $E3
 L076940: db $82
-SndHeader_67: db $02
-L076942: db $05
-L076943: db $01
-L076944: db $0F
-L076945: db $00
-L076946: db $00
-L076947: db $F4
-L076948: db $00
-L076949: db $01
-L07694A: db $5C
-L07694B: db $69
-L07694C: db $40
-L07694D: db $FF
-L07694E: db $06
-L07694F: db $01
-L076950: db $0F
-L076951: db $00
-L076952: db $00
-L076953: db $00
-L076954: db $00
-L076955: db $02
-L076956: db $5A
-L076957: db $69
-L076958: db $05
-L076959: db $FF
-L07695A: db $00
+SndHeader_67:
+	db 2 ; Number of slots
+.slot0:
+	db SNDSLOT5 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db -12 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_PULSE2 ; iSndChInfo_06
+	dw SndData_67_Ch2 ; Data pointer
+	nrx1 SNDDUTY_25, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+.slot1:
+	db SNDSLOT6 ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_67_Ch3 ; Data pointer
+	db WAVE_05 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_67_Ch3: db $00
 L07695B: db $E0
-L07695C: db $39
+SndData_67_Ch2: db $39
 L07695D: db $DF
 L07695E: db $3B
 L07695F: db $3D
@@ -10616,20 +10689,21 @@ L076976: db $47
 L076977: db $43
 L076978: db $45
 L076979: db $82
-SndHeader_68: db $01
-L07697B: db $07
-L07697C: db $21
-L07697D: db $0F
-L07697E: db $00
-L07697F: db $00
-L076980: db $00
-L076981: db $00
-L076982: db $03
-L076983: db $87
-L076984: db $69
-L076985: db $00
-L076986: db $FF
-L076987: db $8D
+SndHeader_68:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOT7 ; Slot location
+	db SNDX_CH123|SNDX_5 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 0 ; iSndChInfo_05
+	db SNDCH_NOISE ; iSndChInfo_06
+	dw SndData_68_Ch4 ; Data pointer
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
+SndData_68_Ch4: db $8D
 L076988: db $24
 L076989: db $07
 L07698A: db $92

@@ -61,9 +61,6 @@ function default_command($iter, $is_instrument) {
 	} else {
 		$iter->next();
 		$n = $iter->current()->as_int();
-		$vol	= fmthexnum($n >> 4, 1);
-		$env	= ($n & 8) ? "SNDENV_INC" : "SNDENV_DEC";
-		$pace	= fmthexnum($n & 7);
-		return "\${$row->val}, \${$vol}, {$env}, \${$pace}";
+		return "\${$row->val}, ".mknrx2($n)." ; vol3 \${$row->val}, ".mknr32($n);
 	}
 }

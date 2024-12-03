@@ -116,6 +116,10 @@ DEF SPR_XFLIP       EQU 1 << SPRB_XFLIP
 DEF SPR_YFLIP       EQU 1 << SPRB_YFLIP    
 DEF SPR_BGPRIORITY  EQU 1 << SPRB_BGPRIORITY 
 
+; NR10 Flags
+DEF SNDPRD_INC EQU 0
+DEF SNDPRD_DEC EQU 1 ; Consistency wins!
+
 ; NR*2 Flags
 DEF SNDENVB_INC EQU 3 ; If set, it's an increasing envelope sweep
 DEF SNDENV_INC EQU 1 << SNDENVB_INC
@@ -156,6 +160,9 @@ DEF SNDOUT_CH1L      equ 1 << SNDOUTB_CH1L
 DEF SNDOUT_CH2L      equ 1 << SNDOUTB_CH2L
 DEF SNDOUT_CH3L      equ 1 << SNDOUTB_CH3L
 DEF SNDOUT_CH4L      equ 1 << SNDOUTB_CH4L
+DEF SNDOUT_CHNONE    equ $00
+DEF SNDOUT_CHL       equ $F0
+DEF SNDOUT_CHR       equ $0F
 DEF SNDOUT_CHALL     equ $FF ; Shorthand for playing every channel on every speaker
 
 ; NR52 - Sound control

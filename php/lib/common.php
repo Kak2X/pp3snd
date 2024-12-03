@@ -29,10 +29,11 @@ class flbl {
 	private $labelmap = [];
 	private $total = 0;
 	
-	public function w($icount, $str) {
-		$this->b[] = $str;
+	public function w($icount, $str, $raw = false) {
+		$this->b[] = [$str, $raw];
 		$this->map[] = $this->total; // + $icount;
-		$this->total += $icount;
+		if ($icount >= 0)
+			$this->total += $icount;
 	}
 	
 	public function add_rel_label($i, $label = null) { // label is $i bytes from current location
@@ -49,7 +50,8 @@ class flbl {
 			$label = $this->labelmap[$this->map[$i]] ?? null;
 			if ($label)
 				$o .= "{$label}:\r\n";
-			$o .= "\t{$this->b[$i]}\r\n";
+			// Raw or not?
+			$o .= ($this->b[$i][1] ? "" : "\t") . $this->b[$i][0]."\r\n";
 		}
 		return $o;
 	}
@@ -57,9 +59,11 @@ class flbl {
 
 class dbnfo {
 	public function __construct(
+		public $raw,
 		public $label, 
 		public $val,
-		public $used,) {
+		public $used,
+		public $bank,) {
     }
 	
 	public function as_int() {
@@ -69,16 +73,27 @@ class dbnfo {
 		$c = hexdec($this->val);
 		return $c >= 0x80 ? $c - 0x100 : $c;
 	}
+	public function as_flag($map) {
+		return generate_const_label($this->val, $map);
+	}
+	public function as_enum($map) {
+		return trim($map[$this->val] ?? '$'.$this->val);
+	}
 }
 
 function dbify($path, $no_data_labels = false) {
 	foreach (pretty_file($path) as $ln) {
 		$label = get_label($ln);
 		$val = get_db($ln);
-		if ($no_data_labels && $ln && $ln[0] == 'L' && strlen($label) == 7) // Dumb detection, but should work for us
+		// Dumb detection, but should work for us
+		if ($no_data_labels && $ln && $ln[0] == 'L' && strlen($label) == 7) {
+			$bank  = substr($label, 1, 2);
 			$label = null;
+		} else {
+			$bank = null;
+		}
 		$used = strrpos($ln, ";X") === false;
-		yield new dbnfo($label, $val, $used);
+		yield new dbnfo($ln, $label, $val, $used, $bank);
 	}
 }
 
@@ -90,8 +105,9 @@ function pretty_file($path) {
 	fclose($h);
 }
 
-function oc($cmd) {
-	return "\t{$cmd}\r\n";
+function getnext($iter) {
+	$iter->next();
+	return $iter->current();
 }
 
 function generate_const_label($strdb, $map) {
@@ -99,7 +115,7 @@ function generate_const_label($strdb, $map) {
 	$res = "";
 	foreach ($map as $k => $lbl) {
 		if ($val & (1 << $k)) {
-			$res .= ($res ? "|" : "").$lbl;
+			$res .= ($res ? "|" : "").trim($lbl);
 			//$val ^= (1 << $k); // Remove bit
 		}
 	}
@@ -112,6 +128,38 @@ function generate_const_label($strdb, $map) {
 
 function fmthexnum($dec, $digits = 2) {
 	return str_pad(strtoupper(dechex($dec)), $digits, "0", STR_PAD_LEFT);
+}
+
+function mknr10($n) {
+	$pace	= fmthexnum($n >> 4, 1);
+	$dir	= ($n & 8) ? "SNDPRD_DEC" : "SNDPRD_INC"; // Consistency wins
+	$step	= fmthexnum($n & 7);
+	return "\${$pace}, {$dir}, \${$step}";
+}
+const map_nrx1duty = [
+	0 => "SNDDUTY_12",
+	1 => "SNDDUTY_25",
+	2 => "SNDDUTY_50",
+	3 => "SNDDUTY_75",
+];
+function mknrx1($n) {
+	return map_nrx1duty[$n >> 6].", \$".fmthexnum($n & 0b00111111); 
+}
+const map_nrx2vol = [
+	0 => "SNDCH3VOL_000",
+	1 => "SNDCH3VOL_025",
+	2 => "SNDCH3VOL_050",
+	3 => "SNDCH3VOL_100",
+];
+function mknrx2($n) {
+	$vol	= fmthexnum($n >> 4, 1);
+	$env	= ($n & 8) ? "SNDENV_INC" : "SNDENV_DEC";
+	$pace	= fmthexnum($n & 7);
+	return "\${$vol}, {$env}, \${$pace}";
+}
+
+function mknr32($n) {
+	return map_nrx2vol[$n >> 6]; 
 }
 
 //---

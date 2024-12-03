@@ -15298,6 +15298,8 @@ Sound_StartNew:
 	;    8: iSndChInfo_07
 	;    9: iSndChInfo_08
 	;    A: iSndChInfo_09
+	;       For Wave data specifically, this may be set to an invalid value at times.
+	;       When that's the case, the song data will almost immediately contain a SoundDataCmd_A0 command.
 	;    B: iSndChInfo_0A
 	
 	; byte0

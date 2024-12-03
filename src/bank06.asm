@@ -7,27 +7,27 @@ Sound_WaveTablePtr: dw Sound_WaveTable
 ; =============== Sound_WaveTable ===============
 ; Sets of Wave data for channel 3, copied directly to the rWave registers.
 Sound_WaveTable:
-	db $00,$00,$00,$00,$00,$00,$00,$00,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF   ; $00
-	db $00,$00,$00,$00,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF   ; $01
-	db $00,$00,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF   ; $02
-	db $00,$0F,$FF,$00,$00,$0F,$FF,$FF,$00,$00,$00,$00,$FF,$FF,$FF,$FF;X ; $03
-	db $01,$23,$45,$67,$89,$AB,$CD,$EF,$FE,$DC,$BA,$98,$76,$54,$32,$10   ; $04
-	db $8B,$68,$84,$4A,$DC,$59,$51,$CB,$65,$09,$59,$F3,$49,$8D,$8A,$60   ; $05
-	db $75,$64,$24,$20,$22,$02,$54,$58,$77,$BC,$BF,$FE,$EF,$CD,$EB,$AB   ; $06
-	db $8F,$DB,$AB,$B0,$04,$7B,$65,$76,$50,$35,$8A,$CA,$6A,$53,$12,$54   ; $07
-	db $9F,$EA,$AF,$FB,$8A,$CB,$A8,$75,$45,$55,$57,$BD,$73,$02,$47,$B3   ; $08
-	db $00,$11,$22,$33,$44,$55,$66,$77,$88,$99,$AA,$BB,$CC,$DD,$EE,$FF   ; $09
-	db $AA,$CB,$02,$AB,$AB,$F9,$D8,$5E,$EA,$8A,$94,$52,$8C,$C7,$7F,$D6;X ; $0A
-	db $64,$98,$FA,$B3,$86,$3A,$8C,$9A,$B7,$8C,$9B,$D8,$20,$65,$9D,$D9   ; $0B
-	db $02,$46,$8A,$CE,$FD,$B9,$75,$31,$00,$11,$22,$33,$44,$55,$66,$77;X ; $0C
-	db $01,$12,$34,$55,$67,$78,$89,$9A,$BC,$DE,$FD,$CA,$86,$42,$06,$77   ; $0D
-	db $03,$68,$AB,$CD,$DE,$EE,$FF,$FB,$40,$00,$11,$12,$23,$45,$79,$CF   ; $0E
-	db $44,$44,$44,$20,$24,$44,$44,$44,$BB,$BB,$BB,$DF,$DB,$BB,$BB,$BB;X ; $0F
-	db $03,$68,$9A,$BC,$DD,$EE,$EF,$FF,$FE,$DC,$BA,$98,$B6,$54,$32,$10   ; $10
-	db $FF,$FF,$FF,$FF,$AA,$AA,$AA,$AA,$55,$55,$55,$55,$00,$00,$00,$00;X ; $11
-	db $9B,$CE,$CC,$AA,$97,$53,$55,$77,$99,$BB,$97,$53,$22,$00,$23,$57   ; $12
-	db $88,$99,$AA,$BB,$77,$88,$99,$AA,$55,$66,$77,$88,$44,$55,$66,$77;X ; $13
-	db $89,$AB,$CD,$78,$95,$67,$89,$AB,$56,$78,$9A,$B7,$89,$23,$45,$67;X ; $14
+	db $00,$00,$00,$00,$00,$00,$00,$00,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF   ; $00 ; WAVE_00
+	db $00,$00,$00,$00,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF   ; $01 ; WAVE_01
+	db $00,$00,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF   ; $02 ; WAVE_02
+	db $00,$0F,$FF,$00,$00,$0F,$FF,$FF,$00,$00,$00,$00,$FF,$FF,$FF,$FF;X ; $03 ; WAVE_03
+	db $01,$23,$45,$67,$89,$AB,$CD,$EF,$FE,$DC,$BA,$98,$76,$54,$32,$10   ; $04 ; WAVE_04
+	db $8B,$68,$84,$4A,$DC,$59,$51,$CB,$65,$09,$59,$F3,$49,$8D,$8A,$60   ; $05 ; WAVE_05
+	db $75,$64,$24,$20,$22,$02,$54,$58,$77,$BC,$BF,$FE,$EF,$CD,$EB,$AB   ; $06 ; WAVE_06
+	db $8F,$DB,$AB,$B0,$04,$7B,$65,$76,$50,$35,$8A,$CA,$6A,$53,$12,$54   ; $07 ; WAVE_07
+	db $9F,$EA,$AF,$FB,$8A,$CB,$A8,$75,$45,$55,$57,$BD,$73,$02,$47,$B3   ; $08 ; WAVE_08
+	db $00,$11,$22,$33,$44,$55,$66,$77,$88,$99,$AA,$BB,$CC,$DD,$EE,$FF   ; $09 ; WAVE_09
+	db $AA,$CB,$02,$AB,$AB,$F9,$D8,$5E,$EA,$8A,$94,$52,$8C,$C7,$7F,$D6;X ; $0A ; WAVE_0A
+	db $64,$98,$FA,$B3,$86,$3A,$8C,$9A,$B7,$8C,$9B,$D8,$20,$65,$9D,$D9   ; $0B ; WAVE_0B
+	db $02,$46,$8A,$CE,$FD,$B9,$75,$31,$00,$11,$22,$33,$44,$55,$66,$77;X ; $0C ; WAVE_0C
+	db $01,$12,$34,$55,$67,$78,$89,$9A,$BC,$DE,$FD,$CA,$86,$42,$06,$77   ; $0D ; WAVE_0D
+	db $03,$68,$AB,$CD,$DE,$EE,$FF,$FB,$40,$00,$11,$12,$23,$45,$79,$CF   ; $0E ; WAVE_0E
+	db $44,$44,$44,$20,$24,$44,$44,$44,$BB,$BB,$BB,$DF,$DB,$BB,$BB,$BB;X ; $0F ; WAVE_0F
+	db $03,$68,$9A,$BC,$DD,$EE,$EF,$FF,$FE,$DC,$BA,$98,$B6,$54,$32,$10   ; $10 ; WAVE_10
+	db $FF,$FF,$FF,$FF,$AA,$AA,$AA,$AA,$55,$55,$55,$55,$00,$00,$00,$00;X ; $11 ; WAVE_11
+	db $9B,$CE,$CC,$AA,$97,$53,$55,$77,$99,$BB,$97,$53,$22,$00,$23,$57   ; $12 ; WAVE_12
+	db $88,$99,$AA,$BB,$77,$88,$99,$AA,$55,$66,$77,$88,$44,$55,$66,$77;X ; $13 ; WAVE_13
+	db $89,$AB,$CD,$78,$95,$67,$89,$AB,$56,$78,$9A,$B7,$89,$23,$45,$67;X ; $14 ; WAVE_14
 
 ; =============== Sound_SlotPresetTable ===============
 ; Table of slot presets, used by SoundDataCmd_NoteEx.
@@ -48,133 +48,133 @@ Sound_SlotPresetTable:
 ; =============== Sound_VibratoPtrTable ===============
 ; Pointers to the various Vibrato settings.
 Sound_VibratoPtrTable:
-	dw SndVibrato_01   ; $01
-	dw SndVibrato_02   ; $02
-	dw SndVibrato_03   ; $03
-	dw SndVibrato_04   ; $04
-	dw SndVibrato_05   ; $05
-	dw SndVibrato_06   ; $06
-	dw SndVibrato_07   ; $07
-	dw SndVibrato_08   ; $08
-	dw SndVibrato_09   ; $09
-	dw SndVibrato_0A;X ; $0A
-	dw SndVibrato_0B   ; $0B
-	dw SndVibrato_0C   ; $0C
-	dw SndVibrato_0D   ; $0D
-	dw SndVibrato_0E;X ; $0E
-	dw SndVibrato_0F   ; $0F
-	dw SndVibrato_10;X ; $10
-	dw SndVibrato_11   ; $11
-	dw SndVibrato_12   ; $12
-	dw SndVibrato_13   ; $13
-	dw SndVibrato_14;X ; $14
-	dw SndVibrato_14   ; $15
-	dw SndVibrato_16   ; $16
-	dw SndVibrato_17   ; $17
-	dw SndVibrato_18;X ; $18
-	dw SndVibrato_18;X ; $19
-	dw SndVibrato_18;X ; $1A
-	dw SndVibrato_18;X ; $1B
-	dw SndVibrato_18;X ; $1C
-	dw SndVibrato_18;X ; $1D
-	dw SndVibrato_18;X ; $1E
-	dw SndVibrato_18;X ; $1F
-	dw SndVibrato_18;X ; $20
-	dw SndVibrato_18;X ; $21
-	dw SndVibrato_18;X ; $22
-	dw SndVibrato_18;X ; $23
-	dw SndVibrato_18;X ; $24
-	dw SndVibrato_18;X ; $25
-	dw SndVibrato_18;X ; $26
-	dw SndVibrato_18;X ; $27
-	dw SndVibrato_18;X ; $28
-	dw SndVibrato_18;X ; $29
-	dw SndVibrato_18;X ; $2A
-	dw SndVibrato_18;X ; $2B
-	dw SndVibrato_18;X ; $2C
-	dw SndVibrato_18;X ; $2D
-	dw SndVibrato_18;X ; $2E
-	dw SndVibrato_18;X ; $2F
-	dw SndVibrato_18;X ; $30
-	dw SndVibrato_18;X ; $31
-	dw SndVibrato_18;X ; $32
-	dw SndVibrato_33   ; $33
-	dw SndVibrato_34   ; $34
-	dw SndVibrato_35   ; $35
-	dw SndVibrato_36   ; $36
-	dw SndVibrato_37   ; $37
-	dw SndVibrato_38;X ; $38
-	dw SndVibrato_39;X ; $39
-	dw SndVibrato_39;X ; $3A
-	dw SndVibrato_39;X ; $3B
-	dw SndVibrato_39;X ; $3C
-	dw SndVibrato_39   ; $3D
-	dw SndVibrato_39;X ; $3E
-	dw SndVibrato_39;X ; $3F
-	dw SndVibrato_39;X ; $40
-	dw SndVibrato_39;X ; $41
-	dw SndVibrato_39;X ; $42
-	dw SndVibrato_39;X ; $43
-	dw SndVibrato_39;X ; $44
-	dw SndVibrato_39;X ; $45
-	dw SndVibrato_39;X ; $46
-	dw SndVibrato_39;X ; $47
-	dw SndVibrato_39;X ; $48
-	dw SndVibrato_39;X ; $49
-	dw SndVibrato_39;X ; $4A
-	dw SndVibrato_39;X ; $4B
-	dw SndVibrato_39;X ; $4C
-	dw SndVibrato_39;X ; $4D
-	dw SndVibrato_39;X ; $4E
-	dw SndVibrato_39;X ; $4F
-	dw SndVibrato_39;X ; $50
-	dw SndVibrato_39;X ; $51
-	dw SndVibrato_39;X ; $52
-	dw SndVibrato_39;X ; $53
-	dw SndVibrato_39;X ; $54
-	dw SndVibrato_39;X ; $55
-	dw SndVibrato_39;X ; $56
-	dw SndVibrato_39;X ; $57
-	dw SndVibrato_39;X ; $58
-	dw SndVibrato_39;X ; $59
-	dw SndVibrato_39;X ; $5A
-	dw SndVibrato_5B   ; $5B
-	dw SndVibrato_5C   ; $5C
-	dw SndVibrato_5D   ; $5D
-	dw SndVibrato_5E;X ; $5E
-	dw SndVibrato_5F   ; $5F
-	dw SndVibrato_60   ; $60
-	dw SndVibrato_61   ; $61
-	dw SndVibrato_62   ; $62
-	dw SndVibrato_63   ; $63
-	dw SndVibrato_64;X ; $64
-	dw SndVibrato_65   ; $65
-	dw SndVibrato_66   ; $66
-	dw SndVibrato_67;X ; $67
-	dw SndVibrato_68   ; $68
-	dw SndVibrato_69;X ; $69
-	dw SndVibrato_69;X ; $6A
-	dw SndVibrato_69;X ; $6B
-	dw SndVibrato_69;X ; $6C
-	dw SndVibrato_69;X ; $6D
-	dw SndVibrato_69;X ; $6E
-	dw SndVibrato_69;X ; $6F
-	dw SndVibrato_69;X ; $70
-	dw SndVibrato_69;X ; $71
-	dw SndVibrato_69;X ; $72
-	dw SndVibrato_69;X ; $73
-	dw SndVibrato_69;X ; $74
-	dw SndVibrato_69;X ; $75
-	dw SndVibrato_69;X ; $76
-	dw SndVibrato_69;X ; $77
-	dw SndVibrato_69;X ; $78
-	dw SndVibrato_69;X ; $79
-	dw SndVibrato_69;X ; $7A
-	dw SndVibrato_69;X ; $7B
-	dw SndVibrato_69;X ; $7C
-	dw SndVibrato_69;X ; $7D
-	dw SndVibrato_69;X ; $7E
-	dw SndVibrato_69;X ; $7F
+	dw SndVibrato_01   ; $01 ; VIBRATO_01
+	dw SndVibrato_02   ; $02 ; VIBRATO_02
+	dw SndVibrato_03   ; $03 ; VIBRATO_03
+	dw SndVibrato_04   ; $04 ; VIBRATO_04
+	dw SndVibrato_05   ; $05 ; VIBRATO_05
+	dw SndVibrato_06   ; $06 ; VIBRATO_06
+	dw SndVibrato_07   ; $07 ; VIBRATO_07
+	dw SndVibrato_08   ; $08 ; VIBRATO_08
+	dw SndVibrato_09   ; $09 ; VIBRATO_09
+	dw SndVibrato_0A;X ; $0A ; VIBRATO_0A
+	dw SndVibrato_0B   ; $0B ; VIBRATO_0B
+	dw SndVibrato_0C   ; $0C ; VIBRATO_0C
+	dw SndVibrato_0D   ; $0D ; VIBRATO_0D
+	dw SndVibrato_0E;X ; $0E ; VIBRATO_0E
+	dw SndVibrato_0F   ; $0F ; VIBRATO_0F
+	dw SndVibrato_10;X ; $10 ; VIBRATO_10
+	dw SndVibrato_11   ; $11 ; VIBRATO_11
+	dw SndVibrato_12   ; $12 ; VIBRATO_12
+	dw SndVibrato_13   ; $13 ; VIBRATO_13
+	dw SndVibrato_14;X ; $14 ; VIBRATO_14
+	dw SndVibrato_14   ; $15 ; VIBRATO_15
+	dw SndVibrato_16   ; $16 ; VIBRATO_16
+	dw SndVibrato_17   ; $17 ; VIBRATO_17
+	dw SndVibrato_18;X ; $18 ; VIBRATO_18
+	dw SndVibrato_18;X ; $19 ; VIBRATO_19
+	dw SndVibrato_18;X ; $1A ; VIBRATO_1A
+	dw SndVibrato_18;X ; $1B ; VIBRATO_1B
+	dw SndVibrato_18;X ; $1C ; VIBRATO_1C
+	dw SndVibrato_18;X ; $1D ; VIBRATO_1D
+	dw SndVibrato_18;X ; $1E ; VIBRATO_1E
+	dw SndVibrato_18;X ; $1F ; VIBRATO_1F
+	dw SndVibrato_18;X ; $20 ; VIBRATO_20
+	dw SndVibrato_18;X ; $21 ; VIBRATO_21
+	dw SndVibrato_18;X ; $22 ; VIBRATO_22
+	dw SndVibrato_18;X ; $23 ; VIBRATO_23
+	dw SndVibrato_18;X ; $24 ; VIBRATO_24
+	dw SndVibrato_18;X ; $25 ; VIBRATO_25
+	dw SndVibrato_18;X ; $26 ; VIBRATO_26
+	dw SndVibrato_18;X ; $27 ; VIBRATO_27
+	dw SndVibrato_18;X ; $28 ; VIBRATO_28
+	dw SndVibrato_18;X ; $29 ; VIBRATO_29
+	dw SndVibrato_18;X ; $2A ; VIBRATO_2A
+	dw SndVibrato_18;X ; $2B ; VIBRATO_2B
+	dw SndVibrato_18;X ; $2C ; VIBRATO_2C
+	dw SndVibrato_18;X ; $2D ; VIBRATO_2D
+	dw SndVibrato_18;X ; $2E ; VIBRATO_2E
+	dw SndVibrato_18;X ; $2F ; VIBRATO_2F
+	dw SndVibrato_18;X ; $30 ; VIBRATO_30
+	dw SndVibrato_18;X ; $31 ; VIBRATO_31
+	dw SndVibrato_18;X ; $32 ; VIBRATO_32
+	dw SndVibrato_33   ; $33 ; VIBRATO_33
+	dw SndVibrato_34   ; $34 ; VIBRATO_34
+	dw SndVibrato_35   ; $35 ; VIBRATO_35
+	dw SndVibrato_36   ; $36 ; VIBRATO_36
+	dw SndVibrato_37   ; $37 ; VIBRATO_37
+	dw SndVibrato_38;X ; $38 ; VIBRATO_38
+	dw SndVibrato_39;X ; $39 ; VIBRATO_39
+	dw SndVibrato_39;X ; $3A ; VIBRATO_3A
+	dw SndVibrato_39;X ; $3B ; VIBRATO_3B
+	dw SndVibrato_39;X ; $3C ; VIBRATO_3C
+	dw SndVibrato_39   ; $3D ; VIBRATO_3D
+	dw SndVibrato_39;X ; $3E ; VIBRATO_3E
+	dw SndVibrato_39;X ; $3F ; VIBRATO_3F
+	dw SndVibrato_39;X ; $40 ; VIBRATO_40
+	dw SndVibrato_39;X ; $41 ; VIBRATO_41
+	dw SndVibrato_39;X ; $42 ; VIBRATO_42
+	dw SndVibrato_39;X ; $43 ; VIBRATO_43
+	dw SndVibrato_39;X ; $44 ; VIBRATO_44
+	dw SndVibrato_39;X ; $45 ; VIBRATO_45
+	dw SndVibrato_39;X ; $46 ; VIBRATO_46
+	dw SndVibrato_39;X ; $47 ; VIBRATO_47
+	dw SndVibrato_39;X ; $48 ; VIBRATO_48
+	dw SndVibrato_39;X ; $49 ; VIBRATO_49
+	dw SndVibrato_39;X ; $4A ; VIBRATO_4A
+	dw SndVibrato_39;X ; $4B ; VIBRATO_4B
+	dw SndVibrato_39;X ; $4C ; VIBRATO_4C
+	dw SndVibrato_39;X ; $4D ; VIBRATO_4D
+	dw SndVibrato_39;X ; $4E ; VIBRATO_4E
+	dw SndVibrato_39;X ; $4F ; VIBRATO_4F
+	dw SndVibrato_39;X ; $50 ; VIBRATO_50
+	dw SndVibrato_39;X ; $51 ; VIBRATO_51
+	dw SndVibrato_39;X ; $52 ; VIBRATO_52
+	dw SndVibrato_39;X ; $53 ; VIBRATO_53
+	dw SndVibrato_39;X ; $54 ; VIBRATO_54
+	dw SndVibrato_39;X ; $55 ; VIBRATO_55
+	dw SndVibrato_39;X ; $56 ; VIBRATO_56
+	dw SndVibrato_39;X ; $57 ; VIBRATO_57
+	dw SndVibrato_39;X ; $58 ; VIBRATO_58
+	dw SndVibrato_39;X ; $59 ; VIBRATO_59
+	dw SndVibrato_39;X ; $5A ; VIBRATO_5A
+	dw SndVibrato_5B   ; $5B ; VIBRATO_5B
+	dw SndVibrato_5C   ; $5C ; VIBRATO_5C
+	dw SndVibrato_5D   ; $5D ; VIBRATO_5D
+	dw SndVibrato_5E;X ; $5E ; VIBRATO_5E
+	dw SndVibrato_5F   ; $5F ; VIBRATO_5F
+	dw SndVibrato_60   ; $60 ; VIBRATO_60
+	dw SndVibrato_61   ; $61 ; VIBRATO_61
+	dw SndVibrato_62   ; $62 ; VIBRATO_62
+	dw SndVibrato_63   ; $63 ; VIBRATO_63
+	dw SndVibrato_64;X ; $64 ; VIBRATO_64
+	dw SndVibrato_65   ; $65 ; VIBRATO_65
+	dw SndVibrato_66   ; $66 ; VIBRATO_66
+	dw SndVibrato_67;X ; $67 ; VIBRATO_67
+	dw SndVibrato_68   ; $68 ; VIBRATO_68
+	dw SndVibrato_69;X ; $69 ; VIBRATO_69
+	dw SndVibrato_69;X ; $6A ; VIBRATO_6A
+	dw SndVibrato_69;X ; $6B ; VIBRATO_6B
+	dw SndVibrato_69;X ; $6C ; VIBRATO_6C
+	dw SndVibrato_69;X ; $6D ; VIBRATO_6D
+	dw SndVibrato_69;X ; $6E ; VIBRATO_6E
+	dw SndVibrato_69;X ; $6F ; VIBRATO_6F
+	dw SndVibrato_69;X ; $70 ; VIBRATO_70
+	dw SndVibrato_69;X ; $71 ; VIBRATO_71
+	dw SndVibrato_69;X ; $72 ; VIBRATO_72
+	dw SndVibrato_69;X ; $73 ; VIBRATO_73
+	dw SndVibrato_69;X ; $74 ; VIBRATO_74
+	dw SndVibrato_69;X ; $75 ; VIBRATO_75
+	dw SndVibrato_69;X ; $76 ; VIBRATO_76
+	dw SndVibrato_69;X ; $77 ; VIBRATO_77
+	dw SndVibrato_69;X ; $78 ; VIBRATO_78
+	dw SndVibrato_69;X ; $79 ; VIBRATO_79
+	dw SndVibrato_69;X ; $7A ; VIBRATO_7A
+	dw SndVibrato_69;X ; $7B ; VIBRATO_7B
+	dw SndVibrato_69;X ; $7C ; VIBRATO_7C
+	dw SndVibrato_69;X ; $7D ; VIBRATO_7D
+	dw SndVibrato_69;X ; $7E ; VIBRATO_7E
+	dw SndVibrato_69;X ; $7F ; VIBRATO_7F
 
 SndVibrato_01:
 	vfrq 40
@@ -517,133 +517,133 @@ SndVibrato_18:
 ; Each of the entries points to a list of commands, separate from normal sound commands.
 ; See also: Sound_DoInstrument
 Sound_InstrumentPtrTable:
-	dw SndInstrument_01   ; $01
-	dw SndInstrument_02   ; $02
-	dw SndInstrument_03   ; $03
-	dw SndInstrument_04   ; $04
-	dw SndInstrument_05   ; $05
-	dw SndInstrument_06   ; $06
-	dw SndInstrument_07   ; $07
-	dw SndInstrument_08   ; $08
-	dw SndInstrument_09   ; $09
-	dw SndInstrument_0A   ; $0A
-	dw SndInstrument_0B   ; $0B
-	dw SndInstrument_0C   ; $0C
-	dw SndInstrument_0D   ; $0D
-	dw SndInstrument_0E   ; $0E
-	dw SndInstrument_0F   ; $0F
-	dw SndInstrument_10   ; $10
-	dw SndInstrument_11   ; $11
-	dw SndInstrument_12   ; $12
-	dw SndInstrument_13   ; $13
-	dw SndInstrument_14   ; $14
-	dw SndInstrument_15   ; $15
-	dw SndInstrument_16   ; $16
-	dw SndInstrument_17   ; $17
-	dw SndInstrument_18   ; $18
-	dw SndInstrument_19   ; $19
-	dw SndInstrument_1A   ; $1A
-	dw SndInstrument_1B   ; $1B
-	dw SndInstrument_1C;X ; $1C
-	dw SndInstrument_1C;X ; $1D
-	dw SndInstrument_1C   ; $1E
-	dw SndInstrument_1F;X ; $1F
-	dw SndInstrument_1F;X ; $20
-	dw SndInstrument_1F;X ; $21
-	dw SndInstrument_1F;X ; $22
-	dw SndInstrument_1F;X ; $23
-	dw SndInstrument_1F;X ; $24
-	dw SndInstrument_1F;X ; $25
-	dw SndInstrument_1F;X ; $26
-	dw SndInstrument_1F;X ; $27
-	dw SndInstrument_1F;X ; $28
-	dw SndInstrument_1F;X ; $29
-	dw SndInstrument_1F;X ; $2A
-	dw SndInstrument_1F;X ; $2B
-	dw SndInstrument_1F;X ; $2C
-	dw SndInstrument_1F;X ; $2D
-	dw SndInstrument_2E   ; $2E
-	dw SndInstrument_2F   ; $2F
-	dw SndInstrument_30   ; $30
-	dw SndInstrument_31   ; $31
-	dw SndInstrument_32   ; $32
-	dw SndInstrument_33   ; $33
-	dw SndInstrument_34   ; $34
-	dw SndInstrument_35   ; $35
-	dw SndInstrument_36   ; $36
-	dw SndInstrument_37   ; $37
-	dw SndInstrument_38   ; $38
-	dw SndInstrument_39   ; $39
-	dw SndInstrument_3A   ; $3A
-	dw SndInstrument_3B   ; $3B
-	dw SndInstrument_3C   ; $3C
-	dw SndInstrument_3D   ; $3D
-	dw SndInstrument_3E   ; $3E
-	dw SndVibrato_5B;X    ; $3F
-	dw SndInstrument_40   ; $40
-	dw SndInstrument_41   ; $41
-	dw SndInstrument_42   ; $42
-	dw SndVibrato_5B;X    ; $43
-	dw SndVibrato_5B;X    ; $44
-	dw SndVibrato_5B;X    ; $45
-	dw SndVibrato_5B;X    ; $46
-	dw SndVibrato_5B;X    ; $47
-	dw SndVibrato_5B;X    ; $48
-	dw SndVibrato_5B;X    ; $49
-	dw SndVibrato_5B;X    ; $4A
-	dw SndVibrato_5B;X    ; $4B
-	dw SndVibrato_5B;X    ; $4C
-	dw SndVibrato_5B;X    ; $4D
-	dw SndVibrato_5B;X    ; $4E
-	dw SndVibrato_5B;X    ; $4F
-	dw SndVibrato_5B;X    ; $50
-	dw SndVibrato_5B;X    ; $51
-	dw SndVibrato_5B;X    ; $52
-	dw SndVibrato_5B;X    ; $53
-	dw SndVibrato_5B;X    ; $54
-	dw SndVibrato_5B;X    ; $55
-	dw SndInstrument_56   ; $56
-	dw SndInstrument_57   ; $57
-	dw SndInstrument_58   ; $58
-	dw SndInstrument_59;X ; $59
-	dw SndInstrument_5A   ; $5A
-	dw SndInstrument_5B   ; $5B
-	dw SndInstrument_5C   ; $5C
-	dw SndInstrument_5D   ; $5D
-	dw SndInstrument_5E   ; $5E
-	dw SndInstrument_5F   ; $5F
-	dw SndInstrument_60   ; $60
-	dw SndInstrument_61   ; $61
-	dw SndInstrument_62   ; $62
-	dw SndInstrument_63   ; $63
-	dw SndInstrument_64;X ; $64
-	dw SndInstrument_65   ; $65
-	dw SndInstrument_66;X ; $66
-	dw SndInstrument_67   ; $67
-	dw SndInstrument_68   ; $68
-	dw SndInstrument_69   ; $69
-	dw SndInstrument_6A   ; $6A
-	dw SndInstrument_6B   ; $6B
-	dw SndInstrument_6C;X ; $6C
-	dw SndInstrument_6D   ; $6D
-	dw SndInstrument_6E   ; $6E
-	dw SndInstrument_6F   ; $6F
-	dw SndInstrument_70   ; $70
-	dw SndInstrument_71   ; $71
-	dw SndInstrument_72;X ; $72
-	dw SndInstrument_73   ; $73
-	dw SndHeader_00;X     ; $74
-	dw SndHeader_00;X     ; $75
-	dw SndHeader_00;X     ; $76
-	dw SndHeader_00;X     ; $77
-	dw SndHeader_00;X     ; $78
-	dw SndHeader_00;X     ; $79
-	dw SndInstrument_70;X ; $7A
-	dw SndHeader_00;X     ; $7B
-	dw SndHeader_00;X     ; $7C
-	dw SndHeader_00;X     ; $7D
-	dw SndHeader_00;X     ; $7E
-	dw SndHeader_00;X     ; $7F
+	dw SndInstrument_01   ; $01 ; INSTR_01
+	dw SndInstrument_02   ; $02 ; INSTR_02
+	dw SndInstrument_03   ; $03 ; INSTR_03
+	dw SndInstrument_04   ; $04 ; INSTR_04
+	dw SndInstrument_05   ; $05 ; INSTR_05
+	dw SndInstrument_06   ; $06 ; INSTR_06
+	dw SndInstrument_07   ; $07 ; INSTR_07
+	dw SndInstrument_08   ; $08 ; INSTR_08
+	dw SndInstrument_09   ; $09 ; INSTR_09
+	dw SndInstrument_0A   ; $0A ; INSTR_0A
+	dw SndInstrument_0B   ; $0B ; INSTR_0B
+	dw SndInstrument_0C   ; $0C ; INSTR_0C
+	dw SndInstrument_0D   ; $0D ; INSTR_0D
+	dw SndInstrument_0E   ; $0E ; INSTR_0E
+	dw SndInstrument_0F   ; $0F ; INSTR_0F
+	dw SndInstrument_10   ; $10 ; INSTR_10
+	dw SndInstrument_11   ; $11 ; INSTR_11
+	dw SndInstrument_12   ; $12 ; INSTR_12
+	dw SndInstrument_13   ; $13 ; INSTR_13
+	dw SndInstrument_14   ; $14 ; INSTR_14
+	dw SndInstrument_15   ; $15 ; INSTR_15
+	dw SndInstrument_16   ; $16 ; INSTR_16
+	dw SndInstrument_17   ; $17 ; INSTR_17
+	dw SndInstrument_18   ; $18 ; INSTR_18
+	dw SndInstrument_19   ; $19 ; INSTR_19
+	dw SndInstrument_1A   ; $1A ; INSTR_1A
+	dw SndInstrument_1B   ; $1B ; INSTR_1B
+	dw SndInstrument_1C;X ; $1C ; INSTR_1C
+	dw SndInstrument_1C;X ; $1D ; INSTR_1D
+	dw SndInstrument_1C   ; $1E ; INSTR_1E
+	dw SndInstrument_1F;X ; $1F ; INSTR_1F
+	dw SndInstrument_1F;X ; $20 ; INSTR_20
+	dw SndInstrument_1F;X ; $21 ; INSTR_21
+	dw SndInstrument_1F;X ; $22 ; INSTR_22
+	dw SndInstrument_1F;X ; $23 ; INSTR_23
+	dw SndInstrument_1F;X ; $24 ; INSTR_24
+	dw SndInstrument_1F;X ; $25 ; INSTR_25
+	dw SndInstrument_1F;X ; $26 ; INSTR_26
+	dw SndInstrument_1F;X ; $27 ; INSTR_27
+	dw SndInstrument_1F;X ; $28 ; INSTR_28
+	dw SndInstrument_1F;X ; $29 ; INSTR_29
+	dw SndInstrument_1F;X ; $2A ; INSTR_2A
+	dw SndInstrument_1F;X ; $2B ; INSTR_2B
+	dw SndInstrument_1F;X ; $2C ; INSTR_2C
+	dw SndInstrument_1F;X ; $2D ; INSTR_2D
+	dw SndInstrument_2E   ; $2E ; INSTR_2E
+	dw SndInstrument_2F   ; $2F ; INSTR_2F
+	dw SndInstrument_30   ; $30 ; INSTR_30
+	dw SndInstrument_31   ; $31 ; INSTR_31
+	dw SndInstrument_32   ; $32 ; INSTR_32
+	dw SndInstrument_33   ; $33 ; INSTR_33
+	dw SndInstrument_34   ; $34 ; INSTR_34
+	dw SndInstrument_35   ; $35 ; INSTR_35
+	dw SndInstrument_36   ; $36 ; INSTR_36
+	dw SndInstrument_37   ; $37 ; INSTR_37
+	dw SndInstrument_38   ; $38 ; INSTR_38
+	dw SndInstrument_39   ; $39 ; INSTR_39
+	dw SndInstrument_3A   ; $3A ; INSTR_3A
+	dw SndInstrument_3B   ; $3B ; INSTR_3B
+	dw SndInstrument_3C   ; $3C ; INSTR_3C
+	dw SndInstrument_3D   ; $3D ; INSTR_3D
+	dw SndInstrument_3E   ; $3E ; INSTR_3E
+	dw SndVibrato_5B;X    ; $3F ; INSTR_3F
+	dw SndInstrument_40   ; $40 ; INSTR_40
+	dw SndInstrument_41   ; $41 ; INSTR_41
+	dw SndInstrument_42   ; $42 ; INSTR_42
+	dw SndVibrato_5B;X    ; $43 ; INSTR_43
+	dw SndVibrato_5B;X    ; $44 ; INSTR_44
+	dw SndVibrato_5B;X    ; $45 ; INSTR_45
+	dw SndVibrato_5B;X    ; $46 ; INSTR_46
+	dw SndVibrato_5B;X    ; $47 ; INSTR_47
+	dw SndVibrato_5B;X    ; $48 ; INSTR_48
+	dw SndVibrato_5B;X    ; $49 ; INSTR_49
+	dw SndVibrato_5B;X    ; $4A ; INSTR_4A
+	dw SndVibrato_5B;X    ; $4B ; INSTR_4B
+	dw SndVibrato_5B;X    ; $4C ; INSTR_4C
+	dw SndVibrato_5B;X    ; $4D ; INSTR_4D
+	dw SndVibrato_5B;X    ; $4E ; INSTR_4E
+	dw SndVibrato_5B;X    ; $4F ; INSTR_4F
+	dw SndVibrato_5B;X    ; $50 ; INSTR_50
+	dw SndVibrato_5B;X    ; $51 ; INSTR_51
+	dw SndVibrato_5B;X    ; $52 ; INSTR_52
+	dw SndVibrato_5B;X    ; $53 ; INSTR_53
+	dw SndVibrato_5B;X    ; $54 ; INSTR_54
+	dw SndVibrato_5B;X    ; $55 ; INSTR_55
+	dw SndInstrument_56   ; $56 ; INSTR_56
+	dw SndInstrument_57   ; $57 ; INSTR_57
+	dw SndInstrument_58   ; $58 ; INSTR_58
+	dw SndInstrument_59;X ; $59 ; INSTR_59
+	dw SndInstrument_5A   ; $5A ; INSTR_5A
+	dw SndInstrument_5B   ; $5B ; INSTR_5B
+	dw SndInstrument_5C   ; $5C ; INSTR_5C
+	dw SndInstrument_5D   ; $5D ; INSTR_5D
+	dw SndInstrument_5E   ; $5E ; INSTR_5E
+	dw SndInstrument_5F   ; $5F ; INSTR_5F
+	dw SndInstrument_60   ; $60 ; INSTR_60
+	dw SndInstrument_61   ; $61 ; INSTR_61
+	dw SndInstrument_62   ; $62 ; INSTR_62
+	dw SndInstrument_63   ; $63 ; INSTR_63
+	dw SndInstrument_64;X ; $64 ; INSTR_64
+	dw SndInstrument_65   ; $65 ; INSTR_65
+	dw SndInstrument_66;X ; $66 ; INSTR_66
+	dw SndInstrument_67   ; $67 ; INSTR_67
+	dw SndInstrument_68   ; $68 ; INSTR_68
+	dw SndInstrument_69   ; $69 ; INSTR_69
+	dw SndInstrument_6A   ; $6A ; INSTR_6A
+	dw SndInstrument_6B   ; $6B ; INSTR_6B
+	dw SndInstrument_6C;X ; $6C ; INSTR_6C
+	dw SndInstrument_6D   ; $6D ; INSTR_6D
+	dw SndInstrument_6E   ; $6E ; INSTR_6E
+	dw SndInstrument_6F   ; $6F ; INSTR_6F
+	dw SndInstrument_70   ; $70 ; INSTR_70
+	dw SndInstrument_71   ; $71 ; INSTR_71
+	dw SndInstrument_72;X ; $72 ; INSTR_72
+	dw SndInstrument_73   ; $73 ; INSTR_73
+	dw SndHeader_00;X     ; $74 ; INSTR_74
+	dw SndHeader_00;X     ; $75 ; INSTR_75
+	dw SndHeader_00;X     ; $76 ; INSTR_76
+	dw SndHeader_00;X     ; $77 ; INSTR_77
+	dw SndHeader_00;X     ; $78 ; INSTR_78
+	dw SndHeader_00;X     ; $79 ; INSTR_79
+	dw SndInstrument_70;X ; $7A ; INSTR_7A
+	dw SndHeader_00;X     ; $7B ; INSTR_7B
+	dw SndHeader_00;X     ; $7C ; INSTR_7C
+	dw SndHeader_00;X     ; $7D ; INSTR_7D
+	dw SndHeader_00;X     ; $7E ; INSTR_7E
+	dw SndHeader_00;X     ; $7F ; INSTR_7F
 SndInstrument_01:
 	ivol $14, $F, SNDENV_INC, $00 ; vol3 $14, SNDCH3VOL_100
 	ivol $04, $F, SNDENV_DEC, $01 ; vol3 $04, SNDCH3VOL_100
@@ -1786,28 +1786,29 @@ SndInstrument_73:
 	iloop_prev
 
 
-SndHeader_00: db $01
-L064A81: db $08
-L064A82: db $01
-L064A83: db $0F
-L064A84: db $00
-L064A85: db $00
-L064A86: db $00
-L064A87: db $A0
-L064A88: db $02
-L064A89: db $C8
-L064A8A: db $4B
-L064A8B: db $06
-L064A8C: db $FF
+SndHeader_00:
+	db 1 ; Number of slots
+.slot0:
+	db SNDSLOTPAUSE ; Slot location
+	db SNDX_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_01
+	db INSTR_NONE ; iSndChInfo_02
+	db VIBRATO_NONE ; iSndChInfo_03
+	db 0 ; iSndChInfo_04
+	db 160 ; iSndChInfo_05
+	db SNDCH_WAVE ; iSndChInfo_06
+	dw SndData_00_Ch3 ; Data pointer
+	db WAVE_06 ; iSndChInfo_09
+	db SNDOUT_CHALL ; iSndChInfo_0A
 
 ; =============== Sound_SndHeaderPtrTable ===============
 ; Pointer table with sound headers, by ID.
-; Some of the unused entries point to L064BC8, which is NOT a sound header, but somehow it works out ??? (due to a dubious check in the handler)
+; Some of the unused entries point to SndData_00_Ch3, which is NOT a sound header, but somehow it works out ??? (due to a dubious check in the handler)
 ; so nothing bad happens then playing those.
 Sound_SndHeaderPtrTable: 
 	dp SndHeader_00 ; $00
 	dp SndHeader_01 ; $01
-	dp L064BC8 ; $02
+	dp SndData_00_Ch3 ; $02
 	dp SndHeader_03 ; $03
 	dp SndHeader_04 ; $04
 	dp SndHeader_05 ; $05
@@ -1833,19 +1834,19 @@ Sound_SndHeaderPtrTable:
 	dp SndHeader_19 ; $19
 	dp SndHeader_1A ; $1A
 	dp SndHeader_1B ; $1B
-	dp L064BC8 ; $1C
-	dp L064BC8 ; $1D
-	dp L064BC8 ; $1E
+	dp SndData_00_Ch3 ; $1C
+	dp SndData_00_Ch3 ; $1D
+	dp SndData_00_Ch3 ; $1E
 	dp SndHeader_1F ; $1F
 	dp SndHeader_20 ; $20
 	dp SndHeader_21 ; $21
 	dp SndHeader_22 ; $22
-	dp L064BC8 ; $23
+	dp SndData_00_Ch3 ; $23
 	dp SndHeader_24 ; $24
-	dp L064BC8 ; $25
-	dp L064BC8 ; $26
-	dp L064BC8 ; $27
-	dp L064BC8 ; $28
+	dp SndData_00_Ch3 ; $25
+	dp SndData_00_Ch3 ; $26
+	dp SndData_00_Ch3 ; $27
+	dp SndData_00_Ch3 ; $28
 	dp SndHeader_29 ; $29
 	dp SndHeader_2A ; $2A
 	dp SndHeader_2B ; $2B
@@ -1912,13 +1913,13 @@ Sound_SndHeaderPtrTable:
 	dp SndHeader_68 ; $68
 	
 	; [POI] This is a very bad way to implement the blank sound effect.
-L064BC8:
-	db $3D ; Slot count - Way out of range
-L064BC9:
-	db $DF ; Slot ID - Way out of range. 
-	       ; This ends up indexing the slot pointer table out of bounds, and returns a null pointer.
-	       ; By coincidence ??? (intentional? explains the direct return), at $0000 there's code whose first byte is $E0.
-	       ; $E0 has bit 6 set, so it fails the check and the subroutine that plays a new sound returns early.
+	; Slot count - Way out of range
+	; Slot ID - Way out of range. 
+	; This ends up indexing the slot pointer table out of bounds, and returns a null pointer.
+	; By coincidence ??? (intentional? explains the direct return), at $0000 there's code whose first byte is $E0.
+	; $E0 has bit 6 set, so it fails the check and the subroutine that plays a new sound returns early.
+SndData_00_Ch3:	db $3D 
+L064BC9: db $DF 
 L064BCA: db $38
 L064BCB: db $3A
 L064BCC: db $3C

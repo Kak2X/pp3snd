@@ -5,6 +5,152 @@ MACRO dp
 	dw \1
 ENDM
 
+; =============== INSTRUMENT / VIBRATO DATA COMMANDS ===============
+
+; =============== ivol ===============
+; Command: Sound_DoInstrument.cmdSetNewData
+;
+; Sets new NRx2 data block.
+;
+; IN
+; - 1: Length, in frames. This NRx2 data is valid for that duration.
+;      Must not be between $80-$84
+; - 2: Volume ($0-$F)
+; - 3: Envelope direction (SNDENV_INC or SNDENV_DEC)
+; - 4: Envelope pace
+MACRO ivol
+	db \1
+	db (\2 << 4)|\3|\4
+ENDM
+
+; =============== vfrq ===============
+; Command: Sound_DoVibrato.cmdShiftFreq
+;
+; Shifts the frequency by the specified amount.
+;
+; IN
+; - 1: Amount (signed)
+;      Must not be between $80-$84
+MACRO vfrq
+	db \1
+ENDM
+
+; =============== irewind ===============
+; Command: Sound_DoInstrument.cmdReset
+;
+; Restarts the instrument from the beginning.
+MACRO irewind
+	db SNDENVCMD_RESET
+ENDM
+
+; =============== vrewind ===============
+; Command: Sound_DoVibrato.cmdReset
+;
+; Restarts the vibrato from the beginning.
+MACRO vrewind
+	db SNDENVCMD_RESET
+ENDM
+
+; =============== iloop_prev ===============
+; Command: Sound_DoInstrument.cmdLoop
+;
+; Makes the previous command loop.
+MACRO iloop_prev
+	db SNDENVCMD_LOOP
+ENDM
+
+; =============== vloop_prev ===============
+; Command: Sound_DoVibrato.cmdLoop
+;
+; Makes the previous command loop.
+MACRO vloop_prev
+	db SNDENVCMD_LOOP
+ENDM
+
+; =============== iloop_prev_sh ===============
+; Command: Sound_DoInstrument.cmdLoopCond
+;
+; Makes the previous command loop until short instruments are disabled.
+;
+; IN (same as ivol)
+; - 1: Length, in frames.
+; - 2: Volume ($0-$F)
+; - 3: Envelope direction (SNDENV_INC or SNDENV_DEC)
+; - 4: Envelope pace
+MACRO iloop_prev_sh
+	db SNDENVCMD_LOOPCOND
+	ivol \1,\2,\3,\4
+ENDM
+
+; =============== vloop_prev_sh ===============
+; Command: Sound_DoVibrato.cmdLoopCond
+;
+; Makes the previous command loop until short vibratos are disabled.
+; IN (same as vfrq)
+; - 1: Amount (signed)
+MACRO vloop_prev_sh
+	db SNDENVCMD_LOOPCOND
+	vfrq \1
+ENDM
+
+; =============== iloop_far ===============
+; Command: Sound_DoInstrument.cmdLoopFar
+;
+; Makes the instrument loop to the specified label.
+;
+; IN
+; - 1: Label
+;      Must point to before current location.
+MACRO iloop_far
+	db SNDENVCMD_LOOPFAR, (@ - \1 - 1)
+ENDM
+
+; =============== vloop_far ===============
+; Command: Sound_DoVibrato.cmdLoopFar
+;
+; Makes the vibrato loop to the specified label.
+;
+; IN
+; - 1: Label
+;      Must point to before current location.
+MACRO vloop_far
+	db SNDENVCMD_LOOPFAR, (@ - \1 - 1)
+ENDM
+
+; =============== iloop_far_sh ===============
+; Command: Sound_DoInstrument.cmdLoopFarCond
+;
+; Makes the instrument loop to the specified label.
+;
+; IN
+; - 1: Label
+;      Must point to before current location.
+; (remaining same as ivol)
+; - 2: Length, in frames.
+; - 3: Volume ($0-$F)
+; - 4: Envelope direction (SNDENV_INC or SNDENV_DEC)
+; - 5: Envelope pace
+MACRO iloop_far_sh
+	db SNDENVCMD_LOOPFARCOND, (@ - \1 - 1)
+	ivol \2,\3,\4,\5
+ENDM
+
+; =============== vloop_far_sh ===============
+; Command: Sound_DoVibrato.cmdLoopFarCond
+;
+; Makes the vibrato loop to the specified label.
+;
+; IN
+; - 1: Label
+;      Must point to before current location.
+; (remaining same as vfrq)
+; - 2: Amount (signed)
+MACRO vloop_far_sh
+	db SNDENVCMD_LOOPFARCOND, (@ - \1 - 1)
+	vfrq \2
+ENDM
+
+
 ; h_Unk_FFE5_Flags bits (data command- related? frame specific slot flags?)
 DEF SNDDFB_3 EQU 3 ; SNDDFB_CLRINST Reset instrument data on NoteEx
 DEF SNDDFB_TRIG EQU 5 ; Sound channel should be retriggered.

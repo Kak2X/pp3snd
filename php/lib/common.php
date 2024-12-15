@@ -27,31 +27,43 @@ class flbl {
 	private $b = [];
 	private $map = [];
 	private $labelmap = [];
+	private $labelpending = [];
 	private $total = 0;
 	
-	public function w($icount, $str, $raw = false) {
-		$this->b[] = [$str, $raw];
+	public function w($icount, $str, $raw = false, $ref = "") {
+		$this->b[] = [$str, $raw, $ref];
 		$this->map[] = $this->total; // + $icount;
 		if ($icount >= 0)
 			$this->total += $icount;
 	}
 	
-	public function add_rel_label($i, $label = null) { // label is $i bytes from current location
+	// label is $i bytes from current location
+	public function add_rel_label($i, $label = null) {
 		$j = $this->total + $i;
 		if (!isset($this->labelmap[$j]))
 			$this->labelmap[$j] = $label ?? ".jump".fmthexnum($j, 4);
 		return $this->labelmap[$j];
 	}
 	
+	// label should be added when ran into
+	public function add_pending_label($label) {
+		return $this->labelpending[] = $label;
+	}
+	
 	public function build() {
 		
 		$o = "";
 		for ($i = 0, $cnt = count($this->b); $i < $cnt; ++$i) {
-			$label = $this->labelmap[$this->map[$i]] ?? null;
-			if ($label)
+			list($str, $raw, $ref) = $this->b[$i];
+			
+			if ($label = $this->labelmap[$this->map[$i]] ?? "")
 				$o .= "{$label}:\r\n";
+			// We already wrote the label elsewhere, this should be a second label
+			if ($ref && in_array($ref, $this->labelpending, true))
+				$o .= "{$ref}:\r\n";
+			
 			// Raw or not?
-			$o .= ($this->b[$i][1] ? "" : "\t") . $this->b[$i][0]."\r\n";
+			$o .= $raw ? $str : "\t{$str}\r\n";
 		}
 		return $o;
 	}
@@ -60,7 +72,8 @@ class flbl {
 class dbnfo {
 	public function __construct(
 		public $raw,
-		public $label, 
+		public $label,
+		public $raw_label,
 		public $val,
 		public $used,
 		public $bank,) {
@@ -79,22 +92,32 @@ class dbnfo {
 	public function as_enum($map) {
 		return trim($map[$this->val] ?? '$'.$this->val);
 	}
+	public function is_empty() {
+		return $this->val === null;
+	}
 }
 
 function dbify($path, $no_data_labels = false) {
-	foreach (pretty_file($path) as $ln) {
-		$label = get_label($ln);
-		$val = get_db($ln);
-		// Dumb detection, but should work for us
-		if ($no_data_labels && $ln && $ln[0] == 'L' && strlen($label) == 7) {
-			$bank  = substr($label, 1, 2);
-			$label = null;
+	$h = fopen($path, 'r');
+	while (($line = fgets($h)) !== false) {
+		if ($ln = trim($line)) {
+			$raw_label = $label = get_label($ln);
+			$val = get_db($ln);
+			// Dumb detection, but should work for us
+			if ($no_data_labels && $ln && $ln[0] == 'L' && strlen($label) == 7) {
+				$bank  = substr($label, 1, 2);
+				$label = null;
+			} else {
+				$bank = null;
+			}
+			$used = strrpos($ln, ";X") === false;
+			yield new dbnfo($line, $label, $raw_label, $val, $used, $bank);
 		} else {
-			$bank = null;
+			yield new dbnfo($line,     "",         "", null,  null, true);
 		}
-		$used = strrpos($ln, ";X") === false;
-		yield new dbnfo($ln, $label, $val, $used, $bank);
+
 	}
+	fclose($h);
 }
 
 function pretty_file($path) {

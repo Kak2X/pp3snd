@@ -11911,7 +11911,7 @@ SoundDataCmdS_SetSlotField:
 	ld   [hl], e	; and write the arg there
 	ret
 	
-; =============== SoundDataCmd_SetSweep ===============
+; =============== SoundDataCmd_SetVibrato ===============
 ; Sets a new Pulse 1 sweep value OR Vibrato ID.
 ;
 ; FORMAT:
@@ -12042,11 +12042,11 @@ SoundDataCmd_84:
 	ret
 	
 ; =============== SoundDataCmd_IncBaseFreq ===============
-; Increments the base frequency ID by the specified value.
+; Increments the base note/frequency ID by the specified value.
 ;
 ; FORMAT:
 ; - 0: Command ID ($89)
-; - 1: ID Offset
+; - 1: ID Offset (signed)
 SoundDataCmd_89:
 	; Seek HL to the target address
 	ld   h, d
@@ -12088,8 +12088,8 @@ SoundDataCmd_8D:
 	ld   [hl], a		; Write it to the slot
 	ret
 	
-; =============== SoundDataCmd_IncNoiseSweep ===============
-; [TCRF] Increments the noise sweep value.
+; =============== SoundDataCmd_NoiseSweepSingle ===============
+; [TCRF] ; Performs a single noise sweep with the specified value.
 ;
 ; FORMAT:
 ; - 0: Command ID ($8F)
@@ -12163,8 +12163,8 @@ SoundDataCmd_8A:
 	ld   [hl], a		; Save back to iSndChInfo_01
 	ret
 	
-; =============== SoundDataCmd_PlaySnd ===============
-; [TCRF] Plays a new sound effect.
+; =============== SoundDataCmd_PlaySndArg ===============
+; [TCRF] Plays a new sound.
 ;
 ; FORMAT:
 ; - 0: Command ID ($85)
@@ -12192,34 +12192,47 @@ SoundDataCmd_91:
 	ld   [hl], a
 	ret
 
-; =============== SoundDataCmd_IncBaseNote ===============
-; [TCRF] Increases the base note ID, off the following:
-; iSndChInfo_04 += byte23[byte1 - iSndChInfo_24]
+; =============== SoundDataCmd_IncBaseNoteByLoop ===============
+; [TCRF] Alters the base note ID based on the loop count, given a table of offsets.
+;        This can only be used inside conditional loops.
 ;
+; It's accomplished by doing this:
+; iSndChInfo_04 += OffsetTable[LastIndex - iSndChInfo_24]
+;
+; iSndChInfo_24 is the first loop timer.
+; It's set by sound data through snd_var and decrements when snd_djnz targets it.
+;
+; Since iSndChInfo_24 is subtracted to LastIndex, means that the index to the offset
+; table increments over time, until it reaches LastIndex at the last loop.
+; 
 ; FORMAT:
 ; - 0: Command ID ($9C)
-; - 1: Note table index
-; - 2-3: Pointer to a Note ID offset table
+; - 1: Total number of loops.
+;      This is the last index to the table, which will be used on the last loop.
+; - 2-3: Ptr to a table of offsets.
+;        Individual entries are signed and get added to the slot's base note ID.
 SoundDataCmd_9C:
-	
+
 	;
-	; Seek DE to the note ID.
-	; DE = byte23[byte1 - iSndChInfo_24]
+	; Generate the table index.
+	; E = byte1 - iSndChInfo_24
 	;
 	
-	; Seek HL to iSndChInfo_24 
+	; Seek HL to the primary loop counter
 	ld   h, d
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_24
 	ld   l, a
+	; Subtract it to the last index
+	ld   a, e		; A = byte1
+	sub  [hl]		; -= iSndChInfo_24
+	ld   e, a		; to E
 	
-	; Generate the index to the table.
-	; E = byte1 - iSndChInfo_24
-	ld   a, e		; Get byte1, the index
-	sub  [hl]		; Subtract iSndChInfo_24
-	ld   e, a
+	;
+	; Index the offset table with it.
+	; DE = byte23[E]
+	;
 	
-	; Index the note ID offset table byte2-3 is pointing to
 	; E = byte2 + E
 	inc  bc			; Seek to byte2
 	ld   a, [bc]	; Read low byte
@@ -12232,19 +12245,17 @@ SoundDataCmd_9C:
 	ld   d, a		; Save back
 	
 	;
-	; Increment the base note ID by whatever DE is pointing to.
+	; Add the resulting value to the slot's base note ID.
 	;
 	
 	; Seek HL to current note ID
 	ld   a, l
 	add  iSndChInfo_04 - iSndChInfo_24
 	ld   l, a
-	
 	; iSndChInfo_04 += *DE
 	ld   a, [de]		; Read offset
 	add  [hl]			; Add base ID
 	ld   [hl], a		; Save back
-	
 	; Restore pointer
 	ld   d, h
 	ret
@@ -12379,7 +12390,7 @@ SoundDataCmd_94:
 	res  SNDBB_NS, [hl]
 	ret
 	
-; =============== SoundDataCmd_JpByLock ===============
+; =============== SoundDataCmd_JpIfShortInst ===============
 ; Loops the sound slot until SNDBB_1 is set.
 ; Works identically to SoundDataCmd_80 when looping.
 ;
@@ -12499,7 +12510,7 @@ SoundDataCmd_9B:
 	ld   b, [hl]	; B = iSndChInfo_27
 	ret
 	
-; =============== SoundDataCmd_DecFreqOff ===============
+; =============== SoundDataCmd_IncFreqOff ===============
 ; Increments the frequency value offset by the specified amount.
 ; The higher this is, the lower the final frequency will be.
 ;
@@ -12519,8 +12530,9 @@ SoundDataCmd_97:
 	ld   [hl], a	; Save it back to iSndChInfo_1B
 	ret
 	
-; =============== SoundDataCmd_SkipNextIfNotCh ===============
-; [TCRF] Skips the next sound command if the slot's sound channel doesn't match the specified one.
+; =============== SoundDataCmd_IfCh ===============
+; [TCRF] Handles the next command only if the sound channel matches the specified one.
+;        If it isn't, it gets skipped over.
 ;        To work properly, the next command must be a 2-byte one.
 ;
 ; FORMAT:
@@ -12575,7 +12587,11 @@ IF KEEP_PCM
 ;
 ; FORMAT:
 ; - 0: Command ID ($A5)
-; - 1: Pla
+; - 1: Playback speed
+; --- rest from normal note
+; - 2: Note length ID + "Contains extension offset" marker.
+; - 3: Custom note length value [Optional, if \1 is $DE or $EF]
+; - 4: Mid-note instrument extension delay [Optional, if \1 is between $DE-$EE] 
 SoundDataCmd_A5:
 	; A = iSndChInfo_29
 	ldh  a, [hSndChInfoPtrBakLow]
@@ -12634,7 +12650,7 @@ ENDC
 ;
 ; FORMAT:
 ; - 0: Slot preset ID [Optional]
-; - 1: Note ID [Optional, only if the preset lacks a Note ID]
+; - 1: Relative note ID [Optional, only if the preset lacks a Note ID]
 ; - 2: Note length ID + "Contains extension offset" marker.
 ; - 3: Custom note length value [Optional, if \1 is $DE or $EF]
 ; - 4: Mid-note instrument extension delay [Optional, if \1 is between $DE-$EE] 
@@ -12965,7 +12981,7 @@ SoundDataCmd_Note:
 		;
 		; But why twice?
 		;
-		; If only one time is needed to put the values in range, there's an additional parameter telling
+		; If only one time is needed to put the values in range (no underflow), there's an additional parameter telling
 		; when, mid-frame, the instrument data should be "extended" (iSndChInfo_14).
 		;
 		; There is a completely separate branch that handles it, but the code that handles the note length
@@ -13020,7 +13036,7 @@ ENDM
 		ld   a, [bc]		
 		sub  $EF			; Try to force back in range
 		jr   c, .noInstOff	; Underflowed? If so, try again
-		
+		; $EF-$FF
 	.withInstOff:
 		jr   nz, .lenIdx_wi	; A > 0? If so, read from table
 		; Otherwise, treat next arg as length.
@@ -13040,6 +13056,7 @@ ENDM
 		jr   .saveDataPtr
 		
 	.noInstOff:
+		; $DE-$EE
 		; Subtract again! This makes what's it's checking not explicit due to underflow.
 		sub  $DE+$11		; Try to force back in range
 		jr   z, .len0_ni	; A == 0? If so, treat next arg as length
@@ -14781,7 +14798,7 @@ Sound_DoQueue:
 			; ($D000-7 v $D008-F)
 			;
 			ld   a, [hl]		; A = Slot value
-			cp   SNDCMD_ID_BASE ; A < $F0?
+			cp   SNDCMD_START ; A < $F0?
 			set  3, l			; (Switch to the respective argument, in the other queue)
 			jr   c, .song 		; If so, it's a sound ID
 		.cmd:
@@ -14796,7 +14813,7 @@ Sound_DoQueue:
 			add  a				; DE = Command ID * 2
 			ld   e, a
 			ld   d, $00
-			ld   hl, Sound_CmdPtrTable - LOW(SNDCMD_ID_BASE * 2)	
+			ld   hl, Sound_CmdPtrTable - LOW(SNDCMD_START * 2)	
 			add  hl, de			; Add table base
 			ldi  a, [hl]		; Read out pointer
 			ld   h, [hl]
@@ -14918,10 +14935,9 @@ SoundCmd_StopAll:
 	call Sound_DisablePCM
 	jp   Sound_UpdateRegs
 	
-; =============== Sound_ReqPlayId ===============
-; Command ID: $8B
-;
+; =============== Sound_ReqPlayId / SoundDataCmd_PlaySnd ===============
 ; Requests playback for a new sound ID, adding it to the end of the queue.
+; This does not set any arguments.
 ; FORMAT / IN
 ; - 0: Command ID ($8B)
 ; - A / 1: Sound ID to play
@@ -14989,6 +15005,7 @@ Sound_ReqPlayId:
 			
 ; =============== Sound_ReqPlayIdWithArg ===============
 ; Requests playback for a new sound ID with arguments.
+; This is performed in an "unsafe" way that doesn't check if the queue is full.
 ; IN
 ; - B: Sound ID to play	
 ; - C: Arguments	
@@ -15111,7 +15128,7 @@ Sound_CmdPtrTable:
 	dw SoundCmd_ResetAll            ; $F1
 	dw SoundCmd_StopAll             ; $F2
 	dw SoundCmd_FadeOut             ; $F3
-	dw SoundCmd_StartNewFadeIn;X    ; $F4
+	dw SoundCmd_FadeInStartNew;X    ; $F4
 	dw SoundCmd_FadeIn;X            ; $F5
 	dw SoundCmd_Pause               ; $F6
 	dw SoundCmd_Unpause             ; $F7
@@ -15152,13 +15169,13 @@ SoundCmd_FadeOut:
 	ld   [wSnd_D011_Flags], a
 	ret
 	
-;================ SoundCmd_StartNewFadeIn ================
+;================ SoundCmd_FadeInStartNew ================
 ; [TCRF] Not used.
 ; Command ID: $F4
 ; Starts a new song while doing a full fade-in, starting from zero volume to max volume.
 ; IN
 ; - C: Sound ID
-SoundCmd_StartNewFadeIn:
+SoundCmd_FadeInStartNew:
 	; Start the new song
 	call Sound_StartNew
 	; Start the fade-in
@@ -15184,7 +15201,7 @@ SoundCmd_FadeIn:
 	ret  z
 	
 .setFade:
-	; Delete the existing fade out, in case we came here from SoundCmd_StartNewFadeIn
+	; Delete the existing fade out, in case we came here from SoundCmd_FadeInStartNew
 	and  $FF^SNDF1_FADEOUT
 	; Enable fade-in
 	or   SNDF1_FADE

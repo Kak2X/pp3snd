@@ -512,6 +512,37 @@ DEF INSTR_7D EQU $7D
 DEF INSTR_7E EQU $7E
 DEF INSTR_7F EQU $7F
 
+DEF PRESET_00 EQU $C0
+DEF PRESET_01 EQU $C1
+DEF PRESET_02 EQU $C2
+DEF PRESET_03 EQU $C3
+DEF PRESET_04 EQU $C4
+DEF PRESET_05 EQU $C5
+DEF PRESET_06 EQU $C6
+DEF PRESET_07 EQU $C7
+DEF PRESET_08 EQU $C8
+DEF PRESET_09 EQU $C9
+
+	;  VAL   |  ID | ENCODED IN COMMAND's byte1
+DEF NOTELEN_CUSTOM EQU $00
+DEF NOTELEN_01 EQU $01 ;; ;;, ;;| $F0 or $DF
+DEF NOTELEN_02 EQU $02 ;; ;;, ;;| $F1 or $E0
+DEF NOTELEN_03 EQU $03 ;; ;;, ;;| $F2 or $E1
+DEF NOTELEN_04 EQU $04 ;; ;;, ;;| $F3 or $E2
+DEF NOTELEN_06 EQU $05 ;; ;;, ;;| $F4 or $E3
+DEF NOTELEN_08 EQU $06 ;; ;;, ;;| $F5 or $E4
+DEF NOTELEN_0C EQU $07 ;; ;;, ;;| $F6 or $E5
+DEF NOTELEN_10 EQU $08 ;; ;;, ;;| $F7 or $E6
+DEF NOTELEN_18 EQU $09 ;; ;;, ;;| $F8 or $E7
+DEF NOTELEN_20 EQU $0A ;; ;;, ;;| $F9 or $E8
+DEF NOTELEN_30 EQU $0B ;; ;;, ;;| $FA or $E9
+DEF NOTELEN_09 EQU $0C ;; ;;, ;;| $FB or $EA
+DEF NOTELEN_12 EQU $0D ;; ;;, ;;| $FC or $EB
+DEF NOTELEN_1E EQU $0E ;; ;;, ;;| $FD or $EC
+DEF NOTELEN_24 EQU $0F ;; ;;, ;;| $FE or $ED
+DEF NOTELEN_2A EQU $10 ;; ;;, ;;| $FF or $EE
+DEF NOTELENARG_LENGTH EQU $11 ; Range of valid values for the note length parameter (SNDDATACMD_NOTE & supersets)
+
 ; iSndChInfo_06
 DEF SNDCH_PULSE1 EQU $00
 DEF SNDCH_PULSE2 EQU $01
@@ -581,6 +612,7 @@ DEF SNDB_FADEOUT EQU 1 << SNDBB_FADEOUT
 DEF SNDB_FADE EQU 1 << SNDBB_FADE
 DEF SNDB_NSUP EQU 1 << SNDBB_NSUP
 DEF SNDB_NS EQU 1 << SNDBB_NS
+DEF SNDB_NSDOWN EQU 0
 
 ; iSndChInfo_0C flags
 DEF SNDCB_PITCHBEND EQU 0 ; Enable pitch bend
@@ -593,7 +625,6 @@ DEF SND14_END  EQU 1 << SND14B_END
 
 
 ; SOUND VIBRATO/INSTRUMENT DATA COMMANDS
-
 DEF SECB_SPEC_START       EQU 7
 DEF SNDENVCMD_LOOP        EQU $80
 DEF SNDENVCMD_LOOPFAR     EQU $81
@@ -602,33 +633,651 @@ DEF SNDENVCMD_LOOPCOND    EQU $83
 DEF SNDENVCMD_LOOPFARCOND EQU $84
 
 ; SOUND ID COMMANDS
-DEF SNDCMD_ID_BASE EQU $F0
+DEF SNDCMD_START           EQU $F0
+DEF SNDCMD_RESET           EQU $F1
+DEF SNDCMD_STOP            EQU $F2
+DEF SNDCMD_FADEOUT         EQU $F3
+DEF SNDCMD_FADEIN_STARTNEW EQU $F4
+DEF SNDCMD_FADEIN          EQU $F5
+DEF SNDCMD_PAUSE           EQU $F6
+DEF SNDCMD_UNPAUSE         EQU $F7
 
 ; SOUND DATA COMMANDS
+
+
+; =============== snd_jp ===============
+; Command: SoundDataCmd_Jp
+;
+; Loops the song to the specified location.
+;
+; IN
+; - 1: Target location
+MACRO snd_jp
+	db SNDDATACMD_JP
+	dw \1
+ENDM
+
+; =============== snd_djnz ===============
+; Command: SoundDataCmd_JpByTimer
+;
+; Decrements the specified counter on the slot struct.
+; It will loop the song akin to snd_jp until the counter becomes 0.
+;
+; IN
+; - 1: Slot struct offset
+;      This contains the timer, should use iSndChInfo_Work*
+; - 2: Target location if the jump is taken
+MACRO snd_djnz
+	db SNDDATACMD_DJNZ, \1
+	dw \2
+ENDM
+
+; =============== snd_end ===============
+; Command: SoundDataCmd_End
+;
+; Ends the sound channel data without looping.
+MACRO snd_end
+	db SNDDATACMD_END
+ENDM
+
+; =============== snd_vibrato ===============
+; Command: SoundDataCmd_SetVibrato
+;
+; Sets a new vibrato.
+; IN
+; - 1: Vibrato ID (VIBRATO_*)
+MACRO snd_vibrato
+	db SNDDATACMD_VIBRATO, \1
+ENDM
+
+; =============== snd_pulse1_sweep ===============
+; Command: SoundDataCmd_SetVibrato
+;
+; Sets a Pulse 1 sweep value.
+; IN
+; - 1: NR10 sweep data
+MACRO snd_pulse1_sweep
+	db SNDDATACMD_VIBRATO, SNDSW_SET|\1
+ENDM
+
+; =============== snd_pitchbend ===============
+; Command: SoundDataCmd_PitchBend
+;
+; Enables/disables pitch bends.
+;
+; When this command is used to enable them, two more notes need to be played to start the first one.
+; First note for the source frequency, the second for the destination.
+;
+; From the second note onwards, the current note counts as the source frequency.
+;
+; IN
+; - 1: Pitch bend speed.
+;      If 0, pitch bends are disabled.
+MACRO snd_pitchbend
+	db SNDDATACMD_PITCH_BEND, \1
+ENDM
+
+; =============== snd_playsndarg ===============
+; Command: SoundDataCmd_PlaySndArg
+;
+; Plays a new sound with the specified arguments.
+; This internally uses Sound_ReqPlayIdWithArg, which adds to the queue without checking for bounds.
+;
+; IN
+; - 1: Sound ID
+; - 2: Argument
+MACRO snd_playsndarg
+	db SNDDATACMD_PLAYSNDARG, \1, \2
+ENDM
+
+; =============== snd_end_saveid ===============
+; Command: SoundDataCmd_EndSaveID
+;
+; Like snd_end, except it also saves the song's Sound ID to wSndSavedSoundID.
+MACRO snd_end_saveid
+	db SNDDATACMD_END_SAVEID
+ENDM
+
+; =============== snd_vol ===============
+; Command: SoundDataCmd_SetVol
+;
+; Sets a new base volume.
+; IN
+; - 1: Volume ($0-$F)
+MACRO snd_vol
+	db SNDDATACMD_VOL, \1
+ENDM
+
+; =============== snd_instrument ===============
+; Command: SoundDataCmd_SetInstrument
+;
+; Sets a new instrument.
+; IN
+; - 1: Instrument ID (INSTR_*)
+MACRO snd_instrument
+	db SNDDATACMD_INSTRUMENT, \1
+ENDM
+
+; =============== snd_nrx2 ===============
+; Command: SoundDataCmd_SetInstrument
+;
+; Sets new envelope data.
+; IN
+; - 1+: <nrx2 arguments>
+MACRO snd_nrx2
+	db SNDDATACMD_INSTRUMENT
+	nrx2 \#
+ENDM
+
+
+; =============== snd_inc_base_note ===============
+; Command: SoundDataCmd_IncBaseFreq
+;
+; Alters the base note ID by the specified value.
+;
+; IN
+; - 1: Value (signed)
+;      If $80, it will zero out the note ID.
+MACRO snd_inc_base_note
+	db SNDDATACMD_INC_BASE_NOTE, \1
+ENDM
+
+; =============== snd_inc_vol ===============
+; Command: SoundDataCmd_IncVol
+;
+; Increments the slot volume by the specified amount.
+;
+; IN
+; - 1: Volume offset (signed)
+MACRO snd_inc_vol
+	db SNDDATACMD_INC_VOL, \1
+ENDM
+
+; =============== snd_playsnd ===============
+; Command: SoundDataCmd_PlaySnd
+;
+; Plays a new sound.
+; This internally uses Sound_ReqPlayId, which doesn't set any arguments but performs bound checks on the queue.
+;
+; IN
+; - 1: Sound ID
+; - 2: Argument
+MACRO snd_playsnd
+	db SNDDATACMD_PLAYSND, \1
+ENDM
+
+; =============== snd_nop ===============
+; Command: SoundDataCmd_Nop
+MACRO snd_nop
+	db SNDDATACMD_NOP
+ENDM
+
+; =============== snd_var ===============
+; Command: SoundDataCmd_SetVar
+;
+; Writes an arbitrary value to the specified slot struct.
+; This is also used to write loop timers, for use with snd_djnz
+;
+; IN
+; - 1: Struct offset (iSndChInfo_*)
+; - 2: Value to write
+MACRO snd_var
+	db SNDDATACMD_VAR, \1, \2
+ENDM
+
+; =============== snd_noise_sweep ===============
+; Command: SoundDataCmd_SetNoiseSweep
+;
+; Sets a new noise sweep value.
+;
+; IN
+; - 1: Clock shift increment (0-2 or 8)
+; - 2: Clock divider increment (0 or 1)
+; - 3: LFSR toggle (SBDCH4_LFSR7)
+;      If set, toggles between 15-bit and 7-bit modes.
+MACRO snd_noise_sweep
+	db SNDDATACMD_NOISE_SWEEP, (\1 << 4)|\2|\3
+ENDM
+
+; =============== snd_noise_sweep_single ===============
+; Command: SoundDataCmd_NoiseSweepSingle
+;
+; Performs a single noise sweep with the specified value.
+; This does not alter the sweep value currently saved to the slot through snd_noise_sweep.
+;
+; IN
+; - 1: Clock shift increment (0-2 or 8)
+; - 2: Clock divider increment (0 or 1)
+; - 3: LFSR toggle (SBDCH4_LFSR7)
+;      If set, toggles between 15-bit and 7-bit modes.
+MACRO snd_noise_sweep_single
+	db SNDDATACMD_NOISE_SWEEP_SINGLE, (\1 << 4)|\2|\3
+ENDM
+
+; =============== snd_status ===============
+; Command: SoundDataCmd_SetStatus
+;
+; Sets a new slot status bitmask.
+;
+; IN
+; - 1: Status flags	
+MACRO snd_status
+	db SNDDATACMD_STATUS, \1
+ENDM
+
+; =============== snd_orsaveid ===============
+; Command: SoundDataCmd_OrSnd
+;
+; Merges the specified value into wSndSavedSoundID.
+;
+; IN
+; - 1: Status flags	
+MACRO snd_orsaveid
+	db SNDDATACMD_ORSAVEID, \1
+ENDM
+
+; =============== snd_noise_freq ===============
+; Command: SoundDataCmd_SetNoiseSweep
+;
+; Sets a new noise frequency value.
+;
+; IN
+; - 1: Clock shift
+; - 2: Clock divider
+; - 3: LFSR mode (SBDCH4_LFSR7)
+MACRO snd_noise
+	db SNDDATACMD_NOISE_FREQ, (\1 << 4)|\2|\3
+ENDM
+
+; =============== snd_fade ===============
+; Command: SoundDataCmd_SlotFade
+;
+; Starts or stops a fade for the current slot.
+;
+; IN
+; - 1: Fade type (SSF_FADEOUT/SSF_FADEIN)
+; - 2: Target volume
+; - 3: Fade speed. 
+;      If 0, the fade is stopped.
+MACRO snd_fade
+	db SNDDATACMD_FADE, \1|\2, \3
+ENDM
+
+
+; =============== snd_note_slide ===============
+; Command: SoundDataCmd_NoteSlide
+;
+; Enables/disables portamento.
+;
+; IN
+; - 1: Direction (SNDB_NSUP/SNDB_NSDOWN)
+;      This is shifted up by 1 compared to the internal status bit.
+; - 2: Speed ($00-$7F)
+;      If $00, portamento is disabled.
+MACRO snd_note_slide
+	db SNDDATACMD_NOTE_SLIDE, (\1 << 1)|\2
+ENDM
+
+; =============== snd_jp_if_short_inst ===============
+; Command: SoundDataCmd_JpIfShortInst
+;
+; Loops the song to the specified location when short instruments are enabled.
+;
+; IN
+; - 1: Target location
+MACRO snd_jp_if_short_inst
+	db SNDDATACMD_JP_SHORT_INST
+	dw \1
+ENDM
+
+; =============== snd_toggle_short_inst ===============
+; Command: SoundDataCmd_ToggleShortInst
+;
+; Toggles short instruments.
+MACRO snd_toggle_short_inst
+	db SNDDATACMD_TOGGLE_SHORT_INST
+ENDM
+
+; =============== snd_call ===============
+; Command: SoundDataCmd_Call
+;
+; Calls the data subroutine. Cannot be nested.
+;
+; IN
+; - 1: Target location
+MACRO snd_call
+	db SNDDATACMD_CALL
+	dw \1
+ENDM
+
+; =============== snd_ret ===============
+; Command: SoundDataCmd_Ret
+;
+; Returns from the called data subroutine.
+MACRO snd_ret
+	db SNDDATACMD_RET
+ENDM
+
+; =============== snd_speed ===============
+; Command: SoundDataCmd_SetSpeed
+;
+; Sets a new playback speed.
+;
+; IN
+; - 1: Playback speed
+MACRO snd_speed
+	db SNDDATACMD_SPEED, \1
+ENDM
+
+; =============== snd_inc_freq_offset ===============
+; Command: SoundDataCmd_IncFreqOff
+;
+; Increments the frequency value offset by the specified amount.
+; The higher this is, the lower the final frequency will be.
+;
+; IN
+; - 1: Value (signed)
+MACRO snd_inc_freq_offset
+	db SNDDATACMD_INC_FREQ_OFFSET, \1
+ENDM
+
+
+; =============== snd_ch ===============
+; Command: SoundDataCmd_SetCh
+;
+; Sets a new channel ID.
+;
+; IN
+; - 1: Channel ID (SNDCH_*)
+MACRO snd_ch
+	db SNDDATACMD_CH, \1
+ENDM
+
+; =============== snd_inc_base_note_by_loop ===============
+; Command: SoundDataCmd_IncBaseNoteByLoop
+;
+; Alters the base note ID by the specified *values*.
+; The one picked depends on the primary loop counter:
+; \2[\1 - iSndChInfo_24]
+;
+; IN
+; - 1: Last Index, will be picked when the counter reaches 0.
+; - 2: Ptr to table of note offsets
+MACRO snd_inc_base_note_by_loop
+	db SNDDATACMD_INC_BASE_NOTE_BY_LOOP, \1
+	dw \2
+ENDM
+
+; =============== snd_instrument_extimer ===============
+; Command: SoundDataCmd_SetInstExt
+;
+; Sets a new timer offset for the mid-note instrument change.
+;
+; IN
+; - 1: Value
+MACRO snd_instrument_extimer
+	db SNDDATACMD_INSTRUMENT_EXT, \1
+ENDM
+
+; =============== snd_ifch ===============
+; Command: SoundDataCmd_IfCh
+;
+; Handles the next command only if the sound channel matches the specified one.
+; If it isn't, it gets skipped over.
+; To work properly, the next command must be a 2-byte one.
+;
+; IN
+; - 1: Channel ID (SNDCH_*)
+MACRO snd_ifch
+	db SNDDATACMD_IFCH, \1
+ENDM
+
+; =============== snd_jpch ===============
+; Command: SoundDataCmd_JpCh
+;
+; Loops the song to the specified location if the sound channel matches the specified one.
+;
+; IN
+; - 1: Channel ID (SNDCH_*)
+; - 2: Target location
+MACRO snd_jpch
+	db SNDDATACMD_JPCH, \1
+	dw \2
+ENDM
+
+; =============== snd_duty ===============
+; Command: SoundDataCmd_SetDuty
+;
+; Sets a new length/duty sweep.
+; Do not use for the wave channel.
+;
+; IN
+; - 1: Duty (SNDDUTY_*)
+; - 2: Initial length timer
+MACRO snd_duty
+	db SNDDATACMD_DUTY
+	nrx1 \1,\2
+ENDM
+
+; =============== snd_wave ===============
+; Command: SoundDataCmd_SetDuty
+;
+; Sets new wave data. For the wave channel-only.
+;
+; IN
+; - 1: Wave ID
+MACRO snd_wave
+	db SNDDATACMD_DUTY, \1
+ENDM
+
+; =============== snd_pan ===============
+; Command: SoundDataCmd_StereoPan
+;
+; Sets stereo panning.
+;
+; IN
+; - 1: Stereo Panning flags, as NR51 bits.
+MACRO snd_pan
+	db SNDDATACMD_PAN, \1
+ENDM
+
+; =============== snd_sets3 ===============
+; Command: SoundDataCmd_SetS3
+;
+; Sets the otherwise unused flag SNDX_3.
+MACRO snd_sets3
+	db SNDDATACMD_SETS3
+ENDM
+
+; =============== snd_clrs3 ===============
+; Command: SoundDataCmd_ClrS3
+;
+; Clears the otherwise unused flag SNDX_3.
+MACRO snd_clrs3
+	db SNDDATACMD_CLRS3
+ENDM
+
+; =============== snd_playpcm ===============
+; Command: SoundDataCmd_PlayPcm
+;
+; Plays a new PCM sample.
+;
+; IN
+; - 1: PCM Sample ID
+; - 2: Playback speed
+; - 3+: <_snd_note parameters>
+MACRO snd_playpcm
+	db SNDDATACMD_PLAYPCM, \1, \2
+	_snd_note \#
+ENDM
+
+; =============== snd_playslotpcm ===============
+; Command: SoundDataCmd_PlayPcm
+;
+; Plays the PCM sample previously assigned to the slot.
+;
+; IN
+; - 1: Playback speed
+; - 2+: <_snd_note parameters>
+MACRO snd_playslotpcm
+	db SNDDATACMD_PLAYSLOTSND, \1
+	_snd_note \#
+ENDM
+
+; =============== snd_note ===============
+; Command: SoundDataCmd_Note
+;
+; Standard octave.
+;
+; IN
+; - 1: Relative note ID ($00-$7F)
+; - 2: Note length ID (NOTELEN_*) [Optional]
+; - 3: Custom note length value [If NOTELEN_CUSTOM is set]
+; - 4: Mid-note instrument extension delay [Optional]
+MACRO snd_note
+	db \1
+	SHIFT
+	_snd_note \#
+ENDM
+
+; =============== snd_noteex ===============
+; Command: SoundDataCmd_NoteEx
+;
+; Standard octave with preset settings.
+; Use when the preset includes a Note ID.
+;
+; IN
+; - 1: Preset ID
+; - 2: Note length ID (NOTELEN_*) [Optional]
+; - 3: Custom note length value [If NOTELEN_CUSTOM is set]
+; - 4: Mid-note instrument extension delay [Optional]
+MACRO snd_noteex
+	db \1
+	SHIFT
+	_snd_note \#
+ENDM
+
+; =============== snd_noteex2 ===============
+; Command: SoundDataCmd_NoteEx
+;
+; Standard octave with preset settings.
+; Use when the preset doesn't include a Note ID.
+;
+; IN
+; - 1: Preset ID
+; - 2: Relative note ID ($00-$7F)
+;      If $00, it will mute the sound channel.
+; - 3: Note length ID (NOTELEN_*) [Optional]
+; - 4: Custom note length value [If NOTELEN_CUSTOM is set]
+; - 5: Mid-note instrument extension delay [Optional]
+MACRO snd_noteex2
+	db \1
+	SHIFT
+	snd_note \#
+ENDM
+
+; =============== snd_samenote ===============
+; Command: SoundDataCmd_NoteEx.noNote
+;
+; Changes the existing note settings.
+;
+; IN
+; - 1+: <_snd_note parameters>
+MACRO snd_samenote
+	_snd_note \#
+ENDM
+
+; =============== _snd_note ===============
+; Shared arguments for note commands, do not use directly.
+; - 1: Note length ID (NOTELEN_*) [Optional]
+; - 2: Custom note length value [If NOTELEN_CUSTOM is set]
+; - 3: Mid-note instrument extension delay [Optional]
+MACRO _snd_note
+	; "is not constant at assembly time"
+	IF _NARG > 0
+		IF \1 == NOTELEN_CUSTOM
+			IF _NARG > 2
+				db SNDDATACMD_NOTELENARG_WITHMID + \1, \2, \3
+			ELSE
+				db SNDDATACMD_NOTELENARG_NOMID + \1, \2
+			ENDC
+		ELSE
+			IF _NARG > 1
+				db SNDDATACMD_NOTELENARG_WITHMID + \1, \2
+			ELSE
+				db SNDDATACMD_NOTELENARG_NOMID + \1
+			ENDC
+		ENDC
+	ENDC
+ENDM
+
+DEF SNDDATACMD_NOTE_START          EQU $00
+DEF SNDDATACMD_NOTE_END            EQU $7F
+
+DEF SNDDATACMDB_SPEC_START         EQU 7
+DEF SNDDATACMD_SPEC_START          EQU $80
+DEF SNDDATACMD_JP                  EQU $80
+DEF SNDDATACMD_DJNZ                EQU $81
+DEF SNDDATACMD_END                 EQU $82
+DEF SNDDATACMD_VIBRATO             EQU $83
+DEF SNDDATACMD_PITCH_BEND          EQU $84
+DEF SNDDATACMD_PLAYSNDARG          EQU $85
+DEF SNDDATACMD_END_SAVEID          EQU $86
+DEF SNDDATACMD_VOL                 EQU $87
+DEF SNDDATACMD_INSTRUMENT          EQU $88
+DEF SNDDATACMD_INC_BASE_NOTE       EQU $89
+DEF SNDDATACMD_INC_VOL             EQU $8A
+DEF SNDDATACMD_PLAYSND             EQU $8B
+DEF SNDDATACMD_NOP                 EQU $8C
+DEF SNDDATACMD_VAR                 EQU $8D
+DEF SNDDATACMD_NOISE_SWEEP         EQU $8E
+DEF SNDDATACMD_NOISE_SWEEP_SINGLE  EQU $8F
+DEF SNDDATACMD_STATUS              EQU $90
+DEF SNDDATACMD_ORSAVEID            EQU $91
+DEF SNDDATACMD_NOISE_FREQ          EQU $92
+DEF SNDDATACMD_FADE                EQU $93
+DEF SNDDATACMD_NOTE_SLIDE          EQU $94
+DEF SNDDATACMD_JP_SHORT_INST       EQU $95
+DEF SNDDATACMD_SPEED               EQU $96
+DEF SNDDATACMD_INC_FREQ_OFFSET     EQU $97
+DEF SNDDATACMD_CH                  EQU $98
+DEF SNDDATACMD_TOGGLE_SHORT_INST   EQU $99
+DEF SNDDATACMD_CALL                EQU $9A
+DEF SNDDATACMD_RET                 EQU $9B
+DEF SNDDATACMD_INC_BASE_NOTE_BY_LOOP EQU $9C
+DEF SNDDATACMD_INSTRUMENT_EXT      EQU $9D ; SNDDATACMD_SHORT_INST_LEN ???
+DEF SNDDATACMD_IFCH                EQU $9E
+DEF SNDDATACMD_JPCH                EQU $9F
+DEF SNDDATACMD_DUTY                EQU $A0
+DEF SNDDATACMD_PAN                 EQU $A1
+DEF SNDDATACMD_SETS3               EQU $A2
+DEF SNDDATACMD_CLRS3               EQU $A3
+DEF SNDDATACMD_PLAYPCM             EQU $A4
+DEF SNDDATACMD_PLAYSLOTPCM         EQU $A5
+DEF SNDDATACMD_SPEC_END            EQU $A5
+
+DEF SNDDATACMD_NOTEPRESET_START    EQU $C0
+DEF SNDDATACMD_NOTEPRESET_END      EQU $C9
+
+DEF SNDDATACMD_SAMENOTE_START      EQU $100-(NOTELENARG_LENGTH*2) ; $DE
+DEF SNDDATACMD_SAMENOTE_END        EQU $100-1 ; $FF
+DEF SNDDATACMD_NOTELENARG_NOMID    EQU $100-(NOTELENARG_LENGTH*2)
+DEF SNDDATACMD_NOTELENARG_WITHMID  EQU $100-(NOTELENARG_LENGTH*1)
 
 ; SoundDataCmd_SlotFade
 DEF SSFB_FADEOUT EQU 7 ; If set, it's a fade out
 DEF SSF_FADEOUT EQU 1 << SSFB_FADEOUT
+DEF SSF_FADEIN EQU 0
 
 ; SoundDataCmd_NoteSlide
 DEF SNSB_UP EQU 7 ; Portamento direction (If set, up)
 DEF SNS_UP EQU 1 << SNSB_UP
 
 
-DEF NOTELENARG_LENGTH EQU $11 ; Range of valid values for the note length parameter (SNDDATACMD_NOTE & supersets)
 
 
 
 
-DEF SNDDATACMD_NOTE_START     EQU $00
-DEF SNDDATACMD_NOTE_END       EQU $7F
-DEF SNDDATACMDB_SPEC_START    EQU 7
-DEF SNDDATACMD_SPEC_START     EQU $80
-DEF SNDDATACMD_SPEC_END       EQU $A5
-DEF SNDDATACMD_NOTEPRESET_START   EQU $C0
-DEF SNDDATACMD_NOTEPRESET_END     EQU $C9
-DEF SNDDATACMD_SAMENOTE_START EQU $100-(NOTELENARG_LENGTH*2) ; $DE
-DEF SNDDATACMD_SAMENOTE_END   EQU $100-1 ; $FF
 
 ; Sound Preset Flags
 DEF SNDNPRB_USECH4SWEEP EQU 7 ; Use byte3 as Noise sweep data, otherwisw it's used as Pulse 1 sweep
@@ -738,18 +1387,18 @@ DEF iSndChInfo_20 EQU $20 ; Noise channel frequency. [wNR43]
 DEF iSndChInfo_21 EQU $21 ; Fade speed
 DEF iSndChInfo_22 EQU $22 ; Fade timer
 DEF iSndChInfo_23 EQU $23 ; Fade target volume
-DEF iSndChInfo_24 EQU $24 ; Negative offset when increasing the base note ID through SoundDataCmd_9C.
-DEF iSndChInfo_25 EQU $25 ; 
+DEF iSndChInfo_24 EQU $24 ; Loop timer #0. Also used as negative offset in SoundDataCmd_9C, for loop-based frequency increases.
+DEF iSndChInfo_25 EQU $25 ; Loop timer #1
 DEF iSndChInfo_26 EQU $26 ; Data Pointer return address, low byte.
 DEF iSndChInfo_27 EQU $27 ; Data Pointer return address, high byte.
 DEF iSndChInfo_28 EQU $28 ; Data Pointer, Bank Number
 DEF iSndChInfo_29 EQU $29 ; Slot-specific PCM sample ID. 
-DEF iSndChInfo_2A EQU $2A ; 
-DEF iSndChInfo_2B EQU $2B ; 
-DEF iSndChInfo_2C EQU $2C ; 
-DEF iSndChInfo_2D EQU $2D ; 
-DEF iSndChInfo_2E EQU $2E ; 
-DEF iSndChInfo_2F EQU $2F ; 
+DEF iSndChInfo_2A EQU $2A ; iSndChInfo_Work2A ???
+DEF iSndChInfo_2B EQU $2B ; iSndChInfo_Work2B ???
+DEF iSndChInfo_2C EQU $2C ; iSndChInfo_Work2C ???
+DEF iSndChInfo_2D EQU $2D ; iSndChInfo_Work2D ???
+DEF iSndChInfo_2E EQU $2E ; iSndChInfo_Work2E ???
+DEF iSndChInfo_2F EQU $2F ; iSndChInfo_Work2F ???
 
 SECTION "Hardware", HRAM[$FF90]
 hROMBank                  :db     ; EQU $FF90

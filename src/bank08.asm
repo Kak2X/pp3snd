@@ -48,1802 +48,945 @@ SndHeader_01:
 	dw SndData_01_Ch4 ; Data pointer
 	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
-SndData_01_Ch3: db $A0
-L084032: db $09
-L084033: db $00
-L084034: db $EA
-L084035: db $1E
-L084036: db $DE
-L084037: db $03
-L084038: db $8A
-L084039: db $FB
-L08403A: db $97
-L08403B: db $FF
-L08403C: db $1E
-L08403D: db $E1
-L08403E: db $8A
-L08403F: db $05
-L084040: db $97
-L084041: db $01
-L084042: db $22
-L084043: db $DE
-L084044: db $03
-L084045: db $8A
-L084046: db $FB
-L084047: db $97
-L084048: db $FF
-L084049: db $22
-L08404A: db $E1
-L08404B: db $8A
-L08404C: db $05
-L08404D: db $97
-L08404E: db $01
-L08404F: db $25
-L084050: db $E1
-L084051: db $27
-L084052: db $EA
-L084053: db $2A
-L084054: db $DE
-L084055: db $03
-L084056: db $8A
-L084057: db $FB
-L084058: db $88
-L084059: db $00
-L08405A: db $97
-L08405B: db $FF
-L08405C: db $2A
-L08405D: db $DE
-L08405E: db $06
-L08405F: db $8A
-L084060: db $05
-L084061: db $88
-L084062: db $00
-L084063: db $97
-L084064: db $01
-L084065: db $27
-L084066: db $E3
-L084067: db $25
-L084068: db $EA
-L084069: db $22
-L08406A: db $DE
-L08406B: db $03
-L08406C: db $8A
-L08406D: db $FB
-L08406E: db $88
-L08406F: db $00
-L084070: db $97
-L084071: db $FF
-L084072: db $22
-L084073: db $DE
-L084074: db $06
-L084075: db $8A
-L084076: db $05
-L084077: db $88
-L084078: db $00
-L084079: db $97
-L08407A: db $01
-L08407B: db $25
-L08407C: db $E3
-L08407D: db $23
-L08407E: db $23
-L08407F: db $E1
-L084080: db $23
-L084081: db $00
-L084082: db $22
-L084083: db $00
-L084084: db $20
-L084085: db $1E
-L084086: db $DE
-L084087: db $06
-L084088: db $8A
-L084089: db $FB
-L08408A: db $88
-L08408B: db $00
-L08408C: db $97
-L08408D: db $FF
-L08408E: db $1E
-L08408F: db $DE
-L084090: db $03
-L084091: db $8A
-L084092: db $05
-L084093: db $88
-L084094: db $00
-L084095: db $97
-L084096: db $01
-L084097: db $1E
-L084098: db $DE
-L084099: db $03
-L08409A: db $8A
-L08409B: db $FB
-L08409C: db $97
-L08409D: db $FF
-L08409E: db $1E
-L08409F: db $E1
-L0840A0: db $8A
-L0840A1: db $05
-L0840A2: db $97
-L0840A3: db $01
-L0840A4: db $22
-L0840A5: db $DE
-L0840A6: db $03
-L0840A7: db $8A
-L0840A8: db $FB
-L0840A9: db $97
-L0840AA: db $FF
-L0840AB: db $22
-L0840AC: db $E1
-L0840AD: db $8A
-L0840AE: db $05
-L0840AF: db $97
-L0840B0: db $01
-L0840B1: db $25
-L0840B2: db $E1
-L0840B3: db $27
-L0840B4: db $EA
-L0840B5: db $2A
-L0840B6: db $DE
-L0840B7: db $03
-L0840B8: db $8A
-L0840B9: db $FB
-L0840BA: db $88
-L0840BB: db $00
-L0840BC: db $97
-L0840BD: db $FF
-L0840BE: db $2A
-L0840BF: db $DE
-L0840C0: db $06
-L0840C1: db $8A
-L0840C2: db $05
-L0840C3: db $88
-L0840C4: db $00
-L0840C5: db $97
-L0840C6: db $01
-L0840C7: db $27
-L0840C8: db $E3
-L0840C9: db $25
-L0840CA: db $EA
-L0840CB: db $22
-L0840CC: db $DE
-L0840CD: db $03
-L0840CE: db $8A
-L0840CF: db $FB
-L0840D0: db $97
-L0840D1: db $FF
-L0840D2: db $22
-L0840D3: db $E1
-L0840D4: db $8A
-L0840D5: db $05
-L0840D6: db $97
-L0840D7: db $01
-L0840D8: db $23
-L0840D9: db $DE
-L0840DA: db $03
-L0840DB: db $8A
-L0840DC: db $FB
-L0840DD: db $97
-L0840DE: db $FF
-L0840DF: db $23
-L0840E0: db $E1
-L0840E1: db $8A
-L0840E2: db $05
-L0840E3: db $97
-L0840E4: db $01
-L0840E5: db $24
-L0840E6: db $E1
-L0840E7: db $25
-L0840E8: db $DE
-L0840E9: db $03
-L0840EA: db $8A
-L0840EB: db $FB
-L0840EC: db $88
-L0840ED: db $00
-L0840EE: db $97
-L0840EF: db $FF
-L0840F0: db $25
-L0840F1: db $DE
-L0840F2: db $06
-L0840F3: db $8A
-L0840F4: db $05
-L0840F5: db $88
-L0840F6: db $00
-L0840F7: db $97
-L0840F8: db $01
-L0840F9: db $00
-L0840FA: db $DE
-L0840FB: db $0F
-L0840FC: db $A0
-L0840FD: db $09
-L0840FE: db $88
-L0840FF: db $30
-L084100: db $00
-L084101: db $E3
-L084102: db $31
-L084103: db $DE
-L084104: db $03
-L084105: db $8A
-L084106: db $FB
-L084107: db $97
-L084108: db $FF
-L084109: db $31
-L08410A: db $E1
-L08410B: db $8A
-L08410C: db $05
-L08410D: db $97
-L08410E: db $01
-L08410F: db $31
-L084110: db $DE
-L084111: db $06
-L084112: db $8A
-L084113: db $FB
-L084114: db $97
-L084115: db $FF
-L084116: db $31
-L084117: db $E1
-L084118: db $8A
-L084119: db $05
-L08411A: db $97
-L08411B: db $01
-L08411C: db $31
-L08411D: db $EA
-L08411E: db $2F
-L08411F: db $E3
-L084120: db $2E
-L084121: db $2F
-L084122: db $31
-L084123: db $DE
-L084124: db $0B
-L084125: db $34
-L084126: db $DF
-L084127: db $35
-L084128: db $EA
-L084129: db $36
-L08412A: db $DE
-L08412B: db $1B
-L08412C: db $8A
-L08412D: db $FB
-L08412E: db $88
-L08412F: db $00
-L084130: db $97
-L084131: db $FF
-L084132: db $36
-L084133: db $DE
-L084134: db $06
-L084135: db $8A
-L084136: db $05
-L084137: db $88
-L084138: db $30
-L084139: db $97
-L08413A: db $01
-L08413B: db $33
-L08413C: db $DE
-L08413D: db $03
-L08413E: db $8A
-L08413F: db $FB
-L084140: db $97
-L084141: db $FF
-L084142: db $33
-L084143: db $E1
-L084144: db $8A
-L084145: db $05
-L084146: db $97
-L084147: db $01
-L084148: db $31
-L084149: db $E1
-L08414A: db $2F
-L08414B: db $DE
-L08414C: db $03
-L08414D: db $8A
-L08414E: db $FB
-L08414F: db $97
-L084150: db $FF
-L084151: db $2F
-L084152: db $E1
-L084153: db $8A
-L084154: db $05
-L084155: db $97
-L084156: db $01
-L084157: db $2E
-L084158: db $EA
-L084159: db $2C
-L08415A: db $E3
-L08415B: db $2E
-L08415C: db $2F
-L08415D: db $31
-L08415E: db $DE
-L08415F: db $30
-L084160: db $8A
-L084161: db $FB
-L084162: db $88
-L084163: db $00
-L084164: db $97
-L084165: db $FF
-L084166: db $31
-L084167: db $DE
-L084168: db $06
-L084169: db $8A
-L08416A: db $05
-L08416B: db $88
-L08416C: db $30
-L08416D: db $97
-L08416E: db $01
-L08416F: db $31
-L084170: db $DE
-L084171: db $03
-L084172: db $8A
-L084173: db $FB
-L084174: db $97
-L084175: db $FF
-L084176: db $31
-L084177: db $E1
-L084178: db $8A
-L084179: db $05
-L08417A: db $97
-L08417B: db $01
-L08417C: db $31
-L08417D: db $DE
-L08417E: db $06
-L08417F: db $8A
-L084180: db $FB
-L084181: db $97
-L084182: db $FF
-L084183: db $31
-L084184: db $E1
-L084185: db $8A
-L084186: db $05
-L084187: db $97
-L084188: db $01
-L084189: db $31
-L08418A: db $EA
-L08418B: db $2F
-L08418C: db $E3
-L08418D: db $2E
-L08418E: db $2F
-L08418F: db $31
-L084190: db $EA
-L084191: db $32
-L084192: db $DF
-L084193: db $33
-L084194: db $34
-L084195: db $35
-L084196: db $EA
-L084197: db $36
-L084198: db $DE
-L084199: db $1B
-L08419A: db $8A
-L08419B: db $FB
-L08419C: db $88
-L08419D: db $00
-L08419E: db $97
-L08419F: db $FF
-L0841A0: db $36
-L0841A1: db $DE
-L0841A2: db $06
-L0841A3: db $8A
-L0841A4: db $05
-L0841A5: db $88
-L0841A6: db $30
-L0841A7: db $97
-L0841A8: db $01
-L0841A9: db $36
-L0841AA: db $DE
-L0841AB: db $03
-L0841AC: db $8A
-L0841AD: db $FB
-L0841AE: db $97
-L0841AF: db $FF
-L0841B0: db $36
-L0841B1: db $E1
-L0841B2: db $8A
-L0841B3: db $05
-L0841B4: db $97
-L0841B5: db $01
-L0841B6: db $33
-L0841B7: db $E1
-L0841B8: db $2F
-L0841B9: db $DE
-L0841BA: db $03
-L0841BB: db $8A
-L0841BC: db $FB
-L0841BD: db $97
-L0841BE: db $FF
-L0841BF: db $2F
-L0841C0: db $E1
-L0841C1: db $8A
-L0841C2: db $05
-L0841C3: db $97
-L0841C4: db $01
-L0841C5: db $2E
-L0841C6: db $EA
-L0841C7: db $2C
-L0841C8: db $DE
-L0841C9: db $03
-L0841CA: db $8A
-L0841CB: db $FB
-L0841CC: db $97
-L0841CD: db $FF
-L0841CE: db $2C
-L0841CF: db $E1
-L0841D0: db $8A
-L0841D1: db $05
-L0841D2: db $97
-L0841D3: db $01
-L0841D4: db $2A
-L0841D5: db $DE
-L0841D6: db $03
-L0841D7: db $8A
-L0841D8: db $FB
-L0841D9: db $97
-L0841DA: db $FF
-L0841DB: db $2A
-L0841DC: db $E1
-L0841DD: db $8A
-L0841DE: db $05
-L0841DF: db $97
-L0841E0: db $01
-L0841E1: db $2A
-L0841E2: db $DE
-L0841E3: db $36
-L0841E4: db $8A
-L0841E5: db $FB
-L0841E6: db $88
-L0841E7: db $00
-L0841E8: db $97
-L0841E9: db $FF
-L0841EA: db $2A
-L0841EB: db $DE
-L0841EC: db $06
-L0841ED: db $8A
-L0841EE: db $05
-L0841EF: db $88
-L0841F0: db $30
-L0841F1: db $97
-L0841F2: db $01
-L0841F3: db $A0
-L0841F4: db $10
-L0841F5: db $88
-L0841F6: db $30
-L0841F7: db $89
-L0841F8: db $0C
-L0841F9: db $83
-L0841FA: db $35
-L0841FB: db $31
-L0841FC: db $DE
-L0841FD: db $03
-L0841FE: db $8A
-L0841FF: db $FB
-L084200: db $97
-L084201: db $FF
-L084202: db $31
-L084203: db $E1
-L084204: db $8A
-L084205: db $05
-L084206: db $97
-L084207: db $01
-L084208: db $31
-L084209: db $DE
-L08420A: db $06
-L08420B: db $8A
-L08420C: db $FB
-L08420D: db $97
-L08420E: db $FF
-L08420F: db $31
-L084210: db $E1
-L084211: db $8A
-L084212: db $05
-L084213: db $97
-L084214: db $01
-L084215: db $31
-L084216: db $EA
-L084217: db $2F
-L084218: db $E3
-L084219: db $2E
-L08421A: db $2F
-L08421B: db $31
-L08421C: db $EA
-L08421D: db $31
-L08421E: db $DF
-L08421F: db $33
-L084220: db $34
-L084221: db $35
-L084222: db $EA
-L084223: db $36
-L084224: db $DE
-L084225: db $1B
-L084226: db $8A
-L084227: db $FB
-L084228: db $88
-L084229: db $00
-L08422A: db $97
-L08422B: db $FF
-L08422C: db $36
-L08422D: db $DE
-L08422E: db $06
-L08422F: db $8A
-L084230: db $05
-L084231: db $88
-L084232: db $30
-L084233: db $97
-L084234: db $01
-L084235: db $33
-L084236: db $DE
-L084237: db $03
-L084238: db $8A
-L084239: db $FB
-L08423A: db $97
-L08423B: db $FF
-L08423C: db $33
-L08423D: db $E1
-L08423E: db $8A
-L08423F: db $05
-L084240: db $97
-L084241: db $01
-L084242: db $31
-L084243: db $E1
-L084244: db $2F
-L084245: db $DE
-L084246: db $03
-L084247: db $8A
-L084248: db $FB
-L084249: db $97
-L08424A: db $FF
-L08424B: db $2F
-L08424C: db $E1
-L08424D: db $8A
-L08424E: db $05
-L08424F: db $97
-L084250: db $01
-L084251: db $2E
-L084252: db $EA
-L084253: db $2C
-L084254: db $DE
-L084255: db $03
-L084256: db $8A
-L084257: db $FB
-L084258: db $97
-L084259: db $FF
-L08425A: db $2C
-L08425B: db $E1
-L08425C: db $8A
-L08425D: db $05
-L08425E: db $97
-L08425F: db $01
-L084260: db $2E
-L084261: db $E3
-L084262: db $2F
-L084263: db $31
-L084264: db $DE
-L084265: db $30
-L084266: db $8A
-L084267: db $FB
-L084268: db $88
-L084269: db $00
-L08426A: db $97
-L08426B: db $FF
-L08426C: db $31
-L08426D: db $DE
-L08426E: db $06
-L08426F: db $8A
-L084270: db $05
-L084271: db $88
-L084272: db $30
-L084273: db $97
-L084274: db $01
-L084275: db $31
-L084276: db $DE
-L084277: db $03
-L084278: db $8A
-L084279: db $FB
-L08427A: db $97
-L08427B: db $FF
-L08427C: db $31
-L08427D: db $E1
-L08427E: db $8A
-L08427F: db $05
-L084280: db $97
-L084281: db $01
-L084282: db $31
-L084283: db $DE
-L084284: db $06
-L084285: db $8A
-L084286: db $FB
-L084287: db $97
-L084288: db $FF
-L084289: db $31
-L08428A: db $E1
-L08428B: db $8A
-L08428C: db $05
-L08428D: db $97
-L08428E: db $01
-L08428F: db $31
-L084290: db $EA
-L084291: db $2F
-L084292: db $E3
-L084293: db $2E
-L084294: db $2F
-L084295: db $31
-L084296: db $EA
-L084297: db $31
-L084298: db $DF
-L084299: db $33
-L08429A: db $34
-L08429B: db $35
-L08429C: db $EA
-L08429D: db $36
-L08429E: db $DE
-L08429F: db $1B
-L0842A0: db $8A
-L0842A1: db $FB
-L0842A2: db $88
-L0842A3: db $00
-L0842A4: db $97
-L0842A5: db $FF
-L0842A6: db $36
-L0842A7: db $DE
-L0842A8: db $06
-L0842A9: db $8A
-L0842AA: db $05
-L0842AB: db $88
-L0842AC: db $30
-L0842AD: db $97
-L0842AE: db $01
-L0842AF: db $36
-L0842B0: db $DE
-L0842B1: db $03
-L0842B2: db $8A
-L0842B3: db $FB
-L0842B4: db $97
-L0842B5: db $FF
-L0842B6: db $36
-L0842B7: db $E1
-L0842B8: db $8A
-L0842B9: db $05
-L0842BA: db $97
-L0842BB: db $01
-L0842BC: db $33
-L0842BD: db $E1
-L0842BE: db $2F
-L0842BF: db $DE
-L0842C0: db $03
-L0842C1: db $8A
-L0842C2: db $FB
-L0842C3: db $97
-L0842C4: db $FF
-L0842C5: db $2F
-L0842C6: db $E1
-L0842C7: db $8A
-L0842C8: db $05
-L0842C9: db $97
-L0842CA: db $01
-L0842CB: db $2E
-L0842CC: db $EA
-L0842CD: db $2C
-L0842CE: db $E3
-L0842CF: db $2A
-L0842D0: db $DE
-L0842D1: db $03
-L0842D2: db $8A
-L0842D3: db $FB
-L0842D4: db $97
-L0842D5: db $FF
-L0842D6: db $2A
-L0842D7: db $E1
-L0842D8: db $8A
-L0842D9: db $05
-L0842DA: db $97
-L0842DB: db $01
-L0842DC: db $2A
-L0842DD: db $E9
-L0842DE: db $A0
-L0842DF: db $09
-L0842E0: db $88
-L0842E1: db $2E
-L0842E2: db $89
-L0842E3: db $F4
-L0842E4: db $36
-L0842E5: db $E1
-L0842E6: db $36
-L0842E7: db $36
-L0842E8: db $E3
-L0842E9: db $86
-SndData_01_Ch2: db $1E
-L0842EB: db $EA
-L0842EC: db $22
-L0842ED: db $25
-L0842EE: db $E3
-L0842EF: db $23
-L0842F0: db $EA
-L0842F1: db $27
-L0842F2: db $2A
-L0842F3: db $E3
-L0842F4: db $22
-L0842F5: db $EA
-L0842F6: db $25
-L0842F7: db $29
-L0842F8: db $E3
-L0842F9: db $20
-L0842FA: db $E1
-L0842FB: db $20
-L0842FC: db $E3
-L0842FD: db $19
-L0842FE: db $1D
-L0842FF: db $20
-L084300: db $E1
-L084301: db $1E
-L084302: db $EA
-L084303: db $1E
-L084304: db $E3
-L084305: db $22
-L084306: db $E1
-L084307: db $25
-L084308: db $E3
-L084309: db $23
-L08430A: db $EA
-L08430B: db $27
-L08430C: db $2A
-L08430D: db $E3
-L08430E: db $22
-L08430F: db $E1
-L084310: db $22
-L084311: db $E3
-L084312: db $22
-L084313: db $1E
-L084314: db $1B
-L084315: db $E1
-L084316: db $19
-L084317: db $E5
-L084318: db $25
-L084319: db $1E
-L08431A: db $EA
-L08431B: db $22
-L08431C: db $25
-L08431D: db $E3
-L08431E: db $23
-L08431F: db $EA
-L084320: db $27
-L084321: db $2A
-L084322: db $E3
-L084323: db $22
-L084324: db $EA
-L084325: db $25
-L084326: db $29
-L084327: db $E3
-L084328: db $21
-L084329: db $EA
-L08432A: db $24
-L08432B: db $27
-L08432C: db $E3
-L08432D: db $20
-L08432E: db $EA
-L08432F: db $23
-L084330: db $27
-L084331: db $E3
-L084332: db $25
-L084333: db $EA
-L084334: db $20
-L084335: db $1D
-L084336: db $E3
-L084337: db $22
-L084338: db $E5
-L084339: db $21
-L08433A: db $20
-L08433B: db $EA
-L08433C: db $25
-L08433D: db $E1
-L08433E: db $25
-L08433F: db $E3
-L084340: db $25
-L084341: db $1E
-L084342: db $EA
-L084343: db $22
-L084344: db $25
-L084345: db $E3
-L084346: db $23
-L084347: db $EA
-L084348: db $27
-L084349: db $2A
-L08434A: db $E3
-L08434B: db $22
-L08434C: db $EA
-L08434D: db $25
-L08434E: db $29
-L08434F: db $E3
-L084350: db $21
-L084351: db $EA
-L084352: db $24
-L084353: db $27
-L084354: db $E3
-L084355: db $20
-L084356: db $EA
-L084357: db $23
-L084358: db $27
-L084359: db $E3
-L08435A: db $25
-L08435B: db $EA
-L08435C: db $20
-L08435D: db $25
-L08435E: db $E3
-L08435F: db $1E
-L084360: db $EA
-L084361: db $1E
-L084362: db $1E
-L084363: db $E3
-L084364: db $25
-L084365: db $EA
-L084366: db $20
-L084367: db $25
-L084368: db $E3
-L084369: db $1E
-L08436A: db $EA
-L08436B: db $22
-L08436C: db $25
-L08436D: db $E3
-L08436E: db $23
-L08436F: db $EA
-L084370: db $27
-L084371: db $2A
-L084372: db $E3
-L084373: db $22
-L084374: db $EA
-L084375: db $25
-L084376: db $29
-L084377: db $E3
-L084378: db $21
-L084379: db $EA
-L08437A: db $24
-L08437B: db $27
-L08437C: db $E3
-L08437D: db $20
-L08437E: db $EA
-L08437F: db $23
-L084380: db $27
-L084381: db $E3
-L084382: db $25
-L084383: db $EA
-L084384: db $20
-L084385: db $1D
-L084386: db $E3
-L084387: db $22
-L084388: db $E5
-L084389: db $21
-L08438A: db $20
-L08438B: db $EA
-L08438C: db $25
-L08438D: db $E1
-L08438E: db $25
-L08438F: db $E3
-L084390: db $25
-L084391: db $1E
-L084392: db $EA
-L084393: db $22
-L084394: db $25
-L084395: db $E3
-L084396: db $23
-L084397: db $EA
-L084398: db $27
-L084399: db $2A
-L08439A: db $E3
-L08439B: db $22
-L08439C: db $EA
-L08439D: db $25
-L08439E: db $29
-L08439F: db $E3
-L0843A0: db $21
-L0843A1: db $EA
-L0843A2: db $24
-L0843A3: db $27
-L0843A4: db $E3
-L0843A5: db $20
-L0843A6: db $EA
-L0843A7: db $23
-L0843A8: db $27
-L0843A9: db $E3
-L0843AA: db $25
-L0843AB: db $EA
-L0843AC: db $20
-L0843AD: db $25
-L0843AE: db $E3
-L0843AF: db $1E
-L0843B0: db $EA
-L0843B1: db $1E
-L0843B2: db $19
-L0843B3: db $1E
-L0843B4: db $1E
-L0843B5: db $E3
-L0843B6: db $19
-L0843B7: db $1E
-L0843B8: db $E3
-L0843B9: db $82
-SndData_01_Ch1: db $A0
-L0843BB: db $40
-L0843BC: db $97
-L0843BD: db $FE
-L0843BE: db $00
-L0843BF: db $EA
-L0843C0: db $2A
-L0843C1: db $DE
-L0843C2: db $03
-L0843C3: db $8A
-L0843C4: db $FB
-L0843C5: db $97
-L0843C6: db $FF
-L0843C7: db $2A
-L0843C8: db $E1
-L0843C9: db $8A
-L0843CA: db $05
-L0843CB: db $97
-L0843CC: db $01
-L0843CD: db $2E
-L0843CE: db $DE
-L0843CF: db $03
-L0843D0: db $8A
-L0843D1: db $FB
-L0843D2: db $97
-L0843D3: db $FF
-L0843D4: db $2E
-L0843D5: db $E1
-L0843D6: db $8A
-L0843D7: db $05
-L0843D8: db $97
-L0843D9: db $01
-L0843DA: db $31
-L0843DB: db $E1
-L0843DC: db $33
-L0843DD: db $EA
-L0843DE: db $36
-L0843DF: db $DE
-L0843E0: db $03
-L0843E1: db $8A
-L0843E2: db $FB
-L0843E3: db $88
-L0843E4: db $00
-L0843E5: db $97
-L0843E6: db $FF
-L0843E7: db $36
-L0843E8: db $DE
-L0843E9: db $06
-L0843EA: db $8A
-L0843EB: db $05
-L0843EC: db $88
-L0843ED: db $00
-L0843EE: db $97
-L0843EF: db $01
-L0843F0: db $33
-L0843F1: db $E3
-L0843F2: db $31
-L0843F3: db $EA
-L0843F4: db $2E
-L0843F5: db $DE
-L0843F6: db $03
-L0843F7: db $8A
-L0843F8: db $FB
-L0843F9: db $88
-L0843FA: db $00
-L0843FB: db $97
-L0843FC: db $FF
-L0843FD: db $2E
-L0843FE: db $DE
-L0843FF: db $06
-L084400: db $8A
-L084401: db $05
-L084402: db $88
-L084403: db $00
-L084404: db $97
-L084405: db $01
-L084406: db $31
-L084407: db $E3
-L084408: db $2F
-L084409: db $2F
-L08440A: db $E1
-L08440B: db $2F
-L08440C: db $DE
-L08440D: db $03
-L08440E: db $8A
-L08440F: db $FB
-L084410: db $97
-L084411: db $FF
-L084412: db $2F
-L084413: db $E1
-L084414: db $8A
-L084415: db $05
-L084416: db $97
-L084417: db $01
-L084418: db $2E
-L084419: db $DE
-L08441A: db $03
-L08441B: db $8A
-L08441C: db $FB
-L08441D: db $97
-L08441E: db $FF
-L08441F: db $2E
-L084420: db $E1
-L084421: db $8A
-L084422: db $05
-L084423: db $97
-L084424: db $01
-L084425: db $2C
-L084426: db $E1
-L084427: db $2A
-L084428: db $EA
-L084429: db $2A
-L08442A: db $DE
-L08442B: db $03
-L08442C: db $8A
-L08442D: db $FB
-L08442E: db $97
-L08442F: db $FF
-L084430: db $2A
-L084431: db $E1
-L084432: db $8A
-L084433: db $05
-L084434: db $97
-L084435: db $01
-L084436: db $2E
-L084437: db $DE
-L084438: db $03
-L084439: db $8A
-L08443A: db $FB
-L08443B: db $97
-L08443C: db $FF
-L08443D: db $2E
-L08443E: db $E1
-L08443F: db $8A
-L084440: db $05
-L084441: db $97
-L084442: db $01
-L084443: db $31
-L084444: db $E1
-L084445: db $33
-L084446: db $EA
-L084447: db $36
-L084448: db $DE
-L084449: db $03
-L08444A: db $8A
-L08444B: db $FB
-L08444C: db $88
-L08444D: db $00
-L08444E: db $97
-L08444F: db $FF
-L084450: db $36
-L084451: db $DE
-L084452: db $06
-L084453: db $8A
-L084454: db $05
-L084455: db $88
-L084456: db $00
-L084457: db $97
-L084458: db $01
-L084459: db $33
-L08445A: db $E3
-L08445B: db $31
-L08445C: db $EA
-L08445D: db $2E
-L08445E: db $DE
-L08445F: db $03
-L084460: db $8A
-L084461: db $FB
-L084462: db $97
-L084463: db $FF
-L084464: db $2E
-L084465: db $E1
-L084466: db $8A
-L084467: db $05
-L084468: db $97
-L084469: db $01
-L08446A: db $2F
-L08446B: db $DE
-L08446C: db $03
-L08446D: db $8A
-L08446E: db $FB
-L08446F: db $97
-L084470: db $FF
-L084471: db $2F
-L084472: db $E1
-L084473: db $8A
-L084474: db $05
-L084475: db $97
-L084476: db $01
-L084477: db $30
-L084478: db $E1
-L084479: db $31
-L08447A: db $DE
-L08447B: db $03
-L08447C: db $8A
-L08447D: db $FB
-L08447E: db $88
-L08447F: db $00
-L084480: db $97
-L084481: db $FF
-L084482: db $31
-L084483: db $DE
-L084484: db $06
-L084485: db $8A
-L084486: db $05
-L084487: db $88
-L084488: db $00
-L084489: db $97
-L08448A: db $01
-L08448B: db $00
-L08448C: db $DE
-L08448D: db $0F
-L08448E: db $97
-L08448F: db $02
-L084490: db $A0
-L084491: db $40
-L084492: db $88
-L084493: db $3B
-L084494: db $2E
-L084495: db $DE
-L084496: db $15
-L084497: db $8A
-L084498: db $FB
-L084499: db $97
-L08449A: db $FF
-L08449B: db $2E
-L08449C: db $E1
-L08449D: db $8A
-L08449E: db $05
-L08449F: db $97
-L0844A0: db $01
-L0844A1: db $2F
-L0844A2: db $DE
-L0844A3: db $15
-L0844A4: db $8A
-L0844A5: db $FB
-L0844A6: db $97
-L0844A7: db $FF
-L0844A8: db $2F
-L0844A9: db $E1
-L0844AA: db $8A
-L0844AB: db $05
-L0844AC: db $97
-L0844AD: db $01
-L0844AE: db $2E
-L0844AF: db $DE
-L0844B0: db $15
-L0844B1: db $8A
-L0844B2: db $FB
-L0844B3: db $97
-L0844B4: db $FF
-L0844B5: db $2E
-L0844B6: db $E1
-L0844B7: db $8A
-L0844B8: db $05
-L0844B9: db $97
-L0844BA: db $01
-L0844BB: db $2D
-L0844BC: db $DE
-L0844BD: db $15
-L0844BE: db $8A
-L0844BF: db $FB
-L0844C0: db $97
-L0844C1: db $FF
-L0844C2: db $2D
-L0844C3: db $E1
-L0844C4: db $8A
-L0844C5: db $05
-L0844C6: db $97
-L0844C7: db $01
-L0844C8: db $2C
-L0844C9: db $DE
-L0844CA: db $15
-L0844CB: db $8A
-L0844CC: db $FB
-L0844CD: db $97
-L0844CE: db $FF
-L0844CF: db $2C
-L0844D0: db $E1
-L0844D1: db $8A
-L0844D2: db $05
-L0844D3: db $97
-L0844D4: db $01
-L0844D5: db $29
-L0844D6: db $DE
-L0844D7: db $15
-L0844D8: db $8A
-L0844D9: db $FB
-L0844DA: db $97
-L0844DB: db $FF
-L0844DC: db $29
-L0844DD: db $E1
-L0844DE: db $8A
-L0844DF: db $05
-L0844E0: db $97
-L0844E1: db $01
-L0844E2: db $A0
-L0844E3: db $80
-L0844E4: db $88
-L0844E5: db $33
-L0844E6: db $89
-L0844E7: db $0C
-L0844E8: db $35
-L0844E9: db $E5
-L0844EA: db $34
-L0844EB: db $33
-L0844EC: db $2C
-L0844ED: db $A0
-L0844EE: db $40
-L0844EF: db $88
-L0844F0: db $3B
-L0844F1: db $89
-L0844F2: db $F4
-L0844F3: db $2E
-L0844F4: db $DE
-L0844F5: db $15
-L0844F6: db $8A
-L0844F7: db $FB
-L0844F8: db $97
-L0844F9: db $FF
-L0844FA: db $2E
-L0844FB: db $E1
-L0844FC: db $8A
-L0844FD: db $05
-L0844FE: db $97
-L0844FF: db $01
-L084500: db $2F
-L084501: db $DE
-L084502: db $15
-L084503: db $8A
-L084504: db $FB
-L084505: db $97
-L084506: db $FF
-L084507: db $2F
-L084508: db $E1
-L084509: db $8A
-L08450A: db $05
-L08450B: db $97
-L08450C: db $01
-L08450D: db $2E
-L08450E: db $DE
-L08450F: db $15
-L084510: db $8A
-L084511: db $FB
-L084512: db $97
-L084513: db $FF
-L084514: db $2E
-L084515: db $E1
-L084516: db $8A
-L084517: db $05
-L084518: db $97
-L084519: db $01
-L08451A: db $2D
-L08451B: db $DE
-L08451C: db $15
-L08451D: db $8A
-L08451E: db $FB
-L08451F: db $97
-L084520: db $FF
-L084521: db $2D
-L084522: db $E1
-L084523: db $8A
-L084524: db $05
-L084525: db $97
-L084526: db $01
-L084527: db $2C
-L084528: db $DE
-L084529: db $15
-L08452A: db $8A
-L08452B: db $FB
-L08452C: db $97
-L08452D: db $FF
-L08452E: db $2C
-L08452F: db $E1
-L084530: db $8A
-L084531: db $05
-L084532: db $97
-L084533: db $01
-L084534: db $29
-L084535: db $DE
-L084536: db $15
-L084537: db $8A
-L084538: db $FB
-L084539: db $97
-L08453A: db $FF
-L08453B: db $29
-L08453C: db $E1
-L08453D: db $8A
-L08453E: db $05
-L08453F: db $97
-L084540: db $01
-L084541: db $2E
-L084542: db $DE
-L084543: db $15
-L084544: db $8A
-L084545: db $FB
-L084546: db $97
-L084547: db $FF
-L084548: db $2E
-L084549: db $E1
-L08454A: db $8A
-L08454B: db $05
-L08454C: db $97
-L08454D: db $01
-L08454E: db $2F
-L08454F: db $DE
-L084550: db $15
-L084551: db $8A
-L084552: db $FB
-L084553: db $97
-L084554: db $FF
-L084555: db $2F
-L084556: db $E1
-L084557: db $8A
-L084558: db $05
-L084559: db $97
-L08455A: db $01
-L08455B: db $2E
-L08455C: db $DE
-L08455D: db $15
-L08455E: db $8A
-L08455F: db $FB
-L084560: db $97
-L084561: db $FF
-L084562: db $2E
-L084563: db $E1
-L084564: db $8A
-L084565: db $05
-L084566: db $97
-L084567: db $01
-L084568: db $2F
-L084569: db $DE
-L08456A: db $15
-L08456B: db $8A
-L08456C: db $FB
-L08456D: db $97
-L08456E: db $FF
-L08456F: db $2F
-L084570: db $E1
-L084571: db $8A
-L084572: db $05
-L084573: db $97
-L084574: db $01
-L084575: db $2E
-L084576: db $DE
-L084577: db $15
-L084578: db $8A
-L084579: db $FB
-L08457A: db $97
-L08457B: db $FF
-L08457C: db $2E
-L08457D: db $E1
-L08457E: db $8A
-L08457F: db $05
-L084580: db $97
-L084581: db $01
-L084582: db $2D
-L084583: db $DE
-L084584: db $15
-L084585: db $8A
-L084586: db $FB
-L084587: db $97
-L084588: db $FF
-L084589: db $2D
-L08458A: db $E1
-L08458B: db $8A
-L08458C: db $05
-L08458D: db $97
-L08458E: db $01
-L08458F: db $2C
-L084590: db $DE
-L084591: db $15
-L084592: db $8A
-L084593: db $FB
-L084594: db $97
-L084595: db $FF
-L084596: db $2C
-L084597: db $E1
-L084598: db $8A
-L084599: db $05
-L08459A: db $97
-L08459B: db $01
-L08459C: db $29
-L08459D: db $DE
-L08459E: db $15
-L08459F: db $8A
-L0845A0: db $FB
-L0845A1: db $97
-L0845A2: db $FF
-L0845A3: db $29
-L0845A4: db $E1
-L0845A5: db $8A
-L0845A6: db $05
-L0845A7: db $97
-L0845A8: db $01
-L0845A9: db $A0
-L0845AA: db $00
-L0845AB: db $88
-L0845AC: db $00
-L0845AD: db $00
-L0845AE: db $E0
-L0845AF: db $24
-L0845B0: db $DF
-L0845B1: db $25
-L0845B2: db $E1
-L0845B3: db $27
-L0845B4: db $DE
-L0845B5: db $03
-L0845B6: db $8A
-L0845B7: db $FB
-L0845B8: db $97
-L0845B9: db $FF
-L0845BA: db $27
-L0845BB: db $E1
-L0845BC: db $8A
-L0845BD: db $05
-L0845BE: db $97
-L0845BF: db $01
-L0845C0: db $2A
-L0845C1: db $DE
-L0845C2: db $03
-L0845C3: db $8A
-L0845C4: db $FB
-L0845C5: db $97
-L0845C6: db $FF
-L0845C7: db $2A
-L0845C8: db $E1
-L0845C9: db $8A
-L0845CA: db $05
-L0845CB: db $97
-L0845CC: db $01
-L0845CD: db $27
-L0845CE: db $E3
-L0845CF: db $2A
-L0845D0: db $E1
-L0845D1: db $2B
-L0845D2: db $2C
-L0845D3: db $2D
-L0845D4: db $DE
-L0845D5: db $03
-L0845D6: db $8A
-L0845D7: db $FB
-L0845D8: db $97
-L0845D9: db $FF
-L0845DA: db $2D
-L0845DB: db $E1
-L0845DC: db $8A
-L0845DD: db $05
-L0845DE: db $97
-L0845DF: db $01
-L0845E0: db $2F
-L0845E1: db $EA
-L0845E2: db $31
-L0845E3: db $30
-L0845E4: db $DF
-L0845E5: db $2F
-L0845E6: db $2E
-L0845E7: db $2D
-L0845E8: db $2C
-L0845E9: db $2B
-L0845EA: db $00
-L0845EB: db $E0
-L0845EC: db $8A
-L0845ED: db $FC
-L0845EE: db $30
-L0845EF: db $DF
-L0845F0: db $2F
-L0845F1: db $2E
-L0845F2: db $2D
-L0845F3: db $8A
-L0845F4: db $FF
-L0845F5: db $2C
-L0845F6: db $2B
-L0845F7: db $00
-L0845F8: db $DF
-L0845F9: db $8A
-L0845FA: db $05
-L0845FB: db $A0
-L0845FC: db $40
-L0845FD: db $88
-L0845FE: db $3B
-L0845FF: db $2F
-L084600: db $DE
-L084601: db $15
-L084602: db $8A
-L084603: db $FB
-L084604: db $97
-L084605: db $FF
-L084606: db $2F
-L084607: db $E1
-L084608: db $8A
-L084609: db $05
-L08460A: db $97
-L08460B: db $01
-L08460C: db $2E
-L08460D: db $DE
-L08460E: db $15
-L08460F: db $8A
-L084610: db $FB
-L084611: db $97
-L084612: db $FF
-L084613: db $2E
-L084614: db $E1
-L084615: db $8A
-L084616: db $05
-L084617: db $97
-L084618: db $01
-L084619: db $2D
-L08461A: db $DE
-L08461B: db $15
-L08461C: db $8A
-L08461D: db $FB
-L08461E: db $97
-L08461F: db $FF
-L084620: db $2D
-L084621: db $E1
-L084622: db $8A
-L084623: db $05
-L084624: db $97
-L084625: db $01
-L084626: db $2C
-L084627: db $DE
-L084628: db $15
-L084629: db $8A
-L08462A: db $FB
-L08462B: db $97
-L08462C: db $FF
-L08462D: db $2C
-L08462E: db $E1
-L08462F: db $8A
-L084630: db $05
-L084631: db $97
-L084632: db $01
-L084633: db $29
-L084634: db $DE
-L084635: db $15
-L084636: db $8A
-L084637: db $FB
-L084638: db $97
-L084639: db $FF
-L08463A: db $29
-L08463B: db $E1
-L08463C: db $8A
-L08463D: db $05
-L08463E: db $97
-L08463F: db $01
-L084640: db $2F
-L084641: db $DE
-L084642: db $06
-L084643: db $8A
-L084644: db $FB
-L084645: db $97
-L084646: db $FF
-L084647: db $2F
-L084648: db $E1
-L084649: db $8A
-L08464A: db $05
-L08464B: db $97
-L08464C: db $01
-L08464D: db $2F
-L08464E: db $DE
-L08464F: db $06
-L084650: db $8A
-L084651: db $FB
-L084652: db $97
-L084653: db $FF
-L084654: db $2F
-L084655: db $E1
-L084656: db $8A
-L084657: db $05
-L084658: db $97
-L084659: db $01
-L08465A: db $2F
-L08465B: db $DE
-L08465C: db $06
-L08465D: db $8A
-L08465E: db $FB
-L08465F: db $97
-L084660: db $FF
-L084661: db $2F
-L084662: db $E1
-L084663: db $8A
-L084664: db $05
-L084665: db $97
-L084666: db $01
-L084667: db $2F
-L084668: db $DE
-L084669: db $06
-L08466A: db $8A
-L08466B: db $FB
-L08466C: db $97
-L08466D: db $FF
-L08466E: db $2F
-L08466F: db $E1
-L084670: db $8A
-L084671: db $05
-L084672: db $97
-L084673: db $01
-L084674: db $2F
-L084675: db $E3
-L084676: db $A0
-L084677: db $40
-L084678: db $88
-L084679: db $2E
-L08467A: db $2F
-L08467B: db $E1
-L08467C: db $2F
-L08467D: db $2E
-L08467E: db $E3
-L08467F: db $82
-SndData_01_Ch4: db $8D
-L084681: db $24
-L084682: db $03
-L084683: db $C1
-L084684: db $E1
-L084685: db $C2
-L084686: db $C2
-L084687: db $C0
-L084688: db $C1
-L084689: db $E3
-L08468A: db $C2
-L08468B: db $E1
-L08468C: db $C2
-L08468D: db $C1
-L08468E: db $C2
-L08468F: db $C2
-L084690: db $C0
-L084691: db $C1
-L084692: db $C2
-L084693: db $C0
-L084694: db $C2
-L084695: db $81
-L084696: db $24
-L084697: db $83
-L084698: db $46
-L084699: db $C1
-L08469A: db $C2
-L08469B: db $C2
-L08469C: db $C0
-L08469D: db $E3
-L08469E: db $C2
-L08469F: db $E1
-L0846A0: db $C1
-L0846A1: db $C2
-L0846A2: db $C0
-L0846A3: db $EA
-L0846A4: db $C0
-L0846A5: db $DF
-L0846A6: db $C0
-L0846A7: db $C0
-L0846A8: db $C0
-L0846A9: db $E1
-L0846AA: db $C0
-L0846AB: db $C1
-L0846AC: db $C0
-L0846AD: db $8D
-L0846AE: db $24
-L0846AF: db $03
-L0846B0: db $C1
-L0846B1: db $C2
-L0846B2: db $C2
-L0846B3: db $C0
-L0846B4: db $C1
-L0846B5: db $E3
-L0846B6: db $C2
-L0846B7: db $E1
-L0846B8: db $C2
-L0846B9: db $C1
-L0846BA: db $C2
-L0846BB: db $C2
-L0846BC: db $C0
-L0846BD: db $C1
-L0846BE: db $E3
-L0846BF: db $C2
-L0846C0: db $E1
-L0846C1: db $C2
-L0846C2: db $81
-L0846C3: db $24
-L0846C4: db $B0
-L0846C5: db $46
-L0846C6: db $C1
-L0846C7: db $C2
-L0846C8: db $C2
-L0846C9: db $C0
-L0846CA: db $C1
-L0846CB: db $E3
-L0846CC: db $C2
-L0846CD: db $E1
-L0846CE: db $C2
-L0846CF: db $C1
-L0846D0: db $C2
-L0846D1: db $C2
-L0846D2: db $C0
-L0846D3: db $C1
-L0846D4: db $C2
-L0846D5: db $C0
-L0846D6: db $C2
-L0846D7: db $8D
-L0846D8: db $24
-L0846D9: db $02
-L0846DA: db $8D
-L0846DB: db $25
-L0846DC: db $03
-L0846DD: db $C1
-L0846DE: db $C2
-L0846DF: db $C2
-L0846E0: db $C0
-L0846E1: db $C1
-L0846E2: db $E3
-L0846E3: db $C2
-L0846E4: db $E1
-L0846E5: db $C2
-L0846E6: db $C1
-L0846E7: db $C2
-L0846E8: db $C2
-L0846E9: db $C0
-L0846EA: db $C1
-L0846EB: db $E3
-L0846EC: db $C2
-L0846ED: db $E1
-L0846EE: db $C2
-L0846EF: db $81
-L0846F0: db $25
-L0846F1: db $DD
-L0846F2: db $46
-L0846F3: db $C1
-L0846F4: db $C2
-L0846F5: db $C2
-L0846F6: db $C0
-L0846F7: db $C1
-L0846F8: db $E3
-L0846F9: db $C2
-L0846FA: db $E1
-L0846FB: db $C2
-L0846FC: db $C1
-L0846FD: db $C2
-L0846FE: db $C2
-L0846FF: db $C0
-L084700: db $C1
-L084701: db $C2
-L084702: db $C0
-L084703: db $C2
-L084704: db $81
-L084705: db $24
-L084706: db $DA
-L084707: db $46
-L084708: db $8D
-L084709: db $24
-L08470A: db $03
-L08470B: db $C1
-L08470C: db $C2
-L08470D: db $C2
-L08470E: db $C0
-L08470F: db $C1
-L084710: db $E3
-L084711: db $C2
-L084712: db $E1
-L084713: db $C2
-L084714: db $C1
-L084715: db $C2
-L084716: db $C2
-L084717: db $C0
-L084718: db $C1
-L084719: db $E3
-L08471A: db $C2
-L08471B: db $E1
-L08471C: db $C2
-L08471D: db $81
-L08471E: db $24
-L08471F: db $0B
-L084720: db $47
-L084721: db $C1
-L084722: db $C2
-L084723: db $C2
-L084724: db $C0
-L084725: db $C1
-L084726: db $E3
-L084727: db $C2
-L084728: db $E1
-L084729: db $C2
-L08472A: db $C1
-L08472B: db $C2
-L08472C: db $C2
-L08472D: db $C1
-L08472E: db $C0
-L08472F: db $C2
-L084730: db $C0
-L084731: db $C2
-L084732: db $C0
-L084733: db $E9
-L084734: db $82
+SndData_01_Ch3:
+	snd_wave WAVE_09
+	snd_note $00, NOTELEN_09
+	snd_note $1E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $1E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $22, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $22, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $25, NOTELEN_03
+	snd_note $27, NOTELEN_09
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_06
+	snd_note $25, NOTELEN_09
+	snd_note $22, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $22, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $25, NOTELEN_06
+	snd_note $23
+	snd_note $23, NOTELEN_03
+	snd_note $23
+	snd_note $00
+	snd_note $22
+	snd_note $00
+	snd_note $20
+	snd_note $1E, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $1E, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $1E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $1E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $22, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $22, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $25, NOTELEN_03
+	snd_note $27, NOTELEN_09
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_06
+	snd_note $25, NOTELEN_09
+	snd_note $22, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $22, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $23, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $23, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $24, NOTELEN_03
+	snd_note $25, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $25, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $0F
+	snd_wave WAVE_09
+	snd_instrument INSTR_30
+	snd_note $00, NOTELEN_06
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_09
+	snd_note $2F, NOTELEN_06
+	snd_note $2E
+	snd_note $2F
+	snd_note $31, NOTELEN_CUSTOM, $0B
+	snd_note $34, NOTELEN_01
+	snd_note $35, NOTELEN_09
+	snd_note $36, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_03
+	snd_note $2F, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2E
+	snd_note $2F
+	snd_note $31, NOTELEN_CUSTOM, $30
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_09
+	snd_note $2F, NOTELEN_06
+	snd_note $2E
+	snd_note $2F
+	snd_note $31, NOTELEN_09
+	snd_note $32, NOTELEN_01
+	snd_note $33
+	snd_note $34
+	snd_note $35, NOTELEN_09
+	snd_note $36, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $36, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_03
+	snd_note $2F, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_09
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2A, NOTELEN_CUSTOM, $36
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_wave WAVE_10
+	snd_instrument INSTR_30
+	snd_inc_base_note 12
+	snd_vibrato VIBRATO_35
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_09
+	snd_note $2F, NOTELEN_06
+	snd_note $2E
+	snd_note $2F
+	snd_note $31, NOTELEN_09
+	snd_note $31, NOTELEN_01
+	snd_note $33
+	snd_note $34
+	snd_note $35, NOTELEN_09
+	snd_note $36, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_03
+	snd_note $2F, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_09
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_06
+	snd_note $2F
+	snd_note $31, NOTELEN_CUSTOM, $30
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_09
+	snd_note $2F, NOTELEN_06
+	snd_note $2E
+	snd_note $2F
+	snd_note $31, NOTELEN_09
+	snd_note $31, NOTELEN_01
+	snd_note $33
+	snd_note $34
+	snd_note $35, NOTELEN_09
+	snd_note $36, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $36, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_03
+	snd_note $2F, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2A, NOTELEN_30
+	snd_wave WAVE_09
+	snd_instrument INSTR_2E
+	snd_inc_base_note -12
+	snd_note $36, NOTELEN_03
+	snd_note $36
+	snd_note $36, NOTELEN_06
+	snd_end_saveid
+SndData_01_Ch2:
+	snd_note $1E, NOTELEN_09
+	snd_note $22
+	snd_note $25, NOTELEN_06
+	snd_note $23, NOTELEN_09
+	snd_note $27
+	snd_note $2A, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $25
+	snd_note $29, NOTELEN_06
+	snd_note $20, NOTELEN_03
+	snd_note $20, NOTELEN_06
+	snd_note $19
+	snd_note $1D
+	snd_note $20, NOTELEN_03
+	snd_note $1E, NOTELEN_09
+	snd_note $1E, NOTELEN_06
+	snd_note $22, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_note $23, NOTELEN_09
+	snd_note $27
+	snd_note $2A, NOTELEN_06
+	snd_note $22, NOTELEN_03
+	snd_note $22, NOTELEN_06
+	snd_note $22
+	snd_note $1E
+	snd_note $1B, NOTELEN_03
+	snd_note $19, NOTELEN_0C
+	snd_note $25
+	snd_note $1E, NOTELEN_09
+	snd_note $22
+	snd_note $25, NOTELEN_06
+	snd_note $23, NOTELEN_09
+	snd_note $27
+	snd_note $2A, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $25
+	snd_note $29, NOTELEN_06
+	snd_note $21, NOTELEN_09
+	snd_note $24
+	snd_note $27, NOTELEN_06
+	snd_note $20, NOTELEN_09
+	snd_note $23
+	snd_note $27, NOTELEN_06
+	snd_note $25, NOTELEN_09
+	snd_note $20
+	snd_note $1D, NOTELEN_06
+	snd_note $22, NOTELEN_0C
+	snd_note $21
+	snd_note $20, NOTELEN_09
+	snd_note $25, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_note $25
+	snd_note $1E, NOTELEN_09
+	snd_note $22
+	snd_note $25, NOTELEN_06
+	snd_note $23, NOTELEN_09
+	snd_note $27
+	snd_note $2A, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $25
+	snd_note $29, NOTELEN_06
+	snd_note $21, NOTELEN_09
+	snd_note $24
+	snd_note $27, NOTELEN_06
+	snd_note $20, NOTELEN_09
+	snd_note $23
+	snd_note $27, NOTELEN_06
+	snd_note $25, NOTELEN_09
+	snd_note $20
+	snd_note $25, NOTELEN_06
+	snd_note $1E, NOTELEN_09
+	snd_note $1E
+	snd_note $1E, NOTELEN_06
+	snd_note $25, NOTELEN_09
+	snd_note $20
+	snd_note $25, NOTELEN_06
+	snd_note $1E, NOTELEN_09
+	snd_note $22
+	snd_note $25, NOTELEN_06
+	snd_note $23, NOTELEN_09
+	snd_note $27
+	snd_note $2A, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $25
+	snd_note $29, NOTELEN_06
+	snd_note $21, NOTELEN_09
+	snd_note $24
+	snd_note $27, NOTELEN_06
+	snd_note $20, NOTELEN_09
+	snd_note $23
+	snd_note $27, NOTELEN_06
+	snd_note $25, NOTELEN_09
+	snd_note $20
+	snd_note $1D, NOTELEN_06
+	snd_note $22, NOTELEN_0C
+	snd_note $21
+	snd_note $20, NOTELEN_09
+	snd_note $25, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_note $25
+	snd_note $1E, NOTELEN_09
+	snd_note $22
+	snd_note $25, NOTELEN_06
+	snd_note $23, NOTELEN_09
+	snd_note $27
+	snd_note $2A, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $25
+	snd_note $29, NOTELEN_06
+	snd_note $21, NOTELEN_09
+	snd_note $24
+	snd_note $27, NOTELEN_06
+	snd_note $20, NOTELEN_09
+	snd_note $23
+	snd_note $27, NOTELEN_06
+	snd_note $25, NOTELEN_09
+	snd_note $20
+	snd_note $25, NOTELEN_06
+	snd_note $1E, NOTELEN_09
+	snd_note $1E
+	snd_note $19
+	snd_note $1E
+	snd_note $1E, NOTELEN_06
+	snd_note $19
+	snd_note $1E, NOTELEN_06
+	snd_end
+SndData_01_Ch1:
+	snd_duty SNDDUTY_25, $00
+	snd_inc_freq_offset -2
+	snd_note $00, NOTELEN_09
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_03
+	snd_note $33, NOTELEN_09
+	snd_note $36, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_06
+	snd_note $31, NOTELEN_09
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_06
+	snd_note $2F
+	snd_note $2F, NOTELEN_03
+	snd_note $2F, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_03
+	snd_note $2A, NOTELEN_09
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_03
+	snd_note $33, NOTELEN_09
+	snd_note $36, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_06
+	snd_note $31, NOTELEN_09
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_03
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $0F
+	snd_inc_freq_offset 2
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_3B
+	snd_note $2E, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2D, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_duty SNDDUTY_50, $00
+	snd_instrument INSTR_33
+	snd_inc_base_note 12
+	snd_note $35, NOTELEN_0C
+	snd_note $34
+	snd_note $33
+	snd_note $2C
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_3B
+	snd_inc_base_note -12
+	snd_note $2E, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2D, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2D, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_duty SNDDUTY_12, $00
+	snd_instrument INSTR_NONE
+	snd_note $00, NOTELEN_02
+	snd_note $24, NOTELEN_01
+	snd_note $25, NOTELEN_03
+	snd_note $27, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $27, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_06
+	snd_note $2A, NOTELEN_03
+	snd_note $2B
+	snd_note $2C
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_09
+	snd_note $31
+	snd_note $30, NOTELEN_01
+	snd_note $2F
+	snd_note $2E
+	snd_note $2D
+	snd_note $2C
+	snd_note $2B
+	snd_note $00, NOTELEN_02
+	snd_inc_vol -4
+	snd_note $30, NOTELEN_01
+	snd_note $2F
+	snd_note $2E
+	snd_note $2D
+	snd_inc_vol -1
+	snd_note $2C
+	snd_note $2B
+	snd_note $00, NOTELEN_01
+	snd_inc_vol 5
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_3B
+	snd_note $2F, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2D, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_06
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_2E
+	snd_note $2F, NOTELEN_03
+	snd_note $2F
+	snd_note $2E, NOTELEN_06
+	snd_end
+SndData_01_Ch4:
+	snd_var iSndChInfo_24, $03
+	.loop0:
+		snd_noteex PRESET_01, NOTELEN_03
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01, NOTELEN_06
+		snd_noteex PRESET_02, NOTELEN_03
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_djnz iSndChInfo_24, .loop0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_00, NOTELEN_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_var iSndChInfo_24, $03
+	.loop1:
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01, NOTELEN_06
+		snd_noteex PRESET_02, NOTELEN_03
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01, NOTELEN_06
+		snd_noteex PRESET_02, NOTELEN_03
+		snd_noteex PRESET_02
+		snd_djnz iSndChInfo_24, .loop1
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_var iSndChInfo_24, $02
+	.loop2a:
+		snd_var iSndChInfo_25, $03
+		.loop2b:
+			snd_noteex PRESET_01
+			snd_noteex PRESET_02
+			snd_noteex PRESET_02
+			snd_noteex PRESET_00
+			snd_noteex PRESET_01, NOTELEN_06
+			snd_noteex PRESET_02, NOTELEN_03
+			snd_noteex PRESET_02
+			snd_noteex PRESET_01
+			snd_noteex PRESET_02
+			snd_noteex PRESET_02
+			snd_noteex PRESET_00
+			snd_noteex PRESET_01, NOTELEN_06
+			snd_noteex PRESET_02, NOTELEN_03
+			snd_noteex PRESET_02
+			snd_djnz iSndChInfo_25, .loop2b
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01, NOTELEN_06
+		snd_noteex PRESET_02, NOTELEN_03
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_djnz iSndChInfo_24, .loop2a
+	snd_var iSndChInfo_24, $03
+L08470B:
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_djnz iSndChInfo_24, L08470B
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_30
+	snd_end
 SndHeader_04:
 	db 4 ; Number of slots
 .slot0:
@@ -1894,553 +1037,311 @@ SndHeader_04:
 	dw SndData_04_Ch4 ; Data pointer
 	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
-SndData_04_Ch3: db $A0
-L084767: db $08
-L084768: db $38
-L084769: db $EA
-L08476A: db $38
-L08476B: db $39
-L08476C: db $E3
-L08476D: db $3B
-L08476E: db $EA
-L08476F: db $39
-L084770: db $39
-L084771: db $38
-L084772: db $E1
-L084773: db $36
-L084774: db $EA
-L084775: db $34
-L084776: db $38
-L084777: db $38
-L084778: db $39
-L084779: db $E3
-L08477A: db $3B
-L08477B: db $EA
-L08477C: db $39
-L08477D: db $DE
-L08477E: db $0F
-L08477F: db $00
-L084780: db $E7
-L084781: db $38
-L084782: db $EA
-L084783: db $38
-L084784: db $39
-L084785: db $E3
-L084786: db $3B
-L084787: db $EA
-L084788: db $39
-L084789: db $39
-L08478A: db $38
-L08478B: db $E1
-L08478C: db $36
-L08478D: db $EA
-L08478E: db $34
-L08478F: db $38
-L084790: db $38
-L084791: db $39
-L084792: db $E3
-L084793: db $3B
-L084794: db $EA
-L084795: db $39
-L084796: db $DE
-L084797: db $0F
-L084798: db $00
-L084799: db $E5
-L08479A: db $36
-L08479B: db $38
-L08479C: db $EA
-L08479D: db $38
-L08479E: db $39
-L08479F: db $E3
-L0847A0: db $3B
-L0847A1: db $EA
-L0847A2: db $39
-L0847A3: db $39
-L0847A4: db $38
-L0847A5: db $E1
-L0847A6: db $36
-L0847A7: db $EA
-L0847A8: db $34
-L0847A9: db $38
-L0847AA: db $38
-L0847AB: db $39
-L0847AC: db $E3
-L0847AD: db $3B
-L0847AE: db $EA
-L0847AF: db $39
-L0847B0: db $DE
-L0847B1: db $0F
-L0847B2: db $00
-L0847B3: db $E7
-L0847B4: db $38
-L0847B5: db $EA
-L0847B6: db $38
-L0847B7: db $39
-L0847B8: db $E3
-L0847B9: db $3B
-L0847BA: db $EA
-L0847BB: db $39
-L0847BC: db $39
-L0847BD: db $38
-L0847BE: db $E1
-L0847BF: db $36
-L0847C0: db $EA
-L0847C1: db $34
-L0847C2: db $38
-L0847C3: db $38
-L0847C4: db $39
-L0847C5: db $E3
-L0847C6: db $3B
-L0847C7: db $EA
-L0847C8: db $39
-L0847C9: db $DE
-L0847CA: db $0F
-L0847CB: db $00
-L0847CC: db $E1
-L0847CD: db $2F
-L0847CE: db $E5
-L0847CF: db $32
-L0847D0: db $EA
-L0847D1: db $80
-L0847D2: db $66
-L0847D3: db $47
-SndData_04_Ch1: db $A0
-L0847D5: db $40
-L0847D6: db $1C
-L0847D7: db $DE
-L0847D8: db $0F
-L0847D9: db $23
-L0847DA: db $E1
-L0847DB: db $28
-L0847DC: db $E3
-L0847DD: db $1C
-L0847DE: db $EA
-L0847DF: db $1A
-L0847E0: db $E5
-L0847E1: db $00
-L0847E2: db $E3
-L0847E3: db $21
-L0847E4: db $E1
-L0847E5: db $26
-L0847E6: db $EA
-L0847E7: db $1A
-L0847E8: db $1C
-L0847E9: db $DE
-L0847EA: db $0F
-L0847EB: db $23
-L0847EC: db $E1
-L0847ED: db $28
-L0847EE: db $E3
-L0847EF: db $1C
-L0847F0: db $EA
-L0847F1: db $1A
-L0847F2: db $E1
-L0847F3: db $00
-L0847F4: db $E5
-L0847F5: db $00
-L0847F6: db $E7
-L0847F7: db $1C
-L0847F8: db $DE
-L0847F9: db $0F
-L0847FA: db $23
-L0847FB: db $E1
-L0847FC: db $28
-L0847FD: db $E3
-L0847FE: db $1C
-L0847FF: db $EA
-L084800: db $1A
-L084801: db $E5
-L084802: db $00
-L084803: db $E3
-L084804: db $21
-L084805: db $E1
-L084806: db $26
-L084807: db $EA
-L084808: db $1A
-L084809: db $1C
-L08480A: db $DE
-L08480B: db $0F
-L08480C: db $23
-L08480D: db $E1
-L08480E: db $28
-L08480F: db $E3
-L084810: db $1C
-L084811: db $EA
-L084812: db $1A
-L084813: db $19
-L084814: db $E1
-L084815: db $17
-L084816: db $17
-L084817: db $1A
-L084818: db $00
-L084819: db $E3
-L08481A: db $1A
-L08481B: db $E5
-L08481C: db $1C
-L08481D: db $DE
-L08481E: db $0F
-L08481F: db $23
-L084820: db $E1
-L084821: db $28
-L084822: db $E3
-L084823: db $1C
-L084824: db $EA
-L084825: db $1A
-L084826: db $E5
-L084827: db $00
-L084828: db $E3
-L084829: db $21
-L08482A: db $E1
-L08482B: db $26
-L08482C: db $EA
-L08482D: db $1A
-L08482E: db $1C
-L08482F: db $DE
-L084830: db $0F
-L084831: db $23
-L084832: db $E1
-L084833: db $28
-L084834: db $E3
-L084835: db $1C
-L084836: db $EA
-L084837: db $1A
-L084838: db $E1
-L084839: db $00
-L08483A: db $E5
-L08483B: db $00
-L08483C: db $E7
-L08483D: db $1C
-L08483E: db $DE
-L08483F: db $0F
-L084840: db $23
-L084841: db $E1
-L084842: db $28
-L084843: db $E3
-L084844: db $1C
-L084845: db $EA
-L084846: db $1A
-L084847: db $E5
-L084848: db $00
-L084849: db $E3
-L08484A: db $21
-L08484B: db $E1
-L08484C: db $26
-L08484D: db $EA
-L08484E: db $21
-L08484F: db $15
-L084850: db $E5
-L084851: db $00
-L084852: db $E1
-L084853: db $1C
-L084854: db $21
-L084855: db $E3
-L084856: db $15
-L084857: db $EA
-L084858: db $13
-L084859: db $1A
-L08485A: db $E1
-L08485B: db $1F
-L08485C: db $1F
-L08485D: db $13
-L08485E: db $EA
-L08485F: db $00
-L084860: db $E1
-L084861: db $1F
-L084862: db $EA
-L084863: db $80
-L084864: db $D4
-L084865: db $47
-SndData_04_Ch2: db $A0
-L084867: db $01
-L084868: db $88
-L084869: db $41
-L08486A: db $38
-L08486B: db $E1
-L08486C: db $34
-L08486D: db $31
-L08486E: db $2F
-L08486F: db $00
-L084870: db $88
-L084871: db $40
-L084872: db $1C
-L084873: db $28
-L084874: db $E3
-L084875: db $00
-L084876: db $E5
-L084877: db $2A
-L084878: db $DE
-L084879: db $0F
-L08487A: db $26
-L08487B: db $E5
-L08487C: db $2A
-L08487D: db $EA
-L08487E: db $1C
-L08487F: db $E3
-L084880: db $28
-L084881: db $EA
-L084882: db $1C
-L084883: db $E1
-L084884: db $28
-L084885: db $DE
-L084886: db $0F
-L084887: db $2A
-L084888: db $DE
-L084889: db $0F
-L08488A: db $00
-L08488B: db $E7
-L08488C: db $1C
-L08488D: db $E3
-L08488E: db $28
-L08488F: db $EA
-L084890: db $1C
-L084891: db $E1
-L084892: db $2C
-L084893: db $E3
-L084894: db $00
-L084895: db $E5
-L084896: db $2A
-L084897: db $DE
-L084898: db $0F
-L084899: db $26
-L08489A: db $E5
-L08489B: db $2A
-L08489C: db $EA
-L08489D: db $1C
-L08489E: db $E3
-L08489F: db $28
-L0848A0: db $EA
-L0848A1: db $1C
-L0848A2: db $E1
-L0848A3: db $28
-L0848A4: db $DE
-L0848A5: db $0F
-L0848A6: db $2A
-L0848A7: db $DE
-L0848A8: db $0F
-L0848A9: db $00
-L0848AA: db $E5
-L0848AB: db $2D
-L0848AC: db $1C
-L0848AD: db $E3
-L0848AE: db $28
-L0848AF: db $EA
-L0848B0: db $1C
-L0848B1: db $E1
-L0848B2: db $2C
-L0848B3: db $E3
-L0848B4: db $00
-L0848B5: db $E5
-L0848B6: db $2A
-L0848B7: db $DE
-L0848B8: db $0F
-L0848B9: db $26
-L0848BA: db $E5
-L0848BB: db $2A
-L0848BC: db $EA
-L0848BD: db $1C
-L0848BE: db $E3
-L0848BF: db $28
-L0848C0: db $EA
-L0848C1: db $1C
-L0848C2: db $E1
-L0848C3: db $2C
-L0848C4: db $DE
-L0848C5: db $0F
-L0848C6: db $2A
-L0848C7: db $DE
-L0848C8: db $0F
-L0848C9: db $00
-L0848CA: db $E7
-L0848CB: db $1C
-L0848CC: db $E3
-L0848CD: db $28
-L0848CE: db $EA
-L0848CF: db $1C
-L0848D0: db $E1
-L0848D1: db $2C
-L0848D2: db $E3
-L0848D3: db $00
-L0848D4: db $E5
-L0848D5: db $2A
-L0848D6: db $DE
-L0848D7: db $0F
-L0848D8: db $2A
-L0848D9: db $E5
-L0848DA: db $26
-L0848DB: db $EA
-L0848DC: db $15
-L0848DD: db $E3
-L0848DE: db $31
-L0848DF: db $EA
-L0848E0: db $15
-L0848E1: db $E1
-L0848E2: db $2D
-L0848E3: db $E3
-L0848E4: db $15
-L0848E5: db $EA
-L0848E6: db $2B
-L0848E7: db $DE
-L0848E8: db $0F
-L0848E9: db $00
-L0848EA: db $E1
-L0848EB: db $2A
-L0848EC: db $E5
-L0848ED: db $2B
-L0848EE: db $EA
-L0848EF: db $80
-L0848F0: db $66
-L0848F1: db $48
-SndData_04_Ch4: db $C1
-L0848F3: db $EA
-L0848F4: db $C0
-L0848F5: db $C1
-L0848F6: db $E3
-L0848F7: db $00
-L0848F8: db $E1
-L0848F9: db $C0
-L0848FA: db $E3
-L0848FB: db $C1
-L0848FC: db $EA
-L0848FD: db $C1
-L0848FE: db $E1
-L0848FF: db $C0
-L084900: db $EA
-L084901: db $C1
-L084902: db $C0
-L084903: db $C1
-L084904: db $C0
-L084905: db $C1
-L084906: db $C0
-L084907: db $E3
-L084908: db $C1
-L084909: db $EA
-L08490A: db $C1
-L08490B: db $E1
-L08490C: db $C0
-L08490D: db $00
-L08490E: db $C1
-L08490F: db $EA
-L084910: db $C1
-L084911: db $E1
-L084912: db $C0
-L084913: db $EA
-L084914: db $C1
-L084915: db $C0
-L084916: db $C1
-L084917: db $E3
-L084918: db $00
-L084919: db $E1
-L08491A: db $C0
-L08491B: db $E3
-L08491C: db $C1
-L08491D: db $EA
-L08491E: db $C1
-L08491F: db $E1
-L084920: db $C0
-L084921: db $EA
-L084922: db $C1
-L084923: db $C0
-L084924: db $C1
-L084925: db $C0
-L084926: db $C1
-L084927: db $C0
-L084928: db $E3
-L084929: db $C1
-L08492A: db $EA
-L08492B: db $C1
-L08492C: db $E1
-L08492D: db $C0
-L08492E: db $00
-L08492F: db $C1
-L084930: db $EA
-L084931: db $C0
-L084932: db $E1
-L084933: db $C0
-L084934: db $E3
-L084935: db $C0
-L084936: db $E1
-L084937: db $C1
-L084938: db $EA
-L084939: db $C0
-L08493A: db $C1
-L08493B: db $E3
-L08493C: db $00
-L08493D: db $E1
-L08493E: db $C0
-L08493F: db $E3
-L084940: db $C1
-L084941: db $EA
-L084942: db $C1
-L084943: db $E1
-L084944: db $C0
-L084945: db $EA
-L084946: db $C1
-L084947: db $C0
-L084948: db $C1
-L084949: db $C0
-L08494A: db $C1
-L08494B: db $C0
-L08494C: db $E3
-L08494D: db $C1
-L08494E: db $EA
-L08494F: db $C1
-L084950: db $E1
-L084951: db $C0
-L084952: db $00
-L084953: db $C1
-L084954: db $EA
-L084955: db $C1
-L084956: db $E1
-L084957: db $C0
-L084958: db $EA
-L084959: db $C1
-L08495A: db $C0
-L08495B: db $C1
-L08495C: db $E3
-L08495D: db $00
-L08495E: db $E1
-L08495F: db $C0
-L084960: db $E3
-L084961: db $C1
-L084962: db $EA
-L084963: db $C1
-L084964: db $E1
-L084965: db $C0
-L084966: db $EA
-L084967: db $C1
-L084968: db $C0
-L084969: db $C1
-L08496A: db $C0
-L08496B: db $C1
-L08496C: db $C0
-L08496D: db $E3
-L08496E: db $C1
-L08496F: db $EA
-L084970: db $C1
-L084971: db $E1
-L084972: db $C0
-L084973: db $00
-L084974: db $C1
-L084975: db $EA
-L084976: db $8A
-L084977: db $FA
-L084978: db $C0
-L084979: db $DF
-L08497A: db $8A
-L08497B: db $02
-L08497C: db $C0
-L08497D: db $8A
-L08497E: db $02
-L08497F: db $C0
-L084980: db $8A
-L084981: db $02
-L084982: db $C0
-L084983: db $E1
-L084984: db $C0
-L084985: db $C0
-L084986: db $80
-L084987: db $F2
-L084988: db $48
+SndData_04_Ch3:
+	snd_wave WAVE_08
+	snd_note $38, NOTELEN_09
+	snd_note $38
+	snd_note $39, NOTELEN_06
+	snd_note $3B, NOTELEN_09
+	snd_note $39
+	snd_note $39
+	snd_note $38, NOTELEN_03
+	snd_note $36, NOTELEN_09
+	snd_note $34
+	snd_note $38
+	snd_note $38
+	snd_note $39, NOTELEN_06
+	snd_note $3B, NOTELEN_09
+	snd_note $39, NOTELEN_CUSTOM, $0F
+	snd_note $00, NOTELEN_18
+	snd_note $38, NOTELEN_09
+	snd_note $38
+	snd_note $39, NOTELEN_06
+	snd_note $3B, NOTELEN_09
+	snd_note $39
+	snd_note $39
+	snd_note $38, NOTELEN_03
+	snd_note $36, NOTELEN_09
+	snd_note $34
+	snd_note $38
+	snd_note $38
+	snd_note $39, NOTELEN_06
+	snd_note $3B, NOTELEN_09
+	snd_note $39, NOTELEN_CUSTOM, $0F
+	snd_note $00, NOTELEN_0C
+	snd_note $36
+	snd_note $38, NOTELEN_09
+	snd_note $38
+	snd_note $39, NOTELEN_06
+	snd_note $3B, NOTELEN_09
+	snd_note $39
+	snd_note $39
+	snd_note $38, NOTELEN_03
+	snd_note $36, NOTELEN_09
+	snd_note $34
+	snd_note $38
+	snd_note $38
+	snd_note $39, NOTELEN_06
+	snd_note $3B, NOTELEN_09
+	snd_note $39, NOTELEN_CUSTOM, $0F
+	snd_note $00, NOTELEN_18
+	snd_note $38, NOTELEN_09
+	snd_note $38
+	snd_note $39, NOTELEN_06
+	snd_note $3B, NOTELEN_09
+	snd_note $39
+	snd_note $39
+	snd_note $38, NOTELEN_03
+	snd_note $36, NOTELEN_09
+	snd_note $34
+	snd_note $38
+	snd_note $38
+	snd_note $39, NOTELEN_06
+	snd_note $3B, NOTELEN_09
+	snd_note $39, NOTELEN_CUSTOM, $0F
+	snd_note $00, NOTELEN_03
+	snd_note $2F, NOTELEN_0C
+	snd_note $32, NOTELEN_09
+	snd_jp SndData_04_Ch3
+SndData_04_Ch1:
+	snd_duty SNDDUTY_25, $00
+	snd_note $1C, NOTELEN_CUSTOM, $0F
+	snd_note $23, NOTELEN_03
+	snd_note $28, NOTELEN_06
+	snd_note $1C, NOTELEN_09
+	snd_note $1A, NOTELEN_0C
+	snd_note $00, NOTELEN_06
+	snd_note $21, NOTELEN_03
+	snd_note $26, NOTELEN_09
+	snd_note $1A
+	snd_note $1C, NOTELEN_CUSTOM, $0F
+	snd_note $23, NOTELEN_03
+	snd_note $28, NOTELEN_06
+	snd_note $1C, NOTELEN_09
+	snd_note $1A, NOTELEN_03
+	snd_note $00, NOTELEN_0C
+	snd_note $00, NOTELEN_18
+	snd_note $1C, NOTELEN_CUSTOM, $0F
+	snd_note $23, NOTELEN_03
+	snd_note $28, NOTELEN_06
+	snd_note $1C, NOTELEN_09
+	snd_note $1A, NOTELEN_0C
+	snd_note $00, NOTELEN_06
+	snd_note $21, NOTELEN_03
+	snd_note $26, NOTELEN_09
+	snd_note $1A
+	snd_note $1C, NOTELEN_CUSTOM, $0F
+	snd_note $23, NOTELEN_03
+	snd_note $28, NOTELEN_06
+	snd_note $1C, NOTELEN_09
+	snd_note $1A
+	snd_note $19, NOTELEN_03
+	snd_note $17
+	snd_note $17
+	snd_note $1A
+	snd_note $00, NOTELEN_06
+	snd_note $1A, NOTELEN_0C
+	snd_note $1C, NOTELEN_CUSTOM, $0F
+	snd_note $23, NOTELEN_03
+	snd_note $28, NOTELEN_06
+	snd_note $1C, NOTELEN_09
+	snd_note $1A, NOTELEN_0C
+	snd_note $00, NOTELEN_06
+	snd_note $21, NOTELEN_03
+	snd_note $26, NOTELEN_09
+	snd_note $1A
+	snd_note $1C, NOTELEN_CUSTOM, $0F
+	snd_note $23, NOTELEN_03
+	snd_note $28, NOTELEN_06
+	snd_note $1C, NOTELEN_09
+	snd_note $1A, NOTELEN_03
+	snd_note $00, NOTELEN_0C
+	snd_note $00, NOTELEN_18
+	snd_note $1C, NOTELEN_CUSTOM, $0F
+	snd_note $23, NOTELEN_03
+	snd_note $28, NOTELEN_06
+	snd_note $1C, NOTELEN_09
+	snd_note $1A, NOTELEN_0C
+	snd_note $00, NOTELEN_06
+	snd_note $21, NOTELEN_03
+	snd_note $26, NOTELEN_09
+	snd_note $21
+	snd_note $15, NOTELEN_0C
+	snd_note $00, NOTELEN_03
+	snd_note $1C
+	snd_note $21, NOTELEN_06
+	snd_note $15, NOTELEN_09
+	snd_note $13
+	snd_note $1A, NOTELEN_03
+	snd_note $1F
+	snd_note $1F
+	snd_note $13, NOTELEN_09
+	snd_note $00, NOTELEN_03
+	snd_note $1F, NOTELEN_09
+	snd_jp SndData_04_Ch1
+SndData_04_Ch2:
+	snd_duty SNDDUTY_12, $01
+	snd_instrument INSTR_41
+	snd_note $38, NOTELEN_03
+	snd_note $34
+	snd_note $31
+	snd_note $2F
+	snd_note $00
+	snd_instrument INSTR_40
+	snd_note $1C
+	snd_note $28, NOTELEN_06
+	snd_note $00, NOTELEN_0C
+	snd_note $2A, NOTELEN_CUSTOM, $0F
+	snd_note $26, NOTELEN_0C
+	snd_note $2A, NOTELEN_09
+	snd_note $1C, NOTELEN_06
+	snd_note $28, NOTELEN_09
+	snd_note $1C, NOTELEN_03
+	snd_note $28, NOTELEN_CUSTOM, $0F
+	snd_note $2A, NOTELEN_CUSTOM, $0F
+	snd_note $00, NOTELEN_18
+	snd_note $1C, NOTELEN_06
+	snd_note $28, NOTELEN_09
+	snd_note $1C, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $00, NOTELEN_0C
+	snd_note $2A, NOTELEN_CUSTOM, $0F
+	snd_note $26, NOTELEN_0C
+	snd_note $2A, NOTELEN_09
+	snd_note $1C, NOTELEN_06
+	snd_note $28, NOTELEN_09
+	snd_note $1C, NOTELEN_03
+	snd_note $28, NOTELEN_CUSTOM, $0F
+	snd_note $2A, NOTELEN_CUSTOM, $0F
+	snd_note $00, NOTELEN_0C
+	snd_note $2D
+	snd_note $1C, NOTELEN_06
+	snd_note $28, NOTELEN_09
+	snd_note $1C, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $00, NOTELEN_0C
+	snd_note $2A, NOTELEN_CUSTOM, $0F
+	snd_note $26, NOTELEN_0C
+	snd_note $2A, NOTELEN_09
+	snd_note $1C, NOTELEN_06
+	snd_note $28, NOTELEN_09
+	snd_note $1C, NOTELEN_03
+	snd_note $2C, NOTELEN_CUSTOM, $0F
+	snd_note $2A, NOTELEN_CUSTOM, $0F
+	snd_note $00, NOTELEN_18
+	snd_note $1C, NOTELEN_06
+	snd_note $28, NOTELEN_09
+	snd_note $1C, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $00, NOTELEN_0C
+	snd_note $2A, NOTELEN_CUSTOM, $0F
+	snd_note $2A, NOTELEN_0C
+	snd_note $26, NOTELEN_09
+	snd_note $15, NOTELEN_06
+	snd_note $31, NOTELEN_09
+	snd_note $15, NOTELEN_03
+	snd_note $2D, NOTELEN_06
+	snd_note $15, NOTELEN_09
+	snd_note $2B, NOTELEN_CUSTOM, $0F
+	snd_note $00, NOTELEN_03
+	snd_note $2A, NOTELEN_0C
+	snd_note $2B, NOTELEN_09
+	snd_jp SndData_04_Ch2
+SndData_04_Ch4:
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_note $00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_note $00
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_note $00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_note $00
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_note $00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_note $00
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_note $00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_note $00
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_inc_vol -6
+	snd_noteex PRESET_00, NOTELEN_01
+	snd_inc_vol 2
+	snd_noteex PRESET_00
+	snd_inc_vol 2
+	snd_noteex PRESET_00
+	snd_inc_vol 2
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_jp SndData_04_Ch4
 SndHeader_06:
 	db 4 ; Number of slots
 .slot0:
@@ -2491,850 +1392,521 @@ SndHeader_06:
 	dw SndData_06_Ch4 ; Data pointer
 	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
-SndData_06_Ch3: db $A0
-L0849BB: db $08
-L0849BC: db $2F
-L0849BD: db $E5
-L0849BE: db $2C
-L0849BF: db $E3
-L0849C0: db $31
-L0849C1: db $E5
-L0849C2: db $2F
-L0849C3: db $E3
-L0849C4: db $2C
-L0849C5: db $2F
-L0849C6: db $2F
-L0849C7: db $2C
-L0849C8: db $E5
-L0849C9: db $31
-L0849CA: db $2F
-L0849CB: db $E3
-L0849CC: db $2C
-L0849CD: db $2F
-L0849CE: db $2D
-L0849CF: db $E5
-L0849D0: db $28
-L0849D1: db $E3
-L0849D2: db $2F
-L0849D3: db $E5
-L0849D4: db $2D
-L0849D5: db $E3
-L0849D6: db $28
-L0849D7: db $2D
-L0849D8: db $2D
-L0849D9: db $2A
-L0849DA: db $E5
-L0849DB: db $2F
-L0849DC: db $2D
-L0849DD: db $E3
-L0849DE: db $2A
-L0849DF: db $2D
-L0849E0: db $2F
-L0849E1: db $E5
-L0849E2: db $2C
-L0849E3: db $E3
-L0849E4: db $31
-L0849E5: db $E5
-L0849E6: db $2F
-L0849E7: db $E3
-L0849E8: db $2C
-L0849E9: db $2F
-L0849EA: db $2F
-L0849EB: db $2C
-L0849EC: db $E5
-L0849ED: db $31
-L0849EE: db $2F
-L0849EF: db $E3
-L0849F0: db $2C
-L0849F1: db $2F
-L0849F2: db $2D
-L0849F3: db $E5
-L0849F4: db $28
-L0849F5: db $E3
-L0849F6: db $2F
-L0849F7: db $E5
-L0849F8: db $2D
-L0849F9: db $E3
-L0849FA: db $28
-L0849FB: db $2D
-L0849FC: db $2D
-L0849FD: db $2A
-L0849FE: db $E5
-L0849FF: db $2F
-L084A00: db $2D
-L084A01: db $E3
-L084A02: db $2A
-L084A03: db $2D
-L084A04: db $A0
-L084A05: db $09
-L084A06: db $89
-L084A07: db $F4
-L084A08: db $00
-L084A09: db $EA
-L084A0A: db $28
-L084A0B: db $DE
-L084A0C: db $03
-L084A0D: db $8A
-L084A0E: db $FB
-L084A0F: db $97
-L084A10: db $FF
-L084A11: db $28
-L084A12: db $E1
-L084A13: db $8A
-L084A14: db $05
-L084A15: db $97
-L084A16: db $01
-L084A17: db $00
-L084A18: db $DE
-L084A19: db $12
-L084A1A: db $28
-L084A1B: db $E1
-L084A1C: db $2C
-L084A1D: db $E3
-L084A1E: db $2F
-L084A1F: db $00
-L084A20: db $EA
-L084A21: db $25
-L084A22: db $DE
-L084A23: db $03
-L084A24: db $8A
-L084A25: db $FB
-L084A26: db $97
-L084A27: db $FF
-L084A28: db $25
-L084A29: db $E1
-L084A2A: db $8A
-L084A2B: db $05
-L084A2C: db $97
-L084A2D: db $01
-L084A2E: db $00
-L084A2F: db $DE
-L084A30: db $12
-L084A31: db $25
-L084A32: db $E1
-L084A33: db $28
-L084A34: db $E3
-L084A35: db $2C
-L084A36: db $00
-L084A37: db $EA
-L084A38: db $2A
-L084A39: db $DE
-L084A3A: db $03
-L084A3B: db $8A
-L084A3C: db $FB
-L084A3D: db $97
-L084A3E: db $FF
-L084A3F: db $2A
-L084A40: db $E1
-L084A41: db $8A
-L084A42: db $05
-L084A43: db $97
-L084A44: db $01
-L084A45: db $00
-L084A46: db $DE
-L084A47: db $12
-L084A48: db $2A
-L084A49: db $E1
-L084A4A: db $2D
-L084A4B: db $E3
-L084A4C: db $31
-L084A4D: db $00
-L084A4E: db $EA
-L084A4F: db $23
-L084A50: db $DE
-L084A51: db $03
-L084A52: db $8A
-L084A53: db $FB
-L084A54: db $97
-L084A55: db $FF
-L084A56: db $23
-L084A57: db $E1
-L084A58: db $8A
-L084A59: db $05
-L084A5A: db $97
-L084A5B: db $01
-L084A5C: db $00
-L084A5D: db $DE
-L084A5E: db $09
-L084A5F: db $2F
-L084A60: db $EA
-L084A61: db $23
-L084A62: db $E1
-L084A63: db $27
-L084A64: db $E3
-L084A65: db $2A
-L084A66: db $89
-L084A67: db $0C
-L084A68: db $80
-L084A69: db $BA
-L084A6A: db $49
-SndData_06_Ch1: db $A0
-L084A6C: db $05
-L084A6D: db $1C
-L084A6E: db $EA
-L084A6F: db $1C
-L084A70: db $E1
-L084A71: db $20
-L084A72: db $E3
-L084A73: db $23
-L084A74: db $1C
-L084A75: db $EA
-L084A76: db $1C
-L084A77: db $E1
-L084A78: db $20
-L084A79: db $E3
-L084A7A: db $23
-L084A7B: db $19
-L084A7C: db $EA
-L084A7D: db $19
-L084A7E: db $E1
-L084A7F: db $1C
-L084A80: db $E3
-L084A81: db $20
-L084A82: db $19
-L084A83: db $EA
-L084A84: db $19
-L084A85: db $E1
-L084A86: db $1C
-L084A87: db $E3
-L084A88: db $20
-L084A89: db $1E
-L084A8A: db $EA
-L084A8B: db $1E
-L084A8C: db $E1
-L084A8D: db $21
-L084A8E: db $E3
-L084A8F: db $25
-L084A90: db $1E
-L084A91: db $EA
-L084A92: db $1E
-L084A93: db $E1
-L084A94: db $21
-L084A95: db $E3
-L084A96: db $25
-L084A97: db $17
-L084A98: db $EA
-L084A99: db $17
-L084A9A: db $E1
-L084A9B: db $1B
-L084A9C: db $E3
-L084A9D: db $1E
-L084A9E: db $17
-L084A9F: db $EA
-L084AA0: db $17
-L084AA1: db $E1
-L084AA2: db $1B
-L084AA3: db $E3
-L084AA4: db $1E
-L084AA5: db $1C
-L084AA6: db $EA
-L084AA7: db $1C
-L084AA8: db $E1
-L084AA9: db $20
-L084AAA: db $E3
-L084AAB: db $23
-L084AAC: db $1C
-L084AAD: db $EA
-L084AAE: db $1C
-L084AAF: db $E1
-L084AB0: db $20
-L084AB1: db $E3
-L084AB2: db $23
-L084AB3: db $19
-L084AB4: db $EA
-L084AB5: db $19
-L084AB6: db $E1
-L084AB7: db $1C
-L084AB8: db $E3
-L084AB9: db $20
-L084ABA: db $19
-L084ABB: db $EA
-L084ABC: db $19
-L084ABD: db $E1
-L084ABE: db $1C
-L084ABF: db $E3
-L084AC0: db $20
-L084AC1: db $1E
-L084AC2: db $EA
-L084AC3: db $1E
-L084AC4: db $E1
-L084AC5: db $21
-L084AC6: db $E3
-L084AC7: db $25
-L084AC8: db $1E
-L084AC9: db $EA
-L084ACA: db $1E
-L084ACB: db $E1
-L084ACC: db $21
-L084ACD: db $E3
-L084ACE: db $25
-L084ACF: db $17
-L084AD0: db $EA
-L084AD1: db $17
-L084AD2: db $E1
-L084AD3: db $1B
-L084AD4: db $E3
-L084AD5: db $1E
-L084AD6: db $17
-L084AD7: db $EA
-L084AD8: db $17
-L084AD9: db $E1
-L084ADA: db $1B
-L084ADB: db $E3
-L084ADC: db $1E
-L084ADD: db $A0
-L084ADE: db $09
-L084ADF: db $89
-L084AE0: db $0C
-L084AE1: db $00
-L084AE2: db $EA
-L084AE3: db $1C
-L084AE4: db $DE
-L084AE5: db $03
-L084AE6: db $8A
-L084AE7: db $FB
-L084AE8: db $97
-L084AE9: db $FF
-L084AEA: db $1C
-L084AEB: db $E1
-L084AEC: db $8A
-L084AED: db $05
-L084AEE: db $97
-L084AEF: db $01
-L084AF0: db $00
-L084AF1: db $DE
-L084AF2: db $12
-L084AF3: db $1C
-L084AF4: db $E1
-L084AF5: db $20
-L084AF6: db $E3
-L084AF7: db $23
-L084AF8: db $00
-L084AF9: db $EA
-L084AFA: db $19
-L084AFB: db $DE
-L084AFC: db $03
-L084AFD: db $8A
-L084AFE: db $FB
-L084AFF: db $97
-L084B00: db $FF
-L084B01: db $19
-L084B02: db $E1
-L084B03: db $8A
-L084B04: db $05
-L084B05: db $97
-L084B06: db $01
-L084B07: db $00
-L084B08: db $DE
-L084B09: db $12
-L084B0A: db $19
-L084B0B: db $E1
-L084B0C: db $1C
-L084B0D: db $E3
-L084B0E: db $20
-L084B0F: db $00
-L084B10: db $EA
-L084B11: db $1E
-L084B12: db $DE
-L084B13: db $03
-L084B14: db $8A
-L084B15: db $FB
-L084B16: db $97
-L084B17: db $FF
-L084B18: db $1E
-L084B19: db $E1
-L084B1A: db $8A
-L084B1B: db $05
-L084B1C: db $97
-L084B1D: db $01
-L084B1E: db $00
-L084B1F: db $DE
-L084B20: db $12
-L084B21: db $1E
-L084B22: db $E1
-L084B23: db $21
-L084B24: db $E3
-L084B25: db $25
-L084B26: db $00
-L084B27: db $EA
-L084B28: db $17
-L084B29: db $DE
-L084B2A: db $03
-L084B2B: db $8A
-L084B2C: db $FB
-L084B2D: db $97
-L084B2E: db $FF
-L084B2F: db $17
-L084B30: db $E1
-L084B31: db $8A
-L084B32: db $05
-L084B33: db $97
-L084B34: db $01
-L084B35: db $00
-L084B36: db $DE
-L084B37: db $09
-L084B38: db $23
-L084B39: db $EA
-L084B3A: db $17
-L084B3B: db $E1
-L084B3C: db $1B
-L084B3D: db $E3
-L084B3E: db $1E
-L084B3F: db $89
-L084B40: db $F4
-L084B41: db $80
-L084B42: db $6B
-L084B43: db $4A
-SndData_06_Ch2: db $88
-L084B45: db $2E
-L084B46: db $A0
-L084B47: db $80
-L084B48: db $28
-L084B49: db $E1
-L084B4A: db $28
-L084B4B: db $23
-L084B4C: db $E3
-L084B4D: db $88
-L084B4E: db $33
-L084B4F: db $A0
-L084B50: db $40
-L084B51: db $34
-L084B52: db $88
-L084B53: db $2E
-L084B54: db $A0
-L084B55: db $80
-L084B56: db $28
-L084B57: db $EA
-L084B58: db $28
-L084B59: db $E1
-L084B5A: db $23
-L084B5B: db $E3
-L084B5C: db $88
-L084B5D: db $33
-L084B5E: db $A0
-L084B5F: db $40
-L084B60: db $34
-L084B61: db $88
-L084B62: db $2E
-L084B63: db $A0
-L084B64: db $80
-L084B65: db $28
-L084B66: db $25
-L084B67: db $E1
-L084B68: db $25
-L084B69: db $88
-L084B6A: db $33
-L084B6B: db $A0
-L084B6C: db $40
-L084B6D: db $2F
-L084B6E: db $E5
-L084B6F: db $88
-L084B70: db $2E
-L084B71: db $A0
-L084B72: db $80
-L084B73: db $25
-L084B74: db $EA
-L084B75: db $25
-L084B76: db $E1
-L084B77: db $20
-L084B78: db $E3
-L084B79: db $88
-L084B7A: db $33
-L084B7B: db $A0
-L084B7C: db $40
-L084B7D: db $34
-L084B7E: db $88
-L084B7F: db $2E
-L084B80: db $A0
-L084B81: db $80
-L084B82: db $25
-L084B83: db $2A
-L084B84: db $E1
-L084B85: db $2A
-L084B86: db $25
-L084B87: db $E3
-L084B88: db $88
-L084B89: db $33
-L084B8A: db $A0
-L084B8B: db $40
-L084B8C: db $31
-L084B8D: db $88
-L084B8E: db $2E
-L084B8F: db $A0
-L084B90: db $80
-L084B91: db $2A
-L084B92: db $EA
-L084B93: db $2A
-L084B94: db $E1
-L084B95: db $25
-L084B96: db $E3
-L084B97: db $88
-L084B98: db $33
-L084B99: db $A0
-L084B9A: db $40
-L084B9B: db $31
-L084B9C: db $88
-L084B9D: db $2E
-L084B9E: db $A0
-L084B9F: db $80
-L084BA0: db $2A
-L084BA1: db $23
-L084BA2: db $E1
-L084BA3: db $23
-L084BA4: db $88
-L084BA5: db $33
-L084BA6: db $A0
-L084BA7: db $40
-L084BA8: db $33
-L084BA9: db $E5
-L084BAA: db $88
-L084BAB: db $2E
-L084BAC: db $A0
-L084BAD: db $80
-L084BAE: db $23
-L084BAF: db $EA
-L084BB0: db $23
-L084BB1: db $E1
-L084BB2: db $1E
-L084BB3: db $E3
-L084BB4: db $88
-L084BB5: db $33
-L084BB6: db $A0
-L084BB7: db $40
-L084BB8: db $33
-L084BB9: db $88
-L084BBA: db $2E
-L084BBB: db $A0
-L084BBC: db $80
-L084BBD: db $23
-L084BBE: db $28
-L084BBF: db $E1
-L084BC0: db $28
-L084BC1: db $23
-L084BC2: db $E3
-L084BC3: db $88
-L084BC4: db $33
-L084BC5: db $A0
-L084BC6: db $40
-L084BC7: db $34
-L084BC8: db $88
-L084BC9: db $2E
-L084BCA: db $A0
-L084BCB: db $80
-L084BCC: db $28
-L084BCD: db $EA
-L084BCE: db $28
-L084BCF: db $E1
-L084BD0: db $23
-L084BD1: db $E3
-L084BD2: db $88
-L084BD3: db $33
-L084BD4: db $A0
-L084BD5: db $40
-L084BD6: db $34
-L084BD7: db $88
-L084BD8: db $2E
-L084BD9: db $A0
-L084BDA: db $80
-L084BDB: db $28
-L084BDC: db $25
-L084BDD: db $E1
-L084BDE: db $25
-L084BDF: db $88
-L084BE0: db $33
-L084BE1: db $A0
-L084BE2: db $40
-L084BE3: db $2F
-L084BE4: db $E5
-L084BE5: db $88
-L084BE6: db $2E
-L084BE7: db $A0
-L084BE8: db $80
-L084BE9: db $25
-L084BEA: db $EA
-L084BEB: db $25
-L084BEC: db $E1
-L084BED: db $20
-L084BEE: db $E3
-L084BEF: db $88
-L084BF0: db $33
-L084BF1: db $A0
-L084BF2: db $40
-L084BF3: db $34
-L084BF4: db $88
-L084BF5: db $2E
-L084BF6: db $A0
-L084BF7: db $80
-L084BF8: db $25
-L084BF9: db $2A
-L084BFA: db $E1
-L084BFB: db $2A
-L084BFC: db $25
-L084BFD: db $E3
-L084BFE: db $88
-L084BFF: db $33
-L084C00: db $A0
-L084C01: db $40
-L084C02: db $31
-L084C03: db $88
-L084C04: db $2E
-L084C05: db $A0
-L084C06: db $80
-L084C07: db $2A
-L084C08: db $EA
-L084C09: db $2A
-L084C0A: db $E1
-L084C0B: db $25
-L084C0C: db $E3
-L084C0D: db $88
-L084C0E: db $33
-L084C0F: db $A0
-L084C10: db $40
-L084C11: db $31
-L084C12: db $88
-L084C13: db $2E
-L084C14: db $A0
-L084C15: db $80
-L084C16: db $2A
-L084C17: db $23
-L084C18: db $E1
-L084C19: db $23
-L084C1A: db $88
-L084C1B: db $33
-L084C1C: db $A0
-L084C1D: db $40
-L084C1E: db $33
-L084C1F: db $E5
-L084C20: db $88
-L084C21: db $2E
-L084C22: db $A0
-L084C23: db $80
-L084C24: db $23
-L084C25: db $EA
-L084C26: db $23
-L084C27: db $E1
-L084C28: db $1E
-L084C29: db $E3
-L084C2A: db $88
-L084C2B: db $33
-L084C2C: db $A0
-L084C2D: db $40
-L084C2E: db $33
-L084C2F: db $88
-L084C30: db $2E
-L084C31: db $A0
-L084C32: db $80
-L084C33: db $23
-L084C34: db $28
-L084C35: db $E1
-L084C36: db $28
-L084C37: db $23
-L084C38: db $E3
-L084C39: db $25
-L084C3A: db $28
-L084C3B: db $EA
-L084C3C: db $28
-L084C3D: db $E1
-L084C3E: db $23
-L084C3F: db $E3
-L084C40: db $25
-L084C41: db $28
-L084C42: db $25
-L084C43: db $E1
-L084C44: db $25
-L084C45: db $20
-L084C46: db $E3
-L084C47: db $23
-L084C48: db $25
-L084C49: db $EA
-L084C4A: db $25
-L084C4B: db $E1
-L084C4C: db $20
-L084C4D: db $E3
-L084C4E: db $23
-L084C4F: db $25
-L084C50: db $2A
-L084C51: db $E1
-L084C52: db $2A
-L084C53: db $25
-L084C54: db $E3
-L084C55: db $28
-L084C56: db $2A
-L084C57: db $EA
-L084C58: db $2A
-L084C59: db $E1
-L084C5A: db $25
-L084C5B: db $E3
-L084C5C: db $28
-L084C5D: db $2A
-L084C5E: db $23
-L084C5F: db $E1
-L084C60: db $23
-L084C61: db $1E
-L084C62: db $E3
-L084C63: db $21
-L084C64: db $23
-L084C65: db $88
-L084C66: db $3E
-L084C67: db $8A
-L084C68: db $FE
-L084C69: db $1E
-L084C6A: db $DF
-L084C6B: db $20
-L084C6C: db $21
-L084C6D: db $23
-L084C6E: db $25
-L084C6F: db $27
-L084C70: db $28
-L084C71: db $2A
-L084C72: db $2C
-L084C73: db $2D
-L084C74: db $2F
-L084C75: db $31
-L084C76: db $33
-L084C77: db $34
-L084C78: db $36
-L084C79: db $38
-L084C7A: db $39
-L084C7B: db $3B
-L084C7C: db $3D
-L084C7D: db $3F
-L084C7E: db $40
-L084C7F: db $42
-L084C80: db $44
-L084C81: db $45
-L084C82: db $8A
-L084C83: db $02
-L084C84: db $80
-L084C85: db $44
-L084C86: db $4B
-SndData_06_Ch4: db $9A
-L084C88: db $D4
-L084C89: db $4C
-L084C8A: db $C1
-L084C8B: db $C2
-L084C8C: db $C2
-L084C8D: db $C2
-L084C8E: db $C0
-L084C8F: db $C2
-L084C90: db $C2
-L084C91: db $C2
-L084C92: db $C1
-L084C93: db $C2
-L084C94: db $C2
-L084C95: db $C1
-L084C96: db $C0
-L084C97: db $C0
-L084C98: db $C7
-L084C99: db $C2
-L084C9A: db $9A
-L084C9B: db $D4
-L084C9C: db $4C
-L084C9D: db $C1
-L084C9E: db $C2
-L084C9F: db $C2
-L084CA0: db $C2
-L084CA1: db $C0
-L084CA2: db $C2
-L084CA3: db $C2
-L084CA4: db $C2
-L084CA5: db $C1
-L084CA6: db $C0
-L084CA7: db $C2
-L084CA8: db $C1
-L084CA9: db $C0
-L084CAA: db $C0
-L084CAB: db $C7
-L084CAC: db $C0
-L084CAD: db $8D
-L084CAE: db $24
-L084CAF: db $03
-L084CB0: db $C1
-L084CB1: db $EA
-L084CB2: db $C2
-L084CB3: db $E1
-L084CB4: db $C1
-L084CB5: db $E5
-L084CB6: db $C0
-L084CB7: db $EA
-L084CB8: db $C0
-L084CB9: db $E1
-L084CBA: db $C2
-L084CBB: db $E5
-L084CBC: db $81
-L084CBD: db $24
-L084CBE: db $B0
-L084CBF: db $4C
-L084CC0: db $C1
-L084CC1: db $EA
-L084CC2: db $C2
-L084CC3: db $E1
-L084CC4: db $C1
-L084CC5: db $EA
-L084CC6: db $C2
-L084CC7: db $E1
-L084CC8: db $C0
-L084CC9: db $C0
-L084CCA: db $C2
-L084CCB: db $C0
-L084CCC: db $C0
-L084CCD: db $E3
-L084CCE: db $C0
-L084CCF: db $E1
-L084CD0: db $C0
-L084CD1: db $80
-L084CD2: db $87
-L084CD3: db $4C
-L084CD4: db $C1
-L084CD5: db $E1
-L084CD6: db $C2
-L084CD7: db $C2
-L084CD8: db $C2
-L084CD9: db $C0
-L084CDA: db $C2
-L084CDB: db $C2
-L084CDC: db $C2
-L084CDD: db $C1
-L084CDE: db $C2
-L084CDF: db $C2
-L084CE0: db $C1
-L084CE1: db $C0
-L084CE2: db $C2
-L084CE3: db $C5
-L084CE4: db $C2
-L084CE5: db $C1
-L084CE6: db $C2
-L084CE7: db $C2
-L084CE8: db $C2
-L084CE9: db $C0
-L084CEA: db $C2
-L084CEB: db $C2
-L084CEC: db $C2
-L084CED: db $C1
-L084CEE: db $C2
-L084CEF: db $C2
-L084CF0: db $C1
-L084CF1: db $C0
-L084CF2: db $C2
-L084CF3: db $C7
-L084CF4: db $C2
-L084CF5: db $C1
-L084CF6: db $C2
-L084CF7: db $C2
-L084CF8: db $C2
-L084CF9: db $C0
-L084CFA: db $C2
-L084CFB: db $C2
-L084CFC: db $C2
-L084CFD: db $C1
-L084CFE: db $C2
-L084CFF: db $C2
-L084D00: db $C1
-L084D01: db $C0
-L084D02: db $C2
-L084D03: db $C5
-L084D04: db $C2
-L084D05: db $9B
+SndData_06_Ch3:
+	snd_wave WAVE_08
+	snd_note $2F, NOTELEN_0C
+	snd_note $2C, NOTELEN_06
+	snd_note $31, NOTELEN_0C
+	snd_note $2F, NOTELEN_06
+	snd_note $2C
+	snd_note $2F
+	snd_note $2F
+	snd_note $2C, NOTELEN_0C
+	snd_note $31
+	snd_note $2F, NOTELEN_06
+	snd_note $2C
+	snd_note $2F
+	snd_note $2D, NOTELEN_0C
+	snd_note $28, NOTELEN_06
+	snd_note $2F, NOTELEN_0C
+	snd_note $2D, NOTELEN_06
+	snd_note $28
+	snd_note $2D
+	snd_note $2D
+	snd_note $2A, NOTELEN_0C
+	snd_note $2F
+	snd_note $2D, NOTELEN_06
+	snd_note $2A
+	snd_note $2D
+	snd_note $2F, NOTELEN_0C
+	snd_note $2C, NOTELEN_06
+	snd_note $31, NOTELEN_0C
+	snd_note $2F, NOTELEN_06
+	snd_note $2C
+	snd_note $2F
+	snd_note $2F
+	snd_note $2C, NOTELEN_0C
+	snd_note $31
+	snd_note $2F, NOTELEN_06
+	snd_note $2C
+	snd_note $2F
+	snd_note $2D, NOTELEN_0C
+	snd_note $28, NOTELEN_06
+	snd_note $2F, NOTELEN_0C
+	snd_note $2D, NOTELEN_06
+	snd_note $28
+	snd_note $2D
+	snd_note $2D
+	snd_note $2A, NOTELEN_0C
+	snd_note $2F
+	snd_note $2D, NOTELEN_06
+	snd_note $2A
+	snd_note $2D
+	snd_wave WAVE_09
+	snd_inc_base_note -12
+	snd_note $00, NOTELEN_09
+	snd_note $28, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $28, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $12
+	snd_note $28, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $2F
+	snd_note $00, NOTELEN_09
+	snd_note $25, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $25, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $12
+	snd_note $25, NOTELEN_03
+	snd_note $28, NOTELEN_06
+	snd_note $2C
+	snd_note $00, NOTELEN_09
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $12
+	snd_note $2A, NOTELEN_03
+	snd_note $2D, NOTELEN_06
+	snd_note $31
+	snd_note $00, NOTELEN_09
+	snd_note $23, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $23, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $09
+	snd_note $2F, NOTELEN_09
+	snd_note $23, NOTELEN_03
+	snd_note $27, NOTELEN_06
+	snd_note $2A
+	snd_inc_base_note 12
+	snd_jp SndData_06_Ch3
+SndData_06_Ch1:
+	snd_duty SNDDUTY_12, $05
+	snd_note $1C, NOTELEN_09
+	snd_note $1C, NOTELEN_03
+	snd_note $20, NOTELEN_06
+	snd_note $23
+	snd_note $1C, NOTELEN_09
+	snd_note $1C, NOTELEN_03
+	snd_note $20, NOTELEN_06
+	snd_note $23
+	snd_note $19, NOTELEN_09
+	snd_note $19, NOTELEN_03
+	snd_note $1C, NOTELEN_06
+	snd_note $20
+	snd_note $19, NOTELEN_09
+	snd_note $19, NOTELEN_03
+	snd_note $1C, NOTELEN_06
+	snd_note $20
+	snd_note $1E, NOTELEN_09
+	snd_note $1E, NOTELEN_03
+	snd_note $21, NOTELEN_06
+	snd_note $25
+	snd_note $1E, NOTELEN_09
+	snd_note $1E, NOTELEN_03
+	snd_note $21, NOTELEN_06
+	snd_note $25
+	snd_note $17, NOTELEN_09
+	snd_note $17, NOTELEN_03
+	snd_note $1B, NOTELEN_06
+	snd_note $1E
+	snd_note $17, NOTELEN_09
+	snd_note $17, NOTELEN_03
+	snd_note $1B, NOTELEN_06
+	snd_note $1E
+	snd_note $1C, NOTELEN_09
+	snd_note $1C, NOTELEN_03
+	snd_note $20, NOTELEN_06
+	snd_note $23
+	snd_note $1C, NOTELEN_09
+	snd_note $1C, NOTELEN_03
+	snd_note $20, NOTELEN_06
+	snd_note $23
+	snd_note $19, NOTELEN_09
+	snd_note $19, NOTELEN_03
+	snd_note $1C, NOTELEN_06
+	snd_note $20
+	snd_note $19, NOTELEN_09
+	snd_note $19, NOTELEN_03
+	snd_note $1C, NOTELEN_06
+	snd_note $20
+	snd_note $1E, NOTELEN_09
+	snd_note $1E, NOTELEN_03
+	snd_note $21, NOTELEN_06
+	snd_note $25
+	snd_note $1E, NOTELEN_09
+	snd_note $1E, NOTELEN_03
+	snd_note $21, NOTELEN_06
+	snd_note $25
+	snd_note $17, NOTELEN_09
+	snd_note $17, NOTELEN_03
+	snd_note $1B, NOTELEN_06
+	snd_note $1E
+	snd_note $17, NOTELEN_09
+	snd_note $17, NOTELEN_03
+	snd_note $1B, NOTELEN_06
+	snd_note $1E
+	snd_duty SNDDUTY_12, $09
+	snd_inc_base_note 12
+	snd_note $00, NOTELEN_09
+	snd_note $1C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $1C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $12
+	snd_note $1C, NOTELEN_03
+	snd_note $20, NOTELEN_06
+	snd_note $23
+	snd_note $00, NOTELEN_09
+	snd_note $19, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $19, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $12
+	snd_note $19, NOTELEN_03
+	snd_note $1C, NOTELEN_06
+	snd_note $20
+	snd_note $00, NOTELEN_09
+	snd_note $1E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $1E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $12
+	snd_note $1E, NOTELEN_03
+	snd_note $21, NOTELEN_06
+	snd_note $25
+	snd_note $00, NOTELEN_09
+	snd_note $17, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $17, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $09
+	snd_note $23, NOTELEN_09
+	snd_note $17, NOTELEN_03
+	snd_note $1B, NOTELEN_06
+	snd_note $1E
+	snd_inc_base_note -12
+	snd_jp SndData_06_Ch1
+SndData_06_Ch2:
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $28, NOTELEN_03
+	snd_note $28
+	snd_note $23, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $34
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $28, NOTELEN_09
+	snd_note $28, NOTELEN_03
+	snd_note $23, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $34
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $28
+	snd_note $25, NOTELEN_03
+	snd_note $25
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $2F, NOTELEN_0C
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $25, NOTELEN_09
+	snd_note $25, NOTELEN_03
+	snd_note $20, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $34
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $25
+	snd_note $2A, NOTELEN_03
+	snd_note $2A
+	snd_note $25, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $31
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $2A, NOTELEN_09
+	snd_note $2A, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $31
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $2A
+	snd_note $23, NOTELEN_03
+	snd_note $23
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $33, NOTELEN_0C
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $23, NOTELEN_09
+	snd_note $23, NOTELEN_03
+	snd_note $1E, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $33
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $23
+	snd_note $28, NOTELEN_03
+	snd_note $28
+	snd_note $23, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $34
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $28, NOTELEN_09
+	snd_note $28, NOTELEN_03
+	snd_note $23, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $34
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $28
+	snd_note $25, NOTELEN_03
+	snd_note $25
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $2F, NOTELEN_0C
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $25, NOTELEN_09
+	snd_note $25, NOTELEN_03
+	snd_note $20, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $34
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $25
+	snd_note $2A, NOTELEN_03
+	snd_note $2A
+	snd_note $25, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $31
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $2A, NOTELEN_09
+	snd_note $2A, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $31
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $2A
+	snd_note $23, NOTELEN_03
+	snd_note $23
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $33, NOTELEN_0C
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $23, NOTELEN_09
+	snd_note $23, NOTELEN_03
+	snd_note $1E, NOTELEN_06
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_25, $00
+	snd_note $33
+	snd_instrument INSTR_2E
+	snd_duty SNDDUTY_50, $00
+	snd_note $23
+	snd_note $28, NOTELEN_03
+	snd_note $28
+	snd_note $23, NOTELEN_06
+	snd_note $25
+	snd_note $28, NOTELEN_09
+	snd_note $28, NOTELEN_03
+	snd_note $23, NOTELEN_06
+	snd_note $25
+	snd_note $28
+	snd_note $25, NOTELEN_03
+	snd_note $25
+	snd_note $20, NOTELEN_06
+	snd_note $23
+	snd_note $25, NOTELEN_09
+	snd_note $25, NOTELEN_03
+	snd_note $20, NOTELEN_06
+	snd_note $23
+	snd_note $25
+	snd_note $2A, NOTELEN_03
+	snd_note $2A
+	snd_note $25, NOTELEN_06
+	snd_note $28
+	snd_note $2A, NOTELEN_09
+	snd_note $2A, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_note $28
+	snd_note $2A
+	snd_note $23, NOTELEN_03
+	snd_note $23
+	snd_note $1E, NOTELEN_06
+	snd_note $21
+	snd_note $23
+	snd_instrument INSTR_3E
+	snd_inc_vol -2
+	snd_note $1E, NOTELEN_01
+	snd_note $20
+	snd_note $21
+	snd_note $23
+	snd_note $25
+	snd_note $27
+	snd_note $28
+	snd_note $2A
+	snd_note $2C
+	snd_note $2D
+	snd_note $2F
+	snd_note $31
+	snd_note $33
+	snd_note $34
+	snd_note $36
+	snd_note $38
+	snd_note $39
+	snd_note $3B
+	snd_note $3D
+	snd_note $3F
+	snd_note $40
+	snd_note $42
+	snd_note $44
+	snd_note $45
+	snd_inc_vol 2
+	snd_jp SndData_06_Ch2
+SndData_06_Ch4:
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_07
+	snd_noteex PRESET_02
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_07
+	snd_noteex PRESET_00
+	snd_var iSndChInfo_24, $03
+	.loop:
+		snd_noteex PRESET_01, NOTELEN_09
+		snd_noteex PRESET_02, NOTELEN_03
+		snd_noteex PRESET_01, NOTELEN_0C
+		snd_noteex PRESET_00, NOTELEN_09
+		snd_noteex PRESET_00, NOTELEN_03
+		snd_noteex PRESET_02, NOTELEN_0C
+		snd_djnz iSndChInfo_24, .loop
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_jp SndData_06_Ch4
+.sub0:
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_05
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_07
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_05
+	snd_noteex PRESET_02
+	snd_ret
 SndHeader_09:
 	db 4 ; Number of slots
 .slot0:
@@ -3385,1278 +1957,712 @@ SndHeader_09:
 	dw SndData_09_Ch4 ; Data pointer
 	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
-SndData_09_Ch3: db $A0
-L084D38: db $09
-L084D39: db $88
-L084D3A: db $01
-L084D3B: db $83
-L084D3C: db $3D
-L084D3D: db $89
-L084D3E: db $00
-L084D3F: db $8A
-L084D40: db $FC
-L084D41: db $24
-L084D42: db $DF
-L084D43: db $8A
-L084D44: db $02
-L084D45: db $25
-L084D46: db $8A
-L084D47: db $01
-L084D48: db $26
-L084D49: db $8A
-L084D4A: db $01
-L084D4B: db $27
-L084D4C: db $EA
-L084D4D: db $29
-L084D4E: db $DE
-L084D4F: db $03
-L084D50: db $8A
-L084D51: db $FB
-L084D52: db $97
-L084D53: db $FF
-L084D54: db $29
-L084D55: db $E1
-L084D56: db $8A
-L084D57: db $05
-L084D58: db $97
-L084D59: db $01
-L084D5A: db $2A
-L084D5B: db $DE
-L084D5C: db $03
-L084D5D: db $8A
-L084D5E: db $FB
-L084D5F: db $97
-L084D60: db $FF
-L084D61: db $2A
-L084D62: db $E1
-L084D63: db $8A
-L084D64: db $05
-L084D65: db $97
-L084D66: db $01
-L084D67: db $A0
-L084D68: db $07
-L084D69: db $88
-L084D6A: db $2E
-L084D6B: db $83
-L084D6C: db $00
-L084D6D: db $89
-L084D6E: db $0C
-L084D6F: db $2B
-L084D70: db $E3
-L084D71: db $24
-L084D72: db $EA
-L084D73: db $2B
-L084D74: db $E3
-L084D75: db $29
-L084D76: db $DE
-L084D77: db $03
-L084D78: db $8A
-L084D79: db $FB
-L084D7A: db $97
-L084D7B: db $FF
-L084D7C: db $29
-L084D7D: db $E1
-L084D7E: db $8A
-L084D7F: db $05
-L084D80: db $97
-L084D81: db $01
-L084D82: db $A0
-L084D83: db $09
-L084D84: db $88
-L084D85: db $30
-L084D86: db $83
-L084D87: db $34
-L084D88: db $89
-L084D89: db $F4
-L084D8A: db $29
-L084D8B: db $EA
-L084D8C: db $30
-L084D8D: db $E3
-L084D8E: db $29
-L084D8F: db $A0
-L084D90: db $07
-L084D91: db $88
-L084D92: db $2E
-L084D93: db $83
-L084D94: db $00
-L084D95: db $89
-L084D96: db $0C
-L084D97: db $29
-L084D98: db $22
-L084D99: db $EA
-L084D9A: db $29
-L084D9B: db $E3
-L084D9C: db $27
-L084D9D: db $DE
-L084D9E: db $03
-L084D9F: db $8A
-L084DA0: db $FB
-L084DA1: db $97
-L084DA2: db $FF
-L084DA3: db $27
-L084DA4: db $E1
-L084DA5: db $8A
-L084DA6: db $05
-L084DA7: db $97
-L084DA8: db $01
-L084DA9: db $A0
-L084DAA: db $09
-L084DAB: db $88
-L084DAC: db $30
-L084DAD: db $83
-L084DAE: db $34
-L084DAF: db $89
-L084DB0: db $F4
-L084DB1: db $27
-L084DB2: db $EA
-L084DB3: db $2E
-L084DB4: db $E3
-L084DB5: db $27
-L084DB6: db $A0
-L084DB7: db $07
-L084DB8: db $88
-L084DB9: db $2E
-L084DBA: db $83
-L084DBB: db $00
-L084DBC: db $89
-L084DBD: db $0C
-L084DBE: db $2B
-L084DBF: db $24
-L084DC0: db $EA
-L084DC1: db $2B
-L084DC2: db $E3
-L084DC3: db $29
-L084DC4: db $E1
-L084DC5: db $A0
-L084DC6: db $09
-L084DC7: db $88
-L084DC8: db $30
-L084DC9: db $83
-L084DCA: db $34
-L084DCB: db $89
-L084DCC: db $F4
-L084DCD: db $2D
-L084DCE: db $DF
-L084DCF: db $2E
-L084DD0: db $2F
-L084DD1: db $30
-L084DD2: db $EA
-L084DD3: db $32
-L084DD4: db $E3
-L084DD5: db $33
-L084DD6: db $35
-L084DD7: db $E1
-L084DD8: db $83
-L084DD9: db $00
-L084DDA: db $34
-L084DDB: db $DF
-L084DDC: db $8A
-L084DDD: db $FF
-L084DDE: db $33
-L084DDF: db $8A
-L084DE0: db $FF
-L084DE1: db $32
-L084DE2: db $8A
-L084DE3: db $FE
-L084DE4: db $31
-L084DE5: db $8A
-L084DE6: db $FE
-L084DE7: db $30
-L084DE8: db $2F
-L084DE9: db $E0
-L084DEA: db $8A
-L084DEB: db $06
-L084DEC: db $A0
-L084DED: db $07
-L084DEE: db $88
-L084DEF: db $2E
-L084DF0: db $83
-L084DF1: db $00
-L084DF2: db $89
-L084DF3: db $0C
-L084DF4: db $30
-L084DF5: db $DF
-L084DF6: db $31
-L084DF7: db $E5
-L084DF8: db $30
-L084DF9: db $E2
-L084DFA: db $A0
-L084DFB: db $09
-L084DFC: db $88
-L084DFD: db $30
-L084DFE: db $83
-L084DFF: db $34
-L084E00: db $89
-L084E01: db $F4
-L084E02: db $27
-L084E03: db $EA
-L084E04: db $29
-L084E05: db $E3
-L084E06: db $2A
-L084E07: db $2B
-L084E08: db $E1
-L084E09: db $2A
-L084E0A: db $DF
-L084E0B: db $29
-L084E0C: db $28
-L084E0D: db $A0
-L084E0E: db $07
-L084E0F: db $88
-L084E10: db $2E
-L084E11: db $83
-L084E12: db $00
-L084E13: db $89
-L084E14: db $0C
-L084E15: db $24
-L084E16: db $EA
-L084E17: db $2B
-L084E18: db $E3
-L084E19: db $29
-L084E1A: db $DE
-L084E1B: db $03
-L084E1C: db $8A
-L084E1D: db $FB
-L084E1E: db $97
-L084E1F: db $FF
-L084E20: db $29
-L084E21: db $E1
-L084E22: db $8A
-L084E23: db $05
-L084E24: db $97
-L084E25: db $01
-L084E26: db $A0
-L084E27: db $09
-L084E28: db $88
-L084E29: db $30
-L084E2A: db $83
-L084E2B: db $34
-L084E2C: db $89
-L084E2D: db $F4
-L084E2E: db $29
-L084E2F: db $EA
-L084E30: db $30
-L084E31: db $E3
-L084E32: db $29
-L084E33: db $A0
-L084E34: db $07
-L084E35: db $88
-L084E36: db $2E
-L084E37: db $83
-L084E38: db $00
-L084E39: db $89
-L084E3A: db $0C
-L084E3B: db $29
-L084E3C: db $22
-L084E3D: db $EA
-L084E3E: db $29
-L084E3F: db $E3
-L084E40: db $27
-L084E41: db $DE
-L084E42: db $03
-L084E43: db $8A
-L084E44: db $FB
-L084E45: db $97
-L084E46: db $FF
-L084E47: db $27
-L084E48: db $E1
-L084E49: db $8A
-L084E4A: db $05
-L084E4B: db $97
-L084E4C: db $01
-L084E4D: db $A0
-L084E4E: db $09
-L084E4F: db $88
-L084E50: db $30
-L084E51: db $83
-L084E52: db $34
-L084E53: db $89
-L084E54: db $F4
-L084E55: db $27
-L084E56: db $EA
-L084E57: db $2E
-L084E58: db $E3
-L084E59: db $27
-L084E5A: db $A0
-L084E5B: db $07
-L084E5C: db $88
-L084E5D: db $2E
-L084E5E: db $83
-L084E5F: db $00
-L084E60: db $89
-L084E61: db $0C
-L084E62: db $2B
-L084E63: db $24
-L084E64: db $EA
-L084E65: db $2B
-L084E66: db $E3
-L084E67: db $29
-L084E68: db $E1
-L084E69: db $A0
-L084E6A: db $09
-L084E6B: db $88
-L084E6C: db $30
-L084E6D: db $83
-L084E6E: db $34
-L084E6F: db $89
-L084E70: db $F4
-L084E71: db $2D
-L084E72: db $DF
-L084E73: db $2E
-L084E74: db $2F
-L084E75: db $30
-L084E76: db $EA
-L084E77: db $32
-L084E78: db $E3
-L084E79: db $33
-L084E7A: db $35
-L084E7B: db $E1
-L084E7C: db $83
-L084E7D: db $00
-L084E7E: db $34
-L084E7F: db $DF
-L084E80: db $33
-L084E81: db $32
-L084E82: db $31
-L084E83: db $30
-L084E84: db $2F
-L084E85: db $E0
-L084E86: db $A0
-L084E87: db $07
-L084E88: db $88
-L084E89: db $2E
-L084E8A: db $83
-L084E8B: db $00
-L084E8C: db $89
-L084E8D: db $0C
-L084E8E: db $30
-L084E8F: db $DF
-L084E90: db $31
-L084E91: db $E5
-L084E92: db $30
-L084E93: db $E2
-L084E94: db $A0
-L084E95: db $09
-L084E96: db $88
-L084E97: db $30
-L084E98: db $83
-L084E99: db $34
-L084E9A: db $89
-L084E9B: db $F4
-L084E9C: db $27
-L084E9D: db $EA
-L084E9E: db $29
-L084E9F: db $E3
-L084EA0: db $2A
-L084EA1: db $A0
-L084EA2: db $01
-L084EA3: db $88
-L084EA4: db $2E
-L084EA5: db $83
-L084EA6: db $33
-L084EA7: db $89
-L084EA8: db $00
-L084EA9: db $3E
-L084EAA: db $37
-L084EAB: db $EA
-L084EAC: db $3E
-L084EAD: db $E3
-L084EAE: db $3C
-L084EAF: db $DE
-L084EB0: db $17
-L084EB1: db $8A
-L084EB2: db $FB
-L084EB3: db $97
-L084EB4: db $FF
-L084EB5: db $3C
-L084EB6: db $E1
-L084EB7: db $8A
-L084EB8: db $05
-L084EB9: db $97
-L084EBA: db $01
-L084EBB: db $A0
-L084EBC: db $08
-L084EBD: db $88
-L084EBE: db $33
-L084EBF: db $83
-L084EC0: db $33
-L084EC1: db $89
-L084EC2: db $00
-L084EC3: db $3A
-L084EC4: db $DF
-L084EC5: db $3C
-L084EC6: db $E3
-L084EC7: db $35
-L084EC8: db $EA
-L084EC9: db $3C
-L084ECA: db $E3
-L084ECB: db $3A
-L084ECC: db $DE
-L084ECD: db $16
-L084ECE: db $8A
-L084ECF: db $FB
-L084ED0: db $97
-L084ED1: db $FF
-L084ED2: db $3A
-L084ED3: db $E1
-L084ED4: db $8A
-L084ED5: db $05
-L084ED6: db $97
-L084ED7: db $01
-L084ED8: db $A0
-L084ED9: db $01
-L084EDA: db $88
-L084EDB: db $2E
-L084EDC: db $83
-L084EDD: db $33
-L084EDE: db $89
-L084EDF: db $00
-L084EE0: db $3C
-L084EE1: db $DF
-L084EE2: db $3D
-L084EE3: db $3E
-L084EE4: db $E3
-L084EE5: db $37
-L084EE6: db $EA
-L084EE7: db $3E
-L084EE8: db $E3
-L084EE9: db $3C
-L084EEA: db $DE
-L084EEB: db $23
-L084EEC: db $8A
-L084EED: db $FB
-L084EEE: db $97
-L084EEF: db $FF
-L084EF0: db $3C
-L084EF1: db $E1
-L084EF2: db $8A
-L084EF3: db $05
-L084EF4: db $97
-L084EF5: db $01
-L084EF6: db $3C
-L084EF7: db $DF
-L084EF8: db $3D
-L084EF9: db $E5
-L084EFA: db $3C
-L084EFB: db $3A
-L084EFC: db $A0
-L084EFD: db $02
-L084EFE: db $88
-L084EFF: db $33
-L084F00: db $83
-L084F01: db $33
-L084F02: db $89
-L084F03: db $00
-L084F04: db $2E
-L084F05: db $E3
-L084F06: db $33
-L084F07: db $EA
-L084F08: db $3A
-L084F09: db $E3
-L084F0A: db $39
-L084F0B: db $33
-L084F0C: db $2D
-L084F0D: db $E1
-L084F0E: db $39
-L084F0F: db $E3
-L084F10: db $35
-L084F11: db $38
-L084F12: db $35
-L084F13: db $EA
-L084F14: db $38
-L084F15: db $E3
-L084F16: db $37
-L084F17: db $33
-L084F18: db $2B
-L084F19: db $E1
-L084F1A: db $37
-L084F1B: db $E3
-L084F1C: db $33
-L084F1D: db $2E
-L084F1E: db $33
-L084F1F: db $EA
-L084F20: db $3A
-L084F21: db $E3
-L084F22: db $39
-L084F23: db $33
-L084F24: db $2D
-L084F25: db $E1
-L084F26: db $39
-L084F27: db $E3
-L084F28: db $35
-L084F29: db $38
-L084F2A: db $35
-L084F2B: db $EA
-L084F2C: db $38
-L084F2D: db $E3
-L084F2E: db $37
-L084F2F: db $E1
-L084F30: db $A0
-L084F31: db $09
-L084F32: db $88
-L084F33: db $30
-L084F34: db $83
-L084F35: db $33
-L084F36: db $89
-L084F37: db $00
-L084F38: db $24
-L084F39: db $DF
-L084F3A: db $25
-L084F3B: db $26
-L084F3C: db $27
-L084F3D: db $EA
-L084F3E: db $29
-L084F3F: db $E3
-L084F40: db $2A
-L084F41: db $80
-L084F42: db $67
-L084F43: db $4D
-SndData_09_Ch1: db $A0
-L084F45: db $40
-L084F46: db $30
-L084F47: db $DF
-L084F48: db $31
-L084F49: db $32
-L084F4A: db $33
-L084F4B: db $EA
-L084F4C: db $35
-L084F4D: db $E3
-L084F4E: db $36
-L084F4F: db $A0
-L084F50: db $80
-L084F51: db $88
-L084F52: db $2F
-L084F53: db $83
-L084F54: db $3D
-L084F55: db $89
-L084F56: db $0C
-L084F57: db $3E
-L084F58: db $37
-L084F59: db $EA
-L084F5A: db $3E
-L084F5B: db $E3
-L084F5C: db $3C
-L084F5D: db $A0
-L084F5E: db $40
-L084F5F: db $88
-L084F60: db $30
-L084F61: db $83
-L084F62: db $34
-L084F63: db $89
-L084F64: db $F4
-L084F65: db $35
-L084F66: db $EA
-L084F67: db $3C
-L084F68: db $E3
-L084F69: db $35
-L084F6A: db $DE
-L084F6B: db $05
-L084F6C: db $A0
-L084F6D: db $80
-L084F6E: db $88
-L084F6F: db $2F
-L084F70: db $83
-L084F71: db $3D
-L084F72: db $89
-L084F73: db $0C
-L084F74: db $3A
-L084F75: db $DF
-L084F76: db $3C
-L084F77: db $E3
-L084F78: db $35
-L084F79: db $EA
-L084F7A: db $3C
-L084F7B: db $E3
-L084F7C: db $3A
-L084F7D: db $A0
-L084F7E: db $40
-L084F7F: db $88
-L084F80: db $30
-L084F81: db $83
-L084F82: db $34
-L084F83: db $89
-L084F84: db $F4
-L084F85: db $33
-L084F86: db $EA
-L084F87: db $3A
-L084F88: db $E3
-L084F89: db $33
-L084F8A: db $DE
-L084F8B: db $05
-L084F8C: db $A0
-L084F8D: db $80
-L084F8E: db $88
-L084F8F: db $2F
-L084F90: db $83
-L084F91: db $3D
-L084F92: db $89
-L084F93: db $0C
-L084F94: db $3C
-L084F95: db $DF
-L084F96: db $3E
-L084F97: db $E3
-L084F98: db $37
-L084F99: db $EA
-L084F9A: db $3E
-L084F9B: db $E3
-L084F9C: db $3C
-L084F9D: db $A0
-L084F9E: db $40
-L084F9F: db $88
-L084FA0: db $30
-L084FA1: db $83
-L084FA2: db $34
-L084FA3: db $89
-L084FA4: db $F4
-L084FA5: db $3C
-L084FA6: db $EA
-L084FA7: db $3E
-L084FA8: db $E3
-L084FA9: db $3F
-L084FAA: db $41
-L084FAB: db $E1
-L084FAC: db $83
-L084FAD: db $00
-L084FAE: db $40
-L084FAF: db $DF
-L084FB0: db $3F
-L084FB1: db $3E
-L084FB2: db $3D
-L084FB3: db $3C
-L084FB4: db $3B
-L084FB5: db $E1
-L084FB6: db $A0
-L084FB7: db $80
-L084FB8: db $88
-L084FB9: db $2F
-L084FBA: db $83
-L084FBB: db $3D
-L084FBC: db $89
-L084FBD: db $0C
-L084FBE: db $3C
-L084FBF: db $DF
-L084FC0: db $3D
-L084FC1: db $E5
-L084FC2: db $3C
-L084FC3: db $3A
-L084FC4: db $DE
-L084FC5: db $0B
-L084FC6: db $3C
-L084FC7: db $DF
-L084FC8: db $3E
-L084FC9: db $E3
-L084FCA: db $37
-L084FCB: db $EA
-L084FCC: db $3E
-L084FCD: db $E3
-L084FCE: db $3C
-L084FCF: db $A0
-L084FD0: db $40
-L084FD1: db $88
-L084FD2: db $30
-L084FD3: db $83
-L084FD4: db $34
-L084FD5: db $89
-L084FD6: db $F4
-L084FD7: db $35
-L084FD8: db $EA
-L084FD9: db $3C
-L084FDA: db $E3
-L084FDB: db $35
-L084FDC: db $DE
-L084FDD: db $05
-L084FDE: db $A0
-L084FDF: db $80
-L084FE0: db $88
-L084FE1: db $2F
-L084FE2: db $83
-L084FE3: db $3D
-L084FE4: db $89
-L084FE5: db $0C
-L084FE6: db $3A
-L084FE7: db $DF
-L084FE8: db $3C
-L084FE9: db $E3
-L084FEA: db $35
-L084FEB: db $EA
-L084FEC: db $3C
-L084FED: db $E3
-L084FEE: db $3A
-L084FEF: db $A0
-L084FF0: db $40
-L084FF1: db $88
-L084FF2: db $30
-L084FF3: db $83
-L084FF4: db $34
-L084FF5: db $89
-L084FF6: db $F4
-L084FF7: db $33
-L084FF8: db $EA
-L084FF9: db $3A
-L084FFA: db $E3
-L084FFB: db $33
-L084FFC: db $DE
-L084FFD: db $05
-L084FFE: db $A0
-L084FFF: db $80
-L085000: db $88
-L085001: db $2F
-L085002: db $83
-L085003: db $3D
-L085004: db $89
-L085005: db $0C
-L085006: db $3C
-L085007: db $DF
-L085008: db $3E
-L085009: db $E3
-L08500A: db $37
-L08500B: db $EA
-L08500C: db $3E
-L08500D: db $E3
-L08500E: db $3C
-L08500F: db $A0
-L085010: db $40
-L085011: db $88
-L085012: db $30
-L085013: db $83
-L085014: db $34
-L085015: db $89
-L085016: db $F4
-L085017: db $3C
-L085018: db $EA
-L085019: db $3E
-L08501A: db $E3
-L08501B: db $3F
-L08501C: db $41
-L08501D: db $E1
-L08501E: db $83
-L08501F: db $00
-L085020: db $40
-L085021: db $DF
-L085022: db $3F
-L085023: db $3E
-L085024: db $3D
-L085025: db $3C
-L085026: db $3B
-L085027: db $E1
-L085028: db $A0
-L085029: db $80
-L08502A: db $88
-L08502B: db $2F
-L08502C: db $83
-L08502D: db $3D
-L08502E: db $89
-L08502F: db $0C
-L085030: db $3C
-L085031: db $DF
-L085032: db $3D
-L085033: db $E5
-L085034: db $3C
-L085035: db $3A
-L085036: db $A0
-L085037: db $80
-L085038: db $88
-L085039: db $38
-L08503A: db $83
-L08503B: db $3D
-L08503C: db $89
-L08503D: db $F4
-L08503E: db $8A
-L08503F: db $F8
-L085040: db $32
-L085041: db $DE
-L085042: db $15
-L085043: db $2D
-L085044: db $DE
-L085045: db $1B
-L085046: db $2C
-L085047: db $DE
-L085048: db $15
-L085049: db $2B
-L08504A: db $DE
-L08504B: db $1B
-L08504C: db $32
-L08504D: db $DE
-L08504E: db $15
-L08504F: db $2D
-L085050: db $DE
-L085051: db $1B
-L085052: db $2C
-L085053: db $DE
-L085054: db $15
-L085055: db $2B
-L085056: db $DE
-L085057: db $1B
-L085058: db $8A
-L085059: db $08
-L08505A: db $A0
-L08505B: db $00
-L08505C: db $88
-L08505D: db $2F
-L08505E: db $83
-L08505F: db $3D
-L085060: db $89
-L085061: db $00
-L085062: db $3A
-L085063: db $E3
-L085064: db $37
-L085065: db $EA
-L085066: db $2E
-L085067: db $E3
-L085068: db $2D
-L085069: db $35
-L08506A: db $39
-L08506B: db $E1
-L08506C: db $2D
-L08506D: db $E3
-L08506E: db $33
-L08506F: db $2C
-L085070: db $31
-L085071: db $EA
-L085072: db $2C
-L085073: db $E3
-L085074: db $2B
-L085075: db $31
-L085076: db $37
-L085077: db $E1
-L085078: db $2B
-L085079: db $E3
-L08507A: db $31
-L08507B: db $3A
-L08507C: db $37
-L08507D: db $EA
-L08507E: db $2E
-L08507F: db $E3
-L085080: db $2D
-L085081: db $35
-L085082: db $39
-L085083: db $E1
-L085084: db $2D
-L085085: db $E3
-L085086: db $33
-L085087: db $2C
-L085088: db $31
-L085089: db $EA
-L08508A: db $2C
-L08508B: db $E3
-L08508C: db $2B
-L08508D: db $E1
-L08508E: db $A0
-L08508F: db $40
-L085090: db $88
-L085091: db $30
-L085092: db $83
-L085093: db $3D
-L085094: db $89
-L085095: db $00
-L085096: db $30
-L085097: db $DF
-L085098: db $31
-L085099: db $32
-L08509A: db $33
-L08509B: db $EA
-L08509C: db $35
-L08509D: db $E3
-L08509E: db $36
-L08509F: db $80
-L0850A0: db $4F
-L0850A1: db $4F
-SndData_09_Ch2: db $00
-L0850A3: db $E7
-L0850A4: db $18
-L0850A5: db $EA
-L0850A6: db $1A
-L0850A7: db $E5
-L0850A8: db $2B
-L0850A9: db $E1
-L0850AA: db $1D
-L0850AB: db $EA
-L0850AC: db $1F
-L0850AD: db $23
-L0850AE: db $E3
-L0850AF: db $22
-L0850B0: db $EA
-L0850B1: db $1D
-L0850B2: db $29
-L0850B3: db $E1
-L0850B4: db $1D
-L0850B5: db $1B
-L0850B6: db $EA
-L0850B7: db $2E
-L0850B8: db $E1
-L0850B9: db $25
-L0850BA: db $E3
-L0850BB: db $19
-L0850BC: db $18
-L0850BD: db $EA
-L0850BE: db $1A
-L0850BF: db $E5
-L0850C0: db $2B
-L0850C1: db $E1
-L0850C2: db $1D
-L0850C3: db $EA
-L0850C4: db $1F
-L0850C5: db $23
-L0850C6: db $E3
-L0850C7: db $22
-L0850C8: db $EA
-L0850C9: db $24
-L0850CA: db $28
-L0850CB: db $E3
-L0850CC: db $27
-L0850CD: db $E1
-L0850CE: db $2E
-L0850CF: db $22
-L0850D0: db $1B
-L0850D1: db $16
-L0850D2: db $E3
-L0850D3: db $17
-L0850D4: db $18
-L0850D5: db $EA
-L0850D6: db $1A
-L0850D7: db $E5
-L0850D8: db $2B
-L0850D9: db $E1
-L0850DA: db $1D
-L0850DB: db $EA
-L0850DC: db $1F
-L0850DD: db $23
-L0850DE: db $E3
-L0850DF: db $22
-L0850E0: db $EA
-L0850E1: db $1D
-L0850E2: db $29
-L0850E3: db $E1
-L0850E4: db $1D
-L0850E5: db $1B
-L0850E6: db $EA
-L0850E7: db $2E
-L0850E8: db $E1
-L0850E9: db $25
-L0850EA: db $E3
-L0850EB: db $19
-L0850EC: db $18
-L0850ED: db $EA
-L0850EE: db $1A
-L0850EF: db $E5
-L0850F0: db $2B
-L0850F1: db $E1
-L0850F2: db $1D
-L0850F3: db $EA
-L0850F4: db $1F
-L0850F5: db $23
-L0850F6: db $E3
-L0850F7: db $22
-L0850F8: db $EA
-L0850F9: db $24
-L0850FA: db $28
-L0850FB: db $E3
-L0850FC: db $27
-L0850FD: db $E1
-L0850FE: db $2E
-L0850FF: db $22
-L085100: db $1B
-L085101: db $DE
-L085102: db $0F
-L085103: db $A0
-L085104: db $00
-L085105: db $8A
-L085106: db $F8
-L085107: db $88
-L085108: db $38
-L085109: db $22
-L08510A: db $DE
-L08510B: db $15
-L08510C: db $24
-L08510D: db $DE
-L08510E: db $1B
-L08510F: db $24
-L085110: db $DE
-L085111: db $15
-L085112: db $22
-L085113: db $DE
-L085114: db $1B
-L085115: db $22
-L085116: db $DE
-L085117: db $15
-L085118: db $24
-L085119: db $DE
-L08511A: db $1B
-L08511B: db $24
-L08511C: db $DE
-L08511D: db $15
-L08511E: db $22
-L08511F: db $DE
-L085120: db $1B
-L085121: db $8A
-L085122: db $08
-L085123: db $A0
-L085124: db $40
-L085125: db $88
-L085126: db $2E
-L085127: db $22
-L085128: db $E3
-L085129: db $27
-L08512A: db $EA
-L08512B: db $2E
-L08512C: db $E3
-L08512D: db $2D
-L08512E: db $27
-L08512F: db $21
-L085130: db $E1
-L085131: db $2D
-L085132: db $E3
-L085133: db $29
-L085134: db $2C
-L085135: db $29
-L085136: db $EA
-L085137: db $2C
-L085138: db $E3
-L085139: db $2B
-L08513A: db $27
-L08513B: db $1F
-L08513C: db $E1
-L08513D: db $2B
-L08513E: db $E3
-L08513F: db $27
-L085140: db $22
-L085141: db $27
-L085142: db $EA
-L085143: db $2E
-L085144: db $E3
-L085145: db $2D
-L085146: db $27
-L085147: db $21
-L085148: db $E1
-L085149: db $2D
-L08514A: db $E3
-L08514B: db $29
-L08514C: db $2C
-L08514D: db $29
-L08514E: db $EA
-L08514F: db $2C
-L085150: db $E3
-L085151: db $2B
-L085152: db $DE
-L085153: db $0F
-L085154: db $A0
-L085155: db $40
-L085156: db $88
-L085157: db $2E
-L085158: db $16
-L085159: db $E3
-L08515A: db $17
-L08515B: db $80
-L08515C: db $A4
-L08515D: db $50
-SndData_09_Ch4: db $A0
-L08515F: db $00
-L085160: db $00
-L085161: db $E5
-L085162: db $C0
-L085163: db $E3
-L085164: db $C0
-L085165: db $E1
-L085166: db $C0
-L085167: db $8D
-L085168: db $24
-L085169: db $03
-L08516A: db $C1
-L08516B: db $E3
-L08516C: db $C0
-L08516D: db $E1
-L08516E: db $C1
-L08516F: db $C0
-L085170: db $EA
-L085171: db $C0
-L085172: db $E1
-L085173: db $C1
-L085174: db $C0
-L085175: db $E3
-L085176: db $C0
-L085177: db $E1
-L085178: db $C0
-L085179: db $E3
-L08517A: db $C0
-L08517B: db $E1
-L08517C: db $C0
-L08517D: db $C1
-L08517E: db $E3
-L08517F: db $C0
-L085180: db $E1
-L085181: db $C1
-L085182: db $C1
-L085183: db $C0
-L085184: db $E3
-L085185: db $C0
-L085186: db $E1
-L085187: db $C1
-L085188: db $C0
-L085189: db $E3
-L08518A: db $C0
-L08518B: db $E1
-L08518C: db $C0
-L08518D: db $E3
-L08518E: db $C0
-L08518F: db $E1
-L085190: db $C0
-L085191: db $81
-L085192: db $24
-L085193: db $6A
-L085194: db $51
-L085195: db $C1
-L085196: db $E3
-L085197: db $C0
-L085198: db $E1
-L085199: db $C1
-L08519A: db $C0
-L08519B: db $EA
-L08519C: db $C0
-L08519D: db $E1
-L08519E: db $C1
-L08519F: db $C0
-L0851A0: db $E3
-L0851A1: db $C0
-L0851A2: db $E1
-L0851A3: db $C0
-L0851A4: db $E3
-L0851A5: db $C0
-L0851A6: db $E1
-L0851A7: db $C0
-L0851A8: db $C1
-L0851A9: db $E3
-L0851AA: db $C0
-L0851AB: db $E1
-L0851AC: db $C1
-L0851AD: db $C1
-L0851AE: db $C0
-L0851AF: db $E3
-L0851B0: db $C0
-L0851B1: db $E1
-L0851B2: db $C1
-L0851B3: db $C0
-L0851B4: db $E3
-L0851B5: db $C0
-L0851B6: db $E1
-L0851B7: db $C0
-L0851B8: db $E3
-L0851B9: db $C0
-L0851BA: db $E1
-L0851BB: db $C0
-L0851BC: db $9A
-L0851BD: db $0F
-L0851BE: db $52
-L0851BF: db $C1
-L0851C0: db $E3
-L0851C1: db $C0
-L0851C2: db $E1
-L0851C3: db $C1
-L0851C4: db $C0
-L0851C5: db $EA
-L0851C6: db $C0
-L0851C7: db $E1
-L0851C8: db $C1
-L0851C9: db $C0
-L0851CA: db $E3
-L0851CB: db $C0
-L0851CC: db $E1
-L0851CD: db $C0
-L0851CE: db $E3
-L0851CF: db $C0
-L0851D0: db $E1
-L0851D1: db $C0
-L0851D2: db $C1
-L0851D3: db $E3
-L0851D4: db $C0
-L0851D5: db $E1
-L0851D6: db $C1
-L0851D7: db $C1
-L0851D8: db $C0
-L0851D9: db $E3
-L0851DA: db $C0
-L0851DB: db $E1
-L0851DC: db $C1
-L0851DD: db $C0
-L0851DE: db $E3
-L0851DF: db $C0
-L0851E0: db $E1
-L0851E1: db $C0
-L0851E2: db $E3
-L0851E3: db $C0
-L0851E4: db $E1
-L0851E5: db $C0
-L0851E6: db $C1
-L0851E7: db $E3
-L0851E8: db $C0
-L0851E9: db $E1
-L0851EA: db $C1
-L0851EB: db $C0
-L0851EC: db $EA
-L0851ED: db $C0
-L0851EE: db $E1
-L0851EF: db $C1
-L0851F0: db $C0
-L0851F1: db $E3
-L0851F2: db $C0
-L0851F3: db $E1
-L0851F4: db $C0
-L0851F5: db $E3
-L0851F6: db $C0
-L0851F7: db $E1
-L0851F8: db $C0
-L0851F9: db $C1
-L0851FA: db $E3
-L0851FB: db $C0
-L0851FC: db $E1
-L0851FD: db $C1
-L0851FE: db $C1
-L0851FF: db $C0
-L085200: db $E3
-L085201: db $C0
-L085202: db $E1
-L085203: db $C1
-L085204: db $EA
-L085205: db $C1
-L085206: db $E1
-L085207: db $C0
-L085208: db $E3
-L085209: db $C0
-L08520A: db $E1
-L08520B: db $C0
-L08520C: db $80
-L08520D: db $67
-L08520E: db $51
-L08520F: db $8D
-L085210: db $24
-L085211: db $04
-L085212: db $C2
-L085213: db $8A
-L085214: db $FD
-L085215: db $C2
-L085216: db $C2
-L085217: db $C2
-L085218: db $C2
-L085219: db $C2
-L08521A: db $C2
-L08521B: db $8A
-L08521C: db $03
-L08521D: db $C2
-L08521E: db $8A
-L08521F: db $FD
-L085220: db $C2
-L085221: db $C2
-L085222: db $C2
-L085223: db $C2
-L085224: db $C2
-L085225: db $C2
-L085226: db $C2
-L085227: db $C2
-L085228: db $8A
-L085229: db $03
-L08522A: db $81
-L08522B: db $24
-L08522C: db $12
-L08522D: db $52
-L08522E: db $9B
+SndData_09_Ch3:
+	snd_wave WAVE_09
+	snd_instrument INSTR_01
+	snd_vibrato VIBRATO_3D
+	snd_inc_base_note 0
+	snd_inc_vol -4
+	snd_note $24, NOTELEN_01
+	snd_inc_vol 2
+	snd_note $25
+	snd_inc_vol 1
+	snd_note $26
+	snd_inc_vol 1
+	snd_note $27, NOTELEN_09
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+.loop:
+	snd_wave WAVE_07
+	snd_instrument INSTR_2E
+	snd_vibrato VIBRATO_NONE
+	snd_inc_base_note 12
+	snd_note $2B, NOTELEN_06
+	snd_note $24, NOTELEN_09
+	snd_note $2B, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_09
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $29, NOTELEN_09
+	snd_note $30, NOTELEN_06
+	snd_note $29
+	snd_wave WAVE_07
+	snd_instrument INSTR_2E
+	snd_vibrato VIBRATO_NONE
+	snd_inc_base_note 12
+	snd_note $29
+	snd_note $22, NOTELEN_09
+	snd_note $29, NOTELEN_06
+	snd_note $27, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $27, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_09
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $27, NOTELEN_09
+	snd_note $2E, NOTELEN_06
+	snd_note $27
+	snd_wave WAVE_07
+	snd_instrument INSTR_2E
+	snd_vibrato VIBRATO_NONE
+	snd_inc_base_note 12
+	snd_note $2B
+	snd_note $24, NOTELEN_09
+	snd_note $2B, NOTELEN_06
+	snd_note $29, NOTELEN_03
+	snd_wave WAVE_09
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $2D, NOTELEN_01
+	snd_note $2E
+	snd_note $2F
+	snd_note $30, NOTELEN_09
+	snd_note $32, NOTELEN_06
+	snd_note $33
+	snd_note $35, NOTELEN_03
+	snd_vibrato VIBRATO_NONE
+	snd_note $34, NOTELEN_01
+	snd_inc_vol -1
+	snd_note $33
+	snd_inc_vol -1
+	snd_note $32
+	snd_inc_vol -2
+	snd_note $31
+	snd_inc_vol -2
+	snd_note $30
+	snd_note $2F, NOTELEN_02
+	snd_inc_vol 6
+	snd_wave WAVE_07
+	snd_instrument INSTR_2E
+	snd_vibrato VIBRATO_NONE
+	snd_inc_base_note 12
+	snd_note $30, NOTELEN_01
+	snd_note $31, NOTELEN_0C
+	snd_note $30, NOTELEN_04
+	snd_wave WAVE_09
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $27, NOTELEN_09
+	snd_note $29, NOTELEN_06
+	snd_note $2A
+	snd_note $2B, NOTELEN_03
+	snd_note $2A, NOTELEN_01
+	snd_note $29
+	snd_note $28
+	snd_wave WAVE_07
+	snd_instrument INSTR_2E
+	snd_vibrato VIBRATO_NONE
+	snd_inc_base_note 12
+	snd_note $24, NOTELEN_09
+	snd_note $2B, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_09
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $29, NOTELEN_09
+	snd_note $30, NOTELEN_06
+	snd_note $29
+	snd_wave WAVE_07
+	snd_instrument INSTR_2E
+	snd_vibrato VIBRATO_NONE
+	snd_inc_base_note 12
+	snd_note $29
+	snd_note $22, NOTELEN_09
+	snd_note $29, NOTELEN_06
+	snd_note $27, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $27, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_09
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $27, NOTELEN_09
+	snd_note $2E, NOTELEN_06
+	snd_note $27
+	snd_wave WAVE_07
+	snd_instrument INSTR_2E
+	snd_vibrato VIBRATO_NONE
+	snd_inc_base_note 12
+	snd_note $2B
+	snd_note $24, NOTELEN_09
+	snd_note $2B, NOTELEN_06
+	snd_note $29, NOTELEN_03
+	snd_wave WAVE_09
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $2D, NOTELEN_01
+	snd_note $2E
+	snd_note $2F
+	snd_note $30, NOTELEN_09
+	snd_note $32, NOTELEN_06
+	snd_note $33
+	snd_note $35, NOTELEN_03
+	snd_vibrato VIBRATO_NONE
+	snd_note $34, NOTELEN_01
+	snd_note $33
+	snd_note $32
+	snd_note $31
+	snd_note $30
+	snd_note $2F, NOTELEN_02
+	snd_wave WAVE_07
+	snd_instrument INSTR_2E
+	snd_vibrato VIBRATO_NONE
+	snd_inc_base_note 12
+	snd_note $30, NOTELEN_01
+	snd_note $31, NOTELEN_0C
+	snd_note $30, NOTELEN_04
+	snd_wave WAVE_09
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $27, NOTELEN_09
+	snd_note $29, NOTELEN_06
+	snd_note $2A
+	snd_wave WAVE_01
+	snd_instrument INSTR_2E
+	snd_vibrato VIBRATO_33
+	snd_inc_base_note 0
+	snd_note $3E
+	snd_note $37, NOTELEN_09
+	snd_note $3E, NOTELEN_06
+	snd_note $3C, NOTELEN_CUSTOM, $17
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_08
+	snd_instrument INSTR_33
+	snd_vibrato VIBRATO_33
+	snd_inc_base_note 0
+	snd_note $3A, NOTELEN_01
+	snd_note $3C, NOTELEN_06
+	snd_note $35, NOTELEN_09
+	snd_note $3C, NOTELEN_06
+	snd_note $3A, NOTELEN_CUSTOM, $16
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_01
+	snd_instrument INSTR_2E
+	snd_vibrato VIBRATO_33
+	snd_inc_base_note 0
+	snd_note $3C, NOTELEN_01
+	snd_note $3D
+	snd_note $3E, NOTELEN_06
+	snd_note $37, NOTELEN_09
+	snd_note $3E, NOTELEN_06
+	snd_note $3C, NOTELEN_CUSTOM, $23
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3C, NOTELEN_01
+	snd_note $3D, NOTELEN_0C
+	snd_note $3C
+	snd_note $3A
+	snd_wave WAVE_02
+	snd_instrument INSTR_33
+	snd_vibrato VIBRATO_33
+	snd_inc_base_note 0
+	snd_note $2E, NOTELEN_06
+	snd_note $33, NOTELEN_09
+	snd_note $3A, NOTELEN_06
+	snd_note $39
+	snd_note $33
+	snd_note $2D, NOTELEN_03
+	snd_note $39, NOTELEN_06
+	snd_note $35
+	snd_note $38
+	snd_note $35, NOTELEN_09
+	snd_note $38, NOTELEN_06
+	snd_note $37
+	snd_note $33
+	snd_note $2B, NOTELEN_03
+	snd_note $37, NOTELEN_06
+	snd_note $33
+	snd_note $2E
+	snd_note $33, NOTELEN_09
+	snd_note $3A, NOTELEN_06
+	snd_note $39
+	snd_note $33
+	snd_note $2D, NOTELEN_03
+	snd_note $39, NOTELEN_06
+	snd_note $35
+	snd_note $38
+	snd_note $35, NOTELEN_09
+	snd_note $38, NOTELEN_06
+	snd_note $37, NOTELEN_03
+	snd_wave WAVE_09
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_33
+	snd_inc_base_note 0
+	snd_note $24, NOTELEN_01
+	snd_note $25
+	snd_note $26
+	snd_note $27, NOTELEN_09
+	snd_note $29, NOTELEN_06
+	snd_note $2A
+	snd_jp .loop
+SndData_09_Ch1:
+	snd_duty SNDDUTY_25, $00
+	snd_note $30, NOTELEN_01
+	snd_note $31
+	snd_note $32
+	snd_note $33, NOTELEN_09
+	snd_note $35, NOTELEN_06
+	snd_note $36
+.loop:
+	snd_duty SNDDUTY_50, $00
+	snd_instrument INSTR_2F
+	snd_vibrato VIBRATO_3D
+	snd_inc_base_note 12
+	snd_note $3E
+	snd_note $37, NOTELEN_09
+	snd_note $3E, NOTELEN_06
+	snd_note $3C
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $35, NOTELEN_09
+	snd_note $3C, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $05
+	snd_duty SNDDUTY_50, $00
+	snd_instrument INSTR_2F
+	snd_vibrato VIBRATO_3D
+	snd_inc_base_note 12
+	snd_note $3A, NOTELEN_01
+	snd_note $3C, NOTELEN_06
+	snd_note $35, NOTELEN_09
+	snd_note $3C, NOTELEN_06
+	snd_note $3A
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $33, NOTELEN_09
+	snd_note $3A, NOTELEN_06
+	snd_note $33, NOTELEN_CUSTOM, $05
+	snd_duty SNDDUTY_50, $00
+	snd_instrument INSTR_2F
+	snd_vibrato VIBRATO_3D
+	snd_inc_base_note 12
+	snd_note $3C, NOTELEN_01
+	snd_note $3E, NOTELEN_06
+	snd_note $37, NOTELEN_09
+	snd_note $3E, NOTELEN_06
+	snd_note $3C
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $3C, NOTELEN_09
+	snd_note $3E, NOTELEN_06
+	snd_note $3F
+	snd_note $41, NOTELEN_03
+	snd_vibrato VIBRATO_NONE
+	snd_note $40, NOTELEN_01
+	snd_note $3F
+	snd_note $3E
+	snd_note $3D
+	snd_note $3C
+	snd_note $3B, NOTELEN_03
+	snd_duty SNDDUTY_50, $00
+	snd_instrument INSTR_2F
+	snd_vibrato VIBRATO_3D
+	snd_inc_base_note 12
+	snd_note $3C, NOTELEN_01
+	snd_note $3D, NOTELEN_0C
+	snd_note $3C
+	snd_note $3A, NOTELEN_CUSTOM, $0B
+	snd_note $3C, NOTELEN_01
+	snd_note $3E, NOTELEN_06
+	snd_note $37, NOTELEN_09
+	snd_note $3E, NOTELEN_06
+	snd_note $3C
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $35, NOTELEN_09
+	snd_note $3C, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $05
+	snd_duty SNDDUTY_50, $00
+	snd_instrument INSTR_2F
+	snd_vibrato VIBRATO_3D
+	snd_inc_base_note 12
+	snd_note $3A, NOTELEN_01
+	snd_note $3C, NOTELEN_06
+	snd_note $35, NOTELEN_09
+	snd_note $3C, NOTELEN_06
+	snd_note $3A
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $33, NOTELEN_09
+	snd_note $3A, NOTELEN_06
+	snd_note $33, NOTELEN_CUSTOM, $05
+	snd_duty SNDDUTY_50, $00
+	snd_instrument INSTR_2F
+	snd_vibrato VIBRATO_3D
+	snd_inc_base_note 12
+	snd_note $3C, NOTELEN_01
+	snd_note $3E, NOTELEN_06
+	snd_note $37, NOTELEN_09
+	snd_note $3E, NOTELEN_06
+	snd_note $3C
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_34
+	snd_inc_base_note -12
+	snd_note $3C, NOTELEN_09
+	snd_note $3E, NOTELEN_06
+	snd_note $3F
+	snd_note $41, NOTELEN_03
+	snd_vibrato VIBRATO_NONE
+	snd_note $40, NOTELEN_01
+	snd_note $3F
+	snd_note $3E
+	snd_note $3D
+	snd_note $3C
+	snd_note $3B, NOTELEN_03
+	snd_duty SNDDUTY_50, $00
+	snd_instrument INSTR_2F
+	snd_vibrato VIBRATO_3D
+	snd_inc_base_note 12
+	snd_note $3C, NOTELEN_01
+	snd_note $3D, NOTELEN_0C
+	snd_note $3C
+	snd_note $3A
+	snd_duty SNDDUTY_50, $00
+	snd_instrument INSTR_38
+	snd_vibrato VIBRATO_3D
+	snd_inc_base_note -12
+	snd_inc_vol -8
+	snd_note $32, NOTELEN_CUSTOM, $15
+	snd_note $2D, NOTELEN_CUSTOM, $1B
+	snd_note $2C, NOTELEN_CUSTOM, $15
+	snd_note $2B, NOTELEN_CUSTOM, $1B
+	snd_note $32, NOTELEN_CUSTOM, $15
+	snd_note $2D, NOTELEN_CUSTOM, $1B
+	snd_note $2C, NOTELEN_CUSTOM, $15
+	snd_note $2B, NOTELEN_CUSTOM, $1B
+	snd_inc_vol 8
+	snd_duty SNDDUTY_12, $00
+	snd_instrument INSTR_2F
+	snd_vibrato VIBRATO_3D
+	snd_inc_base_note 0
+	snd_note $3A, NOTELEN_06
+	snd_note $37, NOTELEN_09
+	snd_note $2E, NOTELEN_06
+	snd_note $2D
+	snd_note $35
+	snd_note $39, NOTELEN_03
+	snd_note $2D, NOTELEN_06
+	snd_note $33
+	snd_note $2C
+	snd_note $31, NOTELEN_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2B
+	snd_note $31
+	snd_note $37, NOTELEN_03
+	snd_note $2B, NOTELEN_06
+	snd_note $31
+	snd_note $3A
+	snd_note $37, NOTELEN_09
+	snd_note $2E, NOTELEN_06
+	snd_note $2D
+	snd_note $35
+	snd_note $39, NOTELEN_03
+	snd_note $2D, NOTELEN_06
+	snd_note $33
+	snd_note $2C
+	snd_note $31, NOTELEN_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2B, NOTELEN_03
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_3D
+	snd_inc_base_note 0
+	snd_note $30, NOTELEN_01
+	snd_note $31
+	snd_note $32
+	snd_note $33, NOTELEN_09
+	snd_note $35, NOTELEN_06
+	snd_note $36
+	snd_jp .loop
+SndData_09_Ch2:
+	snd_note $00, NOTELEN_18
+.loop:
+	snd_note $18, NOTELEN_09
+	snd_note $1A, NOTELEN_0C
+	snd_note $2B, NOTELEN_03
+	snd_note $1D, NOTELEN_09
+	snd_note $1F
+	snd_note $23, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $1D
+	snd_note $29, NOTELEN_03
+	snd_note $1D
+	snd_note $1B, NOTELEN_09
+	snd_note $2E, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_note $19
+	snd_note $18, NOTELEN_09
+	snd_note $1A, NOTELEN_0C
+	snd_note $2B, NOTELEN_03
+	snd_note $1D, NOTELEN_09
+	snd_note $1F
+	snd_note $23, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $24
+	snd_note $28, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $2E
+	snd_note $22
+	snd_note $1B
+	snd_note $16, NOTELEN_06
+	snd_note $17
+	snd_note $18, NOTELEN_09
+	snd_note $1A, NOTELEN_0C
+	snd_note $2B, NOTELEN_03
+	snd_note $1D, NOTELEN_09
+	snd_note $1F
+	snd_note $23, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $1D
+	snd_note $29, NOTELEN_03
+	snd_note $1D
+	snd_note $1B, NOTELEN_09
+	snd_note $2E, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_note $19
+	snd_note $18, NOTELEN_09
+	snd_note $1A, NOTELEN_0C
+	snd_note $2B, NOTELEN_03
+	snd_note $1D, NOTELEN_09
+	snd_note $1F
+	snd_note $23, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $24
+	snd_note $28, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $2E
+	snd_note $22
+	snd_note $1B, NOTELEN_CUSTOM, $0F
+	snd_duty SNDDUTY_12, $00
+	snd_inc_vol -8
+	snd_instrument INSTR_38
+	snd_note $22, NOTELEN_CUSTOM, $15
+	snd_note $24, NOTELEN_CUSTOM, $1B
+	snd_note $24, NOTELEN_CUSTOM, $15
+	snd_note $22, NOTELEN_CUSTOM, $1B
+	snd_note $22, NOTELEN_CUSTOM, $15
+	snd_note $24, NOTELEN_CUSTOM, $1B
+	snd_note $24, NOTELEN_CUSTOM, $15
+	snd_note $22, NOTELEN_CUSTOM, $1B
+	snd_inc_vol 8
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_2E
+	snd_note $22, NOTELEN_06
+	snd_note $27, NOTELEN_09
+	snd_note $2E, NOTELEN_06
+	snd_note $2D
+	snd_note $27
+	snd_note $21, NOTELEN_03
+	snd_note $2D, NOTELEN_06
+	snd_note $29
+	snd_note $2C
+	snd_note $29, NOTELEN_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2B
+	snd_note $27
+	snd_note $1F, NOTELEN_03
+	snd_note $2B, NOTELEN_06
+	snd_note $27
+	snd_note $22
+	snd_note $27, NOTELEN_09
+	snd_note $2E, NOTELEN_06
+	snd_note $2D
+	snd_note $27
+	snd_note $21, NOTELEN_03
+	snd_note $2D, NOTELEN_06
+	snd_note $29
+	snd_note $2C
+	snd_note $29, NOTELEN_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2B, NOTELEN_CUSTOM, $0F
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_2E
+	snd_note $16, NOTELEN_06
+	snd_note $17
+	snd_jp .loop
+SndData_09_Ch4:
+	snd_duty SNDDUTY_12, $00
+	snd_note $00, NOTELEN_0C
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+.loop0:
+	snd_var iSndChInfo_24, $03
+	.loop1:
+		snd_noteex PRESET_01, NOTELEN_06
+		snd_noteex PRESET_00, NOTELEN_03
+		snd_noteex PRESET_01
+		snd_noteex PRESET_00, NOTELEN_09
+		snd_noteex PRESET_00, NOTELEN_03
+		snd_noteex PRESET_01
+		snd_noteex PRESET_00, NOTELEN_06
+		snd_noteex PRESET_00, NOTELEN_03
+		snd_noteex PRESET_00, NOTELEN_06
+		snd_noteex PRESET_00, NOTELEN_03
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01, NOTELEN_06
+		snd_noteex PRESET_00, NOTELEN_03
+		snd_noteex PRESET_01
+		snd_noteex PRESET_01
+		snd_noteex PRESET_00, NOTELEN_06
+		snd_noteex PRESET_00, NOTELEN_03
+		snd_noteex PRESET_01
+		snd_noteex PRESET_00, NOTELEN_06
+		snd_noteex PRESET_00, NOTELEN_03
+		snd_noteex PRESET_00, NOTELEN_06
+		snd_noteex PRESET_00, NOTELEN_03
+		snd_noteex PRESET_00
+		snd_djnz iSndChInfo_24, .loop1
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_call .sub0
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01, NOTELEN_09
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_jp .loop0
+.sub0:
+	snd_var iSndChInfo_24, $04
+	.sub0loop0:
+		snd_noteex PRESET_02
+		snd_inc_vol -3
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_inc_vol 3
+		snd_noteex PRESET_02
+		snd_inc_vol -3
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_inc_vol 3
+		snd_djnz iSndChInfo_24, .sub0loop0
+	snd_ret
 SndHeader_0B:
 	db 4 ; Number of slots
 .slot0:
@@ -4707,2751 +2713,1625 @@ SndHeader_0B:
 	dw SndData_0B_Ch4 ; Data pointer
 	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
-SndData_0B_Ch3: db $A0
-L085261: db $10
-L085262: db $83
-L085263: db $35
-L085264: db $9A
-L085265: db $28
-L085266: db $55
-L085267: db $36
-L085268: db $EA
-L085269: db $35
-L08526A: db $DE
-L08526B: db $03
-L08526C: db $8A
-L08526D: db $FB
-L08526E: db $88
-L08526F: db $00
-L085270: db $97
-L085271: db $FF
-L085272: db $35
-L085273: db $DE
-L085274: db $06
-L085275: db $8A
-L085276: db $05
-L085277: db $88
-L085278: db $00
-L085279: db $97
-L08527A: db $01
-L08527B: db $33
-L08527C: db $E3
-L08527D: db $3A
-L08527E: db $EA
-L08527F: db $37
-L085280: db $DE
-L085281: db $03
-L085282: db $8A
-L085283: db $FB
-L085284: db $88
-L085285: db $00
-L085286: db $97
-L085287: db $FF
-L085288: db $37
-L085289: db $DE
-L08528A: db $06
-L08528B: db $8A
-L08528C: db $05
-L08528D: db $88
-L08528E: db $00
-L08528F: db $97
-L085290: db $01
-L085291: db $33
-L085292: db $DE
-L085293: db $1E
-L085294: db $8A
-L085295: db $FB
-L085296: db $88
-L085297: db $00
-L085298: db $97
-L085299: db $FF
-L08529A: db $33
-L08529B: db $DE
-L08529C: db $06
-L08529D: db $8A
-L08529E: db $05
-L08529F: db $88
-L0852A0: db $00
-L0852A1: db $97
-L0852A2: db $01
-L0852A3: db $00
-L0852A4: db $DE
-L0852A5: db $12
-L0852A6: db $A0
-L0852A7: db $09
-L0852A8: db $83
-L0852A9: db $34
-L0852AA: db $27
-L0852AB: db $E1
-L0852AC: db $27
-L0852AD: db $24
-L0852AE: db $DE
-L0852AF: db $03
-L0852B0: db $8A
-L0852B1: db $FB
-L0852B2: db $97
-L0852B3: db $FF
-L0852B4: db $24
-L0852B5: db $E1
-L0852B6: db $8A
-L0852B7: db $05
-L0852B8: db $97
-L0852B9: db $01
-L0852BA: db $27
-L0852BB: db $DE
-L0852BC: db $03
-L0852BD: db $8A
-L0852BE: db $FB
-L0852BF: db $97
-L0852C0: db $FF
-L0852C1: db $27
-L0852C2: db $E1
-L0852C3: db $8A
-L0852C4: db $05
-L0852C5: db $97
-L0852C6: db $01
-L0852C7: db $00
-L0852C8: db $E3
-L0852C9: db $29
-L0852CA: db $DF
-L0852CB: db $2A
-L0852CC: db $E0
-L0852CD: db $00
-L0852CE: db $E3
-L0852CF: db $29
-L0852D0: db $EA
-L0852D1: db $24
-L0852D2: db $E3
-L0852D3: db $27
-L0852D4: db $E1
-L0852D5: db $27
-L0852D6: db $24
-L0852D7: db $DE
-L0852D8: db $03
-L0852D9: db $8A
-L0852DA: db $FB
-L0852DB: db $97
-L0852DC: db $FF
-L0852DD: db $24
-L0852DE: db $E1
-L0852DF: db $8A
-L0852E0: db $05
-L0852E1: db $97
-L0852E2: db $01
-L0852E3: db $27
-L0852E4: db $DE
-L0852E5: db $03
-L0852E6: db $8A
-L0852E7: db $FB
-L0852E8: db $97
-L0852E9: db $FF
-L0852EA: db $27
-L0852EB: db $E1
-L0852EC: db $8A
-L0852ED: db $05
-L0852EE: db $97
-L0852EF: db $01
-L0852F0: db $00
-L0852F1: db $E3
-L0852F2: db $1E
-L0852F3: db $DF
-L0852F4: db $1F
-L0852F5: db $E0
-L0852F6: db $00
-L0852F7: db $E3
-L0852F8: db $20
-L0852F9: db $EA
-L0852FA: db $22
-L0852FB: db $E3
-L0852FC: db $27
-L0852FD: db $E1
-L0852FE: db $27
-L0852FF: db $24
-L085300: db $DE
-L085301: db $03
-L085302: db $8A
-L085303: db $FB
-L085304: db $97
-L085305: db $FF
-L085306: db $24
-L085307: db $E1
-L085308: db $8A
-L085309: db $05
-L08530A: db $97
-L08530B: db $01
-L08530C: db $27
-L08530D: db $DE
-L08530E: db $03
-L08530F: db $8A
-L085310: db $FB
-L085311: db $97
-L085312: db $FF
-L085313: db $27
-L085314: db $E1
-L085315: db $8A
-L085316: db $05
-L085317: db $97
-L085318: db $01
-L085319: db $00
-L08531A: db $E3
-L08531B: db $29
-L08531C: db $DF
-L08531D: db $2A
-L08531E: db $E0
-L08531F: db $00
-L085320: db $E3
-L085321: db $29
-L085322: db $EA
-L085323: db $24
-L085324: db $E3
-L085325: db $27
-L085326: db $E1
-L085327: db $27
-L085328: db $24
-L085329: db $DE
-L08532A: db $03
-L08532B: db $8A
-L08532C: db $FB
-L08532D: db $97
-L08532E: db $FF
-L08532F: db $24
-L085330: db $E1
-L085331: db $8A
-L085332: db $05
-L085333: db $97
-L085334: db $01
-L085335: db $27
-L085336: db $06
-L085337: db $00
-L085338: db $DE
-L085339: db $04
-L08533A: db $2B
-L08533B: db $DF
-L08533C: db $2C
-L08533D: db $2D
-L08533E: db $2E
-L08533F: db $DE
-L085340: db $05
-L085341: db $8A
-L085342: db $FB
-L085343: db $97
-L085344: db $FF
-L085345: db $2E
-L085346: db $E1
-L085347: db $8A
-L085348: db $05
-L085349: db $97
-L08534A: db $01
-L08534B: db $2B
-L08534C: db $EA
-L08534D: db $24
-L08534E: db $E3
-L08534F: db $27
-L085350: db $E1
-L085351: db $27
-L085352: db $24
-L085353: db $DE
-L085354: db $03
-L085355: db $8A
-L085356: db $FB
-L085357: db $97
-L085358: db $FF
-L085359: db $24
-L08535A: db $E1
-L08535B: db $8A
-L08535C: db $05
-L08535D: db $97
-L08535E: db $01
-L08535F: db $27
-L085360: db $DE
-L085361: db $03
-L085362: db $8A
-L085363: db $FB
-L085364: db $97
-L085365: db $FF
-L085366: db $27
-L085367: db $E1
-L085368: db $8A
-L085369: db $05
-L08536A: db $97
-L08536B: db $01
-L08536C: db $00
-L08536D: db $E3
-L08536E: db $29
-L08536F: db $DF
-L085370: db $2A
-L085371: db $E0
-L085372: db $00
-L085373: db $E3
-L085374: db $29
-L085375: db $EA
-L085376: db $24
-L085377: db $E3
-L085378: db $27
-L085379: db $E1
-L08537A: db $27
-L08537B: db $24
-L08537C: db $DE
-L08537D: db $03
-L08537E: db $8A
-L08537F: db $FB
-L085380: db $97
-L085381: db $FF
-L085382: db $24
-L085383: db $E1
-L085384: db $8A
-L085385: db $05
-L085386: db $97
-L085387: db $01
-L085388: db $27
-L085389: db $DE
-L08538A: db $03
-L08538B: db $8A
-L08538C: db $FB
-L08538D: db $97
-L08538E: db $FF
-L08538F: db $27
-L085390: db $E1
-L085391: db $8A
-L085392: db $05
-L085393: db $97
-L085394: db $01
-L085395: db $00
-L085396: db $E3
-L085397: db $1E
-L085398: db $DF
-L085399: db $1F
-L08539A: db $E0
-L08539B: db $00
-L08539C: db $E3
-L08539D: db $20
-L08539E: db $EA
-L08539F: db $22
-L0853A0: db $E3
-L0853A1: db $27
-L0853A2: db $E1
-L0853A3: db $27
-L0853A4: db $24
-L0853A5: db $DE
-L0853A6: db $03
-L0853A7: db $8A
-L0853A8: db $FB
-L0853A9: db $97
-L0853AA: db $FF
-L0853AB: db $24
-L0853AC: db $E1
-L0853AD: db $8A
-L0853AE: db $05
-L0853AF: db $97
-L0853B0: db $01
-L0853B1: db $27
-L0853B2: db $DE
-L0853B3: db $03
-L0853B4: db $8A
-L0853B5: db $FB
-L0853B6: db $97
-L0853B7: db $FF
-L0853B8: db $27
-L0853B9: db $E1
-L0853BA: db $8A
-L0853BB: db $05
-L0853BC: db $97
-L0853BD: db $01
-L0853BE: db $00
-L0853BF: db $E3
-L0853C0: db $29
-L0853C1: db $DF
-L0853C2: db $2A
-L0853C3: db $E0
-L0853C4: db $00
-L0853C5: db $E3
-L0853C6: db $29
-L0853C7: db $EA
-L0853C8: db $24
-L0853C9: db $E3
-L0853CA: db $00
-L0853CB: db $2E
-L0853CC: db $DE
-L0853CD: db $03
-L0853CE: db $8A
-L0853CF: db $FB
-L0853D0: db $97
-L0853D1: db $FF
-L0853D2: db $2E
-L0853D3: db $E1
-L0853D4: db $8A
-L0853D5: db $05
-L0853D6: db $97
-L0853D7: db $01
-L0853D8: db $00
-L0853D9: db $E1
-L0853DA: db $2A
-L0853DB: db $DF
-L0853DC: db $2B
-L0853DD: db $E4
-L0853DE: db $27
-L0853DF: db $DE
-L0853E0: db $03
-L0853E1: db $8A
-L0853E2: db $FB
-L0853E3: db $97
-L0853E4: db $FF
-L0853E5: db $27
-L0853E6: db $E1
-L0853E7: db $8A
-L0853E8: db $05
-L0853E9: db $97
-L0853EA: db $01
-L0853EB: db $00
-L0853EC: db $DE
-L0853ED: db $12
-L0853EE: db $A0
-L0853EF: db $10
-L0853F0: db $83
-L0853F1: db $35
-L0853F2: db $9A
-L0853F3: db $28
-L0853F4: db $55
-L0853F5: db $36
-L0853F6: db $EA
-L0853F7: db $35
-L0853F8: db $DE
-L0853F9: db $03
-L0853FA: db $8A
-L0853FB: db $FB
-L0853FC: db $97
-L0853FD: db $FF
-L0853FE: db $35
-L0853FF: db $E1
-L085400: db $8A
-L085401: db $05
-L085402: db $97
-L085403: db $01
-L085404: db $00
-L085405: db $E1
-L085406: db $33
-L085407: db $DE
-L085408: db $03
-L085409: db $8A
-L08540A: db $FB
-L08540B: db $97
-L08540C: db $FF
-L08540D: db $33
-L08540E: db $E1
-L08540F: db $8A
-L085410: db $05
-L085411: db $97
-L085412: db $01
-L085413: db $3A
-L085414: db $EA
-L085415: db $37
-L085416: db $DE
-L085417: db $03
-L085418: db $8A
-L085419: db $FB
-L08541A: db $97
-L08541B: db $FF
-L08541C: db $37
-L08541D: db $E1
-L08541E: db $8A
-L08541F: db $05
-L085420: db $97
-L085421: db $01
-L085422: db $00
-L085423: db $E1
-L085424: db $33
-L085425: db $DE
-L085426: db $1E
-L085427: db $8A
-L085428: db $FB
-L085429: db $97
-L08542A: db $FF
-L08542B: db $33
-L08542C: db $E1
-L08542D: db $8A
-L08542E: db $05
-L08542F: db $97
-L085430: db $01
-L085431: db $00
-L085432: db $EA
-L085433: db $A0
-L085434: db $0E
-L085435: db $83
-L085436: db $35
-L085437: db $29
-L085438: db $E1
-L085439: db $2B
-L08543A: db $2C
-L08543B: db $2E
-L08543C: db $30
-L08543D: db $DE
-L08543E: db $18
-L08543F: db $8A
-L085440: db $FB
-L085441: db $88
-L085442: db $00
-L085443: db $97
-L085444: db $FF
-L085445: db $30
-L085446: db $DE
-L085447: db $06
-L085448: db $8A
-L085449: db $05
-L08544A: db $88
-L08544B: db $00
-L08544C: db $97
-L08544D: db $01
-L08544E: db $32
-L08544F: db $DF
-L085450: db $33
-L085451: db $E4
-L085452: db $31
-L085453: db $EA
-L085454: db $30
-L085455: db $EC
-L085456: db $2E
-L085457: db $EA
-L085458: db $2C
-L085459: db $2F
-L08545A: db $DF
-L08545B: db $30
-L08545C: db $DE
-L08545D: db $59
-L08545E: db $8A
-L08545F: db $FB
-L085460: db $88
-L085461: db $00
-L085462: db $97
-L085463: db $FF
-L085464: db $30
-L085465: db $DE
-L085466: db $06
-L085467: db $8A
-L085468: db $05
-L085469: db $88
-L08546A: db $00
-L08546B: db $97
-L08546C: db $01
-L08546D: db $30
-L08546E: db $DE
-L08546F: db $1B
-L085470: db $8A
-L085471: db $FB
-L085472: db $97
-L085473: db $FF
-L085474: db $30
-L085475: db $E1
-L085476: db $8A
-L085477: db $05
-L085478: db $97
-L085479: db $01
-L08547A: db $32
-L08547B: db $DF
-L08547C: db $33
-L08547D: db $E4
-L08547E: db $31
-L08547F: db $EA
-L085480: db $30
-L085481: db $DE
-L085482: db $21
-L085483: db $8A
-L085484: db $FB
-L085485: db $97
-L085486: db $FF
-L085487: db $30
-L085488: db $E1
-L085489: db $8A
-L08548A: db $05
-L08548B: db $97
-L08548C: db $01
-L08548D: db $36
-L08548E: db $DF
-L08548F: db $37
-L085490: db $DE
-L085491: db $0B
-L085492: db $33
-L085493: db $DE
-L085494: db $4E
-L085495: db $8A
-L085496: db $FB
-L085497: db $88
-L085498: db $00
-L085499: db $97
-L08549A: db $FF
-L08549B: db $33
-L08549C: db $DE
-L08549D: db $06
-L08549E: db $8A
-L08549F: db $05
-L0854A0: db $88
-L0854A1: db $00
-L0854A2: db $97
-L0854A3: db $01
-L0854A4: db $31
-L0854A5: db $E5
-L0854A6: db $30
-L0854A7: db $E7
-L0854A8: db $2E
-L0854A9: db $2C
-L0854AA: db $DE
-L0854AB: db $18
-L0854AC: db $8A
-L0854AD: db $FB
-L0854AE: db $88
-L0854AF: db $00
-L0854B0: db $97
-L0854B1: db $FF
-L0854B2: db $2C
-L0854B3: db $DE
-L0854B4: db $06
-L0854B5: db $8A
-L0854B6: db $05
-L0854B7: db $88
-L0854B8: db $00
-L0854B9: db $97
-L0854BA: db $01
-L0854BB: db $30
-L0854BC: db $EA
-L0854BD: db $29
-L0854BE: db $2C
-L0854BF: db $DE
-L0854C0: db $8A
-L0854C1: db $8A
-L0854C2: db $FB
-L0854C3: db $88
-L0854C4: db $00
-L0854C5: db $97
-L0854C6: db $FF
-L0854C7: db $2C
-L0854C8: db $DE
-L0854C9: db $06
-L0854CA: db $8A
-L0854CB: db $05
-L0854CC: db $88
-L0854CD: db $00
-L0854CE: db $97
-L0854CF: db $01
-L0854D0: db $A0
-L0854D1: db $09
-L0854D2: db $83
-L0854D3: db $34
-L0854D4: db $2C
-L0854D5: db $DE
-L0854D6: db $03
-L0854D7: db $8A
-L0854D8: db $FB
-L0854D9: db $97
-L0854DA: db $FF
-L0854DB: db $2C
-L0854DC: db $E1
-L0854DD: db $8A
-L0854DE: db $05
-L0854DF: db $97
-L0854E0: db $01
-L0854E1: db $2C
-L0854E2: db $E1
-L0854E3: db $2C
-L0854E4: db $DE
-L0854E5: db $03
-L0854E6: db $8A
-L0854E7: db $FB
-L0854E8: db $88
-L0854E9: db $00
-L0854EA: db $97
-L0854EB: db $FF
-L0854EC: db $2C
-L0854ED: db $DE
-L0854EE: db $06
-L0854EF: db $8A
-L0854F0: db $05
-L0854F1: db $88
-L0854F2: db $00
-L0854F3: db $97
-L0854F4: db $01
-L0854F5: db $00
-L0854F6: db $E3
-L0854F7: db $2C
-L0854F8: db $E1
-L0854F9: db $2C
-L0854FA: db $DE
-L0854FB: db $03
-L0854FC: db $8A
-L0854FD: db $FB
-L0854FE: db $97
-L0854FF: db $FF
-L085500: db $2C
-L085501: db $E1
-L085502: db $8A
-L085503: db $05
-L085504: db $97
-L085505: db $01
-L085506: db $2C
-L085507: db $DE
-L085508: db $03
-L085509: db $8A
-L08550A: db $FB
-L08550B: db $88
-L08550C: db $00
-L08550D: db $97
-L08550E: db $FF
-L08550F: db $2C
-L085510: db $DE
-L085511: db $06
-L085512: db $8A
-L085513: db $05
-L085514: db $88
-L085515: db $00
-L085516: db $97
-L085517: db $01
-L085518: db $2C
-L085519: db $DE
-L08551A: db $03
-L08551B: db $8A
-L08551C: db $FB
-L08551D: db $97
-L08551E: db $FF
-L08551F: db $2C
-L085520: db $E1
-L085521: db $8A
-L085522: db $05
-L085523: db $97
-L085524: db $01
-L085525: db $80
-L085526: db $60
-L085527: db $52
-L085528: db $3A
-L085529: db $DE
-L08552A: db $18
-L08552B: db $8A
-L08552C: db $FB
-L08552D: db $88
-L08552E: db $00
-L08552F: db $97
-L085530: db $FF
-L085531: db $3A
-L085532: db $DE
-L085533: db $06
-L085534: db $8A
-L085535: db $05
-L085536: db $88
-L085537: db $00
-L085538: db $97
-L085539: db $01
-L08553A: db $3F
-L08553B: db $DE
-L08553C: db $03
-L08553D: db $8A
-L08553E: db $FB
-L08553F: db $97
-L085540: db $FF
-L085541: db $3F
-L085542: db $E1
-L085543: db $8A
-L085544: db $05
-L085545: db $97
-L085546: db $01
-L085547: db $3C
-L085548: db $E3
-L085549: db $3A
-L08554A: db $DE
-L08554B: db $03
-L08554C: db $8A
-L08554D: db $FB
-L08554E: db $97
-L08554F: db $FF
-L085550: db $3A
-L085551: db $E1
-L085552: db $8A
-L085553: db $05
-L085554: db $97
-L085555: db $01
-L085556: db $37
-L085557: db $EA
-L085558: db $35
-L085559: db $DE
-L08555A: db $06
-L08555B: db $8A
-L08555C: db $FB
-L08555D: db $97
-L08555E: db $FF
-L08555F: db $35
-L085560: db $E1
-L085561: db $8A
-L085562: db $05
-L085563: db $97
-L085564: db $01
-L085565: db $33
-L085566: db $DE
-L085567: db $0C
-L085568: db $8A
-L085569: db $FB
-L08556A: db $88
-L08556B: db $00
-L08556C: db $97
-L08556D: db $FF
-L08556E: db $33
-L08556F: db $DE
-L085570: db $06
-L085571: db $8A
-L085572: db $05
-L085573: db $88
-L085574: db $00
-L085575: db $97
-L085576: db $01
-L085577: db $30
-L085578: db $E3
-L085579: db $33
-L08557A: db $DE
-L08557B: db $03
-L08557C: db $8A
-L08557D: db $FB
-L08557E: db $97
-L08557F: db $FF
-L085580: db $33
-L085581: db $E1
-L085582: db $8A
-L085583: db $05
-L085584: db $97
-L085585: db $01
-L085586: db $36
-L085587: db $EA
-L085588: db $35
-L085589: db $DE
-L08558A: db $06
-L08558B: db $8A
-L08558C: db $FB
-L08558D: db $97
-L08558E: db $FF
-L08558F: db $35
-L085590: db $E1
-L085591: db $8A
-L085592: db $05
-L085593: db $97
-L085594: db $01
-L085595: db $33
-L085596: db $DE
-L085597: db $03
-L085598: db $8A
-L085599: db $FB
-L08559A: db $97
-L08559B: db $FF
-L08559C: db $33
-L08559D: db $E1
-L08559E: db $8A
-L08559F: db $05
-L0855A0: db $97
-L0855A1: db $01
-L0855A2: db $2F
-L0855A3: db $EA
-L0855A4: db $2E
-L0855A5: db $DE
-L0855A6: db $06
-L0855A7: db $8A
-L0855A8: db $FB
-L0855A9: db $97
-L0855AA: db $FF
-L0855AB: db $2E
-L0855AC: db $E1
-L0855AD: db $8A
-L0855AE: db $05
-L0855AF: db $97
-L0855B0: db $01
-L0855B1: db $37
-L0855B2: db $DE
-L0855B3: db $1E
-L0855B4: db $8A
-L0855B5: db $FB
-L0855B6: db $88
-L0855B7: db $00
-L0855B8: db $97
-L0855B9: db $FF
-L0855BA: db $37
-L0855BB: db $DE
-L0855BC: db $06
-L0855BD: db $8A
-L0855BE: db $05
-L0855BF: db $88
-L0855C0: db $00
-L0855C1: db $97
-L0855C2: db $01
-L0855C3: db $00
-L0855C4: db $E3
-L0855C5: db $38
-L0855C6: db $E5
-L0855C7: db $3A
-L0855C8: db $DE
-L0855C9: db $18
-L0855CA: db $8A
-L0855CB: db $FB
-L0855CC: db $88
-L0855CD: db $00
-L0855CE: db $97
-L0855CF: db $FF
-L0855D0: db $3A
-L0855D1: db $DE
-L0855D2: db $06
-L0855D3: db $8A
-L0855D4: db $05
-L0855D5: db $88
-L0855D6: db $00
-L0855D7: db $97
-L0855D8: db $01
-L0855D9: db $3F
-L0855DA: db $DE
-L0855DB: db $03
-L0855DC: db $8A
-L0855DD: db $FB
-L0855DE: db $97
-L0855DF: db $FF
-L0855E0: db $3F
-L0855E1: db $E1
-L0855E2: db $8A
-L0855E3: db $05
-L0855E4: db $97
-L0855E5: db $01
-L0855E6: db $3C
-L0855E7: db $E3
-L0855E8: db $3A
-L0855E9: db $DE
-L0855EA: db $03
-L0855EB: db $8A
-L0855EC: db $FB
-L0855ED: db $97
-L0855EE: db $FF
-L0855EF: db $3A
-L0855F0: db $E1
-L0855F1: db $8A
-L0855F2: db $05
-L0855F3: db $97
-L0855F4: db $01
-L0855F5: db $37
-L0855F6: db $EA
-L0855F7: db $35
-L0855F8: db $DE
-L0855F9: db $06
-L0855FA: db $8A
-L0855FB: db $FB
-L0855FC: db $97
-L0855FD: db $FF
-L0855FE: db $35
-L0855FF: db $E1
-L085600: db $8A
-L085601: db $05
-L085602: db $97
-L085603: db $01
-L085604: db $33
-L085605: db $DE
-L085606: db $0C
-L085607: db $8A
-L085608: db $FB
-L085609: db $97
-L08560A: db $FF
-L08560B: db $33
-L08560C: db $E1
-L08560D: db $8A
-L08560E: db $05
-L08560F: db $97
-L085610: db $01
-L085611: db $00
-L085612: db $E1
-L085613: db $30
-L085614: db $E3
-L085615: db $33
-L085616: db $DE
-L085617: db $03
-L085618: db $8A
-L085619: db $FB
-L08561A: db $97
-L08561B: db $FF
-L08561C: db $33
-L08561D: db $E1
-L08561E: db $8A
-L08561F: db $05
-L085620: db $97
-L085621: db $01
-L085622: db $9B
-SndData_0B_Ch2: db $A0
-L085624: db $40
-L085625: db $89
-L085626: db $F4
-L085627: db $1B
-L085628: db $E3
-L085629: db $1B
-L08562A: db $E1
-L08562B: db $1E
-L08562C: db $DF
-L08562D: db $1F
-L08562E: db $E4
-L08562F: db $22
-L085630: db $E3
-L085631: db $25
-L085632: db $DF
-L085633: db $26
-L085634: db $27
-L085635: db $DE
-L085636: db $07
-L085637: db $24
-L085638: db $E3
-L085639: db $24
-L08563A: db $E1
-L08563B: db $22
-L08563C: db $22
-L08563D: db $21
-L08563E: db $21
-L08563F: db $21
-L085640: db $24
-L085641: db $EA
-L085642: db $27
-L085643: db $E3
-L085644: db $29
-L085645: db $DF
-L085646: db $2A
-L085647: db $2B
-L085648: db $DE
-L085649: db $07
-L08564A: db $27
-L08564B: db $E3
-L08564C: db $27
-L08564D: db $E1
-L08564E: db $24
-L08564F: db $E3
-L085650: db $20
-L085651: db $E1
-L085652: db $20
-L085653: db $E3
-L085654: db $23
-L085655: db $DF
-L085656: db $24
-L085657: db $E4
-L085658: db $27
-L085659: db $E3
-L08565A: db $23
-L08565B: db $DF
-L08565C: db $24
-L08565D: db $25
-L08565E: db $DE
-L08565F: db $07
-L085660: db $20
-L085661: db $E3
-L085662: db $20
-L085663: db $E1
-L085664: db $19
-L085665: db $E3
-L085666: db $1B
-L085667: db $E1
-L085668: db $1B
-L085669: db $E3
-L08566A: db $1E
-L08566B: db $DF
-L08566C: db $1F
-L08566D: db $E4
-L08566E: db $22
-L08566F: db $E3
-L085670: db $27
-L085671: db $E5
-L085672: db $1C
-L085673: db $1B
-L085674: db $E3
-L085675: db $1B
-L085676: db $E1
-L085677: db $1E
-L085678: db $DF
-L085679: db $1F
-L08567A: db $E4
-L08567B: db $22
-L08567C: db $E3
-L08567D: db $25
-L08567E: db $DF
-L08567F: db $26
-L085680: db $27
-L085681: db $DE
-L085682: db $07
-L085683: db $24
-L085684: db $E3
-L085685: db $24
-L085686: db $E1
-L085687: db $22
-L085688: db $22
-L085689: db $21
-L08568A: db $21
-L08568B: db $21
-L08568C: db $24
-L08568D: db $EA
-L08568E: db $27
-L08568F: db $E3
-L085690: db $29
-L085691: db $DF
-L085692: db $2A
-L085693: db $2B
-L085694: db $DE
-L085695: db $07
-L085696: db $27
-L085697: db $E3
-L085698: db $27
-L085699: db $E1
-L08569A: db $24
-L08569B: db $E3
-L08569C: db $89
-L08569D: db $0C
-L08569E: db $1D
-L08569F: db $E1
-L0856A0: db $1D
-L0856A1: db $E3
-L0856A2: db $20
-L0856A3: db $EA
-L0856A4: db $21
-L0856A5: db $E3
-L0856A6: db $22
-L0856A7: db $EA
-L0856A8: db $16
-L0856A9: db $19
-L0856AA: db $E0
-L0856AB: db $1A
-L0856AC: db $E2
-L0856AD: db $1B
-L0856AE: db $E1
-L0856AF: db $1B
-L0856B0: db $E3
-L0856B1: db $1E
-L0856B2: db $DF
-L0856B3: db $1F
-L0856B4: db $E4
-L0856B5: db $22
-L0856B6: db $E3
-L0856B7: db $27
-L0856B8: db $E5
-L0856B9: db $27
-L0856BA: db $1B
-L0856BB: db $E1
-L0856BC: db $1B
-L0856BD: db $17
-L0856BE: db $18
-L0856BF: db $1B
-L0856C0: db $E5
-L0856C1: db $1E
-L0856C2: db $EA
-L0856C3: db $1D
-L0856C4: db $E1
-L0856C5: db $1C
-L0856C6: db $1D
-L0856C7: db $18
-L0856C8: db $E3
-L0856C9: db $1B
-L0856CA: db $E1
-L0856CB: db $1B
-L0856CC: db $17
-L0856CD: db $18
-L0856CE: db $1B
-L0856CF: db $E5
-L0856D0: db $13
-L0856D1: db $EA
-L0856D2: db $14
-L0856D3: db $E1
-L0856D4: db $13
-L0856D5: db $14
-L0856D6: db $16
-L0856D7: db $E3
-L0856D8: db $1B
-L0856D9: db $E1
-L0856DA: db $1B
-L0856DB: db $17
-L0856DC: db $18
-L0856DD: db $1B
-L0856DE: db $E5
-L0856DF: db $1E
-L0856E0: db $EA
-L0856E1: db $1D
-L0856E2: db $E1
-L0856E3: db $1C
-L0856E4: db $1D
-L0856E5: db $18
-L0856E6: db $E3
-L0856E7: db $1B
-L0856E8: db $E1
-L0856E9: db $1B
-L0856EA: db $17
-L0856EB: db $18
-L0856EC: db $1B
-L0856ED: db $E5
-L0856EE: db $22
-L0856EF: db $EA
-L0856F0: db $1F
-L0856F1: db $E1
-L0856F2: db $1E
-L0856F3: db $1F
-L0856F4: db $18
-L0856F5: db $E3
-L0856F6: db $1B
-L0856F7: db $E1
-L0856F8: db $1B
-L0856F9: db $17
-L0856FA: db $18
-L0856FB: db $1B
-L0856FC: db $E5
-L0856FD: db $1E
-L0856FE: db $EA
-L0856FF: db $1D
-L085700: db $E1
-L085701: db $1C
-L085702: db $1D
-L085703: db $18
-L085704: db $E3
-L085705: db $1B
-L085706: db $E1
-L085707: db $1B
-L085708: db $17
-L085709: db $18
-L08570A: db $1B
-L08570B: db $E5
-L08570C: db $13
-L08570D: db $EA
-L08570E: db $14
-L08570F: db $E1
-L085710: db $13
-L085711: db $14
-L085712: db $16
-L085713: db $E3
-L085714: db $1B
-L085715: db $E1
-L085716: db $1B
-L085717: db $17
-L085718: db $18
-L085719: db $1B
-L08571A: db $E5
-L08571B: db $1E
-L08571C: db $EA
-L08571D: db $1D
-L08571E: db $E1
-L08571F: db $1C
-L085720: db $1D
-L085721: db $18
-L085722: db $E3
-L085723: db $00
-L085724: db $22
-L085725: db $EA
-L085726: db $1E
-L085727: db $E1
-L085728: db $1F
-L085729: db $E3
-L08572A: db $1B
-L08572B: db $00
-L08572C: db $EB
-L08572D: db $89
-L08572E: db $F4
-L08572F: db $1B
-L085730: db $E3
-L085731: db $1B
-L085732: db $E1
-L085733: db $1E
-L085734: db $DF
-L085735: db $1F
-L085736: db $E4
-L085737: db $22
-L085738: db $E3
-L085739: db $25
-L08573A: db $DF
-L08573B: db $26
-L08573C: db $27
-L08573D: db $DE
-L08573E: db $07
-L08573F: db $24
-L085740: db $E3
-L085741: db $24
-L085742: db $E1
-L085743: db $22
-L085744: db $22
-L085745: db $21
-L085746: db $21
-L085747: db $21
-L085748: db $24
-L085749: db $EA
-L08574A: db $27
-L08574B: db $E3
-L08574C: db $29
-L08574D: db $DF
-L08574E: db $2A
-L08574F: db $2B
-L085750: db $DE
-L085751: db $07
-L085752: db $27
-L085753: db $E3
-L085754: db $27
-L085755: db $E1
-L085756: db $24
-L085757: db $E3
-L085758: db $20
-L085759: db $E1
-L08575A: db $20
-L08575B: db $E3
-L08575C: db $23
-L08575D: db $DF
-L08575E: db $24
-L08575F: db $E4
-L085760: db $27
-L085761: db $E3
-L085762: db $25
-L085763: db $E1
-L085764: db $23
-L085765: db $E3
-L085766: db $22
-L085767: db $20
-L085768: db $19
-L085769: db $E1
-L08576A: db $1B
-L08576B: db $1B
-L08576C: db $E3
-L08576D: db $1E
-L08576E: db $DF
-L08576F: db $1F
-L085770: db $E4
-L085771: db $22
-L085772: db $E3
-L085773: db $27
-L085774: db $E5
-L085775: db $1C
-L085776: db $1B
-L085777: db $E3
-L085778: db $1B
-L085779: db $E1
-L08577A: db $1E
-L08577B: db $DF
-L08577C: db $1F
-L08577D: db $E4
-L08577E: db $22
-L08577F: db $E3
-L085780: db $25
-L085781: db $DF
-L085782: db $26
-L085783: db $27
-L085784: db $DE
-L085785: db $07
-L085786: db $24
-L085787: db $EA
-L085788: db $27
-L085789: db $E1
-L08578A: db $28
-L08578B: db $28
-L08578C: db $DF
-L08578D: db $29
-L08578E: db $E4
-L08578F: db $24
-L085790: db $EA
-L085791: db $27
-L085792: db $E1
-L085793: db $29
-L085794: db $2A
-L085795: db $E0
-L085796: db $2B
-L085797: db $DE
-L085798: db $07
-L085799: db $27
-L08579A: db $EA
-L08579B: db $24
-L08579C: db $E3
-L08579D: db $1D
-L08579E: db $E1
-L08579F: db $1D
-L0857A0: db $E3
-L0857A1: db $1F
-L0857A2: db $DF
-L0857A3: db $20
-L0857A4: db $E4
-L0857A5: db $21
-L0857A6: db $E3
-L0857A7: db $20
-L0857A8: db $DF
-L0857A9: db $21
-L0857AA: db $22
-L0857AB: db $DE
-L0857AC: db $07
-L0857AD: db $16
-L0857AE: db $EA
-L0857AF: db $1A
-L0857B0: db $E3
-L0857B1: db $1B
-L0857B2: db $E1
-L0857B3: db $1B
-L0857B4: db $E3
-L0857B5: db $1E
-L0857B6: db $DF
-L0857B7: db $1F
-L0857B8: db $E4
-L0857B9: db $22
-L0857BA: db $E3
-L0857BB: db $27
-L0857BC: db $E5
-L0857BD: db $27
-L0857BE: db $89
-L0857BF: db $0C
-L0857C0: db $89
-L0857C1: db $F4
-L0857C2: db $21
-L0857C3: db $DF
-L0857C4: db $22
-L0857C5: db $E4
-L0857C6: db $25
-L0857C7: db $EA
-L0857C8: db $29
-L0857C9: db $E3
-L0857CA: db $2E
-L0857CB: db $DF
-L0857CC: db $2F
-L0857CD: db $30
-L0857CE: db $DE
-L0857CF: db $07
-L0857D0: db $2E
-L0857D1: db $EA
-L0857D2: db $2C
-L0857D3: db $E3
-L0857D4: db $2A
-L0857D5: db $DF
-L0857D6: db $2B
-L0857D7: db $E4
-L0857D8: db $27
-L0857D9: db $EA
-L0857DA: db $22
-L0857DB: db $E7
-L0857DC: db $1A
-L0857DD: db $DF
-L0857DE: db $1B
-L0857DF: db $DE
-L0857E0: db $05
-L0857E1: db $1F
-L0857E2: db $DF
-L0857E3: db $20
-L0857E4: db $E4
-L0857E5: db $24
-L0857E6: db $EA
-L0857E7: db $27
-L0857E8: db $E3
-L0857E9: db $2D
-L0857EA: db $DF
-L0857EB: db $2E
-L0857EC: db $E4
-L0857ED: db $2C
-L0857EE: db $EA
-L0857EF: db $2B
-L0857F0: db $E3
-L0857F1: db $28
-L0857F2: db $DF
-L0857F3: db $29
-L0857F4: db $E4
-L0857F5: db $24
-L0857F6: db $EA
-L0857F7: db $1D
-L0857F8: db $EB
-L0857F9: db $1B
-L0857FA: db $DF
-L0857FB: db $1C
-L0857FC: db $1D
-L0857FD: db $DE
-L0857FE: db $0A
-L0857FF: db $21
-L085800: db $DF
-L085801: db $22
-L085802: db $E4
-L085803: db $25
-L085804: db $EA
-L085805: db $29
-L085806: db $E3
-L085807: db $2E
-L085808: db $DF
-L085809: db $2F
-L08580A: db $30
-L08580B: db $DE
-L08580C: db $07
-L08580D: db $2E
-L08580E: db $EA
-L08580F: db $2C
-L085810: db $E3
-L085811: db $2A
-L085812: db $DF
-L085813: db $2B
-L085814: db $E4
-L085815: db $27
-L085816: db $EA
-L085817: db $22
-L085818: db $E7
-L085819: db $1A
-L08581A: db $DF
-L08581B: db $1B
-L08581C: db $DE
-L08581D: db $05
-L08581E: db $1F
-L08581F: db $DF
-L085820: db $20
-L085821: db $E4
-L085822: db $24
-L085823: db $EA
-L085824: db $27
-L085825: db $E3
-L085826: db $2D
-L085827: db $DF
-L085828: db $2E
-L085829: db $E4
-L08582A: db $2C
-L08582B: db $EA
-L08582C: db $2B
-L08582D: db $E3
-L08582E: db $2A
-L08582F: db $DF
-L085830: db $2B
-L085831: db $E4
-L085832: db $27
-L085833: db $EA
-L085834: db $24
-L085835: db $EB
-L085836: db $19
-L085837: db $DF
-L085838: db $1A
-L085839: db $1B
-L08583A: db $DE
-L08583B: db $0A
-L08583C: db $24
-L08583D: db $DF
-L08583E: db $25
-L08583F: db $DE
-L085840: db $17
-L085841: db $23
-L085842: db $DF
-L085843: db $24
-L085844: db $DE
-L085845: db $17
-L085846: db $21
-L085847: db $DF
-L085848: db $22
-L085849: db $DE
-L08584A: db $17
-L08584B: db $1A
-L08584C: db $DF
-L08584D: db $1B
-L08584E: db $DE
-L08584F: db $17
-L085850: db $89
-L085851: db $0C
-L085852: db $12
-L085853: db $EA
-L085854: db $19
-L085855: db $1E
-L085856: db $E3
-L085857: db $1F
-L085858: db $DF
-L085859: db $20
-L08585A: db $E4
-L08585B: db $12
-L08585C: db $EA
-L08585D: db $19
-L08585E: db $E3
-L08585F: db $14
-L085860: db $EA
-L085861: db $1B
-L085862: db $20
-L085863: db $E3
-L085864: db $24
-L085865: db $E1
-L085866: db $23
-L085867: db $E3
-L085868: db $21
-L085869: db $DF
-L08586A: db $22
-L08586B: db $E4
-L08586C: db $20
-L08586D: db $E1
-L08586E: db $1F
-L08586F: db $1E
-L085870: db $EA
-L085871: db $19
-L085872: db $1E
-L085873: db $1F
-L085874: db $DF
-L085875: db $20
-L085876: db $E4
-L085877: db $12
-L085878: db $E3
-L085879: db $13
-L08587A: db $14
-L08587B: db $EA
-L08587C: db $16
-L08587D: db $18
-L08587E: db $E3
-L08587F: db $18
-L085880: db $E1
-L085881: db $17
-L085882: db $DF
-L085883: db $18
-L085884: db $E4
-L085885: db $19
-L085886: db $E3
-L085887: db $1A
-L085888: db $80
-L085889: db $23
-L08588A: db $56
-SndData_0B_Ch1: db $A0
-L08588C: db $40
-L08588D: db $36
-L08588E: db $DF
-L08588F: db $37
-L085890: db $DE
-L085891: db $05
-L085892: db $37
-L085893: db $E1
-L085894: db $37
-L085895: db $E3
-L085896: db $2E
-L085897: db $33
-L085898: db $33
-L085899: db $E1
-L08589A: db $2E
-L08589B: db $E3
-L08589C: db $30
-L08589D: db $33
-L08589E: db $37
-L08589F: db $37
-L0858A0: db $E1
-L0858A1: db $37
-L0858A2: db $E3
-L0858A3: db $30
-L0858A4: db $33
-L0858A5: db $33
-L0858A6: db $E1
-L0858A7: db $2D
-L0858A8: db $E3
-L0858A9: db $30
-L0858AA: db $33
-L0858AB: db $33
-L0858AC: db $33
-L0858AD: db $E1
-L0858AE: db $33
-L0858AF: db $E3
-L0858B0: db $30
-L0858B1: db $30
-L0858B2: db $E1
-L0858B3: db $35
-L0858B4: db $E3
-L0858B5: db $35
-L0858B6: db $E1
-L0858B7: db $35
-L0858B8: db $E3
-L0858B9: db $33
-L0858BA: db $2F
-L0858BB: db $E1
-L0858BC: db $3A
-L0858BD: db $E3
-L0858BE: db $3A
-L0858BF: db $E1
-L0858C0: db $36
-L0858C1: db $DF
-L0858C2: db $37
-L0858C3: db $DE
-L0858C4: db $05
-L0858C5: db $33
-L0858C6: db $EA
-L0858C7: db $2E
-L0858C8: db $E5
-L0858C9: db $3B
-L0858CA: db $E0
-L0858CB: db $3B
-L0858CC: db $3B
-L0858CD: db $3B
-L0858CE: db $3B
-L0858CF: db $3B
-L0858D0: db $37
-L0858D1: db $E3
-L0858D2: db $36
-L0858D3: db $E1
-L0858D4: db $37
-L0858D5: db $E3
-L0858D6: db $2E
-L0858D7: db $33
-L0858D8: db $33
-L0858D9: db $E1
-L0858DA: db $2E
-L0858DB: db $E3
-L0858DC: db $30
-L0858DD: db $33
-L0858DE: db $37
-L0858DF: db $3C
-L0858E0: db $E1
-L0858E1: db $37
-L0858E2: db $E3
-L0858E3: db $30
-L0858E4: db $33
-L0858E5: db $33
-L0858E6: db $E1
-L0858E7: db $2D
-L0858E8: db $E3
-L0858E9: db $30
-L0858EA: db $33
-L0858EB: db $33
-L0858EC: db $33
-L0858ED: db $E1
-L0858EE: db $33
-L0858EF: db $E3
-L0858F0: db $30
-L0858F1: db $30
-L0858F2: db $E1
-L0858F3: db $33
-L0858F4: db $E3
-L0858F5: db $33
-L0858F6: db $E1
-L0858F7: db $33
-L0858F8: db $E3
-L0858F9: db $30
-L0858FA: db $2C
-L0858FB: db $E1
-L0858FC: db $3A
-L0858FD: db $E3
-L0858FE: db $3A
-L0858FF: db $E1
-L085900: db $36
-L085901: db $DF
-L085902: db $37
-L085903: db $DE
-L085904: db $05
-L085905: db $33
-L085906: db $EA
-L085907: db $33
-L085908: db $E5
-L085909: db $33
-L08590A: db $E0
-L08590B: db $33
-L08590C: db $33
-L08590D: db $33
-L08590E: db $33
-L08590F: db $33
-L085910: db $A0
-L085911: db $00
-L085912: db $33
-L085913: db $E1
-L085914: db $33
-L085915: db $30
-L085916: db $E3
-L085917: db $33
-L085918: db $E5
-L085919: db $35
-L08591A: db $DF
-L08591B: db $36
-L08591C: db $E4
-L08591D: db $35
-L08591E: db $EA
-L08591F: db $30
-L085920: db $E3
-L085921: db $33
-L085922: db $E1
-L085923: db $33
-L085924: db $30
-L085925: db $E3
-L085926: db $33
-L085927: db $E5
-L085928: db $2A
-L085929: db $DF
-L08592A: db $2B
-L08592B: db $E4
-L08592C: db $2C
-L08592D: db $EA
-L08592E: db $2E
-L08592F: db $E3
-L085930: db $33
-L085931: db $E1
-L085932: db $33
-L085933: db $30
-L085934: db $E3
-L085935: db $33
-L085936: db $E5
-L085937: db $35
-L085938: db $DF
-L085939: db $36
-L08593A: db $E4
-L08593B: db $35
-L08593C: db $EA
-L08593D: db $30
-L08593E: db $E3
-L08593F: db $33
-L085940: db $E1
-L085941: db $33
-L085942: db $30
-L085943: db $E3
-L085944: db $33
-L085945: db $DE
-L085946: db $0A
-L085947: db $37
-L085948: db $DF
-L085949: db $38
-L08594A: db $39
-L08594B: db $3A
-L08594C: db $E4
-L08594D: db $37
-L08594E: db $EA
-L08594F: db $30
-L085950: db $E3
-L085951: db $33
-L085952: db $E1
-L085953: db $33
-L085954: db $30
-L085955: db $E3
-L085956: db $33
-L085957: db $E5
-L085958: db $35
-L085959: db $DF
-L08595A: db $36
-L08595B: db $E4
-L08595C: db $35
-L08595D: db $EA
-L08595E: db $30
-L08595F: db $E3
-L085960: db $33
-L085961: db $E1
-L085962: db $33
-L085963: db $30
-L085964: db $E3
-L085965: db $33
-L085966: db $E5
-L085967: db $2A
-L085968: db $DF
-L085969: db $2B
-L08596A: db $E4
-L08596B: db $2C
-L08596C: db $EA
-L08596D: db $2E
-L08596E: db $E3
-L08596F: db $33
-L085970: db $E1
-L085971: db $33
-L085972: db $30
-L085973: db $E3
-L085974: db $33
-L085975: db $E5
-L085976: db $35
-L085977: db $DF
-L085978: db $36
-L085979: db $E4
-L08597A: db $35
-L08597B: db $EA
-L08597C: db $30
-L08597D: db $E3
-L08597E: db $00
-L08597F: db $3A
-L085980: db $EA
-L085981: db $36
-L085982: db $DF
-L085983: db $37
-L085984: db $E4
-L085985: db $33
-L085986: db $E7
-L085987: db $A0
-L085988: db $40
-L085989: db $36
-L08598A: db $DF
-L08598B: db $37
-L08598C: db $DE
-L08598D: db $05
-L08598E: db $37
-L08598F: db $E1
-L085990: db $37
-L085991: db $E3
-L085992: db $2E
-L085993: db $33
-L085994: db $33
-L085995: db $E1
-L085996: db $2E
-L085997: db $E3
-L085998: db $30
-L085999: db $33
-L08599A: db $37
-L08599B: db $37
-L08599C: db $E1
-L08599D: db $37
-L08599E: db $E3
-L08599F: db $30
-L0859A0: db $33
-L0859A1: db $33
-L0859A2: db $E1
-L0859A3: db $2D
-L0859A4: db $E3
-L0859A5: db $30
-L0859A6: db $33
-L0859A7: db $33
-L0859A8: db $33
-L0859A9: db $E1
-L0859AA: db $33
-L0859AB: db $E3
-L0859AC: db $30
-L0859AD: db $30
-L0859AE: db $E1
-L0859AF: db $35
-L0859B0: db $E3
-L0859B1: db $35
-L0859B2: db $E1
-L0859B3: db $35
-L0859B4: db $E3
-L0859B5: db $33
-L0859B6: db $2F
-L0859B7: db $E1
-L0859B8: db $3A
-L0859B9: db $E3
-L0859BA: db $3A
-L0859BB: db $E1
-L0859BC: db $A0
-L0859BD: db $00
-L0859BE: db $2A
-L0859BF: db $DF
-L0859C0: db $2B
-L0859C1: db $DE
-L0859C2: db $05
-L0859C3: db $27
-L0859C4: db $EA
-L0859C5: db $22
-L0859C6: db $E1
-L0859C7: db $00
-L0859C8: db $EA
-L0859C9: db $A0
-L0859CA: db $40
-L0859CB: db $3B
-L0859CC: db $E0
-L0859CD: db $3B
-L0859CE: db $3B
-L0859CF: db $3B
-L0859D0: db $3B
-L0859D1: db $3B
-L0859D2: db $37
-L0859D3: db $E3
-L0859D4: db $36
-L0859D5: db $E1
-L0859D6: db $37
-L0859D7: db $E3
-L0859D8: db $2E
-L0859D9: db $33
-L0859DA: db $33
-L0859DB: db $E1
-L0859DC: db $2E
-L0859DD: db $E3
-L0859DE: db $30
-L0859DF: db $33
-L0859E0: db $37
-L0859E1: db $3C
-L0859E2: db $E1
-L0859E3: db $37
-L0859E4: db $E3
-L0859E5: db $30
-L0859E6: db $33
-L0859E7: db $33
-L0859E8: db $E1
-L0859E9: db $2D
-L0859EA: db $E3
-L0859EB: db $30
-L0859EC: db $33
-L0859ED: db $33
-L0859EE: db $33
-L0859EF: db $E1
-L0859F0: db $33
-L0859F1: db $E3
-L0859F2: db $30
-L0859F3: db $30
-L0859F4: db $E1
-L0859F5: db $33
-L0859F6: db $E3
-L0859F7: db $33
-L0859F8: db $E1
-L0859F9: db $33
-L0859FA: db $E3
-L0859FB: db $30
-L0859FC: db $2C
-L0859FD: db $E1
-L0859FE: db $3A
-L0859FF: db $E3
-L085A00: db $A0
-L085A01: db $80
-L085A02: db $8A
-L085A03: db $FE
-L085A04: db $2E
-L085A05: db $E1
-L085A06: db $30
-L085A07: db $33
-L085A08: db $30
-L085A09: db $2E
-L085A0A: db $30
-L085A0B: db $27
-L085A0C: db $E5
-L085A0D: db $A0
-L085A0E: db $80
-L085A0F: db $8A
-L085A10: db $FF
-L085A11: db $33
-L085A12: db $E0
-L085A13: db $33
-L085A14: db $33
-L085A15: db $33
-L085A16: db $33
-L085A17: db $E2
-L085A18: db $38
-L085A19: db $E0
-L085A1A: db $3C
-L085A1B: db $8A
-L085A1C: db $FF
-L085A1D: db $38
-L085A1E: db $3C
-L085A1F: db $8A
-L085A20: db $FF
-L085A21: db $38
-L085A22: db $3C
-L085A23: db $8A
-L085A24: db $FF
-L085A25: db $38
-L085A26: db $3C
-L085A27: db $38
-L085A28: db $3C
-L085A29: db $38
-L085A2A: db $3C
-L085A2B: db $38
-L085A2C: db $3C
-L085A2D: db $38
-L085A2E: db $3C
-L085A2F: db $38
-L085A30: db $3C
-L085A31: db $38
-L085A32: db $3C
-L085A33: db $38
-L085A34: db $3C
-L085A35: db $38
-L085A36: db $3C
-L085A37: db $8A
-L085A38: db $03
-L085A39: db $8D
-L085A3A: db $24
-L085A3B: db $02
-L085A3C: db $37
-L085A3D: db $3C
-L085A3E: db $8A
-L085A3F: db $FF
-L085A40: db $37
-L085A41: db $3C
-L085A42: db $8A
-L085A43: db $FF
-L085A44: db $37
-L085A45: db $3C
-L085A46: db $8A
-L085A47: db $FF
-L085A48: db $37
-L085A49: db $3C
-L085A4A: db $37
-L085A4B: db $3C
-L085A4C: db $37
-L085A4D: db $3C
-L085A4E: db $37
-L085A4F: db $3C
-L085A50: db $37
-L085A51: db $3C
-L085A52: db $37
-L085A53: db $3C
-L085A54: db $37
-L085A55: db $3C
-L085A56: db $37
-L085A57: db $3C
-L085A58: db $37
-L085A59: db $3C
-L085A5A: db $8A
-L085A5B: db $03
-L085A5C: db $81
-L085A5D: db $24
-L085A5E: db $3C
-L085A5F: db $5A
-L085A60: db $33
-L085A61: db $37
-L085A62: db $8A
-L085A63: db $FF
-L085A64: db $33
-L085A65: db $37
-L085A66: db $8A
-L085A67: db $FF
-L085A68: db $33
-L085A69: db $37
-L085A6A: db $8A
-L085A6B: db $FF
-L085A6C: db $33
-L085A6D: db $37
-L085A6E: db $33
-L085A6F: db $37
-L085A70: db $33
-L085A71: db $37
-L085A72: db $33
-L085A73: db $37
-L085A74: db $33
-L085A75: db $37
-L085A76: db $33
-L085A77: db $37
-L085A78: db $33
-L085A79: db $37
-L085A7A: db $33
-L085A7B: db $37
-L085A7C: db $33
-L085A7D: db $37
-L085A7E: db $8A
-L085A7F: db $03
-L085A80: db $38
-L085A81: db $3C
-L085A82: db $8A
-L085A83: db $FF
-L085A84: db $38
-L085A85: db $3C
-L085A86: db $8A
-L085A87: db $FF
-L085A88: db $38
-L085A89: db $3C
-L085A8A: db $8A
-L085A8B: db $FF
-L085A8C: db $38
-L085A8D: db $3C
-L085A8E: db $38
-L085A8F: db $3C
-L085A90: db $38
-L085A91: db $3C
-L085A92: db $38
-L085A93: db $3C
-L085A94: db $38
-L085A95: db $3C
-L085A96: db $38
-L085A97: db $3C
-L085A98: db $38
-L085A99: db $3C
-L085A9A: db $38
-L085A9B: db $3C
-L085A9C: db $38
-L085A9D: db $3C
-L085A9E: db $8A
-L085A9F: db $03
-L085AA0: db $37
-L085AA1: db $8A
-L085AA2: db $FF
-L085AA3: db $3C
-L085AA4: db $8A
-L085AA5: db $FF
-L085AA6: db $37
-L085AA7: db $8A
-L085AA8: db $FF
-L085AA9: db $3C
-L085AAA: db $37
-L085AAB: db $3C
-L085AAC: db $37
-L085AAD: db $3C
-L085AAE: db $37
-L085AAF: db $3C
-L085AB0: db $37
-L085AB1: db $3C
-L085AB2: db $37
-L085AB3: db $3C
-L085AB4: db $37
-L085AB5: db $3C
-L085AB6: db $37
-L085AB7: db $3C
-L085AB8: db $37
-L085AB9: db $3C
-L085ABA: db $37
-L085ABB: db $3C
-L085ABC: db $37
-L085ABD: db $3C
-L085ABE: db $8A
-L085ABF: db $03
-L085AC0: db $3C
-L085AC1: db $8A
-L085AC2: db $FF
-L085AC3: db $3F
-L085AC4: db $8A
-L085AC5: db $FF
-L085AC6: db $3C
-L085AC7: db $8A
-L085AC8: db $FF
-L085AC9: db $3F
-L085ACA: db $3C
-L085ACB: db $3F
-L085ACC: db $3C
-L085ACD: db $3F
-L085ACE: db $3C
-L085ACF: db $3F
-L085AD0: db $3C
-L085AD1: db $3F
-L085AD2: db $3C
-L085AD3: db $3F
-L085AD4: db $3C
-L085AD5: db $3F
-L085AD6: db $3C
-L085AD7: db $3F
-L085AD8: db $3C
-L085AD9: db $3F
-L085ADA: db $3C
-L085ADB: db $3F
-L085ADC: db $3C
-L085ADD: db $3F
-L085ADE: db $8A
-L085ADF: db $03
-L085AE0: db $37
-L085AE1: db $8A
-L085AE2: db $FF
-L085AE3: db $3C
-L085AE4: db $8A
-L085AE5: db $FF
-L085AE6: db $37
-L085AE7: db $8A
-L085AE8: db $FF
-L085AE9: db $3C
-L085AEA: db $37
-L085AEB: db $3C
-L085AEC: db $37
-L085AED: db $3C
-L085AEE: db $37
-L085AEF: db $3C
-L085AF0: db $37
-L085AF1: db $3C
-L085AF2: db $33
-L085AF3: db $37
-L085AF4: db $33
-L085AF5: db $37
-L085AF6: db $33
-L085AF7: db $37
-L085AF8: db $36
-L085AF9: db $3D
-L085AFA: db $36
-L085AFB: db $3D
-L085AFC: db $36
-L085AFD: db $3D
-L085AFE: db $8A
-L085AFF: db $03
-L085B00: db $38
-L085B01: db $8A
-L085B02: db $FF
-L085B03: db $3C
-L085B04: db $8A
-L085B05: db $FF
-L085B06: db $38
-L085B07: db $8A
-L085B08: db $FF
-L085B09: db $3C
-L085B0A: db $38
-L085B0B: db $3C
-L085B0C: db $38
-L085B0D: db $3C
-L085B0E: db $38
-L085B0F: db $3C
-L085B10: db $38
-L085B11: db $3C
-L085B12: db $37
-L085B13: db $3A
-L085B14: db $37
-L085B15: db $3A
-L085B16: db $37
-L085B17: db $3A
-L085B18: db $37
-L085B19: db $3A
-L085B1A: db $37
-L085B1B: db $8A
-L085B1C: db $01
-L085B1D: db $3A
-L085B1E: db $8A
-L085B1F: db $01
-L085B20: db $37
-L085B21: db $8A
-L085B22: db $01
-L085B23: db $3A
-L085B24: db $35
-L085B25: db $8A
-L085B26: db $FF
-L085B27: db $38
-L085B28: db $8A
-L085B29: db $FF
-L085B2A: db $35
-L085B2B: db $8A
-L085B2C: db $FF
-L085B2D: db $38
-L085B2E: db $35
-L085B2F: db $38
-L085B30: db $35
-L085B31: db $38
-L085B32: db $35
-L085B33: db $38
-L085B34: db $35
-L085B35: db $38
-L085B36: db $35
-L085B37: db $38
-L085B38: db $35
-L085B39: db $38
-L085B3A: db $35
-L085B3B: db $38
-L085B3C: db $35
-L085B3D: db $38
-L085B3E: db $35
-L085B3F: db $8A
-L085B40: db $01
-L085B41: db $38
-L085B42: db $8A
-L085B43: db $01
-L085B44: db $35
-L085B45: db $8A
-L085B46: db $01
-L085B47: db $38
-L085B48: db $8A
-L085B49: db $03
-L085B4A: db $2A
-L085B4B: db $E3
-L085B4C: db $2E
-L085B4D: db $EA
-L085B4E: db $2A
-L085B4F: db $E3
-L085B50: db $2E
-L085B51: db $2A
-L085B52: db $EA
-L085B53: db $2E
-L085B54: db $E3
-L085B55: db $2A
-L085B56: db $2C
-L085B57: db $30
-L085B58: db $EA
-L085B59: db $2C
-L085B5A: db $E3
-L085B5B: db $30
-L085B5C: db $2C
-L085B5D: db $30
-L085B5E: db $E1
-L085B5F: db $30
-L085B60: db $E3
-L085B61: db $2C
-L085B62: db $2A
-L085B63: db $2E
-L085B64: db $EA
-L085B65: db $2A
-L085B66: db $E3
-L085B67: db $2E
-L085B68: db $2A
-L085B69: db $EA
-L085B6A: db $2E
-L085B6B: db $E3
-L085B6C: db $2A
-L085B6D: db $A0
-L085B6E: db $80
-L085B6F: db $38
-L085B70: db $38
-L085B71: db $E1
-L085B72: db $38
-L085B73: db $DE
-L085B74: db $0F
-L085B75: db $38
-L085B76: db $E1
-L085B77: db $38
-L085B78: db $E3
-L085B79: db $38
-L085B7A: db $EA
-L085B7B: db $38
-L085B7C: db $E3
-L085B7D: db $80
-L085B7E: db $8B
-L085B7F: db $58
-SndData_0B_Ch4: db $9A
-L085B81: db $00
-L085B82: db $5D
-L085B83: db $C1
-L085B84: db $C2
-L085B85: db $C2
-L085B86: db $C1
-L085B87: db $C0
-L085B88: db $C2
-L085B89: db $C1
-L085B8A: db $C2
-L085B8B: db $C1
-L085B8C: db $E5
-L085B8D: db $C0
-L085B8E: db $9A
-L085B8F: db $00
-L085B90: db $5D
-L085B91: db $C1
-L085B92: db $C2
-L085B93: db $C2
-L085B94: db $C0
-L085B95: db $DF
-L085B96: db $C0
-L085B97: db $C0
-L085B98: db $C0
-L085B99: db $E1
-L085B9A: db $C0
-L085B9B: db $C1
-L085B9C: db $C2
-L085B9D: db $C0
-L085B9E: db $E5
-L085B9F: db $C0
-L085BA0: db $E1
-L085BA1: db $C2
-L085BA2: db $C2
-L085BA3: db $C2
-L085BA4: db $C1
-L085BA5: db $E3
-L085BA6: db $C1
-L085BA7: db $E1
-L085BA8: db $C2
-L085BA9: db $C0
-L085BAA: db $EA
-L085BAB: db $C0
-L085BAC: db $DF
-L085BAD: db $C0
-L085BAE: db $C0
-L085BAF: db $C1
-L085BB0: db $E1
-L085BB1: db $C0
-L085BB2: db $C2
-L085BB3: db $C1
-L085BB4: db $C0
-L085BB5: db $E3
-L085BB6: db $C1
-L085BB7: db $E1
-L085BB8: db $C0
-L085BB9: db $C1
-L085BBA: db $C0
-L085BBB: db $C1
-L085BBC: db $C2
-L085BBD: db $C0
-L085BBE: db $E3
-L085BBF: db $C2
-L085BC0: db $E1
-L085BC1: db $C0
-L085BC2: db $C1
-L085BC3: db $C0
-L085BC4: db $C2
-L085BC5: db $C1
-L085BC6: db $C0
-L085BC7: db $E3
-L085BC8: db $C1
-L085BC9: db $E1
-L085BCA: db $C0
-L085BCB: db $C1
-L085BCC: db $E3
-L085BCD: db $C1
-L085BCE: db $E1
-L085BCF: db $C2
-L085BD0: db $C0
-L085BD1: db $EA
-L085BD2: db $C0
-L085BD3: db $DF
-L085BD4: db $C0
-L085BD5: db $C0
-L085BD6: db $C1
-L085BD7: db $E1
-L085BD8: db $C0
-L085BD9: db $C2
-L085BDA: db $C1
-L085BDB: db $C0
-L085BDC: db $E3
-L085BDD: db $C1
-L085BDE: db $E1
-L085BDF: db $C0
-L085BE0: db $C1
-L085BE1: db $C0
-L085BE2: db $C1
-L085BE3: db $C2
-L085BE4: db $C0
-L085BE5: db $E3
-L085BE6: db $C2
-L085BE7: db $E1
-L085BE8: db $C0
-L085BE9: db $C1
-L085BEA: db $C0
-L085BEB: db $C2
-L085BEC: db $C1
-L085BED: db $C0
-L085BEE: db $C0
-L085BEF: db $C1
-L085BF0: db $C0
-L085BF1: db $C1
-L085BF2: db $E3
-L085BF3: db $C1
-L085BF4: db $E1
-L085BF5: db $C2
-L085BF6: db $C0
-L085BF7: db $EA
-L085BF8: db $C0
-L085BF9: db $DF
-L085BFA: db $C0
-L085BFB: db $C0
-L085BFC: db $C1
-L085BFD: db $E1
-L085BFE: db $C0
-L085BFF: db $C2
-L085C00: db $C1
-L085C01: db $C0
-L085C02: db $E3
-L085C03: db $C1
-L085C04: db $E1
-L085C05: db $C0
-L085C06: db $C1
-L085C07: db $C0
-L085C08: db $C1
-L085C09: db $C2
-L085C0A: db $C0
-L085C0B: db $E3
-L085C0C: db $C2
-L085C0D: db $E1
-L085C0E: db $C0
-L085C0F: db $C1
-L085C10: db $C0
-L085C11: db $C2
-L085C12: db $C1
-L085C13: db $C0
-L085C14: db $E3
-L085C15: db $C1
-L085C16: db $E1
-L085C17: db $C0
-L085C18: db $C1
-L085C19: db $E3
-L085C1A: db $C1
-L085C1B: db $E1
-L085C1C: db $C2
-L085C1D: db $C0
-L085C1E: db $EA
-L085C1F: db $C0
-L085C20: db $DF
-L085C21: db $C0
-L085C22: db $C0
-L085C23: db $C1
-L085C24: db $E1
-L085C25: db $C0
-L085C26: db $C2
-L085C27: db $C1
-L085C28: db $C0
-L085C29: db $E3
-L085C2A: db $C1
-L085C2B: db $E1
-L085C2C: db $C0
-L085C2D: db $C1
-L085C2E: db $E3
-L085C2F: db $C0
-L085C30: db $C2
-L085C31: db $E1
-L085C32: db $C0
-L085C33: db $E3
-L085C34: db $C2
-L085C35: db $E1
-L085C36: db $C0
-L085C37: db $DE
-L085C38: db $0F
-L085C39: db $C0
-L085C3A: db $DF
-L085C3B: db $C0
-L085C3C: db $C0
-L085C3D: db $C0
-L085C3E: db $E1
-L085C3F: db $C0
-L085C40: db $9A
-L085C41: db $00
-L085C42: db $5D
-L085C43: db $C1
-L085C44: db $C2
-L085C45: db $C2
-L085C46: db $C1
-L085C47: db $C0
-L085C48: db $C2
-L085C49: db $C1
-L085C4A: db $C2
-L085C4B: db $C1
-L085C4C: db $E5
-L085C4D: db $C0
-L085C4E: db $9A
-L085C4F: db $00
-L085C50: db $5D
-L085C51: db $C1
-L085C52: db $C2
-L085C53: db $C2
-L085C54: db $C0
-L085C55: db $DF
-L085C56: db $C0
-L085C57: db $C0
-L085C58: db $C0
-L085C59: db $E1
-L085C5A: db $C0
-L085C5B: db $C1
-L085C5C: db $C0
-L085C5D: db $DF
-L085C5E: db $C0
-L085C5F: db $C0
-L085C60: db $C0
-L085C61: db $E5
-L085C62: db $C0
-L085C63: db $C1
-L085C64: db $E3
-L085C65: db $C2
-L085C66: db $E1
-L085C67: db $C1
-L085C68: db $C0
-L085C69: db $E3
-L085C6A: db $C1
-L085C6B: db $C1
-L085C6C: db $C2
-L085C6D: db $E1
-L085C6E: db $C1
-L085C6F: db $C0
-L085C70: db $E3
-L085C71: db $C1
-L085C72: db $C1
-L085C73: db $C2
-L085C74: db $E1
-L085C75: db $C1
-L085C76: db $C0
-L085C77: db $E3
-L085C78: db $C1
-L085C79: db $C1
-L085C7A: db $C2
-L085C7B: db $E1
-L085C7C: db $C1
-L085C7D: db $C0
-L085C7E: db $E3
-L085C7F: db $C1
-L085C80: db $C1
-L085C81: db $C2
-L085C82: db $E1
-L085C83: db $C1
-L085C84: db $C0
-L085C85: db $E3
-L085C86: db $C1
-L085C87: db $C1
-L085C88: db $C2
-L085C89: db $E1
-L085C8A: db $C1
-L085C8B: db $C0
-L085C8C: db $E3
-L085C8D: db $C1
-L085C8E: db $C1
-L085C8F: db $C2
-L085C90: db $E1
-L085C91: db $C1
-L085C92: db $C0
-L085C93: db $E3
-L085C94: db $C1
-L085C95: db $C1
-L085C96: db $E1
-L085C97: db $C0
-L085C98: db $E3
-L085C99: db $C1
-L085C9A: db $E1
-L085C9B: db $C0
-L085C9C: db $E3
-L085C9D: db $C1
-L085C9E: db $C1
-L085C9F: db $C2
-L085CA0: db $E1
-L085CA1: db $C1
-L085CA2: db $C0
-L085CA3: db $E3
-L085CA4: db $C1
-L085CA5: db $C1
-L085CA6: db $C2
-L085CA7: db $E1
-L085CA8: db $C1
-L085CA9: db $C0
-L085CAA: db $E3
-L085CAB: db $C1
-L085CAC: db $C1
-L085CAD: db $C2
-L085CAE: db $E1
-L085CAF: db $C1
-L085CB0: db $C0
-L085CB1: db $E3
-L085CB2: db $C1
-L085CB3: db $C1
-L085CB4: db $C2
-L085CB5: db $E1
-L085CB6: db $C1
-L085CB7: db $C0
-L085CB8: db $E3
-L085CB9: db $C1
-L085CBA: db $C1
-L085CBB: db $C2
-L085CBC: db $E1
-L085CBD: db $C1
-L085CBE: db $C0
-L085CBF: db $E3
-L085CC0: db $C1
-L085CC1: db $C1
-L085CC2: db $C2
-L085CC3: db $E1
-L085CC4: db $C1
-L085CC5: db $C0
-L085CC6: db $E3
-L085CC7: db $C1
-L085CC8: db $C1
-L085CC9: db $C2
-L085CCA: db $E1
-L085CCB: db $C1
-L085CCC: db $C0
-L085CCD: db $E3
-L085CCE: db $C1
-L085CCF: db $C1
-L085CD0: db $E1
-L085CD1: db $C0
-L085CD2: db $E3
-L085CD3: db $C1
-L085CD4: db $E1
-L085CD5: db $C2
-L085CD6: db $C0
-L085CD7: db $C1
-L085CD8: db $C0
-L085CD9: db $C1
-L085CDA: db $E5
-L085CDB: db $C0
-L085CDC: db $C1
-L085CDD: db $C0
-L085CDE: db $C1
-L085CDF: db $C0
-L085CE0: db $C0
-L085CE1: db $E3
-L085CE2: db $C2
-L085CE3: db $E1
-L085CE4: db $C1
-L085CE5: db $C0
-L085CE6: db $C0
-L085CE7: db $E3
-L085CE8: db $C0
-L085CE9: db $E1
-L085CEA: db $9A
-L085CEB: db $00
-L085CEC: db $5D
-L085CED: db $C1
-L085CEE: db $C2
-L085CEF: db $C2
-L085CF0: db $C1
-L085CF1: db $C0
-L085CF2: db $C2
-L085CF3: db $C1
-L085CF4: db $C2
-L085CF5: db $C1
-L085CF6: db $C0
-L085CF7: db $E3
-L085CF8: db $C1
-L085CF9: db $E1
-L085CFA: db $C0
-L085CFB: db $E3
-L085CFC: db $C0
-L085CFD: db $80
-L085CFE: db $80
-L085CFF: db $5B
-L085D00: db $8D
-L085D01: db $24
-L085D02: db $03
-L085D03: db $C1
-L085D04: db $E1
-L085D05: db $C2
-L085D06: db $C2
-L085D07: db $C1
-L085D08: db $C0
-L085D09: db $C2
-L085D0A: db $C1
-L085D0B: db $C2
-L085D0C: db $C1
-L085D0D: db $C2
-L085D0E: db $C2
-L085D0F: db $C1
-L085D10: db $C0
-L085D11: db $C2
-L085D12: db $C1
-L085D13: db $C2
-L085D14: db $81
-L085D15: db $24
-L085D16: db $03
-L085D17: db $5D
-L085D18: db $9B
+SndData_0B_Ch3:
+	snd_wave WAVE_10
+	snd_vibrato VIBRATO_35
+	snd_call .sub0
+	snd_note $36, NOTELEN_09
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_06
+	snd_note $3A, NOTELEN_09
+	snd_note $37, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_CUSTOM, $1E
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $12
+	snd_wave WAVE_09
+	snd_vibrato VIBRATO_34
+	snd_note $27, NOTELEN_03
+	snd_note $27
+	snd_note $24, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $24, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $27, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $29, NOTELEN_01
+	snd_note $2A, NOTELEN_02
+	snd_note $00, NOTELEN_06
+	snd_note $29, NOTELEN_09
+	snd_note $24, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $27
+	snd_note $24, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $24, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $27, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $1E, NOTELEN_01
+	snd_note $1F, NOTELEN_02
+	snd_note $00, NOTELEN_06
+	snd_note $20, NOTELEN_09
+	snd_note $22, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $27
+	snd_note $24, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $24, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $27, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $29, NOTELEN_01
+	snd_note $2A, NOTELEN_02
+	snd_note $00, NOTELEN_06
+	snd_note $29, NOTELEN_09
+	snd_note $24, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $27
+	snd_note $24, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $24, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $27
+	snd_note $06
+	snd_note $00, NOTELEN_CUSTOM, $04
+	snd_note $2B, NOTELEN_01
+	snd_note $2C
+	snd_note $2D
+	snd_note $2E, NOTELEN_CUSTOM, $05
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2B, NOTELEN_09
+	snd_note $24, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $27
+	snd_note $24, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $24, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $27, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $29, NOTELEN_01
+	snd_note $2A, NOTELEN_02
+	snd_note $00, NOTELEN_06
+	snd_note $29, NOTELEN_09
+	snd_note $24, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $27
+	snd_note $24, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $24, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $27, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $1E, NOTELEN_01
+	snd_note $1F, NOTELEN_02
+	snd_note $00, NOTELEN_06
+	snd_note $20, NOTELEN_09
+	snd_note $22, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $27
+	snd_note $24, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $24, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $27, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $29, NOTELEN_01
+	snd_note $2A, NOTELEN_02
+	snd_note $00, NOTELEN_06
+	snd_note $29, NOTELEN_09
+	snd_note $24, NOTELEN_06
+	snd_note $00
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $2A, NOTELEN_01
+	snd_note $2B, NOTELEN_08
+	snd_note $27, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $27, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $12
+	snd_wave WAVE_10
+	snd_vibrato VIBRATO_35
+	snd_call .sub0
+	snd_note $36, NOTELEN_09
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3A, NOTELEN_09
+	snd_note $37, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $33, NOTELEN_CUSTOM, $1E
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_09
+	snd_wave WAVE_0E
+	snd_vibrato VIBRATO_35
+	snd_note $29, NOTELEN_03
+	snd_note $2B
+	snd_note $2C
+	snd_note $2E
+	snd_note $30, NOTELEN_CUSTOM, $18
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_01
+	snd_note $33, NOTELEN_08
+	snd_note $31, NOTELEN_09
+	snd_note $30, NOTELEN_1E
+	snd_note $2E, NOTELEN_09
+	snd_note $2C
+	snd_note $2F, NOTELEN_01
+	snd_note $30, NOTELEN_CUSTOM, $59
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_01
+	snd_note $33, NOTELEN_08
+	snd_note $31, NOTELEN_09
+	snd_note $30, NOTELEN_CUSTOM, $21
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $36, NOTELEN_01
+	snd_note $37, NOTELEN_CUSTOM, $0B
+	snd_note $33, NOTELEN_CUSTOM, $4E
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_0C
+	snd_note $30, NOTELEN_18
+	snd_note $2E
+	snd_note $2C, NOTELEN_CUSTOM, $18
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_09
+	snd_note $29
+	snd_note $2C, NOTELEN_CUSTOM, $8A
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_wave WAVE_09
+	snd_vibrato VIBRATO_34
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_03
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $2C, NOTELEN_03
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_jp SndData_0B_Ch3
+.sub0:
+	snd_note $3A, NOTELEN_CUSTOM, $18
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $3A, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $3F, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3C, NOTELEN_06
+	snd_note $3A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $37, NOTELEN_09
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_CUSTOM, $0C
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $36, NOTELEN_09
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_09
+	snd_note $2E, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $37, NOTELEN_CUSTOM, $1E
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $38, NOTELEN_0C
+	snd_note $3A, NOTELEN_CUSTOM, $18
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $3A, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $3F, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3F, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3C, NOTELEN_06
+	snd_note $3A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $37, NOTELEN_09
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_CUSTOM, $0C
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_ret
+SndData_0B_Ch2:
+	snd_duty SNDDUTY_25, $00
+	snd_inc_base_note -12
+	snd_note $1B, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1E, NOTELEN_01
+	snd_note $1F, NOTELEN_08
+	snd_note $22, NOTELEN_06
+	snd_note $25, NOTELEN_01
+	snd_note $26
+	snd_note $27, NOTELEN_CUSTOM, $07
+	snd_note $24, NOTELEN_06
+	snd_note $24, NOTELEN_03
+	snd_note $22
+	snd_note $22
+	snd_note $21
+	snd_note $21
+	snd_note $21
+	snd_note $24, NOTELEN_09
+	snd_note $27, NOTELEN_06
+	snd_note $29, NOTELEN_01
+	snd_note $2A
+	snd_note $2B, NOTELEN_CUSTOM, $07
+	snd_note $27, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $24, NOTELEN_06
+	snd_note $20, NOTELEN_03
+	snd_note $20, NOTELEN_06
+	snd_note $23, NOTELEN_01
+	snd_note $24, NOTELEN_08
+	snd_note $27, NOTELEN_06
+	snd_note $23, NOTELEN_01
+	snd_note $24
+	snd_note $25, NOTELEN_CUSTOM, $07
+	snd_note $20, NOTELEN_06
+	snd_note $20, NOTELEN_03
+	snd_note $19, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1B, NOTELEN_06
+	snd_note $1E, NOTELEN_01
+	snd_note $1F, NOTELEN_08
+	snd_note $22, NOTELEN_06
+	snd_note $27, NOTELEN_0C
+	snd_note $1C
+	snd_note $1B, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1E, NOTELEN_01
+	snd_note $1F, NOTELEN_08
+	snd_note $22, NOTELEN_06
+	snd_note $25, NOTELEN_01
+	snd_note $26
+	snd_note $27, NOTELEN_CUSTOM, $07
+	snd_note $24, NOTELEN_06
+	snd_note $24, NOTELEN_03
+	snd_note $22
+	snd_note $22
+	snd_note $21
+	snd_note $21
+	snd_note $21
+	snd_note $24, NOTELEN_09
+	snd_note $27, NOTELEN_06
+	snd_note $29, NOTELEN_01
+	snd_note $2A
+	snd_note $2B, NOTELEN_CUSTOM, $07
+	snd_note $27, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $24, NOTELEN_06
+	snd_inc_base_note 12
+	snd_note $1D, NOTELEN_03
+	snd_note $1D, NOTELEN_06
+	snd_note $20, NOTELEN_09
+	snd_note $21, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $16
+	snd_note $19, NOTELEN_02
+	snd_note $1A, NOTELEN_04
+	snd_note $1B, NOTELEN_03
+	snd_note $1B, NOTELEN_06
+	snd_note $1E, NOTELEN_01
+	snd_note $1F, NOTELEN_08
+	snd_note $22, NOTELEN_06
+	snd_note $27, NOTELEN_0C
+	snd_note $27
+	snd_note $1B, NOTELEN_03
+	snd_note $1B
+	snd_note $17
+	snd_note $18
+	snd_note $1B, NOTELEN_0C
+	snd_note $1E, NOTELEN_09
+	snd_note $1D, NOTELEN_03
+	snd_note $1C
+	snd_note $1D
+	snd_note $18, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1B
+	snd_note $17
+	snd_note $18
+	snd_note $1B, NOTELEN_0C
+	snd_note $13, NOTELEN_09
+	snd_note $14, NOTELEN_03
+	snd_note $13
+	snd_note $14
+	snd_note $16, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1B
+	snd_note $17
+	snd_note $18
+	snd_note $1B, NOTELEN_0C
+	snd_note $1E, NOTELEN_09
+	snd_note $1D, NOTELEN_03
+	snd_note $1C
+	snd_note $1D
+	snd_note $18, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1B
+	snd_note $17
+	snd_note $18
+	snd_note $1B, NOTELEN_0C
+	snd_note $22, NOTELEN_09
+	snd_note $1F, NOTELEN_03
+	snd_note $1E
+	snd_note $1F
+	snd_note $18, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1B
+	snd_note $17
+	snd_note $18
+	snd_note $1B, NOTELEN_0C
+	snd_note $1E, NOTELEN_09
+	snd_note $1D, NOTELEN_03
+	snd_note $1C
+	snd_note $1D
+	snd_note $18, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1B
+	snd_note $17
+	snd_note $18
+	snd_note $1B, NOTELEN_0C
+	snd_note $13, NOTELEN_09
+	snd_note $14, NOTELEN_03
+	snd_note $13
+	snd_note $14
+	snd_note $16, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1B
+	snd_note $17
+	snd_note $18
+	snd_note $1B, NOTELEN_0C
+	snd_note $1E, NOTELEN_09
+	snd_note $1D, NOTELEN_03
+	snd_note $1C
+	snd_note $1D
+	snd_note $18, NOTELEN_06
+	snd_note $00
+	snd_note $22, NOTELEN_09
+	snd_note $1E, NOTELEN_03
+	snd_note $1F, NOTELEN_06
+	snd_note $1B
+	snd_note $00, NOTELEN_12
+	snd_inc_base_note -12
+	snd_note $1B, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1E, NOTELEN_01
+	snd_note $1F, NOTELEN_08
+	snd_note $22, NOTELEN_06
+	snd_note $25, NOTELEN_01
+	snd_note $26
+	snd_note $27, NOTELEN_CUSTOM, $07
+	snd_note $24, NOTELEN_06
+	snd_note $24, NOTELEN_03
+	snd_note $22
+	snd_note $22
+	snd_note $21
+	snd_note $21
+	snd_note $21
+	snd_note $24, NOTELEN_09
+	snd_note $27, NOTELEN_06
+	snd_note $29, NOTELEN_01
+	snd_note $2A
+	snd_note $2B, NOTELEN_CUSTOM, $07
+	snd_note $27, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $24, NOTELEN_06
+	snd_note $20, NOTELEN_03
+	snd_note $20, NOTELEN_06
+	snd_note $23, NOTELEN_01
+	snd_note $24, NOTELEN_08
+	snd_note $27, NOTELEN_06
+	snd_note $25, NOTELEN_03
+	snd_note $23, NOTELEN_06
+	snd_note $22
+	snd_note $20
+	snd_note $19, NOTELEN_03
+	snd_note $1B
+	snd_note $1B, NOTELEN_06
+	snd_note $1E, NOTELEN_01
+	snd_note $1F, NOTELEN_08
+	snd_note $22, NOTELEN_06
+	snd_note $27, NOTELEN_0C
+	snd_note $1C
+	snd_note $1B, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1E, NOTELEN_01
+	snd_note $1F, NOTELEN_08
+	snd_note $22, NOTELEN_06
+	snd_note $25, NOTELEN_01
+	snd_note $26
+	snd_note $27, NOTELEN_CUSTOM, $07
+	snd_note $24, NOTELEN_09
+	snd_note $27, NOTELEN_03
+	snd_note $28
+	snd_note $28, NOTELEN_01
+	snd_note $29, NOTELEN_08
+	snd_note $24, NOTELEN_09
+	snd_note $27, NOTELEN_03
+	snd_note $29
+	snd_note $2A, NOTELEN_02
+	snd_note $2B, NOTELEN_CUSTOM, $07
+	snd_note $27, NOTELEN_09
+	snd_note $24, NOTELEN_06
+	snd_note $1D, NOTELEN_03
+	snd_note $1D, NOTELEN_06
+	snd_note $1F, NOTELEN_01
+	snd_note $20, NOTELEN_08
+	snd_note $21, NOTELEN_06
+	snd_note $20, NOTELEN_01
+	snd_note $21
+	snd_note $22, NOTELEN_CUSTOM, $07
+	snd_note $16, NOTELEN_09
+	snd_note $1A, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1B, NOTELEN_06
+	snd_note $1E, NOTELEN_01
+	snd_note $1F, NOTELEN_08
+	snd_note $22, NOTELEN_06
+	snd_note $27, NOTELEN_0C
+	snd_note $27
+	snd_inc_base_note 12
+	snd_inc_base_note -12
+	snd_note $21, NOTELEN_01
+	snd_note $22, NOTELEN_08
+	snd_note $25, NOTELEN_09
+	snd_note $29, NOTELEN_06
+	snd_note $2E, NOTELEN_01
+	snd_note $2F
+	snd_note $30, NOTELEN_CUSTOM, $07
+	snd_note $2E, NOTELEN_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2A, NOTELEN_01
+	snd_note $2B, NOTELEN_08
+	snd_note $27, NOTELEN_09
+	snd_note $22, NOTELEN_18
+	snd_note $1A, NOTELEN_01
+	snd_note $1B, NOTELEN_CUSTOM, $05
+	snd_note $1F, NOTELEN_01
+	snd_note $20, NOTELEN_08
+	snd_note $24, NOTELEN_09
+	snd_note $27, NOTELEN_06
+	snd_note $2D, NOTELEN_01
+	snd_note $2E, NOTELEN_08
+	snd_note $2C, NOTELEN_09
+	snd_note $2B, NOTELEN_06
+	snd_note $28, NOTELEN_01
+	snd_note $29, NOTELEN_08
+	snd_note $24, NOTELEN_09
+	snd_note $1D, NOTELEN_12
+	snd_note $1B, NOTELEN_01
+	snd_note $1C
+	snd_note $1D, NOTELEN_CUSTOM, $0A
+	snd_note $21, NOTELEN_01
+	snd_note $22, NOTELEN_08
+	snd_note $25, NOTELEN_09
+	snd_note $29, NOTELEN_06
+	snd_note $2E, NOTELEN_01
+	snd_note $2F
+	snd_note $30, NOTELEN_CUSTOM, $07
+	snd_note $2E, NOTELEN_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2A, NOTELEN_01
+	snd_note $2B, NOTELEN_08
+	snd_note $27, NOTELEN_09
+	snd_note $22, NOTELEN_18
+	snd_note $1A, NOTELEN_01
+	snd_note $1B, NOTELEN_CUSTOM, $05
+	snd_note $1F, NOTELEN_01
+	snd_note $20, NOTELEN_08
+	snd_note $24, NOTELEN_09
+	snd_note $27, NOTELEN_06
+	snd_note $2D, NOTELEN_01
+	snd_note $2E, NOTELEN_08
+	snd_note $2C, NOTELEN_09
+	snd_note $2B, NOTELEN_06
+	snd_note $2A, NOTELEN_01
+	snd_note $2B, NOTELEN_08
+	snd_note $27, NOTELEN_09
+	snd_note $24, NOTELEN_12
+	snd_note $19, NOTELEN_01
+	snd_note $1A
+	snd_note $1B, NOTELEN_CUSTOM, $0A
+	snd_note $24, NOTELEN_01
+	snd_note $25, NOTELEN_CUSTOM, $17
+	snd_note $23, NOTELEN_01
+	snd_note $24, NOTELEN_CUSTOM, $17
+	snd_note $21, NOTELEN_01
+	snd_note $22, NOTELEN_CUSTOM, $17
+	snd_note $1A, NOTELEN_01
+	snd_note $1B, NOTELEN_CUSTOM, $17
+	snd_inc_base_note 12
+	snd_note $12, NOTELEN_09
+	snd_note $19
+	snd_note $1E, NOTELEN_06
+	snd_note $1F, NOTELEN_01
+	snd_note $20, NOTELEN_08
+	snd_note $12, NOTELEN_09
+	snd_note $19, NOTELEN_06
+	snd_note $14, NOTELEN_09
+	snd_note $1B
+	snd_note $20, NOTELEN_06
+	snd_note $24, NOTELEN_03
+	snd_note $23, NOTELEN_06
+	snd_note $21, NOTELEN_01
+	snd_note $22, NOTELEN_08
+	snd_note $20, NOTELEN_03
+	snd_note $1F
+	snd_note $1E, NOTELEN_09
+	snd_note $19
+	snd_note $1E
+	snd_note $1F, NOTELEN_01
+	snd_note $20, NOTELEN_08
+	snd_note $12, NOTELEN_06
+	snd_note $13
+	snd_note $14, NOTELEN_09
+	snd_note $16
+	snd_note $18, NOTELEN_06
+	snd_note $18, NOTELEN_03
+	snd_note $17, NOTELEN_01
+	snd_note $18, NOTELEN_08
+	snd_note $19, NOTELEN_06
+	snd_note $1A
+	snd_jp SndData_0B_Ch2
+SndData_0B_Ch1:
+	snd_duty SNDDUTY_25, $00
+	snd_note $36, NOTELEN_01
+	snd_note $37, NOTELEN_CUSTOM, $05
+	snd_note $37, NOTELEN_03
+	snd_note $37, NOTELEN_06
+	snd_note $2E
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $37
+	snd_note $37, NOTELEN_03
+	snd_note $37, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $2D, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $33, NOTELEN_06
+	snd_note $30
+	snd_note $30, NOTELEN_03
+	snd_note $35, NOTELEN_06
+	snd_note $35, NOTELEN_03
+	snd_note $35, NOTELEN_06
+	snd_note $33
+	snd_note $2F, NOTELEN_03
+	snd_note $3A, NOTELEN_06
+	snd_note $3A, NOTELEN_03
+	snd_note $36, NOTELEN_01
+	snd_note $37, NOTELEN_CUSTOM, $05
+	snd_note $33, NOTELEN_09
+	snd_note $2E, NOTELEN_0C
+	snd_note $3B, NOTELEN_02
+	snd_note $3B
+	snd_note $3B
+	snd_note $3B
+	snd_note $3B
+	snd_note $3B
+	snd_note $37, NOTELEN_06
+	snd_note $36, NOTELEN_03
+	snd_note $37, NOTELEN_06
+	snd_note $2E
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $37
+	snd_note $3C, NOTELEN_03
+	snd_note $37, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $2D, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $33, NOTELEN_06
+	snd_note $30
+	snd_note $30, NOTELEN_03
+	snd_note $33, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $33, NOTELEN_06
+	snd_note $30
+	snd_note $2C, NOTELEN_03
+	snd_note $3A, NOTELEN_06
+	snd_note $3A, NOTELEN_03
+	snd_note $36, NOTELEN_01
+	snd_note $37, NOTELEN_CUSTOM, $05
+	snd_note $33, NOTELEN_09
+	snd_note $33, NOTELEN_0C
+	snd_note $33, NOTELEN_02
+	snd_note $33
+	snd_note $33
+	snd_note $33
+	snd_note $33
+	snd_note $33
+	snd_duty SNDDUTY_12, $00
+	snd_note $33, NOTELEN_03
+	snd_note $33
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_0C
+	snd_note $35, NOTELEN_01
+	snd_note $36, NOTELEN_08
+	snd_note $35, NOTELEN_09
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $33
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_0C
+	snd_note $2A, NOTELEN_01
+	snd_note $2B, NOTELEN_08
+	snd_note $2C, NOTELEN_09
+	snd_note $2E, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $33
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_0C
+	snd_note $35, NOTELEN_01
+	snd_note $36, NOTELEN_08
+	snd_note $35, NOTELEN_09
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $33
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_CUSTOM, $0A
+	snd_note $37, NOTELEN_01
+	snd_note $38
+	snd_note $39
+	snd_note $3A, NOTELEN_08
+	snd_note $37, NOTELEN_09
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $33
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_0C
+	snd_note $35, NOTELEN_01
+	snd_note $36, NOTELEN_08
+	snd_note $35, NOTELEN_09
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $33
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_0C
+	snd_note $2A, NOTELEN_01
+	snd_note $2B, NOTELEN_08
+	snd_note $2C, NOTELEN_09
+	snd_note $2E, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $33
+	snd_note $30, NOTELEN_06
+	snd_note $33, NOTELEN_0C
+	snd_note $35, NOTELEN_01
+	snd_note $36, NOTELEN_08
+	snd_note $35, NOTELEN_09
+	snd_note $30, NOTELEN_06
+	snd_note $00
+	snd_note $3A, NOTELEN_09
+	snd_note $36, NOTELEN_01
+	snd_note $37, NOTELEN_08
+	snd_note $33, NOTELEN_18
+	snd_duty SNDDUTY_25, $00
+	snd_note $36, NOTELEN_01
+	snd_note $37, NOTELEN_CUSTOM, $05
+	snd_note $37, NOTELEN_03
+	snd_note $37, NOTELEN_06
+	snd_note $2E
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $37
+	snd_note $37, NOTELEN_03
+	snd_note $37, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $2D, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $33, NOTELEN_06
+	snd_note $30
+	snd_note $30, NOTELEN_03
+	snd_note $35, NOTELEN_06
+	snd_note $35, NOTELEN_03
+	snd_note $35, NOTELEN_06
+	snd_note $33
+	snd_note $2F, NOTELEN_03
+	snd_note $3A, NOTELEN_06
+	snd_note $3A, NOTELEN_03
+	snd_duty SNDDUTY_12, $00
+	snd_note $2A, NOTELEN_01
+	snd_note $2B, NOTELEN_CUSTOM, $05
+	snd_note $27, NOTELEN_09
+	snd_note $22, NOTELEN_03
+	snd_note $00, NOTELEN_09
+	snd_duty SNDDUTY_25, $00
+	snd_note $3B, NOTELEN_02
+	snd_note $3B
+	snd_note $3B
+	snd_note $3B
+	snd_note $3B
+	snd_note $3B
+	snd_note $37, NOTELEN_06
+	snd_note $36, NOTELEN_03
+	snd_note $37, NOTELEN_06
+	snd_note $2E
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $37
+	snd_note $3C, NOTELEN_03
+	snd_note $37, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $2D, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $33
+	snd_note $33, NOTELEN_03
+	snd_note $33, NOTELEN_06
+	snd_note $30
+	snd_note $30, NOTELEN_03
+	snd_note $33, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $33, NOTELEN_06
+	snd_note $30
+	snd_note $2C, NOTELEN_03
+	snd_note $3A, NOTELEN_06
+	snd_duty SNDDUTY_50, $00
+	snd_inc_vol -2
+	snd_note $2E, NOTELEN_03
+	snd_note $30
+	snd_note $33
+	snd_note $30
+	snd_note $2E
+	snd_note $30
+	snd_note $27, NOTELEN_0C
+	snd_duty SNDDUTY_50, $00
+	snd_inc_vol -1
+	snd_note $33, NOTELEN_02
+	snd_note $33
+	snd_note $33
+	snd_note $33
+	snd_note $33, NOTELEN_04
+	snd_note $38, NOTELEN_02
+	snd_note $3C
+	snd_inc_vol -1
+	snd_note $38
+	snd_note $3C
+	snd_inc_vol -1
+	snd_note $38
+	snd_note $3C
+	snd_inc_vol -1
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_inc_vol 3
+	snd_var iSndChInfo_24, $02
+	.loop:
+		snd_note $37
+		snd_note $3C
+		snd_inc_vol -1
+		snd_note $37
+		snd_note $3C
+		snd_inc_vol -1
+		snd_note $37
+		snd_note $3C
+		snd_inc_vol -1
+		snd_note $37
+		snd_note $3C
+		snd_note $37
+		snd_note $3C
+		snd_note $37
+		snd_note $3C
+		snd_note $37
+		snd_note $3C
+		snd_note $37
+		snd_note $3C
+		snd_note $37
+		snd_note $3C
+		snd_note $37
+		snd_note $3C
+		snd_note $37
+		snd_note $3C
+		snd_note $37
+		snd_note $3C
+		snd_inc_vol 3
+		snd_djnz iSndChInfo_24, .loop
+	snd_note $33
+	snd_note $37
+	snd_inc_vol -1
+	snd_note $33
+	snd_note $37
+	snd_inc_vol -1
+	snd_note $33
+	snd_note $37
+	snd_inc_vol -1
+	snd_note $33
+	snd_note $37
+	snd_note $33
+	snd_note $37
+	snd_note $33
+	snd_note $37
+	snd_note $33
+	snd_note $37
+	snd_note $33
+	snd_note $37
+	snd_note $33
+	snd_note $37
+	snd_note $33
+	snd_note $37
+	snd_note $33
+	snd_note $37
+	snd_note $33
+	snd_note $37
+	snd_inc_vol 3
+	snd_note $38
+	snd_note $3C
+	snd_inc_vol -1
+	snd_note $38
+	snd_note $3C
+	snd_inc_vol -1
+	snd_note $38
+	snd_note $3C
+	snd_inc_vol -1
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_inc_vol 3
+	snd_note $37
+	snd_inc_vol -1
+	snd_note $3C
+	snd_inc_vol -1
+	snd_note $37
+	snd_inc_vol -1
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_inc_vol 3
+	snd_note $3C
+	snd_inc_vol -1
+	snd_note $3F
+	snd_inc_vol -1
+	snd_note $3C
+	snd_inc_vol -1
+	snd_note $3F
+	snd_note $3C
+	snd_note $3F
+	snd_note $3C
+	snd_note $3F
+	snd_note $3C
+	snd_note $3F
+	snd_note $3C
+	snd_note $3F
+	snd_note $3C
+	snd_note $3F
+	snd_note $3C
+	snd_note $3F
+	snd_note $3C
+	snd_note $3F
+	snd_note $3C
+	snd_note $3F
+	snd_note $3C
+	snd_note $3F
+	snd_note $3C
+	snd_note $3F
+	snd_inc_vol 3
+	snd_note $37
+	snd_inc_vol -1
+	snd_note $3C
+	snd_inc_vol -1
+	snd_note $37
+	snd_inc_vol -1
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $37
+	snd_note $3C
+	snd_note $33
+	snd_note $37
+	snd_note $33
+	snd_note $37
+	snd_note $33
+	snd_note $37
+	snd_note $36
+	snd_note $3D
+	snd_note $36
+	snd_note $3D
+	snd_note $36
+	snd_note $3D
+	snd_inc_vol 3
+	snd_note $38
+	snd_inc_vol -1
+	snd_note $3C
+	snd_inc_vol -1
+	snd_note $38
+	snd_inc_vol -1
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $38
+	snd_note $3C
+	snd_note $37
+	snd_note $3A
+	snd_note $37
+	snd_note $3A
+	snd_note $37
+	snd_note $3A
+	snd_note $37
+	snd_note $3A
+	snd_note $37
+	snd_inc_vol 1
+	snd_note $3A
+	snd_inc_vol 1
+	snd_note $37
+	snd_inc_vol 1
+	snd_note $3A
+	snd_note $35
+	snd_inc_vol -1
+	snd_note $38
+	snd_inc_vol -1
+	snd_note $35
+	snd_inc_vol -1
+	snd_note $38
+	snd_note $35
+	snd_note $38
+	snd_note $35
+	snd_note $38
+	snd_note $35
+	snd_note $38
+	snd_note $35
+	snd_note $38
+	snd_note $35
+	snd_note $38
+	snd_note $35
+	snd_note $38
+	snd_note $35
+	snd_note $38
+	snd_note $35
+	snd_note $38
+	snd_note $35
+	snd_inc_vol 1
+	snd_note $38
+	snd_inc_vol 1
+	snd_note $35
+	snd_inc_vol 1
+	snd_note $38
+	snd_inc_vol 3
+	snd_note $2A, NOTELEN_06
+	snd_note $2E, NOTELEN_09
+	snd_note $2A, NOTELEN_06
+	snd_note $2E
+	snd_note $2A, NOTELEN_09
+	snd_note $2E, NOTELEN_06
+	snd_note $2A
+	snd_note $2C
+	snd_note $30, NOTELEN_09
+	snd_note $2C, NOTELEN_06
+	snd_note $30
+	snd_note $2C
+	snd_note $30, NOTELEN_03
+	snd_note $30, NOTELEN_06
+	snd_note $2C
+	snd_note $2A
+	snd_note $2E, NOTELEN_09
+	snd_note $2A, NOTELEN_06
+	snd_note $2E
+	snd_note $2A, NOTELEN_09
+	snd_note $2E, NOTELEN_06
+	snd_note $2A
+	snd_duty SNDDUTY_50, $00
+	snd_note $38
+	snd_note $38, NOTELEN_03
+	snd_note $38, NOTELEN_CUSTOM, $0F
+	snd_note $38, NOTELEN_03
+	snd_note $38, NOTELEN_06
+	snd_note $38, NOTELEN_09
+	snd_note $38, NOTELEN_06
+	snd_jp SndData_0B_Ch1
+SndData_0B_Ch4:
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01, NOTELEN_0C
+	snd_noteex PRESET_00
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_0C
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_00, NOTELEN_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_00, NOTELEN_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_00, NOTELEN_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_09
+	snd_noteex PRESET_00, NOTELEN_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_CUSTOM, $0F
+	snd_noteex PRESET_00, NOTELEN_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01, NOTELEN_0C
+	snd_noteex PRESET_00
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_0C
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_0C
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_jp SndData_0B_Ch4
+.sub0:
+	snd_var iSndChInfo_24, $03
+	.sub0loop0:
+		snd_noteex PRESET_01, NOTELEN_03
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_djnz iSndChInfo_24, .sub0loop0
+	snd_ret
 SndHeader_0C:
 	db 4 ; Number of slots
 .slot0:
@@ -7502,2448 +4382,1415 @@ SndHeader_0C:
 	dw SndData_0C_Ch4 ; Data pointer
 	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
-SndData_0C_Ch3: db $A0
-L085D4B: db $09
-L085D4C: db $27
-L085D4D: db $E1
-L085D4E: db $29
-L085D4F: db $2A
-L085D50: db $2C
-L085D51: db $2E
-L085D52: db $31
-L085D53: db $DE
-L085D54: db $03
-L085D55: db $8A
-L085D56: db $FB
-L085D57: db $97
-L085D58: db $FF
-L085D59: db $31
-L085D5A: db $E1
-L085D5B: db $8A
-L085D5C: db $05
-L085D5D: db $97
-L085D5E: db $01
-L085D5F: db $30
-L085D60: db $DE
-L085D61: db $03
-L085D62: db $8A
-L085D63: db $FB
-L085D64: db $97
-L085D65: db $FF
-L085D66: db $30
-L085D67: db $E1
-L085D68: db $8A
-L085D69: db $05
-L085D6A: db $97
-L085D6B: db $01
-L085D6C: db $2C
-L085D6D: db $DE
-L085D6E: db $03
-L085D6F: db $8A
-L085D70: db $FB
-L085D71: db $97
-L085D72: db $FF
-L085D73: db $2C
-L085D74: db $E1
-L085D75: db $8A
-L085D76: db $05
-L085D77: db $97
-L085D78: db $01
-L085D79: db $2E
-L085D7A: db $DE
-L085D7B: db $03
-L085D7C: db $8A
-L085D7D: db $FB
-L085D7E: db $97
-L085D7F: db $FF
-L085D80: db $2E
-L085D81: db $E1
-L085D82: db $8A
-L085D83: db $05
-L085D84: db $97
-L085D85: db $01
-L085D86: db $2E
-L085D87: db $E1
-L085D88: db $2A
-L085D89: db $DE
-L085D8A: db $03
-L085D8B: db $8A
-L085D8C: db $FB
-L085D8D: db $97
-L085D8E: db $FF
-L085D8F: db $2A
-L085D90: db $E1
-L085D91: db $8A
-L085D92: db $05
-L085D93: db $97
-L085D94: db $01
-L085D95: db $27
-L085D96: db $E1
-L085D97: db $29
-L085D98: db $2A
-L085D99: db $2C
-L085D9A: db $2E
-L085D9B: db $31
-L085D9C: db $DE
-L085D9D: db $03
-L085D9E: db $8A
-L085D9F: db $FB
-L085DA0: db $97
-L085DA1: db $FF
-L085DA2: db $31
-L085DA3: db $E1
-L085DA4: db $8A
-L085DA5: db $05
-L085DA6: db $97
-L085DA7: db $01
-L085DA8: db $30
-L085DA9: db $DE
-L085DAA: db $03
-L085DAB: db $8A
-L085DAC: db $FB
-L085DAD: db $97
-L085DAE: db $FF
-L085DAF: db $30
-L085DB0: db $E1
-L085DB1: db $8A
-L085DB2: db $05
-L085DB3: db $97
-L085DB4: db $01
-L085DB5: db $33
-L085DB6: db $E1
-L085DB7: db $32
-L085DB8: db $33
-L085DB9: db $00
-L085DBA: db $E5
-L085DBB: db $27
-L085DBC: db $E1
-L085DBD: db $29
-L085DBE: db $2A
-L085DBF: db $2C
-L085DC0: db $2E
-L085DC1: db $31
-L085DC2: db $DE
-L085DC3: db $03
-L085DC4: db $8A
-L085DC5: db $FB
-L085DC6: db $97
-L085DC7: db $FF
-L085DC8: db $31
-L085DC9: db $E1
-L085DCA: db $8A
-L085DCB: db $05
-L085DCC: db $97
-L085DCD: db $01
-L085DCE: db $30
-L085DCF: db $DE
-L085DD0: db $03
-L085DD1: db $8A
-L085DD2: db $FB
-L085DD3: db $97
-L085DD4: db $FF
-L085DD5: db $30
-L085DD6: db $E1
-L085DD7: db $8A
-L085DD8: db $05
-L085DD9: db $97
-L085DDA: db $01
-L085DDB: db $2C
-L085DDC: db $DE
-L085DDD: db $03
-L085DDE: db $8A
-L085DDF: db $FB
-L085DE0: db $97
-L085DE1: db $FF
-L085DE2: db $2C
-L085DE3: db $E1
-L085DE4: db $8A
-L085DE5: db $05
-L085DE6: db $97
-L085DE7: db $01
-L085DE8: db $2E
-L085DE9: db $DE
-L085DEA: db $03
-L085DEB: db $8A
-L085DEC: db $FB
-L085DED: db $97
-L085DEE: db $FF
-L085DEF: db $2E
-L085DF0: db $E1
-L085DF1: db $8A
-L085DF2: db $05
-L085DF3: db $97
-L085DF4: db $01
-L085DF5: db $2E
-L085DF6: db $E1
-L085DF7: db $2A
-L085DF8: db $DE
-L085DF9: db $03
-L085DFA: db $8A
-L085DFB: db $FB
-L085DFC: db $97
-L085DFD: db $FF
-L085DFE: db $2A
-L085DFF: db $E1
-L085E00: db $8A
-L085E01: db $05
-L085E02: db $97
-L085E03: db $01
-L085E04: db $27
-L085E05: db $E1
-L085E06: db $29
-L085E07: db $2A
-L085E08: db $2C
-L085E09: db $2E
-L085E0A: db $31
-L085E0B: db $DE
-L085E0C: db $03
-L085E0D: db $8A
-L085E0E: db $FB
-L085E0F: db $97
-L085E10: db $FF
-L085E11: db $31
-L085E12: db $E1
-L085E13: db $8A
-L085E14: db $05
-L085E15: db $97
-L085E16: db $01
-L085E17: db $30
-L085E18: db $DE
-L085E19: db $03
-L085E1A: db $8A
-L085E1B: db $FB
-L085E1C: db $88
-L085E1D: db $00
-L085E1E: db $97
-L085E1F: db $FF
-L085E20: db $30
-L085E21: db $DE
-L085E22: db $03
-L085E23: db $8A
-L085E24: db $05
-L085E25: db $88
-L085E26: db $2E
-L085E27: db $97
-L085E28: db $01
-L085E29: db $00
-L085E2A: db $EA
-L085E2B: db $33
-L085E2C: db $E5
-L085E2D: db $A0
-L085E2E: db $07
-L085E2F: db $30
-L085E30: db $E3
-L085E31: db $31
-L085E32: db $E1
-L085E33: db $33
-L085E34: db $DE
-L085E35: db $03
-L085E36: db $8A
-L085E37: db $FB
-L085E38: db $97
-L085E39: db $FF
-L085E3A: db $33
-L085E3B: db $E1
-L085E3C: db $8A
-L085E3D: db $05
-L085E3E: db $97
-L085E3F: db $01
-L085E40: db $35
-L085E41: db $DE
-L085E42: db $03
-L085E43: db $8A
-L085E44: db $FB
-L085E45: db $97
-L085E46: db $FF
-L085E47: db $35
-L085E48: db $E1
-L085E49: db $8A
-L085E4A: db $05
-L085E4B: db $97
-L085E4C: db $01
-L085E4D: db $35
-L085E4E: db $DF
-L085E4F: db $36
-L085E50: db $E4
-L085E51: db $35
-L085E52: db $E3
-L085E53: db $33
-L085E54: db $31
-L085E55: db $30
-L085E56: db $31
-L085E57: db $E1
-L085E58: db $33
-L085E59: db $DE
-L085E5A: db $03
-L085E5B: db $8A
-L085E5C: db $FB
-L085E5D: db $97
-L085E5E: db $FF
-L085E5F: db $33
-L085E60: db $E1
-L085E61: db $8A
-L085E62: db $05
-L085E63: db $97
-L085E64: db $01
-L085E65: db $30
-L085E66: db $DE
-L085E67: db $03
-L085E68: db $8A
-L085E69: db $FB
-L085E6A: db $97
-L085E6B: db $FF
-L085E6C: db $30
-L085E6D: db $E1
-L085E6E: db $8A
-L085E6F: db $05
-L085E70: db $97
-L085E71: db $01
-L085E72: db $2E
-L085E73: db $EA
-L085E74: db $2C
-L085E75: db $DE
-L085E76: db $03
-L085E77: db $8A
-L085E78: db $FB
-L085E79: db $97
-L085E7A: db $FF
-L085E7B: db $2C
-L085E7C: db $E1
-L085E7D: db $8A
-L085E7E: db $05
-L085E7F: db $97
-L085E80: db $01
-L085E81: db $2E
-L085E82: db $DE
-L085E83: db $03
-L085E84: db $8A
-L085E85: db $FB
-L085E86: db $97
-L085E87: db $FF
-L085E88: db $2E
-L085E89: db $E1
-L085E8A: db $8A
-L085E8B: db $05
-L085E8C: db $97
-L085E8D: db $01
-L085E8E: db $2C
-L085E8F: db $DE
-L085E90: db $03
-L085E91: db $8A
-L085E92: db $FB
-L085E93: db $97
-L085E94: db $FF
-L085E95: db $2C
-L085E96: db $E1
-L085E97: db $8A
-L085E98: db $05
-L085E99: db $97
-L085E9A: db $01
-L085E9B: db $2F
-L085E9C: db $DF
-L085E9D: db $30
-L085E9E: db $E4
-L085E9F: db $33
-L085EA0: db $DE
-L085EA1: db $03
-L085EA2: db $8A
-L085EA3: db $FB
-L085EA4: db $97
-L085EA5: db $FF
-L085EA6: db $33
-L085EA7: db $E1
-L085EA8: db $8A
-L085EA9: db $05
-L085EAA: db $97
-L085EAB: db $01
-L085EAC: db $A0
-L085EAD: db $01
-L085EAE: db $8A
-L085EAF: db $FA
-L085EB0: db $31
-L085EB1: db $DE
-L085EB2: db $03
-L085EB3: db $8A
-L085EB4: db $FB
-L085EB5: db $97
-L085EB6: db $FF
-L085EB7: db $31
-L085EB8: db $E1
-L085EB9: db $8A
-L085EBA: db $05
-L085EBB: db $97
-L085EBC: db $01
-L085EBD: db $30
-L085EBE: db $DE
-L085EBF: db $03
-L085EC0: db $8A
-L085EC1: db $FB
-L085EC2: db $88
-L085EC3: db $00
-L085EC4: db $97
-L085EC5: db $FF
-L085EC6: db $30
-L085EC7: db $DE
-L085EC8: db $06
-L085EC9: db $8A
-L085ECA: db $05
-L085ECB: db $88
-L085ECC: db $2E
-L085ECD: db $97
-L085ECE: db $01
-L085ECF: db $00
-L085ED0: db $E3
-L085ED1: db $30
-L085ED2: db $DE
-L085ED3: db $03
-L085ED4: db $8A
-L085ED5: db $FB
-L085ED6: db $97
-L085ED7: db $FF
-L085ED8: db $30
-L085ED9: db $E1
-L085EDA: db $8A
-L085EDB: db $05
-L085EDC: db $97
-L085EDD: db $01
-L085EDE: db $2C
-L085EDF: db $DE
-L085EE0: db $03
-L085EE1: db $8A
-L085EE2: db $FB
-L085EE3: db $97
-L085EE4: db $FF
-L085EE5: db $2C
-L085EE6: db $E1
-L085EE7: db $8A
-L085EE8: db $05
-L085EE9: db $97
-L085EEA: db $01
-L085EEB: db $A0
-L085EEC: db $06
-L085EED: db $8A
-L085EEE: db $06
-L085EEF: db $00
-L085EF0: db $E1
-L085EF1: db $31
-L085EF2: db $36
-L085EF3: db $3A
-L085EF4: db $3D
-L085EF5: db $DE
-L085EF6: db $03
-L085EF7: db $8A
-L085EF8: db $FB
-L085EF9: db $97
-L085EFA: db $FF
-L085EFB: db $3D
-L085EFC: db $E1
-L085EFD: db $8A
-L085EFE: db $05
-L085EFF: db $97
-L085F00: db $01
-L085F01: db $3D
-L085F02: db $DE
-L085F03: db $03
-L085F04: db $8A
-L085F05: db $FB
-L085F06: db $97
-L085F07: db $FF
-L085F08: db $3D
-L085F09: db $E1
-L085F0A: db $8A
-L085F0B: db $05
-L085F0C: db $97
-L085F0D: db $01
-L085F0E: db $3D
-L085F0F: db $DE
-L085F10: db $03
-L085F11: db $8A
-L085F12: db $FB
-L085F13: db $97
-L085F14: db $FF
-L085F15: db $3D
-L085F16: db $E1
-L085F17: db $8A
-L085F18: db $05
-L085F19: db $97
-L085F1A: db $01
-L085F1B: db $3D
-L085F1C: db $DE
-L085F1D: db $03
-L085F1E: db $8A
-L085F1F: db $FB
-L085F20: db $97
-L085F21: db $FF
-L085F22: db $3D
-L085F23: db $E1
-L085F24: db $8A
-L085F25: db $05
-L085F26: db $97
-L085F27: db $01
-L085F28: db $3D
-L085F29: db $E1
-L085F2A: db $3C
-L085F2B: db $3A
-L085F2C: db $38
-L085F2D: db $A0
-L085F2E: db $07
-L085F2F: db $30
-L085F30: db $E3
-L085F31: db $31
-L085F32: db $E1
-L085F33: db $33
-L085F34: db $DE
-L085F35: db $03
-L085F36: db $8A
-L085F37: db $FB
-L085F38: db $97
-L085F39: db $FF
-L085F3A: db $33
-L085F3B: db $E1
-L085F3C: db $8A
-L085F3D: db $05
-L085F3E: db $97
-L085F3F: db $01
-L085F40: db $35
-L085F41: db $DE
-L085F42: db $03
-L085F43: db $8A
-L085F44: db $FB
-L085F45: db $97
-L085F46: db $FF
-L085F47: db $35
-L085F48: db $E1
-L085F49: db $8A
-L085F4A: db $05
-L085F4B: db $97
-L085F4C: db $01
-L085F4D: db $35
-L085F4E: db $DF
-L085F4F: db $36
-L085F50: db $E4
-L085F51: db $35
-L085F52: db $E3
-L085F53: db $33
-L085F54: db $31
-L085F55: db $30
-L085F56: db $31
-L085F57: db $E1
-L085F58: db $33
-L085F59: db $DE
-L085F5A: db $03
-L085F5B: db $8A
-L085F5C: db $FB
-L085F5D: db $97
-L085F5E: db $FF
-L085F5F: db $33
-L085F60: db $E1
-L085F61: db $8A
-L085F62: db $05
-L085F63: db $97
-L085F64: db $01
-L085F65: db $30
-L085F66: db $DE
-L085F67: db $03
-L085F68: db $8A
-L085F69: db $FB
-L085F6A: db $97
-L085F6B: db $FF
-L085F6C: db $30
-L085F6D: db $E1
-L085F6E: db $8A
-L085F6F: db $05
-L085F70: db $97
-L085F71: db $01
-L085F72: db $2E
-L085F73: db $EA
-L085F74: db $2C
-L085F75: db $DE
-L085F76: db $03
-L085F77: db $8A
-L085F78: db $FB
-L085F79: db $97
-L085F7A: db $FF
-L085F7B: db $2C
-L085F7C: db $E1
-L085F7D: db $8A
-L085F7E: db $05
-L085F7F: db $97
-L085F80: db $01
-L085F81: db $2E
-L085F82: db $DE
-L085F83: db $03
-L085F84: db $8A
-L085F85: db $FB
-L085F86: db $97
-L085F87: db $FF
-L085F88: db $2E
-L085F89: db $E1
-L085F8A: db $8A
-L085F8B: db $05
-L085F8C: db $97
-L085F8D: db $01
-L085F8E: db $2C
-L085F8F: db $DE
-L085F90: db $03
-L085F91: db $8A
-L085F92: db $FB
-L085F93: db $97
-L085F94: db $FF
-L085F95: db $2C
-L085F96: db $E1
-L085F97: db $8A
-L085F98: db $05
-L085F99: db $97
-L085F9A: db $01
-L085F9B: db $2F
-L085F9C: db $DF
-L085F9D: db $30
-L085F9E: db $E4
-L085F9F: db $A0
-L085FA0: db $09
-L085FA1: db $2C
-L085FA2: db $E1
-L085FA3: db $2E
-L085FA4: db $31
-L085FA5: db $DE
-L085FA6: db $03
-L085FA7: db $8A
-L085FA8: db $FB
-L085FA9: db $97
-L085FAA: db $FF
-L085FAB: db $31
-L085FAC: db $E1
-L085FAD: db $8A
-L085FAE: db $05
-L085FAF: db $97
-L085FB0: db $01
-L085FB1: db $30
-L085FB2: db $DE
-L085FB3: db $03
-L085FB4: db $8A
-L085FB5: db $FB
-L085FB6: db $97
-L085FB7: db $FF
-L085FB8: db $30
-L085FB9: db $E1
-L085FBA: db $8A
-L085FBB: db $05
-L085FBC: db $97
-L085FBD: db $01
-L085FBE: db $2C
-L085FBF: db $DE
-L085FC0: db $03
-L085FC1: db $8A
-L085FC2: db $FB
-L085FC3: db $97
-L085FC4: db $FF
-L085FC5: db $2C
-L085FC6: db $E1
-L085FC7: db $8A
-L085FC8: db $05
-L085FC9: db $97
-L085FCA: db $01
-L085FCB: db $2E
-L085FCC: db $DE
-L085FCD: db $03
-L085FCE: db $8A
-L085FCF: db $FB
-L085FD0: db $97
-L085FD1: db $FF
-L085FD2: db $2E
-L085FD3: db $E1
-L085FD4: db $8A
-L085FD5: db $05
-L085FD6: db $97
-L085FD7: db $01
-L085FD8: db $2E
-L085FD9: db $E1
-L085FDA: db $2A
-L085FDB: db $DE
-L085FDC: db $03
-L085FDD: db $8A
-L085FDE: db $FB
-L085FDF: db $97
-L085FE0: db $FF
-L085FE1: db $2A
-L085FE2: db $E1
-L085FE3: db $8A
-L085FE4: db $05
-L085FE5: db $97
-L085FE6: db $01
-L085FE7: db $27
-L085FE8: db $E1
-L085FE9: db $29
-L085FEA: db $2A
-L085FEB: db $2C
-L085FEC: db $2E
-L085FED: db $31
-L085FEE: db $DE
-L085FEF: db $03
-L085FF0: db $8A
-L085FF1: db $FB
-L085FF2: db $97
-L085FF3: db $FF
-L085FF4: db $31
-L085FF5: db $E1
-L085FF6: db $8A
-L085FF7: db $05
-L085FF8: db $97
-L085FF9: db $01
-L085FFA: db $33
-L085FFB: db $DE
-L085FFC: db $03
-L085FFD: db $8A
-L085FFE: db $FB
-L085FFF: db $88
-L086000: db $00
-L086001: db $97
-L086002: db $FF
-L086003: db $33
-L086004: db $DE
-L086005: db $06
-L086006: db $8A
-L086007: db $05
-L086008: db $88
-L086009: db $2E
-L08600A: db $97
-L08600B: db $01
-L08600C: db $00
-L08600D: db $EB
-L08600E: db $A0
-L08600F: db $07
-L086010: db $30
-L086011: db $E3
-L086012: db $31
-L086013: db $E1
-L086014: db $33
-L086015: db $DE
-L086016: db $03
-L086017: db $8A
-L086018: db $FB
-L086019: db $97
-L08601A: db $FF
-L08601B: db $33
-L08601C: db $E1
-L08601D: db $8A
-L08601E: db $05
-L08601F: db $97
-L086020: db $01
-L086021: db $35
-L086022: db $DE
-L086023: db $03
-L086024: db $8A
-L086025: db $FB
-L086026: db $97
-L086027: db $FF
-L086028: db $35
-L086029: db $E1
-L08602A: db $8A
-L08602B: db $05
-L08602C: db $97
-L08602D: db $01
-L08602E: db $35
-L08602F: db $DF
-L086030: db $36
-L086031: db $E4
-L086032: db $35
-L086033: db $E3
-L086034: db $33
-L086035: db $31
-L086036: db $30
-L086037: db $31
-L086038: db $E1
-L086039: db $33
-L08603A: db $DE
-L08603B: db $03
-L08603C: db $8A
-L08603D: db $FB
-L08603E: db $97
-L08603F: db $FF
-L086040: db $33
-L086041: db $E1
-L086042: db $8A
-L086043: db $05
-L086044: db $97
-L086045: db $01
-L086046: db $30
-L086047: db $DE
-L086048: db $03
-L086049: db $8A
-L08604A: db $FB
-L08604B: db $97
-L08604C: db $FF
-L08604D: db $30
-L08604E: db $E1
-L08604F: db $8A
-L086050: db $05
-L086051: db $97
-L086052: db $01
-L086053: db $2E
-L086054: db $EA
-L086055: db $2C
-L086056: db $DE
-L086057: db $03
-L086058: db $8A
-L086059: db $FB
-L08605A: db $97
-L08605B: db $FF
-L08605C: db $2C
-L08605D: db $E1
-L08605E: db $8A
-L08605F: db $05
-L086060: db $97
-L086061: db $01
-L086062: db $2E
-L086063: db $DE
-L086064: db $03
-L086065: db $8A
-L086066: db $FB
-L086067: db $97
-L086068: db $FF
-L086069: db $2E
-L08606A: db $E1
-L08606B: db $8A
-L08606C: db $05
-L08606D: db $97
-L08606E: db $01
-L08606F: db $2C
-L086070: db $DE
-L086071: db $03
-L086072: db $8A
-L086073: db $FB
-L086074: db $97
-L086075: db $FF
-L086076: db $2C
-L086077: db $E1
-L086078: db $8A
-L086079: db $05
-L08607A: db $97
-L08607B: db $01
-L08607C: db $2F
-L08607D: db $DF
-L08607E: db $30
-L08607F: db $E4
-L086080: db $33
-L086081: db $DE
-L086082: db $03
-L086083: db $8A
-L086084: db $FB
-L086085: db $97
-L086086: db $FF
-L086087: db $33
-L086088: db $E1
-L086089: db $8A
-L08608A: db $05
-L08608B: db $97
-L08608C: db $01
-L08608D: db $A0
-L08608E: db $01
-L08608F: db $8A
-L086090: db $FA
-L086091: db $31
-L086092: db $DE
-L086093: db $03
-L086094: db $8A
-L086095: db $FB
-L086096: db $97
-L086097: db $FF
-L086098: db $31
-L086099: db $E1
-L08609A: db $8A
-L08609B: db $05
-L08609C: db $97
-L08609D: db $01
-L08609E: db $30
-L08609F: db $DE
-L0860A0: db $03
-L0860A1: db $8A
-L0860A2: db $FB
-L0860A3: db $88
-L0860A4: db $00
-L0860A5: db $97
-L0860A6: db $FF
-L0860A7: db $30
-L0860A8: db $DE
-L0860A9: db $06
-L0860AA: db $8A
-L0860AB: db $05
-L0860AC: db $88
-L0860AD: db $2E
-L0860AE: db $97
-L0860AF: db $01
-L0860B0: db $00
-L0860B1: db $E3
-L0860B2: db $30
-L0860B3: db $DE
-L0860B4: db $03
-L0860B5: db $8A
-L0860B6: db $FB
-L0860B7: db $97
-L0860B8: db $FF
-L0860B9: db $30
-L0860BA: db $E1
-L0860BB: db $8A
-L0860BC: db $05
-L0860BD: db $97
-L0860BE: db $01
-L0860BF: db $2C
-L0860C0: db $DE
-L0860C1: db $03
-L0860C2: db $8A
-L0860C3: db $FB
-L0860C4: db $97
-L0860C5: db $FF
-L0860C6: db $2C
-L0860C7: db $E1
-L0860C8: db $8A
-L0860C9: db $05
-L0860CA: db $97
-L0860CB: db $01
-L0860CC: db $A0
-L0860CD: db $06
-L0860CE: db $8A
-L0860CF: db $06
-L0860D0: db $00
-L0860D1: db $E1
-L0860D2: db $31
-L0860D3: db $36
-L0860D4: db $3A
-L0860D5: db $3D
-L0860D6: db $DE
-L0860D7: db $03
-L0860D8: db $8A
-L0860D9: db $FB
-L0860DA: db $97
-L0860DB: db $FF
-L0860DC: db $3D
-L0860DD: db $E1
-L0860DE: db $8A
-L0860DF: db $05
-L0860E0: db $97
-L0860E1: db $01
-L0860E2: db $3D
-L0860E3: db $DE
-L0860E4: db $03
-L0860E5: db $8A
-L0860E6: db $FB
-L0860E7: db $97
-L0860E8: db $FF
-L0860E9: db $3D
-L0860EA: db $E1
-L0860EB: db $8A
-L0860EC: db $05
-L0860ED: db $97
-L0860EE: db $01
-L0860EF: db $3D
-L0860F0: db $DE
-L0860F1: db $03
-L0860F2: db $8A
-L0860F3: db $FB
-L0860F4: db $97
-L0860F5: db $FF
-L0860F6: db $3D
-L0860F7: db $E1
-L0860F8: db $8A
-L0860F9: db $05
-L0860FA: db $97
-L0860FB: db $01
-L0860FC: db $3D
-L0860FD: db $DE
-L0860FE: db $03
-L0860FF: db $8A
-L086100: db $FB
-L086101: db $97
-L086102: db $FF
-L086103: db $3D
-L086104: db $E1
-L086105: db $8A
-L086106: db $05
-L086107: db $97
-L086108: db $01
-L086109: db $3D
-L08610A: db $E1
-L08610B: db $3C
-L08610C: db $3A
-L08610D: db $38
-L08610E: db $A0
-L08610F: db $07
-L086110: db $30
-L086111: db $E3
-L086112: db $31
-L086113: db $E1
-L086114: db $33
-L086115: db $DE
-L086116: db $03
-L086117: db $8A
-L086118: db $FB
-L086119: db $97
-L08611A: db $FF
-L08611B: db $33
-L08611C: db $E1
-L08611D: db $8A
-L08611E: db $05
-L08611F: db $97
-L086120: db $01
-L086121: db $35
-L086122: db $DE
-L086123: db $03
-L086124: db $8A
-L086125: db $FB
-L086126: db $97
-L086127: db $FF
-L086128: db $35
-L086129: db $E1
-L08612A: db $8A
-L08612B: db $05
-L08612C: db $97
-L08612D: db $01
-L08612E: db $35
-L08612F: db $DF
-L086130: db $36
-L086131: db $E4
-L086132: db $35
-L086133: db $E3
-L086134: db $33
-L086135: db $31
-L086136: db $30
-L086137: db $31
-L086138: db $E1
-L086139: db $33
-L08613A: db $DE
-L08613B: db $03
-L08613C: db $8A
-L08613D: db $FB
-L08613E: db $97
-L08613F: db $FF
-L086140: db $33
-L086141: db $E1
-L086142: db $8A
-L086143: db $05
-L086144: db $97
-L086145: db $01
-L086146: db $30
-L086147: db $DE
-L086148: db $03
-L086149: db $8A
-L08614A: db $FB
-L08614B: db $97
-L08614C: db $FF
-L08614D: db $30
-L08614E: db $E1
-L08614F: db $8A
-L086150: db $05
-L086151: db $97
-L086152: db $01
-L086153: db $2E
-L086154: db $EA
-L086155: db $2C
-L086156: db $DE
-L086157: db $03
-L086158: db $8A
-L086159: db $FB
-L08615A: db $97
-L08615B: db $FF
-L08615C: db $2C
-L08615D: db $E1
-L08615E: db $8A
-L08615F: db $05
-L086160: db $97
-L086161: db $01
-L086162: db $2E
-L086163: db $DE
-L086164: db $03
-L086165: db $8A
-L086166: db $FB
-L086167: db $97
-L086168: db $FF
-L086169: db $2E
-L08616A: db $E1
-L08616B: db $8A
-L08616C: db $05
-L08616D: db $97
-L08616E: db $01
-L08616F: db $2C
-L086170: db $DE
-L086171: db $03
-L086172: db $8A
-L086173: db $FB
-L086174: db $97
-L086175: db $FF
-L086176: db $2C
-L086177: db $E1
-L086178: db $8A
-L086179: db $05
-L08617A: db $97
-L08617B: db $01
-L08617C: db $2F
-L08617D: db $DF
-L08617E: db $30
-L08617F: db $E4
-L086180: db $2C
-L086181: db $DE
-L086182: db $4B
-L086183: db $A0
-L086184: db $09
-L086185: db $88
-L086186: db $00
-L086187: db $2C
-L086188: db $E5
-L086189: db $38
-L08618A: db $E9
-L08618B: db $36
-L08618C: db $DE
-L08618D: db $09
-L08618E: db $8A
-L08618F: db $FB
-L086190: db $88
-L086191: db $00
-L086192: db $97
-L086193: db $FF
-L086194: db $36
-L086195: db $DE
-L086196: db $03
-L086197: db $8A
-L086198: db $05
-L086199: db $88
-L08619A: db $00
-L08619B: db $97
-L08619C: db $01
-L08619D: db $35
-L08619E: db $DE
-L08619F: db $09
-L0861A0: db $8A
-L0861A1: db $FB
-L0861A2: db $88
-L0861A3: db $00
-L0861A4: db $97
-L0861A5: db $FF
-L0861A6: db $35
-L0861A7: db $DE
-L0861A8: db $03
-L0861A9: db $8A
-L0861AA: db $05
-L0861AB: db $88
-L0861AC: db $00
-L0861AD: db $97
-L0861AE: db $01
-L0861AF: db $33
-L0861B0: db $DE
-L0861B1: db $09
-L0861B2: db $8A
-L0861B3: db $FB
-L0861B4: db $88
-L0861B5: db $00
-L0861B6: db $97
-L0861B7: db $FF
-L0861B8: db $33
-L0861B9: db $DE
-L0861BA: db $03
-L0861BB: db $8A
-L0861BC: db $05
-L0861BD: db $88
-L0861BE: db $00
-L0861BF: db $97
-L0861C0: db $01
-L0861C1: db $35
-L0861C2: db $E0
-L0861C3: db $00
-L0861C4: db $E2
-L0861C5: db $2C
-L0861C6: db $E3
-L0861C7: db $2C
-L0861C8: db $DE
-L0861C9: db $4B
-L0861CA: db $00
-L0861CB: db $EA
-L0861CC: db $2C
-L0861CD: db $E5
-L0861CE: db $38
-L0861CF: db $E9
-L0861D0: db $36
-L0861D1: db $DE
-L0861D2: db $09
-L0861D3: db $8A
-L0861D4: db $FB
-L0861D5: db $88
-L0861D6: db $00
-L0861D7: db $97
-L0861D8: db $FF
-L0861D9: db $36
-L0861DA: db $DE
-L0861DB: db $03
-L0861DC: db $8A
-L0861DD: db $05
-L0861DE: db $88
-L0861DF: db $00
-L0861E0: db $97
-L0861E1: db $01
-L0861E2: db $35
-L0861E3: db $DE
-L0861E4: db $09
-L0861E5: db $8A
-L0861E6: db $FB
-L0861E7: db $88
-L0861E8: db $00
-L0861E9: db $97
-L0861EA: db $FF
-L0861EB: db $35
-L0861EC: db $DE
-L0861ED: db $03
-L0861EE: db $8A
-L0861EF: db $05
-L0861F0: db $88
-L0861F1: db $00
-L0861F2: db $97
-L0861F3: db $01
-L0861F4: db $33
-L0861F5: db $DE
-L0861F6: db $09
-L0861F7: db $8A
-L0861F8: db $FB
-L0861F9: db $88
-L0861FA: db $00
-L0861FB: db $97
-L0861FC: db $FF
-L0861FD: db $33
-L0861FE: db $DE
-L0861FF: db $03
-L086200: db $8A
-L086201: db $05
-L086202: db $88
-L086203: db $00
-L086204: db $97
-L086205: db $01
-L086206: db $35
-L086207: db $E0
-L086208: db $00
-L086209: db $E2
-L08620A: db $2C
-L08620B: db $E3
-L08620C: db $2C
-L08620D: db $DE
-L08620E: db $48
-L08620F: db $00
-L086210: db $E5
-L086211: db $2C
-L086212: db $3A
-L086213: db $E9
-L086214: db $38
-L086215: db $DE
-L086216: db $09
-L086217: db $8A
-L086218: db $FB
-L086219: db $88
-L08621A: db $00
-L08621B: db $97
-L08621C: db $FF
-L08621D: db $38
-L08621E: db $DE
-L08621F: db $03
-L086220: db $8A
-L086221: db $05
-L086222: db $88
-L086223: db $00
-L086224: db $97
-L086225: db $01
-L086226: db $37
-L086227: db $DE
-L086228: db $09
-L086229: db $8A
-L08622A: db $FB
-L08622B: db $88
-L08622C: db $00
-L08622D: db $97
-L08622E: db $FF
-L08622F: db $37
-L086230: db $DE
-L086231: db $03
-L086232: db $8A
-L086233: db $05
-L086234: db $88
-L086235: db $00
-L086236: db $97
-L086237: db $01
-L086238: db $35
-L086239: db $DE
-L08623A: db $09
-L08623B: db $8A
-L08623C: db $FB
-L08623D: db $88
-L08623E: db $00
-L08623F: db $97
-L086240: db $FF
-L086241: db $35
-L086242: db $DE
-L086243: db $03
-L086244: db $8A
-L086245: db $05
-L086246: db $88
-L086247: db $00
-L086248: db $97
-L086249: db $01
-L08624A: db $37
-L08624B: db $E0
-L08624C: db $00
-L08624D: db $E2
-L08624E: db $2E
-L08624F: db $E3
-L086250: db $2E
-L086251: db $DE
-L086252: db $48
-L086253: db $00
-L086254: db $E5
-L086255: db $2E
-L086256: db $3A
-L086257: db $E9
-L086258: db $38
-L086259: db $DE
-L08625A: db $09
-L08625B: db $8A
-L08625C: db $FB
-L08625D: db $88
-L08625E: db $00
-L08625F: db $97
-L086260: db $FF
-L086261: db $38
-L086262: db $DE
-L086263: db $03
-L086264: db $8A
-L086265: db $05
-L086266: db $88
-L086267: db $00
-L086268: db $97
-L086269: db $01
-L08626A: db $37
-L08626B: db $DE
-L08626C: db $09
-L08626D: db $8A
-L08626E: db $FB
-L08626F: db $88
-L086270: db $00
-L086271: db $97
-L086272: db $FF
-L086273: db $37
-L086274: db $DE
-L086275: db $03
-L086276: db $8A
-L086277: db $05
-L086278: db $88
-L086279: db $00
-L08627A: db $97
-L08627B: db $01
-L08627C: db $35
-L08627D: db $DE
-L08627E: db $09
-L08627F: db $8A
-L086280: db $FB
-L086281: db $88
-L086282: db $00
-L086283: db $97
-L086284: db $FF
-L086285: db $35
-L086286: db $DE
-L086287: db $03
-L086288: db $8A
-L086289: db $05
-L08628A: db $88
-L08628B: db $00
-L08628C: db $97
-L08628D: db $01
-L08628E: db $37
-L08628F: db $E0
-L086290: db $00
-L086291: db $E2
-L086292: db $3A
-L086293: db $E3
-L086294: db $3A
-L086295: db $DE
-L086296: db $60
-L086297: db $80
-L086298: db $4A
-L086299: db $5D
-SndData_0C_Ch2: db $A0
-L08629B: db $01
-L08629C: db $14
-L08629D: db $EA
-L08629E: db $1B
-L08629F: db $E5
-L0862A0: db $20
-L0862A1: db $1B
-L0862A2: db $EA
-L0862A3: db $20
-L0862A4: db $E3
-L0862A5: db $12
-L0862A6: db $EA
-L0862A7: db $19
-L0862A8: db $E5
-L0862A9: db $1E
-L0862AA: db $0F
-L0862AB: db $E3
-L0862AC: db $00
-L0862AD: db $E1
-L0862AE: db $1B
-L0862AF: db $E3
-L0862B0: db $14
-L0862B1: db $EA
-L0862B2: db $1B
-L0862B3: db $E5
-L0862B4: db $20
-L0862B5: db $1B
-L0862B6: db $EA
-L0862B7: db $20
-L0862B8: db $E3
-L0862B9: db $12
-L0862BA: db $EA
-L0862BB: db $19
-L0862BC: db $E5
-L0862BD: db $1E
-L0862BE: db $0F
-L0862BF: db $E3
-L0862C0: db $00
-L0862C1: db $E1
-L0862C2: db $0F
-L0862C3: db $E3
-L0862C4: db $14
-L0862C5: db $EA
-L0862C6: db $1B
-L0862C7: db $E5
-L0862C8: db $20
-L0862C9: db $1B
-L0862CA: db $EA
-L0862CB: db $12
-L0862CC: db $E3
-L0862CD: db $12
-L0862CE: db $EA
-L0862CF: db $19
-L0862D0: db $E5
-L0862D1: db $1E
-L0862D2: db $E3
-L0862D3: db $0F
-L0862D4: db $0F
-L0862D5: db $E1
-L0862D6: db $16
-L0862D7: db $E3
-L0862D8: db $12
-L0862D9: db $14
-L0862DA: db $EA
-L0862DB: db $1B
-L0862DC: db $E5
-L0862DD: db $20
-L0862DE: db $1B
-L0862DF: db $EA
-L0862E0: db $12
-L0862E1: db $E3
-L0862E2: db $12
-L0862E3: db $EA
-L0862E4: db $19
-L0862E5: db $E5
-L0862E6: db $1E
-L0862E7: db $0F
-L0862E8: db $E3
-L0862E9: db $00
-L0862EA: db $E1
-L0862EB: db $0F
-L0862EC: db $E3
-L0862ED: db $14
-L0862EE: db $EA
-L0862EF: db $1B
-L0862F0: db $E5
-L0862F1: db $20
-L0862F2: db $1B
-L0862F3: db $EA
-L0862F4: db $12
-L0862F5: db $E3
-L0862F6: db $12
-L0862F7: db $EA
-L0862F8: db $19
-L0862F9: db $E5
-L0862FA: db $1E
-L0862FB: db $0F
-L0862FC: db $EA
-L0862FD: db $0F
-L0862FE: db $E3
-L0862FF: db $14
-L086300: db $EA
-L086301: db $1B
-L086302: db $E5
-L086303: db $20
-L086304: db $1B
-L086305: db $EA
-L086306: db $12
-L086307: db $E3
-L086308: db $12
-L086309: db $EA
-L08630A: db $19
-L08630B: db $E3
-L08630C: db $1E
-L08630D: db $0F
-L08630E: db $0F
-L08630F: db $EA
-L086310: db $16
-L086311: db $E3
-L086312: db $1B
-L086313: db $14
-L086314: db $EA
-L086315: db $1B
-L086316: db $E5
-L086317: db $20
-L086318: db $1B
-L086319: db $EA
-L08631A: db $12
-L08631B: db $E3
-L08631C: db $12
-L08631D: db $EA
-L08631E: db $19
-L08631F: db $E5
-L086320: db $1E
-L086321: db $0F
-L086322: db $EA
-L086323: db $0F
-L086324: db $E3
-L086325: db $14
-L086326: db $EA
-L086327: db $1B
-L086328: db $E5
-L086329: db $20
-L08632A: db $1B
-L08632B: db $EA
-L08632C: db $12
-L08632D: db $E3
-L08632E: db $12
-L08632F: db $EA
-L086330: db $19
-L086331: db $1E
-L086332: db $0F
-L086333: db $E3
-L086334: db $0F
-L086335: db $E1
-L086336: db $16
-L086337: db $E3
-L086338: db $12
-L086339: db $14
-L08633A: db $EA
-L08633B: db $1B
-L08633C: db $E5
-L08633D: db $20
-L08633E: db $1B
-L08633F: db $EA
-L086340: db $12
-L086341: db $E3
-L086342: db $12
-L086343: db $EA
-L086344: db $19
-L086345: db $E5
-L086346: db $1E
-L086347: db $0F
-L086348: db $EA
-L086349: db $0F
-L08634A: db $E3
-L08634B: db $14
-L08634C: db $EA
-L08634D: db $1B
-L08634E: db $E5
-L08634F: db $20
-L086350: db $1B
-L086351: db $EA
-L086352: db $12
-L086353: db $E3
-L086354: db $12
-L086355: db $EA
-L086356: db $19
-L086357: db $E3
-L086358: db $1E
-L086359: db $0F
-L08635A: db $E1
-L08635B: db $00
-L08635C: db $1B
-L08635D: db $EA
-L08635E: db $1A
-L08635F: db $E1
-L086360: db $00
-L086361: db $1A
-L086362: db $E3
-L086363: db $19
-L086364: db $EA
-L086365: db $1D
-L086366: db $19
-L086367: db $E3
-L086368: db $17
-L086369: db $EA
-L08636A: db $16
-L08636B: db $14
-L08636C: db $E3
-L08636D: db $19
-L08636E: db $EA
-L08636F: db $1D
-L086370: db $19
-L086371: db $E3
-L086372: db $17
-L086373: db $EA
-L086374: db $1B
-L086375: db $1E
-L086376: db $E3
-L086377: db $19
-L086378: db $EA
-L086379: db $1D
-L08637A: db $19
-L08637B: db $E3
-L08637C: db $17
-L08637D: db $EA
-L08637E: db $16
-L08637F: db $14
-L086380: db $E3
-L086381: db $19
-L086382: db $EA
-L086383: db $1D
-L086384: db $19
-L086385: db $E3
-L086386: db $17
-L086387: db $EA
-L086388: db $1E
-L086389: db $17
-L08638A: db $E3
-L08638B: db $19
-L08638C: db $EA
-L08638D: db $1D
-L08638E: db $19
-L08638F: db $E3
-L086390: db $17
-L086391: db $EA
-L086392: db $16
-L086393: db $14
-L086394: db $E3
-L086395: db $19
-L086396: db $EA
-L086397: db $1D
-L086398: db $19
-L086399: db $E3
-L08639A: db $17
-L08639B: db $EA
-L08639C: db $1B
-L08639D: db $1E
-L08639E: db $E3
-L08639F: db $19
-L0863A0: db $EA
-L0863A1: db $1D
-L0863A2: db $19
-L0863A3: db $E3
-L0863A4: db $17
-L0863A5: db $EA
-L0863A6: db $16
-L0863A7: db $14
-L0863A8: db $E3
-L0863A9: db $19
-L0863AA: db $EA
-L0863AB: db $1D
-L0863AC: db $19
-L0863AD: db $E3
-L0863AE: db $17
-L0863AF: db $EA
-L0863B0: db $1E
-L0863B1: db $17
-L0863B2: db $E3
-L0863B3: db $1B
-L0863B4: db $EA
-L0863B5: db $1F
-L0863B6: db $1B
-L0863B7: db $E3
-L0863B8: db $19
-L0863B9: db $EA
-L0863BA: db $18
-L0863BB: db $16
-L0863BC: db $E3
-L0863BD: db $1B
-L0863BE: db $EA
-L0863BF: db $1F
-L0863C0: db $1B
-L0863C1: db $E3
-L0863C2: db $19
-L0863C3: db $EA
-L0863C4: db $1D
-L0863C5: db $20
-L0863C6: db $E3
-L0863C7: db $1B
-L0863C8: db $EA
-L0863C9: db $1F
-L0863CA: db $1B
-L0863CB: db $E3
-L0863CC: db $19
-L0863CD: db $EA
-L0863CE: db $18
-L0863CF: db $16
-L0863D0: db $E3
-L0863D1: db $1B
-L0863D2: db $EA
-L0863D3: db $1F
-L0863D4: db $1B
-L0863D5: db $E3
-L0863D6: db $00
-L0863D7: db $E1
-L0863D8: db $19
-L0863D9: db $E3
-L0863DA: db $19
-L0863DB: db $E1
-L0863DC: db $1A
-L0863DD: db $00
-L0863DE: db $1A
-L0863DF: db $E3
-L0863E0: db $1B
-L0863E1: db $EA
-L0863E2: db $1F
-L0863E3: db $E1
-L0863E4: db $00
-L0863E5: db $1B
-L0863E6: db $00
-L0863E7: db $19
-L0863E8: db $00
-L0863E9: db $19
-L0863EA: db $EA
-L0863EB: db $1D
-L0863EC: db $E1
-L0863ED: db $00
-L0863EE: db $19
-L0863EF: db $00
-L0863F0: db $1B
-L0863F1: db $EA
-L0863F2: db $1F
-L0863F3: db $E1
-L0863F4: db $00
-L0863F5: db $1B
-L0863F6: db $00
-L0863F7: db $19
-L0863F8: db $00
-L0863F9: db $19
-L0863FA: db $EA
-L0863FB: db $1D
-L0863FC: db $E1
-L0863FD: db $00
-L0863FE: db $19
-L0863FF: db $00
-L086400: db $1B
-L086401: db $EA
-L086402: db $1F
-L086403: db $E1
-L086404: db $00
-L086405: db $1B
-L086406: db $00
-L086407: db $19
-L086408: db $00
-L086409: db $19
-L08640A: db $EA
-L08640B: db $1D
-L08640C: db $E1
-L08640D: db $00
-L08640E: db $20
-L08640F: db $00
-L086410: db $1B
-L086411: db $EA
-L086412: db $1F
-L086413: db $E1
-L086414: db $00
-L086415: db $1B
-L086416: db $00
-L086417: db $19
-L086418: db $00
-L086419: db $19
-L08641A: db $E3
-L08641B: db $18
-L08641C: db $E1
-L08641D: db $16
-L08641E: db $00
-L08641F: db $18
-L086420: db $00
-L086421: db $80
-L086422: db $9A
-L086423: db $62
-SndData_0C_Ch1: db $A0
-L086425: db $02
-L086426: db $1B
-L086427: db $E1
-L086428: db $1D
-L086429: db $1E
-L08642A: db $20
-L08642B: db $22
-L08642C: db $25
-L08642D: db $00
-L08642E: db $24
-L08642F: db $00
-L086430: db $20
-L086431: db $00
-L086432: db $22
-L086433: db $00
-L086434: db $22
-L086435: db $1E
-L086436: db $00
-L086437: db $1B
-L086438: db $1D
-L086439: db $1E
-L08643A: db $20
-L08643B: db $22
-L08643C: db $25
-L08643D: db $00
-L08643E: db $24
-L08643F: db $00
-L086440: db $27
-L086441: db $26
-L086442: db $27
-L086443: db $00
-L086444: db $E5
-L086445: db $1B
-L086446: db $E1
-L086447: db $1D
-L086448: db $1E
-L086449: db $20
-L08644A: db $22
-L08644B: db $25
-L08644C: db $00
-L08644D: db $24
-L08644E: db $00
-L08644F: db $20
-L086450: db $00
-L086451: db $22
-L086452: db $00
-L086453: db $22
-L086454: db $1E
-L086455: db $00
-L086456: db $1B
-L086457: db $1D
-L086458: db $1E
-L086459: db $20
-L08645A: db $22
-L08645B: db $25
-L08645C: db $00
-L08645D: db $24
-L08645E: db $00
-L08645F: db $E5
-L086460: db $27
-L086461: db $A0
-L086462: db $29
-L086463: db $2C
-L086464: db $E3
-L086465: db $27
-L086466: db $E1
-L086467: db $2A
-L086468: db $E3
-L086469: db $2E
-L08646A: db $2C
-L08646B: db $DE
-L08646C: db $0F
-L08646D: db $2C
-L08646E: db $E3
-L08646F: db $27
-L086470: db $2A
-L086471: db $22
-L086472: db $E1
-L086473: db $25
-L086474: db $E3
-L086475: db $29
-L086476: db $2A
-L086477: db $DE
-L086478: db $0F
-L086479: db $2A
-L08647A: db $E3
-L08647B: db $27
-L08647C: db $2C
-L08647D: db $27
-L08647E: db $E1
-L08647F: db $2A
-L086480: db $E3
-L086481: db $2E
-L086482: db $2C
-L086483: db $DE
-L086484: db $0F
-L086485: db $2C
-L086486: db $E3
-L086487: db $27
-L086488: db $2A
-L086489: db $22
-L08648A: db $E1
-L08648B: db $25
-L08648C: db $E3
-L08648D: db $29
-L08648E: db $2A
-L08648F: db $DE
-L086490: db $0F
-L086491: db $2A
-L086492: db $E3
-L086493: db $27
-L086494: db $2C
-L086495: db $27
-L086496: db $E1
-L086497: db $2A
-L086498: db $E3
-L086499: db $2E
-L08649A: db $2C
-L08649B: db $DE
-L08649C: db $0F
-L08649D: db $2C
-L08649E: db $E3
-L08649F: db $27
-L0864A0: db $2A
-L0864A1: db $22
-L0864A2: db $E1
-L0864A3: db $25
-L0864A4: db $E3
-L0864A5: db $29
-L0864A6: db $2A
-L0864A7: db $DE
-L0864A8: db $0F
-L0864A9: db $2A
-L0864AA: db $E3
-L0864AB: db $27
-L0864AC: db $A0
-L0864AD: db $02
-L0864AE: db $1B
-L0864AF: db $E1
-L0864B0: db $1D
-L0864B1: db $1E
-L0864B2: db $20
-L0864B3: db $22
-L0864B4: db $25
-L0864B5: db $00
-L0864B6: db $24
-L0864B7: db $00
-L0864B8: db $20
-L0864B9: db $00
-L0864BA: db $22
-L0864BB: db $00
-L0864BC: db $22
-L0864BD: db $1E
-L0864BE: db $00
-L0864BF: db $1B
-L0864C0: db $1D
-L0864C1: db $1E
-L0864C2: db $20
-L0864C3: db $22
-L0864C4: db $25
-L0864C5: db $00
-L0864C6: db $27
-L0864C7: db $00
-L0864C8: db $E5
-L0864C9: db $A0
-L0864CA: db $00
-L0864CB: db $2A
-L0864CC: db $DF
-L0864CD: db $2C
-L0864CE: db $2D
-L0864CF: db $2F
-L0864D0: db $31
-L0864D1: db $33
-L0864D2: db $34
-L0864D3: db $36
-L0864D4: db $38
-L0864D5: db $39
-L0864D6: db $3B
-L0864D7: db $3D
-L0864D8: db $2C
-L0864D9: db $E3
-L0864DA: db $2E
-L0864DB: db $E1
-L0864DC: db $30
-L0864DD: db $E3
-L0864DE: db $31
-L0864DF: db $33
-L0864E0: db $EA
-L0864E1: db $31
-L0864E2: db $E3
-L0864E3: db $30
-L0864E4: db $2E
-L0864E5: db $2C
-L0864E6: db $2E
-L0864E7: db $E1
-L0864E8: db $30
-L0864E9: db $E3
-L0864EA: db $2C
-L0864EB: db $2A
-L0864EC: db $EA
-L0864ED: db $29
-L0864EE: db $E3
-L0864EF: db $2A
-L0864F0: db $29
-L0864F1: db $A0
-L0864F2: db $29
-L0864F3: db $2C
-L0864F4: db $27
-L0864F5: db $E1
-L0864F6: db $2A
-L0864F7: db $E3
-L0864F8: db $2E
-L0864F9: db $2C
-L0864FA: db $DE
-L0864FB: db $0F
-L0864FC: db $2C
-L0864FD: db $E3
-L0864FE: db $27
-L0864FF: db $2A
-L086500: db $22
-L086501: db $E1
-L086502: db $25
-L086503: db $E3
-L086504: db $29
-L086505: db $2A
-L086506: db $DE
-L086507: db $0F
-L086508: db $2A
-L086509: db $E3
-L08650A: db $27
-L08650B: db $A0
-L08650C: db $00
-L08650D: db $2C
-L08650E: db $2E
-L08650F: db $E1
-L086510: db $30
-L086511: db $E3
-L086512: db $31
-L086513: db $33
-L086514: db $EA
-L086515: db $31
-L086516: db $E3
-L086517: db $30
-L086518: db $2E
-L086519: db $2C
-L08651A: db $2E
-L08651B: db $E1
-L08651C: db $30
-L08651D: db $E3
-L08651E: db $2C
-L08651F: db $2A
-L086520: db $EA
-L086521: db $29
-L086522: db $E3
-L086523: db $2A
-L086524: db $29
-L086525: db $A0
-L086526: db $02
-L086527: db $1B
-L086528: db $E1
-L086529: db $1D
-L08652A: db $1E
-L08652B: db $20
-L08652C: db $22
-L08652D: db $25
-L08652E: db $E3
-L08652F: db $24
-L086530: db $20
-L086531: db $22
-L086532: db $22
-L086533: db $E1
-L086534: db $1E
-L086535: db $E3
-L086536: db $1B
-L086537: db $E1
-L086538: db $1D
-L086539: db $1E
-L08653A: db $20
-L08653B: db $22
-L08653C: db $25
-L08653D: db $E3
-L08653E: db $24
-L08653F: db $20
-L086540: db $22
-L086541: db $22
-L086542: db $E1
-L086543: db $1E
-L086544: db $E3
-L086545: db $A0
-L086546: db $28
-L086547: db $31
-L086548: db $29
-L086549: db $E1
-L08654A: db $2C
-L08654B: db $E3
-L08654C: db $31
-L08654D: db $2F
-L08654E: db $2F
-L08654F: db $2E
-L086550: db $E1
-L086551: db $2C
-L086552: db $E3
-L086553: db $2E
-L086554: db $31
-L086555: db $29
-L086556: db $E1
-L086557: db $2C
-L086558: db $E3
-L086559: db $31
-L08655A: db $2F
-L08655B: db $2F
-L08655C: db $2E
-L08655D: db $E1
-L08655E: db $2C
-L08655F: db $E5
-L086560: db $31
-L086561: db $E3
-L086562: db $29
-L086563: db $E1
-L086564: db $2C
-L086565: db $E3
-L086566: db $31
-L086567: db $2F
-L086568: db $2F
-L086569: db $2E
-L08656A: db $E1
-L08656B: db $2C
-L08656C: db $E3
-L08656D: db $2E
-L08656E: db $31
-L08656F: db $29
-L086570: db $E1
-L086571: db $2C
-L086572: db $E3
-L086573: db $31
-L086574: db $2F
-L086575: db $2F
-L086576: db $2E
-L086577: db $E1
-L086578: db $2C
-L086579: db $E5
-L08657A: db $31
-L08657B: db $E3
-L08657C: db $29
-L08657D: db $E1
-L08657E: db $2C
-L08657F: db $E3
-L086580: db $31
-L086581: db $2F
-L086582: db $2F
-L086583: db $2E
-L086584: db $E1
-L086585: db $2C
-L086586: db $E3
-L086587: db $2E
-L086588: db $31
-L086589: db $29
-L08658A: db $E1
-L08658B: db $2C
-L08658C: db $E3
-L08658D: db $31
-L08658E: db $2F
-L08658F: db $2F
-L086590: db $2E
-L086591: db $E1
-L086592: db $2C
-L086593: db $E5
-L086594: db $31
-L086595: db $E3
-L086596: db $29
-L086597: db $E1
-L086598: db $2C
-L086599: db $E3
-L08659A: db $31
-L08659B: db $2F
-L08659C: db $2F
-L08659D: db $2E
-L08659E: db $E1
-L08659F: db $2C
-L0865A0: db $E3
-L0865A1: db $2E
-L0865A2: db $31
-L0865A3: db $29
-L0865A4: db $E1
-L0865A5: db $2C
-L0865A6: db $E3
-L0865A7: db $31
-L0865A8: db $2F
-L0865A9: db $2F
-L0865AA: db $2E
-L0865AB: db $E1
-L0865AC: db $2C
-L0865AD: db $E3
-L0865AE: db $2A
-L0865AF: db $33
-L0865B0: db $2B
-L0865B1: db $E1
-L0865B2: db $2E
-L0865B3: db $E3
-L0865B4: db $33
-L0865B5: db $31
-L0865B6: db $31
-L0865B7: db $30
-L0865B8: db $E1
-L0865B9: db $2E
-L0865BA: db $E3
-L0865BB: db $30
-L0865BC: db $33
-L0865BD: db $2B
-L0865BE: db $E1
-L0865BF: db $2E
-L0865C0: db $E3
-L0865C1: db $33
-L0865C2: db $31
-L0865C3: db $31
-L0865C4: db $30
-L0865C5: db $E1
-L0865C6: db $2E
-L0865C7: db $E3
-L0865C8: db $2C
-L0865C9: db $33
-L0865CA: db $2B
-L0865CB: db $E1
-L0865CC: db $2E
-L0865CD: db $E3
-L0865CE: db $33
-L0865CF: db $31
-L0865D0: db $31
-L0865D1: db $30
-L0865D2: db $E1
-L0865D3: db $2E
-L0865D4: db $E3
-L0865D5: db $30
-L0865D6: db $33
-L0865D7: db $2B
-L0865D8: db $E1
-L0865D9: db $2E
-L0865DA: db $E3
-L0865DB: db $33
-L0865DC: db $31
-L0865DD: db $31
-L0865DE: db $30
-L0865DF: db $E1
-L0865E0: db $2E
-L0865E1: db $E3
-L0865E2: db $2C
-L0865E3: db $33
-L0865E4: db $2B
-L0865E5: db $E1
-L0865E6: db $2E
-L0865E7: db $E3
-L0865E8: db $33
-L0865E9: db $31
-L0865EA: db $31
-L0865EB: db $30
-L0865EC: db $E1
-L0865ED: db $2E
-L0865EE: db $E3
-L0865EF: db $30
-L0865F0: db $33
-L0865F1: db $2B
-L0865F2: db $E1
-L0865F3: db $2E
-L0865F4: db $E3
-L0865F5: db $33
-L0865F6: db $31
-L0865F7: db $31
-L0865F8: db $30
-L0865F9: db $E1
-L0865FA: db $2E
-L0865FB: db $E3
-L0865FC: db $2C
-L0865FD: db $33
-L0865FE: db $2B
-L0865FF: db $E1
-L086600: db $2E
-L086601: db $E3
-L086602: db $33
-L086603: db $31
-L086604: db $31
-L086605: db $30
-L086606: db $E1
-L086607: db $2E
-L086608: db $E3
-L086609: db $30
-L08660A: db $33
-L08660B: db $2B
-L08660C: db $E1
-L08660D: db $2E
-L08660E: db $E3
-L08660F: db $33
-L086610: db $31
-L086611: db $31
-L086612: db $30
-L086613: db $E1
-L086614: db $2E
-L086615: db $E3
-L086616: db $30
-L086617: db $80
-L086618: db $24
-L086619: db $64
-SndData_0C_Ch4: db $A0
-L08661B: db $00
-L08661C: db $9A
-L08661D: db $B2
-L08661E: db $66
-L08661F: db $9A
-L086620: db $B2
-L086621: db $66
-L086622: db $9A
-L086623: db $B2
-L086624: db $66
-L086625: db $9A
-L086626: db $B2
-L086627: db $66
-L086628: db $9A
-L086629: db $B2
-L08662A: db $66
-L08662B: db $C1
-L08662C: db $C2
-L08662D: db $C2
-L08662E: db $C1
-L08662F: db $C1
-L086630: db $C2
-L086631: db $C2
-L086632: db $C1
-L086633: db $C1
-L086634: db $C2
-L086635: db $C2
-L086636: db $C1
-L086637: db $C1
-L086638: db $C2
-L086639: db $C2
-L08663A: db $C1
-L08663B: db $C1
-L08663C: db $C2
-L08663D: db $C2
-L08663E: db $C1
-L08663F: db $C1
-L086640: db $C2
-L086641: db $C2
-L086642: db $C1
-L086643: db $C1
-L086644: db $C2
-L086645: db $C2
-L086646: db $C1
-L086647: db $C0
-L086648: db $C2
-L086649: db $C0
-L08664A: db $C2
-L08664B: db $8D
-L08664C: db $24
-L08664D: db $04
-L08664E: db $C1
-L08664F: db $C2
-L086650: db $C2
-L086651: db $C1
-L086652: db $C0
-L086653: db $C2
-L086654: db $C2
-L086655: db $C0
-L086656: db $C0
-L086657: db $C2
-L086658: db $C2
-L086659: db $C0
-L08665A: db $C0
-L08665B: db $C2
-L08665C: db $C0
-L08665D: db $C1
-L08665E: db $C1
-L08665F: db $C0
-L086660: db $C2
-L086661: db $C1
-L086662: db $C0
-L086663: db $C2
-L086664: db $C2
-L086665: db $C0
-L086666: db $C0
-L086667: db $C2
-L086668: db $C2
-L086669: db $C0
-L08666A: db $C0
-L08666B: db $C2
-L08666C: db $C0
-L08666D: db $C1
-L08666E: db $81
-L08666F: db $24
-L086670: db $4E
-L086671: db $66
-L086672: db $8D
-L086673: db $24
-L086674: db $08
-L086675: db $C1
-L086676: db $C2
-L086677: db $C2
-L086678: db $C7
-L086679: db $C1
-L08667A: db $C2
-L08667B: db $C2
-L08667C: db $C2
-L08667D: db $C1
-L08667E: db $C2
-L08667F: db $C2
-L086680: db $C5
-L086681: db $C1
-L086682: db $C2
-L086683: db $C2
-L086684: db $C2
-L086685: db $81
-L086686: db $24
-L086687: db $75
-L086688: db $66
-L086689: db $8D
-L08668A: db $24
-L08668B: db $07
-L08668C: db $C1
-L08668D: db $C2
-L08668E: db $C2
-L08668F: db $C1
-L086690: db $C2
-L086691: db $C1
-L086692: db $C2
-L086693: db $C1
-L086694: db $C2
-L086695: db $C1
-L086696: db $C2
-L086697: db $C1
-L086698: db $C1
-L086699: db $C2
-L08669A: db $C2
-L08669B: db $C2
-L08669C: db $81
-L08669D: db $24
-L08669E: db $8C
-L08669F: db $66
-L0866A0: db $C1
-L0866A1: db $C2
-L0866A2: db $C2
-L0866A3: db $C1
-L0866A4: db $C2
-L0866A5: db $C1
-L0866A6: db $C2
-L0866A7: db $C1
-L0866A8: db $C2
-L0866A9: db $C1
-L0866AA: db $C2
-L0866AB: db $C1
-L0866AC: db $C0
-L0866AD: db $E3
-L0866AE: db $C0
-L0866AF: db $80
-L0866B0: db $1A
-L0866B1: db $66
-L0866B2: db $C1
-L0866B3: db $E1
-L0866B4: db $C2
-L0866B5: db $C2
-L0866B6: db $C1
-L0866B7: db $C1
-L0866B8: db $C2
-L0866B9: db $C2
-L0866BA: db $C1
-L0866BB: db $C1
-L0866BC: db $C2
-L0866BD: db $C2
-L0866BE: db $C1
-L0866BF: db $C1
-L0866C0: db $C2
-L0866C1: db $C2
-L0866C2: db $C1
-L0866C3: db $C1
-L0866C4: db $C2
-L0866C5: db $C2
-L0866C6: db $C1
-L0866C7: db $C1
-L0866C8: db $C2
-L0866C9: db $C2
-L0866CA: db $C1
-L0866CB: db $C1
-L0866CC: db $C2
-L0866CD: db $C2
-L0866CE: db $C1
-L0866CF: db $C1
-L0866D0: db $C2
-L0866D1: db $C1
-L0866D2: db $C2
-L0866D3: db $9B
+SndData_0C_Ch3:
+	snd_wave WAVE_09
+	snd_note $27, NOTELEN_03
+	snd_note $29
+	snd_note $2A
+	snd_note $2C
+	snd_note $2E
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_03
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_03
+	snd_note $29
+	snd_note $2A
+	snd_note $2C
+	snd_note $2E
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_03
+	snd_note $32
+	snd_note $33
+	snd_note $00, NOTELEN_0C
+	snd_note $27, NOTELEN_03
+	snd_note $29
+	snd_note $2A
+	snd_note $2C
+	snd_note $2E
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_03
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_03
+	snd_note $29
+	snd_note $2A
+	snd_note $2C
+	snd_note $2E
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_2E
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_09
+	snd_note $33, NOTELEN_0C
+	snd_wave WAVE_07
+	snd_note $30, NOTELEN_06
+	snd_note $31, NOTELEN_03
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_01
+	snd_note $36, NOTELEN_08
+	snd_note $35, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $30
+	snd_note $31, NOTELEN_03
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_09
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_01
+	snd_note $30, NOTELEN_08
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_01
+	snd_inc_vol -6
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_2E
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_06
+	snd_inc_vol 6
+	snd_note $00, NOTELEN_03
+	snd_note $31
+	snd_note $36
+	snd_note $3A
+	snd_note $3D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3D, NOTELEN_03
+	snd_note $3C
+	snd_note $3A
+	snd_note $38
+	snd_wave WAVE_07
+	snd_note $30, NOTELEN_06
+	snd_note $31, NOTELEN_03
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_01
+	snd_note $36, NOTELEN_08
+	snd_note $35, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $30
+	snd_note $31, NOTELEN_03
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_09
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_01
+	snd_note $30, NOTELEN_08
+	snd_wave WAVE_09
+	snd_note $2C, NOTELEN_03
+	snd_note $2E
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_03
+	snd_note $2A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_03
+	snd_note $29
+	snd_note $2A
+	snd_note $2C
+	snd_note $2E
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_2E
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_12
+	snd_wave WAVE_07
+	snd_note $30, NOTELEN_06
+	snd_note $31, NOTELEN_03
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_01
+	snd_note $36, NOTELEN_08
+	snd_note $35, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $30
+	snd_note $31, NOTELEN_03
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_09
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_01
+	snd_note $30, NOTELEN_08
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_01
+	snd_inc_vol -6
+	snd_note $31, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_2E
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_06
+	snd_inc_vol 6
+	snd_note $00, NOTELEN_03
+	snd_note $31
+	snd_note $36
+	snd_note $3A
+	snd_note $3D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3D, NOTELEN_03
+	snd_note $3C
+	snd_note $3A
+	snd_note $38
+	snd_wave WAVE_07
+	snd_note $30, NOTELEN_06
+	snd_note $31, NOTELEN_03
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_01
+	snd_note $36, NOTELEN_08
+	snd_note $35, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $30
+	snd_note $31, NOTELEN_03
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_09
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2F, NOTELEN_01
+	snd_note $30, NOTELEN_08
+	snd_note $2C, NOTELEN_CUSTOM, $4B
+	snd_wave WAVE_09
+	snd_instrument INSTR_NONE
+	snd_note $2C, NOTELEN_0C
+	snd_note $38, NOTELEN_30
+	snd_note $36, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $2C, NOTELEN_06
+	snd_note $2C, NOTELEN_CUSTOM, $4B
+	snd_note $00, NOTELEN_09
+	snd_note $2C, NOTELEN_0C
+	snd_note $38, NOTELEN_30
+	snd_note $36, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $2C, NOTELEN_06
+	snd_note $2C, NOTELEN_CUSTOM, $48
+	snd_note $00, NOTELEN_0C
+	snd_note $2C
+	snd_note $3A, NOTELEN_30
+	snd_note $38, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $38, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $37, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $37, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $2E, NOTELEN_06
+	snd_note $2E, NOTELEN_CUSTOM, $48
+	snd_note $00, NOTELEN_0C
+	snd_note $2E
+	snd_note $3A, NOTELEN_30
+	snd_note $38, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $38, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $37, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_CUSTOM, $09
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $37, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $3A, NOTELEN_06
+	snd_note $3A, NOTELEN_CUSTOM, $60
+	snd_jp SndData_0C_Ch3
+SndData_0C_Ch2:
+	snd_duty SNDDUTY_12, $01
+	snd_note $14, NOTELEN_09
+	snd_note $1B, NOTELEN_0C
+	snd_note $20
+	snd_note $1B, NOTELEN_09
+	snd_note $20, NOTELEN_06
+	snd_note $12, NOTELEN_09
+	snd_note $19, NOTELEN_0C
+	snd_note $1E
+	snd_note $0F, NOTELEN_06
+	snd_note $00, NOTELEN_03
+	snd_note $1B, NOTELEN_06
+	snd_note $14, NOTELEN_09
+	snd_note $1B, NOTELEN_0C
+	snd_note $20
+	snd_note $1B, NOTELEN_09
+	snd_note $20, NOTELEN_06
+	snd_note $12, NOTELEN_09
+	snd_note $19, NOTELEN_0C
+	snd_note $1E
+	snd_note $0F, NOTELEN_06
+	snd_note $00, NOTELEN_03
+	snd_note $0F, NOTELEN_06
+	snd_note $14, NOTELEN_09
+	snd_note $1B, NOTELEN_0C
+	snd_note $20
+	snd_note $1B, NOTELEN_09
+	snd_note $12, NOTELEN_06
+	snd_note $12, NOTELEN_09
+	snd_note $19, NOTELEN_0C
+	snd_note $1E, NOTELEN_06
+	snd_note $0F
+	snd_note $0F, NOTELEN_03
+	snd_note $16, NOTELEN_06
+	snd_note $12
+	snd_note $14, NOTELEN_09
+	snd_note $1B, NOTELEN_0C
+	snd_note $20
+	snd_note $1B, NOTELEN_09
+	snd_note $12, NOTELEN_06
+	snd_note $12, NOTELEN_09
+	snd_note $19, NOTELEN_0C
+	snd_note $1E
+	snd_note $0F, NOTELEN_06
+	snd_note $00, NOTELEN_03
+	snd_note $0F, NOTELEN_06
+	snd_note $14, NOTELEN_09
+	snd_note $1B, NOTELEN_0C
+	snd_note $20
+	snd_note $1B, NOTELEN_09
+	snd_note $12, NOTELEN_06
+	snd_note $12, NOTELEN_09
+	snd_note $19, NOTELEN_0C
+	snd_note $1E
+	snd_note $0F, NOTELEN_09
+	snd_note $0F, NOTELEN_06
+	snd_note $14, NOTELEN_09
+	snd_note $1B, NOTELEN_0C
+	snd_note $20
+	snd_note $1B, NOTELEN_09
+	snd_note $12, NOTELEN_06
+	snd_note $12, NOTELEN_09
+	snd_note $19, NOTELEN_06
+	snd_note $1E
+	snd_note $0F
+	snd_note $0F, NOTELEN_09
+	snd_note $16, NOTELEN_06
+	snd_note $1B
+	snd_note $14, NOTELEN_09
+	snd_note $1B, NOTELEN_0C
+	snd_note $20
+	snd_note $1B, NOTELEN_09
+	snd_note $12, NOTELEN_06
+	snd_note $12, NOTELEN_09
+	snd_note $19, NOTELEN_0C
+	snd_note $1E
+	snd_note $0F, NOTELEN_09
+	snd_note $0F, NOTELEN_06
+	snd_note $14, NOTELEN_09
+	snd_note $1B, NOTELEN_0C
+	snd_note $20
+	snd_note $1B, NOTELEN_09
+	snd_note $12, NOTELEN_06
+	snd_note $12, NOTELEN_09
+	snd_note $19
+	snd_note $1E
+	snd_note $0F, NOTELEN_06
+	snd_note $0F, NOTELEN_03
+	snd_note $16, NOTELEN_06
+	snd_note $12
+	snd_note $14, NOTELEN_09
+	snd_note $1B, NOTELEN_0C
+	snd_note $20
+	snd_note $1B, NOTELEN_09
+	snd_note $12, NOTELEN_06
+	snd_note $12, NOTELEN_09
+	snd_note $19, NOTELEN_0C
+	snd_note $1E
+	snd_note $0F, NOTELEN_09
+	snd_note $0F, NOTELEN_06
+	snd_note $14, NOTELEN_09
+	snd_note $1B, NOTELEN_0C
+	snd_note $20
+	snd_note $1B, NOTELEN_09
+	snd_note $12, NOTELEN_06
+	snd_note $12, NOTELEN_09
+	snd_note $19, NOTELEN_06
+	snd_note $1E
+	snd_note $0F, NOTELEN_03
+	snd_note $00
+	snd_note $1B, NOTELEN_09
+	snd_note $1A, NOTELEN_03
+	snd_note $00
+	snd_note $1A, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $1D
+	snd_note $19, NOTELEN_06
+	snd_note $17, NOTELEN_09
+	snd_note $16
+	snd_note $14, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $1D
+	snd_note $19, NOTELEN_06
+	snd_note $17, NOTELEN_09
+	snd_note $1B
+	snd_note $1E, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $1D
+	snd_note $19, NOTELEN_06
+	snd_note $17, NOTELEN_09
+	snd_note $16
+	snd_note $14, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $1D
+	snd_note $19, NOTELEN_06
+	snd_note $17, NOTELEN_09
+	snd_note $1E
+	snd_note $17, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $1D
+	snd_note $19, NOTELEN_06
+	snd_note $17, NOTELEN_09
+	snd_note $16
+	snd_note $14, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $1D
+	snd_note $19, NOTELEN_06
+	snd_note $17, NOTELEN_09
+	snd_note $1B
+	snd_note $1E, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $1D
+	snd_note $19, NOTELEN_06
+	snd_note $17, NOTELEN_09
+	snd_note $16
+	snd_note $14, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $1D
+	snd_note $19, NOTELEN_06
+	snd_note $17, NOTELEN_09
+	snd_note $1E
+	snd_note $17, NOTELEN_06
+	snd_note $1B, NOTELEN_09
+	snd_note $1F
+	snd_note $1B, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $18
+	snd_note $16, NOTELEN_06
+	snd_note $1B, NOTELEN_09
+	snd_note $1F
+	snd_note $1B, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $1D
+	snd_note $20, NOTELEN_06
+	snd_note $1B, NOTELEN_09
+	snd_note $1F
+	snd_note $1B, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $18
+	snd_note $16, NOTELEN_06
+	snd_note $1B, NOTELEN_09
+	snd_note $1F
+	snd_note $1B, NOTELEN_06
+	snd_note $00, NOTELEN_03
+	snd_note $19, NOTELEN_06
+	snd_note $19, NOTELEN_03
+	snd_note $1A
+	snd_note $00
+	snd_note $1A, NOTELEN_06
+	snd_note $1B, NOTELEN_09
+	snd_note $1F, NOTELEN_03
+	snd_note $00
+	snd_note $1B
+	snd_note $00
+	snd_note $19
+	snd_note $00
+	snd_note $19, NOTELEN_09
+	snd_note $1D, NOTELEN_03
+	snd_note $00
+	snd_note $19
+	snd_note $00
+	snd_note $1B, NOTELEN_09
+	snd_note $1F, NOTELEN_03
+	snd_note $00
+	snd_note $1B
+	snd_note $00
+	snd_note $19
+	snd_note $00
+	snd_note $19, NOTELEN_09
+	snd_note $1D, NOTELEN_03
+	snd_note $00
+	snd_note $19
+	snd_note $00
+	snd_note $1B, NOTELEN_09
+	snd_note $1F, NOTELEN_03
+	snd_note $00
+	snd_note $1B
+	snd_note $00
+	snd_note $19
+	snd_note $00
+	snd_note $19, NOTELEN_09
+	snd_note $1D, NOTELEN_03
+	snd_note $00
+	snd_note $20
+	snd_note $00
+	snd_note $1B, NOTELEN_09
+	snd_note $1F, NOTELEN_03
+	snd_note $00
+	snd_note $1B
+	snd_note $00
+	snd_note $19
+	snd_note $00
+	snd_note $19, NOTELEN_06
+	snd_note $18, NOTELEN_03
+	snd_note $16
+	snd_note $00
+	snd_note $18
+	snd_note $00
+	snd_jp SndData_0C_Ch2
+SndData_0C_Ch1:
+	snd_duty SNDDUTY_12, $02
+	snd_note $1B, NOTELEN_03
+	snd_note $1D
+	snd_note $1E
+	snd_note $20
+	snd_note $22
+	snd_note $25
+	snd_note $00
+	snd_note $24
+	snd_note $00
+	snd_note $20
+	snd_note $00
+	snd_note $22
+	snd_note $00
+	snd_note $22
+	snd_note $1E
+	snd_note $00
+	snd_note $1B
+	snd_note $1D
+	snd_note $1E
+	snd_note $20
+	snd_note $22
+	snd_note $25
+	snd_note $00
+	snd_note $24
+	snd_note $00
+	snd_note $27
+	snd_note $26
+	snd_note $27
+	snd_note $00, NOTELEN_0C
+	snd_note $1B, NOTELEN_03
+	snd_note $1D
+	snd_note $1E
+	snd_note $20
+	snd_note $22
+	snd_note $25
+	snd_note $00
+	snd_note $24
+	snd_note $00
+	snd_note $20
+	snd_note $00
+	snd_note $22
+	snd_note $00
+	snd_note $22
+	snd_note $1E
+	snd_note $00
+	snd_note $1B
+	snd_note $1D
+	snd_note $1E
+	snd_note $20
+	snd_note $22
+	snd_note $25
+	snd_note $00
+	snd_note $24
+	snd_note $00, NOTELEN_0C
+	snd_note $27
+	snd_duty SNDDUTY_12, $29
+	snd_note $2C, NOTELEN_06
+	snd_note $27, NOTELEN_03
+	snd_note $2A, NOTELEN_06
+	snd_note $2E
+	snd_note $2C, NOTELEN_CUSTOM, $0F
+	snd_note $2C, NOTELEN_06
+	snd_note $27
+	snd_note $2A
+	snd_note $22, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_note $29
+	snd_note $2A, NOTELEN_CUSTOM, $0F
+	snd_note $2A, NOTELEN_06
+	snd_note $27
+	snd_note $2C
+	snd_note $27, NOTELEN_03
+	snd_note $2A, NOTELEN_06
+	snd_note $2E
+	snd_note $2C, NOTELEN_CUSTOM, $0F
+	snd_note $2C, NOTELEN_06
+	snd_note $27
+	snd_note $2A
+	snd_note $22, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_note $29
+	snd_note $2A, NOTELEN_CUSTOM, $0F
+	snd_note $2A, NOTELEN_06
+	snd_note $27
+	snd_note $2C
+	snd_note $27, NOTELEN_03
+	snd_note $2A, NOTELEN_06
+	snd_note $2E
+	snd_note $2C, NOTELEN_CUSTOM, $0F
+	snd_note $2C, NOTELEN_06
+	snd_note $27
+	snd_note $2A
+	snd_note $22, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_note $29
+	snd_note $2A, NOTELEN_CUSTOM, $0F
+	snd_note $2A, NOTELEN_06
+	snd_note $27
+	snd_duty SNDDUTY_12, $02
+	snd_note $1B, NOTELEN_03
+	snd_note $1D
+	snd_note $1E
+	snd_note $20
+	snd_note $22
+	snd_note $25
+	snd_note $00
+	snd_note $24
+	snd_note $00
+	snd_note $20
+	snd_note $00
+	snd_note $22
+	snd_note $00
+	snd_note $22
+	snd_note $1E
+	snd_note $00
+	snd_note $1B
+	snd_note $1D
+	snd_note $1E
+	snd_note $20
+	snd_note $22
+	snd_note $25
+	snd_note $00
+	snd_note $27
+	snd_note $00, NOTELEN_0C
+	snd_duty SNDDUTY_12, $00
+	snd_note $2A, NOTELEN_01
+	snd_note $2C
+	snd_note $2D
+	snd_note $2F
+	snd_note $31
+	snd_note $33
+	snd_note $34
+	snd_note $36
+	snd_note $38
+	snd_note $39
+	snd_note $3B
+	snd_note $3D
+	snd_note $2C, NOTELEN_06
+	snd_note $2E, NOTELEN_03
+	snd_note $30, NOTELEN_06
+	snd_note $31
+	snd_note $33, NOTELEN_09
+	snd_note $31, NOTELEN_06
+	snd_note $30
+	snd_note $2E
+	snd_note $2C
+	snd_note $2E, NOTELEN_03
+	snd_note $30, NOTELEN_06
+	snd_note $2C
+	snd_note $2A, NOTELEN_09
+	snd_note $29, NOTELEN_06
+	snd_note $2A
+	snd_note $29
+	snd_duty SNDDUTY_12, $29
+	snd_note $2C
+	snd_note $27, NOTELEN_03
+	snd_note $2A, NOTELEN_06
+	snd_note $2E
+	snd_note $2C, NOTELEN_CUSTOM, $0F
+	snd_note $2C, NOTELEN_06
+	snd_note $27
+	snd_note $2A
+	snd_note $22, NOTELEN_03
+	snd_note $25, NOTELEN_06
+	snd_note $29
+	snd_note $2A, NOTELEN_CUSTOM, $0F
+	snd_note $2A, NOTELEN_06
+	snd_note $27
+	snd_duty SNDDUTY_12, $00
+	snd_note $2C
+	snd_note $2E, NOTELEN_03
+	snd_note $30, NOTELEN_06
+	snd_note $31
+	snd_note $33, NOTELEN_09
+	snd_note $31, NOTELEN_06
+	snd_note $30
+	snd_note $2E
+	snd_note $2C
+	snd_note $2E, NOTELEN_03
+	snd_note $30, NOTELEN_06
+	snd_note $2C
+	snd_note $2A, NOTELEN_09
+	snd_note $29, NOTELEN_06
+	snd_note $2A
+	snd_note $29
+	snd_duty SNDDUTY_12, $02
+	snd_note $1B, NOTELEN_03
+	snd_note $1D
+	snd_note $1E
+	snd_note $20
+	snd_note $22
+	snd_note $25, NOTELEN_06
+	snd_note $24
+	snd_note $20
+	snd_note $22
+	snd_note $22, NOTELEN_03
+	snd_note $1E, NOTELEN_06
+	snd_note $1B, NOTELEN_03
+	snd_note $1D
+	snd_note $1E
+	snd_note $20
+	snd_note $22
+	snd_note $25, NOTELEN_06
+	snd_note $24
+	snd_note $20
+	snd_note $22
+	snd_note $22, NOTELEN_03
+	snd_note $1E, NOTELEN_06
+	snd_duty SNDDUTY_12, $28
+	snd_note $31
+	snd_note $29, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $31
+	snd_note $2F
+	snd_note $2F
+	snd_note $2E, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $2E
+	snd_note $31
+	snd_note $29, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $31
+	snd_note $2F
+	snd_note $2F
+	snd_note $2E, NOTELEN_03
+	snd_note $2C, NOTELEN_0C
+	snd_note $31, NOTELEN_06
+	snd_note $29, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $31
+	snd_note $2F
+	snd_note $2F
+	snd_note $2E, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $2E
+	snd_note $31
+	snd_note $29, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $31
+	snd_note $2F
+	snd_note $2F
+	snd_note $2E, NOTELEN_03
+	snd_note $2C, NOTELEN_0C
+	snd_note $31, NOTELEN_06
+	snd_note $29, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $31
+	snd_note $2F
+	snd_note $2F
+	snd_note $2E, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $2E
+	snd_note $31
+	snd_note $29, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $31
+	snd_note $2F
+	snd_note $2F
+	snd_note $2E, NOTELEN_03
+	snd_note $2C, NOTELEN_0C
+	snd_note $31, NOTELEN_06
+	snd_note $29, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $31
+	snd_note $2F
+	snd_note $2F
+	snd_note $2E, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $2E
+	snd_note $31
+	snd_note $29, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $31
+	snd_note $2F
+	snd_note $2F
+	snd_note $2E, NOTELEN_03
+	snd_note $2C, NOTELEN_06
+	snd_note $2A
+	snd_note $33
+	snd_note $2B, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $31
+	snd_note $30, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $2B, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $31
+	snd_note $30, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $2C
+	snd_note $33
+	snd_note $2B, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $31
+	snd_note $30, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $2B, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $31
+	snd_note $30, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $2C
+	snd_note $33
+	snd_note $2B, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $31
+	snd_note $30, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $2B, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $31
+	snd_note $30, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $2C
+	snd_note $33
+	snd_note $2B, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $31
+	snd_note $30, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $30
+	snd_note $33
+	snd_note $2B, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $33
+	snd_note $31
+	snd_note $31
+	snd_note $30, NOTELEN_03
+	snd_note $2E, NOTELEN_06
+	snd_note $30
+	snd_jp SndData_0C_Ch1
+SndData_0C_Ch4:
+	snd_duty SNDDUTY_12, $00
+	snd_call .sub0
+	snd_call .sub0
+	snd_call .sub0
+	snd_call .sub0
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_var iSndChInfo_24, $04
+	.loop0:
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01
+		snd_noteex PRESET_01
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01
+		snd_djnz iSndChInfo_24, .loop0
+	snd_var iSndChInfo_24, $08
+	.loop1:
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_07
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_05
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_djnz iSndChInfo_24, .loop1
+	snd_var iSndChInfo_24, $07
+	.loop2:
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_djnz iSndChInfo_24, .loop2
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_jp SndData_0C_Ch4
+.sub0:
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_ret
 SndHeader_0D:
 	db 4 ; Number of slots
 .slot0:
@@ -9994,1597 +5841,858 @@ SndHeader_0D:
 	dw SndData_0D_Ch4 ; Data pointer
 	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
-SndData_0D_Ch3: db $A0
-L086706: db $12
-L086707: db $88
-L086708: db $30
-L086709: db $83
-L08670A: db $36
-L08670B: db $2B
-L08670C: db $DE
-L08670D: db $2D
-L08670E: db $8A
-L08670F: db $FB
-L086710: db $97
-L086711: db $FF
-L086712: db $2B
-L086713: db $E1
-L086714: db $8A
-L086715: db $05
-L086716: db $97
-L086717: db $01
-L086718: db $29
-L086719: db $E7
-L08671A: db $2E
-L08671B: db $2B
-L08671C: db $DE
-L08671D: db $2A
-L08671E: db $8A
-L08671F: db $FB
-L086720: db $88
-L086721: db $00
-L086722: db $97
-L086723: db $FF
-L086724: db $2B
-L086725: db $DE
-L086726: db $06
-L086727: db $8A
-L086728: db $05
-L086729: db $88
-L08672A: db $00
-L08672B: db $97
-L08672C: db $01
-L08672D: db $29
-L08672E: db $E7
-L08672F: db $2E
-L086730: db $2B
-L086731: db $DE
-L086732: db $41
-L086733: db $8A
-L086734: db $FB
-L086735: db $88
-L086736: db $00
-L086737: db $97
-L086738: db $FF
-L086739: db $2B
-L08673A: db $DE
-L08673B: db $06
-L08673C: db $8A
-L08673D: db $05
-L08673E: db $88
-L08673F: db $00
-L086740: db $97
-L086741: db $01
-L086742: db $2E
-L086743: db $DF
-L086744: db $2F
-L086745: db $30
-L086746: db $E4
-L086747: db $2E
-L086748: db $EA
-L086749: db $27
-L08674A: db $E3
-L08674B: db $2B
-L08674C: db $DE
-L08674D: db $48
-L08674E: db $8A
-L08674F: db $FB
-L086750: db $88
-L086751: db $00
-L086752: db $97
-L086753: db $FF
-L086754: db $2B
-L086755: db $DE
-L086756: db $06
-L086757: db $8A
-L086758: db $05
-L086759: db $88
-L08675A: db $00
-L08675B: db $97
-L08675C: db $01
-L08675D: db $27
-L08675E: db $E5
-L08675F: db $29
-L086760: db $E3
-L086761: db $2B
-L086762: db $DE
-L086763: db $2D
-L086764: db $8A
-L086765: db $FB
-L086766: db $97
-L086767: db $FF
-L086768: db $2B
-L086769: db $E1
-L08676A: db $8A
-L08676B: db $05
-L08676C: db $97
-L08676D: db $01
-L08676E: db $29
-L08676F: db $E7
-L086770: db $2E
-L086771: db $2B
-L086772: db $DE
-L086773: db $2A
-L086774: db $8A
-L086775: db $FB
-L086776: db $88
-L086777: db $00
-L086778: db $97
-L086779: db $FF
-L08677A: db $2B
-L08677B: db $DE
-L08677C: db $06
-L08677D: db $8A
-L08677E: db $05
-L08677F: db $88
-L086780: db $00
-L086781: db $97
-L086782: db $01
-L086783: db $29
-L086784: db $DE
-L086785: db $16
-L086786: db $2B
-L086787: db $DF
-L086788: db $2C
-L086789: db $2D
-L08678A: db $2E
-L08678B: db $DE
-L08678C: db $17
-L08678D: db $2B
-L08678E: db $DE
-L08678F: db $42
-L086790: db $8A
-L086791: db $FB
-L086792: db $88
-L086793: db $00
-L086794: db $97
-L086795: db $FF
-L086796: db $2B
-L086797: db $DE
-L086798: db $06
-L086799: db $8A
-L08679A: db $05
-L08679B: db $88
-L08679C: db $30
-L08679D: db $97
-L08679E: db $01
-L08679F: db $27
-L0867A0: db $E7
-L0867A1: db $2B
-L0867A2: db $DE
-L0867A3: db $50
-L0867A4: db $8A
-L0867A5: db $FB
-L0867A6: db $88
-L0867A7: db $00
-L0867A8: db $97
-L0867A9: db $FF
-L0867AA: db $2B
-L0867AB: db $DE
-L0867AC: db $06
-L0867AD: db $8A
-L0867AE: db $05
-L0867AF: db $88
-L0867B0: db $30
-L0867B1: db $97
-L0867B2: db $01
-L0867B3: db $A0
-L0867B4: db $09
-L0867B5: db $83
-L0867B6: db $35
-L0867B7: db $34
-L0867B8: db $E0
-L0867B9: db $35
-L0867BA: db $37
-L0867BB: db $39
-L0867BC: db $3B
-L0867BD: db $3C
-L0867BE: db $DE
-L0867BF: db $1B
-L0867C0: db $8A
-L0867C1: db $FB
-L0867C2: db $97
-L0867C3: db $FF
-L0867C4: db $3C
-L0867C5: db $E1
-L0867C6: db $8A
-L0867C7: db $05
-L0867C8: db $97
-L0867C9: db $01
-L0867CA: db $35
-L0867CB: db $E3
-L0867CC: db $38
-L0867CD: db $3F
-L0867CE: db $3C
-L0867CF: db $EB
-L0867D0: db $3A
-L0867D1: db $38
-L0867D2: db $E5
-L0867D3: db $37
-L0867D4: db $DE
-L0867D5: db $1B
-L0867D6: db $8A
-L0867D7: db $FB
-L0867D8: db $97
-L0867D9: db $FF
-L0867DA: db $37
-L0867DB: db $E1
-L0867DC: db $8A
-L0867DD: db $05
-L0867DE: db $97
-L0867DF: db $01
-L0867E0: db $33
-L0867E1: db $E3
-L0867E2: db $30
-L0867E3: db $33
-L0867E4: db $DE
-L0867E5: db $1E
-L0867E6: db $8A
-L0867E7: db $FB
-L0867E8: db $88
-L0867E9: db $00
-L0867EA: db $97
-L0867EB: db $FF
-L0867EC: db $33
-L0867ED: db $DE
-L0867EE: db $06
-L0867EF: db $8A
-L0867F0: db $05
-L0867F1: db $88
-L0867F2: db $30
-L0867F3: db $97
-L0867F4: db $01
-L0867F5: db $00
-L0867F6: db $E3
-L0867F7: db $32
-L0867F8: db $E5
-L0867F9: db $31
-L0867FA: db $DE
-L0867FB: db $1B
-L0867FC: db $8A
-L0867FD: db $FB
-L0867FE: db $97
-L0867FF: db $FF
-L086800: db $31
-L086801: db $E1
-L086802: db $8A
-L086803: db $05
-L086804: db $97
-L086805: db $01
-L086806: db $35
-L086807: db $E3
-L086808: db $38
-L086809: db $3F
-L08680A: db $3C
-L08680B: db $EB
-L08680C: db $3A
-L08680D: db $DE
-L08680E: db $15
-L08680F: db $8A
-L086810: db $FB
-L086811: db $97
-L086812: db $FF
-L086813: db $3A
-L086814: db $E1
-L086815: db $8A
-L086816: db $05
-L086817: db $97
-L086818: db $01
-L086819: db $38
-L08681A: db $E1
-L08681B: db $3A
-L08681C: db $3C
-L08681D: db $DE
-L08681E: db $48
-L08681F: db $8A
-L086820: db $FB
-L086821: db $88
-L086822: db $00
-L086823: db $97
-L086824: db $FF
-L086825: db $3C
-L086826: db $DE
-L086827: db $06
-L086828: db $8A
-L086829: db $05
-L08682A: db $88
-L08682B: db $30
-L08682C: db $97
-L08682D: db $01
-L08682E: db $00
-L08682F: db $E3
-L086830: db $33
-L086831: db $E1
-L086832: db $35
-L086833: db $37
-L086834: db $38
-L086835: db $3A
-L086836: db $DE
-L086837: db $1B
-L086838: db $8A
-L086839: db $FB
-L08683A: db $97
-L08683B: db $FF
-L08683C: db $3A
-L08683D: db $E1
-L08683E: db $8A
-L08683F: db $05
-L086840: db $97
-L086841: db $01
-L086842: db $33
-L086843: db $E3
-L086844: db $36
-L086845: db $3D
-L086846: db $3A
-L086847: db $EB
-L086848: db $38
-L086849: db $36
-L08684A: db $E5
-L08684B: db $35
-L08684C: db $DE
-L08684D: db $18
-L08684E: db $8A
-L08684F: db $FB
-L086850: db $88
-L086851: db $00
-L086852: db $97
-L086853: db $FF
-L086854: db $35
-L086855: db $DE
-L086856: db $06
-L086857: db $8A
-L086858: db $05
-L086859: db $88
-L08685A: db $30
-L08685B: db $97
-L08685C: db $01
-L08685D: db $31
-L08685E: db $E3
-L08685F: db $2E
-L086860: db $31
-L086861: db $DE
-L086862: db $1E
-L086863: db $8A
-L086864: db $FB
-L086865: db $88
-L086866: db $00
-L086867: db $97
-L086868: db $FF
-L086869: db $31
-L08686A: db $DE
-L08686B: db $06
-L08686C: db $8A
-L08686D: db $05
-L08686E: db $88
-L08686F: db $30
-L086870: db $97
-L086871: db $01
-L086872: db $00
-L086873: db $E3
-L086874: db $31
-L086875: db $E5
-L086876: db $30
-L086877: db $DE
-L086878: db $1B
-L086879: db $8A
-L08687A: db $FB
-L08687B: db $97
-L08687C: db $FF
-L08687D: db $30
-L08687E: db $E1
-L08687F: db $8A
-L086880: db $05
-L086881: db $97
-L086882: db $01
-L086883: db $32
-L086884: db $E3
-L086885: db $33
-L086886: db $2D
-L086887: db $DE
-L086888: db $19
-L086889: db $8A
-L08688A: db $FB
-L08688B: db $97
-L08688C: db $FF
-L08688D: db $2D
-L08688E: db $E1
-L08688F: db $8A
-L086890: db $05
-L086891: db $97
-L086892: db $01
-L086893: db $2E
-L086894: db $DF
-L086895: db $2F
-L086896: db $30
-L086897: db $DE
-L086898: db $16
-L086899: db $31
-L08689A: db $DF
-L08689B: db $32
-L08689C: db $33
-L08689D: db $DE
-L08689E: db $2A
-L08689F: db $8A
-L0868A0: db $FB
-L0868A1: db $88
-L0868A2: db $00
-L0868A3: db $97
-L0868A4: db $FF
-L0868A5: db $33
-L0868A6: db $DE
-L0868A7: db $06
-L0868A8: db $8A
-L0868A9: db $05
-L0868AA: db $88
-L0868AB: db $00
-L0868AC: db $97
-L0868AD: db $01
-L0868AE: db $32
-L0868AF: db $DE
-L0868B0: db $03
-L0868B1: db $8A
-L0868B2: db $FB
-L0868B3: db $97
-L0868B4: db $FF
-L0868B5: db $32
-L0868B6: db $E1
-L0868B7: db $8A
-L0868B8: db $05
-L0868B9: db $97
-L0868BA: db $01
-L0868BB: db $32
-L0868BC: db $DE
-L0868BD: db $03
-L0868BE: db $8A
-L0868BF: db $FB
-L0868C0: db $88
-L0868C1: db $00
-L0868C2: db $97
-L0868C3: db $FF
-L0868C4: db $32
-L0868C5: db $DE
-L0868C6: db $06
-L0868C7: db $8A
-L0868C8: db $05
-L0868C9: db $88
-L0868CA: db $00
-L0868CB: db $97
-L0868CC: db $01
-L0868CD: db $32
-L0868CE: db $DE
-L0868CF: db $03
-L0868D0: db $8A
-L0868D1: db $FB
-L0868D2: db $97
-L0868D3: db $FF
-L0868D4: db $32
-L0868D5: db $E1
-L0868D6: db $8A
-L0868D7: db $05
-L0868D8: db $97
-L0868D9: db $01
-L0868DA: db $32
-L0868DB: db $E5
-L0868DC: db $A0
-L0868DD: db $12
-L0868DE: db $26
-L0868DF: db $E1
-L0868E0: db $27
-L0868E1: db $E3
-L0868E2: db $29
-L0868E3: db $80
-L0868E4: db $05
-L0868E5: db $67
-SndData_0D_Ch2: db $A0
-L0868E7: db $01
-L0868E8: db $18
-L0868E9: db $EA
-L0868EA: db $18
-L0868EB: db $E1
-L0868EC: db $1F
-L0868ED: db $E5
-L0868EE: db $18
-L0868EF: db $EA
-L0868F0: db $18
-L0868F1: db $E1
-L0868F2: db $1F
-L0868F3: db $E5
-L0868F4: db $1B
-L0868F5: db $EA
-L0868F6: db $1B
-L0868F7: db $E1
-L0868F8: db $22
-L0868F9: db $E5
-L0868FA: db $1B
-L0868FB: db $EA
-L0868FC: db $1B
-L0868FD: db $E1
-L0868FE: db $22
-L0868FF: db $E3
-L086900: db $21
-L086901: db $20
-L086902: db $EA
-L086903: db $20
-L086904: db $E1
-L086905: db $1B
-L086906: db $E5
-L086907: db $20
-L086908: db $EA
-L086909: db $20
-L08690A: db $E1
-L08690B: db $1B
-L08690C: db $E3
-L08690D: db $20
-L08690E: db $1F
-L08690F: db $EA
-L086910: db $1F
-L086911: db $E1
-L086912: db $1A
-L086913: db $E5
-L086914: db $1F
-L086915: db $EA
-L086916: db $1F
-L086917: db $E1
-L086918: db $1A
-L086919: db $E3
-L08691A: db $1F
-L08691B: db $1D
-L08691C: db $EA
-L08691D: db $1D
-L08691E: db $E1
-L08691F: db $18
-L086920: db $E5
-L086921: db $1D
-L086922: db $EA
-L086923: db $1D
-L086924: db $E1
-L086925: db $18
-L086926: db $E3
-L086927: db $1D
-L086928: db $16
-L086929: db $EA
-L08692A: db $16
-L08692B: db $E1
-L08692C: db $1D
-L08692D: db $E5
-L08692E: db $16
-L08692F: db $EA
-L086930: db $16
-L086931: db $E1
-L086932: db $1D
-L086933: db $E3
-L086934: db $1C
-L086935: db $1B
-L086936: db $EA
-L086937: db $1B
-L086938: db $E1
-L086939: db $22
-L08693A: db $E5
-L08693B: db $1B
-L08693C: db $EA
-L08693D: db $1B
-L08693E: db $E1
-L08693F: db $22
-L086940: db $E3
-L086941: db $1B
-L086942: db $1A
-L086943: db $EA
-L086944: db $1A
-L086945: db $E1
-L086946: db $24
-L086947: db $25
-L086948: db $E3
-L086949: db $26
-L08694A: db $EA
-L08694B: db $25
-L08694C: db $E5
-L08694D: db $19
-L08694E: db $E3
-L08694F: db $18
-L086950: db $EA
-L086951: db $18
-L086952: db $E1
-L086953: db $1F
-L086954: db $E5
-L086955: db $18
-L086956: db $EA
-L086957: db $18
-L086958: db $E1
-L086959: db $1F
-L08695A: db $E5
-L08695B: db $16
-L08695C: db $EA
-L08695D: db $16
-L08695E: db $E1
-L08695F: db $1D
-L086960: db $E5
-L086961: db $16
-L086962: db $EA
-L086963: db $16
-L086964: db $E1
-L086965: db $20
-L086966: db $E0
-L086967: db $21
-L086968: db $22
-L086969: db $E4
-L08696A: db $20
-L08696B: db $EA
-L08696C: db $20
-L08696D: db $E1
-L08696E: db $1B
-L08696F: db $E5
-L086970: db $20
-L086971: db $EA
-L086972: db $20
-L086973: db $E1
-L086974: db $1B
-L086975: db $E3
-L086976: db $20
-L086977: db $1F
-L086978: db $EA
-L086979: db $1F
-L08697A: db $E1
-L08697B: db $1A
-L08697C: db $E5
-L08697D: db $1F
-L08697E: db $EA
-L08697F: db $1F
-L086980: db $E1
-L086981: db $1A
-L086982: db $E3
-L086983: db $1F
-L086984: db $1D
-L086985: db $EA
-L086986: db $1D
-L086987: db $E1
-L086988: db $18
-L086989: db $E5
-L08698A: db $1D
-L08698B: db $EA
-L08698C: db $1D
-L08698D: db $E1
-L08698E: db $18
-L08698F: db $E3
-L086990: db $1D
-L086991: db $16
-L086992: db $EA
-L086993: db $16
-L086994: db $E1
-L086995: db $1D
-L086996: db $E5
-L086997: db $16
-L086998: db $EA
-L086999: db $16
-L08699A: db $E1
-L08699B: db $1D
-L08699C: db $E5
-L08699D: db $18
-L08699E: db $EA
-L08699F: db $18
-L0869A0: db $E1
-L0869A1: db $1F
-L0869A2: db $E5
-L0869A3: db $18
-L0869A4: db $EA
-L0869A5: db $18
-L0869A6: db $E1
-L0869A7: db $1F
-L0869A8: db $E5
-L0869A9: db $18
-L0869AA: db $EA
-L0869AB: db $18
-L0869AC: db $E1
-L0869AD: db $1D
-L0869AE: db $1E
-L0869AF: db $1F
-L0869B0: db $E3
-L0869B1: db $26
-L0869B2: db $EA
-L0869B3: db $24
-L0869B4: db $E1
-L0869B5: db $24
-L0869B6: db $E3
-L0869B7: db $23
-L0869B8: db $16
-L0869B9: db $EA
-L0869BA: db $1D
-L0869BB: db $20
-L0869BC: db $E3
-L0869BD: db $22
-L0869BE: db $EA
-L0869BF: db $1D
-L0869C0: db $1D
-L0869C1: db $E1
-L0869C2: db $1C
-L0869C3: db $1B
-L0869C4: db $EA
-L0869C5: db $16
-L0869C6: db $19
-L0869C7: db $E3
-L0869C8: db $1B
-L0869C9: db $EA
-L0869CA: db $22
-L0869CB: db $1B
-L0869CC: db $E3
-L0869CD: db $1D
-L0869CE: db $EA
-L0869CF: db $18
-L0869D0: db $1B
-L0869D1: db $E3
-L0869D2: db $1D
-L0869D3: db $EA
-L0869D4: db $24
-L0869D5: db $27
-L0869D6: db $E1
-L0869D7: db $28
-L0869D8: db $29
-L0869D9: db $EA
-L0869DA: db $27
-L0869DB: db $24
-L0869DC: db $E3
-L0869DD: db $1D
-L0869DE: db $EA
-L0869DF: db $24
-L0869E0: db $23
-L0869E1: db $E3
-L0869E2: db $22
-L0869E3: db $EA
-L0869E4: db $1D
-L0869E5: db $20
-L0869E6: db $E3
-L0869E7: db $22
-L0869E8: db $EA
-L0869E9: db $1D
-L0869EA: db $1C
-L0869EB: db $E3
-L0869EC: db $1B
-L0869ED: db $EA
-L0869EE: db $16
-L0869EF: db $19
-L0869F0: db $E3
-L0869F1: db $1B
-L0869F2: db $EA
-L0869F3: db $22
-L0869F4: db $1B
-L0869F5: db $E3
-L0869F6: db $20
-L0869F7: db $EA
-L0869F8: db $1B
-L0869F9: db $16
-L0869FA: db $E3
-L0869FB: db $14
-L0869FC: db $EA
-L0869FD: db $1B
-L0869FE: db $22
-L0869FF: db $E3
-L086A00: db $20
-L086A01: db $EA
-L086A02: db $1F
-L086A03: db $1B
-L086A04: db $E3
-L086A05: db $14
-L086A06: db $EA
-L086A07: db $13
-L086A08: db $1B
-L086A09: db $E3
-L086A0A: db $20
-L086A0B: db $EA
-L086A0C: db $1B
-L086A0D: db $1E
-L086A0E: db $E3
-L086A0F: db $20
-L086A10: db $EA
-L086A11: db $27
-L086A12: db $1B
-L086A13: db $E1
-L086A14: db $1A
-L086A15: db $19
-L086A16: db $EA
-L086A17: db $14
-L086A18: db $17
-L086A19: db $E3
-L086A1A: db $19
-L086A1B: db $EA
-L086A1C: db $20
-L086A1D: db $19
-L086A1E: db $E3
-L086A1F: db $1B
-L086A20: db $EA
-L086A21: db $16
-L086A22: db $19
-L086A23: db $E3
-L086A24: db $1B
-L086A25: db $EA
-L086A26: db $22
-L086A27: db $25
-L086A28: db $E3
-L086A29: db $27
-L086A2A: db $EA
-L086A2B: db $25
-L086A2C: db $22
-L086A2D: db $E3
-L086A2E: db $1B
-L086A2F: db $EA
-L086A30: db $25
-L086A31: db $22
-L086A32: db $E3
-L086A33: db $21
-L086A34: db $EA
-L086A35: db $1B
-L086A36: db $1F
-L086A37: db $E3
-L086A38: db $21
-L086A39: db $EA
-L086A3A: db $27
-L086A3B: db $1F
-L086A3C: db $E3
-L086A3D: db $21
-L086A3E: db $EA
-L086A3F: db $1B
-L086A40: db $1F
-L086A41: db $E3
-L086A42: db $21
-L086A43: db $EA
-L086A44: db $1B
-L086A45: db $21
-L086A46: db $E3
-L086A47: db $22
-L086A48: db $EA
-L086A49: db $1D
-L086A4A: db $20
-L086A4B: db $E3
-L086A4C: db $22
-L086A4D: db $EA
-L086A4E: db $29
-L086A4F: db $22
-L086A50: db $E3
-L086A51: db $1F
-L086A52: db $1F
-L086A53: db $EA
-L086A54: db $1F
-L086A55: db $E3
-L086A56: db $1F
-L086A57: db $E5
-L086A58: db $1A
-L086A59: db $E1
-L086A5A: db $1F
-L086A5B: db $E3
-L086A5C: db $13
-L086A5D: db $80
-L086A5E: db $E6
-L086A5F: db $68
-SndData_0D_Ch1: db $88
-L086A61: db $30
-L086A62: db $A0
-L086A63: db $40
-L086A64: db $27
-L086A65: db $EA
-L086A66: db $88
-L086A67: db $33
-L086A68: db $A0
-L086A69: db $00
-L086A6A: db $33
-L086A6B: db $E1
-L086A6C: db $27
-L086A6D: db $33
-L086A6E: db $27
-L086A6F: db $E3
-L086A70: db $33
-L086A71: db $E1
-L086A72: db $27
-L086A73: db $E3
-L086A74: db $33
-L086A75: db $E1
-L086A76: db $27
-L086A77: db $E3
-L086A78: db $33
-L086A79: db $88
-L086A7A: db $30
-L086A7B: db $A0
-L086A7C: db $40
-L086A7D: db $25
-L086A7E: db $EA
-L086A7F: db $88
-L086A80: db $33
-L086A81: db $A0
-L086A82: db $00
-L086A83: db $31
-L086A84: db $E1
-L086A85: db $25
-L086A86: db $31
-L086A87: db $25
-L086A88: db $E3
-L086A89: db $31
-L086A8A: db $E1
-L086A8B: db $2B
-L086A8C: db $E3
-L086A8D: db $31
-L086A8E: db $E1
-L086A8F: db $2B
-L086A90: db $E3
-L086A91: db $31
-L086A92: db $88
-L086A93: db $30
-L086A94: db $A0
-L086A95: db $40
-L086A96: db $24
-L086A97: db $EA
-L086A98: db $88
-L086A99: db $33
-L086A9A: db $A0
-L086A9B: db $00
-L086A9C: db $33
-L086A9D: db $E1
-L086A9E: db $24
-L086A9F: db $33
-L086AA0: db $24
-L086AA1: db $E3
-L086AA2: db $33
-L086AA3: db $E1
-L086AA4: db $24
-L086AA5: db $E3
-L086AA6: db $33
-L086AA7: db $E1
-L086AA8: db $24
-L086AA9: db $E3
-L086AAA: db $33
-L086AAB: db $88
-L086AAC: db $30
-L086AAD: db $A0
-L086AAE: db $40
-L086AAF: db $22
-L086AB0: db $EA
-L086AB1: db $88
-L086AB2: db $33
-L086AB3: db $A0
-L086AB4: db $00
-L086AB5: db $35
-L086AB6: db $E1
-L086AB7: db $22
-L086AB8: db $32
-L086AB9: db $22
-L086ABA: db $E3
-L086ABB: db $32
-L086ABC: db $E1
-L086ABD: db $26
-L086ABE: db $E3
-L086ABF: db $32
-L086AC0: db $E1
-L086AC1: db $26
-L086AC2: db $E3
-L086AC3: db $35
-L086AC4: db $88
-L086AC5: db $30
-L086AC6: db $A0
-L086AC7: db $40
-L086AC8: db $27
-L086AC9: db $EA
-L086ACA: db $88
-L086ACB: db $33
-L086ACC: db $A0
-L086ACD: db $00
-L086ACE: db $33
-L086ACF: db $E1
-L086AD0: db $27
-L086AD1: db $33
-L086AD2: db $27
-L086AD3: db $E3
-L086AD4: db $33
-L086AD5: db $E1
-L086AD6: db $27
-L086AD7: db $E3
-L086AD8: db $33
-L086AD9: db $E1
-L086ADA: db $27
-L086ADB: db $E3
-L086ADC: db $33
-L086ADD: db $88
-L086ADE: db $30
-L086ADF: db $A0
-L086AE0: db $40
-L086AE1: db $27
-L086AE2: db $EA
-L086AE3: db $88
-L086AE4: db $33
-L086AE5: db $A0
-L086AE6: db $00
-L086AE7: db $33
-L086AE8: db $E1
-L086AE9: db $27
-L086AEA: db $33
-L086AEB: db $27
-L086AEC: db $E3
-L086AED: db $88
-L086AEE: db $30
-L086AEF: db $A0
-L086AF0: db $40
-L086AF1: db $2B
-L086AF2: db $EA
-L086AF3: db $27
-L086AF4: db $22
-L086AF5: db $E3
-L086AF6: db $22
-L086AF7: db $E5
-L086AF8: db $A0
-L086AF9: db $00
-L086AFA: db $88
-L086AFB: db $33
-L086AFC: db $3E
-L086AFD: db $E1
-L086AFE: db $3E
-L086AFF: db $3C
-L086B00: db $3E
-L086B01: db $E5
-L086B02: db $37
-L086B03: db $E3
-L086B04: db $3A
-L086B05: db $E1
-L086B06: db $37
-L086B07: db $3A
-L086B08: db $3C
-L086B09: db $EA
-L086B0A: db $35
-L086B0B: db $E1
-L086B0C: db $39
-L086B0D: db $3C
-L086B0E: db $E3
-L086B0F: db $3E
-L086B10: db $EA
-L086B11: db $88
-L086B12: db $30
-L086B13: db $8A
-L086B14: db $FF
-L086B15: db $2F
-L086B16: db $E5
-L086B17: db $2F
-L086B18: db $E3
-L086B19: db $32
-L086B1A: db $DE
-L086B1B: db $2D
-L086B1C: db $8A
-L086B1D: db $FB
-L086B1E: db $97
-L086B1F: db $FF
-L086B20: db $32
-L086B21: db $E1
-L086B22: db $8A
-L086B23: db $05
-L086B24: db $97
-L086B25: db $01
-L086B26: db $30
-L086B27: db $E7
-L086B28: db $29
-L086B29: db $2E
-L086B2A: db $DE
-L086B2B: db $15
-L086B2C: db $8A
-L086B2D: db $FB
-L086B2E: db $97
-L086B2F: db $FF
-L086B30: db $2E
-L086B31: db $E1
-L086B32: db $8A
-L086B33: db $05
-L086B34: db $97
-L086B35: db $01
-L086B36: db $2E
-L086B37: db $EA
-L086B38: db $30
-L086B39: db $31
-L086B3A: db $E3
-L086B3B: db $32
-L086B3C: db $DE
-L086B3D: db $15
-L086B3E: db $8A
-L086B3F: db $FB
-L086B40: db $97
-L086B41: db $FF
-L086B42: db $32
-L086B43: db $E1
-L086B44: db $8A
-L086B45: db $05
-L086B46: db $97
-L086B47: db $01
-L086B48: db $2B
-L086B49: db $EA
-L086B4A: db $26
-L086B4B: db $32
-L086B4C: db $E3
-L086B4D: db $33
-L086B4E: db $DE
-L086B4F: db $42
-L086B50: db $8A
-L086B51: db $FB
-L086B52: db $88
-L086B53: db $00
-L086B54: db $97
-L086B55: db $FF
-L086B56: db $33
-L086B57: db $DE
-L086B58: db $06
-L086B59: db $8A
-L086B5A: db $05
-L086B5B: db $88
-L086B5C: db $30
-L086B5D: db $97
-L086B5E: db $01
-L086B5F: db $30
-L086B60: db $DE
-L086B61: db $18
-L086B62: db $8A
-L086B63: db $FB
-L086B64: db $88
-L086B65: db $00
-L086B66: db $97
-L086B67: db $FF
-L086B68: db $30
-L086B69: db $DE
-L086B6A: db $06
-L086B6B: db $8A
-L086B6C: db $05
-L086B6D: db $88
-L086B6E: db $00
-L086B6F: db $97
-L086B70: db $01
-L086B71: db $A0
-L086B72: db $40
-L086B73: db $88
-L086B74: db $33
-L086B75: db $8A
-L086B76: db $01
-L086B77: db $47
-L086B78: db $E1
-L086B79: db $48
-L086B7A: db $47
-L086B7B: db $43
-L086B7C: db $E3
-L086B7D: db $40
-L086B7E: db $E5
-L086B7F: db $3B
-L086B80: db $E1
-L086B81: db $3C
-L086B82: db $3E
-L086B83: db $43
-L086B84: db $E3
-L086B85: db $41
-L086B86: db $EA
-L086B87: db $40
-L086B88: db $E3
-L086B89: db $3C
-L086B8A: db $E1
-L086B8B: db $88
-L086B8C: db $30
-L086B8D: db $37
-L086B8E: db $DE
-L086B8F: db $18
-L086B90: db $8A
-L086B91: db $FB
-L086B92: db $88
-L086B93: db $00
-L086B94: db $97
-L086B95: db $FF
-L086B96: db $37
-L086B97: db $DE
-L086B98: db $06
-L086B99: db $8A
-L086B9A: db $05
-L086B9B: db $88
-L086B9C: db $30
-L086B9D: db $97
-L086B9E: db $01
-L086B9F: db $88
-L086BA0: db $30
-L086BA1: db $89
-L086BA2: db $F4
-L086BA3: db $8A
-L086BA4: db $02
-L086BA5: db $38
-L086BA6: db $E5
-L086BA7: db $88
-L086BA8: db $33
-L086BA9: db $35
-L086BAA: db $E1
-L086BAB: db $35
-L086BAC: db $E3
-L086BAD: db $35
-L086BAE: db $EA
-L086BAF: db $88
-L086BB0: db $30
-L086BB1: db $30
-L086BB2: db $E3
-L086BB3: db $35
-L086BB4: db $38
-L086BB5: db $37
-L086BB6: db $E5
-L086BB7: db $88
-L086BB8: db $33
-L086BB9: db $35
-L086BBA: db $E1
-L086BBB: db $35
-L086BBC: db $88
-L086BBD: db $30
-L086BBE: db $31
-L086BBF: db $EB
-L086BC0: db $30
-L086BC1: db $E5
-L086BC2: db $2E
-L086BC3: db $88
-L086BC4: db $33
-L086BC5: db $33
-L086BC6: db $E1
-L086BC7: db $33
-L086BC8: db $E3
-L086BC9: db $33
-L086BCA: db $EA
-L086BCB: db $88
-L086BCC: db $30
-L086BCD: db $2E
-L086BCE: db $E3
-L086BCF: db $2E
-L086BD0: db $2B
-L086BD1: db $DE
-L086BD2: db $1E
-L086BD3: db $30
-L086BD4: db $DE
-L086BD5: db $15
-L086BD6: db $8A
-L086BD7: db $FB
-L086BD8: db $97
-L086BD9: db $FF
-L086BDA: db $30
-L086BDB: db $E1
-L086BDC: db $8A
-L086BDD: db $05
-L086BDE: db $97
-L086BDF: db $01
-L086BE0: db $2C
-L086BE1: db $E5
-L086BE2: db $88
-L086BE3: db $33
-L086BE4: db $30
-L086BE5: db $E1
-L086BE6: db $30
-L086BE7: db $E3
-L086BE8: db $30
-L086BE9: db $EA
-L086BEA: db $88
-L086BEB: db $30
-L086BEC: db $31
-L086BED: db $E3
-L086BEE: db $35
-L086BEF: db $38
-L086BF0: db $38
-L086BF1: db $EB
-L086BF2: db $35
-L086BF3: db $E7
-L086BF4: db $31
-L086BF5: db $E3
-L086BF6: db $30
-L086BF7: db $DE
-L086BF8: db $0A
-L086BF9: db $35
-L086BFA: db $DF
-L086BFB: db $36
-L086BFC: db $37
-L086BFD: db $DE
-L086BFE: db $0F
-L086BFF: db $8A
-L086C00: db $FB
-L086C01: db $97
-L086C02: db $FF
-L086C03: db $37
-L086C04: db $E1
-L086C05: db $8A
-L086C06: db $05
-L086C07: db $97
-L086C08: db $01
-L086C09: db $3A
-L086C0A: db $DE
-L086C0B: db $03
-L086C0C: db $8A
-L086C0D: db $FB
-L086C0E: db $97
-L086C0F: db $FF
-L086C10: db $3A
-L086C11: db $E1
-L086C12: db $8A
-L086C13: db $05
-L086C14: db $97
-L086C15: db $01
-L086C16: db $38
-L086C17: db $E3
-L086C18: db $37
-L086C19: db $E5
-L086C1A: db $33
-L086C1B: db $E4
-L086C1C: db $32
-L086C1D: db $E0
-L086C1E: db $31
-L086C1F: db $88
-L086C20: db $37
-L086C21: db $30
-L086C22: db $EC
-L086C23: db $88
-L086C24: db $30
-L086C25: db $2A
-L086C26: db $E5
-L086C27: db $88
-L086C28: db $33
-L086C29: db $36
-L086C2A: db $E1
-L086C2B: db $36
-L086C2C: db $E3
-L086C2D: db $36
-L086C2E: db $EA
-L086C2F: db $88
-L086C30: db $30
-L086C31: db $2A
-L086C32: db $E3
-L086C33: db $2A
-L086C34: db $2A
-L086C35: db $27
-L086C36: db $EB
-L086C37: db $2A
-L086C38: db $2F
-L086C39: db $E5
-L086C3A: db $31
-L086C3B: db $88
-L086C3C: db $33
-L086C3D: db $31
-L086C3E: db $E1
-L086C3F: db $31
-L086C40: db $E3
-L086C41: db $31
-L086C42: db $EA
-L086C43: db $88
-L086C44: db $30
-L086C45: db $29
-L086C46: db $E3
-L086C47: db $25
-L086C48: db $29
-L086C49: db $DE
-L086C4A: db $1E
-L086C4B: db $2C
-L086C4C: db $DE
-L086C4D: db $15
-L086C4E: db $8A
-L086C4F: db $FB
-L086C50: db $97
-L086C51: db $FF
-L086C52: db $2C
-L086C53: db $E1
-L086C54: db $8A
-L086C55: db $05
-L086C56: db $97
-L086C57: db $01
-L086C58: db $2B
-L086C59: db $DE
-L086C5A: db $2A
-L086C5B: db $8A
-L086C5C: db $FB
-L086C5D: db $88
-L086C5E: db $00
-L086C5F: db $97
-L086C60: db $FF
-L086C61: db $2B
-L086C62: db $DE
-L086C63: db $06
-L086C64: db $8A
-L086C65: db $05
-L086C66: db $88
-L086C67: db $30
-L086C68: db $97
-L086C69: db $01
-L086C6A: db $27
-L086C6B: db $DE
-L086C6C: db $30
-L086C6D: db $8A
-L086C6E: db $FB
-L086C6F: db $88
-L086C70: db $00
-L086C71: db $97
-L086C72: db $FF
-L086C73: db $27
-L086C74: db $DE
-L086C75: db $06
-L086C76: db $8A
-L086C77: db $05
-L086C78: db $88
-L086C79: db $30
-L086C7A: db $97
-L086C7B: db $01
-L086C7C: db $88
-L086C7D: db $33
-L086C7E: db $89
-L086C7F: db $0C
-L086C80: db $37
-L086C81: db $E1
-L086C82: db $38
-L086C83: db $E3
-L086C84: db $33
-L086C85: db $EA
-L086C86: db $33
-L086C87: db $E1
-L086C88: db $30
-L086C89: db $E3
-L086C8A: db $30
-L086C8B: db $2C
-L086C8C: db $E1
-L086C8D: db $30
-L086C8E: db $33
-L086C8F: db $88
-L086C90: db $00
-L086C91: db $35
-L086C92: db $DE
-L086C93: db $03
-L086C94: db $8A
-L086C95: db $FB
-L086C96: db $97
-L086C97: db $FF
-L086C98: db $35
-L086C99: db $E1
-L086C9A: db $8A
-L086C9B: db $05
-L086C9C: db $97
-L086C9D: db $01
-L086C9E: db $35
-L086C9F: db $DE
-L086CA0: db $03
-L086CA1: db $8A
-L086CA2: db $FB
-L086CA3: db $88
-L086CA4: db $00
-L086CA5: db $97
-L086CA6: db $FF
-L086CA7: db $35
-L086CA8: db $DE
-L086CA9: db $06
-L086CAA: db $8A
-L086CAB: db $05
-L086CAC: db $88
-L086CAD: db $00
-L086CAE: db $97
-L086CAF: db $01
-L086CB0: db $35
-L086CB1: db $DE
-L086CB2: db $03
-L086CB3: db $8A
-L086CB4: db $FB
-L086CB5: db $97
-L086CB6: db $FF
-L086CB7: db $35
-L086CB8: db $E1
-L086CB9: db $8A
-L086CBA: db $05
-L086CBB: db $97
-L086CBC: db $01
-L086CBD: db $35
-L086CBE: db $DE
-L086CBF: db $0C
-L086CC0: db $8A
-L086CC1: db $FB
-L086CC2: db $88
-L086CC3: db $00
-L086CC4: db $97
-L086CC5: db $FF
-L086CC6: db $35
-L086CC7: db $DE
-L086CC8: db $06
-L086CC9: db $8A
-L086CCA: db $05
-L086CCB: db $88
-L086CCC: db $00
-L086CCD: db $97
-L086CCE: db $01
-L086CCF: db $00
-L086CD0: db $EA
-L086CD1: db $8A
-L086CD2: db $FE
-L086CD3: db $80
-L086CD4: db $60
-L086CD5: db $6A
-SndData_0D_Ch4: db $9A
-L086CD7: db $23
-L086CD8: db $6D
-L086CD9: db $C1
-L086CDA: db $E1
-L086CDB: db $C2
-L086CDC: db $C2
-L086CDD: db $C0
-L086CDE: db $C1
-L086CDF: db $C0
-L086CE0: db $C2
-L086CE1: db $C0
-L086CE2: db $C2
-L086CE3: db $C1
-L086CE4: db $C0
-L086CE5: db $E3
-L086CE6: db $C2
-L086CE7: db $C0
-L086CE8: db $9A
-L086CE9: db $23
-L086CEA: db $6D
-L086CEB: db $C1
-L086CEC: db $E1
-L086CED: db $C2
-L086CEE: db $C2
-L086CEF: db $C0
-L086CF0: db $C1
-L086CF1: db $C0
-L086CF2: db $C2
-L086CF3: db $C0
-L086CF4: db $C2
-L086CF5: db $C1
-L086CF6: db $C0
-L086CF7: db $E3
-L086CF8: db $C2
-L086CF9: db $C0
-L086CFA: db $9A
-L086CFB: db $23
-L086CFC: db $6D
-L086CFD: db $C1
-L086CFE: db $E1
-L086CFF: db $C2
-L086D00: db $C2
-L086D01: db $C0
-L086D02: db $C1
-L086D03: db $C0
-L086D04: db $C2
-L086D05: db $C0
-L086D06: db $C2
-L086D07: db $C1
-L086D08: db $C0
-L086D09: db $E3
-L086D0A: db $C2
-L086D0B: db $C0
-L086D0C: db $9A
-L086D0D: db $23
-L086D0E: db $6D
-L086D0F: db $C1
-L086D10: db $E1
-L086D11: db $C2
-L086D12: db $C0
-L086D13: db $E3
-L086D14: db $C1
-L086D15: db $E1
-L086D16: db $C0
-L086D17: db $C2
-L086D18: db $C0
-L086D19: db $E5
-L086D1A: db $C1
-L086D1B: db $E1
-L086D1C: db $C2
-L086D1D: db $C0
-L086D1E: db $C0
-L086D1F: db $E3
-L086D20: db $80
-L086D21: db $D6
-L086D22: db $6C
-L086D23: db $8D
-L086D24: db $24
-L086D25: db $07
-L086D26: db $C1
-L086D27: db $E1
-L086D28: db $C2
-L086D29: db $C2
-L086D2A: db $C2
-L086D2B: db $C0
-L086D2C: db $C2
-L086D2D: db $C2
-L086D2E: db $C2
-L086D2F: db $C1
-L086D30: db $C2
-L086D31: db $C2
-L086D32: db $C0
-L086D33: db $C1
-L086D34: db $C2
-L086D35: db $C0
-L086D36: db $E3
-L086D37: db $81
-L086D38: db $24
-L086D39: db $26
-L086D3A: db $6D
-L086D3B: db $9B
+SndData_0D_Ch3:
+	snd_wave WAVE_12
+	snd_instrument INSTR_30
+	snd_vibrato VIBRATO_36
+	snd_note $2B, NOTELEN_CUSTOM, $2D
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_18
+	snd_note $2E
+	snd_note $2B, NOTELEN_CUSTOM, $2A
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_18
+	snd_note $2E
+	snd_note $2B, NOTELEN_CUSTOM, $41
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_01
+	snd_note $2F
+	snd_note $30, NOTELEN_08
+	snd_note $2E, NOTELEN_09
+	snd_note $27, NOTELEN_06
+	snd_note $2B, NOTELEN_CUSTOM, $48
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_0C
+	snd_note $29, NOTELEN_06
+	snd_note $2B, NOTELEN_CUSTOM, $2D
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_18
+	snd_note $2E
+	snd_note $2B, NOTELEN_CUSTOM, $2A
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_CUSTOM, $16
+	snd_note $2B, NOTELEN_01
+	snd_note $2C
+	snd_note $2D
+	snd_note $2E, NOTELEN_CUSTOM, $17
+	snd_note $2B, NOTELEN_CUSTOM, $42
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_18
+	snd_note $2B, NOTELEN_CUSTOM, $50
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_wave WAVE_09
+	snd_vibrato VIBRATO_35
+	snd_note $34, NOTELEN_02
+	snd_note $35
+	snd_note $37
+	snd_note $39
+	snd_note $3B
+	snd_note $3C, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_06
+	snd_note $38
+	snd_note $3F
+	snd_note $3C, NOTELEN_12
+	snd_note $3A
+	snd_note $38, NOTELEN_0C
+	snd_note $37, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_06
+	snd_note $30
+	snd_note $33, NOTELEN_CUSTOM, $1E
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $32, NOTELEN_0C
+	snd_note $31, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_06
+	snd_note $38
+	snd_note $3F
+	snd_note $3C, NOTELEN_12
+	snd_note $3A, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $38, NOTELEN_03
+	snd_note $3A
+	snd_note $3C, NOTELEN_CUSTOM, $48
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $3C, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $35
+	snd_note $37
+	snd_note $38
+	snd_note $3A, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $33, NOTELEN_06
+	snd_note $36
+	snd_note $3D
+	snd_note $3A, NOTELEN_12
+	snd_note $38
+	snd_note $36, NOTELEN_0C
+	snd_note $35, NOTELEN_CUSTOM, $18
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $31, NOTELEN_06
+	snd_note $2E
+	snd_note $31, NOTELEN_CUSTOM, $1E
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $31, NOTELEN_0C
+	snd_note $30, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $33
+	snd_note $2D, NOTELEN_CUSTOM, $19
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_01
+	snd_note $2F
+	snd_note $30, NOTELEN_CUSTOM, $16
+	snd_note $31, NOTELEN_01
+	snd_note $32
+	snd_note $33, NOTELEN_CUSTOM, $2A
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $32, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $32, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $32, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_0C
+	snd_wave WAVE_12
+	snd_note $26, NOTELEN_03
+	snd_note $27, NOTELEN_06
+	snd_note $29
+	snd_jp SndData_0D_Ch3
+SndData_0D_Ch2:
+	snd_duty SNDDUTY_12, $01
+	snd_note $18, NOTELEN_09
+	snd_note $18, NOTELEN_03
+	snd_note $1F, NOTELEN_0C
+	snd_note $18, NOTELEN_09
+	snd_note $18, NOTELEN_03
+	snd_note $1F, NOTELEN_0C
+	snd_note $1B, NOTELEN_09
+	snd_note $1B, NOTELEN_03
+	snd_note $22, NOTELEN_0C
+	snd_note $1B, NOTELEN_09
+	snd_note $1B, NOTELEN_03
+	snd_note $22, NOTELEN_06
+	snd_note $21
+	snd_note $20, NOTELEN_09
+	snd_note $20, NOTELEN_03
+	snd_note $1B, NOTELEN_0C
+	snd_note $20, NOTELEN_09
+	snd_note $20, NOTELEN_03
+	snd_note $1B, NOTELEN_06
+	snd_note $20
+	snd_note $1F, NOTELEN_09
+	snd_note $1F, NOTELEN_03
+	snd_note $1A, NOTELEN_0C
+	snd_note $1F, NOTELEN_09
+	snd_note $1F, NOTELEN_03
+	snd_note $1A, NOTELEN_06
+	snd_note $1F
+	snd_note $1D, NOTELEN_09
+	snd_note $1D, NOTELEN_03
+	snd_note $18, NOTELEN_0C
+	snd_note $1D, NOTELEN_09
+	snd_note $1D, NOTELEN_03
+	snd_note $18, NOTELEN_06
+	snd_note $1D
+	snd_note $16, NOTELEN_09
+	snd_note $16, NOTELEN_03
+	snd_note $1D, NOTELEN_0C
+	snd_note $16, NOTELEN_09
+	snd_note $16, NOTELEN_03
+	snd_note $1D, NOTELEN_06
+	snd_note $1C
+	snd_note $1B, NOTELEN_09
+	snd_note $1B, NOTELEN_03
+	snd_note $22, NOTELEN_0C
+	snd_note $1B, NOTELEN_09
+	snd_note $1B, NOTELEN_03
+	snd_note $22, NOTELEN_06
+	snd_note $1B
+	snd_note $1A, NOTELEN_09
+	snd_note $1A, NOTELEN_03
+	snd_note $24
+	snd_note $25, NOTELEN_06
+	snd_note $26, NOTELEN_09
+	snd_note $25, NOTELEN_0C
+	snd_note $19, NOTELEN_06
+	snd_note $18, NOTELEN_09
+	snd_note $18, NOTELEN_03
+	snd_note $1F, NOTELEN_0C
+	snd_note $18, NOTELEN_09
+	snd_note $18, NOTELEN_03
+	snd_note $1F, NOTELEN_0C
+	snd_note $16, NOTELEN_09
+	snd_note $16, NOTELEN_03
+	snd_note $1D, NOTELEN_0C
+	snd_note $16, NOTELEN_09
+	snd_note $16, NOTELEN_03
+	snd_note $20, NOTELEN_02
+	snd_note $21
+	snd_note $22, NOTELEN_08
+	snd_note $20, NOTELEN_09
+	snd_note $20, NOTELEN_03
+	snd_note $1B, NOTELEN_0C
+	snd_note $20, NOTELEN_09
+	snd_note $20, NOTELEN_03
+	snd_note $1B, NOTELEN_06
+	snd_note $20
+	snd_note $1F, NOTELEN_09
+	snd_note $1F, NOTELEN_03
+	snd_note $1A, NOTELEN_0C
+	snd_note $1F, NOTELEN_09
+	snd_note $1F, NOTELEN_03
+	snd_note $1A, NOTELEN_06
+	snd_note $1F
+	snd_note $1D, NOTELEN_09
+	snd_note $1D, NOTELEN_03
+	snd_note $18, NOTELEN_0C
+	snd_note $1D, NOTELEN_09
+	snd_note $1D, NOTELEN_03
+	snd_note $18, NOTELEN_06
+	snd_note $1D
+	snd_note $16, NOTELEN_09
+	snd_note $16, NOTELEN_03
+	snd_note $1D, NOTELEN_0C
+	snd_note $16, NOTELEN_09
+	snd_note $16, NOTELEN_03
+	snd_note $1D, NOTELEN_0C
+	snd_note $18, NOTELEN_09
+	snd_note $18, NOTELEN_03
+	snd_note $1F, NOTELEN_0C
+	snd_note $18, NOTELEN_09
+	snd_note $18, NOTELEN_03
+	snd_note $1F, NOTELEN_0C
+	snd_note $18, NOTELEN_09
+	snd_note $18, NOTELEN_03
+	snd_note $1D
+	snd_note $1E
+	snd_note $1F, NOTELEN_06
+	snd_note $26, NOTELEN_09
+	snd_note $24, NOTELEN_03
+	snd_note $24, NOTELEN_06
+	snd_note $23
+	snd_note $16, NOTELEN_09
+	snd_note $1D
+	snd_note $20, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $1D
+	snd_note $1D, NOTELEN_03
+	snd_note $1C
+	snd_note $1B, NOTELEN_09
+	snd_note $16
+	snd_note $19, NOTELEN_06
+	snd_note $1B, NOTELEN_09
+	snd_note $22
+	snd_note $1B, NOTELEN_06
+	snd_note $1D, NOTELEN_09
+	snd_note $18
+	snd_note $1B, NOTELEN_06
+	snd_note $1D, NOTELEN_09
+	snd_note $24
+	snd_note $27, NOTELEN_03
+	snd_note $28
+	snd_note $29, NOTELEN_09
+	snd_note $27
+	snd_note $24, NOTELEN_06
+	snd_note $1D, NOTELEN_09
+	snd_note $24
+	snd_note $23, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $1D
+	snd_note $20, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $1D
+	snd_note $1C, NOTELEN_06
+	snd_note $1B, NOTELEN_09
+	snd_note $16
+	snd_note $19, NOTELEN_06
+	snd_note $1B, NOTELEN_09
+	snd_note $22
+	snd_note $1B, NOTELEN_06
+	snd_note $20, NOTELEN_09
+	snd_note $1B
+	snd_note $16, NOTELEN_06
+	snd_note $14, NOTELEN_09
+	snd_note $1B
+	snd_note $22, NOTELEN_06
+	snd_note $20, NOTELEN_09
+	snd_note $1F
+	snd_note $1B, NOTELEN_06
+	snd_note $14, NOTELEN_09
+	snd_note $13
+	snd_note $1B, NOTELEN_06
+	snd_note $20, NOTELEN_09
+	snd_note $1B
+	snd_note $1E, NOTELEN_06
+	snd_note $20, NOTELEN_09
+	snd_note $27
+	snd_note $1B, NOTELEN_03
+	snd_note $1A
+	snd_note $19, NOTELEN_09
+	snd_note $14
+	snd_note $17, NOTELEN_06
+	snd_note $19, NOTELEN_09
+	snd_note $20
+	snd_note $19, NOTELEN_06
+	snd_note $1B, NOTELEN_09
+	snd_note $16
+	snd_note $19, NOTELEN_06
+	snd_note $1B, NOTELEN_09
+	snd_note $22
+	snd_note $25, NOTELEN_06
+	snd_note $27, NOTELEN_09
+	snd_note $25
+	snd_note $22, NOTELEN_06
+	snd_note $1B, NOTELEN_09
+	snd_note $25
+	snd_note $22, NOTELEN_06
+	snd_note $21, NOTELEN_09
+	snd_note $1B
+	snd_note $1F, NOTELEN_06
+	snd_note $21, NOTELEN_09
+	snd_note $27
+	snd_note $1F, NOTELEN_06
+	snd_note $21, NOTELEN_09
+	snd_note $1B
+	snd_note $1F, NOTELEN_06
+	snd_note $21, NOTELEN_09
+	snd_note $1B
+	snd_note $21, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $1D
+	snd_note $20, NOTELEN_06
+	snd_note $22, NOTELEN_09
+	snd_note $29
+	snd_note $22, NOTELEN_06
+	snd_note $1F
+	snd_note $1F, NOTELEN_09
+	snd_note $1F, NOTELEN_06
+	snd_note $1F, NOTELEN_0C
+	snd_note $1A, NOTELEN_03
+	snd_note $1F, NOTELEN_06
+	snd_note $13
+	snd_jp SndData_0D_Ch2
+SndData_0D_Ch1:
+	snd_instrument INSTR_30
+	snd_duty SNDDUTY_25, $00
+	snd_note $27, NOTELEN_09
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_12, $00
+	snd_note $33, NOTELEN_03
+	snd_note $27
+	snd_note $33
+	snd_note $27, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $27, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $27, NOTELEN_06
+	snd_note $33
+	snd_instrument INSTR_30
+	snd_duty SNDDUTY_25, $00
+	snd_note $25, NOTELEN_09
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_12, $00
+	snd_note $31, NOTELEN_03
+	snd_note $25
+	snd_note $31
+	snd_note $25, NOTELEN_06
+	snd_note $31, NOTELEN_03
+	snd_note $2B, NOTELEN_06
+	snd_note $31, NOTELEN_03
+	snd_note $2B, NOTELEN_06
+	snd_note $31
+	snd_instrument INSTR_30
+	snd_duty SNDDUTY_25, $00
+	snd_note $24, NOTELEN_09
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_12, $00
+	snd_note $33, NOTELEN_03
+	snd_note $24
+	snd_note $33
+	snd_note $24, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $24, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $24, NOTELEN_06
+	snd_note $33
+	snd_instrument INSTR_30
+	snd_duty SNDDUTY_25, $00
+	snd_note $22, NOTELEN_09
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_12, $00
+	snd_note $35, NOTELEN_03
+	snd_note $22
+	snd_note $32
+	snd_note $22, NOTELEN_06
+	snd_note $32, NOTELEN_03
+	snd_note $26, NOTELEN_06
+	snd_note $32, NOTELEN_03
+	snd_note $26, NOTELEN_06
+	snd_note $35
+	snd_instrument INSTR_30
+	snd_duty SNDDUTY_25, $00
+	snd_note $27, NOTELEN_09
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_12, $00
+	snd_note $33, NOTELEN_03
+	snd_note $27
+	snd_note $33
+	snd_note $27, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $27, NOTELEN_06
+	snd_note $33, NOTELEN_03
+	snd_note $27, NOTELEN_06
+	snd_note $33
+	snd_instrument INSTR_30
+	snd_duty SNDDUTY_25, $00
+	snd_note $27, NOTELEN_09
+	snd_instrument INSTR_33
+	snd_duty SNDDUTY_12, $00
+	snd_note $33, NOTELEN_03
+	snd_note $27
+	snd_note $33
+	snd_note $27, NOTELEN_06
+	snd_instrument INSTR_30
+	snd_duty SNDDUTY_25, $00
+	snd_note $2B, NOTELEN_09
+	snd_note $27
+	snd_note $22, NOTELEN_06
+	snd_note $22, NOTELEN_0C
+	snd_duty SNDDUTY_12, $00
+	snd_instrument INSTR_33
+	snd_note $3E, NOTELEN_03
+	snd_note $3E
+	snd_note $3C
+	snd_note $3E, NOTELEN_0C
+	snd_note $37, NOTELEN_06
+	snd_note $3A, NOTELEN_03
+	snd_note $37
+	snd_note $3A
+	snd_note $3C, NOTELEN_09
+	snd_note $35, NOTELEN_03
+	snd_note $39
+	snd_note $3C, NOTELEN_06
+	snd_note $3E, NOTELEN_09
+	snd_instrument INSTR_30
+	snd_inc_vol -1
+	snd_note $2F, NOTELEN_0C
+	snd_note $2F, NOTELEN_06
+	snd_note $32, NOTELEN_CUSTOM, $2D
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $32, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_18
+	snd_note $29
+	snd_note $2E, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2E, NOTELEN_09
+	snd_note $30
+	snd_note $31, NOTELEN_06
+	snd_note $32, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $32, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2B, NOTELEN_09
+	snd_note $26
+	snd_note $32, NOTELEN_06
+	snd_note $33, NOTELEN_CUSTOM, $42
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $33, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $18
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_33
+	snd_inc_vol 1
+	snd_note $47, NOTELEN_03
+	snd_note $48
+	snd_note $47
+	snd_note $43, NOTELEN_06
+	snd_note $40, NOTELEN_0C
+	snd_note $3B, NOTELEN_03
+	snd_note $3C
+	snd_note $3E
+	snd_note $43, NOTELEN_06
+	snd_note $41, NOTELEN_09
+	snd_note $40, NOTELEN_06
+	snd_note $3C, NOTELEN_03
+	snd_instrument INSTR_30
+	snd_note $37, NOTELEN_CUSTOM, $18
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_instrument INSTR_30
+	snd_inc_base_note -12
+	snd_inc_vol 2
+	snd_note $38, NOTELEN_0C
+	snd_instrument INSTR_33
+	snd_note $35, NOTELEN_03
+	snd_note $35, NOTELEN_06
+	snd_note $35, NOTELEN_09
+	snd_instrument INSTR_30
+	snd_note $30, NOTELEN_06
+	snd_note $35
+	snd_note $38
+	snd_note $37, NOTELEN_0C
+	snd_instrument INSTR_33
+	snd_note $35, NOTELEN_03
+	snd_note $35
+	snd_instrument INSTR_30
+	snd_note $31, NOTELEN_12
+	snd_note $30, NOTELEN_0C
+	snd_note $2E
+	snd_instrument INSTR_33
+	snd_note $33, NOTELEN_03
+	snd_note $33, NOTELEN_06
+	snd_note $33, NOTELEN_09
+	snd_instrument INSTR_30
+	snd_note $2E, NOTELEN_06
+	snd_note $2E
+	snd_note $2B, NOTELEN_CUSTOM, $1E
+	snd_note $30, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_0C
+	snd_instrument INSTR_33
+	snd_note $30, NOTELEN_03
+	snd_note $30, NOTELEN_06
+	snd_note $30, NOTELEN_09
+	snd_instrument INSTR_30
+	snd_note $31, NOTELEN_06
+	snd_note $35
+	snd_note $38
+	snd_note $38, NOTELEN_12
+	snd_note $35, NOTELEN_18
+	snd_note $31, NOTELEN_06
+	snd_note $30, NOTELEN_CUSTOM, $0A
+	snd_note $35, NOTELEN_01
+	snd_note $36
+	snd_note $37, NOTELEN_CUSTOM, $0F
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3A, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $38, NOTELEN_06
+	snd_note $37, NOTELEN_0C
+	snd_note $33, NOTELEN_08
+	snd_note $32, NOTELEN_02
+	snd_note $31
+	snd_instrument INSTR_37
+	snd_note $30, NOTELEN_1E
+	snd_instrument INSTR_30
+	snd_note $2A, NOTELEN_0C
+	snd_instrument INSTR_33
+	snd_note $36, NOTELEN_03
+	snd_note $36, NOTELEN_06
+	snd_note $36, NOTELEN_09
+	snd_instrument INSTR_30
+	snd_note $2A, NOTELEN_06
+	snd_note $2A
+	snd_note $2A
+	snd_note $27, NOTELEN_12
+	snd_note $2A
+	snd_note $2F, NOTELEN_0C
+	snd_note $31
+	snd_instrument INSTR_33
+	snd_note $31, NOTELEN_03
+	snd_note $31, NOTELEN_06
+	snd_note $31, NOTELEN_09
+	snd_instrument INSTR_30
+	snd_note $29, NOTELEN_06
+	snd_note $25
+	snd_note $29, NOTELEN_CUSTOM, $1E
+	snd_note $2C, NOTELEN_CUSTOM, $15
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2B, NOTELEN_CUSTOM, $2A
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_note $27, NOTELEN_CUSTOM, $30
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $27, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 1
+	snd_instrument INSTR_33
+	snd_inc_base_note 12
+	snd_note $37, NOTELEN_03
+	snd_note $38, NOTELEN_06
+	snd_note $33, NOTELEN_09
+	snd_note $33, NOTELEN_03
+	snd_note $30, NOTELEN_06
+	snd_note $30
+	snd_note $2C, NOTELEN_03
+	snd_note $30
+	snd_note $33
+	snd_instrument INSTR_NONE
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_CUSTOM, $0C
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_09
+	snd_inc_vol -2
+	snd_jp SndData_0D_Ch1
+SndData_0D_Ch4:
+	snd_call .sub0
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_call .sub0
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_call .sub0
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_call .sub0
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_0C
+	snd_noteex PRESET_01, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_jp SndData_0D_Ch4
+.sub0:
+	snd_var iSndChInfo_24, $07
+	.sub0loop0:
+		snd_noteex PRESET_01, NOTELEN_03
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00, NOTELEN_06
+		snd_djnz iSndChInfo_24, .sub0loop0
+	snd_ret
 SndHeader_14:
 	db 4 ; Number of slots
 .slot0:
@@ -11635,862 +6743,531 @@ SndHeader_14:
 	dw SndData_14_Ch4 ; Data pointer
 	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
-SndData_14_Ch3: db $A0
-L086D6E: db $00
-L086D6F: db $88
-L086D70: db $34
-L086D71: db $8A
-L086D72: db $FC
-L086D73: db $36
-L086D74: db $EC
-L086D75: db $2B
-L086D76: db $E3
-L086D77: db $36
-L086D78: db $32
-L086D79: db $DE
-L086D7A: db $1E
-L086D7B: db $34
-L086D7C: db $E7
-L086D7D: db $32
-L086D7E: db $EC
-L086D7F: db $2F
-L086D80: db $E3
-L086D81: db $32
-L086D82: db $28
-L086D83: db $E5
-L086D84: db $88
-L086D85: db $33
-L086D86: db $8A
-L086D87: db $FE
-L086D88: db $4A
-L086D89: db $E0
-L086D8A: db $49
-L086D8B: db $47
-L086D8C: db $45
-L086D8D: db $43
-L086D8E: db $42
-L086D8F: db $40
-L086D90: db $3E
-L086D91: db $3D
-L086D92: db $3B
-L086D93: db $39
-L086D94: db $37
-L086D95: db $36
-L086D96: db $34
-L086D97: db $32
-L086D98: db $31
-L086D99: db $2F
-L086D9A: db $2D
-L086D9B: db $2B
-L086D9C: db $2A
-L086D9D: db $28
-L086D9E: db $8A
-L086D9F: db $02
-L086DA0: db $28
-L086DA1: db $E5
-L086DA2: db $A0
-L086DA3: db $0E
-L086DA4: db $88
-L086DA5: db $34
-L086DA6: db $8A
-L086DA7: db $02
-L086DA8: db $39
-L086DA9: db $EB
-L086DAA: db $37
-L086DAB: db $E5
-L086DAC: db $36
-L086DAD: db $DE
-L086DAE: db $24
-L086DAF: db $8A
-L086DB0: db $FB
-L086DB1: db $88
-L086DB2: db $00
-L086DB3: db $97
-L086DB4: db $FF
-L086DB5: db $36
-L086DB6: db $DE
-L086DB7: db $06
-L086DB8: db $8A
-L086DB9: db $05
-L086DBA: db $88
-L086DBB: db $34
-L086DBC: db $97
-L086DBD: db $01
-L086DBE: db $34
-L086DBF: db $E3
-L086DC0: db $36
-L086DC1: db $DE
-L086DC2: db $21
-L086DC3: db $8A
-L086DC4: db $FB
-L086DC5: db $97
-L086DC6: db $FF
-L086DC7: db $36
-L086DC8: db $E1
-L086DC9: db $8A
-L086DCA: db $05
-L086DCB: db $97
-L086DCC: db $01
-L086DCD: db $30
-L086DCE: db $E5
-L086DCF: db $2F
-L086DD0: db $DE
-L086DD1: db $18
-L086DD2: db $8A
-L086DD3: db $FB
-L086DD4: db $88
-L086DD5: db $00
-L086DD6: db $97
-L086DD7: db $FF
-L086DD8: db $2F
-L086DD9: db $DE
-L086DDA: db $06
-L086DDB: db $8A
-L086DDC: db $05
-L086DDD: db $88
-L086DDE: db $34
-L086DDF: db $97
-L086DE0: db $01
-L086DE1: db $A0
-L086DE2: db $05
-L086DE3: db $88
-L086DE4: db $33
-L086DE5: db $3B
-L086DE6: db $E5
-L086DE7: db $39
-L086DE8: db $37
-L086DE9: db $A0
-L086DEA: db $0E
-L086DEB: db $88
-L086DEC: db $34
-L086DED: db $3B
-L086DEE: db $EB
-L086DEF: db $39
-L086DF0: db $E5
-L086DF1: db $37
-L086DF2: db $DE
-L086DF3: db $27
-L086DF4: db $8A
-L086DF5: db $FB
-L086DF6: db $97
-L086DF7: db $FF
-L086DF8: db $37
-L086DF9: db $E1
-L086DFA: db $8A
-L086DFB: db $05
-L086DFC: db $97
-L086DFD: db $01
-L086DFE: db $36
-L086DFF: db $E3
-L086E00: db $37
-L086E01: db $DE
-L086E02: db $1E
-L086E03: db $8A
-L086E04: db $FB
-L086E05: db $88
-L086E06: db $00
-L086E07: db $97
-L086E08: db $FF
-L086E09: db $37
-L086E0A: db $DE
-L086E0B: db $06
-L086E0C: db $8A
-L086E0D: db $05
-L086E0E: db $88
-L086E0F: db $34
-L086E10: db $97
-L086E11: db $01
-L086E12: db $32
-L086E13: db $E5
-L086E14: db $31
-L086E15: db $DE
-L086E16: db $33
-L086E17: db $8A
-L086E18: db $FB
-L086E19: db $97
-L086E1A: db $FF
-L086E1B: db $31
-L086E1C: db $E1
-L086E1D: db $8A
-L086E1E: db $05
-L086E1F: db $97
-L086E20: db $01
-L086E21: db $A0
-L086E22: db $05
-L086E23: db $88
-L086E24: db $33
-L086E25: db $8A
-L086E26: db $02
-L086E27: db $31
-L086E28: db $E3
-L086E29: db $31
-L086E2A: db $31
-L086E2B: db $EB
-L086E2C: db $A0
-L086E2D: db $09
-L086E2E: db $88
-L086E2F: db $00
-L086E30: db $2D
-L086E31: db $E3
-L086E32: db $39
-L086E33: db $36
-L086E34: db $DE
-L086E35: db $18
-L086E36: db $8A
-L086E37: db $FB
-L086E38: db $88
-L086E39: db $00
-L086E3A: db $97
-L086E3B: db $FF
-L086E3C: db $36
-L086E3D: db $DE
-L086E3E: db $06
-L086E3F: db $8A
-L086E40: db $05
-L086E41: db $88
-L086E42: db $00
-L086E43: db $97
-L086E44: db $01
-L086E45: db $34
-L086E46: db $E5
-L086E47: db $32
-L086E48: db $A0
-L086E49: db $05
-L086E4A: db $88
-L086E4B: db $33
-L086E4C: db $31
-L086E4D: db $E3
-L086E4E: db $31
-L086E4F: db $31
-L086E50: db $EB
-L086E51: db $A0
-L086E52: db $09
-L086E53: db $88
-L086E54: db $00
-L086E55: db $32
-L086E56: db $E3
-L086E57: db $2F
-L086E58: db $32
-L086E59: db $DE
-L086E5A: db $18
-L086E5B: db $8A
-L086E5C: db $FB
-L086E5D: db $88
-L086E5E: db $00
-L086E5F: db $97
-L086E60: db $FF
-L086E61: db $32
-L086E62: db $DE
-L086E63: db $06
-L086E64: db $8A
-L086E65: db $05
-L086E66: db $88
-L086E67: db $00
-L086E68: db $97
-L086E69: db $01
-L086E6A: db $34
-L086E6B: db $E5
-L086E6C: db $32
-L086E6D: db $A0
-L086E6E: db $05
-L086E6F: db $88
-L086E70: db $33
-L086E71: db $31
-L086E72: db $E3
-L086E73: db $31
-L086E74: db $31
-L086E75: db $EB
-L086E76: db $A0
-L086E77: db $09
-L086E78: db $88
-L086E79: db $00
-L086E7A: db $2D
-L086E7B: db $E3
-L086E7C: db $39
-L086E7D: db $36
-L086E7E: db $DE
-L086E7F: db $18
-L086E80: db $8A
-L086E81: db $FB
-L086E82: db $88
-L086E83: db $00
-L086E84: db $97
-L086E85: db $FF
-L086E86: db $36
-L086E87: db $DE
-L086E88: db $06
-L086E89: db $8A
-L086E8A: db $05
-L086E8B: db $88
-L086E8C: db $00
-L086E8D: db $97
-L086E8E: db $01
-L086E8F: db $34
-L086E90: db $E5
-L086E91: db $32
-L086E92: db $A0
-L086E93: db $05
-L086E94: db $88
-L086E95: db $33
-L086E96: db $31
-L086E97: db $E3
-L086E98: db $31
-L086E99: db $31
-L086E9A: db $EB
-L086E9B: db $A0
-L086E9C: db $09
-L086E9D: db $88
-L086E9E: db $00
-L086E9F: db $32
-L086EA0: db $E3
-L086EA1: db $2F
-L086EA2: db $32
-L086EA3: db $DE
-L086EA4: db $30
-L086EA5: db $8A
-L086EA6: db $FB
-L086EA7: db $88
-L086EA8: db $00
-L086EA9: db $97
-L086EAA: db $FF
-L086EAB: db $32
-L086EAC: db $DE
-L086EAD: db $06
-L086EAE: db $8A
-L086EAF: db $05
-L086EB0: db $88
-L086EB1: db $00
-L086EB2: db $97
-L086EB3: db $01
-L086EB4: db $A0
-L086EB5: db $00
-L086EB6: db $88
-L086EB7: db $33
-L086EB8: db $8A
-L086EB9: db $FE
-L086EBA: db $93
-L086EBB: db $80
-L086EBC: db $0C
-L086EBD: db $45
-L086EBE: db $E0
-L086EBF: db $42
-L086EC0: db $3E
-L086EC1: db $3D
-L086EC2: db $39
-L086EC3: db $36
-L086EC4: db $32
-L086EC5: db $31
-L086EC6: db $2D
-L086EC7: db $2A
-L086EC8: db $26
-L086EC9: db $25
-L086ECA: db $26
-L086ECB: db $2A
-L086ECC: db $2D
-L086ECD: db $31
-L086ECE: db $32
-L086ECF: db $36
-L086ED0: db $32
-L086ED1: db $31
-L086ED2: db $2D
-L086ED3: db $2A
-L086ED4: db $26
-L086ED5: db $25
-L086ED6: db $21
-L086ED7: db $1E
-L086ED8: db $1A
-L086ED9: db $19
-L086EDA: db $1A
-L086EDB: db $1E
-L086EDC: db $21
-L086EDD: db $25
-L086EDE: db $26
-L086EDF: db $2A
-L086EE0: db $26
-L086EE1: db $25
-L086EE2: db $21
-L086EE3: db $1E
-L086EE4: db $1A
-L086EE5: db $19
-L086EE6: db $15
-L086EE7: db $12
-L086EE8: db $0E
-L086EE9: db $E5
-L086EEA: db $86
-SndData_14_Ch2: db $A0
-L086EEC: db $40
-L086EED: db $88
-L086EEE: db $34
-L086EEF: db $15
-L086EF0: db $EB
-L086EF1: db $15
-L086EF2: db $E3
-L086EF3: db $1C
-L086EF4: db $EB
-L086EF5: db $15
-L086EF6: db $E5
-L086EF7: db $15
-L086EF8: db $E5
-L086EF9: db $15
-L086EFA: db $E3
-L086EFB: db $1C
-L086EFC: db $E5
-L086EFD: db $1C
-L086EFE: db $15
-L086EFF: db $EB
-L086F00: db $15
-L086F01: db $E3
-L086F02: db $1C
-L086F03: db $EB
-L086F04: db $15
-L086F05: db $E5
-L086F06: db $15
-L086F07: db $E5
-L086F08: db $15
-L086F09: db $E3
-L086F0A: db $1C
-L086F0B: db $E5
-L086F0C: db $1C
-L086F0D: db $1A
-L086F0E: db $EB
-L086F0F: db $1A
-L086F10: db $E3
-L086F11: db $21
-L086F12: db $EB
-L086F13: db $1A
-L086F14: db $E5
-L086F15: db $1A
-L086F16: db $E5
-L086F17: db $1A
-L086F18: db $E3
-L086F19: db $21
-L086F1A: db $E5
-L086F1B: db $21
-L086F1C: db $1E
-L086F1D: db $EB
-L086F1E: db $1E
-L086F1F: db $E3
-L086F20: db $24
-L086F21: db $EB
-L086F22: db $23
-L086F23: db $E5
-L086F24: db $23
-L086F25: db $E5
-L086F26: db $23
-L086F27: db $E3
-L086F28: db $1E
-L086F29: db $E5
-L086F2A: db $1E
-L086F2B: db $1C
-L086F2C: db $EB
-L086F2D: db $1C
-L086F2E: db $E3
-L086F2F: db $23
-L086F30: db $EB
-L086F31: db $1C
-L086F32: db $E5
-L086F33: db $1C
-L086F34: db $E5
-L086F35: db $1C
-L086F36: db $E3
-L086F37: db $23
-L086F38: db $E5
-L086F39: db $23
-L086F3A: db $1C
-L086F3B: db $EB
-L086F3C: db $1C
-L086F3D: db $E3
-L086F3E: db $23
-L086F3F: db $EB
-L086F40: db $21
-L086F41: db $E5
-L086F42: db $21
-L086F43: db $E5
-L086F44: db $15
-L086F45: db $E3
-L086F46: db $15
-L086F47: db $E1
-L086F48: db $21
-L086F49: db $17
-L086F4A: db $E3
-L086F4B: db $18
-L086F4C: db $19
-L086F4D: db $8D
-L086F4E: db $24
-L086F4F: db $02
-L086F50: db $1A
-L086F51: db $E5
-L086F52: db $1A
-L086F53: db $EA
-L086F54: db $1A
-L086F55: db $E1
-L086F56: db $1E
-L086F57: db $E3
-L086F58: db $1F
-L086F59: db $20
-L086F5A: db $21
-L086F5B: db $00
-L086F5C: db $21
-L086F5D: db $21
-L086F5E: db $EA
-L086F5F: db $21
-L086F60: db $E1
-L086F61: db $21
-L086F62: db $E3
-L086F63: db $1C
-L086F64: db $1E
-L086F65: db $21
-L086F66: db $81
-L086F67: db $24
-L086F68: db $50
-L086F69: db $6F
-L086F6A: db $1A
-L086F6B: db $E5
-L086F6C: db $1A
-L086F6D: db $EA
-L086F6E: db $1A
-L086F6F: db $E1
-L086F70: db $1E
-L086F71: db $E3
-L086F72: db $1F
-L086F73: db $20
-L086F74: db $21
-L086F75: db $00
-L086F76: db $21
-L086F77: db $21
-L086F78: db $EA
-L086F79: db $21
-L086F7A: db $E1
-L086F7B: db $21
-L086F7C: db $2D
-L086F7D: db $1C
-L086F7E: db $E3
-L086F7F: db $1E
-L086F80: db $21
-L086F81: db $1A
-L086F82: db $E5
-L086F83: db $1A
-L086F84: db $EA
-L086F85: db $1A
-L086F86: db $E1
-L086F87: db $1E
-L086F88: db $E3
-L086F89: db $1F
-L086F8A: db $20
-L086F8B: db $21
-L086F8C: db $00
-L086F8D: db $21
-L086F8E: db $21
-L086F8F: db $EA
-L086F90: db $21
-L086F91: db $E1
-L086F92: db $26
-L086F93: db $23
-L086F94: db $E3
-L086F95: db $21
-L086F96: db $1E
-L086F97: db $1C
-L086F98: db $E1
-L086F99: db $88
-L086F9A: db $36
-L086F9B: db $1A
-L086F9C: db $DE
-L086F9D: db $60
-L086F9E: db $82
-SndData_14_Ch1: db $A0
-L086FA0: db $80
-L086FA1: db $88
-L086FA2: db $34
-L086FA3: db $97
-L086FA4: db $FE
-L086FA5: db $8A
-L086FA6: db $FE
-L086FA7: db $83
-L086FA8: db $33
-L086FA9: db $00
-L086FAA: db $E2
-L086FAB: db $36
-L086FAC: db $EC
-L086FAD: db $2B
-L086FAE: db $E3
-L086FAF: db $36
-L086FB0: db $32
-L086FB1: db $DE
-L086FB2: db $1E
-L086FB3: db $34
-L086FB4: db $E7
-L086FB5: db $32
-L086FB6: db $EC
-L086FB7: db $2F
-L086FB8: db $E3
-L086FB9: db $32
-L086FBA: db $28
-L086FBB: db $E5
-L086FBC: db $A0
-L086FBD: db $80
-L086FBE: db $88
-L086FBF: db $33
-L086FC0: db $8A
-L086FC1: db $FE
-L086FC2: db $4A
-L086FC3: db $E0
-L086FC4: db $49
-L086FC5: db $47
-L086FC6: db $45
-L086FC7: db $43
-L086FC8: db $42
-L086FC9: db $40
-L086FCA: db $3E
-L086FCB: db $3D
-L086FCC: db $3B
-L086FCD: db $39
-L086FCE: db $37
-L086FCF: db $36
-L086FD0: db $34
-L086FD1: db $32
-L086FD2: db $31
-L086FD3: db $2F
-L086FD4: db $2D
-L086FD5: db $2B
-L086FD6: db $2A
-L086FD7: db $DF
-L086FD8: db $A0
-L086FD9: db $40
-L086FDA: db $88
-L086FDB: db $30
-L086FDC: db $97
-L086FDD: db $02
-L086FDE: db $8A
-L086FDF: db $04
-L086FE0: db $83
-L086FE1: db $33
-L086FE2: db $2D
-L086FE3: db $EE
-L086FE4: db $2D
-L086FE5: db $DE
-L086FE6: db $33
-L086FE7: db $8A
-L086FE8: db $FB
-L086FE9: db $97
-L086FEA: db $FF
-L086FEB: db $2D
-L086FEC: db $E1
-L086FED: db $8A
-L086FEE: db $05
-L086FEF: db $97
-L086FF0: db $01
-L086FF1: db $2D
-L086FF2: db $EE
-L086FF3: db $2B
-L086FF4: db $DE
-L086FF5: db $33
-L086FF6: db $8A
-L086FF7: db $FB
-L086FF8: db $97
-L086FF9: db $FF
-L086FFA: db $2B
-L086FFB: db $E1
-L086FFC: db $8A
-L086FFD: db $05
-L086FFE: db $97
-L086FFF: db $01
-L087000: db $2B
-L087001: db $EE
-L087002: db $2B
-L087003: db $DE
-L087004: db $33
-L087005: db $8A
-L087006: db $FB
-L087007: db $97
-L087008: db $FF
-L087009: db $2B
-L08700A: db $E1
-L08700B: db $8A
-L08700C: db $05
-L08700D: db $97
-L08700E: db $01
-L08700F: db $2B
-L087010: db $EE
-L087011: db $2B
-L087012: db $DE
-L087013: db $33
-L087014: db $8A
-L087015: db $FB
-L087016: db $97
-L087017: db $FF
-L087018: db $2B
-L087019: db $E1
-L08701A: db $8A
-L08701B: db $05
-L08701C: db $97
-L08701D: db $01
-L08701E: db $A0
-L08701F: db $00
-L087020: db $8A
-L087021: db $FE
-L087022: db $2A
-L087023: db $EE
-L087024: db $2B
-L087025: db $DE
-L087026: db $36
-L087027: db $2D
-L087028: db $EE
-L087029: db $2F
-L08702A: db $DE
-L08702B: db $36
-L08702C: db $31
-L08702D: db $EE
-L08702E: db $32
-L08702F: db $DE
-L087030: db $36
-L087031: db $36
-L087032: db $EE
-L087033: db $37
-L087034: db $DE
-L087035: db $36
-L087036: db $88
-L087037: db $36
-L087038: db $8A
-L087039: db $02
-L08703A: db $31
-L08703B: db $DE
-L08703C: db $60
-L08703D: db $82
-SndData_14_Ch4: db $A0
-L08703F: db $00
-L087040: db $8D
-L087041: db $24
-L087042: db $03
-L087043: db $C1
-L087044: db $E3
-L087045: db $C2
-L087046: db $C2
-L087047: db $C1
-L087048: db $C1
-L087049: db $C2
-L08704A: db $C2
-L08704B: db $C1
-L08704C: db $81
-L08704D: db $24
-L08704E: db $43
-L08704F: db $70
-L087050: db $C1
-L087051: db $C2
-L087052: db $C2
-L087053: db $C1
-L087054: db $C1
-L087055: db $C2
-L087056: db $C0
-L087057: db $C1
-L087058: db $8D
-L087059: db $24
-L08705A: db $07
-L08705B: db $C1
-L08705C: db $C2
-L08705D: db $C2
-L08705E: db $C1
-L08705F: db $C1
-L087060: db $C2
-L087061: db $C2
-L087062: db $C1
-L087063: db $81
-L087064: db $24
-L087065: db $5B
-L087066: db $70
-L087067: db $C1
-L087068: db $C2
-L087069: db $C2
-L08706A: db $C1
-L08706B: db $C1
-L08706C: db $C0
-L08706D: db $C0
-L08706E: db $E1
-L08706F: db $C0
-L087070: db $E3
-L087071: db $C0
-L087072: db $E1
-L087073: db $C0
-L087074: db $E3
-L087075: db $C2
-L087076: db $C0
-L087077: db $C2
-L087078: db $C1
-L087079: db $C1
-L08707A: db $C0
-L08707B: db $C1
-L08707C: db $C2
-L08707D: db $C1
-L08707E: db $C0
-L08707F: db $C2
-L087080: db $C1
-L087081: db $C1
-L087082: db $C0
-L087083: db $C2
-L087084: db $E1
-L087085: db $C0
-L087086: db $C0
-L087087: db $E3
-L087088: db $C2
-L087089: db $C0
-L08708A: db $C2
-L08708B: db $C1
-L08708C: db $C1
-L08708D: db $C0
-L08708E: db $C1
-L08708F: db $C2
-L087090: db $C1
-L087091: db $C0
-L087092: db $C2
-L087093: db $C1
-L087094: db $C1
-L087095: db $C0
-L087096: db $C2
-L087097: db $E1
-L087098: db $C0
-L087099: db $C0
-L08709A: db $E3
-L08709B: db $C2
-L08709C: db $C0
-L08709D: db $C2
-L08709E: db $C1
-L08709F: db $C1
-L0870A0: db $C0
-L0870A1: db $C1
-L0870A2: db $C2
-L0870A3: db $C1
-L0870A4: db $C0
-L0870A5: db $C2
-L0870A6: db $C1
-L0870A7: db $C1
-L0870A8: db $C0
-L0870A9: db $C2
-L0870AA: db $E1
-L0870AB: db $C0
-L0870AC: db $C0
-L0870AD: db $E3
-L0870AE: db $C2
-L0870AF: db $C0
-L0870B0: db $C2
-L0870B1: db $C1
-L0870B2: db $C1
-L0870B3: db $C0
-L0870B4: db $C1
-L0870B5: db $C2
-L0870B6: db $C1
-L0870B7: db $C0
-L0870B8: db $C2
-L0870B9: db $C0
-L0870BA: db $E1
-L0870BB: db $C1
-L0870BC: db $E3
-L0870BD: db $C0
-L0870BE: db $C0
-L0870BF: db $E1
-L0870C0: db $C0
-L0870C1: db $E3
-L0870C2: db $C0
-L0870C3: db $E9
-L0870C4: db $82
+SndData_14_Ch3:
+	snd_wave WAVE_00
+	snd_instrument INSTR_34
+	snd_inc_vol -4
+	snd_note $36, NOTELEN_1E
+	snd_note $2B, NOTELEN_06
+	snd_note $36
+	snd_note $32, NOTELEN_CUSTOM, $1E
+	snd_note $34, NOTELEN_18
+	snd_note $32, NOTELEN_1E
+	snd_note $2F, NOTELEN_06
+	snd_note $32
+	snd_note $28, NOTELEN_0C
+	snd_instrument INSTR_33
+	snd_inc_vol -2
+	snd_note $4A, NOTELEN_02
+	snd_note $49
+	snd_note $47
+	snd_note $45
+	snd_note $43
+	snd_note $42
+	snd_note $40
+	snd_note $3E
+	snd_note $3D
+	snd_note $3B
+	snd_note $39
+	snd_note $37
+	snd_note $36
+	snd_note $34
+	snd_note $32
+	snd_note $31
+	snd_note $2F
+	snd_note $2D
+	snd_note $2B
+	snd_note $2A
+	snd_note $28
+	snd_inc_vol 2
+	snd_note $28, NOTELEN_0C
+	snd_wave WAVE_0E
+	snd_instrument INSTR_34
+	snd_inc_vol 2
+	snd_note $39, NOTELEN_12
+	snd_note $37, NOTELEN_0C
+	snd_note $36, NOTELEN_CUSTOM, $24
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_34
+	snd_inc_freq_offset 1
+	snd_note $34, NOTELEN_06
+	snd_note $36, NOTELEN_CUSTOM, $21
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_0C
+	snd_note $2F, NOTELEN_CUSTOM, $18
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $2F, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_34
+	snd_inc_freq_offset 1
+	snd_wave WAVE_05
+	snd_instrument INSTR_33
+	snd_note $3B, NOTELEN_0C
+	snd_note $39
+	snd_note $37
+	snd_wave WAVE_0E
+	snd_instrument INSTR_34
+	snd_note $3B, NOTELEN_12
+	snd_note $39, NOTELEN_0C
+	snd_note $37, NOTELEN_CUSTOM, $27
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $36, NOTELEN_06
+	snd_note $37, NOTELEN_CUSTOM, $1E
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_34
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_0C
+	snd_note $31, NOTELEN_CUSTOM, $33
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $31, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_05
+	snd_instrument INSTR_33
+	snd_inc_vol 2
+	snd_note $31, NOTELEN_06
+	snd_note $31
+	snd_note $31, NOTELEN_12
+	snd_wave WAVE_09
+	snd_instrument INSTR_NONE
+	snd_note $2D, NOTELEN_06
+	snd_note $39
+	snd_note $36, NOTELEN_CUSTOM, $18
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $34, NOTELEN_0C
+	snd_note $32
+	snd_wave WAVE_05
+	snd_instrument INSTR_33
+	snd_note $31, NOTELEN_06
+	snd_note $31
+	snd_note $31, NOTELEN_12
+	snd_wave WAVE_09
+	snd_instrument INSTR_NONE
+	snd_note $32, NOTELEN_06
+	snd_note $2F
+	snd_note $32, NOTELEN_CUSTOM, $18
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $32, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $34, NOTELEN_0C
+	snd_note $32
+	snd_wave WAVE_05
+	snd_instrument INSTR_33
+	snd_note $31, NOTELEN_06
+	snd_note $31
+	snd_note $31, NOTELEN_12
+	snd_wave WAVE_09
+	snd_instrument INSTR_NONE
+	snd_note $2D, NOTELEN_06
+	snd_note $39
+	snd_note $36, NOTELEN_CUSTOM, $18
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $36, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_note $34, NOTELEN_0C
+	snd_note $32
+	snd_wave WAVE_05
+	snd_instrument INSTR_33
+	snd_note $31, NOTELEN_06
+	snd_note $31
+	snd_note $31, NOTELEN_12
+	snd_wave WAVE_09
+	snd_instrument INSTR_NONE
+	snd_note $32, NOTELEN_06
+	snd_note $2F
+	snd_note $32, NOTELEN_CUSTOM, $30
+	snd_inc_vol -5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset -1
+	snd_note $32, NOTELEN_CUSTOM, $06
+	snd_inc_vol 5
+	snd_instrument INSTR_NONE
+	snd_inc_freq_offset 1
+	snd_wave WAVE_00
+	snd_instrument INSTR_33
+	snd_inc_vol -2
+	snd_fade SSF_FADEOUT, 0, 12
+	snd_note $45, NOTELEN_02
+	snd_note $42
+	snd_note $3E
+	snd_note $3D
+	snd_note $39
+	snd_note $36
+	snd_note $32
+	snd_note $31
+	snd_note $2D
+	snd_note $2A
+	snd_note $26
+	snd_note $25
+	snd_note $26
+	snd_note $2A
+	snd_note $2D
+	snd_note $31
+	snd_note $32
+	snd_note $36
+	snd_note $32
+	snd_note $31
+	snd_note $2D
+	snd_note $2A
+	snd_note $26
+	snd_note $25
+	snd_note $21
+	snd_note $1E
+	snd_note $1A
+	snd_note $19
+	snd_note $1A
+	snd_note $1E
+	snd_note $21
+	snd_note $25
+	snd_note $26
+	snd_note $2A
+	snd_note $26
+	snd_note $25
+	snd_note $21
+	snd_note $1E
+	snd_note $1A
+	snd_note $19
+	snd_note $15
+	snd_note $12
+	snd_note $0E, NOTELEN_0C
+	snd_end_saveid
+SndData_14_Ch2:
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_34
+	snd_note $15, NOTELEN_12
+	snd_note $15, NOTELEN_06
+	snd_note $1C, NOTELEN_12
+	snd_note $15, NOTELEN_0C
+	snd_note $15, NOTELEN_0C
+	snd_note $15, NOTELEN_06
+	snd_note $1C, NOTELEN_0C
+	snd_note $1C
+	snd_note $15, NOTELEN_12
+	snd_note $15, NOTELEN_06
+	snd_note $1C, NOTELEN_12
+	snd_note $15, NOTELEN_0C
+	snd_note $15, NOTELEN_0C
+	snd_note $15, NOTELEN_06
+	snd_note $1C, NOTELEN_0C
+	snd_note $1C
+	snd_note $1A, NOTELEN_12
+	snd_note $1A, NOTELEN_06
+	snd_note $21, NOTELEN_12
+	snd_note $1A, NOTELEN_0C
+	snd_note $1A, NOTELEN_0C
+	snd_note $1A, NOTELEN_06
+	snd_note $21, NOTELEN_0C
+	snd_note $21
+	snd_note $1E, NOTELEN_12
+	snd_note $1E, NOTELEN_06
+	snd_note $24, NOTELEN_12
+	snd_note $23, NOTELEN_0C
+	snd_note $23, NOTELEN_0C
+	snd_note $23, NOTELEN_06
+	snd_note $1E, NOTELEN_0C
+	snd_note $1E
+	snd_note $1C, NOTELEN_12
+	snd_note $1C, NOTELEN_06
+	snd_note $23, NOTELEN_12
+	snd_note $1C, NOTELEN_0C
+	snd_note $1C, NOTELEN_0C
+	snd_note $1C, NOTELEN_06
+	snd_note $23, NOTELEN_0C
+	snd_note $23
+	snd_note $1C, NOTELEN_12
+	snd_note $1C, NOTELEN_06
+	snd_note $23, NOTELEN_12
+	snd_note $21, NOTELEN_0C
+	snd_note $21, NOTELEN_0C
+	snd_note $15, NOTELEN_06
+	snd_note $15, NOTELEN_03
+	snd_note $21
+	snd_note $17, NOTELEN_06
+	snd_note $18
+	snd_note $19
+	snd_var iSndChInfo_24, $02
+	.loop:
+		snd_note $1A, NOTELEN_0C
+		snd_note $1A, NOTELEN_09
+		snd_note $1A, NOTELEN_03
+		snd_note $1E, NOTELEN_06
+		snd_note $1F
+		snd_note $20
+		snd_note $21
+		snd_note $00
+		snd_note $21
+		snd_note $21, NOTELEN_09
+		snd_note $21, NOTELEN_03
+		snd_note $21, NOTELEN_06
+		snd_note $1C
+		snd_note $1E
+		snd_note $21
+		snd_djnz iSndChInfo_24, .loop
+	snd_note $1A, NOTELEN_0C
+	snd_note $1A, NOTELEN_09
+	snd_note $1A, NOTELEN_03
+	snd_note $1E, NOTELEN_06
+	snd_note $1F
+	snd_note $20
+	snd_note $21
+	snd_note $00
+	snd_note $21
+	snd_note $21, NOTELEN_09
+	snd_note $21, NOTELEN_03
+	snd_note $21
+	snd_note $2D
+	snd_note $1C, NOTELEN_06
+	snd_note $1E
+	snd_note $21
+	snd_note $1A, NOTELEN_0C
+	snd_note $1A, NOTELEN_09
+	snd_note $1A, NOTELEN_03
+	snd_note $1E, NOTELEN_06
+	snd_note $1F
+	snd_note $20
+	snd_note $21
+	snd_note $00
+	snd_note $21
+	snd_note $21, NOTELEN_09
+	snd_note $21, NOTELEN_03
+	snd_note $26
+	snd_note $23, NOTELEN_06
+	snd_note $21
+	snd_note $1E
+	snd_note $1C, NOTELEN_03
+	snd_instrument INSTR_36
+	snd_note $1A, NOTELEN_CUSTOM, $60
+	snd_end
+SndData_14_Ch1:
+	snd_duty SNDDUTY_50, $00
+	snd_instrument INSTR_34
+	snd_inc_freq_offset -2
+	snd_inc_vol -2
+	snd_vibrato VIBRATO_33
+	snd_note $00, NOTELEN_04
+	snd_note $36, NOTELEN_1E
+	snd_note $2B, NOTELEN_06
+	snd_note $36
+	snd_note $32, NOTELEN_CUSTOM, $1E
+	snd_note $34, NOTELEN_18
+	snd_note $32, NOTELEN_1E
+	snd_note $2F, NOTELEN_06
+	snd_note $32
+	snd_note $28, NOTELEN_0C
+	snd_duty SNDDUTY_50, $00
+	snd_instrument INSTR_33
+	snd_inc_vol -2
+	snd_note $4A, NOTELEN_02
+	snd_note $49
+	snd_note $47
+	snd_note $45
+	snd_note $43
+	snd_note $42
+	snd_note $40
+	snd_note $3E
+	snd_note $3D
+	snd_note $3B
+	snd_note $39
+	snd_note $37
+	snd_note $36
+	snd_note $34
+	snd_note $32
+	snd_note $31
+	snd_note $2F
+	snd_note $2D
+	snd_note $2B
+	snd_note $2A, NOTELEN_01
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_30
+	snd_inc_freq_offset 2
+	snd_inc_vol 4
+	snd_vibrato VIBRATO_33
+	snd_note $2D, NOTELEN_2A
+	snd_note $2D, NOTELEN_CUSTOM, $33
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2D, NOTELEN_2A
+	snd_note $2B, NOTELEN_CUSTOM, $33
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2B, NOTELEN_2A
+	snd_note $2B, NOTELEN_CUSTOM, $33
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2B, NOTELEN_2A
+	snd_note $2B, NOTELEN_CUSTOM, $33
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_duty SNDDUTY_12, $00
+	snd_inc_vol -2
+	snd_note $2A, NOTELEN_2A
+	snd_note $2B, NOTELEN_CUSTOM, $36
+	snd_note $2D, NOTELEN_2A
+	snd_note $2F, NOTELEN_CUSTOM, $36
+	snd_note $31, NOTELEN_2A
+	snd_note $32, NOTELEN_CUSTOM, $36
+	snd_note $36, NOTELEN_2A
+	snd_note $37, NOTELEN_CUSTOM, $36
+	snd_instrument INSTR_36
+	snd_inc_vol 2
+	snd_note $31, NOTELEN_CUSTOM, $60
+	snd_end
+SndData_14_Ch4:
+	snd_duty SNDDUTY_12, $00
+	snd_var iSndChInfo_24, $03
+	.loop0:
+		snd_noteex PRESET_01, NOTELEN_06
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_djnz iSndChInfo_24, .loop0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_var iSndChInfo_24, $07
+	.loop1:
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_djnz iSndChInfo_24, .loop1
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_30
+	snd_end
 SndHeader_16:
 	db 4 ; Number of slots
 .slot0:
@@ -12541,150 +7318,100 @@ SndHeader_16:
 	dw SndData_16_Ch1 ; Data pointer
 	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
-SndData_16_Ch4: db $C0
-L0870F7: db $E5
-L0870F8: db $C1
-L0870F9: db $E3
-L0870FA: db $C0
-L0870FB: db $E5
-L0870FC: db $C1
-L0870FD: db $E3
-L0870FE: db $C0
-L0870FF: db $E5
-L087100: db $80
-L087101: db $F6
-L087102: db $70
-SndData_16_Ch3: db $34
-L087104: db $EB
-L087105: db $34
-L087106: db $34
-L087107: db $E5
-L087108: db $80
-L087109: db $03
-L08710A: db $71
-SndData_16_Ch2: db $42
-L08710C: db $E3
-L08710D: db $42
-L08710E: db $3F
-L08710F: db $3F
-L087110: db $42
-L087111: db $EA
-L087112: db $42
-L087113: db $E1
-L087114: db $3F
-L087115: db $E3
-L087116: db $3F
-L087117: db $42
-L087118: db $E3
-L087119: db $42
-L08711A: db $3F
-L08711B: db $3F
-L08711C: db $E1
-L08711D: db $42
-L08711E: db $E3
-L08711F: db $42
-L087120: db $42
-L087121: db $E1
-L087122: db $3F
-L087123: db $E3
-L087124: db $3F
-L087125: db $80
-L087126: db $0B
-L087127: db $71
-SndData_16_Ch1: db $9A
-L087129: db $75
-L08712A: db $71
-L08712B: db $2A
-L08712C: db $8A
-L08712D: db $FA
-L08712E: db $2A
-L08712F: db $2A
-L087130: db $2A
-L087131: db $8A
-L087132: db $06
-L087133: db $2A
-L087134: db $8A
-L087135: db $FA
-L087136: db $2A
-L087137: db $8A
-L087138: db $06
-L087139: db $2A
-L08713A: db $8A
-L08713B: db $FA
-L08713C: db $2A
-L08713D: db $2A
-L08713E: db $2A
-L08713F: db $8A
-L087140: db $06
-L087141: db $2A
-L087142: db $8A
-L087143: db $FA
-L087144: db $2A
-L087145: db $2A
-L087146: db $2A
-L087147: db $8A
-L087148: db $06
-L087149: db $2A
-L08714A: db $8A
-L08714B: db $FA
-L08714C: db $2A
-L08714D: db $8A
-L08714E: db $06
-L08714F: db $9A
-L087150: db $75
-L087151: db $71
-L087152: db $89
-L087153: db $EF
-L087154: db $3A
-L087155: db $E0
-L087156: db $3A
-L087157: db $3A
-L087158: db $3A
-L087159: db $E1
-L08715A: db $3A
-L08715B: db $35
-L08715C: db $E0
-L08715D: db $35
-L08715E: db $35
-L08715F: db $35
-L087160: db $E1
-L087161: db $35
-L087162: db $30
-L087163: db $E0
-L087164: db $30
-L087165: db $30
-L087166: db $30
-L087167: db $E1
-L087168: db $30
-L087169: db $29
-L08716A: db $E0
-L08716B: db $29
-L08716C: db $29
-L08716D: db $29
-L08716E: db $E1
-L08716F: db $29
-L087170: db $89
-L087171: db $11
-L087172: db $80
-L087173: db $28
-L087174: db $71
-L087175: db $8D
-L087176: db $24
-L087177: db $04
-L087178: db $2A
-L087179: db $E1
-L08717A: db $8A
-L08717B: db $FA
-L08717C: db $2A
-L08717D: db $2A
-L08717E: db $2A
-L08717F: db $8A
-L087180: db $06
-L087181: db $81
-L087182: db $24
-L087183: db $78
-L087184: db $71
-L087185: db $9B
+SndData_16_Ch4:
+	snd_noteex PRESET_00, NOTELEN_0C
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_0C
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_0C
+	snd_jp SndData_16_Ch4
+SndData_16_Ch3:
+	snd_note $34, NOTELEN_12
+	snd_note $34
+	snd_note $34, NOTELEN_0C
+	snd_jp SndData_16_Ch3
+SndData_16_Ch2:
+	snd_note $42, NOTELEN_06
+	snd_note $42
+	snd_note $3F
+	snd_note $3F
+	snd_note $42, NOTELEN_09
+	snd_note $42, NOTELEN_03
+	snd_note $3F, NOTELEN_06
+	snd_note $3F
+	snd_note $42, NOTELEN_06
+	snd_note $42
+	snd_note $3F
+	snd_note $3F, NOTELEN_03
+	snd_note $42, NOTELEN_06
+	snd_note $42
+	snd_note $42, NOTELEN_03
+	snd_note $3F, NOTELEN_06
+	snd_note $3F
+	snd_jp SndData_16_Ch2
+SndData_16_Ch1:
+	snd_call .sub0
+	snd_note $2A
+	snd_inc_vol -6
+	snd_note $2A
+	snd_note $2A
+	snd_note $2A
+	snd_inc_vol 6
+	snd_note $2A
+	snd_inc_vol -6
+	snd_note $2A
+	snd_inc_vol 6
+	snd_note $2A
+	snd_inc_vol -6
+	snd_note $2A
+	snd_note $2A
+	snd_note $2A
+	snd_inc_vol 6
+	snd_note $2A
+	snd_inc_vol -6
+	snd_note $2A
+	snd_note $2A
+	snd_note $2A
+	snd_inc_vol 6
+	snd_note $2A
+	snd_inc_vol -6
+	snd_note $2A
+	snd_inc_vol 6
+	snd_call .sub0
+	snd_inc_base_note -17
+	snd_note $3A, NOTELEN_02
+	snd_note $3A
+	snd_note $3A
+	snd_note $3A, NOTELEN_03
+	snd_note $3A
+	snd_note $35, NOTELEN_02
+	snd_note $35
+	snd_note $35
+	snd_note $35, NOTELEN_03
+	snd_note $35
+	snd_note $30, NOTELEN_02
+	snd_note $30
+	snd_note $30
+	snd_note $30, NOTELEN_03
+	snd_note $30
+	snd_note $29, NOTELEN_02
+	snd_note $29
+	snd_note $29
+	snd_note $29, NOTELEN_03
+	snd_note $29
+	snd_inc_base_note 17
+	snd_jp SndData_16_Ch1
+.sub0:
+	snd_var iSndChInfo_24, $04
+	.sub0loop:
+		snd_note $2A, NOTELEN_03
+		snd_inc_vol -6
+		snd_note $2A
+		snd_note $2A
+		snd_note $2A
+		snd_inc_vol 6
+		snd_djnz iSndChInfo_24, .sub0loop
+	snd_ret
 SndHeader_18:
 	db 4 ; Number of slots
 .slot0:
@@ -12735,3654 +7462,2021 @@ SndHeader_18:
 	dw SndData_18_Ch4 ; Data pointer
 	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
-SndData_18_Ch3: db $A0
-L0871B8: db $07
-L0871B9: db $00
-L0871BA: db $E3
-L0871BB: db $2D
-L0871BC: db $2C
-L0871BD: db $2D
-L0871BE: db $DE
-L0871BF: db $03
-L0871C0: db $8A
-L0871C1: db $FB
-L0871C2: db $97
-L0871C3: db $FF
-L0871C4: db $2D
-L0871C5: db $E1
-L0871C6: db $8A
-L0871C7: db $05
-L0871C8: db $97
-L0871C9: db $01
-L0871CA: db $00
-L0871CB: db $E3
-L0871CC: db $24
-L0871CD: db $DE
-L0871CE: db $03
-L0871CF: db $8A
-L0871D0: db $FB
-L0871D1: db $97
-L0871D2: db $FF
-L0871D3: db $24
-L0871D4: db $E1
-L0871D5: db $8A
-L0871D6: db $05
-L0871D7: db $97
-L0871D8: db $01
-L0871D9: db $00
-L0871DA: db $E3
-L0871DB: db $26
-L0871DC: db $DE
-L0871DD: db $03
-L0871DE: db $8A
-L0871DF: db $FB
-L0871E0: db $97
-L0871E1: db $FF
-L0871E2: db $26
-L0871E3: db $E1
-L0871E4: db $8A
-L0871E5: db $05
-L0871E6: db $97
-L0871E7: db $01
-L0871E8: db $00
-L0871E9: db $E3
-L0871EA: db $29
-L0871EB: db $DE
-L0871EC: db $03
-L0871ED: db $8A
-L0871EE: db $FB
-L0871EF: db $97
-L0871F0: db $FF
-L0871F1: db $29
-L0871F2: db $E1
-L0871F3: db $8A
-L0871F4: db $05
-L0871F5: db $97
-L0871F6: db $01
-L0871F7: db $00
-L0871F8: db $E3
-L0871F9: db $2B
-L0871FA: db $DE
-L0871FB: db $03
-L0871FC: db $8A
-L0871FD: db $FB
-L0871FE: db $97
-L0871FF: db $FF
-L087200: db $2B
-L087201: db $E1
-L087202: db $8A
-L087203: db $05
-L087204: db $97
-L087205: db $01
-L087206: db $00
-L087207: db $E3
-L087208: db $2B
-L087209: db $29
-L08720A: db $2B
-L08720B: db $2D
-L08720C: db $DE
-L08720D: db $06
-L08720E: db $8A
-L08720F: db $FB
-L087210: db $97
-L087211: db $FF
-L087212: db $2D
-L087213: db $E1
-L087214: db $8A
-L087215: db $05
-L087216: db $97
-L087217: db $01
-L087218: db $00
-L087219: db $E1
-L08721A: db $30
-L08721B: db $E3
-L08721C: db $32
-L08721D: db $DE
-L08721E: db $03
-L08721F: db $8A
-L087220: db $FB
-L087221: db $97
-L087222: db $FF
-L087223: db $32
-L087224: db $E1
-L087225: db $8A
-L087226: db $05
-L087227: db $97
-L087228: db $01
-L087229: db $00
-L08722A: db $E3
-L08722B: db $2B
-L08722C: db $DF
-L08722D: db $2C
-L08722E: db $DE
-L08722F: db $05
-L087230: db $2B
-L087231: db $E3
-L087232: db $29
-L087233: db $DE
-L087234: db $06
-L087235: db $8A
-L087236: db $FB
-L087237: db $97
-L087238: db $FF
-L087239: db $29
-L08723A: db $E1
-L08723B: db $8A
-L08723C: db $05
-L08723D: db $97
-L08723E: db $01
-L08723F: db $00
-L087240: db $E1
-L087241: db $A0
-L087242: db $05
-L087243: db $88
-L087244: db $40
-L087245: db $37
-L087246: db $DF
-L087247: db $38
-L087248: db $DE
-L087249: db $05
-L08724A: db $37
-L08724B: db $E3
-L08724C: db $35
-L08724D: db $DE
-L08724E: db $06
-L08724F: db $8A
-L087250: db $FB
-L087251: db $97
-L087252: db $FF
-L087253: db $35
-L087254: db $E1
-L087255: db $8A
-L087256: db $05
-L087257: db $97
-L087258: db $01
-L087259: db $00
-L08725A: db $DE
-L08725B: db $15
-L08725C: db $00
-L08725D: db $EB
-L08725E: db $A0
-L08725F: db $07
-L087260: db $88
-L087261: db $3D
-L087262: db $2C
-L087263: db $DF
-L087264: db $2D
-L087265: db $DE
-L087266: db $05
-L087267: db $2E
-L087268: db $E3
-L087269: db $30
-L08726A: db $DE
-L08726B: db $03
-L08726C: db $8A
-L08726D: db $FB
-L08726E: db $97
-L08726F: db $FF
-L087270: db $30
-L087271: db $E1
-L087272: db $8A
-L087273: db $05
-L087274: db $97
-L087275: db $01
-L087276: db $00
-L087277: db $E3
-L087278: db $2E
-L087279: db $DE
-L08727A: db $03
-L08727B: db $8A
-L08727C: db $FB
-L08727D: db $97
-L08727E: db $FF
-L08727F: db $2E
-L087280: db $E1
-L087281: db $8A
-L087282: db $05
-L087283: db $97
-L087284: db $01
-L087285: db $00
-L087286: db $E3
-L087287: db $2D
-L087288: db $DE
-L087289: db $03
-L08728A: db $8A
-L08728B: db $FB
-L08728C: db $97
-L08728D: db $FF
-L08728E: db $2D
-L08728F: db $E1
-L087290: db $8A
-L087291: db $05
-L087292: db $97
-L087293: db $01
-L087294: db $00
-L087295: db $E3
-L087296: db $29
-L087297: db $DE
-L087298: db $03
-L087299: db $8A
-L08729A: db $FB
-L08729B: db $97
-L08729C: db $FF
-L08729D: db $29
-L08729E: db $E1
-L08729F: db $8A
-L0872A0: db $05
-L0872A1: db $97
-L0872A2: db $01
-L0872A3: db $00
-L0872A4: db $E3
-L0872A5: db $29
-L0872A6: db $DE
-L0872A7: db $03
-L0872A8: db $8A
-L0872A9: db $FB
-L0872AA: db $97
-L0872AB: db $FF
-L0872AC: db $29
-L0872AD: db $E1
-L0872AE: db $8A
-L0872AF: db $05
-L0872B0: db $97
-L0872B1: db $01
-L0872B2: db $2B
-L0872B3: db $E3
-L0872B4: db $2C
-L0872B5: db $DF
-L0872B6: db $2D
-L0872B7: db $E1
-L0872B8: db $2D
-L0872B9: db $E0
-L0872BA: db $8A
-L0872BB: db $FF
-L0872BC: db $2D
-L0872BD: db $2D
-L0872BE: db $2D
-L0872BF: db $8A
-L0872C0: db $FF
-L0872C1: db $2D
-L0872C2: db $2D
-L0872C3: db $2D
-L0872C4: db $8A
-L0872C5: db $FF
-L0872C6: db $2D
-L0872C7: db $2D
-L0872C8: db $2D
-L0872C9: db $A0
-L0872CA: db $09
-L0872CB: db $29
-L0872CC: db $DE
-L0872CD: db $03
-L0872CE: db $8A
-L0872CF: db $FB
-L0872D0: db $97
-L0872D1: db $FF
-L0872D2: db $29
-L0872D3: db $E1
-L0872D4: db $8A
-L0872D5: db $05
-L0872D6: db $97
-L0872D7: db $01
-L0872D8: db $00
-L0872D9: db $E3
-L0872DA: db $8A
-L0872DB: db $01
-L0872DC: db $29
-L0872DD: db $DE
-L0872DE: db $03
-L0872DF: db $8A
-L0872E0: db $FB
-L0872E1: db $97
-L0872E2: db $FF
-L0872E3: db $29
-L0872E4: db $E1
-L0872E5: db $8A
-L0872E6: db $05
-L0872E7: db $97
-L0872E8: db $01
-L0872E9: db $00
-L0872EA: db $E3
-L0872EB: db $8A
-L0872EC: db $01
-L0872ED: db $29
-L0872EE: db $DE
-L0872EF: db $03
-L0872F0: db $8A
-L0872F1: db $FB
-L0872F2: db $97
-L0872F3: db $FF
-L0872F4: db $29
-L0872F5: db $E1
-L0872F6: db $8A
-L0872F7: db $05
-L0872F8: db $97
-L0872F9: db $01
-L0872FA: db $00
-L0872FB: db $E3
-L0872FC: db $8A
-L0872FD: db $01
-L0872FE: db $29
-L0872FF: db $26
-L087300: db $DE
-L087301: db $03
-L087302: db $8A
-L087303: db $FB
-L087304: db $97
-L087305: db $FF
-L087306: db $26
-L087307: db $E1
-L087308: db $8A
-L087309: db $05
-L08730A: db $97
-L08730B: db $01
-L08730C: db $24
-L08730D: db $DE
-L08730E: db $03
-L08730F: db $8A
-L087310: db $FB
-L087311: db $97
-L087312: db $FF
-L087313: db $24
-L087314: db $E1
-L087315: db $8A
-L087316: db $05
-L087317: db $97
-L087318: db $01
-L087319: db $26
-L08731A: db $E3
-L08731B: db $29
-L08731C: db $DE
-L08731D: db $03
-L08731E: db $8A
-L08731F: db $FB
-L087320: db $97
-L087321: db $FF
-L087322: db $29
-L087323: db $E1
-L087324: db $8A
-L087325: db $05
-L087326: db $97
-L087327: db $01
-L087328: db $2C
-L087329: db $E3
-L08732A: db $2B
-L08732B: db $DE
-L08732C: db $03
-L08732D: db $8A
-L08732E: db $FB
-L08732F: db $97
-L087330: db $FF
-L087331: db $2B
-L087332: db $E1
-L087333: db $8A
-L087334: db $05
-L087335: db $97
-L087336: db $01
-L087337: db $00
-L087338: db $E3
-L087339: db $35
-L08733A: db $DE
-L08733B: db $03
-L08733C: db $8A
-L08733D: db $FB
-L08733E: db $97
-L08733F: db $FF
-L087340: db $35
-L087341: db $E1
-L087342: db $8A
-L087343: db $05
-L087344: db $97
-L087345: db $01
-L087346: db $00
-L087347: db $EB
-L087348: db $A0
-L087349: db $07
-L08734A: db $29
-L08734B: db $DE
-L08734C: db $03
-L08734D: db $8A
-L08734E: db $FB
-L08734F: db $97
-L087350: db $FF
-L087351: db $29
-L087352: db $E1
-L087353: db $8A
-L087354: db $05
-L087355: db $97
-L087356: db $01
-L087357: db $26
-L087358: db $E3
-L087359: db $29
-L08735A: db $DE
-L08735B: db $03
-L08735C: db $8A
-L08735D: db $FB
-L08735E: db $97
-L08735F: db $FF
-L087360: db $29
-L087361: db $E1
-L087362: db $8A
-L087363: db $05
-L087364: db $97
-L087365: db $01
-L087366: db $00
-L087367: db $E7
-L087368: db $A0
-L087369: db $09
-L08736A: db $2C
-L08736B: db $E3
-L08736C: db $2D
-L08736D: db $DE
-L08736E: db $03
-L08736F: db $8A
-L087370: db $FB
-L087371: db $97
-L087372: db $FF
-L087373: db $2D
-L087374: db $E1
-L087375: db $8A
-L087376: db $05
-L087377: db $97
-L087378: db $01
-L087379: db $2C
-L08737A: db $E3
-L08737B: db $2D
-L08737C: db $DE
-L08737D: db $03
-L08737E: db $8A
-L08737F: db $FB
-L087380: db $97
-L087381: db $FF
-L087382: db $2D
-L087383: db $E1
-L087384: db $8A
-L087385: db $05
-L087386: db $97
-L087387: db $01
-L087388: db $29
-L087389: db $DE
-L08738A: db $06
-L08738B: db $8A
-L08738C: db $FB
-L08738D: db $97
-L08738E: db $FF
-L08738F: db $29
-L087390: db $E1
-L087391: db $8A
-L087392: db $05
-L087393: db $97
-L087394: db $01
-L087395: db $00
-L087396: db $E1
-L087397: db $29
-L087398: db $DE
-L087399: db $06
-L08739A: db $8A
-L08739B: db $FB
-L08739C: db $97
-L08739D: db $FF
-L08739E: db $29
-L08739F: db $E1
-L0873A0: db $8A
-L0873A1: db $05
-L0873A2: db $97
-L0873A3: db $01
-L0873A4: db $00
-L0873A5: db $EA
-L0873A6: db $A0
-L0873A7: db $07
-L0873A8: db $29
-L0873A9: db $DE
-L0873AA: db $03
-L0873AB: db $8A
-L0873AC: db $FB
-L0873AD: db $97
-L0873AE: db $FF
-L0873AF: db $29
-L0873B0: db $E1
-L0873B1: db $8A
-L0873B2: db $05
-L0873B3: db $97
-L0873B4: db $01
-L0873B5: db $29
-L0873B6: db $E3
-L0873B7: db $29
-L0873B8: db $DE
-L0873B9: db $03
-L0873BA: db $8A
-L0873BB: db $FB
-L0873BC: db $97
-L0873BD: db $FF
-L0873BE: db $29
-L0873BF: db $E1
-L0873C0: db $8A
-L0873C1: db $05
-L0873C2: db $97
-L0873C3: db $01
-L0873C4: db $00
-L0873C5: db $EB
-L0873C6: db $A0
-L0873C7: db $09
-L0873C8: db $30
-L0873C9: db $DE
-L0873CA: db $03
-L0873CB: db $8A
-L0873CC: db $FB
-L0873CD: db $97
-L0873CE: db $FF
-L0873CF: db $30
-L0873D0: db $E1
-L0873D1: db $8A
-L0873D2: db $05
-L0873D3: db $97
-L0873D4: db $01
-L0873D5: db $32
-L0873D6: db $E3
-L0873D7: db $35
-L0873D8: db $DE
-L0873D9: db $03
-L0873DA: db $8A
-L0873DB: db $FB
-L0873DC: db $97
-L0873DD: db $FF
-L0873DE: db $35
-L0873DF: db $E1
-L0873E0: db $8A
-L0873E1: db $05
-L0873E2: db $97
-L0873E3: db $01
-L0873E4: db $39
-L0873E5: db $E3
-L0873E6: db $35
-L0873E7: db $DE
-L0873E8: db $03
-L0873E9: db $8A
-L0873EA: db $FB
-L0873EB: db $97
-L0873EC: db $FF
-L0873ED: db $35
-L0873EE: db $E1
-L0873EF: db $8A
-L0873F0: db $05
-L0873F1: db $97
-L0873F2: db $01
-L0873F3: db $00
-L0873F4: db $EC
-L0873F5: db $A0
-L0873F6: db $07
-L0873F7: db $29
-L0873F8: db $DE
-L0873F9: db $03
-L0873FA: db $8A
-L0873FB: db $FB
-L0873FC: db $97
-L0873FD: db $FF
-L0873FE: db $29
-L0873FF: db $E1
-L087400: db $8A
-L087401: db $05
-L087402: db $97
-L087403: db $01
-L087404: db $26
-L087405: db $E3
-L087406: db $29
-L087407: db $DE
-L087408: db $03
-L087409: db $8A
-L08740A: db $FB
-L08740B: db $97
-L08740C: db $FF
-L08740D: db $29
-L08740E: db $E1
-L08740F: db $8A
-L087410: db $05
-L087411: db $97
-L087412: db $01
-L087413: db $00
-L087414: db $E7
-L087415: db $A0
-L087416: db $09
-L087417: db $2C
-L087418: db $E3
-L087419: db $2D
-L08741A: db $DE
-L08741B: db $03
-L08741C: db $8A
-L08741D: db $FB
-L08741E: db $97
-L08741F: db $FF
-L087420: db $2D
-L087421: db $E1
-L087422: db $8A
-L087423: db $05
-L087424: db $97
-L087425: db $01
-L087426: db $2C
-L087427: db $E3
-L087428: db $2D
-L087429: db $DE
-L08742A: db $03
-L08742B: db $8A
-L08742C: db $FB
-L08742D: db $97
-L08742E: db $FF
-L08742F: db $2D
-L087430: db $E1
-L087431: db $8A
-L087432: db $05
-L087433: db $97
-L087434: db $01
-L087435: db $29
-L087436: db $DE
-L087437: db $06
-L087438: db $8A
-L087439: db $FB
-L08743A: db $97
-L08743B: db $FF
-L08743C: db $29
-L08743D: db $E1
-L08743E: db $8A
-L08743F: db $05
-L087440: db $97
-L087441: db $01
-L087442: db $2C
-L087443: db $DF
-L087444: db $2D
-L087445: db $30
-L087446: db $35
-L087447: db $DE
-L087448: db $06
-L087449: db $8A
-L08744A: db $FB
-L08744B: db $97
-L08744C: db $FF
-L08744D: db $35
-L08744E: db $E1
-L08744F: db $8A
-L087450: db $05
-L087451: db $97
-L087452: db $01
-L087453: db $00
-L087454: db $EA
-L087455: db $A0
-L087456: db $07
-L087457: db $29
-L087458: db $E3
-L087459: db $29
-L08745A: db $29
-L08745B: db $DE
-L08745C: db $03
-L08745D: db $8A
-L08745E: db $FB
-L08745F: db $97
-L087460: db $FF
-L087461: db $29
-L087462: db $E1
-L087463: db $8A
-L087464: db $05
-L087465: db $97
-L087466: db $01
-L087467: db $A0
-L087468: db $09
-L087469: db $38
-L08746A: db $E3
-L08746B: db $39
-L08746C: db $DE
-L08746D: db $03
-L08746E: db $8A
-L08746F: db $FB
-L087470: db $97
-L087471: db $FF
-L087472: db $39
-L087473: db $E1
-L087474: db $8A
-L087475: db $05
-L087476: db $97
-L087477: db $01
-L087478: db $00
-L087479: db $E3
-L08747A: db $30
-L08747B: db $DE
-L08747C: db $03
-L08747D: db $8A
-L08747E: db $FB
-L08747F: db $97
-L087480: db $FF
-L087481: db $30
-L087482: db $E1
-L087483: db $8A
-L087484: db $05
-L087485: db $97
-L087486: db $01
-L087487: db $32
-L087488: db $E3
-L087489: db $35
-L08748A: db $DE
-L08748B: db $03
-L08748C: db $8A
-L08748D: db $FB
-L08748E: db $97
-L08748F: db $FF
-L087490: db $35
-L087491: db $E1
-L087492: db $8A
-L087493: db $05
-L087494: db $97
-L087495: db $01
-L087496: db $32
-L087497: db $E3
-L087498: db $35
-L087499: db $DE
-L08749A: db $03
-L08749B: db $8A
-L08749C: db $FB
-L08749D: db $97
-L08749E: db $FF
-L08749F: db $35
-L0874A0: db $E1
-L0874A1: db $8A
-L0874A2: db $05
-L0874A3: db $97
-L0874A4: db $01
-L0874A5: db $A0
-L0874A6: db $0B
-L0874A7: db $88
-L0874A8: db $3E
-L0874A9: db $00
-L0874AA: db $E3
-L0874AB: db $39
-L0874AC: db $38
-L0874AD: db $39
-L0874AE: db $DE
-L0874AF: db $03
-L0874B0: db $8A
-L0874B1: db $FB
-L0874B2: db $97
-L0874B3: db $FF
-L0874B4: db $39
-L0874B5: db $E1
-L0874B6: db $8A
-L0874B7: db $05
-L0874B8: db $97
-L0874B9: db $01
-L0874BA: db $00
-L0874BB: db $E3
-L0874BC: db $30
-L0874BD: db $DE
-L0874BE: db $03
-L0874BF: db $8A
-L0874C0: db $FB
-L0874C1: db $97
-L0874C2: db $FF
-L0874C3: db $30
-L0874C4: db $E1
-L0874C5: db $8A
-L0874C6: db $05
-L0874C7: db $97
-L0874C8: db $01
-L0874C9: db $00
-L0874CA: db $E3
-L0874CB: db $32
-L0874CC: db $DE
-L0874CD: db $03
-L0874CE: db $8A
-L0874CF: db $FB
-L0874D0: db $97
-L0874D1: db $FF
-L0874D2: db $32
-L0874D3: db $E1
-L0874D4: db $8A
-L0874D5: db $05
-L0874D6: db $97
-L0874D7: db $01
-L0874D8: db $00
-L0874D9: db $E3
-L0874DA: db $35
-L0874DB: db $DE
-L0874DC: db $03
-L0874DD: db $8A
-L0874DE: db $FB
-L0874DF: db $97
-L0874E0: db $FF
-L0874E1: db $35
-L0874E2: db $E1
-L0874E3: db $8A
-L0874E4: db $05
-L0874E5: db $97
-L0874E6: db $01
-L0874E7: db $00
-L0874E8: db $E3
-L0874E9: db $37
-L0874EA: db $DE
-L0874EB: db $03
-L0874EC: db $8A
-L0874ED: db $FB
-L0874EE: db $97
-L0874EF: db $FF
-L0874F0: db $37
-L0874F1: db $E1
-L0874F2: db $8A
-L0874F3: db $05
-L0874F4: db $97
-L0874F5: db $01
-L0874F6: db $00
-L0874F7: db $E3
-L0874F8: db $37
-L0874F9: db $E3
-L0874FA: db $35
-L0874FB: db $37
-L0874FC: db $39
-L0874FD: db $DE
-L0874FE: db $06
-L0874FF: db $8A
-L087500: db $FB
-L087501: db $97
-L087502: db $FF
-L087503: db $39
-L087504: db $E1
-L087505: db $8A
-L087506: db $05
-L087507: db $97
-L087508: db $01
-L087509: db $00
-L08750A: db $E1
-L08750B: db $3C
-L08750C: db $E3
-L08750D: db $3E
-L08750E: db $DE
-L08750F: db $03
-L087510: db $8A
-L087511: db $FB
-L087512: db $97
-L087513: db $FF
-L087514: db $3E
-L087515: db $E1
-L087516: db $8A
-L087517: db $05
-L087518: db $97
-L087519: db $01
-L08751A: db $00
-L08751B: db $E3
-L08751C: db $37
-L08751D: db $DF
-L08751E: db $38
-L08751F: db $DE
-L087520: db $05
-L087521: db $37
-L087522: db $E3
-L087523: db $35
-L087524: db $DE
-L087525: db $06
-L087526: db $8A
-L087527: db $FB
-L087528: db $97
-L087529: db $FF
-L08752A: db $35
-L08752B: db $E1
-L08752C: db $8A
-L08752D: db $05
-L08752E: db $97
-L08752F: db $01
-L087530: db $00
-L087531: db $DE
-L087532: db $0F
-L087533: db $A0
-L087534: db $09
-L087535: db $88
-L087536: db $3D
-L087537: db $30
-L087538: db $DE
-L087539: db $03
-L08753A: db $8A
-L08753B: db $FB
-L08753C: db $97
-L08753D: db $FF
-L08753E: db $30
-L08753F: db $E1
-L087540: db $8A
-L087541: db $05
-L087542: db $97
-L087543: db $01
-L087544: db $32
-L087545: db $E3
-L087546: db $35
-L087547: db $DE
-L087548: db $03
-L087549: db $8A
-L08754A: db $FB
-L08754B: db $97
-L08754C: db $FF
-L08754D: db $35
-L08754E: db $E1
-L08754F: db $8A
-L087550: db $05
-L087551: db $97
-L087552: db $01
-L087553: db $38
-L087554: db $DF
-L087555: db $39
-L087556: db $DE
-L087557: db $05
-L087558: db $35
-L087559: db $DE
-L08755A: db $03
-L08755B: db $8A
-L08755C: db $FB
-L08755D: db $97
-L08755E: db $FF
-L08755F: db $35
-L087560: db $E1
-L087561: db $8A
-L087562: db $05
-L087563: db $97
-L087564: db $01
-L087565: db $00
-L087566: db $E3
-L087567: db $35
-L087568: db $DE
-L087569: db $03
-L08756A: db $8A
-L08756B: db $FB
-L08756C: db $97
-L08756D: db $FF
-L08756E: db $35
-L08756F: db $E1
-L087570: db $8A
-L087571: db $05
-L087572: db $97
-L087573: db $01
-L087574: db $00
-L087575: db $E3
-L087576: db $A0
-L087577: db $0B
-L087578: db $88
-L087579: db $3E
-L08757A: db $38
-L08757B: db $DF
-L08757C: db $39
-L08757D: db $DE
-L08757E: db $05
-L08757F: db $3A
-L087580: db $E3
-L087581: db $3C
-L087582: db $DE
-L087583: db $03
-L087584: db $8A
-L087585: db $FB
-L087586: db $97
-L087587: db $FF
-L087588: db $3C
-L087589: db $E1
-L08758A: db $8A
-L08758B: db $05
-L08758C: db $97
-L08758D: db $01
-L08758E: db $00
-L08758F: db $E3
-L087590: db $3A
-L087591: db $DE
-L087592: db $06
-L087593: db $8A
-L087594: db $FB
-L087595: db $97
-L087596: db $FF
-L087597: db $3A
-L087598: db $E1
-L087599: db $8A
-L08759A: db $05
-L08759B: db $97
-L08759C: db $01
-L08759D: db $00
-L08759E: db $E1
-L08759F: db $39
-L0875A0: db $DE
-L0875A1: db $06
-L0875A2: db $8A
-L0875A3: db $FB
-L0875A4: db $97
-L0875A5: db $FF
-L0875A6: db $39
-L0875A7: db $E1
-L0875A8: db $8A
-L0875A9: db $05
-L0875AA: db $97
-L0875AB: db $01
-L0875AC: db $00
-L0875AD: db $E1
-L0875AE: db $35
-L0875AF: db $DE
-L0875B0: db $06
-L0875B1: db $8A
-L0875B2: db $FB
-L0875B3: db $97
-L0875B4: db $FF
-L0875B5: db $35
-L0875B6: db $E1
-L0875B7: db $8A
-L0875B8: db $05
-L0875B9: db $97
-L0875BA: db $01
-L0875BB: db $00
-L0875BC: db $E1
-L0875BD: db $35
-L0875BE: db $DE
-L0875BF: db $03
-L0875C0: db $8A
-L0875C1: db $FB
-L0875C2: db $97
-L0875C3: db $FF
-L0875C4: db $35
-L0875C5: db $E1
-L0875C6: db $8A
-L0875C7: db $05
-L0875C8: db $97
-L0875C9: db $01
-L0875CA: db $37
-L0875CB: db $E3
-L0875CC: db $38
-L0875CD: db $E0
-L0875CE: db $39
-L0875CF: db $39
-L0875D0: db $8A
-L0875D1: db $FE
-L0875D2: db $39
-L0875D3: db $39
-L0875D4: db $39
-L0875D5: db $8A
-L0875D6: db $FE
-L0875D7: db $39
-L0875D8: db $39
-L0875D9: db $39
-L0875DA: db $8A
-L0875DB: db $FF
-L0875DC: db $39
-L0875DD: db $39
-L0875DE: db $39
-L0875DF: db $A0
-L0875E0: db $09
-L0875E1: db $8A
-L0875E2: db $02
-L0875E3: db $88
-L0875E4: db $3D
-L0875E5: db $35
-L0875E6: db $DE
-L0875E7: db $03
-L0875E8: db $8A
-L0875E9: db $FB
-L0875EA: db $97
-L0875EB: db $FF
-L0875EC: db $35
-L0875ED: db $E1
-L0875EE: db $8A
-L0875EF: db $05
-L0875F0: db $97
-L0875F1: db $01
-L0875F2: db $00
-L0875F3: db $E3
-L0875F4: db $8A
-L0875F5: db $02
-L0875F6: db $35
-L0875F7: db $DE
-L0875F8: db $03
-L0875F9: db $8A
-L0875FA: db $FB
-L0875FB: db $97
-L0875FC: db $FF
-L0875FD: db $35
-L0875FE: db $E1
-L0875FF: db $8A
-L087600: db $05
-L087601: db $97
-L087602: db $01
-L087603: db $00
-L087604: db $E3
-L087605: db $8A
-L087606: db $01
-L087607: db $35
-L087608: db $DE
-L087609: db $03
-L08760A: db $8A
-L08760B: db $FB
-L08760C: db $97
-L08760D: db $FF
-L08760E: db $35
-L08760F: db $E1
-L087610: db $8A
-L087611: db $05
-L087612: db $97
-L087613: db $01
-L087614: db $8A
-L087615: db $01
-L087616: db $00
-L087617: db $E3
-L087618: db $35
-L087619: db $32
-L08761A: db $DE
-L08761B: db $03
-L08761C: db $8A
-L08761D: db $FB
-L08761E: db $97
-L08761F: db $FF
-L087620: db $32
-L087621: db $E1
-L087622: db $8A
-L087623: db $05
-L087624: db $97
-L087625: db $01
-L087626: db $30
-L087627: db $DE
-L087628: db $03
-L087629: db $8A
-L08762A: db $FB
-L08762B: db $97
-L08762C: db $FF
-L08762D: db $30
-L08762E: db $E1
-L08762F: db $8A
-L087630: db $05
-L087631: db $97
-L087632: db $01
-L087633: db $32
-L087634: db $E3
-L087635: db $35
-L087636: db $DE
-L087637: db $03
-L087638: db $8A
-L087639: db $FB
-L08763A: db $97
-L08763B: db $FF
-L08763C: db $35
-L08763D: db $E1
-L08763E: db $8A
-L08763F: db $05
-L087640: db $97
-L087641: db $01
-L087642: db $38
-L087643: db $E3
-L087644: db $37
-L087645: db $DE
-L087646: db $03
-L087647: db $8A
-L087648: db $FB
-L087649: db $97
-L08764A: db $FF
-L08764B: db $37
-L08764C: db $E1
-L08764D: db $8A
-L08764E: db $05
-L08764F: db $97
-L087650: db $01
-L087651: db $00
-L087652: db $E3
-L087653: db $35
-L087654: db $DE
-L087655: db $03
-L087656: db $8A
-L087657: db $FB
-L087658: db $97
-L087659: db $FF
-L08765A: db $35
-L08765B: db $E1
-L08765C: db $8A
-L08765D: db $05
-L08765E: db $97
-L08765F: db $01
-L087660: db $00
-L087661: db $EB
-L087662: db $A0
-L087663: db $0B
-L087664: db $88
-L087665: db $3E
-L087666: db $35
-L087667: db $DE
-L087668: db $03
-L087669: db $8A
-L08766A: db $FB
-L08766B: db $97
-L08766C: db $FF
-L08766D: db $35
-L08766E: db $E1
-L08766F: db $8A
-L087670: db $05
-L087671: db $97
-L087672: db $01
-L087673: db $32
-L087674: db $E3
-L087675: db $35
-L087676: db $DE
-L087677: db $03
-L087678: db $8A
-L087679: db $FB
-L08767A: db $97
-L08767B: db $FF
-L08767C: db $35
-L08767D: db $E1
-L08767E: db $8A
-L08767F: db $05
-L087680: db $97
-L087681: db $01
-L087682: db $A0
-L087683: db $09
-L087684: db $88
-L087685: db $3D
-L087686: db $00
-L087687: db $E7
-L087688: db $2C
-L087689: db $E3
-L08768A: db $2D
-L08768B: db $DE
-L08768C: db $03
-L08768D: db $8A
-L08768E: db $FB
-L08768F: db $97
-L087690: db $FF
-L087691: db $2D
-L087692: db $E1
-L087693: db $8A
-L087694: db $05
-L087695: db $97
-L087696: db $01
-L087697: db $2C
-L087698: db $E3
-L087699: db $2D
-L08769A: db $DE
-L08769B: db $03
-L08769C: db $8A
-L08769D: db $FB
-L08769E: db $97
-L08769F: db $FF
-L0876A0: db $2D
-L0876A1: db $E1
-L0876A2: db $8A
-L0876A3: db $05
-L0876A4: db $97
-L0876A5: db $01
-L0876A6: db $29
-L0876A7: db $DE
-L0876A8: db $06
-L0876A9: db $8A
-L0876AA: db $FB
-L0876AB: db $97
-L0876AC: db $FF
-L0876AD: db $29
-L0876AE: db $E1
-L0876AF: db $8A
-L0876B0: db $05
-L0876B1: db $97
-L0876B2: db $01
-L0876B3: db $00
-L0876B4: db $E1
-L0876B5: db $29
-L0876B6: db $DE
-L0876B7: db $06
-L0876B8: db $8A
-L0876B9: db $FB
-L0876BA: db $97
-L0876BB: db $FF
-L0876BC: db $29
-L0876BD: db $E1
-L0876BE: db $8A
-L0876BF: db $05
-L0876C0: db $97
-L0876C1: db $01
-L0876C2: db $00
-L0876C3: db $EA
-L0876C4: db $A0
-L0876C5: db $0B
-L0876C6: db $88
-L0876C7: db $3E
-L0876C8: db $35
-L0876C9: db $DE
-L0876CA: db $03
-L0876CB: db $8A
-L0876CC: db $FB
-L0876CD: db $97
-L0876CE: db $FF
-L0876CF: db $35
-L0876D0: db $E1
-L0876D1: db $8A
-L0876D2: db $05
-L0876D3: db $97
-L0876D4: db $01
-L0876D5: db $35
-L0876D6: db $E3
-L0876D7: db $35
-L0876D8: db $DE
-L0876D9: db $03
-L0876DA: db $8A
-L0876DB: db $FB
-L0876DC: db $97
-L0876DD: db $FF
-L0876DE: db $35
-L0876DF: db $E1
-L0876E0: db $8A
-L0876E1: db $05
-L0876E2: db $97
-L0876E3: db $01
-L0876E4: db $00
-L0876E5: db $EB
-L0876E6: db $A0
-L0876E7: db $09
-L0876E8: db $88
-L0876E9: db $3D
-L0876EA: db $30
-L0876EB: db $DE
-L0876EC: db $03
-L0876ED: db $8A
-L0876EE: db $FB
-L0876EF: db $97
-L0876F0: db $FF
-L0876F1: db $30
-L0876F2: db $E1
-L0876F3: db $8A
-L0876F4: db $05
-L0876F5: db $97
-L0876F6: db $01
-L0876F7: db $32
-L0876F8: db $E3
-L0876F9: db $35
-L0876FA: db $DE
-L0876FB: db $03
-L0876FC: db $8A
-L0876FD: db $FB
-L0876FE: db $97
-L0876FF: db $FF
-L087700: db $35
-L087701: db $E1
-L087702: db $8A
-L087703: db $05
-L087704: db $97
-L087705: db $01
-L087706: db $39
-L087707: db $E3
-L087708: db $35
-L087709: db $DE
-L08770A: db $03
-L08770B: db $8A
-L08770C: db $FB
-L08770D: db $97
-L08770E: db $FF
-L08770F: db $35
-L087710: db $E1
-L087711: db $8A
-L087712: db $05
-L087713: db $97
-L087714: db $01
-L087715: db $00
-L087716: db $EB
-L087717: db $35
-L087718: db $DE
-L087719: db $03
-L08771A: db $8A
-L08771B: db $FB
-L08771C: db $97
-L08771D: db $FF
-L08771E: db $35
-L08771F: db $E1
-L087720: db $8A
-L087721: db $05
-L087722: db $97
-L087723: db $01
-L087724: db $00
-L087725: db $E3
-L087726: db $A0
-L087727: db $0B
-L087728: db $88
-L087729: db $3E
-L08772A: db $35
-L08772B: db $DE
-L08772C: db $03
-L08772D: db $8A
-L08772E: db $FB
-L08772F: db $97
-L087730: db $FF
-L087731: db $35
-L087732: db $E1
-L087733: db $8A
-L087734: db $05
-L087735: db $97
-L087736: db $01
-L087737: db $32
-L087738: db $E3
-L087739: db $35
-L08773A: db $DE
-L08773B: db $03
-L08773C: db $8A
-L08773D: db $FB
-L08773E: db $97
-L08773F: db $FF
-L087740: db $35
-L087741: db $E1
-L087742: db $8A
-L087743: db $05
-L087744: db $97
-L087745: db $01
-L087746: db $00
-L087747: db $E7
-L087748: db $A0
-L087749: db $09
-L08774A: db $88
-L08774B: db $3D
-L08774C: db $2C
-L08774D: db $E3
-L08774E: db $2D
-L08774F: db $DE
-L087750: db $03
-L087751: db $8A
-L087752: db $FB
-L087753: db $97
-L087754: db $FF
-L087755: db $2D
-L087756: db $E1
-L087757: db $8A
-L087758: db $05
-L087759: db $97
-L08775A: db $01
-L08775B: db $2C
-L08775C: db $E3
-L08775D: db $2D
-L08775E: db $DE
-L08775F: db $03
-L087760: db $8A
-L087761: db $FB
-L087762: db $97
-L087763: db $FF
-L087764: db $2D
-L087765: db $E1
-L087766: db $8A
-L087767: db $05
-L087768: db $97
-L087769: db $01
-L08776A: db $29
-L08776B: db $DE
-L08776C: db $06
-L08776D: db $8A
-L08776E: db $FB
-L08776F: db $97
-L087770: db $FF
-L087771: db $29
-L087772: db $E1
-L087773: db $8A
-L087774: db $05
-L087775: db $97
-L087776: db $01
-L087777: db $2C
-L087778: db $DF
-L087779: db $2D
-L08777A: db $30
-L08777B: db $35
-L08777C: db $DE
-L08777D: db $03
-L08777E: db $8A
-L08777F: db $FB
-L087780: db $97
-L087781: db $FF
-L087782: db $35
-L087783: db $E1
-L087784: db $8A
-L087785: db $05
-L087786: db $97
-L087787: db $01
-L087788: db $00
-L087789: db $E5
-L08778A: db $A0
-L08778B: db $0B
-L08778C: db $88
-L08778D: db $3E
-L08778E: db $35
-L08778F: db $DE
-L087790: db $03
-L087791: db $8A
-L087792: db $FB
-L087793: db $97
-L087794: db $FF
-L087795: db $35
-L087796: db $E1
-L087797: db $8A
-L087798: db $05
-L087799: db $97
-L08779A: db $01
-L08779B: db $35
-L08779C: db $E3
-L08779D: db $35
-L08779E: db $DE
-L08779F: db $03
-L0877A0: db $8A
-L0877A1: db $FB
-L0877A2: db $97
-L0877A3: db $FF
-L0877A4: db $35
-L0877A5: db $E1
-L0877A6: db $8A
-L0877A7: db $05
-L0877A8: db $97
-L0877A9: db $01
-L0877AA: db $00
-L0877AB: db $EB
-L0877AC: db $A0
-L0877AD: db $09
-L0877AE: db $88
-L0877AF: db $3D
-L0877B0: db $36
-L0877B1: db $DF
-L0877B2: db $37
-L0877B3: db $38
-L0877B4: db $DE
-L0877B5: db $0A
-L0877B6: db $35
-L0877B7: db $DE
-L0877B8: db $03
-L0877B9: db $8A
-L0877BA: db $FB
-L0877BB: db $97
-L0877BC: db $FF
-L0877BD: db $35
-L0877BE: db $E1
-L0877BF: db $8A
-L0877C0: db $05
-L0877C1: db $97
-L0877C2: db $01
-L0877C3: db $37
-L0877C4: db $E3
-L0877C5: db $32
-L0877C6: db $DE
-L0877C7: db $03
-L0877C8: db $8A
-L0877C9: db $FB
-L0877CA: db $97
-L0877CB: db $FF
-L0877CC: db $32
-L0877CD: db $E1
-L0877CE: db $8A
-L0877CF: db $05
-L0877D0: db $97
-L0877D1: db $01
-L0877D2: db $35
-L0877D3: db $E3
-L0877D4: db $34
-L0877D5: db $DF
-L0877D6: db $33
-L0877D7: db $32
-L0877D8: db $30
-L0877D9: db $E0
-L0877DA: db $00
-L0877DB: db $DE
-L0877DC: db $07
-L0877DD: db $A0
-L0877DE: db $01
-L0877DF: db $35
-L0877E0: db $DE
-L0877E1: db $03
-L0877E2: db $8A
-L0877E3: db $FB
-L0877E4: db $97
-L0877E5: db $FF
-L0877E6: db $35
-L0877E7: db $E1
-L0877E8: db $8A
-L0877E9: db $05
-L0877EA: db $97
-L0877EB: db $01
-L0877EC: db $37
-L0877ED: db $E3
-L0877EE: db $39
-L0877EF: db $DE
-L0877F0: db $03
-L0877F1: db $8A
-L0877F2: db $FB
-L0877F3: db $97
-L0877F4: db $FF
-L0877F5: db $39
-L0877F6: db $E1
-L0877F7: db $8A
-L0877F8: db $05
-L0877F9: db $97
-L0877FA: db $01
-L0877FB: db $00
-L0877FC: db $DE
-L0877FD: db $06
-L0877FE: db $3E
-L0877FF: db $DE
-L087800: db $1B
-L087801: db $8A
-L087802: db $FB
-L087803: db $97
-L087804: db $FF
-L087805: db $3E
-L087806: db $E1
-L087807: db $8A
-L087808: db $05
-L087809: db $97
-L08780A: db $01
-L08780B: db $00
-L08780C: db $E3
-L08780D: db $40
-L08780E: db $41
-L08780F: db $DE
-L087810: db $03
-L087811: db $8A
-L087812: db $FB
-L087813: db $97
-L087814: db $FF
-L087815: db $41
-L087816: db $E1
-L087817: db $8A
-L087818: db $05
-L087819: db $97
-L08781A: db $01
-L08781B: db $44
-L08781C: db $E5
-L08781D: db $41
-L08781E: db $DE
-L08781F: db $03
-L087820: db $8A
-L087821: db $FB
-L087822: db $97
-L087823: db $FF
-L087824: db $41
-L087825: db $E1
-L087826: db $8A
-L087827: db $05
-L087828: db $97
-L087829: db $01
-L08782A: db $3A
-L08782B: db $E1
-L08782C: db $39
-L08782D: db $38
-L08782E: db $DE
-L08782F: db $4B
-L087830: db $8A
-L087831: db $FB
-L087832: db $97
-L087833: db $FF
-L087834: db $38
-L087835: db $E1
-L087836: db $8A
-L087837: db $05
-L087838: db $97
-L087839: db $01
-L08783A: db $00
-L08783B: db $EB
-L08783C: db $35
-L08783D: db $DE
-L08783E: db $03
-L08783F: db $8A
-L087840: db $FB
-L087841: db $97
-L087842: db $FF
-L087843: db $35
-L087844: db $E1
-L087845: db $8A
-L087846: db $05
-L087847: db $97
-L087848: db $01
-L087849: db $37
-L08784A: db $E3
-L08784B: db $39
-L08784C: db $DE
-L08784D: db $03
-L08784E: db $8A
-L08784F: db $FB
-L087850: db $97
-L087851: db $FF
-L087852: db $39
-L087853: db $E1
-L087854: db $8A
-L087855: db $05
-L087856: db $97
-L087857: db $01
-L087858: db $00
-L087859: db $DE
-L08785A: db $06
-L08785B: db $3E
-L08785C: db $DE
-L08785D: db $1B
-L08785E: db $8A
-L08785F: db $FB
-L087860: db $97
-L087861: db $FF
-L087862: db $3E
-L087863: db $E1
-L087864: db $8A
-L087865: db $05
-L087866: db $97
-L087867: db $01
-L087868: db $00
-L087869: db $E3
-L08786A: db $3E
-L08786B: db $DE
-L08786C: db $03
-L08786D: db $8A
-L08786E: db $FB
-L08786F: db $97
-L087870: db $FF
-L087871: db $3E
-L087872: db $E1
-L087873: db $8A
-L087874: db $05
-L087875: db $97
-L087876: db $01
-L087877: db $40
-L087878: db $E3
-L087879: db $41
-L08787A: db $DE
-L08787B: db $03
-L08787C: db $8A
-L08787D: db $FB
-L08787E: db $97
-L08787F: db $FF
-L087880: db $41
-L087881: db $E1
-L087882: db $8A
-L087883: db $05
-L087884: db $97
-L087885: db $01
-L087886: db $44
-L087887: db $EE
-L087888: db $43
-L087889: db $E0
-L08788A: db $42
-L08788B: db $41
-L08788C: db $40
-L08788D: db $E9
-L08788E: db $A0
-L08788F: db $40
-L087890: db $8A
-L087891: db $FB
-L087892: db $35
-L087893: db $EB
-L087894: db $35
-L087895: db $E7
-L087896: db $35
-L087897: db $E3
-L087898: db $35
-L087899: db $EB
-L08789A: db $35
-L08789B: db $E5
-L08789C: db $2B
-L08789D: db $32
-L08789E: db $E3
-L08789F: db $35
-L0878A0: db $EB
-L0878A1: db $35
-L0878A2: db $E7
-L0878A3: db $35
-L0878A4: db $E3
-L0878A5: db $35
-L0878A6: db $EB
-L0878A7: db $35
-L0878A8: db $E5
-L0878A9: db $32
-L0878AA: db $E3
-L0878AB: db $35
-L0878AC: db $35
-L0878AD: db $00
-L0878AE: db $35
-L0878AF: db $E5
-L0878B0: db $30
-L0878B1: db $E3
-L0878B2: db $35
-L0878B3: db $EB
-L0878B4: db $35
-L0878B5: db $E3
-L0878B6: db $35
-L0878B7: db $EB
-L0878B8: db $35
-L0878B9: db $E5
-L0878BA: db $2B
-L0878BB: db $32
-L0878BC: db $E3
-L0878BD: db $35
-L0878BE: db $EB
-L0878BF: db $35
-L0878C0: db $E7
-L0878C1: db $35
-L0878C2: db $E3
-L0878C3: db $35
-L0878C4: db $EB
-L0878C5: db $35
-L0878C6: db $E5
-L0878C7: db $32
-L0878C8: db $E3
-L0878C9: db $33
-L0878CA: db $34
-L0878CB: db $8A
-L0878CC: db $05
-L0878CD: db $00
-L0878CE: db $EC
-L0878CF: db $A0
-L0878D0: db $07
-L0878D1: db $29
-L0878D2: db $DE
-L0878D3: db $03
-L0878D4: db $8A
-L0878D5: db $FB
-L0878D6: db $97
-L0878D7: db $FF
-L0878D8: db $29
-L0878D9: db $E1
-L0878DA: db $8A
-L0878DB: db $05
-L0878DC: db $97
-L0878DD: db $01
-L0878DE: db $26
-L0878DF: db $E3
-L0878E0: db $29
-L0878E1: db $DE
-L0878E2: db $03
-L0878E3: db $8A
-L0878E4: db $FB
-L0878E5: db $97
-L0878E6: db $FF
-L0878E7: db $29
-L0878E8: db $E1
-L0878E9: db $8A
-L0878EA: db $05
-L0878EB: db $97
-L0878EC: db $01
-L0878ED: db $00
-L0878EE: db $E7
-L0878EF: db $A0
-L0878F0: db $09
-L0878F1: db $2C
-L0878F2: db $E3
-L0878F3: db $2D
-L0878F4: db $DE
-L0878F5: db $03
-L0878F6: db $8A
-L0878F7: db $FB
-L0878F8: db $97
-L0878F9: db $FF
-L0878FA: db $2D
-L0878FB: db $E1
-L0878FC: db $8A
-L0878FD: db $05
-L0878FE: db $97
-L0878FF: db $01
-L087900: db $2C
-L087901: db $E3
-L087902: db $2D
-L087903: db $DE
-L087904: db $03
-L087905: db $8A
-L087906: db $FB
-L087907: db $97
-L087908: db $FF
-L087909: db $2D
-L08790A: db $E1
-L08790B: db $8A
-L08790C: db $05
-L08790D: db $97
-L08790E: db $01
-L08790F: db $29
-L087910: db $DE
-L087911: db $06
-L087912: db $8A
-L087913: db $FB
-L087914: db $97
-L087915: db $FF
-L087916: db $29
-L087917: db $E1
-L087918: db $8A
-L087919: db $05
-L08791A: db $97
-L08791B: db $01
-L08791C: db $00
-L08791D: db $E1
-L08791E: db $29
-L08791F: db $DE
-L087920: db $06
-L087921: db $8A
-L087922: db $FB
-L087923: db $97
-L087924: db $FF
-L087925: db $29
-L087926: db $E1
-L087927: db $8A
-L087928: db $05
-L087929: db $97
-L08792A: db $01
-L08792B: db $00
-L08792C: db $EA
-L08792D: db $A0
-L08792E: db $07
-L08792F: db $29
-L087930: db $DE
-L087931: db $03
-L087932: db $8A
-L087933: db $FB
-L087934: db $97
-L087935: db $FF
-L087936: db $29
-L087937: db $E1
-L087938: db $8A
-L087939: db $05
-L08793A: db $97
-L08793B: db $01
-L08793C: db $29
-L08793D: db $E3
-L08793E: db $29
-L08793F: db $DE
-L087940: db $03
-L087941: db $8A
-L087942: db $FB
-L087943: db $97
-L087944: db $FF
-L087945: db $29
-L087946: db $E1
-L087947: db $8A
-L087948: db $05
-L087949: db $97
-L08794A: db $01
-L08794B: db $00
-L08794C: db $EB
-L08794D: db $A0
-L08794E: db $09
-L08794F: db $30
-L087950: db $DE
-L087951: db $03
-L087952: db $8A
-L087953: db $FB
-L087954: db $97
-L087955: db $FF
-L087956: db $30
-L087957: db $E1
-L087958: db $8A
-L087959: db $05
-L08795A: db $97
-L08795B: db $01
-L08795C: db $32
-L08795D: db $E3
-L08795E: db $35
-L08795F: db $DE
-L087960: db $03
-L087961: db $8A
-L087962: db $FB
-L087963: db $97
-L087964: db $FF
-L087965: db $35
-L087966: db $E1
-L087967: db $8A
-L087968: db $05
-L087969: db $97
-L08796A: db $01
-L08796B: db $39
-L08796C: db $E3
-L08796D: db $35
-L08796E: db $DE
-L08796F: db $03
-L087970: db $8A
-L087971: db $FB
-L087972: db $97
-L087973: db $FF
-L087974: db $35
-L087975: db $E1
-L087976: db $8A
-L087977: db $05
-L087978: db $97
-L087979: db $01
-L08797A: db $00
-L08797B: db $EC
-L08797C: db $A0
-L08797D: db $07
-L08797E: db $29
-L08797F: db $DE
-L087980: db $03
-L087981: db $8A
-L087982: db $FB
-L087983: db $97
-L087984: db $FF
-L087985: db $29
-L087986: db $E1
-L087987: db $8A
-L087988: db $05
-L087989: db $97
-L08798A: db $01
-L08798B: db $26
-L08798C: db $E3
-L08798D: db $29
-L08798E: db $DE
-L08798F: db $03
-L087990: db $8A
-L087991: db $FB
-L087992: db $97
-L087993: db $FF
-L087994: db $29
-L087995: db $E1
-L087996: db $8A
-L087997: db $05
-L087998: db $97
-L087999: db $01
-L08799A: db $00
-L08799B: db $E7
-L08799C: db $A0
-L08799D: db $09
-L08799E: db $2C
-L08799F: db $E3
-L0879A0: db $2D
-L0879A1: db $DE
-L0879A2: db $03
-L0879A3: db $8A
-L0879A4: db $FB
-L0879A5: db $97
-L0879A6: db $FF
-L0879A7: db $2D
-L0879A8: db $E1
-L0879A9: db $8A
-L0879AA: db $05
-L0879AB: db $97
-L0879AC: db $01
-L0879AD: db $2C
-L0879AE: db $E3
-L0879AF: db $2D
-L0879B0: db $DE
-L0879B1: db $03
-L0879B2: db $8A
-L0879B3: db $FB
-L0879B4: db $97
-L0879B5: db $FF
-L0879B6: db $2D
-L0879B7: db $E1
-L0879B8: db $8A
-L0879B9: db $05
-L0879BA: db $97
-L0879BB: db $01
-L0879BC: db $29
-L0879BD: db $DE
-L0879BE: db $06
-L0879BF: db $8A
-L0879C0: db $FB
-L0879C1: db $97
-L0879C2: db $FF
-L0879C3: db $29
-L0879C4: db $E1
-L0879C5: db $8A
-L0879C6: db $05
-L0879C7: db $97
-L0879C8: db $01
-L0879C9: db $2C
-L0879CA: db $DF
-L0879CB: db $2D
-L0879CC: db $30
-L0879CD: db $35
-L0879CE: db $DE
-L0879CF: db $06
-L0879D0: db $8A
-L0879D1: db $FB
-L0879D2: db $97
-L0879D3: db $FF
-L0879D4: db $35
-L0879D5: db $E1
-L0879D6: db $8A
-L0879D7: db $05
-L0879D8: db $97
-L0879D9: db $01
-L0879DA: db $00
-L0879DB: db $EA
-L0879DC: db $A0
-L0879DD: db $07
-L0879DE: db $29
-L0879DF: db $E3
-L0879E0: db $29
-L0879E1: db $29
-L0879E2: db $DE
-L0879E3: db $03
-L0879E4: db $8A
-L0879E5: db $FB
-L0879E6: db $97
-L0879E7: db $FF
-L0879E8: db $29
-L0879E9: db $E1
-L0879EA: db $8A
-L0879EB: db $05
-L0879EC: db $97
-L0879ED: db $01
-L0879EE: db $A0
-L0879EF: db $09
-L0879F0: db $38
-L0879F1: db $E3
-L0879F2: db $39
-L0879F3: db $DE
-L0879F4: db $03
-L0879F5: db $8A
-L0879F6: db $FB
-L0879F7: db $97
-L0879F8: db $FF
-L0879F9: db $39
-L0879FA: db $E1
-L0879FB: db $8A
-L0879FC: db $05
-L0879FD: db $97
-L0879FE: db $01
-L0879FF: db $00
-L087A00: db $DE
-L087A01: db $06
-L087A02: db $30
-L087A03: db $DE
-L087A04: db $03
-L087A05: db $8A
-L087A06: db $FB
-L087A07: db $97
-L087A08: db $FF
-L087A09: db $30
-L087A0A: db $E1
-L087A0B: db $8A
-L087A0C: db $05
-L087A0D: db $97
-L087A0E: db $01
-L087A0F: db $32
-L087A10: db $E3
-L087A11: db $35
-L087A12: db $DE
-L087A13: db $03
-L087A14: db $8A
-L087A15: db $FB
-L087A16: db $97
-L087A17: db $FF
-L087A18: db $35
-L087A19: db $E1
-L087A1A: db $8A
-L087A1B: db $05
-L087A1C: db $97
-L087A1D: db $01
-L087A1E: db $32
-L087A1F: db $E3
-L087A20: db $35
-L087A21: db $DE
-L087A22: db $03
-L087A23: db $8A
-L087A24: db $FB
-L087A25: db $97
-L087A26: db $FF
-L087A27: db $35
-L087A28: db $E1
-L087A29: db $8A
-L087A2A: db $05
-L087A2B: db $97
-L087A2C: db $01
-L087A2D: db $A0
-L087A2E: db $00
-L087A2F: db $8A
-L087A30: db $FB
-L087A31: db $00
-L087A32: db $E3
-L087A33: db $3C
-L087A34: db $3C
-L087A35: db $3C
-L087A36: db $E5
-L087A37: db $3A
-L087A38: db $E3
-L087A39: db $39
-L087A3A: db $3A
-L087A3B: db $3C
-L087A3C: db $40
-L087A3D: db $E5
-L087A3E: db $41
-L087A3F: db $E0
-L087A40: db $3E
-L087A41: db $8A
-L087A42: db $FF
-L087A43: db $41
-L087A44: db $3E
-L087A45: db $8A
-L087A46: db $FF
-L087A47: db $41
-L087A48: db $3E
-L087A49: db $8A
-L087A4A: db $FF
-L087A4B: db $41
-L087A4C: db $3E
-L087A4D: db $41
-L087A4E: db $3E
-L087A4F: db $41
-L087A50: db $3E
-L087A51: db $41
-L087A52: db $3E
-L087A53: db $41
-L087A54: db $00
-L087A55: db $EC
-L087A56: db $8A
-L087A57: db $08
-L087A58: db $A0
-L087A59: db $07
-L087A5A: db $29
-L087A5B: db $DE
-L087A5C: db $03
-L087A5D: db $8A
-L087A5E: db $FB
-L087A5F: db $97
-L087A60: db $FF
-L087A61: db $29
-L087A62: db $E1
-L087A63: db $8A
-L087A64: db $05
-L087A65: db $97
-L087A66: db $01
-L087A67: db $29
-L087A68: db $E3
-L087A69: db $29
-L087A6A: db $DE
-L087A6B: db $03
-L087A6C: db $8A
-L087A6D: db $FB
-L087A6E: db $97
-L087A6F: db $FF
-L087A70: db $29
-L087A71: db $E1
-L087A72: db $8A
-L087A73: db $05
-L087A74: db $97
-L087A75: db $01
-L087A76: db $00
-L087A77: db $EB
-L087A78: db $A0
-L087A79: db $09
-L087A7A: db $30
-L087A7B: db $DE
-L087A7C: db $03
-L087A7D: db $8A
-L087A7E: db $FB
-L087A7F: db $97
-L087A80: db $FF
-L087A81: db $30
-L087A82: db $E1
-L087A83: db $8A
-L087A84: db $05
-L087A85: db $97
-L087A86: db $01
-L087A87: db $32
-L087A88: db $E3
-L087A89: db $35
-L087A8A: db $DE
-L087A8B: db $03
-L087A8C: db $8A
-L087A8D: db $FB
-L087A8E: db $97
-L087A8F: db $FF
-L087A90: db $35
-L087A91: db $E1
-L087A92: db $8A
-L087A93: db $05
-L087A94: db $97
-L087A95: db $01
-L087A96: db $39
-L087A97: db $E3
-L087A98: db $35
-L087A99: db $DE
-L087A9A: db $03
-L087A9B: db $8A
-L087A9C: db $FB
-L087A9D: db $97
-L087A9E: db $FF
-L087A9F: db $35
-L087AA0: db $E1
-L087AA1: db $8A
-L087AA2: db $05
-L087AA3: db $97
-L087AA4: db $01
-L087AA5: db $A0
-L087AA6: db $00
-L087AA7: db $8A
-L087AA8: db $FB
-L087AA9: db $00
-L087AAA: db $E5
-L087AAB: db $3C
-L087AAC: db $E3
-L087AAD: db $3C
-L087AAE: db $E5
-L087AAF: db $3A
-L087AB0: db $E3
-L087AB1: db $39
-L087AB2: db $3A
-L087AB3: db $3C
-L087AB4: db $40
-L087AB5: db $E5
-L087AB6: db $41
-L087AB7: db $E0
-L087AB8: db $3E
-L087AB9: db $8A
-L087ABA: db $FF
-L087ABB: db $41
-L087ABC: db $3E
-L087ABD: db $8A
-L087ABE: db $FF
-L087ABF: db $41
-L087AC0: db $3E
-L087AC1: db $8A
-L087AC2: db $FF
-L087AC3: db $41
-L087AC4: db $3E
-L087AC5: db $41
-L087AC6: db $3E
-L087AC7: db $41
-L087AC8: db $3E
-L087AC9: db $41
-L087ACA: db $3E
-L087ACB: db $41
-L087ACC: db $A0
-L087ACD: db $09
-L087ACE: db $8A
-L087ACF: db $08
-L087AD0: db $29
-L087AD1: db $DE
-L087AD2: db $06
-L087AD3: db $8A
-L087AD4: db $FB
-L087AD5: db $97
-L087AD6: db $FF
-L087AD7: db $29
-L087AD8: db $E1
-L087AD9: db $8A
-L087ADA: db $05
-L087ADB: db $97
-L087ADC: db $01
-L087ADD: db $2C
-L087ADE: db $DF
-L087ADF: db $2D
-L087AE0: db $30
-L087AE1: db $35
-L087AE2: db $DE
-L087AE3: db $06
-L087AE4: db $8A
-L087AE5: db $FB
-L087AE6: db $97
-L087AE7: db $FF
-L087AE8: db $35
-L087AE9: db $E1
-L087AEA: db $8A
-L087AEB: db $05
-L087AEC: db $97
-L087AED: db $01
-L087AEE: db $00
-L087AEF: db $EA
-L087AF0: db $A0
-L087AF1: db $07
-L087AF2: db $29
-L087AF3: db $E3
-L087AF4: db $29
-L087AF5: db $29
-L087AF6: db $DE
-L087AF7: db $03
-L087AF8: db $8A
-L087AF9: db $FB
-L087AFA: db $97
-L087AFB: db $FF
-L087AFC: db $29
-L087AFD: db $E1
-L087AFE: db $8A
-L087AFF: db $05
-L087B00: db $97
-L087B01: db $01
-L087B02: db $A0
-L087B03: db $09
-L087B04: db $38
-L087B05: db $E3
-L087B06: db $39
-L087B07: db $DE
-L087B08: db $03
-L087B09: db $8A
-L087B0A: db $FB
-L087B0B: db $97
-L087B0C: db $FF
-L087B0D: db $39
-L087B0E: db $E1
-L087B0F: db $8A
-L087B10: db $05
-L087B11: db $97
-L087B12: db $01
-L087B13: db $00
-L087B14: db $E3
-L087B15: db $30
-L087B16: db $DE
-L087B17: db $03
-L087B18: db $8A
-L087B19: db $FB
-L087B1A: db $97
-L087B1B: db $FF
-L087B1C: db $30
-L087B1D: db $E1
-L087B1E: db $8A
-L087B1F: db $05
-L087B20: db $97
-L087B21: db $01
-L087B22: db $32
-L087B23: db $E3
-L087B24: db $35
-L087B25: db $DE
-L087B26: db $03
-L087B27: db $8A
-L087B28: db $FB
-L087B29: db $97
-L087B2A: db $FF
-L087B2B: db $35
-L087B2C: db $E1
-L087B2D: db $8A
-L087B2E: db $05
-L087B2F: db $97
-L087B30: db $01
-L087B31: db $32
-L087B32: db $E3
-L087B33: db $35
-L087B34: db $DE
-L087B35: db $03
-L087B36: db $8A
-L087B37: db $FB
-L087B38: db $97
-L087B39: db $FF
-L087B3A: db $35
-L087B3B: db $E1
-L087B3C: db $8A
-L087B3D: db $05
-L087B3E: db $97
-L087B3F: db $01
-L087B40: db $80
-L087B41: db $B7
-L087B42: db $71
-SndData_18_Ch2: db $A0
-L087B44: db $40
-L087B45: db $88
-L087B46: db $3C
-L087B47: db $8D
-L087B48: db $24
-L087B49: db $03
-L087B4A: db $9A
-L087B4B: db $87
-L087B4C: db $7C
-L087B4D: db $00
-L087B4E: db $29
-L087B4F: db $E5
-L087B50: db $21
-L087B51: db $E3
-L087B52: db $1D
-L087B53: db $21
-L087B54: db $24
-L087B55: db $1D
-L087B56: db $E5
-L087B57: db $22
-L087B58: db $E3
-L087B59: db $26
-L087B5A: db $1D
-L087B5B: db $E5
-L087B5C: db $22
-L087B5D: db $1A
-L087B5E: db $E3
-L087B5F: db $1D
-L087B60: db $21
-L087B61: db $24
-L087B62: db $1D
-L087B63: db $E5
-L087B64: db $21
-L087B65: db $E3
-L087B66: db $24
-L087B67: db $1D
-L087B68: db $E5
-L087B69: db $22
-L087B6A: db $E3
-L087B6B: db $26
-L087B6C: db $1D
-L087B6D: db $E5
-L087B6E: db $22
-L087B6F: db $E3
-L087B70: db $1B
-L087B71: db $1C
-L087B72: db $81
-L087B73: db $24
-L087B74: db $4A
-L087B75: db $7B
-L087B76: db $9A
-L087B77: db $87
-L087B78: db $7C
-L087B79: db $00
-L087B7A: db $EB
-L087B7B: db $21
-L087B7C: db $E3
-L087B7D: db $1D
-L087B7E: db $21
-L087B7F: db $24
-L087B80: db $1D
-L087B81: db $E5
-L087B82: db $22
-L087B83: db $E3
-L087B84: db $26
-L087B85: db $1D
-L087B86: db $E5
-L087B87: db $22
-L087B88: db $1A
-L087B89: db $E3
-L087B8A: db $1D
-L087B8B: db $21
-L087B8C: db $24
-L087B8D: db $1D
-L087B8E: db $E5
-L087B8F: db $21
-L087B90: db $E3
-L087B91: db $24
-L087B92: db $1D
-L087B93: db $E5
-L087B94: db $22
-L087B95: db $E3
-L087B96: db $26
-L087B97: db $2E
-L087B98: db $E5
-L087B99: db $2D
-L087B9A: db $2C
-L087B9B: db $E3
-L087B9C: db $00
-L087B9D: db $EB
-L087B9E: db $A0
-L087B9F: db $40
-L087BA0: db $26
-L087BA1: db $E0
-L087BA2: db $00
-L087BA3: db $E2
-L087BA4: db $28
-L087BA5: db $E3
-L087BA6: db $29
-L087BA7: db $E0
-L087BA8: db $00
-L087BA9: db $DE
-L087BAA: db $0A
-L087BAB: db $2F
-L087BAC: db $DE
-L087BAD: db $1E
-L087BAE: db $00
-L087BAF: db $E3
-L087BB0: db $30
-L087BB1: db $32
-L087BB2: db $E0
-L087BB3: db $00
-L087BB4: db $E2
-L087BB5: db $35
-L087BB6: db $E5
-L087BB7: db $32
-L087BB8: db $E0
-L087BB9: db $00
-L087BBA: db $E2
-L087BBB: db $2B
-L087BBC: db $E1
-L087BBD: db $2A
-L087BBE: db $29
-L087BBF: db $DE
-L087BC0: db $4E
-L087BC1: db $00
-L087BC2: db $EB
-L087BC3: db $26
-L087BC4: db $E0
-L087BC5: db $00
-L087BC6: db $E2
-L087BC7: db $28
-L087BC8: db $E3
-L087BC9: db $29
-L087BCA: db $E0
-L087BCB: db $00
-L087BCC: db $DE
-L087BCD: db $0A
-L087BCE: db $2F
-L087BCF: db $DE
-L087BD0: db $1E
-L087BD1: db $00
-L087BD2: db $E3
-L087BD3: db $35
-L087BD4: db $E0
-L087BD5: db $00
-L087BD6: db $E2
-L087BD7: db $37
-L087BD8: db $E3
-L087BD9: db $39
-L087BDA: db $E0
-L087BDB: db $00
-L087BDC: db $E2
-L087BDD: db $3C
-L087BDE: db $EE
-L087BDF: db $3B
-L087BE0: db $E0
-L087BE1: db $3A
-L087BE2: db $39
-L087BE3: db $38
-L087BE4: db $E9
-L087BE5: db $A0
-L087BE6: db $40
-L087BE7: db $8D
-L087BE8: db $24
-L087BE9: db $02
-L087BEA: db $1D
-L087BEB: db $E5
-L087BEC: db $24
-L087BED: db $E3
-L087BEE: db $1D
-L087BEF: db $E5
-L087BF0: db $21
-L087BF1: db $E3
-L087BF2: db $24
-L087BF3: db $1D
-L087BF4: db $1D
-L087BF5: db $22
-L087BF6: db $26
-L087BF7: db $1D
-L087BF8: db $E5
-L087BF9: db $22
-L087BFA: db $1A
-L087BFB: db $E3
-L087BFC: db $1D
-L087BFD: db $21
-L087BFE: db $24
-L087BFF: db $1D
-L087C00: db $E5
-L087C01: db $21
-L087C02: db $E3
-L087C03: db $24
-L087C04: db $1D
-L087C05: db $1D
-L087C06: db $22
-L087C07: db $26
-L087C08: db $1D
-L087C09: db $E5
-L087C0A: db $22
-L087C0B: db $E3
-L087C0C: db $1D
-L087C0D: db $1D
-L087C0E: db $00
-L087C0F: db $29
-L087C10: db $E5
-L087C11: db $21
-L087C12: db $E3
-L087C13: db $1D
-L087C14: db $21
-L087C15: db $24
-L087C16: db $1D
-L087C17: db $1D
-L087C18: db $22
-L087C19: db $26
-L087C1A: db $1D
-L087C1B: db $E5
-L087C1C: db $22
-L087C1D: db $1A
-L087C1E: db $E3
-L087C1F: db $1D
-L087C20: db $21
-L087C21: db $24
-L087C22: db $1D
-L087C23: db $E5
-L087C24: db $21
-L087C25: db $E3
-L087C26: db $24
-L087C27: db $1D
-L087C28: db $1D
-L087C29: db $22
-L087C2A: db $26
-L087C2B: db $1D
-L087C2C: db $E5
-L087C2D: db $22
-L087C2E: db $E3
-L087C2F: db $1B
-L087C30: db $1C
-L087C31: db $81
-L087C32: db $24
-L087C33: db $EA
-L087C34: db $7B
-L087C35: db $1D
-L087C36: db $A0
-L087C37: db $00
-L087C38: db $39
-L087C39: db $39
-L087C3A: db $39
-L087C3B: db $E5
-L087C3C: db $37
-L087C3D: db $E3
-L087C3E: db $35
-L087C3F: db $37
-L087C40: db $39
-L087C41: db $3C
-L087C42: db $A0
-L087C43: db $40
-L087C44: db $26
-L087C45: db $1D
-L087C46: db $E5
-L087C47: db $22
-L087C48: db $1A
-L087C49: db $E3
-L087C4A: db $1D
-L087C4B: db $21
-L087C4C: db $24
-L087C4D: db $1D
-L087C4E: db $E5
-L087C4F: db $21
-L087C50: db $E3
-L087C51: db $24
-L087C52: db $1D
-L087C53: db $1D
-L087C54: db $22
-L087C55: db $26
-L087C56: db $1D
-L087C57: db $E5
-L087C58: db $22
-L087C59: db $E3
-L087C5A: db $1D
-L087C5B: db $1D
-L087C5C: db $00
-L087C5D: db $A0
-L087C5E: db $00
-L087C5F: db $39
-L087C60: db $39
-L087C61: db $39
-L087C62: db $E5
-L087C63: db $37
-L087C64: db $E3
-L087C65: db $35
-L087C66: db $37
-L087C67: db $39
-L087C68: db $3C
-L087C69: db $A0
-L087C6A: db $40
-L087C6B: db $26
-L087C6C: db $1D
-L087C6D: db $E5
-L087C6E: db $22
-L087C6F: db $1A
-L087C70: db $E3
-L087C71: db $1D
-L087C72: db $21
-L087C73: db $24
-L087C74: db $1D
-L087C75: db $E5
-L087C76: db $21
-L087C77: db $E3
-L087C78: db $24
-L087C79: db $1D
-L087C7A: db $1D
-L087C7B: db $22
-L087C7C: db $26
-L087C7D: db $29
-L087C7E: db $A0
-L087C7F: db $00
-L087C80: db $2D
-L087C81: db $2D
-L087C82: db $2D
-L087C83: db $2D
-L087C84: db $80
-L087C85: db $43
-L087C86: db $7B
-L087C87: db $1D
-L087C88: db $E5
-L087C89: db $24
-L087C8A: db $E3
-L087C8B: db $1D
-L087C8C: db $E5
-L087C8D: db $21
-L087C8E: db $E3
-L087C8F: db $24
-L087C90: db $1D
-L087C91: db $E5
-L087C92: db $22
-L087C93: db $E3
-L087C94: db $26
-L087C95: db $1D
-L087C96: db $E5
-L087C97: db $22
-L087C98: db $1A
-L087C99: db $E3
-L087C9A: db $1D
-L087C9B: db $21
-L087C9C: db $24
-L087C9D: db $1D
-L087C9E: db $E5
-L087C9F: db $21
-L087CA0: db $E3
-L087CA1: db $24
-L087CA2: db $1D
-L087CA3: db $E5
-L087CA4: db $22
-L087CA5: db $E3
-L087CA6: db $26
-L087CA7: db $1D
-L087CA8: db $E5
-L087CA9: db $22
-L087CAA: db $E3
-L087CAB: db $1D
-L087CAC: db $1D
-L087CAD: db $9B
-SndData_18_Ch1: db $A0
-L087CAF: db $01
-L087CB0: db $29
-L087CB1: db $E5
-L087CB2: db $21
-L087CB3: db $E3
-L087CB4: db $29
-L087CB5: db $E5
-L087CB6: db $2D
-L087CB7: db $E3
-L087CB8: db $30
-L087CB9: db $29
-L087CBA: db $29
-L087CBB: db $2E
-L087CBC: db $32
-L087CBD: db $35
-L087CBE: db $E5
-L087CBF: db $2B
-L087CC0: db $26
-L087CC1: db $E3
-L087CC2: db $29
-L087CC3: db $2D
-L087CC4: db $30
-L087CC5: db $29
-L087CC6: db $E5
-L087CC7: db $2D
-L087CC8: db $E3
-L087CC9: db $30
-L087CCA: db $29
-L087CCB: db $29
-L087CCC: db $2E
-L087CCD: db $32
-L087CCE: db $29
-L087CCF: db $E5
-L087CD0: db $26
-L087CD1: db $E3
-L087CD2: db $29
-L087CD3: db $29
-L087CD4: db $00
-L087CD5: db $35
-L087CD6: db $E5
-L087CD7: db $30
-L087CD8: db $E3
-L087CD9: db $29
-L087CDA: db $2D
-L087CDB: db $30
-L087CDC: db $29
-L087CDD: db $29
-L087CDE: db $2E
-L087CDF: db $32
-L087CE0: db $29
-L087CE1: db $E5
-L087CE2: db $2B
-L087CE3: db $26
-L087CE4: db $E3
-L087CE5: db $29
-L087CE6: db $2D
-L087CE7: db $30
-L087CE8: db $29
-L087CE9: db $E5
-L087CEA: db $2D
-L087CEB: db $E3
-L087CEC: db $30
-L087CED: db $29
-L087CEE: db $29
-L087CEF: db $A0
-L087CF0: db $02
-L087CF1: db $35
-L087CF2: db $32
-L087CF3: db $E0
-L087CF4: db $00
-L087CF5: db $E2
-L087CF6: db $30
-L087CF7: db $E0
-L087CF8: db $00
-L087CF9: db $E2
-L087CFA: db $32
-L087CFB: db $E3
-L087CFC: db $35
-L087CFD: db $E0
-L087CFE: db $00
-L087CFF: db $E2
-L087D00: db $38
-L087D01: db $E3
-L087D02: db $37
-L087D03: db $E0
-L087D04: db $00
-L087D05: db $E2
-L087D06: db $A0
-L087D07: db $01
-L087D08: db $11
-L087D09: db $EB
-L087D0A: db $18
-L087D0B: db $E7
-L087D0C: db $16
-L087D0D: db $E3
-L087D0E: db $16
-L087D0F: db $EB
-L087D10: db $13
-L087D11: db $18
-L087D12: db $E5
-L087D13: db $11
-L087D14: db $EB
-L087D15: db $18
-L087D16: db $E7
-L087D17: db $16
-L087D18: db $E3
-L087D19: db $16
-L087D1A: db $EB
-L087D1B: db $1A
-L087D1C: db $1D
-L087D1D: db $E5
-L087D1E: db $1D
-L087D1F: db $EB
-L087D20: db $18
-L087D21: db $E7
-L087D22: db $16
-L087D23: db $E3
-L087D24: db $16
-L087D25: db $EB
-L087D26: db $13
-L087D27: db $18
-L087D28: db $E5
-L087D29: db $11
-L087D2A: db $EB
-L087D2B: db $18
-L087D2C: db $E7
-L087D2D: db $16
-L087D2E: db $E3
-L087D2F: db $16
-L087D30: db $EB
-L087D31: db $1A
-L087D32: db $E5
-L087D33: db $1B
-L087D34: db $1C
-L087D35: db $E3
-L087D36: db $11
-L087D37: db $EB
-L087D38: db $18
-L087D39: db $E7
-L087D3A: db $16
-L087D3B: db $E3
-L087D3C: db $16
-L087D3D: db $EB
-L087D3E: db $13
-L087D3F: db $18
-L087D40: db $E5
-L087D41: db $11
-L087D42: db $EB
-L087D43: db $18
-L087D44: db $E7
-L087D45: db $16
-L087D46: db $E3
-L087D47: db $16
-L087D48: db $1D
-L087D49: db $E5
-L087D4A: db $1A
-L087D4B: db $16
-L087D4C: db $E3
-L087D4D: db $11
-L087D4E: db $11
-L087D4F: db $00
-L087D50: db $EB
-L087D51: db $11
-L087D52: db $E3
-L087D53: db $11
-L087D54: db $18
-L087D55: db $E5
-L087D56: db $16
-L087D57: db $E3
-L087D58: db $16
-L087D59: db $EB
-L087D5A: db $13
-L087D5B: db $18
-L087D5C: db $E5
-L087D5D: db $11
-L087D5E: db $EB
-L087D5F: db $18
-L087D60: db $E7
-L087D61: db $16
-L087D62: db $E3
-L087D63: db $16
-L087D64: db $EB
-L087D65: db $1A
-L087D66: db $E5
-L087D67: db $1B
-L087D68: db $1C
-L087D69: db $E3
-L087D6A: db $11
-L087D6B: db $E5
-L087D6C: db $1A
-L087D6D: db $E3
-L087D6E: db $18
-L087D6F: db $E5
-L087D70: db $1A
-L087D71: db $16
-L087D72: db $E3
-L087D73: db $16
-L087D74: db $EB
-L087D75: db $13
-L087D76: db $E5
-L087D77: db $1A
-L087D78: db $E3
-L087D79: db $18
-L087D7A: db $1A
-L087D7B: db $11
-L087D7C: db $E5
-L087D7D: db $1A
-L087D7E: db $E3
-L087D7F: db $18
-L087D80: db $E5
-L087D81: db $1A
-L087D82: db $16
-L087D83: db $E3
-L087D84: db $16
-L087D85: db $1D
-L087D86: db $E5
-L087D87: db $1A
-L087D88: db $16
-L087D89: db $E3
-L087D8A: db $11
-L087D8B: db $11
-L087D8C: db $00
-L087D8D: db $EB
-L087D8E: db $11
-L087D8F: db $E3
-L087D90: db $11
-L087D91: db $18
-L087D92: db $E5
-L087D93: db $16
-L087D94: db $E3
-L087D95: db $16
-L087D96: db $EB
-L087D97: db $13
-L087D98: db $E5
-L087D99: db $1A
-L087D9A: db $E3
-L087D9B: db $18
-L087D9C: db $1A
-L087D9D: db $11
-L087D9E: db $E5
-L087D9F: db $1A
-L087DA0: db $E3
-L087DA1: db $18
-L087DA2: db $E5
-L087DA3: db $1A
-L087DA4: db $16
-L087DA5: db $E3
-L087DA6: db $16
-L087DA7: db $EB
-L087DA8: db $16
-L087DA9: db $E5
-L087DAA: db $15
-L087DAB: db $14
-L087DAC: db $E3
-L087DAD: db $13
-L087DAE: db $13
-L087DAF: db $E5
-L087DB0: db $13
-L087DB1: db $E3
-L087DB2: db $1A
-L087DB3: db $E5
-L087DB4: db $1D
-L087DB5: db $00
-L087DB6: db $1F
-L087DB7: db $13
-L087DB8: db $EB
-L087DB9: db $13
-L087DBA: db $E3
-L087DBB: db $16
-L087DBC: db $16
-L087DBD: db $E5
-L087DBE: db $16
-L087DBF: db $E3
-L087DC0: db $1D
-L087DC1: db $E5
-L087DC2: db $20
-L087DC3: db $00
-L087DC4: db $E3
-L087DC5: db $22
-L087DC6: db $22
-L087DC7: db $E5
-L087DC8: db $16
-L087DC9: db $EB
-L087DCA: db $16
-L087DCB: db $E3
-L087DCC: db $13
-L087DCD: db $13
-L087DCE: db $E5
-L087DCF: db $13
-L087DD0: db $E3
-L087DD1: db $1A
-L087DD2: db $E5
-L087DD3: db $1D
-L087DD4: db $00
-L087DD5: db $E3
-L087DD6: db $1F
-L087DD7: db $1F
-L087DD8: db $E5
-L087DD9: db $13
-L087DDA: db $EB
-L087DDB: db $13
-L087DDC: db $E3
-L087DDD: db $12
-L087DDE: db $EB
-L087DDF: db $12
-L087DE0: db $12
-L087DE1: db $E5
-L087DE2: db $00
-L087DE3: db $12
-L087DE4: db $ED
-L087DE5: db $A0
-L087DE6: db $29
-L087DE7: db $29
-L087DE8: db $E5
-L087DE9: db $30
-L087DEA: db $E3
-L087DEB: db $29
-L087DEC: db $E5
-L087DED: db $2D
-L087DEE: db $E3
-L087DEF: db $30
-L087DF0: db $29
-L087DF1: db $29
-L087DF2: db $2E
-L087DF3: db $32
-L087DF4: db $29
-L087DF5: db $E5
-L087DF6: db $1F
-L087DF7: db $26
-L087DF8: db $E3
-L087DF9: db $29
-L087DFA: db $2D
-L087DFB: db $30
-L087DFC: db $29
-L087DFD: db $E5
-L087DFE: db $2D
-L087DFF: db $E3
-L087E00: db $30
-L087E01: db $29
-L087E02: db $29
-L087E03: db $2E
-L087E04: db $32
-L087E05: db $29
-L087E06: db $E5
-L087E07: db $26
-L087E08: db $E3
-L087E09: db $29
-L087E0A: db $29
-L087E0B: db $00
-L087E0C: db $1D
-L087E0D: db $E5
-L087E0E: db $24
-L087E0F: db $E3
-L087E10: db $29
-L087E11: db $2D
-L087E12: db $30
-L087E13: db $29
-L087E14: db $29
-L087E15: db $2E
-L087E16: db $32
-L087E17: db $29
-L087E18: db $E5
-L087E19: db $1F
-L087E1A: db $26
-L087E1B: db $E3
-L087E1C: db $29
-L087E1D: db $2D
-L087E1E: db $30
-L087E1F: db $29
-L087E20: db $E5
-L087E21: db $2D
-L087E22: db $E3
-L087E23: db $30
-L087E24: db $29
-L087E25: db $29
-L087E26: db $2E
-L087E27: db $32
-L087E28: db $A0
-L087E29: db $01
-L087E2A: db $16
-L087E2B: db $E5
-L087E2C: db $22
-L087E2D: db $16
-L087E2E: db $E3
-L087E2F: db $11
-L087E30: db $EB
-L087E31: db $18
-L087E32: db $E7
-L087E33: db $16
-L087E34: db $E3
-L087E35: db $16
-L087E36: db $EB
-L087E37: db $13
-L087E38: db $18
-L087E39: db $E5
-L087E3A: db $11
-L087E3B: db $EB
-L087E3C: db $18
-L087E3D: db $E7
-L087E3E: db $16
-L087E3F: db $E3
-L087E40: db $16
-L087E41: db $1D
-L087E42: db $E5
-L087E43: db $1A
-L087E44: db $16
-L087E45: db $E3
-L087E46: db $11
-L087E47: db $11
-L087E48: db $00
-L087E49: db $EB
-L087E4A: db $11
-L087E4B: db $E3
-L087E4C: db $11
-L087E4D: db $18
-L087E4E: db $E5
-L087E4F: db $16
-L087E50: db $E3
-L087E51: db $16
-L087E52: db $EB
-L087E53: db $13
-L087E54: db $18
-L087E55: db $E5
-L087E56: db $11
-L087E57: db $EB
-L087E58: db $18
-L087E59: db $E7
-L087E5A: db $16
-L087E5B: db $E3
-L087E5C: db $16
-L087E5D: db $EB
-L087E5E: db $1A
-L087E5F: db $E5
-L087E60: db $1B
-L087E61: db $1C
-L087E62: db $E3
-L087E63: db $11
-L087E64: db $E5
-L087E65: db $1A
-L087E66: db $E3
-L087E67: db $18
-L087E68: db $E5
-L087E69: db $1A
-L087E6A: db $16
-L087E6B: db $E3
-L087E6C: db $16
-L087E6D: db $EB
-L087E6E: db $13
-L087E6F: db $E5
-L087E70: db $1A
-L087E71: db $E3
-L087E72: db $18
-L087E73: db $1A
-L087E74: db $11
-L087E75: db $E5
-L087E76: db $1A
-L087E77: db $E3
-L087E78: db $18
-L087E79: db $E5
-L087E7A: db $1A
-L087E7B: db $16
-L087E7C: db $E3
-L087E7D: db $16
-L087E7E: db $1D
-L087E7F: db $E5
-L087E80: db $1A
-L087E81: db $16
-L087E82: db $E3
-L087E83: db $11
-L087E84: db $11
-L087E85: db $00
-L087E86: db $EB
-L087E87: db $11
-L087E88: db $E3
-L087E89: db $11
-L087E8A: db $18
-L087E8B: db $E5
-L087E8C: db $16
-L087E8D: db $E3
-L087E8E: db $16
-L087E8F: db $EB
-L087E90: db $13
-L087E91: db $E5
-L087E92: db $1A
-L087E93: db $E3
-L087E94: db $18
-L087E95: db $1A
-L087E96: db $11
-L087E97: db $E5
-L087E98: db $1A
-L087E99: db $E3
-L087E9A: db $18
-L087E9B: db $E5
-L087E9C: db $1A
-L087E9D: db $16
-L087E9E: db $E3
-L087E9F: db $16
-L087EA0: db $EB
-L087EA1: db $11
-L087EA2: db $E3
-L087EA3: db $11
-L087EA4: db $11
-L087EA5: db $11
-L087EA6: db $11
-L087EA7: db $80
-L087EA8: db $AE
-L087EA9: db $7C
-SndData_18_Ch4: db $A0
-L087EAB: db $00
-L087EAC: db $8D
-L087EAD: db $24
-L087EAE: db $07
-L087EAF: db $C2
-L087EB0: db $E3
-L087EB1: db $C2
-L087EB2: db $C2
-L087EB3: db $C2
-L087EB4: db $C0
-L087EB5: db $C2
-L087EB6: db $C2
-L087EB7: db $C2
-L087EB8: db $81
-L087EB9: db $24
-L087EBA: db $AF
-L087EBB: db $7E
-L087EBC: db $C2
-L087EBD: db $C0
-L087EBE: db $E1
-L087EBF: db $C0
-L087EC0: db $C0
-L087EC1: db $E3
-L087EC2: db $C0
-L087EC3: db $C2
-L087EC4: db $C0
-L087EC5: db $C0
-L087EC6: db $E1
-L087EC7: db $C0
-L087EC8: db $C0
-L087EC9: db $E3
-L087ECA: db $9A
-L087ECB: db $E1
-L087ECC: db $7F
-L087ECD: db $C1
-L087ECE: db $C2
-L087ECF: db $C0
-L087ED0: db $C1
-L087ED1: db $C2
-L087ED2: db $C0
-L087ED3: db $C2
-L087ED4: db $C1
-L087ED5: db $C2
-L087ED6: db $C0
-L087ED7: db $E1
-L087ED8: db $C0
-L087ED9: db $C0
-L087EDA: db $E3
-L087EDB: db $C0
-L087EDC: db $C2
-L087EDD: db $C0
-L087EDE: db $C0
-L087EDF: db $E1
-L087EE0: db $C0
-L087EE1: db $C0
-L087EE2: db $E3
-L087EE3: db $9A
-L087EE4: db $E1
-L087EE5: db $7F
-L087EE6: db $C1
-L087EE7: db $C2
-L087EE8: db $C0
-L087EE9: db $C1
-L087EEA: db $C2
-L087EEB: db $C0
-L087EEC: db $C2
-L087EED: db $C1
-L087EEE: db $C2
-L087EEF: db $C2
-L087EF0: db $C2
-L087EF1: db $C0
-L087EF2: db $C2
-L087EF3: db $C1
-L087EF4: db $C0
-L087EF5: db $C0
-L087EF6: db $E1
-L087EF7: db $C0
-L087EF8: db $8D
-L087EF9: db $24
-L087EFA: db $03
-L087EFB: db $C1
-L087EFC: db $E3
-L087EFD: db $C2
-L087EFE: db $C0
-L087EFF: db $C1
-L087F00: db $C2
-L087F01: db $C0
-L087F02: db $C2
-L087F03: db $C1
-L087F04: db $C2
-L087F05: db $C2
-L087F06: db $C2
-L087F07: db $E1
-L087F08: db $C2
-L087F09: db $C0
-L087F0A: db $E3
-L087F0B: db $C2
-L087F0C: db $E1
-L087F0D: db $C2
-L087F0E: db $C2
-L087F0F: db $E3
-L087F10: db $C0
-L087F11: db $C2
-L087F12: db $C1
-L087F13: db $C2
-L087F14: db $C0
-L087F15: db $C1
-L087F16: db $C2
-L087F17: db $C0
-L087F18: db $C2
-L087F19: db $C1
-L087F1A: db $C2
-L087F1B: db $C2
-L087F1C: db $C2
-L087F1D: db $E1
-L087F1E: db $C2
-L087F1F: db $C0
-L087F20: db $E3
-L087F21: db $C2
-L087F22: db $E1
-L087F23: db $C2
-L087F24: db $C2
-L087F25: db $E3
-L087F26: db $C0
-L087F27: db $C0
-L087F28: db $C1
-L087F29: db $E5
-L087F2A: db $C2
-L087F2B: db $E3
-L087F2C: db $C0
-L087F2D: db $C2
-L087F2E: db $C0
-L087F2F: db $C2
-L087F30: db $C1
-L087F31: db $C2
-L087F32: db $C2
-L087F33: db $C2
-L087F34: db $E1
-L087F35: db $C2
-L087F36: db $C0
-L087F37: db $E3
-L087F38: db $C2
-L087F39: db $E1
-L087F3A: db $C2
-L087F3B: db $C2
-L087F3C: db $E3
-L087F3D: db $C0
-L087F3E: db $C2
-L087F3F: db $C1
-L087F40: db $C2
-L087F41: db $C0
-L087F42: db $C1
-L087F43: db $C2
-L087F44: db $C0
-L087F45: db $C2
-L087F46: db $C1
-L087F47: db $C2
-L087F48: db $C0
-L087F49: db $E1
-L087F4A: db $C0
-L087F4B: db $C0
-L087F4C: db $E3
-L087F4D: db $C0
-L087F4E: db $C2
-L087F4F: db $C0
-L087F50: db $C0
-L087F51: db $E1
-L087F52: db $C0
-L087F53: db $C0
-L087F54: db $E3
-L087F55: db $C1
-L087F56: db $C2
-L087F57: db $C2
-L087F58: db $C2
-L087F59: db $C0
-L087F5A: db $C2
-L087F5B: db $C2
-L087F5C: db $C2
-L087F5D: db $C2
-L087F5E: db $C2
-L087F5F: db $C1
-L087F60: db $C2
-L087F61: db $C0
-L087F62: db $C2
-L087F63: db $C2
-L087F64: db $C1
-L087F65: db $C1
-L087F66: db $C2
-L087F67: db $C2
-L087F68: db $C2
-L087F69: db $C0
-L087F6A: db $C2
-L087F6B: db $C2
-L087F6C: db $C2
-L087F6D: db $C2
-L087F6E: db $C2
-L087F6F: db $C1
-L087F70: db $C2
-L087F71: db $C0
-L087F72: db $C2
-L087F73: db $C1
-L087F74: db $C1
-L087F75: db $C1
-L087F76: db $C2
-L087F77: db $C2
-L087F78: db $C2
-L087F79: db $C0
-L087F7A: db $C2
-L087F7B: db $C2
-L087F7C: db $C2
-L087F7D: db $C2
-L087F7E: db $C2
-L087F7F: db $C1
-L087F80: db $C2
-L087F81: db $C0
-L087F82: db $C2
-L087F83: db $C2
-L087F84: db $C1
-L087F85: db $C0
-L087F86: db $C2
-L087F87: db $C1
-L087F88: db $C0
-L087F89: db $C2
-L087F8A: db $C1
-L087F8B: db $C0
-L087F8C: db $C2
-L087F8D: db $C2
-L087F8E: db $E1
-L087F8F: db $C2
-L087F90: db $C2
-L087F91: db $E3
-L087F92: db $C0
-L087F93: db $E5
-L087F94: db $C2
-L087F95: db $E3
-L087F96: db $C0
-L087F97: db $C0
-L087F98: db $E1
-L087F99: db $C0
-L087F9A: db $C0
-L087F9B: db $E3
-L087F9C: db $8D
-L087F9D: db $24
-L087F9E: db $38
-L087F9F: db $C2
-L087FA0: db $81
-L087FA1: db $24
-L087FA2: db $9F
-L087FA3: db $7F
-L087FA4: db $C2
-L087FA5: db $C0
-L087FA6: db $E1
-L087FA7: db $C0
-L087FA8: db $C0
-L087FA9: db $E3
-L087FAA: db $C0
-L087FAB: db $C1
-L087FAC: db $C0
-L087FAD: db $C0
-L087FAE: db $E1
-L087FAF: db $C0
-L087FB0: db $C0
-L087FB1: db $E3
-L087FB2: db $9A
-L087FB3: db $E1
-L087FB4: db $7F
-L087FB5: db $C1
-L087FB6: db $C2
-L087FB7: db $C0
-L087FB8: db $C1
-L087FB9: db $C2
-L087FBA: db $C0
-L087FBB: db $C2
-L087FBC: db $C1
-L087FBD: db $C2
-L087FBE: db $C0
-L087FBF: db $E1
-L087FC0: db $C0
-L087FC1: db $C0
-L087FC2: db $E3
-L087FC3: db $C0
-L087FC4: db $C2
-L087FC5: db $C0
-L087FC6: db $C0
-L087FC7: db $E1
-L087FC8: db $C0
-L087FC9: db $C0
-L087FCA: db $E3
-L087FCB: db $9A
-L087FCC: db $E1
-L087FCD: db $7F
-L087FCE: db $C1
-L087FCF: db $C2
-L087FD0: db $C0
-L087FD1: db $C1
-L087FD2: db $C2
-L087FD3: db $C0
-L087FD4: db $C2
-L087FD5: db $C1
-L087FD6: db $C2
-L087FD7: db $C2
-L087FD8: db $C2
-L087FD9: db $C0
-L087FDA: db $C0
-L087FDB: db $C0
-L087FDC: db $C0
-L087FDD: db $C0
-L087FDE: db $80
-L087FDF: db $AA
-L087FE0: db $7E
-L087FE1: db $8D
-L087FE2: db $25
-L087FE3: db $03
-L087FE4: db $C1
-L087FE5: db $C2
-L087FE6: db $C0
-L087FE7: db $C1
-L087FE8: db $C2
-L087FE9: db $C0
-L087FEA: db $C2
-L087FEB: db $C1
-L087FEC: db $C2
-L087FED: db $C2
-L087FEE: db $C2
-L087FEF: db $C0
-L087FF0: db $C2
-L087FF1: db $C2
-L087FF2: db $C0
-L087FF3: db $C2
-L087FF4: db $81
-L087FF5: db $25
-L087FF6: db $E4
-L087FF7: db $7F
-L087FF8: db $9B
-L087FF9: db $00
+SndData_18_Ch3:
+	snd_wave WAVE_07
+	snd_note $00, NOTELEN_06
+	snd_note $2D
+	snd_note $2C
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $24, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $24, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $26, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $26, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $2B, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $2B
+	snd_note $29
+	snd_note $2B
+	snd_note $2D, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $30, NOTELEN_06
+	snd_note $32, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $32, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $2B, NOTELEN_01
+	snd_note $2C, NOTELEN_CUSTOM, $05
+	snd_note $2B, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_wave WAVE_05
+	snd_instrument INSTR_40
+	snd_note $37, NOTELEN_01
+	snd_note $38, NOTELEN_CUSTOM, $05
+	snd_note $37, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $15
+	snd_note $00, NOTELEN_12
+	snd_wave WAVE_07
+	snd_instrument INSTR_3D
+	snd_note $2C, NOTELEN_01
+	snd_note $2D, NOTELEN_CUSTOM, $05
+	snd_note $2E, NOTELEN_06
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $2E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2B, NOTELEN_06
+	snd_note $2C, NOTELEN_01
+	snd_note $2D, NOTELEN_03
+	snd_note $2D, NOTELEN_02
+	snd_inc_vol -1
+	snd_note $2D
+	snd_note $2D
+	snd_note $2D
+	snd_inc_vol -1
+	snd_note $2D
+	snd_note $2D
+	snd_note $2D
+	snd_inc_vol -1
+	snd_note $2D
+	snd_note $2D
+	snd_note $2D
+	snd_wave WAVE_09
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_inc_vol 1
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_inc_vol 1
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_inc_vol 1
+	snd_note $29
+	snd_note $26, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $26, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $24, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $24, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $26, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_06
+	snd_note $2B, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2B, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_12
+	snd_wave WAVE_07
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $26, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_18
+	snd_wave WAVE_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $29, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_09
+	snd_wave WAVE_07
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_12
+	snd_wave WAVE_09
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $39, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_1E
+	snd_wave WAVE_07
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $26, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_18
+	snd_wave WAVE_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_01
+	snd_note $2D
+	snd_note $30
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_09
+	snd_wave WAVE_07
+	snd_note $29, NOTELEN_06
+	snd_note $29
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_09
+	snd_note $38, NOTELEN_06
+	snd_note $39, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $39, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_0B
+	snd_instrument INSTR_3E
+	snd_note $00, NOTELEN_06
+	snd_note $39
+	snd_note $38
+	snd_note $39, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $39, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $32, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $32, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $37, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $37, NOTELEN_06
+	snd_note $35
+	snd_note $37
+	snd_note $39, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $39, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $3C, NOTELEN_06
+	snd_note $3E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $37, NOTELEN_01
+	snd_note $38, NOTELEN_CUSTOM, $05
+	snd_note $37, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $0F
+	snd_wave WAVE_09
+	snd_instrument INSTR_3D
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $38, NOTELEN_01
+	snd_note $39, NOTELEN_CUSTOM, $05
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_wave WAVE_0B
+	snd_instrument INSTR_3E
+	snd_note $38, NOTELEN_01
+	snd_note $39, NOTELEN_CUSTOM, $05
+	snd_note $3A, NOTELEN_06
+	snd_note $3C, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3C, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $3A, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3A, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $39, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $39, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $37, NOTELEN_06
+	snd_note $38, NOTELEN_02
+	snd_note $39
+	snd_note $39
+	snd_inc_vol -2
+	snd_note $39
+	snd_note $39
+	snd_note $39
+	snd_inc_vol -2
+	snd_note $39
+	snd_note $39
+	snd_note $39
+	snd_inc_vol -1
+	snd_note $39
+	snd_note $39
+	snd_note $39
+	snd_wave WAVE_09
+	snd_inc_vol 2
+	snd_instrument INSTR_3D
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_inc_vol 2
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_inc_vol 1
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_inc_vol 1
+	snd_note $00, NOTELEN_06
+	snd_note $35
+	snd_note $32, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $32, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $38, NOTELEN_06
+	snd_note $37, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $37, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_12
+	snd_wave WAVE_0B
+	snd_instrument INSTR_3E
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_09
+	snd_instrument INSTR_3D
+	snd_note $00, NOTELEN_18
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $29, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_09
+	snd_wave WAVE_0B
+	snd_instrument INSTR_3E
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_12
+	snd_wave WAVE_09
+	snd_instrument INSTR_3D
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $39, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_12
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_wave WAVE_0B
+	snd_instrument INSTR_3E
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_18
+	snd_wave WAVE_09
+	snd_instrument INSTR_3D
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_01
+	snd_note $2D
+	snd_note $30
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_0C
+	snd_wave WAVE_0B
+	snd_instrument INSTR_3E
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_12
+	snd_wave WAVE_09
+	snd_instrument INSTR_3D
+	snd_note $36, NOTELEN_01
+	snd_note $37
+	snd_note $38, NOTELEN_CUSTOM, $0A
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $37, NOTELEN_06
+	snd_note $32, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $32, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $35, NOTELEN_06
+	snd_note $34, NOTELEN_01
+	snd_note $33
+	snd_note $32
+	snd_note $30, NOTELEN_02
+	snd_note $00, NOTELEN_CUSTOM, $07
+	snd_wave WAVE_01
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $37, NOTELEN_06
+	snd_note $39, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $39, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $06
+	snd_note $3E, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $40
+	snd_note $41, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $41, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $44, NOTELEN_0C
+	snd_note $41, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $41, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $3A, NOTELEN_03
+	snd_note $39
+	snd_note $38, NOTELEN_CUSTOM, $4B
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $38, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_12
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $37, NOTELEN_06
+	snd_note $39, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $39, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $06
+	snd_note $3E, NOTELEN_CUSTOM, $1B
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $3E, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $3E, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $40, NOTELEN_06
+	snd_note $41, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $41, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $44, NOTELEN_2A
+	snd_note $43, NOTELEN_02
+	snd_note $42
+	snd_note $41
+	snd_note $40, NOTELEN_30
+	snd_wave $40 ; [BUG] Invalid waveform
+	snd_inc_vol -5
+	snd_note $35, NOTELEN_12
+	snd_note $35, NOTELEN_18
+	snd_note $35, NOTELEN_06
+	snd_note $35, NOTELEN_12
+	snd_note $35, NOTELEN_0C
+	snd_note $2B
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_12
+	snd_note $35, NOTELEN_18
+	snd_note $35, NOTELEN_06
+	snd_note $35, NOTELEN_12
+	snd_note $35, NOTELEN_0C
+	snd_note $32, NOTELEN_06
+	snd_note $35
+	snd_note $35
+	snd_note $00
+	snd_note $35, NOTELEN_0C
+	snd_note $30, NOTELEN_06
+	snd_note $35, NOTELEN_12
+	snd_note $35, NOTELEN_06
+	snd_note $35, NOTELEN_12
+	snd_note $35, NOTELEN_0C
+	snd_note $2B
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_12
+	snd_note $35, NOTELEN_18
+	snd_note $35, NOTELEN_06
+	snd_note $35, NOTELEN_12
+	snd_note $35, NOTELEN_0C
+	snd_note $32, NOTELEN_06
+	snd_note $33
+	snd_note $34
+	snd_inc_vol 5
+	snd_note $00, NOTELEN_1E
+	snd_wave WAVE_07
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $26, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_18
+	snd_wave WAVE_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_03
+	snd_note $29, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_09
+	snd_wave WAVE_07
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_12
+	snd_wave WAVE_09
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $39, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_1E
+	snd_wave WAVE_07
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $26, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_18
+	snd_wave WAVE_09
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_06
+	snd_note $2D, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $2D, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_01
+	snd_note $2D
+	snd_note $30
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_09
+	snd_wave WAVE_07
+	snd_note $29, NOTELEN_06
+	snd_note $29
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_09
+	snd_note $38, NOTELEN_06
+	snd_note $39, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $39, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_CUSTOM, $06
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_00
+	snd_inc_vol -5
+	snd_note $00, NOTELEN_06
+	snd_note $3C
+	snd_note $3C
+	snd_note $3C, NOTELEN_0C
+	snd_note $3A, NOTELEN_06
+	snd_note $39
+	snd_note $3A
+	snd_note $3C
+	snd_note $40, NOTELEN_0C
+	snd_note $41, NOTELEN_02
+	snd_note $3E
+	snd_inc_vol -1
+	snd_note $41
+	snd_note $3E
+	snd_inc_vol -1
+	snd_note $41
+	snd_note $3E
+	snd_inc_vol -1
+	snd_note $41
+	snd_note $3E
+	snd_note $41
+	snd_note $3E
+	snd_note $41
+	snd_note $3E
+	snd_note $41
+	snd_note $3E
+	snd_note $41
+	snd_note $00, NOTELEN_1E
+	snd_inc_vol 8
+	snd_wave WAVE_07
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $29, NOTELEN_06
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_12
+	snd_wave WAVE_09
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $39, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_00
+	snd_inc_vol -5
+	snd_note $00, NOTELEN_0C
+	snd_note $3C, NOTELEN_06
+	snd_note $3C, NOTELEN_0C
+	snd_note $3A, NOTELEN_06
+	snd_note $39
+	snd_note $3A
+	snd_note $3C
+	snd_note $40, NOTELEN_0C
+	snd_note $41, NOTELEN_02
+	snd_note $3E
+	snd_inc_vol -1
+	snd_note $41
+	snd_note $3E
+	snd_inc_vol -1
+	snd_note $41
+	snd_note $3E
+	snd_inc_vol -1
+	snd_note $41
+	snd_note $3E
+	snd_note $41
+	snd_note $3E
+	snd_note $41
+	snd_note $3E
+	snd_note $41
+	snd_note $3E
+	snd_note $41
+	snd_wave WAVE_09
+	snd_inc_vol 8
+	snd_note $29, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $2C, NOTELEN_01
+	snd_note $2D
+	snd_note $30
+	snd_note $35, NOTELEN_CUSTOM, $06
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_09
+	snd_wave WAVE_07
+	snd_note $29, NOTELEN_06
+	snd_note $29
+	snd_note $29, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $29, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_wave WAVE_09
+	snd_note $38, NOTELEN_06
+	snd_note $39, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $39, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $00, NOTELEN_06
+	snd_note $30, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $30, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_CUSTOM, $03
+	snd_inc_vol -5
+	snd_inc_freq_offset -1
+	snd_note $35, NOTELEN_03
+	snd_inc_vol 5
+	snd_inc_freq_offset 1
+	snd_jp SndData_18_Ch3
+SndData_18_Ch2:
+	snd_duty SNDDUTY_25, $00
+	snd_instrument INSTR_3C
+	snd_var iSndChInfo_24, $03
+	.loop0:
+		snd_call .sub0
+		snd_note $00
+		snd_note $29, NOTELEN_0C
+		snd_note $21, NOTELEN_06
+		snd_note $1D
+		snd_note $21
+		snd_note $24
+		snd_note $1D, NOTELEN_0C
+		snd_note $22, NOTELEN_06
+		snd_note $26
+		snd_note $1D, NOTELEN_0C
+		snd_note $22
+		snd_note $1A, NOTELEN_06
+		snd_note $1D
+		snd_note $21
+		snd_note $24
+		snd_note $1D, NOTELEN_0C
+		snd_note $21, NOTELEN_06
+		snd_note $24
+		snd_note $1D, NOTELEN_0C
+		snd_note $22, NOTELEN_06
+		snd_note $26
+		snd_note $1D, NOTELEN_0C
+		snd_note $22, NOTELEN_06
+		snd_note $1B
+		snd_note $1C
+		snd_djnz iSndChInfo_24, .loop0
+	snd_call .sub0
+	snd_note $00, NOTELEN_12
+	snd_note $21, NOTELEN_06
+	snd_note $1D
+	snd_note $21
+	snd_note $24
+	snd_note $1D, NOTELEN_0C
+	snd_note $22, NOTELEN_06
+	snd_note $26
+	snd_note $1D, NOTELEN_0C
+	snd_note $22
+	snd_note $1A, NOTELEN_06
+	snd_note $1D
+	snd_note $21
+	snd_note $24
+	snd_note $1D, NOTELEN_0C
+	snd_note $21, NOTELEN_06
+	snd_note $24
+	snd_note $1D, NOTELEN_0C
+	snd_note $22, NOTELEN_06
+	snd_note $26
+	snd_note $2E, NOTELEN_0C
+	snd_note $2D
+	snd_note $2C, NOTELEN_06
+	snd_note $00, NOTELEN_12
+	snd_duty SNDDUTY_25, $00
+	snd_note $26, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $28, NOTELEN_06
+	snd_note $29, NOTELEN_02
+	snd_note $00, NOTELEN_CUSTOM, $0A
+	snd_note $2F, NOTELEN_CUSTOM, $1E
+	snd_note $00, NOTELEN_06
+	snd_note $30
+	snd_note $32, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $35, NOTELEN_0C
+	snd_note $32, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $2B, NOTELEN_03
+	snd_note $2A
+	snd_note $29, NOTELEN_CUSTOM, $4E
+	snd_note $00, NOTELEN_12
+	snd_note $26, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $28, NOTELEN_06
+	snd_note $29, NOTELEN_02
+	snd_note $00, NOTELEN_CUSTOM, $0A
+	snd_note $2F, NOTELEN_CUSTOM, $1E
+	snd_note $00, NOTELEN_06
+	snd_note $35, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $37, NOTELEN_06
+	snd_note $39, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $3C, NOTELEN_2A
+	snd_note $3B, NOTELEN_02
+	snd_note $3A
+	snd_note $39
+	snd_note $38, NOTELEN_30
+	snd_duty SNDDUTY_25, $00
+	snd_var iSndChInfo_24, $02
+	.loop1:
+		snd_note $1D, NOTELEN_0C
+		snd_note $24, NOTELEN_06
+		snd_note $1D, NOTELEN_0C
+		snd_note $21, NOTELEN_06
+		snd_note $24
+		snd_note $1D
+		snd_note $1D
+		snd_note $22
+		snd_note $26
+		snd_note $1D, NOTELEN_0C
+		snd_note $22
+		snd_note $1A, NOTELEN_06
+		snd_note $1D
+		snd_note $21
+		snd_note $24
+		snd_note $1D, NOTELEN_0C
+		snd_note $21, NOTELEN_06
+		snd_note $24
+		snd_note $1D
+		snd_note $1D
+		snd_note $22
+		snd_note $26
+		snd_note $1D, NOTELEN_0C
+		snd_note $22, NOTELEN_06
+		snd_note $1D
+		snd_note $1D
+		snd_note $00
+		snd_note $29, NOTELEN_0C
+		snd_note $21, NOTELEN_06
+		snd_note $1D
+		snd_note $21
+		snd_note $24
+		snd_note $1D
+		snd_note $1D
+		snd_note $22
+		snd_note $26
+		snd_note $1D, NOTELEN_0C
+		snd_note $22
+		snd_note $1A, NOTELEN_06
+		snd_note $1D
+		snd_note $21
+		snd_note $24
+		snd_note $1D, NOTELEN_0C
+		snd_note $21, NOTELEN_06
+		snd_note $24
+		snd_note $1D
+		snd_note $1D
+		snd_note $22
+		snd_note $26
+		snd_note $1D, NOTELEN_0C
+		snd_note $22, NOTELEN_06
+		snd_note $1B
+		snd_note $1C
+		snd_djnz iSndChInfo_24, .loop1
+	snd_note $1D
+	snd_duty SNDDUTY_12, $00
+	snd_note $39
+	snd_note $39
+	snd_note $39, NOTELEN_0C
+	snd_note $37, NOTELEN_06
+	snd_note $35
+	snd_note $37
+	snd_note $39
+	snd_note $3C
+	snd_duty SNDDUTY_25, $00
+	snd_note $26
+	snd_note $1D, NOTELEN_0C
+	snd_note $22
+	snd_note $1A, NOTELEN_06
+	snd_note $1D
+	snd_note $21
+	snd_note $24
+	snd_note $1D, NOTELEN_0C
+	snd_note $21, NOTELEN_06
+	snd_note $24
+	snd_note $1D
+	snd_note $1D
+	snd_note $22
+	snd_note $26
+	snd_note $1D, NOTELEN_0C
+	snd_note $22, NOTELEN_06
+	snd_note $1D
+	snd_note $1D
+	snd_note $00
+	snd_duty SNDDUTY_12, $00
+	snd_note $39
+	snd_note $39
+	snd_note $39, NOTELEN_0C
+	snd_note $37, NOTELEN_06
+	snd_note $35
+	snd_note $37
+	snd_note $39
+	snd_note $3C
+	snd_duty SNDDUTY_25, $00
+	snd_note $26
+	snd_note $1D, NOTELEN_0C
+	snd_note $22
+	snd_note $1A, NOTELEN_06
+	snd_note $1D
+	snd_note $21
+	snd_note $24
+	snd_note $1D, NOTELEN_0C
+	snd_note $21, NOTELEN_06
+	snd_note $24
+	snd_note $1D
+	snd_note $1D
+	snd_note $22
+	snd_note $26
+	snd_note $29
+	snd_duty SNDDUTY_12, $00
+	snd_note $2D
+	snd_note $2D
+	snd_note $2D
+	snd_note $2D
+	snd_jp SndData_18_Ch2
+.sub0:
+	snd_note $1D, NOTELEN_0C
+	snd_note $24, NOTELEN_06
+	snd_note $1D, NOTELEN_0C
+	snd_note $21, NOTELEN_06
+	snd_note $24
+	snd_note $1D, NOTELEN_0C
+	snd_note $22, NOTELEN_06
+	snd_note $26
+	snd_note $1D, NOTELEN_0C
+	snd_note $22
+	snd_note $1A, NOTELEN_06
+	snd_note $1D
+	snd_note $21
+	snd_note $24
+	snd_note $1D, NOTELEN_0C
+	snd_note $21, NOTELEN_06
+	snd_note $24
+	snd_note $1D, NOTELEN_0C
+	snd_note $22, NOTELEN_06
+	snd_note $26
+	snd_note $1D, NOTELEN_0C
+	snd_note $22, NOTELEN_06
+	snd_note $1D
+	snd_note $1D
+	snd_ret
+SndData_18_Ch1:
+	snd_duty SNDDUTY_12, $01
+	snd_note $29, NOTELEN_0C
+	snd_note $21, NOTELEN_06
+	snd_note $29, NOTELEN_0C
+	snd_note $2D, NOTELEN_06
+	snd_note $30
+	snd_note $29
+	snd_note $29
+	snd_note $2E
+	snd_note $32
+	snd_note $35, NOTELEN_0C
+	snd_note $2B
+	snd_note $26, NOTELEN_06
+	snd_note $29
+	snd_note $2D
+	snd_note $30
+	snd_note $29, NOTELEN_0C
+	snd_note $2D, NOTELEN_06
+	snd_note $30
+	snd_note $29
+	snd_note $29
+	snd_note $2E
+	snd_note $32
+	snd_note $29, NOTELEN_0C
+	snd_note $26, NOTELEN_06
+	snd_note $29
+	snd_note $29
+	snd_note $00
+	snd_note $35, NOTELEN_0C
+	snd_note $30, NOTELEN_06
+	snd_note $29
+	snd_note $2D
+	snd_note $30
+	snd_note $29
+	snd_note $29
+	snd_note $2E
+	snd_note $32
+	snd_note $29, NOTELEN_0C
+	snd_note $2B
+	snd_note $26, NOTELEN_06
+	snd_note $29
+	snd_note $2D
+	snd_note $30
+	snd_note $29, NOTELEN_0C
+	snd_note $2D, NOTELEN_06
+	snd_note $30
+	snd_note $29
+	snd_note $29
+	snd_duty SNDDUTY_12, $02
+	snd_note $35
+	snd_note $32, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $30, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $32, NOTELEN_06
+	snd_note $35, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_note $38, NOTELEN_06
+	snd_note $37, NOTELEN_02
+	snd_note $00, NOTELEN_04
+	snd_duty SNDDUTY_12, $01
+	snd_note $11, NOTELEN_12
+	snd_note $18, NOTELEN_18
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $13
+	snd_note $18, NOTELEN_0C
+	snd_note $11, NOTELEN_12
+	snd_note $18, NOTELEN_18
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $1A
+	snd_note $1D, NOTELEN_0C
+	snd_note $1D, NOTELEN_12
+	snd_note $18, NOTELEN_18
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $13
+	snd_note $18, NOTELEN_0C
+	snd_note $11, NOTELEN_12
+	snd_note $18, NOTELEN_18
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $1A, NOTELEN_0C
+	snd_note $1B
+	snd_note $1C, NOTELEN_06
+	snd_note $11, NOTELEN_12
+	snd_note $18, NOTELEN_18
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $13
+	snd_note $18, NOTELEN_0C
+	snd_note $11, NOTELEN_12
+	snd_note $18, NOTELEN_18
+	snd_note $16, NOTELEN_06
+	snd_note $16
+	snd_note $1D, NOTELEN_0C
+	snd_note $1A
+	snd_note $16, NOTELEN_06
+	snd_note $11
+	snd_note $11
+	snd_note $00, NOTELEN_12
+	snd_note $11, NOTELEN_06
+	snd_note $11
+	snd_note $18, NOTELEN_0C
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $13
+	snd_note $18, NOTELEN_0C
+	snd_note $11, NOTELEN_12
+	snd_note $18, NOTELEN_18
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $1A, NOTELEN_0C
+	snd_note $1B
+	snd_note $1C, NOTELEN_06
+	snd_note $11, NOTELEN_0C
+	snd_note $1A, NOTELEN_06
+	snd_note $18, NOTELEN_0C
+	snd_note $1A
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $13, NOTELEN_0C
+	snd_note $1A, NOTELEN_06
+	snd_note $18
+	snd_note $1A
+	snd_note $11, NOTELEN_0C
+	snd_note $1A, NOTELEN_06
+	snd_note $18, NOTELEN_0C
+	snd_note $1A
+	snd_note $16, NOTELEN_06
+	snd_note $16
+	snd_note $1D, NOTELEN_0C
+	snd_note $1A
+	snd_note $16, NOTELEN_06
+	snd_note $11
+	snd_note $11
+	snd_note $00, NOTELEN_12
+	snd_note $11, NOTELEN_06
+	snd_note $11
+	snd_note $18, NOTELEN_0C
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $13, NOTELEN_0C
+	snd_note $1A, NOTELEN_06
+	snd_note $18
+	snd_note $1A
+	snd_note $11, NOTELEN_0C
+	snd_note $1A, NOTELEN_06
+	snd_note $18, NOTELEN_0C
+	snd_note $1A
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $16, NOTELEN_0C
+	snd_note $15
+	snd_note $14, NOTELEN_06
+	snd_note $13
+	snd_note $13, NOTELEN_0C
+	snd_note $13, NOTELEN_06
+	snd_note $1A, NOTELEN_0C
+	snd_note $1D
+	snd_note $00
+	snd_note $1F
+	snd_note $13, NOTELEN_12
+	snd_note $13, NOTELEN_06
+	snd_note $16
+	snd_note $16, NOTELEN_0C
+	snd_note $16, NOTELEN_06
+	snd_note $1D, NOTELEN_0C
+	snd_note $20
+	snd_note $00, NOTELEN_06
+	snd_note $22
+	snd_note $22, NOTELEN_0C
+	snd_note $16, NOTELEN_12
+	snd_note $16, NOTELEN_06
+	snd_note $13
+	snd_note $13, NOTELEN_0C
+	snd_note $13, NOTELEN_06
+	snd_note $1A, NOTELEN_0C
+	snd_note $1D
+	snd_note $00, NOTELEN_06
+	snd_note $1F
+	snd_note $1F, NOTELEN_0C
+	snd_note $13, NOTELEN_12
+	snd_note $13, NOTELEN_06
+	snd_note $12, NOTELEN_12
+	snd_note $12
+	snd_note $12, NOTELEN_0C
+	snd_note $00
+	snd_note $12, NOTELEN_24
+	snd_duty SNDDUTY_12, $29
+	snd_note $29, NOTELEN_0C
+	snd_note $30, NOTELEN_06
+	snd_note $29, NOTELEN_0C
+	snd_note $2D, NOTELEN_06
+	snd_note $30
+	snd_note $29
+	snd_note $29
+	snd_note $2E
+	snd_note $32
+	snd_note $29, NOTELEN_0C
+	snd_note $1F
+	snd_note $26, NOTELEN_06
+	snd_note $29
+	snd_note $2D
+	snd_note $30
+	snd_note $29, NOTELEN_0C
+	snd_note $2D, NOTELEN_06
+	snd_note $30
+	snd_note $29
+	snd_note $29
+	snd_note $2E
+	snd_note $32
+	snd_note $29, NOTELEN_0C
+	snd_note $26, NOTELEN_06
+	snd_note $29
+	snd_note $29
+	snd_note $00
+	snd_note $1D, NOTELEN_0C
+	snd_note $24, NOTELEN_06
+	snd_note $29
+	snd_note $2D
+	snd_note $30
+	snd_note $29
+	snd_note $29
+	snd_note $2E
+	snd_note $32
+	snd_note $29, NOTELEN_0C
+	snd_note $1F
+	snd_note $26, NOTELEN_06
+	snd_note $29
+	snd_note $2D
+	snd_note $30
+	snd_note $29, NOTELEN_0C
+	snd_note $2D, NOTELEN_06
+	snd_note $30
+	snd_note $29
+	snd_note $29
+	snd_note $2E
+	snd_note $32
+	snd_duty SNDDUTY_12, $01
+	snd_note $16, NOTELEN_0C
+	snd_note $22
+	snd_note $16, NOTELEN_06
+	snd_note $11, NOTELEN_12
+	snd_note $18, NOTELEN_18
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $13
+	snd_note $18, NOTELEN_0C
+	snd_note $11, NOTELEN_12
+	snd_note $18, NOTELEN_18
+	snd_note $16, NOTELEN_06
+	snd_note $16
+	snd_note $1D, NOTELEN_0C
+	snd_note $1A
+	snd_note $16, NOTELEN_06
+	snd_note $11
+	snd_note $11
+	snd_note $00, NOTELEN_12
+	snd_note $11, NOTELEN_06
+	snd_note $11
+	snd_note $18, NOTELEN_0C
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $13
+	snd_note $18, NOTELEN_0C
+	snd_note $11, NOTELEN_12
+	snd_note $18, NOTELEN_18
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $1A, NOTELEN_0C
+	snd_note $1B
+	snd_note $1C, NOTELEN_06
+	snd_note $11, NOTELEN_0C
+	snd_note $1A, NOTELEN_06
+	snd_note $18, NOTELEN_0C
+	snd_note $1A
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $13, NOTELEN_0C
+	snd_note $1A, NOTELEN_06
+	snd_note $18
+	snd_note $1A
+	snd_note $11, NOTELEN_0C
+	snd_note $1A, NOTELEN_06
+	snd_note $18, NOTELEN_0C
+	snd_note $1A
+	snd_note $16, NOTELEN_06
+	snd_note $16
+	snd_note $1D, NOTELEN_0C
+	snd_note $1A
+	snd_note $16, NOTELEN_06
+	snd_note $11
+	snd_note $11
+	snd_note $00, NOTELEN_12
+	snd_note $11, NOTELEN_06
+	snd_note $11
+	snd_note $18, NOTELEN_0C
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $13, NOTELEN_0C
+	snd_note $1A, NOTELEN_06
+	snd_note $18
+	snd_note $1A
+	snd_note $11, NOTELEN_0C
+	snd_note $1A, NOTELEN_06
+	snd_note $18, NOTELEN_0C
+	snd_note $1A
+	snd_note $16, NOTELEN_06
+	snd_note $16, NOTELEN_12
+	snd_note $11, NOTELEN_06
+	snd_note $11
+	snd_note $11
+	snd_note $11
+	snd_note $11
+	snd_jp SndData_18_Ch1
+SndData_18_Ch4:
+	snd_duty SNDDUTY_12, $00
+	snd_var iSndChInfo_24, $07
+	.loop0:
+		snd_noteex PRESET_02, NOTELEN_06
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_djnz iSndChInfo_24, .loop0
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_var iSndChInfo_24, $03
+	snd_noteex PRESET_01, NOTELEN_06
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01, NOTELEN_0C
+	snd_noteex PRESET_02, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02, NOTELEN_03
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02, NOTELEN_06
+	snd_noteex PRESET_00, NOTELEN_0C
+	snd_noteex PRESET_02, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_var iSndChInfo_24, $38
+	.loop1:
+		snd_noteex PRESET_02
+		snd_djnz iSndChInfo_24, .loop1
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_03
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00, NOTELEN_06
+	snd_call .sub0
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_02
+	snd_noteex PRESET_01
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_02
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_noteex PRESET_00
+	snd_jp SndData_18_Ch4
+.sub0:
+	snd_var iSndChInfo_25, $03
+	.sub0loop:
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_02
+		snd_djnz iSndChInfo_25, .sub0loop
+	snd_ret
+	snd_note $00

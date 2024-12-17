@@ -11002,7 +11002,6 @@ DEF SOUND_PAUSING  EQU 1 << SOUNDB_PAUSING
 	.chkSlotVolumeTarget:
 		;
 		; Check if we reached the target volume.
-		; ??? purpose of SNDBB_1 ??? If we did, unlike the global fade, we signal it out by setting SNDBB_1.
 		;
 		ld   b, [hl]					; B = iSndChInfo_23
 		ld   a, l						; HL = Ptr to iSndChInfo_01
@@ -11013,10 +11012,9 @@ DEF SOUND_PAUSING  EQU 1 << SOUNDB_PAUSING
 		cp   b							; iSndChInfo_01 != iSndChInfo_23?
 		jr   nz, .chkSlotFadeType		; If not, jump (target not reached yet, alter volume)
 		
-		; Otherwise, fade is done.
-		; ??? Disable sound data loops
+		; Otherwise, mark the fade as done.
 		ld   hl, h_Unk_SndChInfo_B
-		set  SNDBB_1, [hl]
+		set  SNDBB_FADEDONE, [hl]
 		jr   .slotFadeDone
 		
 	.chkSlotFadeType:
@@ -11033,9 +11031,8 @@ DEF SOUND_PAUSING  EQU 1 << SOUNDB_PAUSING
 		dec  a							; Volume--
 		ld   [hl], a					; Save back to iSndChInfo_01
 		; Fade not done yet
-		; ??? Enable sound data loops
 		ld   hl, h_Unk_SndChInfo_B		
-		res  SNDBB_1, [hl]
+		res  SNDBB_FADEDONE, [hl]
 		;##
 		
 	.slotFadeDone:
@@ -11768,7 +11765,7 @@ IF KEEP_PCM
 ENDC
 
 ; =============== SoundDataCmdS_JpCustom ===============
-; Loops the sound slot without loop limit, to the specified location.
+; Performs an unconditional jump to the specified location in the sound data.
 ; The next two data bytes will be treated as new sound data pointer.
 SoundDataCmdS_JpCustom:
 	ld   a, [bc]	; C = Dest. Sound data ptr (low byte)
@@ -11776,7 +11773,7 @@ SoundDataCmdS_JpCustom:
 	; Fall-through
 	
 ; =============== SoundDataCmd_Jp ===============
-; Standalone command version of the loop without limit.
+; Command version of subroutine above.
 ; FORMAT:
 ; - 0: Command ID ($80)
 ; - 1: Dest. Sound data ptr (low byte)
@@ -11795,7 +11792,7 @@ SoundDataCmd_80:
 	; Fall-through
 	
 ; =============== SoundDataCmd_Nop ===============
-; No operation. Unused by itself.
+; [TCRF] No operation. Unused by itself.
 ; FORMAT:
 ; - 0: Command ID ($8C)
 SoundDataCmd_8C:
@@ -11803,8 +11800,8 @@ SoundDataCmd_8C:
 	ret
 	
 ; =============== SoundDataCmd_JpByTimer ===============
-; Loops the sound slot until the specified timer elapses.
-; Note this does not initialize the loop timer, that's handled by ???
+; Conditional jump based on a loop counter, which is decremented each time we get here.
+; Note this does not initialize the loop timer, that must be manually done through SoundDataCmd_SetVar.
 ;
 ; FORMAT:
 ; - 0: Command ID ($81)
@@ -12289,8 +12286,7 @@ SoundDataCmd_93:
 	; SNDB_FADEOUT -> set if bit 7 of byte1 is set
 	ldh  a, [h_Unk_SndChInfo_B]
 	or   SNDB_FADE				; Enable slot fading
-	and  $FF^(SNDB_1|SNDB_FADEOUT) ; Clear existing direction and enable conditional data loops (why ???)
-								; The latter seems to be used as a flag that, when set, marks the fade as completed ??? (but it's not its main purpose)
+	and  $FF^(SNDB_FADEDONE|SNDB_FADEOUT) ; Clear existing flags from the last fade
 	bit  SSFB_FADEOUT, e		; Requesting a fade out?
 	jr   z, .setB				; If not, skip (it's a fade in, volume up)
 	or   SNDB_FADEOUT			; Fade out, volume down
@@ -12390,9 +12386,10 @@ SoundDataCmd_94:
 	res  SNDBB_NS, [hl]
 	ret
 	
-; =============== SoundDataCmd_JpIfShortInst ===============
-; Loops the sound slot until SNDBB_1 is set.
-; Works identically to SoundDataCmd_80 when looping.
+; =============== SoundDataCmd_JpIfFade ===============
+; SoundDataCmd_JpOnWaitFade
+;
+; Conditional jump, performed until the slot fade in/out has finished.
 ;
 ; FORMAT:
 ; - 0: Command ID ($95)
@@ -12400,10 +12397,8 @@ SoundDataCmd_94:
 ; - 2: Dest. Sound data ptr (high byte)
 SoundDataCmd_95:
 	inc  bc							; Seek to byte2
-	; Worth noting this works the opposite of SNDBB_2.
-	; That one enables conditional loops when *set*, not when cleared.
 	ldh  a, [h_Unk_SndChInfo_B]
-	bit  SNDBB_1, a					; Is the bit set?
+	bit  SNDBB_FADEDONE, a			; Fading is done?
 	jp   z, SoundDataCmd_80.readHi	; If not, loop
 	ret
 	
@@ -12556,11 +12551,11 @@ SoundDataCmd_9E:
 	ret
 
 ; =============== SoundDataCmd_JpCh ===============
-; [TCRF] Loops the sound slot to the specified location if the sound channel matches the specified one.
+; [TCRF] Conditional jump, taken if the slot's sound channel matches the specified one.
 ;
 ; FORMAT:
 ; - 0: Command ID ($9F)
-; - 1: Channel ID (SNDCH_*)
+; - 1: Matched Channel ID (SNDCH_*)
 ; - 2: Dest. Sound data ptr (low byte)
 ; - 3: Dest. Sound data ptr (high byte)
 SoundDataCmd_9F:
@@ -12612,7 +12607,7 @@ SoundDataCmd_A5:
 ; - 1: PCM Sample ID
 ; - 2: Playback speed
 ; --- rest from normal note
-; - 3: Note length ID + "Contains extension offset" marker.
+; - 3: Note length ID + "Contains extension offset" marker. [Optional]
 ; - 4: Custom note length value [Optional, if \1 is $DE or $EF]
 ; - 5: Mid-note instrument extension delay [Optional, if \1 is between $DE-$EE] 
 SoundDataCmd_A4:
@@ -12651,7 +12646,7 @@ ENDC
 ; FORMAT:
 ; - 0: Slot preset ID [Optional]
 ; - 1: Relative note ID [Optional, only if the preset lacks a Note ID]
-; - 2: Note length ID + "Contains extension offset" marker.
+; - 2: Note length ID + "Contains extension offset" marker. [Optional]
 ; - 3: Custom note length value [Optional, if \1 is $DE or $EF]
 ; - 4: Mid-note instrument extension delay [Optional, if \1 is between $DE-$EE] 
 ;
@@ -12861,7 +12856,7 @@ SoundDataCmd_NoteEx:
 ;
 ; FORMAT:
 ; - 0: Relative note ID ($00-$7F)
-; - 1: Note length ID + "Contains extension offset" marker.
+; - 1: Note length ID + "Contains extension offset" marker. [Optional]
 ; - 2: Custom note length value [Optional, if \1 is $DE or $EF]
 ; - 3: Mid-note instrument extension delay [Optional, if \1 is between $DE-$EE] 
 ;

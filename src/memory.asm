@@ -597,15 +597,15 @@ DEF SNDX_6 EQU 1 << SNDXB_6
 DEF SNDX_7 EQU 1 << SNDXB_7
 
 ; iSndChInfo_0B flags
-DEF SNDBB_1 EQU 1 ; If set, disables sound data loops
+DEF SNDBB_FADEDONE EQU 1 ; Marks if the slot fade is finished
 DEF SNDBB_2 EQU 2 ; If set, alters instruments by enabling their conditional loops.
-DEF SNDBB_USEFADEVOL EQU 3 ; 
+DEF SNDBB_USEFADEVOL EQU 3 ; Use the faded volume. Must be set to actually hear the fade.
 DEF SNDBB_FADEOUT EQU 4 ; Fade in or out?
 DEF SNDBB_FADE EQU 5 ; Fade enabled (current slot)
 DEF SNDBB_NSUP EQU 6 ; Portamento direction (if set, slide notes up)
 DEF SNDBB_NS EQU 7 ; Portamento enabled
 
-DEF SNDB_1 EQU 1 << SNDBB_1
+DEF SNDB_FADEDONE EQU 1 << SNDBB_FADEDONE
 DEF SNDB_2 EQU 1 << SNDBB_2
 DEF SNDB_USEFADEVOL EQU 1 << SNDBB_USEFADEVOL
 DEF SNDB_FADEOUT EQU 1 << SNDBB_FADEOUT
@@ -918,15 +918,15 @@ MACRO snd_note_slide
 	db SNDDATACMD_NOTE_SLIDE, (\1 << 1)|\2
 ENDM
 
-; =============== snd_jp_if_short_inst ===============
-; Command: SoundDataCmd_JpIfShortInst
+; =============== snd_jpfade ===============
+; Command: SoundDataCmd_JpIfFade
 ;
-; Loops the song to the specified location when short instruments are enabled.
+; Conditional jump, performed until the slot fade in/out has finished.
 ;
 ; IN
 ; - 1: Target location
-MACRO snd_jp_if_short_inst
-	db SNDDATACMD_JP_SHORT_INST
+MACRO snd_jpfade
+	db SNDDATACMD_JP_FADE
 	dw \1
 ENDM
 
@@ -1237,7 +1237,7 @@ DEF SNDDATACMD_ORSAVEID            EQU $91
 DEF SNDDATACMD_NOISE_FREQ          EQU $92
 DEF SNDDATACMD_FADE                EQU $93
 DEF SNDDATACMD_NOTE_SLIDE          EQU $94
-DEF SNDDATACMD_JP_SHORT_INST       EQU $95
+DEF SNDDATACMD_JP_FADE       EQU $95
 DEF SNDDATACMD_SPEED               EQU $96
 DEF SNDDATACMD_INC_FREQ_OFFSET     EQU $97
 DEF SNDDATACMD_CH                  EQU $98

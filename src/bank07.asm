@@ -5211,7 +5211,7 @@ SndData_55_Ch4:
 		snd_note $19
 		snd_noise 7, 5, 0
 		snd_note $19
-		snd_jp_if_short_inst .loop
+		snd_jpfade .loop
 	snd_end
 SndData_55_Ch2:
 	snd_note_slide SNDB_NSDOWN, 48
@@ -5642,7 +5642,7 @@ SndData_2F_Ch2:
 		snd_note $44, NOTELEN_03
 		snd_note $4D
 		snd_pan SNDOUT_CHALL
-		snd_jp_if_short_inst .loop
+		snd_jpfade .loop
 	snd_end
 SndHeader_30:
 	db 1 ; Number of slots
@@ -5956,7 +5956,7 @@ SndData_3C_Ch1:
 		snd_note $5D
 		snd_note $59
 		snd_inc_base_note -4
-		snd_jp_if_short_inst .loop
+		snd_jpfade .loop
 	snd_end
 SndData_3C_Ch2:
 	snd_sets3
@@ -6144,7 +6144,7 @@ SndData_41_Ch4:
 	snd_fade SSF_FADEOUT, 4, 112
 	.loop:
 		snd_note $22, NOTELEN_06
-		snd_jp_if_short_inst .loop
+		snd_jpfade .loop
 	snd_end
 SndHeader_42:
 	db 1 ; Number of slots
@@ -6211,7 +6211,7 @@ SndData_44_Ch2:
 		snd_note $25, NOTELEN_03
 		snd_note $2C
 		snd_note $20
-		snd_jp_if_short_inst .loop
+		snd_jpfade .loop
 	snd_end
 SndHeader_45:
 	db 1 ; Number of slots
@@ -6277,7 +6277,7 @@ SndData_46_Ch1:
 		snd_note $25, NOTELEN_01
 		snd_noise 9, 0, 0
 		snd_note $25, NOTELEN_01
-		snd_jp_if_short_inst .loop
+		snd_jpfade .loop
 	snd_end
 SndData_46_Ch2:
 	snd_note $27, NOTELEN_01
@@ -6315,7 +6315,7 @@ SndData_47_Ch2:
 	snd_fade SSF_FADEOUT, 0, 64
 	.loop:
 		snd_note $2C, NOTELEN_0C
-		snd_jp_if_short_inst .loop
+		snd_jpfade .loop
 	snd_end
 SndHeader_48:
 	db 2 ; Number of slots
@@ -6625,7 +6625,7 @@ SndData_50_Ch1:
 	.loop:
 		snd_note $31, NOTELEN_0C
 		snd_note $35
-		snd_jp_if_short_inst .loop
+		snd_jpfade .loop
 	snd_end
 SndHeader_51:
 	db 2 ; Number of slots
@@ -6680,7 +6680,7 @@ SndData_52_Ch2:
 	.loop:
 		snd_note $31, NOTELEN_0C
 		snd_note $35
-		snd_jp_if_short_inst .loop
+		snd_jpfade .loop
 	snd_end
 SndHeader_5A:
 	db 1 ; Number of slots

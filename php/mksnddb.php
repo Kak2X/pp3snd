@@ -284,7 +284,7 @@ oops_we_need_rewind_actually:
 			case 0x95:
 				$target = getptrlabel($iter);
 				$b->add_pending_label($target);
-				ww(3, "snd_jp_if_short_inst {$target}");
+				ww(3, "snd_jpfade {$target}");
 				break;
 			case 0x96:
 				$speed = getnext($iter)->as_int();

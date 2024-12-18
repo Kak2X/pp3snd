@@ -5606,7 +5606,7 @@ SndHeader_2E:
 	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
 SndData_2E_Ch2:
-	snd_toggle_short_inst
+	snd_toggle_keyhold
 	snd_fade SSF_FADEOUT, 4, 255
 	snd_note $23, NOTELEN_01
 	snd_note $20
@@ -6139,7 +6139,7 @@ SndData_41_Ch2:
 		snd_djnz iSndChInfo_24, .loop
 	snd_end
 SndData_41_Ch4:
-	snd_toggle_short_inst
+	snd_toggle_keyhold
 	snd_noise 8, 0, 0
 	snd_fade SSF_FADEOUT, 4, 112
 	.loop:
@@ -6200,7 +6200,7 @@ SndHeader_44:
 	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
 	db SNDOUT_CHALL ; iSndChInfo_0A
 SndData_44_Ch2:
-	snd_toggle_short_inst
+	snd_toggle_keyhold
 	snd_note $31, NOTELEN_01
 	snd_note $25
 	snd_note $19

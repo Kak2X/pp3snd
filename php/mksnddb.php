@@ -88,7 +88,7 @@ const MAP_STATUS = [
 	1 => "SNDX_CH4   ",
 	2 => "SNDX_2     ",
 	3 => "SNDX_3     ",
-	4 => "SNDX_4     ",
+	4 => "SNDX_KEYHOLD     ",
 	5 => "SNDX_5     ",
 	6 => "SNDX_6     ",
 	7 => "SNDX_7     ",
@@ -299,7 +299,7 @@ oops_we_need_rewind_actually:
 				ww(2, "snd_ch {$var}");
 				break;
 			case 0x99:
-				ww(1, "snd_toggle_short_inst");
+				ww(1, "snd_toggle_keyhold");
 				break;
 			case 0x9A:
 				$target = getptrlabel($iter);
@@ -318,7 +318,7 @@ oops_we_need_rewind_actually:
 				break;
 			case 0x9D:
 				$var = getnext($iter)->val;
-				ww(2, "snd_instrument_extimer \${$var}");
+				ww(2, "snd_keyon \${$var}");
 				break;
 			case 0x9E:
 				$var = getnext($iter)->as_enum(MAP_CH);

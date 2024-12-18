@@ -10794,22 +10794,22 @@ DEF SOUND_PAUSING  EQU 1 << SOUNDB_PAUSING
 		; If we overflowed it, handle the checks for the high byte.
 		; That also happens if the speed is 0. 
 		;
-		ld   a, e								; HL = Ptr to slot speed value (low)	
+		ld   a, e							; HL = Ptr to slot speed value (low)	
 		add  iSndChInfo_05
 		ld   l, a
 		add  iSndChInfo_15 - iSndChInfo_05	; BC = Ptr to slot timer (low)
 		ld   c, a
-		ld   a, [hl]		; A = Slot speed (low)
-		and  a				; Is that zero?
-		ld   l, c			; (HL = BC, prepare for sum)
-		jr   z, .chkInstExt	; If so, skip the following check
-		add  [hl]			; A += SlotTimer
-		ld   [hl], a		; Save back
+		ld   a, [hl]			; A = Slot speed (low)
+		and  a					; Is that zero?
+		ld   l, c				; (HL = BC, prepare for sum)
+		jr   z, .chkKeyRel		; If so, skip the following check
+		add  [hl]				; A += SlotTimer
+		ld   [hl], a			; Save back
 		jr   nc, .noNextData	; ...only do that when SlotTimer += SlotSpeed overflows
 		
-	.chkInstExt:
+	.chkKeyRel:
 		; Overflowed
-		dec  l				; C = iSndChInfo_14 (instrument target)
+		dec  l				; C = iSndChInfo_14 (key release target)
 		ld   c, [hl]
 		dec  l				; B = iSndChInfo_13 (slot timer, low)
 		ld   b, [hl]
@@ -10817,87 +10817,82 @@ DEF SOUND_PAUSING  EQU 1 << SOUNDB_PAUSING
 		
 		;##
 		;
-		; INSTRUMENT EXTENSION TIMING
+		; SUSTAIN / RELEASE KEY
 		;
-		; Times the moment instrument data gets "extended", by disabling their conditional
-		; loops which were enabled at the start of the note.
+		; Times when exactly the key should be released.
+		; Doing so clears SNDBB_KEYON, on which instrument data can conditionally loop on.
 		;
-		; This is accomplished by clearing SNDBB_2.
-		;
-		; [TCRF] A time offset is required to do this, but the sound data never sets one,
+		; [TCRF] A target is required to do this, but the sound data never sets one,
 		;        and the used instruments don't have conditional loops anyway.
 		;
 		
-		; If the override is set, prevent the reset from happening
+		; Skip if we're forcing the key to be pressed
 		ldh  a, [hSndChInfoStatus]
-		bit  SNDXB_4, a
+		bit  SNDXB_KEYHOLD, a
 		jr   nz, .chkSpeedHi
 		
-		; If SNDBB_2 is already cleared, skip this
+		; Skip if the key is already released
 		ldh  a, [h_Unk_SndChInfo_B]
-		bit  SNDBB_2, a
+		bit  SNDBB_KEYON, a
 		jr   z, .chkSpeedHi
 		
-		; If a timer offset isn't set, also skip this
-		ld   a, c				; A = iSndChInfo_14
+		; Skip if no target (iSndChInfo_14) was specified.
+		ld   a, c
 		and  a
 		jr   z, .chkSpeedHi
-		
 		; We never get here
 		
 		;
-		; The instrument is altered (SNDBB_2 cleared) within <iSndChInfo_14> high ticks (times we get here)
-		; from either the start or end of the note.
-		;
+		; The key is released within iSndChInfo_14 (times we get here) from either the start or end of the note.
 		; SND14B_END determines which side it is.
 		;
 		bit  SND14B_END, a		; Checking from the end?
-		jr   z, .dilFromStart	; If not, it's from the start
+		jr   z, .relFromStart	; If not, it's from the start
 		
-	.dilFromEnd:
+	.relFromEnd:
 		;
-		; Alter the instruments if Timer >= Length - Offset
-		;                      aka Timer + Offset >= Length
+		; Release key if Timer >= Length - Target
+		;            aka Timer + Target >= Length
 		;
 		
-		; Remove marker flag
+		; Remove type indicator
 		and  $FF^SND14_END
 
-		; Timer + Offset
-		; If this overflowed, we're definitely past the limit.
+		; Timer + Target
+		; If this overflowed, we're definitely past the target (and the check below wouldn't work)
 		add  b 					; A += iSndChInfo_13
-		jr   c, .dilClear		; Overflowed? If so, jump (ok)
+		jr   c, .releaseKey		; Overflowed? If so, jump (ok)
 		
 		; If that didn't reach the note's length yet, don't clear yet
 		cp   [hl]				; A < iSndChInfo_12?
 		jr   c, .chkSpeedHi		; If so, jump (skip)
 		
 		; All OK
-		jr   .dilClear 
+		jr   .releaseKey 
 		
-	.dilFromStart:
+	.relFromStart:
 		;
-		; Alter the instruments if Timer <= Offset.
-		; [BUG?] This doesn't make much sense, presumably they intended to go off Timer >= Offset.
+		; [BUG] Release key if Timer <= Target.
+		;       This does not make sense. The intention was to go off Timer >= Target. 
 		;
 		cp   b
 	IF FIX_BUGS
 		jr   c, .chkSpeedHi		; iSndChInfo_14 < iSndChInfo_13? If so, jump (skip)
 	ELSE
-		jr   z, .dilClear		; iSndChInfo_14 == iSndChInfo_13? If so, jump (ok)
+		jr   z, .releaseKey		; iSndChInfo_14 == iSndChInfo_13? If so, jump (ok)
 		jr   nc, .chkSpeedHi	; iSndChInfo_14 > iSndChInfo_13? If so, jump (skip)
 	ENDC
-	.dilClear:
+	.releaseKey:
 		;--
 		; [POI] Duplicate useless check.
 		ldh  a, [hSndChInfoStatus]
-		bit  SNDXB_4, a
+		bit  SNDXB_KEYHOLD, a
 		jr   nz, .chkSpeedHi
 		;--
 		
-		; We passed the checks, disable the loops
+		; Release the key!
 		ldh  a, [h_Unk_SndChInfo_B]
-		res  SNDBB_2, a
+		res  SNDBB_KEYON, a
 		ldh  [h_Unk_SndChInfo_B], a
 		;##
 		
@@ -11963,9 +11958,9 @@ SoundDataCmd_98:
 	add  iSndChInfo_06
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_SetInstExt ===============
-; [TCRF] Sets the timer offset for extending the instrument data mid-note.
-; See also: Sound_Do.chkInstExt
+; =============== SoundDataCmd_SetKeyOn ===============
+; [TCRF] Sets how long the key should be held.
+; See also: Sound_Do.chkKeyRel
 ;
 ; FORMAT:
 ; - 0: Command ID ($9D)
@@ -12402,23 +12397,26 @@ SoundDataCmd_95:
 	jp   z, SoundDataCmd_80.readHi	; If not, loop
 	ret
 	
-; =============== SoundDataCmd_ToggleShortInst ===============
-; Toggles short instrument loops.
+; =============== SoundDataCmd_ToggleKeyHold ===============
+; Toggles the "key held" status.
+; When toggled on, it causes instruments to stay in the sustain phase
+; (conditional loops enabled) until this gets toggled back off again.
 ;
 ; FORMAT:
 ; - 0: Command ID ($99)
 SoundDataCmd_99:
-	; Toggle short instruments 
+	; Toggle status 
 	ldh  a, [hSndChInfoStatus]
-	xor  SNDX_4
+	xor  SNDX_KEYHOLD
 	ldh  [hSndChInfoStatus], a
 	
-	; If they are now enabled, also reset instrument data on NoteEx
-	and  SNDX_4					; Did we set SNDX_4?
+	; If we toggled it on, flag that we've just done so.
+	; This is required due to how SoundDataCmd_Note.chkHeld works.
+	and  SNDX_KEYHOLD			; Toggled it on?
 	jr   z, .end				; If not, skip (never taken)
 .setBit3:
-	ldh  a, [h_Unk_FFE5_Flags]	; Enable reset
-	or   SNDDF_3
+	ldh  a, [h_Unk_FFE5_Flags]
+	or   SNDDF_KEYHOLDNEW		; Newly enabled, needs instrument reset
 	ldh  [h_Unk_FFE5_Flags], a
 .end:
 	dec  bc	; no args
@@ -12586,7 +12584,7 @@ IF KEEP_PCM
 ; --- rest from normal note
 ; - 2: Note length ID + "Contains extension offset" marker.
 ; - 3: Custom note length value [Optional, if \1 is $DE or $EF]
-; - 4: Mid-note instrument extension delay [Optional, if \1 is between $DE-$EE] 
+; - 4: Key release target [Optional, if \1 is between $DE-$EE] 
 SoundDataCmd_A5:
 	; A = iSndChInfo_29
 	ldh  a, [hSndChInfoPtrBakLow]
@@ -12609,7 +12607,7 @@ SoundDataCmd_A5:
 ; --- rest from normal note
 ; - 3: Note length ID + "Contains extension offset" marker. [Optional]
 ; - 4: Custom note length value [Optional, if \1 is $DE or $EF]
-; - 5: Mid-note instrument extension delay [Optional, if \1 is between $DE-$EE] 
+; - 5: Key release target [Optional, if \1 is between $DE-$EE] 
 SoundDataCmd_A4:
 	inc  bc					; Seek to byte2
 	ld   a, e				; wSndPcmIDSet = byte1
@@ -12648,7 +12646,7 @@ ENDC
 ; - 1: Relative note ID [Optional, only if the preset lacks a Note ID]
 ; - 2: Note length ID + "Contains extension offset" marker. [Optional]
 ; - 3: Custom note length value [Optional, if \1 is $DE or $EF]
-; - 4: Mid-note instrument extension delay [Optional, if \1 is between $DE-$EE] 
+; - 4: Key release target [Optional, if \1 is between $DE-$EE] 
 ;
 ; IN
 ; - A: byte0
@@ -12834,7 +12832,7 @@ SoundDataCmd_NoteEx:
 ; FORMAT:
 ; - 0: Note length ID + "Contains extension offset" marker. ($DE-$FF)
 ; - 1: Custom note length value [Optional, if \1 is $DE or $EF]
-; - 2: Mid-note instrument extension delay [Optional, if \1 is between $DE-$EE] 
+; - 2: Key release target [Optional, if \1 is between $DE-$EE] 
 .noNote:
 
 	; Seek DE to the relative note ID
@@ -12858,7 +12856,7 @@ SoundDataCmd_NoteEx:
 ; - 0: Relative note ID ($00-$7F)
 ; - 1: Note length ID + "Contains extension offset" marker. [Optional]
 ; - 2: Custom note length value [Optional, if \1 is $DE or $EF]
-; - 3: Mid-note instrument extension delay [Optional, if \1 is between $DE-$EE] 
+; - 3: Key release target [Optional, if \1 is between $DE-$EE] 
 ;
 ; IN
 ; - A: byte0
@@ -12968,7 +12966,10 @@ SoundDataCmd_Note:
 		;   The note's length will be Sound_NoteLenTable[idx-1]
 		; - If it's $00, the next parameter will be treated as the length.
 		; 
-		; That's not how the 1st parameter is encoded though! In the sound data, it takes two sets of ranges:
+		; That's not how the 1st parameter is encoded though!
+		; Because this parameter is completely optional and is the last one, it needs to take
+		; unique values that don't conflict with the first byte of notes or other commands.
+		; So in the sound data it takes two sets of ranges:
 		; - $EF-$FF
 		; - $DE-$EE
 		; These are converted to their decoded values by subtracting $EF up to two times.
@@ -12977,7 +12978,7 @@ SoundDataCmd_Note:
 		; But why twice?
 		;
 		; If only one time is needed to put the values in range (no underflow), there's an additional parameter telling
-		; when, mid-frame, the instrument data should be "extended" (iSndChInfo_14).
+		; when, mid-note, the key should be released (iSndChInfo_14).
 		;
 		; There is a completely separate branch that handles it, but the code that handles the note length
 		; is pratically identical in both branches!
@@ -13026,7 +13027,7 @@ MACRO mLenFromData
 ENDM	
 		
 		
-		; Do we set the instrument extension offset at the end?
+		; Do we specify how long to hold the key?
 		; [TCRF] This always branches, sound data just doesn't use this feature.
 		ld   a, [bc]		
 		sub  $EF			; Try to force back in range
@@ -13038,10 +13039,11 @@ ENDM
 		mLenFromData wi
 		
 		;
-		; INSTRUMENT EXTENSION OFFSET (1 byte)
+		; KEY RELEASE TARGET (1 byte)
 		;
+		; Tells when, mid-note, the key should switch from sustained to released.
 		; This is specific to this branch, making it an optional parameter.
-		; See also: Sound_Do.chkInstExt, where this value is used.
+		; See also: Sound_Do.chkKeyRel, where this value is used.
 		;
 		inc  l			; Seek to iSndChInfo_13
 		inc  l			; Seek to iSndChInfo_14
@@ -13059,6 +13061,7 @@ ENDM
 		
 		; Otherwise, the raw argument was < $DE.
 		; Don't set either a new length, nor a new offset.
+		; This means there are no additional parameters, and we're currently on the first byte of the next command.
 		ld   h, d				
 		jr   .saveDataPtr
 		
@@ -13089,53 +13092,60 @@ ENDM
 		add  iSndChInfo_13 - iSndChInfo_07
 		ld   l, a
 		ld   [hl], $00
-		
+	
 	;--
 	; 
-	; Reset various instrument-related fields such as its timer, since we've set a new note.
-	; This also reverts any mid-note changes.
+	; By default, every new note played should count as a new key.
 	;
-	; This behaviour can be disabled by clearing SNDDFB_3, which lets the instrument handler
-	; continue as if nothing new happened.
+	; We can override this behaviour by using SoundDataCmd_99
+	; right before the note plays, which toggles the ability to "hold keys".
+	; If enabled, this causes conditional loops inside the instrument data to always trigger.
+	;
+	; However, because the command is called when the key is released, we still need to
+	; press a new key the first time after toggling it on, which explains why SNDDFB_KEYHOLDNEW exists.
+	;
 	; This should absolutely not be done with NoteEx that change instruments.
 	;
-		
-		; Seek HL to iSndChInfo_0E, for .end
+	.chkHeld:	
+		; Seek HL to iSndChInfo_0E, for .noHeld
 		add  iSndChInfo_0E - iSndChInfo_13
 		ld   l, a
 	
 	; Not applicable if the slot was muted
 	pop  af				; last iSndChInfo_1C == 0?
-	jr   z, .end		; If so, skip
+	jr   z, .noHeld		; If so, skip
 	
-	; Not applicable if mid-note instrument changes are disabled (??? why?)
+	; Not applicable if not holding keys
 	ldh  a, [hSndChInfoStatus]
-	bit  SNDXB_4, a		; Instrument loops forced enabled?
-	jr   z, .end		; If not, skip
+	bit  SNDXB_KEYHOLD, a
+	jr   z, .noHeld
 	
-	; If the override flag is set, jump
+	; Must be after the first time we get here
 	ldh  a, [h_Unk_FFE5_Flags]
-	bit  SNDDFB_3, a	; Option set?
-	jr   z, .instCont	; If not, jump
+	bit  SNDDFB_KEYHOLDNEW, a	; Just started holding keys?
+	jr   z, .held				; If not, jump (ok)
+	
+	; Otherwise, this is our first time.
+	; As SNDBB_KEYON could be currently disabled, we must go through .noHeld once.
+	; After that, SNDBB_KEYON will stay enabled until we manually
+	; toggle the held status by using SoundDataCmd_99 again. 
+	
 	;--
-.end:
+.noHeld:
 	; Rewind vibrato & instrument
 	sub  a				
 	ldi  [hl], a		; iSndChInfo_0E = 0
 	ldi  [hl], a		; iSndChInfo_0F = 0
-	
 	; Reset instrument timer
 	inc  a
 	ldi  [hl], a		; iSndChInfo_10 = 1
 	
-	; At the start of every note (except for those going to .setFlag7), enable the conditional loops.
-	; This shortens instrument data that's coded for it until the mid-note extension is triggered,
-	; which clears the bit.
+	; Press the key at the start of the note.
 	ldh  a, [h_Unk_SndChInfo_B]
-	set  SNDBB_2, a
+	set  SNDBB_KEYON, a
 	ldh  [h_Unk_SndChInfo_B], a
 	
-	; Mark that a new note was set, and retrigger the channel
+	; Mark that a new note was set, and retrigger the channel.
 	ldh  a, [h_Unk_FFE5_Flags]
 	or   SNDDF_NEWNOTE|SNDDF_TRIG
 	ldh  [h_Unk_FFE5_Flags], a
@@ -13148,7 +13158,7 @@ ENDM
 	; Back to the main loop
 	jp   Sound_Do.soundDataDone
 	
-.instCont:
+.held:
 	; Only mark that a new note was set, otherwise the Portamento handler won't recalculate its base note.
 	ld   hl, h_Unk_FFE5_Flags
 	set  SNDDFB_NEWNOTE, [hl]
@@ -13256,8 +13266,9 @@ Sound_SetFreq:
 	ret
 	
 ; =============== Sound_FreqDataTbl ===============
-; Table with pairs of frequency values for the frequency registers (sound channels 1-2-3).
+; Table with pairs of base frequency values for the frequency registers (sound channels 1-2-3).
 ; Essentially these are "musical notes" ordered from lowest to highest.
+; This data may not be necessarily used as-is, an offset could be applied to the value read from here.
 Sound_FreqDataTbl:
 	dw $0002
 	dw $0072
@@ -13426,18 +13437,18 @@ Sound_DoInstrument:
 	; Out of range IDs behave differently:
 	; - ID    $00: Plays the note at max volume, with incrementing envelope.
 	; - ID >= $80: Plays the note at max volume, with a customizable envelope.
-	;              In practice, the lower nybble of the ID is treated as direct NRx2 data.
+	;              In practice, the lower nybble of the ID is treated as raw NRx2 data.
 	;
 	ld   a, [de]
 	add  a					; *2, for word ptr table
-	jr   z, .directInc		; Is the index 0? If so, jump
+	jr   z, .rawInc			; Is the index 0? If so, jump
 	jr   nc, .chkTimer		; Didn't overflow? If so, jump (A * 2 < $100)
-.direct:
+.raw:
 	rrca 					; /2 with carry shifted back, to restore original
 	or   ($0F<<4)			; Force max volume
 	ldh  [hNRx2Data], a
 	ret
-.directInc:
+.rawInc:
 	ld   a, ($0F<<4)|SNDENV_INC	; Force max volume, *incrementing* envelope
 	ldh  [hNRx2Data], a
 	ret
@@ -13469,10 +13480,10 @@ Sound_DoInstrument:
 	; DE = Ptr to Sound_SndEnvTable[iSndChInfo_02]
 	ld   e, a
 	ld   a, [Sound_InstrumentPtrTablePtr]	; Read low byte of ptr table
-	add  e								; Add iSndChInfo_02, the ptr table offset
+	add  e									; Add iSndChInfo_02, the ptr table offset
 	ld   e, a
 	ld   a, [Sound_InstrumentPtrTablePtr+1]	; Read high byte ""
-	adc  a, $00							; Add carry
+	adc  a, $00								; Add carry
 	ld   d, a
 	
 	; Read out the resulting pointer, and index it by the instrument data offset.
@@ -13553,10 +13564,8 @@ Sound_DoInstrument:
 ; --------------- .cmdLoopCond ---------------
 ; [TCRF] Command ID $83
 ;
-; Makes the previous envelope loop until SNDBB_2 is cleared.
-; This can be used to alter instruments depending on that bit,
-; but none of the conditional loop commands are used...
-; The previous command must be a standard (ID < $80) one.
+; Repeats the previous command until the key is released.
+; This and all other loop commands expect to land on a standard (ID < $80) one.
 ;
 ; FORMAT:
 ; - 0: Command ID ($80)
@@ -13566,8 +13575,8 @@ Sound_DoInstrument:
 .cmdLoopCond:
 	; Check loop condition
 	ldh  a, [h_Unk_SndChInfo_B]
-	bit  SNDBB_2, a 			; Is the bit set?
-	jr   nz, .cmdLoop 			; If so, loop
+	bit  SNDBB_KEYON, a 	; Holding keys?
+	jr   nz, .cmdLoop 		; If so, loop
 	
 	; No loop
 	inc  bc					; Seek to byte1
@@ -13584,8 +13593,7 @@ Sound_DoInstrument:
 ; --------------- .cmdLoop ---------------
 ; Command ID $80
 ;
-; Makes the previous envelope loop indefinitely.
-; The previous command must be a standard (ID < $80) one.
+; Repeats the previous command.
 ;
 ; FORMAT:
 ; - 0: Command ID ($80)
@@ -13599,8 +13607,8 @@ Sound_DoInstrument:
 ; --------------- .cmdLoopFarCond ---------------
 ; [TCRF] Command ID $84
 ;
-; Loops conditionally the offset back by the specified amount of bytes, until SNDBB_2 is cleared.
-; The target location must have a standard command (ID < $80).
+; Loops back by the specified amount of bytes when the keys are held.
+; This could be used to jump forwards too, but that's not the intention.
 ;
 ; FORMAT:
 ; - 0: Command ID ($84)
@@ -13611,7 +13619,7 @@ Sound_DoInstrument:
 .cmdLoopFarCond:
 	; Check loop condition
 	ldh  a, [h_Unk_SndChInfo_B]
-	bit  SNDBB_2, a 			; Is the bit set?
+	bit  SNDBB_KEYON, a 		; Holding keys?
 	jr   nz, .cmdLoopFar		; If so, loop
 	
 	; No loop
@@ -13624,8 +13632,7 @@ Sound_DoInstrument:
 ; --------------- .cmdLoopFar ---------------
 ; [TCRF] Command ID $81
 ;
-; Loops the offset back by the specified amount of bytes.
-; The target location must have a standard command (ID < $80).
+; Loops back by the specified amount of bytes.
 ;
 ; FORMAT:
 ; - 0: Command ID ($81)
@@ -13636,7 +13643,6 @@ Sound_DoInstrument:
 	inc  bc			; Seek to byte1
 	ld   a, [bc]	; Read loop offset
 	ld   e, a
-	
 	
 	; Set up the data offset for next time.
 	; This means making it point two bytes after the target location.
@@ -13660,7 +13666,7 @@ Sound_DoInstrument:
 ; --------------- .cmdReset ---------------
 ; [TCRF] Command ID $82
 ;
-; Resets the data offset to the beginning.
+; Loops to the beginning of the data.
 ;
 ; FORMAT:
 ; - 0: Command ID ($82)
@@ -13830,10 +13836,8 @@ Sound_DoVibrato:
 ; --------------- .cmdLoopCond ---------------
 ; [TCRF] Command ID $83
 ;
-; Makes the previous command loop until SNDBB_2 is cleared.
-; This can be used to alter the vibrato depending on that bit,
-; but none of the conditional loop commands are used...
-; The previous command must be a standard one.
+; Repeats the previous command until the key is released.
+; This and all other loop commands expect to land on a standard (ID < $80) one.
 ;
 ; FORMAT:
 ; - 0: Command ID ($80)
@@ -13842,7 +13846,7 @@ Sound_DoVibrato:
 .cmdLoopCond:
 	; Check loop condition
 	ldh  a, [h_Unk_SndChInfo_B]
-	bit  SNDBB_2, a 			; Is the bit set?
+	bit  SNDBB_KEYON, a 		; Holding keys?
 	jr   nz, .cmdLoop 			; If so, loop
 	
 	; No loop
@@ -13864,8 +13868,7 @@ Sound_DoVibrato:
 ; --------------- .cmdLoop ---------------
 ; Command ID $80
 ;
-; Makes the previous command loop indefinitely.
-; The previous command must be a standard one.
+; Repeats the previous command.
 ;
 ; FORMAT:
 ; - 0: Command ID ($80)
@@ -13880,8 +13883,8 @@ Sound_DoVibrato:
 ; --------------- .cmdLoopFarCond ---------------
 ; [TCRF] Command ID $84
 ;
-; Loops conditionally the offset back by the specified amount of bytes, until SNDBB_2 is cleared.
-; The target location must have a standard command.
+; Loops back by the specified amount of bytes when the keys are held.
+; This could be used to jump forwards too, but that's not the intention.
 ;
 ; FORMAT:
 ; - 0: Command ID ($84)
@@ -13891,7 +13894,7 @@ Sound_DoVibrato:
 .cmdLoopFarCond:
 	; Check loop condition
 	ldh  a, [h_Unk_SndChInfo_B]
-	bit  SNDBB_2, a 			; Is the bit set?
+	bit  SNDBB_KEYON, a 		; Holding keys?
 	jr   nz, .cmdLoopFar		; If so, loop
 	
 	; No loop
@@ -13910,8 +13913,7 @@ Sound_DoVibrato:
 ; --------------- .cmdLoopFar ---------------
 ; Command ID $81
 ;
-; Loops the offset back by the specified amount of bytes.
-; The target location must have a standard command.
+; Loops back by the specified amount of bytes.
 ;
 ; FORMAT:
 ; - 0: Command ID ($81)
@@ -13947,7 +13949,7 @@ Sound_DoVibrato:
 ; --------------- .cmdReset ---------------
 ; Command ID $82
 ;
-; Resets the data offset to the beginning.
+; Loops to the beginning of the data.
 ;
 ; FORMAT:
 ; - 0: Command ID ($82)

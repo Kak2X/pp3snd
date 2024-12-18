@@ -109,7 +109,7 @@ ENDM
 ; =============== iloop_prev ===============
 ; Command: Sound_DoInstrument.cmdLoop
 ;
-; Makes the previous command loop.
+; Repeats the previous command.
 MACRO iloop_prev
 	db SNDENVCMD_LOOP
 ENDM
@@ -117,7 +117,7 @@ ENDM
 ; =============== vloop_prev ===============
 ; Command: Sound_DoVibrato.cmdLoop
 ;
-; Makes the previous command loop.
+; Repeats the previous command.
 MACRO vloop_prev
 	db SNDENVCMD_LOOP
 ENDM
@@ -125,7 +125,7 @@ ENDM
 ; =============== iloop_prev_sh ===============
 ; Command: Sound_DoInstrument.cmdLoopCond
 ;
-; Makes the previous command loop until short instruments are disabled.
+; Repeats the previous command loop until the key is released.
 ;
 ; IN (same as ivol)
 ; - 1: Length, in frames.
@@ -138,7 +138,7 @@ ENDM
 ; =============== vloop_prev_sh ===============
 ; Command: Sound_DoVibrato.cmdLoopCond
 ;
-; Makes the previous command loop until short vibratos are disabled.
+; Repeats the previous command loop until the key is released.
 ; IN (same as vfrq)
 ; - 1: Amount (signed)
 MACRO vloop_prev_sh
@@ -173,7 +173,7 @@ ENDM
 ; =============== iloop_far_sh ===============
 ; Command: Sound_DoInstrument.cmdLoopFarCond
 ;
-; Makes the instrument loop to the specified label.
+; Makes the instrument loop to the specified label until the key is released.
 ;
 ; IN
 ; - 1: Label
@@ -189,7 +189,7 @@ ENDM
 ; =============== vloop_far_sh ===============
 ; Command: Sound_DoVibrato.cmdLoopFarCond
 ;
-; Makes the vibrato loop to the specified label.
+; Makes the vibrato loop to the specified label until the key is released.
 ;
 ; IN
 ; - 1: Label
@@ -203,10 +203,10 @@ ENDM
 
 
 ; h_Unk_FFE5_Flags bits (data command- related? frame specific slot flags?)
-DEF SNDDFB_3 EQU 3 ; SNDDFB_CLRINST Reset instrument data on NoteEx
+DEF SNDDFB_KEYHOLDNEW EQU 3 ; Started holding keys this frame (first frame when SNDXB_KEYHOLD is set)
 DEF SNDDFB_TRIG EQU 5 ; Sound channel should be retriggered.
 DEF SNDDFB_NEWNOTE EQU 7 ; New note set on this frame. Used in practice to execute the Portamento setup code.
-DEF SNDDF_3 EQU 1 << SNDDFB_3
+DEF SNDDF_KEYHOLDNEW EQU 1 << SNDDFB_KEYHOLDNEW
 DEF SNDDF_TRIG EQU 1 << SNDDFB_TRIG
 DEF SNDDF_NEWNOTE EQU 1 << SNDDFB_NEWNOTE
 
@@ -583,7 +583,7 @@ DEF SNDXB_CH123 EQU 0 ; Slot contains channels 1-3 data
 DEF SNDXB_CH4 EQU 1 ; Slot contains channel 4 data 
 DEF SNDXB_2 EQU 2 ; ???
 DEF SNDXB_3 EQU 3
-DEF SNDXB_4 EQU 4 ; SNDXB_SHORTINST Forces the initial note instrument data to be used. (Forces the conditional loops enabled)
+DEF SNDXB_KEYHOLD EQU 4 ; Forces the key to be held (never unset SNDBB_KEYON)
 DEF SNDXB_5 EQU 5 ; If set, the lower priority slots above should be paused.
 DEF SNDXB_6 EQU 6
 DEF SNDXB_7 EQU 7 ; ???
@@ -591,28 +591,28 @@ DEF SNDX_CH123 EQU 1 << SNDXB_CH123
 DEF SNDX_CH4 EQU 1 << SNDXB_CH4
 DEF SNDX_2 EQU 1 << SNDXB_2
 DEF SNDX_3 EQU 1 << SNDXB_3
-DEF SNDX_4 EQU 1 << SNDXB_4
+DEF SNDX_KEYHOLD EQU 1 << SNDXB_KEYHOLD
 DEF SNDX_5 EQU 1 << SNDXB_5
 DEF SNDX_6 EQU 1 << SNDXB_6
 DEF SNDX_7 EQU 1 << SNDXB_7
 
 ; iSndChInfo_0B flags
-DEF SNDBB_FADEDONE EQU 1 ; Marks if the slot fade is finished
-DEF SNDBB_2 EQU 2 ; If set, alters instruments by enabling their conditional loops.
+DEF SNDBB_FADEDONE   EQU 1 ; Marks if the slot fade is finished
+DEF SNDBB_KEYON      EQU 2 ; If set, the key is being pressed. Instrument data can loop until the key is released.
 DEF SNDBB_USEFADEVOL EQU 3 ; Use the faded volume. Must be set to actually hear the fade.
-DEF SNDBB_FADEOUT EQU 4 ; Fade in or out?
-DEF SNDBB_FADE EQU 5 ; Fade enabled (current slot)
-DEF SNDBB_NSUP EQU 6 ; Portamento direction (if set, slide notes up)
-DEF SNDBB_NS EQU 7 ; Portamento enabled
+DEF SNDBB_FADEOUT    EQU 4 ; Fade in or out
+DEF SNDBB_FADE       EQU 5 ; Fade enabled (current slot)
+DEF SNDBB_NSUP       EQU 6 ; Portamento direction (if set, slide notes up)
+DEF SNDBB_NS         EQU 7 ; Portamento enabled
 
-DEF SNDB_FADEDONE EQU 1 << SNDBB_FADEDONE
-DEF SNDB_2 EQU 1 << SNDBB_2
-DEF SNDB_USEFADEVOL EQU 1 << SNDBB_USEFADEVOL
-DEF SNDB_FADEOUT EQU 1 << SNDBB_FADEOUT
-DEF SNDB_FADE EQU 1 << SNDBB_FADE
-DEF SNDB_NSUP EQU 1 << SNDBB_NSUP
-DEF SNDB_NS EQU 1 << SNDBB_NS
-DEF SNDB_NSDOWN EQU 0
+DEF SNDB_FADEDONE    EQU 1 << SNDBB_FADEDONE
+DEF SNDB_KEYON       EQU 1 << SNDBB_KEYON
+DEF SNDB_USEFADEVOL  EQU 1 << SNDBB_USEFADEVOL
+DEF SNDB_FADEOUT     EQU 1 << SNDBB_FADEOUT
+DEF SNDB_FADE        EQU 1 << SNDBB_FADE
+DEF SNDB_NSUP        EQU 1 << SNDBB_NSUP
+DEF SNDB_NS          EQU 1 << SNDBB_NS
+DEF SNDB_NSDOWN      EQU 0
 
 ; iSndChInfo_0C flags
 DEF SNDCB_PITCHBEND EQU 0 ; Enable pitch bend
@@ -620,7 +620,7 @@ DEF SNDCB_PCM EQU 5 ; PCM played in slot
 DEF SNDCB_MUTED EQU 6 ; Slot is processed but won't play audio
 
 ; iSndChInfo_14
-DEF SND14B_END EQU 7 ; If set, the target is relative to the end of the note
+DEF SND14B_END EQU 7 ; If set, the key release timing is relative to the end of the note. Otherwise, it's to the start.
 DEF SND14_END  EQU 1 << SND14B_END
 
 
@@ -930,12 +930,14 @@ MACRO snd_jpfade
 	dw \1
 ENDM
 
-; =============== snd_toggle_short_inst ===============
-; Command: SoundDataCmd_ToggleShortInst
+; =============== snd_toggle_keyhold ===============
+; Command: SoundDataCmd_ToggleKeyHold
 ;
-; Toggles short instruments.
-MACRO snd_toggle_short_inst
-	db SNDDATACMD_TOGGLE_SHORT_INST
+; Toggles the "key held" status.
+; When toggled on, it causes instruments to stay in the sustain phase
+; (conditional loops enabled) until this gets toggled back off again.
+MACRO snd_toggle_keyhold
+	db SNDDATACMD_TOGGLE_KEYHOLD
 ENDM
 
 ; =============== snd_call ===============
@@ -1008,15 +1010,16 @@ MACRO snd_inc_base_note_by_loop
 	dw \2
 ENDM
 
-; =============== snd_instrument_extimer ===============
-; Command: SoundDataCmd_SetInstExt
+; =============== snd_keyon ===============
+; Command: SoundDataCmd_SetKeyOn
 ;
-; Sets a new timer offset for the mid-note instrument change.
+; Sets how long the key should be held, will be \1 ticks after the note starts or before the note ends.
+; This splits the note between sustain and release.
 ;
 ; IN
 ; - 1: Value
-MACRO snd_instrument_extimer
-	db SNDDATACMD_INSTRUMENT_EXT, \1
+MACRO snd_keyon
+	db SNDDATACMD_KEYON, \1
 ENDM
 
 ; =============== snd_ifch ===============
@@ -1133,7 +1136,7 @@ ENDM
 ; - 1: Relative note ID ($00-$7F)
 ; - 2: Note length ID (NOTELEN_*) [Optional]
 ; - 3: Custom note length value [If NOTELEN_CUSTOM is set]
-; - 4: Mid-note instrument extension delay [Optional]
+; - 4: Key release target [Optional]
 MACRO snd_note
 	db \1
 	SHIFT
@@ -1150,7 +1153,7 @@ ENDM
 ; - 1: Preset ID
 ; - 2: Note length ID (NOTELEN_*) [Optional]
 ; - 3: Custom note length value [If NOTELEN_CUSTOM is set]
-; - 4: Mid-note instrument extension delay [Optional]
+; - 4: Key release target [Optional]
 MACRO snd_noteex
 	db \1
 	SHIFT
@@ -1169,7 +1172,7 @@ ENDM
 ;      If $00, it will mute the sound channel.
 ; - 3: Note length ID (NOTELEN_*) [Optional]
 ; - 4: Custom note length value [If NOTELEN_CUSTOM is set]
-; - 5: Mid-note instrument extension delay [Optional]
+; - 5: Key release target [Optional]
 MACRO snd_noteex2
 	db \1
 	SHIFT
@@ -1191,7 +1194,7 @@ ENDM
 ; Shared arguments for note commands, do not use directly.
 ; - 1: Note length ID (NOTELEN_*) [Optional]
 ; - 2: Custom note length value [If NOTELEN_CUSTOM is set]
-; - 3: Mid-note instrument extension delay [Optional]
+; - 3: Key release target [Optional]
 MACRO _snd_note
 	; "is not constant at assembly time"
 	IF _NARG > 0
@@ -1237,15 +1240,15 @@ DEF SNDDATACMD_ORSAVEID            EQU $91
 DEF SNDDATACMD_NOISE_FREQ          EQU $92
 DEF SNDDATACMD_FADE                EQU $93
 DEF SNDDATACMD_NOTE_SLIDE          EQU $94
-DEF SNDDATACMD_JP_FADE       EQU $95
+DEF SNDDATACMD_JP_FADE             EQU $95
 DEF SNDDATACMD_SPEED               EQU $96
 DEF SNDDATACMD_INC_FREQ_OFFSET     EQU $97
 DEF SNDDATACMD_CH                  EQU $98
-DEF SNDDATACMD_TOGGLE_SHORT_INST   EQU $99
+DEF SNDDATACMD_TOGGLE_KEYHOLD      EQU $99
 DEF SNDDATACMD_CALL                EQU $9A
 DEF SNDDATACMD_RET                 EQU $9B
 DEF SNDDATACMD_INC_BASE_NOTE_BY_LOOP EQU $9C
-DEF SNDDATACMD_INSTRUMENT_EXT      EQU $9D ; SNDDATACMD_SHORT_INST_LEN ???
+DEF SNDDATACMD_KEYON               EQU $9D
 DEF SNDDATACMD_IFCH                EQU $9E
 DEF SNDDATACMD_JPCH                EQU $9F
 DEF SNDDATACMD_DUTY                EQU $A0
@@ -1371,7 +1374,7 @@ DEF iSndChInfo_10 EQU $10 ; Instrument timer. When it elapses, new wNRx2 data is
 DEF iSndChInfo_11 EQU $11 ; Instrument data. Raw NRx2 volume/envelope register data. [wNRx2]
 DEF iSndChInfo_12 EQU $12 ; Note length (high byte)
 DEF iSndChInfo_13 EQU $13 ; Slot timer (high byte)
-DEF iSndChInfo_14 EQU $14 ; Mid-note instrument extension target (high byte). Determines when to disable conditional loops in the instrument data. 
+DEF iSndChInfo_14 EQU $14 ; Key release target
 DEF iSndChInfo_15 EQU $15 ; Slot timer (low byte)
 DEF iSndChInfo_16 EQU $16 ; Current frequency value (low byte) [wNRx3].
 DEF iSndChInfo_17 EQU $17 ; Current frequency value (high byte) [wNRx4].

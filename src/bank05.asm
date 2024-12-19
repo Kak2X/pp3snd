@@ -4389,7 +4389,7 @@ L055198:;I
 L0551A0:;I
 	call L05508F
 	ld   a, $F1
-	jp   SoundDataCmd_8B
+	jp   Sound_ReqPlayId
 L0551A8: db $C9;X
 L0551A9: db $05
 L0551AA: db $18

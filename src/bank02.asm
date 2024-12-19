@@ -2166,7 +2166,7 @@ L0249E8:;R
 	ld   hl, $49F3
 	add  hl, bc
 	ld   a, [hl]
-	jp   SoundDataCmd_8B
+	jp   Sound_ReqPlayId
 L0249F3: db $47
 L0249F4: db $48
 L0249F5: db $49;X
@@ -7484,7 +7484,7 @@ L025FC7:;R
 	cp   $FF
 	jr   nz, $5FC7
 	ld   a, $4C
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	jp   L001ECD
 L02600E: db $F0;X
 L02600F: db $B1;X

@@ -589,7 +589,7 @@ ENDM
 ;
 ; IN
 ; - 1: Slot struct offset
-;      This contains the timer, should use iSndChInfo_Work*
+;      This contains the timer, mostly points to iSndChInfo_24
 ; - 2: Target location if the jump is taken
 MACRO snd_djnz
 	db SNDDATACMD_DJNZ, \1
@@ -629,7 +629,7 @@ ENDM
 ;
 ; Enables/disables pitch bends.
 ;
-; When this command is used to enable them, two more notes need to be played to start the first one.
+; When this command is used to enable them, two more notes need to be played to start the first bend.
 ; First note for the source frequency, the second for the destination.
 ;
 ; From the second note onwards, the current note counts as the source frequency.
@@ -695,7 +695,7 @@ ENDM
 
 
 ; =============== snd_inc_base_note ===============
-; Command: SoundDataCmd_IncBaseFreq
+; Command: SoundDataCmd_IncBaseNote
 ;
 ; Alters the base note ID by the specified value.
 ;
@@ -800,8 +800,8 @@ MACRO snd_orsaveid
 	db SNDDATACMD_ORSAVEID, \1
 ENDM
 
-; =============== snd_noise_freq ===============
-; Command: SoundDataCmd_SetNoiseSweep
+; =============== snd_noise ===============
+; Command: SoundDataCmd_SetNoiseFreq
 ;
 ; Sets a new noise frequency value.
 ;
@@ -898,7 +898,7 @@ ENDM
 ; =============== snd_inc_freq_offset ===============
 ; Command: SoundDataCmd_IncFreqOff
 ;
-; Increments the frequency value offset by the specified amount.
+; Alters the frequency value offset by the specified amount.
 ; The higher this is, the lower the final frequency will be.
 ;
 ; IN
@@ -1039,7 +1039,7 @@ MACRO snd_playpcm
 ENDM
 
 ; =============== snd_playslotpcm ===============
-; Command: SoundDataCmd_PlayPcm
+; Command: SoundDataCmd_PlaySlotPcm
 ;
 ; Plays the PCM sample previously assigned to the slot.
 ;
@@ -1314,7 +1314,7 @@ DEF iSndChInfo_20 EQU $20 ; Noise channel frequency. [wNR43]
 DEF iSndChInfo_21 EQU $21 ; Fade speed
 DEF iSndChInfo_22 EQU $22 ; Fade timer
 DEF iSndChInfo_23 EQU $23 ; Fade target volume
-DEF iSndChInfo_24 EQU $24 ; Loop timer #0. Also used as negative offset in SoundDataCmd_9C, for loop-based frequency increases.
+DEF iSndChInfo_24 EQU $24 ; Loop timer #0. Also used as negative offset in SoundDataCmd_IncBaseNoteByLoop, for loop-based frequency increases.
 DEF iSndChInfo_25 EQU $25 ; Loop timer #1
 DEF iSndChInfo_26 EQU $26 ; Data Pointer return address, low byte.
 DEF iSndChInfo_27 EQU $27 ; Data Pointer return address, high byte.

@@ -66,7 +66,7 @@ L034091:;R
 	ld   b, $80
 	call L002210
 	ld   a, $03
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	ld   a, $01
 	ld   [$C140], a
 	ld   a, $80
@@ -121,7 +121,7 @@ L0340F3:;R
 	ld   [$C14A], a
 L0340F9:;R
 	ld   a, $2A
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 L0340FE:;R
 	ldh  a, [$FFA8]
 	and  $0B
@@ -217,7 +217,7 @@ L03415C: db $AB;X
 L03415D: db $40;X
 L03415E:;R
 	ld   a, $2B
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	ld   a, [$C14C]
 	ld   b, a
 	ld   a, [$C148]
@@ -9602,7 +9602,7 @@ L036730:;I
 	bit  3, a
 	ret  z
 	ld   a, $2B
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	call L00056E
 	call L0005E0
 	call L001DAE
@@ -9617,7 +9617,7 @@ L036757:;I
 	call L001EF3
 L03675A:;I
 	ld   a, $F1
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	call L001EF3
 L036762:;I
 	call L03676F

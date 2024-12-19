@@ -11720,45 +11720,45 @@ Sound_JpHl:
 ; =============== Sound_DataCmdPtrTable ===============
 ; Sound data command assignments.
 Sound_DataCmdPtrTable:
-	dw SoundDataCmd_80    ; $80
-	dw SoundDataCmd_81    ; $81
-	dw SoundDataCmd_82    ; $82
-	dw SoundDataCmd_83    ; $83
-	dw SoundDataCmd_84    ; $84
-	dw SoundDataCmd_85;X  ; $85
-	dw SoundDataCmd_86    ; $86
-	dw SoundDataCmd_87    ; $87
-	dw SoundDataCmd_88    ; $88
-	dw SoundDataCmd_89    ; $89
-	dw SoundDataCmd_8A    ; $8A
-	dw SoundDataCmd_8B;X  ; $8B
-	dw SoundDataCmd_8C;X  ; $8C
-	dw SoundDataCmd_8D    ; $8D
-	dw SoundDataCmd_8E    ; $8E
-	dw SoundDataCmd_8F;X  ; $8F
-	dw SoundDataCmd_90    ; $90
-	dw SoundDataCmd_91;X  ; $91
-	dw SoundDataCmd_92    ; $92
-	dw SoundDataCmd_93    ; $93
-	dw SoundDataCmd_94    ; $94
-	dw SoundDataCmd_95    ; $95
-	dw SoundDataCmd_96;X  ; $96
-	dw SoundDataCmd_97    ; $97
-	dw SoundDataCmd_98;X  ; $98
-	dw SoundDataCmd_99    ; $99
-	dw SoundDataCmd_9A    ; $9A
-	dw SoundDataCmd_9B    ; $9B
-	dw SoundDataCmd_9C;X  ; $9C
-	dw SoundDataCmd_9D;X  ; $9D
-	dw SoundDataCmd_9E;X  ; $9E
-	dw SoundDataCmd_9F;X  ; $9F
-	dw SoundDataCmd_A0    ; $A0
-	dw SoundDataCmd_A1    ; $A1
-	dw SoundDataCmd_A2    ; $A2
-	dw SoundDataCmd_A3    ; $A3
+	dw SoundDataCmd_Jp                   ; $80
+	dw SoundDataCmd_JpByTimer            ; $81
+	dw SoundDataCmd_End                  ; $82
+	dw SoundDataCmd_SetVibrato           ; $83
+	dw SoundDataCmd_PitchBend            ; $84
+	dw SoundDataCmd_PlaySndArg           ; $85 ;X
+	dw SoundDataCmd_EndSaveID            ; $86
+	dw SoundDataCmd_SetVol               ; $87
+	dw SoundDataCmd_SetInstrument        ; $88
+	dw SoundDataCmd_IncBaseNote          ; $89
+	dw SoundDataCmd_IncVol               ; $8A
+	dw SoundDataCmd_PlaySnd              ; $8B ;X
+	dw SoundDataCmd_Nop                  ; $8C ;X
+	dw SoundDataCmd_SetVar               ; $8D
+	dw SoundDataCmd_SetNoiseSweep        ; $8E
+	dw SoundDataCmd_NoiseSweepSingle     ; $8F ;X
+	dw SoundDataCmd_SetStatus            ; $90
+	dw SoundDataCmd_OrSnd                ; $91 ;X
+	dw SoundDataCmd_SetNoiseFreq         ; $92
+	dw SoundDataCmd_SlotFade             ; $93
+	dw SoundDataCmd_NoteSlide            ; $94
+	dw SoundDataCmd_JpIfFade             ; $95
+	dw SoundDataCmd_SetSpeed             ; $96 ;X
+	dw SoundDataCmd_IncFreqOff           ; $97
+	dw SoundDataCmd_SetCh                ; $98 ;X
+	dw SoundDataCmd_ToggleKeyHold        ; $99
+	dw SoundDataCmd_Call                 ; $9A
+	dw SoundDataCmd_Ret                  ; $9B
+	dw SoundDataCmd_IncBaseNoteByLoop    ; $9C ;X
+	dw SoundDataCmd_SetKeyOn             ; $9D ;X
+	dw SoundDataCmd_IfCh                 ; $9E ;X
+	dw SoundDataCmd_JpCh                 ; $9F ;X
+	dw SoundDataCmd_SetDuty              ; $A0
+	dw SoundDataCmd_StereoPan            ; $A1
+	dw SoundDataCmd_SetS3                ; $A2
+	dw SoundDataCmd_ClrS3                ; $A3
 IF KEEP_PCM
-	dw SoundDataCmd_A4;X  ; $A4
-	dw SoundDataCmd_A5;X  ; $A5
+	dw SoundDataCmd_PlayPcm              ; $A4 ;X
+	dw SoundDataCmd_PlaySlotPcm          ; $A5 ;X
 ENDC
 
 ; =============== SoundDataCmdS_JpCustom ===============
@@ -11769,13 +11769,13 @@ SoundDataCmdS_JpCustom:
 	ld   e, a
 	; Fall-through
 	
-; =============== SoundDataCmd_Jp ===============
+; =============== SoundDataCmd_Jp / snd_jp ===============
 ; Command version of subroutine above.
 ; FORMAT:
 ; - 0: Command ID ($80)
 ; - 1: Dest. Sound data ptr (low byte)
 ; - 2: Dest. Sound data ptr (high byte)
-SoundDataCmd_80:
+SoundDataCmd_Jp:
 	inc  bc			; Seek to byte2
 .readHi:
 	; Read out the new data pointer to BC, assuming E contains its low byte already
@@ -11788,15 +11788,15 @@ SoundDataCmd_80:
 	; so we've got to balance it out first...
 	; Fall-through
 	
-; =============== SoundDataCmd_Nop ===============
+; =============== SoundDataCmd_Nop / snd_nop ===============
 ; [TCRF] No operation. Unused by itself.
 ; FORMAT:
 ; - 0: Command ID ($8C)
-SoundDataCmd_8C:
+SoundDataCmd_Nop:
 	dec  bc
 	ret
 	
-; =============== SoundDataCmd_JpByTimer ===============
+; =============== SoundDataCmd_JpByTimer / snd_djnz ===============
 ; Conditional jump based on a loop counter, which is decremented each time we get here.
 ; Note this does not initialize the loop timer, that must be manually done through SoundDataCmd_SetVar.
 ;
@@ -11805,13 +11805,13 @@ SoundDataCmd_8C:
 ; - 1: Loop timer ID
 ; - 2: Dest. Sound data ptr (low byte)
 ; - 3: Dest. Sound data ptr (high byte)	
-SoundDataCmd_81:
+SoundDataCmd_JpByTimer:
 	inc  bc							; Seek to byte2, for the potential jump
 	;--
 	; HL = Ptr to loop timer
 	; The loop timer ID, which comes from the args, is just an index to the sound slot struct.
 	ldh  a, [hSndChInfoPtrBakLow]	; A = Base struct pointer
-	add  e						; Add the timer ID
+	add  e							; Add the timer ID
 	ld   l, a						; Put in HL
 	ld   h, d
 	;--
@@ -11821,14 +11821,14 @@ SoundDataCmd_81:
 	inc  bc							; Seek to byte3, the last arg
 	ret
 	
-; =============== SoundDataCmd_EndSaveID ===============
+; =============== SoundDataCmd_EndSaveID / snd_end_saveid ===============
 ; Like SoundDataCmd_End, except it also saves the slot's Sound ID to a fixed location,
 ; presumably so it could be restarted at a later point.
 ; However, the code that uses said fixed location is only used by an unused command.
 ;
 ; FORMAT:
 ; - 0: Command ID ($86)
-SoundDataCmd_86:
+SoundDataCmd_EndSaveID:
 	; Seek HL to the slot's sound ID
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_0D
@@ -11841,13 +11841,13 @@ SoundDataCmd_86:
 	
 	; Fall-through
 	
-; =============== SoundDataCmd_End ===============
+; =============== SoundDataCmd_End / snd_end ===============
 ; Marks the end of the sound data.
 ; This one is special, as it exits the command loop immediately.
 ;
 ; FORMAT:
 ; - 0: Command ID ($82)
-SoundDataCmd_82:
+SoundDataCmd_End:
 	; Disable the current sound slot
 	ldh  a, [hSndChInfoPtrBakLow]
 	ld   e, a
@@ -11863,14 +11863,14 @@ SoundDataCmd_82:
 	ld   [MBC1RomBank], a
 	jp   Sound_Do.eos
 	
-; =============== SoundDataCmd_SetInstrument ===============
+; =============== SoundDataCmd_SetInstrument / snd_instrument ===============
 ; Sets a new instrument ID.
 ; This changes the note's envelope and volume.
 ;
 ; FORMAT:
 ; - 0: Command ID ($88)
 ; - 1: Instrument ID
-SoundDataCmd_88:
+SoundDataCmd_SetInstrument:
 	; Store it to iSndChInfo_02
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_02
@@ -11882,13 +11882,13 @@ SoundDataCmd_88:
 	set  SNDDFB_TRIG, [hl]
 	ret
 	
-; =============== SoundDataCmd_SetVol ===============
+; =============== SoundDataCmd_SetVol / snd_vol ===============
 ; Sets a new slot volume.
 ;
 ; FORMAT:
 ; - 0: Command ID ($87)
 ; - 1: Volume ($00-$0F)	
-SoundDataCmd_87:
+SoundDataCmd_SetVol:
 	ldh  a, [hSndChInfoPtrBakLow]
 	inc  a ; Seek to iSndChInfo_01
 	; Fall-through
@@ -11905,107 +11905,107 @@ SoundDataCmdS_SetSlotField:
 	ld   [hl], e	; and write the arg there
 	ret
 	
-; =============== SoundDataCmd_SetVibrato ===============
+; =============== SoundDataCmd_SetVibrato / snd_vibrato / snd_pulse1_sweep ===============
 ; Sets a new Pulse 1 sweep value OR Vibrato ID.
 ;
 ; FORMAT:
 ; - 0: Command ID ($83)
 ; - 1: Vibrato ID/NR10 value + Type marker (SNDSW_SET)
-SoundDataCmd_83:
+SoundDataCmd_SetVibrato:
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_03
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_SetNoiseSweep ===============
+; =============== SoundDataCmd_SetNoiseSweep / snd_pitchbend ===============
 ; Sets a new Noise sweep value.
 ;
 ; FORMAT:
 ; - 0: Command ID ($8E)
 ; - 1: Noise sweep (+ LSFR mode toggle bit)
-SoundDataCmd_8E:
+SoundDataCmd_SetNoiseSweep:
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_1F
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_SetNoise ===============
+; =============== SoundDataCmd_SetNoiseFreq / snd_noise ===============
 ; Sets a new noise channel frequency.
 ;
 ; FORMAT:
 ; - 0: Command ID ($92)
 ; - 1: NR43 value	
-SoundDataCmd_92:
+SoundDataCmd_SetNoiseFreq:
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_20
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_SetSpeed ===============
+; =============== SoundDataCmd_SetSpeed / snd_speed ===============
 ; [TCRF] Sets a new playback speed.
 ;
 ; FORMAT:
 ; - 0: Command ID ($96)
 ; - 1: Playback speed	
-SoundDataCmd_96:
+SoundDataCmd_SetSpeed:
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_05
 	jr   SoundDataCmdS_SetSlotField
 
-; =============== SoundDataCmd_SetCh ===============
+; =============== SoundDataCmd_SetCh / snd_ch ===============
 ; [TCRF] Sets a new channel ID.
 ;
 ; FORMAT:
 ; - 0: Command ID ($98)
 ; - 1: SNDCH_* value	
-SoundDataCmd_98:
+SoundDataCmd_SetCh:
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_06
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_SetKeyOn ===============
+; =============== SoundDataCmd_SetKeyOn / snd_keyon ===============
 ; [TCRF] Sets how long the key should be held.
 ; See also: Sound_Do.chkKeyRel
 ;
 ; FORMAT:
 ; - 0: Command ID ($9D)
 ; - 1: Value	
-SoundDataCmd_9D:
+SoundDataCmd_SetKeyOn:
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_14
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_SetDuty ===============
-; Sets a new length/duty sweep.
+; =============== SoundDataCmd_SetDuty / snd_duty / snd_wave ===============
+; Sets a new length/duty sweep, or a wave ID.
 ;
 ; FORMAT:
 ; - 0: Command ID ($A0)
-; - 1: NRx1 value	
-SoundDataCmd_A0:
+; - 1: NRx1 value or Wave ID
+SoundDataCmd_SetDuty:
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_09
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_StereoPan ===============
-; Sets the stereo panning options for the channel.
+; =============== SoundDataCmd_StereoPan / snd_pan ===============
+; Sets the stereo panning.
 ;
 ; FORMAT:
 ; - 0: Command ID ($A1)
 ; - 1: Stereo Panning flags, as NR51 bits.
-SoundDataCmd_A1:
+SoundDataCmd_StereoPan:
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_0A
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_PitchBend ===============
+; =============== SoundDataCmd_PitchBend / snd_pitchbend ===============
 ; Enables/disables pitch bends.
 ;
-; When this command is used to enable them, two more notes need to be played to start the first one.
+; When this command is used to enable them, two more notes need to be played to start the first bend.
 ; First note for the source frequency, the second for the destination.
 ;
-; This quirk only applies to the first note.
+; From the second note onwards, the current note counts as the source frequency.
 ;
 ; FORMAT:
 ; - 0: Command ID ($84)
 ; - 1: Speed
-SoundDataCmd_84:
+SoundDataCmd_PitchBend:
 	; Disable feature if we've set a speed of 0.
 	and  a			
 	jr   z, .disable
@@ -12035,13 +12035,13 @@ SoundDataCmd_84:
 	res  SNDCB_PITCHBEND, [hl]
 	ret
 	
-; =============== SoundDataCmd_IncBaseFreq ===============
+; =============== SoundDataCmd_IncBaseNote / snd_inc_base_note ===============
 ; Increments the base note/frequency ID by the specified value.
 ;
 ; FORMAT:
 ; - 0: Command ID ($89)
 ; - 1: ID Offset (signed)
-SoundDataCmd_89:
+SoundDataCmd_IncBaseNote:
 	; Seek HL to the target address
 	ld   h, d
 	ldh  a, [hSndChInfoPtrBakLow]
@@ -12063,14 +12063,14 @@ SoundDataCmd_89:
 	ld   [hl], $00
 	ret
 	
-; =============== SoundDataCmd_SetVar ===============
+; =============== SoundDataCmd_SetVar / snd_var ===============
 ; Writes a value to the specified sound slot field.
 ;
 ; FORMAT:
 ; - 0: Command ID ($8D)
 ; - 1: Struct offset (iSndChInfo_*)
 ; - 2: Value to write
-SoundDataCmd_8D:
+SoundDataCmd_SetVar:
 	; Seek to target slot entry
 	ldh  a, [hSndChInfoPtrBakLow]	; Base low byte
 	add  e				; + offset
@@ -12082,13 +12082,13 @@ SoundDataCmd_8D:
 	ld   [hl], a		; Write it to the slot
 	ret
 	
-; =============== SoundDataCmd_NoiseSweepSingle ===============
+; =============== SoundDataCmd_NoiseSweepSingle / snd_noise_sweep_single ===============
 ; [TCRF] ; Performs a single noise sweep with the specified value.
 ;
 ; FORMAT:
 ; - 0: Command ID ($8F)
 ; - 1: Clock increment value
-SoundDataCmd_8F:
+SoundDataCmd_NoiseSweepSingle:
 
 	; Prepare arguments for Sound_ApplyNoiseSweep
 	
@@ -12107,23 +12107,23 @@ SoundDataCmd_8F:
 	pop  bc
 	ret
 	
-; =============== SoundDataCmd_SetStatus ===============
+; =============== SoundDataCmd_SetStatus / snd_status ===============
 ; Sets a new slot status bitmask.
 ;
 ; FORMAT:
 ; - 0: Command ID ($90)
 ; - 1: Status flags	
-SoundDataCmd_90:
+SoundDataCmd_SetStatus:
 	ldh  [hSndChInfoStatus], a
 	ret
 	
-; =============== SoundDataCmd_IncVol ===============
+; =============== SoundDataCmd_IncVol / snd_inc_vol ===============
 ; Increments the slot volume by the specified amount.
 ;
 ; FORMAT:
 ; - 0: Command ID ($8A)
 ; - 1: Volume offset (signed)
-SoundDataCmd_8A:
+SoundDataCmd_IncVol:
 	; Seek to slot volume field
 	ld   h, d
 	ldh  a, [hSndChInfoPtrBakLow]
@@ -12157,14 +12157,15 @@ SoundDataCmd_8A:
 	ld   [hl], a		; Save back to iSndChInfo_01
 	ret
 	
-; =============== SoundDataCmd_PlaySndArg ===============
-; [TCRF] Plays a new sound.
+; =============== SoundDataCmd_PlaySndArg / snd_playsndarg ===============
+; [TCRF] ; Plays a new sound with the specified arguments.
 ;
 ; FORMAT:
 ; - 0: Command ID ($85)
 ; - 1: Sound ID
 ; - 2: Argument
-SoundDataCmd_85:
+SoundDataCmd_PlaySndArg:
+	; Note that Sound_ReqPlayIdWithArg does not do bounds checking if all queue slots are full.
 	inc  bc	; Seek to byte2
 	push bc
 		ld   a, [bc]	; C = Argument
@@ -12174,19 +12175,19 @@ SoundDataCmd_85:
 	pop  bc
 	ret
 
-; =============== SoundDataCmd_OrSnd ===============
+; =============== SoundDataCmd_OrSnd / snd_orsaveid ===============
 ; [TCRF] Merges the specified value into wSndSavedSoundID.
 ;
 ; FORMAT:
 ; - 0: Command ID ($91)
 ; - 1: Value
-SoundDataCmd_91:
+SoundDataCmd_OrSnd:
 	ld   hl, wSndSavedSoundID
 	or   [hl]
 	ld   [hl], a
 	ret
 
-; =============== SoundDataCmd_IncBaseNoteByLoop ===============
+; =============== SoundDataCmd_IncBaseNoteByLoop / snd_inc_base_note_by_loop ===============
 ; [TCRF] Alters the base note ID based on the loop count, given a table of offsets.
 ;        This can only be used inside conditional loops.
 ;
@@ -12205,7 +12206,7 @@ SoundDataCmd_91:
 ;      This is the last index to the table, which will be used on the last loop.
 ; - 2-3: Ptr to a table of offsets.
 ;        Individual entries are signed and get added to the slot's base note ID.
-SoundDataCmd_9C:
+SoundDataCmd_IncBaseNoteByLoop:
 
 	;
 	; Generate the table index.
@@ -12254,7 +12255,7 @@ SoundDataCmd_9C:
 	ld   d, h
 	ret
 
-; =============== SoundDataCmd_SlotFade ===============
+; =============== SoundDataCmd_SlotFade / snd_fade ===============
 ; Fades the volume for the current slot.
 ;
 ; FORMAT:
@@ -12266,7 +12267,7 @@ SoundDataCmd_9C:
 ;      It's important these are consistent with the current volume value at iSndChInfo_01,
 ;      since the fade is marked as over when it reaches the specific target volume.
 ; - 2: Fade speed, in subticks (iSndChInfo_21)
-SoundDataCmd_93:
+SoundDataCmd_SlotFade:
 
 	ld   h, d
 	
@@ -12327,7 +12328,7 @@ SoundDataCmd_93:
 	ldh  [h_Unk_SndChInfo_B], a
 	ret
 
-; =============== SoundDataCmd_NoteSlide ===============
+; =============== SoundDataCmd_NoteSlide / snd_note_slide ===============
 ; Enables/disables portamento.
 ;
 ; This takes effect immediately, unlike the frequency-to-frequency pitch bend.
@@ -12336,7 +12337,7 @@ SoundDataCmd_93:
 ; FORMAT:
 ; - 0: Command ID ($94)
 ; - 1: Speed + Direction flag
-SoundDataCmd_94:
+SoundDataCmd_NoteSlide:
 	; Disable the effect is the speed is 0.
 	and  a
 	jr   z, .disable
@@ -12383,7 +12384,7 @@ SoundDataCmd_94:
 	res  SNDBB_NS, [hl]
 	ret
 	
-; =============== SoundDataCmd_JpIfFade ===============
+; =============== SoundDataCmd_JpIfFade / snd_jpfade ===============
 ; SoundDataCmd_JpOnWaitFade
 ;
 ; Conditional jump, performed until the slot fade in/out has finished.
@@ -12392,21 +12393,21 @@ SoundDataCmd_94:
 ; - 0: Command ID ($95)
 ; - 1: Dest. Sound data ptr (low byte)
 ; - 2: Dest. Sound data ptr (high byte)
-SoundDataCmd_95:
+SoundDataCmd_JpIfFade:
 	inc  bc							; Seek to byte2
 	ldh  a, [h_Unk_SndChInfo_B]
 	bit  SNDBB_FADEDONE, a			; Fading is done?
-	jp   z, SoundDataCmd_80.readHi	; If not, loop
+	jp   z, SoundDataCmd_Jp.readHi	; If not, loop
 	ret
 	
-; =============== SoundDataCmd_ToggleKeyHold ===============
+; =============== SoundDataCmd_ToggleKeyHold / snd_toggle_keyhold ===============
 ; Toggles the "key held" status.
 ; When toggled on, it causes instruments to stay in the sustain phase
 ; (conditional loops enabled) until this gets toggled back off again.
 ;
 ; FORMAT:
 ; - 0: Command ID ($99)
-SoundDataCmd_99:
+SoundDataCmd_ToggleKeyHold:
 	; Toggle status 
 	ldh  a, [hSndChInfoStatus]
 	xor  SNDX_KEYHOLD
@@ -12424,39 +12425,36 @@ SoundDataCmd_99:
 	dec  bc	; no args
 	ret
 	
-; =============== SoundDataCmd_SetS3 ===============
+; =============== SoundDataCmd_SetS3 / snd_sets3 ===============
 ; Sets the otherwise unused flag SNDX_3.
 ;
 ; FORMAT:
 ; - 0: Command ID ($A2)
-SoundDataCmd_A2:
+SoundDataCmd_SetS3:
 	ldh  a, [hSndChInfoStatus]
 	or   SNDX_3
 	ldh  [hSndChInfoStatus], a
-	jr   SoundDataCmd_99.setBit3
+	jr   SoundDataCmd_ToggleKeyHold.setBit3
 	
-; =============== SoundDataCmd_ClrS3 ===============
+; =============== SoundDataCmd_ClrS3 / snd_clrs3 ===============
 ; Clears the otherwise unused flag SNDX_3.
 ;
 ; FORMAT:
 ; - 0: Command ID ($A3)
-SoundDataCmd_A3:
+SoundDataCmd_ClrS3:
 	ldh  a, [hSndChInfoStatus]
 	and  $FF^SNDX_3
 	ldh  [hSndChInfoStatus], a
 	dec  bc
 	ret
 	
-; =============== SoundDataCmd_Call ===============
-; Saves the current data ptr, then sets a new one.
-; This is handled like code calling a subroutine.
-;
-; Nested calls aren't supported.
+; =============== SoundDataCmd_Call / snd_call ===============
+; Calls the data subroutine. Cannot be nested.
 ;
 ; FORMAT:
 ; - 0: Command ID ($9A)
 ; - 1-2: Sound data ptr 
-SoundDataCmd_9A:
+SoundDataCmd_Call:
 	; Seek HL to where we're saving the current data pointer.
 	; There is no concept of a stack here, so no nested calls.
 	ld   h, d
@@ -12473,7 +12471,7 @@ SoundDataCmd_9A:
 	
 	; Save the current data pointer.
 	; As BC is currently pointing to last argument of this command, 
-	; we won't need to touch it inside SoundDataCmd_9B.
+	; we won't need to touch it inside SoundDataCmd_Ret.
 	ld   [hl], c	; Save low byte
 	inc  l			; Seek to iSndChInfo_27
 	ld   [hl], b	; Save high byte
@@ -12486,13 +12484,12 @@ SoundDataCmd_9A:
 	dec  bc 		; To balance out the inc on exit
 	ret
 	
-; =============== SoundDataCmd_Ret ===============
-; Restores the data ptr previously saved in SoundDataCmd_9A.
-; This acts like code returning from a subroutine.
+; =============== SoundDataCmd_Ret / snd_ret ===============
+; Returns from the called data subroutine.
 ;
 ; FORMAT:
 ; - 0: Command ID ($9B)
-SoundDataCmd_9B:
+SoundDataCmd_Ret:
 	; Seek to the return address
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_26
@@ -12505,15 +12502,15 @@ SoundDataCmd_9B:
 	ld   b, [hl]	; B = iSndChInfo_27
 	ret
 	
-; =============== SoundDataCmd_IncFreqOff ===============
-; Increments the frequency value offset by the specified amount.
-; The higher this is, the lower the final frequency will be.
+; =============== SoundDataCmd_IncFreqOff / snd_inc_freq_offset ===============
+; Alters the frequency value offset by the specified amount.
+; The higher the offset gets, the lower the final frequency will be.
 ;
 ; FORMAT:
 ; - 0: Command ID ($97)
 ; - 1: Value (signed)
-SoundDataCmd_97:
-	; Seek to the frequency offset value
+SoundDataCmd_IncFreqOff:
+	; Seek to the frequency value offset
 	ld   h, d
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  iSndChInfo_1B
@@ -12525,7 +12522,7 @@ SoundDataCmd_97:
 	ld   [hl], a	; Save it back to iSndChInfo_1B
 	ret
 	
-; =============== SoundDataCmd_IfCh ===============
+; =============== SoundDataCmd_IfCh / snd_ifch ===============
 ; [TCRF] Handles the next command only if the sound channel matches the specified one.
 ;        If it isn't, it gets skipped over.
 ;        To work properly, the next command must be a 2-byte one.
@@ -12533,7 +12530,7 @@ SoundDataCmd_97:
 ; FORMAT:
 ; - 0: Command ID ($9E)
 ; - 1: Channel ID (SNDCH_*)
-SoundDataCmd_9E:
+SoundDataCmd_IfCh:
 	; Seek to the slot's channel ID
 	ld   h, d
 	ldh  a, [hSndChInfoPtrBakLow]
@@ -12550,7 +12547,7 @@ SoundDataCmd_9E:
 .ret:
 	ret
 
-; =============== SoundDataCmd_JpCh ===============
+; =============== SoundDataCmd_JpCh / snd_jpch ===============
 ; [TCRF] Conditional jump, taken if the slot's sound channel matches the specified one.
 ;
 ; FORMAT:
@@ -12558,7 +12555,7 @@ SoundDataCmd_9E:
 ; - 1: Matched Channel ID (SNDCH_*)
 ; - 2: Dest. Sound data ptr (low byte)
 ; - 3: Dest. Sound data ptr (high byte)
-SoundDataCmd_9F:
+SoundDataCmd_JpCh:
 	; Seek to the slot's channel ID
 	ld   h, d
 	inc  bc		; And to byte2 too
@@ -12569,13 +12566,13 @@ SoundDataCmd_9F:
 	; Are we skipping it?
 	ld   a, [hl]		; Read current channel ID
 	cp   e				; Does it match what we're checking for? (byte1)
-	jr   nz, SoundDataCmd_9E.skip1	; If not, jump (don't loop, continue as normal)
+	jr   nz, SoundDataCmd_IfCh.skip1	; If not, jump (don't loop, continue as normal)
 	
 	; Otherwise, treat the next two bytes like a jump command
 	jp   SoundDataCmdS_JpCustom
 
 IF KEEP_PCM
-; =============== SoundDataCmd_PlaySlotPcm ===============
+; =============== SoundDataCmd_PlaySlotPcm / snd_playslotpcm ===============
 ; [TCRF] Plays the slot-specific PCM sample, which was passed when creating the slot.
 ;
 ; Identical to SoundDataCmd_PlayPcm otherwise.
@@ -12587,16 +12584,16 @@ IF KEEP_PCM
 ; - 2: Note length ID + "Contains extension offset" marker.
 ; - 3: Custom note length value [Optional, if \1 is $DE or $EF]
 ; - 4: Key release target [Optional, if \1 is between $DE-$EE] 
-SoundDataCmd_A5:
+SoundDataCmd_PlaySlotPcm:
 	; A = iSndChInfo_29
 	ldh  a, [hSndChInfoPtrBakLow]
 	add  a, iSndChInfo_29
 	ld   e, a
 	ld   a, [de]
 	
-	jr   SoundDataCmd_A4.setPcm
+	jr   SoundDataCmd_PlayPcm.setPcm
 
-; =============== SoundDataCmd_PlayPcm ===============
+; =============== SoundDataCmd_PlayPcm / snd_playpcm ===============
 ; [TCRF] Plays the specified PCM sample.
 ;
 ; This is the only way to play a PCM sample in Sun's driver, unlike Yon there's no special
@@ -12610,7 +12607,7 @@ SoundDataCmd_A5:
 ; - 3: Note length ID + "Contains extension offset" marker. [Optional]
 ; - 4: Custom note length value [Optional, if \1 is $DE or $EF]
 ; - 5: Key release target [Optional, if \1 is between $DE-$EE] 
-SoundDataCmd_A4:
+SoundDataCmd_PlayPcm:
 	inc  bc					; Seek to byte2
 	ld   a, e				; wSndPcmIDSet = byte1
 .setPcm:
@@ -12633,15 +12630,15 @@ SoundDataCmd_A4:
 	
 ENDC
 
-; =============== SoundDataCmd_NoteEx ===============
+; =============== SoundDataCmd_NoteEx / snd_noteex ===============
 ; Superset of the normal SoundDataCmd_Note.
 ; It takes the same parameters, except the first one is an index to a table of preset settings.
 ;
 ; These settings change a bunch of stuff at once, such as Instrument ID and stereo panning,
 ; so they can be a good alternative to save bytes.
 ;
-; The actual Note ID SoundDataCmd_Note needs is stored inside the entries too, but it always
-; ends up being $19.
+; While these could be used by any channel, in practice, not only the included presets are made
+; for the Noise channel, but snd_noteex almost always replaces the normal snd_note there.
 ;
 ; FORMAT:
 ; - 0: Slot preset ID [Optional]
@@ -12662,7 +12659,7 @@ SoundDataCmd_NoteEx:
 	;        If it is, all of the logic that makes this command a superset is skipped,
 	;        and the existing note ID is used.
 	cp   SNDDATACMD_SAMENOTE_START	; Command ID >= $DE?
-	jp   nc, .noNote				; If so, jump
+	jp   nc, SoundDataCmd_SameNote	; If so, jump
 	
 	;--
 	;
@@ -12795,7 +12792,7 @@ SoundDataCmd_NoteEx:
 			;
 			ldi  a, [hl]
 			push hl
-				call SoundDataCmd_94
+				call SoundDataCmd_NoteSlide
 			pop  hl
 			
 			; Byte 7 -> Note ID (optional)
@@ -12828,14 +12825,14 @@ SoundDataCmd_NoteEx:
 	sub  a						; ...it will mute the channel instead!
 	jr   SoundDataCmd_Note.fromByte1
 	
-; =============== .noNote ===============
+; =============== SoundDataCmd_SameNote / snd_samenote ===============
 ; [TCRF] Like SoundDataCmd_Note, but the relative note ID doesn't change.
 ;
 ; FORMAT:
 ; - 0: Note length ID + "Contains extension offset" marker. ($DE-$FF)
 ; - 1: Custom note length value [Optional, if \1 is $DE or $EF]
 ; - 2: Key release target [Optional, if \1 is between $DE-$EE] 
-.noNote:
+SoundDataCmd_SameNote:
 
 	; Seek DE to the relative note ID
 	ldh  a, [hSndChInfoPtrBakLow]
@@ -12851,7 +12848,7 @@ SoundDataCmd_NoteEx:
 		jr   SoundDataCmd_Note.withNoteId
 	;##
 
-; =============== SoundDataCmd_Note ===============
+; =============== SoundDataCmd_Note / snd_note ===============
 ; Sets a new note, which updates the slot's frequency.
 ;
 ; FORMAT:
@@ -13099,7 +13096,7 @@ ENDM
 	; 
 	; By default, every new note played should count as a new key.
 	;
-	; We can override this behaviour by using SoundDataCmd_99
+	; We can override this behaviour by using SoundDataCmd_ToggleKeyHold
 	; right before the note plays, which toggles the ability to "hold keys".
 	; If enabled, this causes conditional loops inside the instrument data to always trigger.
 	;
@@ -13130,7 +13127,7 @@ ENDM
 	; Otherwise, this is our first time.
 	; As SNDBB_KEYON could be currently disabled, we must go through .noHeld once.
 	; After that, SNDBB_KEYON will stay enabled until we manually
-	; toggle the held status by using SoundDataCmd_99 again. 
+	; toggle the held status by using SoundDataCmd_ToggleKeyHold again. 
 	
 	;--
 .noHeld:
@@ -14939,7 +14936,7 @@ SoundCmd_StopAll:
 ; FORMAT / IN
 ; - 0: Command ID ($8B)
 ; - A / 1: Sound ID to play
-SoundDataCmd_8B:
+SoundDataCmd_PlaySnd:
 Sound_ReqPlayId:	
 	push bc
 		push hl
@@ -15254,10 +15251,14 @@ SoundCmd_Unpause:
 	and  $FF^SNDF1_PAUSE	
 .setFlags:
 	ld   [wSnd_D011_Flags], a
-	; To apply the changes ???
+	; [POI] This is unnecessary.
+IF FIX_BUGS
+	ret
+ELSE
 	ld   c, $00
 	jp   Sound_StartNew
-	
+ENDC
+
 ;================ Sound_StartNew ================
 ; Plays a new song with an optional sample.
 ; IN
@@ -15314,7 +15315,7 @@ Sound_StartNew:
 	;    9: iSndChInfo_08
 	;    A: iSndChInfo_09
 	;       For Wave data specifically, this may be set to an invalid value at times.
-	;       When that's the case, the song data will almost immediately contain a SoundDataCmd_A0 command.
+	;       When that's the case, the song data will almost immediately contain a SoundDataCmd_SetDuty command.
 	;    B: iSndChInfo_0A
 	
 	; byte0

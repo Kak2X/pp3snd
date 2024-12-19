@@ -3909,7 +3909,7 @@ L045153:;R
 	cp   $07
 	ret  nz
 	ld   a, $2D
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	call L045229
 	ld   hl, $D447
 	res  1, [hl]
@@ -4719,7 +4719,7 @@ L045518:;R
 	inc  a
 	ld   [$C163], a
 	ld   a, $F6
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	jp   L045493
 L04552B:;J
 	ld   a, $7F
@@ -4745,7 +4745,7 @@ L045546:;R
 	inc  a
 	ld   [$C163], a
 	ld   a, $F7
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	jp   L045493
 L045559:;C
 	ld   a, [$C162]
@@ -4939,7 +4939,7 @@ L045664:;R
 L045666:;R
 	call L0458E8
 	ld   a, $2A
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 L04566E:;R
 	ldh  a, [$FFB1]
 	add  $24
@@ -4994,7 +4994,7 @@ L0456AE:;R
 	call L000CFA
 	call L045A25
 	ld   a, $2C
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 L0456B9:;R
 	ldh  a, [$FFA8]
 	and  $0B
@@ -5012,7 +5012,7 @@ L0456B9:;R
 	and  a
 	jr   nz, $56E9
 	ld   a, $2B
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	ld   b, $80
 	call L002225
 	call L001EF3
@@ -5026,7 +5026,7 @@ L0456E9:;R
 	cp   $04
 	jr   z, $5716
 	ld   a, $2B
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	ld   a, e
 	add  $FC
 	ld   l, a
@@ -5206,13 +5206,13 @@ L0457AE:;R
 	cp   $21
 	jr   nc, $57C6
 	ld   a, $F1
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	ld   a, [$C146]
 L0457C6:;R
-	jp   SoundDataCmd_8B
+	jp   Sound_ReqPlayId
 L0457C9:;R
 	ld   a, $F1
-	jp   SoundDataCmd_8B
+	jp   Sound_ReqPlayId
 L0457CE: db $FE;X
 L0457CF: db $04;X
 L0457D0: db $D2;X
@@ -5386,7 +5386,7 @@ L045877: db $0D;X
 L045878: db $C9;X
 L045879:;J
 	ld   a, $2B
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	ldh  a, [$FFB1]
 	add  $24
 	ld   l, a
@@ -9296,7 +9296,7 @@ L04686C:;R
 	call L0468F3
 	call L000585
 	ld   a, $04
-	call SoundDataCmd_8B
+	call Sound_ReqPlayId
 	call L001EF3
 L046880:;I
 	ld   b, $40

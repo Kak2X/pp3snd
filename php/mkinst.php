@@ -61,6 +61,6 @@ function default_command($iter, $is_instrument) {
 	} else {
 		$iter->next();
 		$n = $iter->current()->as_int();
-		return "\${$row->val}, ".mknrx2($n)." ; vol3 \${$row->val}, ".mknr32($n);
+		return "\${$row->val}, ".mknrx2($n)." ; ".mknr32($n);
 	}
 }

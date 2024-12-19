@@ -11466,13 +11466,15 @@ ENDR
 	;
 	
 	; Cut off the channel if it isn't being processed.
+	; For reasons explained in Sound_UpdateWorkRegsFromSlot, this channel
+	; must silence itself manually here when it isn't processed.
 	ld   hl, wNR51_ChMask3
 	ldi  a, [hl]		; read, seek to wNR30
 	and  a				; Has the channel been processed? (wNR51_ChMask3 == 0)
 	jr   z, .ch3_onSet	; If so, jump
 .ch3_onClear:
 	ld   [hl], $00		; Mark the channel as processed
-	ldh  [rNR30], a		; Disable its hardware channel
+	ldh  [rNR30], a		; Silence!
 	ld   l, LOW(wNR42)
 	jr   .ch4			; Don't do anything else
 .ch3_onSet:
@@ -14432,21 +14434,26 @@ ENDC
 	ld   c, a						; C = wNRx3Data
 	ldh  a, [wNRx4Data]				; Copy wNRx4Data to iSndChInfo_17
 	ld   [hl], a
-	; If they are both empty, there's nothing else to do.
+	
+	; If they are both empty, treat the channel as muted by returning early.
+	; This works because all wNRx2 get reset at the start of the frame and 
+	; we're returning before copying the slot's value to it.
+	;
+	; A zeroed out NRx2 silences the pulse and noise channels... but we hit a bit of a snag with wave.
+	; To mute the wave channel we have to clear rNR30 instead, but since we're returning early
+	; we've got to do that on Sound_UpdateRegs, especially since wNR30 can't be reset between frames (see below).
 	or   c
 	ret  z
 	
 	;##
 	;
-	; Apply the volume settings.
+	; Calculate the volume, and save it back to hNRx2Data for later.
 	;
-	; The final volume is the sum between the sound slot's base volume (wSndChInfoVolume),
-	; the negative fade value, and the instrument's volume (upper nybble of hNRx2Data).
+	; The formula used is in practice this:
+	; Vol = (SlotVolume - $0F) + (FadeVolume - $0F) + InstrumentVolume
 	;
-	; The result is subtracted by $0F to allow fades to work without relying on negative numbers, and because
-	; we only have a single nybble to store the final result.
-	;
-	; As a result, logically, a sound slot with 0 volume will prevent every note from playing.
+	; The modifiers SlotVolume and FadeVolume will reduce the volume when they aren't at their max value $0F.
+	; Doing it this way helps fit the final result into a nybble.
 	;
 	
 	; C = Slot base volume
@@ -14456,14 +14463,13 @@ ENDC
 	;
 	; If fades are enabled for the slot, add (wSndFadeVolume - $0F).
 	; This means the lower wSndFadeVolume is, the lower the final volume will be.
-	; Note that wSndFadeVolume is capped at $0F.
 	;
 .chkFade:
 	ldh  a, [h_Unk_SndChInfo_B]
 	bit  SNDBB_USEFADEVOL, a		; Fades enabled?
 	jr   z, .applyVol				; If not, skip
 
-	; Apply fade penalty
+	; Apply modifier
 	; C += wSndFadeVolume - $0F
 	ld   a, [wSndFadeVolume]		
 	add  c
@@ -14471,9 +14477,8 @@ ENDC
 	ld   c, a
 	
 	; If we underflowed the volume, cap it back to zero.
+	; As a sound slot with 0 volume will prevent every note from playing anyway, we can skip .applyVol.
 	jr   nc, .applyVol
-.useZeroVol:
-	; As volume is zero, we can ignore whatever is in the lower nybble and just use a fixed value.
 	ld   a, $08
 	jr   .setNRx2
 .applyVol:
@@ -14621,13 +14626,16 @@ ENDC
 	
 	;--
 	;
-	; Volume control
-	; Upper 2 bits of hNRx2Data -> wNR32
+	; Volume control.
 	;
-	; They are stored inside hNRx2Data in a logical way (0 -> mute, 3 -> max volume),
-	; but that's not how the hardware works:
+	; As the wave channel lacks envelopes and has coarser volume control,
+	; only the upper two volume bits are used from hNRx2Data.
+	; This is helpful, as it allows reusing the same instrument data between multiple channels
+	; even with the differences.
 	;
-	; DRV -> xor -> GB  |
+	; However, the volume value needs to go through conversion first:
+	;
+	; RAW -> xor -> GB  |
 	; %11 -> %00 -> %01 | 100% Volume
 	; %10 -> %01 -> %10 |  50% Volume
 	; %01 -> %10 -> %11 |  25% Volume
@@ -14659,15 +14667,8 @@ ENDC
 	ldh  a, [wNRx4Data]
 	ld   [hl], a
 	
-	;
-	; If the channel was previously turned off, trigger it.
-	; Note that wNR30 isn't being updated here, that's done at the very end
-	; by having Sound_UpdateRegs do it instead.
-	;
-	; This is because wNR30 always needs to be updated even when the wave
-	; channel isn't being used, so that the channel gets disabled once
-	; the wave channel stops being procrssed (with its wNR30/rNR30 values zeroed out).
-	;
+	; If the channel was previously turned off, retrigger it.
+	; This requires wNR30 to be persistent, which is why it's not reset between frames.
 	bit  SNDCH3B_ON, b			; Turned on already?
 	ret  nz						; If so, ignore
 	set  SNDCHFB_RESTART, [hl]	; Otherwise, trigger changes (will require setting SNDCH3B_ON in Sound_UpdateRegs)
@@ -14759,7 +14760,7 @@ ENDC
 	; Note that HL must point to wNRx4 here.
 	;
 	ldh  a, [h_Unk_FFE5_Flags]
-	bit  SNDDFB_TRIG, a			; Instrument data changed? ??? Retrigger requested?
+	bit  SNDDFB_TRIG, a			; Retrigger requested?
 	ret  z						; If not, return
 	set  SNDCHFB_RESTART, [hl]	; Otherwise, let's go
 	ret

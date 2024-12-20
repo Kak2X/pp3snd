@@ -10707,20 +10707,20 @@ ENDC
 	
 	;
 	; Process the individual sound slots, from last to first.
-	; Going backwards helps give priority to later slots, which typically contain sound effects.
+	; This gives higher priority to sound effects, since by convention they use higher slots (4-7)
+	; and the sound *channels* the slots target can get processed only once.
 	;
 	; Usually, the 8 normal slots (wSndChInfo0-7) get processed in a loop as normal.
-	; However, when something plays on the ninth channel (wSndChInfoEx0), it takes "exclusive control",
-	; as all other channels get paused. They resume as normal only when the sound ends.
-	;
-	; While some sound effects use this feature normally, it's also used when the game is paused.
-	; When the pause flag is set, the ninth channel is always processed, regardless if anything
-	; is actually playing on it or not, forcing other channels to pause. 
-	; The pause sound itself plays on that channel but eventually ends, which is why the override is required.
+	; There are three ways to pause the other channels though, with the first two going together:
+	; - The sound driver being paused, which goes along with...
+	; - ...playing anything in the extra 9th slot.
+	;   Pause sounds are played at the same time the sound driver is paused.
+	; - Flagging a sound slot with SNDX_PAUSEREST
+	;   This will pause the remaining unprocessed slots.
 	;
 	
-DEF SOUNDB_PAUSING EQU 7
-DEF SOUND_PAUSING  EQU 1 << SOUNDB_PAUSING
+DEF SOUNDB_PAUSED EQU 7
+DEF SOUND_PAUSED  EQU 1 << SOUNDB_PAUSED
 	
 	; DE = Ptr to initial sound slot
 	; B  = Number of slots remaining + flags
@@ -10732,10 +10732,10 @@ DEF SOUND_PAUSING  EQU 1 << SOUNDB_PAUSING
 	jr   z, .fromNorm			; If not, jump (normal case)
 .fromPause:
 	; Pause case: Process only wSndChInfoEx0
-	; The SOUND_PAUSING flag forces the game to pause all other sound slots
+	; The SOUND_PAUSED flag forces the game to pause all other sound slots
 	; after processing wSndChInfoEx0.
 	ld   de, wSndChInfoEx0
-	ld   b, SOUND_PAUSING|wSndChInfo_Count
+	ld   b, SOUND_PAUSED|wSndChInfo_Count
 	jr   .setDualPtr
 .fromNorm:
 	; Normal case: Process the 8 normal channels
@@ -11065,15 +11065,12 @@ DEF SOUND_PAUSING  EQU 1 << SOUNDB_PAUSING
 	; There's special logic with pausing slots.
 	;
 	
-	bit  SOUNDB_PAUSING, b	; Are we paused or playing an exclusive sound?
+	bit  SOUNDB_PAUSED, b	; Are we paused or playing an exclusive sound?
 	jr   nz, .eosPause		; If so, jump
 	
-	;--
-	; [POI] Nothing sets this flag.
 	ld   a, [de]
-	bit  SNDXB_5, a			; Pause the remaining channels?
+	bit  SNDXB_PAUSEREST, a	; Doing a sound effect that pauses BGM while playing?
 	jr   z, .eosNorm		; If not, jump
-	;--
 	
 .eosPause:
 	;
@@ -11083,7 +11080,7 @@ DEF SOUND_PAUSING  EQU 1 << SOUNDB_PAUSING
 	; mute them all to prevent their notes from hanging.
 	;
 	
-	res  SOUNDB_PAUSING, b		; Filter out flags from counter
+	res  SOUNDB_PAUSED, b		; Filter out flags from counter
 	dec  b						; From the previous slot... (1/2)
 	jr   z, .chkFade			; Skip ahead if there are none left
 	
@@ -11353,7 +11350,7 @@ IF KEEP_PCM
 	ld   a, [de] 			; Otherwise, A = byte4
 .pcm_setTimer:
 	ldh  [rTMA], a 			; Set new modulo
-	ldh  [rTIMA], a 		; Does this do anything ???
+	ldh  [rTIMA], a 		; This will cause an almost immediate overflow
 	
 	;
 	; Prepare the wave channel for PCM playback.
@@ -13238,27 +13235,23 @@ Sound_SetFreq:
 	
 .withOffset:
 
-	; Invert the offset to E before using it.
-	; ??? Why is it like this? Why not inverted to begin with?
+	; As the offset is subtracted, invert it to E before using it.
 	xor  $FF			; cpl a
 	inc  a
 	ld   e, a			; E = -iSndChInfo_1B
 	
-	;
-	; Write the low byte + offset to NRx3.
-	; If the offset is positive, also add whatever overflowed to NRx4.
-	; If the offset is negative, decrement NRx4. This works out for both when an underflow happens and when it doesn't.
-	;
+
+	; Then add the inverted number over.
+	; This is a slightly different version of the normal word += byte operation, since the byte is signed.
+	; $0180 + $FF -> $027F -> $017F
+	; $0100 + $FF -> $01FF -> $00FF
 	ldi  a, [hl]		; Low byte
 	add  e				; + offset
 	ldh  [wNRx3Data], a	; to wNRx3Data
 	ld   a, [hl]		; High byte
 	adc  a, $00			; + carry
 	bit  7, e			; The offset is negative?
-	jr   z, .noNeg		; If so, skip
-	; Non-intuitive trick with negative offsets.
-	; $0180 + $FF -> $0280 -> $0180
-	; $0100 + $FF -> $01FF -> $00FF
+	jr   z, .noNeg		; If not, skip
 	dec  a				; Otherwise, decrement the high byte too
 .noNeg:
 	ldh  [wNRx4Data], a	; to wNRx4Data
@@ -14673,9 +14666,12 @@ ENDC
 	
 .ch124:
 	;--
+	; Duty cycle + Length timer.
 	; iSndChInfo_09 & $C0 -> wNRx1
+	; [POI] Inexplicably, the length timer is forced to $00, overriding whatever is specified in snd_duty.
+	;       That said, 99% of the time what it specifies is $00 anyway.
 	ld   a, [de]				; Read iSndChInfo_09
-	and  $C0					; Filter out length timer (why ???)
+	and  $C0					; Zero out length
 	ldi  [hl], a				; Save it to wNRx1, seek to wNRx2 
 	
 	;--
@@ -14854,10 +14850,10 @@ Sound_Init:
 	ld   a, b
 	ld   [wSndBankPcmDef], a
 	
-	; Clear sound queue (only the index matters)
+	; Clear sound queue
 	sub  a
-	ld   [wSndSetLength], a
-	ld   [wSnd_D011_Flags], a ; and the flags
+	ld   [wSndSetLength], a ; only the index matters
+	ld   [wSnd_D011_Flags], a ; and the driver flags
 	
 	; Fall-through
 	
@@ -14922,7 +14918,7 @@ SoundCmd_StopAll:
 	jr   nz, .loop						; If not, loop
 	
 	; Reset to max volume.
-	; In theory this isn't needed, as it's only used during fades, which do initialize the volume ???
+	; This is here for SoundCmd_FadeIn, the only fade-related command which doesn't initialize the volume.
 	ld   a, $0F
 	ld   [wSndFadeVolume], a
 	
@@ -15028,22 +15024,21 @@ Sound_ReqPlayIdWithArg:
 Sound_FadeInTargetReached:
 	push de
 		push hl
-			; Disable fading
+			; Disable fading in sound driver
 			ld   hl, wSnd_D011_Flags
 			res  SNDFB1_FADE, [hl]
 			
-			; Reset fading volume to default value.
-			; Note this won't take effect as the fading gets disabled from individual sound channels.  ??? TODO: Verify.
+			; Reset fading volume to default value, not necessary though.
 			ld   a, $0F
 			ld   [wSndFadeVolume], a
 			
-			; Stop using wSndFadeVolume for all slots, which preserves the current volume. ???
+			; Disable fading for all sound slots.
 			; This is the reverse of what's done in SoundCmdS_EnableFade.
 			ld   hl, wSndChInfo0 + iSndChInfo_0B	; HL = Ptr to flags of first slot
 			ld   de, +wSndChInfo_Size				; DE = Slot size, seekahead
 			ld   a, wSndChInfo_Count				; A = Number of slots
 		.loop:
-			res  SNDBB_USEFADEVOL, [hl]				; ??? Stop using fading volume
+			res  SNDBB_USEFADEVOL, [hl]				; Stop using fading volume
 			add  hl, de								; Seek to next slot
 			dec  a									; Are we done?
 			jr   nz, .loop							; If not, loop
@@ -15221,14 +15216,14 @@ SoundCmdS_EnableFade:
 	ld   a, $FF
 	ld   [wSndFadeTimerSub], a
 	
-	; Start using wSndFadeVolume for all normal slots. ???
+	; Start using wSndFadeVolume for all normal slots.
 	; Important otherwise the volume change won't get applied.
 	; See also: Sound_FadeInTargetReached
 	ld   hl, wSndChInfo0 + iSndChInfo_0B	; HL = Ptr to flags of first slot
 	ld   de, +wSndChInfo_Size				; DE = Slot size, seekahead
 	ld   a, wSndChInfo_Count - 1			; A = Number of slots
 .loop:
-	set  SNDBB_USEFADEVOL, [hl]				; ??? Start using fading volume
+	set  SNDBB_USEFADEVOL, [hl]				; Start using fading volume
 	add  hl, de								; Seek to next slot
 	dec  a									; Are we done?
 	jr   nz, .loop							; If not, loop

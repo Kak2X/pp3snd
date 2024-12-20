@@ -1910,12 +1910,6 @@ Sound_SndHeaderPtrTable:
 	dp SndHeader_67 ; $67
 	dp SndHeader_68 ; $68
 	
-	; [POI] This is a very bad way to implement the blank sound effect.
-	; Slot count - Way out of range
-	; Slot ID - Way out of range. 
-	; This ends up indexing the slot pointer table out of bounds, and returns a null pointer.
-	; By coincidence ??? (intentional? explains the direct return), at $0000 there's code whose first byte is $E0.
-	; $E0 has bit 6 set, so it fails the check and the subroutine that plays a new sound returns early.
 SndData_00_Ch3:
 	snd_note $3D, NOTELEN_01
 	snd_note $38

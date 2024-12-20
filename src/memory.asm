@@ -505,18 +505,18 @@ DEF SNDF1_7 EQU 1 << SNDFB1_7
 ; iSndChInfo_Status flags
 DEF SNDXB_CH123 EQU 0 ; Slot contains channels 1-3 data
 DEF SNDXB_CH4 EQU 1 ; Slot contains channel 4 data 
-DEF SNDXB_2 EQU 2 ; ???
-DEF SNDXB_3 EQU 3
+DEF SNDXB_2 EQU 2 ; Unused
+DEF SNDXB_3 EQU 3 ; Unused
 DEF SNDXB_KEYHOLD EQU 4 ; Forces the key to be held (never unset SNDBB_KEYON)
-DEF SNDXB_5 EQU 5 ; If set, the lower priority slots above should be paused.
+DEF SNDXB_PAUSEREST EQU 5 ; Pause BGM while playing this (if set, pause lower priority slots)
 DEF SNDXB_PRIORITY EQU 6 ; Slot has high priority
-DEF SNDXB_7 EQU 7 ; ???
+DEF SNDXB_7 EQU 7 ; Unused
 DEF SNDX_CH123 EQU 1 << SNDXB_CH123
 DEF SNDX_CH4 EQU 1 << SNDXB_CH4
 DEF SNDX_2 EQU 1 << SNDXB_2
 DEF SNDX_3 EQU 1 << SNDXB_3
 DEF SNDX_KEYHOLD EQU 1 << SNDXB_KEYHOLD
-DEF SNDX_5 EQU 1 << SNDXB_5
+DEF SNDX_PAUSEREST EQU 1 << SNDXB_PAUSEREST
 DEF SNDX_PRIORITY EQU 1 << SNDXB_PRIORITY
 DEF SNDX_7 EQU 1 << SNDXB_7
 
@@ -1290,7 +1290,7 @@ DEF iSndChInfo_07 EQU $07 ; Data Pointer, Low byte
 DEF iSndChInfo_08 EQU $08 ; Data Pointer, High byte
 DEF iSndChInfo_09 EQU $09 ; Length/duty [NRx1]. The wave channel lacks wNR31 so it's instead copied to wWaveSetId.
 DEF iSndChInfo_0A EQU $0A ; Stereo Panning [NR51]
-DEF iSndChInfo_0B EQU $0B ; Effect Flags #1
+DEF iSndChInfo_0B EQU $0B ; Effect flags #1
 DEF iSndChInfo_0C EQU $0C ; Effect Flags #2
 DEF iSndChInfo_0D EQU $0D ; Sound ID
 DEF iSndChInfo_0E EQU $0E ; Vibrato data offset.
@@ -1315,18 +1315,18 @@ DEF iSndChInfo_20 EQU $20 ; Noise channel frequency. [wNR43]
 DEF iSndChInfo_21 EQU $21 ; Fade speed
 DEF iSndChInfo_22 EQU $22 ; Fade timer
 DEF iSndChInfo_23 EQU $23 ; Fade target volume
-DEF iSndChInfo_24 EQU $24 ; Loop timer #0. Also used as negative offset in SoundDataCmd_IncBaseNoteByLoop, for loop-based frequency increases.
+DEF iSndChInfo_24 EQU $24 ; Loop timer #0. Loop-based frequency increases go off this.
 DEF iSndChInfo_25 EQU $25 ; Loop timer #1
 DEF iSndChInfo_26 EQU $26 ; Data Pointer return address, low byte.
 DEF iSndChInfo_27 EQU $27 ; Data Pointer return address, high byte.
 DEF iSndChInfo_28 EQU $28 ; Data Pointer, Bank Number
 DEF iSndChInfo_29 EQU $29 ; Slot-specific PCM sample ID. 
-DEF iSndChInfo_2A EQU $2A ; iSndChInfo_Work2A ???
-DEF iSndChInfo_2B EQU $2B ; iSndChInfo_Work2B ???
-DEF iSndChInfo_2C EQU $2C ; iSndChInfo_Work2C ???
-DEF iSndChInfo_2D EQU $2D ; iSndChInfo_Work2D ???
-DEF iSndChInfo_2E EQU $2E ; iSndChInfo_Work2E ???
-DEF iSndChInfo_2F EQU $2F ; iSndChInfo_Work2F ???
+DEF iSndChInfo_2A EQU $2A ; Free space
+DEF iSndChInfo_2B EQU $2B ; Free space
+DEF iSndChInfo_2C EQU $2C ; Free space
+DEF iSndChInfo_2D EQU $2D ; Free space
+DEF iSndChInfo_2E EQU $2E ; Free space
+DEF iSndChInfo_2F EQU $2F ; Free space
 
 SECTION "Hardware", HRAM[$FF90]
 hROMBank                  :db     ; EQU $FF90

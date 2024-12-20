@@ -6631,7 +6631,7 @@ SndHeader_51:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123|SNDX_5|SNDX_PRIORITY ; iSndChInfo_Status
+	db SNDX_CH123|SNDX_PAUSEREST|SNDX_PRIORITY ; iSndChInfo_Status
 	db 11 ; iSndChInfo_01
 	db INSTR_NONE ; iSndChInfo_02
 	db VIBRATO_NONE ; iSndChInfo_03
@@ -6818,7 +6818,7 @@ SndHeader_5F:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123|SNDX_5 ; iSndChInfo_Status
+	db SNDX_CH123|SNDX_PAUSEREST ; iSndChInfo_Status
 	db 11 ; iSndChInfo_01
 	db INSTR_NONE ; iSndChInfo_02
 	db VIBRATO_16 ; iSndChInfo_03
@@ -7114,7 +7114,7 @@ SndHeader_68:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123|SNDX_5 ; iSndChInfo_Status
+	db SNDX_CH123|SNDX_PAUSEREST ; iSndChInfo_Status
 	db 15 ; iSndChInfo_01
 	db INSTR_NONE ; iSndChInfo_02
 	db VIBRATO_NONE ; iSndChInfo_03

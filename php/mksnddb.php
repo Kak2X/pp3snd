@@ -261,7 +261,7 @@ oops_we_need_rewind_actually:
 				ww(2, "{$op} {$sh}, {$dv}, {$toggle}");
 				break;
 			case 0x90:
-				$arg = getnext($iter)->as_enum(MAP_STATUS);
+				$arg = getnext($iter)->as_flag(MAP_STATUS);
 				ww(2, "snd_status {$arg}");
 				break;
 			case 0x91:

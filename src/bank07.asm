@@ -5939,14 +5939,14 @@ SndHeader_3C:
 	db SNDOUT_CHALL ; iSndChInfo_0A
 SndData_3C_Ch1:
 	snd_note $5F, NOTELEN_01
-	snd_status $02
+	snd_status SNDX_CH4
 	snd_noise_sweep 0, 7, 0
 	snd_note $60, NOTELEN_02
 	snd_note $3A, NOTELEN_01
-	snd_status $01
+	snd_status SNDX_CH123
 	snd_note $54, NOTELEN_02
 	snd_note $65, NOTELEN_01
-	snd_status $02
+	snd_status SNDX_CH4
 	snd_noise_sweep 0, 7, 0
 	snd_inc_base_note -12
 	snd_fade SSF_FADEOUT, 4, 64
@@ -6050,7 +6050,7 @@ SndHeader_3F:
 	db SNDOUT_CHALL ; iSndChInfo_0A
 SndData_3F_Ch2:
 	snd_note $1D, NOTELEN_01
-	snd_status $02
+	snd_status SNDX_CH4
 	snd_noise_sweep 0, 7, 0
 	snd_note $55, NOTELEN_02
 	snd_inc_vol -5
@@ -6091,7 +6091,7 @@ SndData_40_Ch1:
 	snd_note $25
 	snd_note $49
 	snd_note $25
-	snd_status $01
+	snd_status SNDX_CH123
 .fadeOut:
 	snd_fade SSF_FADEOUT, 4, 160
 	snd_note $4D, NOTELEN_12
@@ -6480,7 +6480,7 @@ SndHeader_4C:
 SndData_4C_Ch2:
 	snd_note $19, NOTELEN_01
 	snd_note $00
-	snd_status $02
+	snd_status SNDX_CH4
 	snd_note $3A, NOTELEN_03
 	snd_noise 8, 0, 0
 	snd_nrx2 8, SNDENV_DEC, 1 ; $81

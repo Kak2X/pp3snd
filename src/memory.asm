@@ -782,6 +782,7 @@ ENDM
 ; Command: SoundDataCmd_SetStatus
 ;
 ; Sets a new slot status bitmask.
+; Used to alter the target channel type from/to the noise channel.
 ;
 ; IN
 ; - 1: Status flags	

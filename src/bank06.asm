@@ -1802,8 +1802,7 @@ SndHeader_00:
 
 ; =============== Sound_SndHeaderPtrTable ===============
 ; Pointer table with sound headers, by ID.
-; Some of the unused entries point to SndData_00_Ch3, which is NOT a sound header, but somehow it works out ??? (due to a dubious check in the handler)
-; so nothing bad happens then playing those.
+; Some of the unused entries point to SndData_00_Ch3, which is NOT a sound header.
 Sound_SndHeaderPtrTable: 
 	dp SndHeader_00 ; $00
 	dp SndHeader_01 ; $01

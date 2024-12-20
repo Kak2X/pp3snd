@@ -24,7 +24,7 @@ $map_status = [
 	3 => "SNDX_3     ",
 	4 => "SNDX_KEYHOLD     ",
 	5 => "SNDX_5     ",
-	6 => "SNDX_6     ",
+	6 => "SNDX_PRIORITY     ",
 	7 => "SNDX_7     ",
 ];
 

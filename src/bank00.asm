@@ -15299,35 +15299,19 @@ Sound_StartNew:
 	;
 	; Parse out the data from the song header.
 	;
-	; Song headers use the following structure:
-	; 
-	; 0: Number of sound slot definitions, each representing a sound channel
-	; 1: Array of sound slot definitions, in this format:
-	;    0: Slot ID
-	;    1: iSndChInfo_Status
-	;    2: iSndChInfo_01
-	;    3: iSndChInfo_02
-	;    4: iSndChInfo_03
-	;    5: iSndChInfo_04
-	;    6: iSndChInfo_05
-	;    7: iSndChInfo_06
-	;    8: iSndChInfo_07
-	;    9: iSndChInfo_08
-	;    A: iSndChInfo_09
-	;       For Wave data specifically, this may be set to an invalid value at times.
-	;       When that's the case, the song data will almost immediately contain a SoundDataCmd_SetDuty command.
-	;    B: iSndChInfo_0A
 	
-	; byte0
-	ldi  a, [hl]	; B = Slot count
+	; 0: Slot header count.
+	;    Process the next loop this amount of times.
+	ldi  a, [hl]
 	ld   b, a
 .slLoop:
 
-	; byte1:0
-	;
-	; Seek HL to the sound slot the definition points to.
-	; Move to DE the header pointer.
-	;
+	; 1.0: Slot ID
+	;      Determines the priority, the lower it is, less priority it has.
+	;      By convention, slots 0-3 are used for BGM, 4-7 for SFX, and 8 for pause sounds.
+	
+	; DE = HL
+	; HL = Ptr to slot, indexed from Sound_SndChInfoPtrTable
 	ldi  a, [hl]						; A = Slot ID
 	push hl
 		add  a							; DE = Table offset
@@ -15340,35 +15324,29 @@ Sound_StartNew:
 		ld   l, a
 	pop  de
 	
-
-	;
-	; byte1:1
-	; iSndChInfo_Status, copied as is after two checks.
-	;
-	ld   a, [de]
-	inc  de
-	
 	;--
-	; [TCRF] If the sound slot isn't enabled, skip this.
-	; The nature of sound slots being able to target arbitrary channels makes this useless,
-	; and in fact the feature's not used.
+	; 1.1: Slot status
+	ld   a, [de]	; A = 1-1
+	inc  de			; Seek to 1-2
+	
+	; [POI] Mute the slot if the new status is fully blank.
+	;       This doesn't come into play with this game's songs.
 	and  a
-	jr   z, .unused_skip
-	;--
+	jr   z, .muteSlot
 	
-	; If the slot is in use ???, we're done.
-	; Curious how this doesn't just skip the slot, but ends processing prematurely.
-	; IS THIS FOR THE $0000 bullshit? ???
-	bit  SNDXB_6, [hl]
+	; If an high priority sound is currently playing, do not interrupt it.
+	; Only SFX use this, and when they do they mark all of their slots with it.
+	; [POI] By coincidence, this prevents memory corruption when playing an invalid
+	;       song whose header pointers to SndData_00_Ch3.
+	bit  SNDXB_PRIORITY, [hl]
 	jr   nz, .end
 	
-	; If we passed the checks, copy it over
-	ldi  [hl], a
+	ldi  [hl], a	; Checks passed, copy it to iSndChInfo_Status
+	;--
 	
-	;
-	; byte1:2-B
-	; More SndChInfo bytes, copied sequentially as-is to the iSndChInfo_01-iSndChInfo_0A
-	;
+	; 1.2-B: Slot bytes, copied sequentially as-is to iSndChInfo_01-iSndChInfo_0A
+	;        For the Wave channel, what's specified in iSndChInfo_09 could be an invalid wave ID.
+	;        When that's the case, the song data will almost immediately contain a snd_wave command.
 	push bc
 		ld   b, $05 ; Copy 5 times
 	.cpLoop:
@@ -15380,51 +15358,64 @@ Sound_StartNew:
 		dec  b
 		jr   nz, .cpLoop
 	pop  bc
+	;--
 	
 	;
 	; Initialize the rest
 	;
 	
 	sub  a
-	;--
-	; This is a pointer
-	ldi  [hl], a ; iSndChInfo_0B = 0
-	ldi  [hl], a ; iSndChInfo_0C = 0
-	;--
-	ld   [hl], c ; iSndChInfo_0D = Sound ID
+	; Zero out flags
+	ldi  [hl], a	; iSndChInfo_0B = 0
+	ldi  [hl], a	; iSndChInfo_0C = 0
+	; Save the Sound ID
+	; In the context of what the game uses, this is pointless to store.
+	ld   [hl], c	; iSndChInfo_0D = Sound ID
 	
-	ld   a, l	 ; HL += 5
-	add  $05
+	ld   a, l
+	add  iSndChInfo_12 - iSndChInfo_0D
 	ld   l, a
 	
-	ld   a, $01 ; iSndChInfo_12 = 1
+	; Set the current note length to $01.00...
+	ld   a, $01		; iSndChInfo_12 = 1
 	ldi  [hl], a
+	; ...and set the timer to $00.FF, which guarantees that, regardless of the song's speed,
+	;    new data will be fetched immediately (Timer + Speed >= Length).
 	dec  a
-	ldi  [hl], a ; iSndChInfo_13 = 0
-	ldi  [hl], a ; iSndChInfo_14 = 0
-	dec  a       ; iSndChInfo_15 = $FF
+	ldi  [hl], a	; iSndChInfo_13 = 0
+	ldi  [hl], a	; iSndChInfo_14 = 0
+	dec  a			; iSndChInfo_15 = $FF
 	ld   [hl], a
 	
-	ld   a, l	 ; HL += 6
-	add  $06
+	ld   a, l
+	add  iSndChInfo_1B - iSndChInfo_15
 	ld   l, a
+	
+	; No note or frequency offsets by default.
+	; Song data will have to request those manually.
 	sub  a
-	ldi  [hl], a ; iSndChInfo_1B = 0
-	ld   [hl], a ; iSndChInfo_1C = 0
-	ld   a, l    ; HL += 3
-	add  $03
+	ldi  [hl], a	; iSndChInfo_1B = 0
+	ld   [hl], a	; iSndChInfo_1C = 0
+	ld   a, l 
+	add  iSndChInfo_1F - iSndChInfo_1C
 	ld   l, a
-	sub  a       ; iSndChInfo_1F = 0
+	
+	; In case the slot handles the noise channel...
+	; ...no default sweep
+	sub  a			; iSndChInfo_1F = 0
 	ldi  [hl], a
-	ld   a, $20  ; iSndChInfo_20 = $20
+	; ...frequency at the base 262144 hz (shift and divider cancel themselves out)
+	ld   a, $20		; iSndChInfo_20 = $20
 	ld   [hl], a
 	
-	ld   a, l    ; HL += 8
-	add  $08
+	ld   a, l
+	add  iSndChInfo_28 - iSndChInfo_20
 	ld   l, a
 	
-	ldh  a, [hROMBank] ; iSndChInfo_28 = Bank ID for Song data
-	ldi  [hl], a
+	; Save the current bank number.
+	; The song data is always in the same bank as its header.
+	ldh  a, [hROMBank]
+	ldi  [hl], a	; iSndChInfo_28 = hROMBank
 	
 IF KEEP_PCM
 	;
@@ -15435,8 +15426,7 @@ IF KEEP_PCM
 	ld   [hl], a
 ENDC
 .chkNext:
-	; Restore the song header ptr to HL
-	ld   l, e
+	ld   l, e			; Restore the song header ptr to HL
 	ld   h, d
 	dec  b				; Copied all channel data?
 	jp   nz, .slLoop	; If not, loop
@@ -15446,8 +15436,8 @@ ENDC
 	ldh  [hROMBank], a
 	ld   [MBC1RomBank], a
 	ret  
-.unused_skip:
-	; Save the zeroed out flags
+.muteSlot:
+	; Save the zeroed out flags. This causes Sound_Do.slotLoop to skip the slot.
 	ld   [hl], a
 	jr   .chkNext
 	

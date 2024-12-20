@@ -5369,7 +5369,7 @@ SndHeader_59:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123|SNDX_6|SNDX_7 ; iSndChInfo_Status
+	db SNDX_CH123|SNDX_PRIORITY|SNDX_7 ; iSndChInfo_Status
 	db 15 ; iSndChInfo_01
 	db INSTR_NONE ; iSndChInfo_02
 	db VIBRATO_NONE ; iSndChInfo_03
@@ -5495,7 +5495,7 @@ SndHeader_2A:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
 	db 11 ; iSndChInfo_01
 	db INSTR_NONE ; iSndChInfo_02
 	db VIBRATO_NONE ; iSndChInfo_03
@@ -5732,7 +5732,7 @@ SndHeader_36:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
 	db 10 ; iSndChInfo_01
 	db INSTR_NONE ; iSndChInfo_02
 	db VIBRATO_NONE ; iSndChInfo_03
@@ -5838,7 +5838,7 @@ SndHeader_3A:
 	db 3 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
 	db 12 ; iSndChInfo_01
 	db INSTR_NONE ; iSndChInfo_02
 	db VIBRATO_NONE ; iSndChInfo_03
@@ -5850,7 +5850,7 @@ SndHeader_3A:
 	db SNDOUT_CHALL ; iSndChInfo_0A
 .slot1:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
 	db 12 ; iSndChInfo_01
 	db INSTR_NONE ; iSndChInfo_02
 	db VIBRATO_NONE ; iSndChInfo_03
@@ -5862,7 +5862,7 @@ SndHeader_3A:
 	db SNDOUT_CHALL ; iSndChInfo_0A
 .slot2:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
 	db 8 ; iSndChInfo_01
 	db INSTR_NONE ; iSndChInfo_02
 	db VIBRATO_NONE ; iSndChInfo_03
@@ -6189,7 +6189,7 @@ SndHeader_44:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123|SNDX_6 ; iSndChInfo_Status
+	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
 	db 15 ; iSndChInfo_01
 	db INSTR_NONE ; iSndChInfo_02
 	db VIBRATO_NONE ; iSndChInfo_03
@@ -6631,7 +6631,7 @@ SndHeader_51:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123|SNDX_5|SNDX_6 ; iSndChInfo_Status
+	db SNDX_CH123|SNDX_5|SNDX_PRIORITY ; iSndChInfo_Status
 	db 11 ; iSndChInfo_01
 	db INSTR_NONE ; iSndChInfo_02
 	db VIBRATO_NONE ; iSndChInfo_03

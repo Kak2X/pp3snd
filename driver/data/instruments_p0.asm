@@ -118,18 +118,18 @@ Sound_InstrumentPtrTable:
 	dw SndInstrument_71   ; $71 ; INSTR_71
 	dw SndInstrument_72;X ; $72 ; INSTR_72
 	dw SndInstrument_73   ; $73 ; INSTR_73
-	dw SndHeader_00;X     ; $74 ; INSTR_74
-	dw SndHeader_00;X     ; $75 ; INSTR_75
-	dw SndHeader_00;X     ; $76 ; INSTR_76
-	dw SndHeader_00;X     ; $77 ; INSTR_77
-	dw SndHeader_00;X     ; $78 ; INSTR_78
-	dw SndHeader_00;X     ; $79 ; INSTR_79
+	dw SndHeader_SFXPause_00;X     ; $74 ; INSTR_74
+	dw SndHeader_SFXPause_00;X     ; $75 ; INSTR_75
+	dw SndHeader_SFXPause_00;X     ; $76 ; INSTR_76
+	dw SndHeader_SFXPause_00;X     ; $77 ; INSTR_77
+	dw SndHeader_SFXPause_00;X     ; $78 ; INSTR_78
+	dw SndHeader_SFXPause_00;X     ; $79 ; INSTR_79
 	dw SndInstrument_70;X ; $7A ; INSTR_7A
-	dw SndHeader_00;X     ; $7B ; INSTR_7B
-	dw SndHeader_00;X     ; $7C ; INSTR_7C
-	dw SndHeader_00;X     ; $7D ; INSTR_7D
-	dw SndHeader_00;X     ; $7E ; INSTR_7E
-	dw SndHeader_00;X     ; $7F ; INSTR_7F
+	dw SndHeader_SFXPause_00;X     ; $7B ; INSTR_7B
+	dw SndHeader_SFXPause_00;X     ; $7C ; INSTR_7C
+	dw SndHeader_SFXPause_00;X     ; $7D ; INSTR_7D
+	dw SndHeader_SFXPause_00;X     ; $7E ; INSTR_7E
+	dw SndHeader_SFXPause_00;X     ; $7F ; INSTR_7F
 SndInstrument_01:
 	ivol $14, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
 	ivol $04, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100

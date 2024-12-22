@@ -1,4 +1,4 @@
-SndHeader_54:
+SndHeader_SFXPause_54:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOTPAUSE ; Slot location

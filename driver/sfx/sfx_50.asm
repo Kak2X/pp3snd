@@ -1,4 +1,4 @@
-SndHeader_50:
+SndHeader_SFX_50:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location

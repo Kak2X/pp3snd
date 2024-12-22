@@ -1,4 +1,4 @@
-SndHeader_1F:
+SndHeader_BGM_1F:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT0 ; Slot location

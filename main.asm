@@ -1,4 +1,6 @@
 INCLUDE "src/hardware.asm"
+INCLUDE "src/macro.asm"
+INCLUDE "src/constants.asm"
 INCLUDE "src/memory.asm"
 
 DEF FIX_BUGS EQU 0 ; Self explainatory

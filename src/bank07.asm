@@ -2,52 +2,52 @@ SndHeader_1F:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT0 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -24 ; iSndChInfo_04
-	db 196 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -24 ; iSndChInfo_NoteIdBase
+	db 196 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_1F_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -24 ; iSndChInfo_04
-	db 196 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -24 ; iSndChInfo_NoteIdBase
+	db 196 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_1F_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 196 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 196 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_1F_Ch3 ; Data pointer
-	db WAVE_00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 196 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 196 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_1F_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_1F_Ch1:
 	snd_duty SNDDUTY_75, $00
 	snd_note $32, NOTELEN_01
@@ -279,52 +279,52 @@ SndHeader_03:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT0 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -24 ; iSndChInfo_04
-	db 104 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -24 ; iSndChInfo_NoteIdBase
+	db 104 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_03_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 104 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 104 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_03_Ch3 ; Data pointer
-	db WAVE_0D ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_0D ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 10 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 104 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 104 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_03_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 104 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 104 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_03_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_03_Ch1:
 	snd_instrument INSTR_56
 	snd_note $3C, NOTELEN_04
@@ -963,9 +963,9 @@ SndData_03_Ch2:
 	snd_inc_vol 10
 	snd_jp SndData_03_Ch2
 SndData_03_Ch4:
-	snd_var iSndChInfo_25, $02
+	snd_var iSndChInfo_LoopTimer1, $02
 	.loop0:
-		snd_var iSndChInfo_24, $03
+		snd_var iSndChInfo_LoopTimer0, $03
 		.loop1:
 			snd_noteex PRESET_04, NOTELEN_06
 			snd_noteex PRESET_02
@@ -984,7 +984,7 @@ SndData_03_Ch4:
 			snd_noteex PRESET_04
 			snd_noteex PRESET_02, NOTELEN_03
 			snd_noteex PRESET_02
-			snd_djnz iSndChInfo_24, .loop1
+			snd_djnz iSndChInfo_LoopTimer0, .loop1
 		snd_noteex PRESET_04, NOTELEN_0C
 		snd_noteex PRESET_04
 		snd_noteex PRESET_04
@@ -995,59 +995,59 @@ SndData_03_Ch4:
 		snd_noteex PRESET_04
 		snd_noteex PRESET_02
 		snd_noteex PRESET_04, NOTELEN_0C
-	snd_djnz iSndChInfo_25, .loop0
+	snd_djnz iSndChInfo_LoopTimer1, .loop0
 	snd_jp SndData_03_Ch4
 	
 SndHeader_0E:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT0 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 12 ; iSndChInfo_04
-	db 119 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 12 ; iSndChInfo_NoteIdBase
+	db 119 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_0E_Ch3 ; Data pointer
-	db WAVE_00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 8 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 119 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 8 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 119 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_0E_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 119 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 119 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_0E_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 119 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 119 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_0E_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_0E_Ch3:
 	snd_wave WAVE_0D
 	snd_inc_vol 5
@@ -1913,52 +1913,52 @@ SndHeader_0F:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT0 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 13 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 153 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 153 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_0F_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 153 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 153 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_0F_Ch3 ; Data pointer
-	db WAVE_00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 11 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 153 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 153 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_0F_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 153 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 153 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_0F_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_0F_Ch1:
 	snd_duty SNDDUTY_12, $00
 	snd_inc_vol -6
@@ -2749,52 +2749,52 @@ SndHeader_20:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT0 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 14 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 102 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 102 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_20_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 102 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 102 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_20_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 102 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 102 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_20_Ch3 ; Data pointer
-	db WAVE_00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 102 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 102 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_20_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_20_Ch1:
 	snd_duty SNDDUTY_50, $00
 	snd_instrument INSTR_60
@@ -3209,52 +3209,52 @@ SndHeader_21:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT0 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 13 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 102 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 102 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_21_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 8 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 102 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 8 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 102 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_21_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 102 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 102 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_21_Ch3 ; Data pointer
-	db WAVE_00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 102 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 102 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_21_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_21_Ch1:
 	snd_duty SNDDUTY_25, $00
 	snd_inc_vol -1
@@ -4025,52 +4025,52 @@ SndHeader_15:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT0 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 14 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 99 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 99 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_15_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 99 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 99 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_15_Ch3 ; Data pointer
-	db WAVE_00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 13 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 99 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 99 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_15_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 14 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 99 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 99 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_15_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_15_Ch1:
 	snd_inc_vol -2
 	snd_duty SNDDUTY_50, $00
@@ -4380,57 +4380,57 @@ SndHeader_11:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT0 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 9 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -36 ; iSndChInfo_04
-	db 136 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 9 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -36 ; iSndChInfo_NoteIdBase
+	db 136 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_11_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 9 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -36 ; iSndChInfo_04
-	db 136 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 9 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -36 ; iSndChInfo_NoteIdBase
+	db 136 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_11_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 136 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 136 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_11_Ch3 ; Data pointer
-	db WAVE_00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 136 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 136 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_11_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_11_Ch1:
 	snd_duty SNDDUTY_25, $00
 	snd_pitchbend 20
 	snd_vibrato VIBRATO_61
-	snd_var iSndChInfo_24, $0F
+	snd_var iSndChInfo_LoopTimer0, $0F
 	.loop:
 		snd_note $47, NOTELEN_0C
 		snd_instrument INSTR_69
@@ -4446,7 +4446,7 @@ SndData_11_Ch1:
 		snd_note $00
 		snd_instrument INSTR_NONE
 		snd_inc_base_note 1
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_inc_base_note -15
 	snd_instrument INSTR_69
 	snd_note $56, NOTELEN_03
@@ -4470,7 +4470,7 @@ SndData_11_Ch2:
 	snd_duty SNDDUTY_25, $00
 	snd_pitchbend 20
 	snd_vibrato VIBRATO_0D
-	snd_var iSndChInfo_24, $0F
+	snd_var iSndChInfo_LoopTimer0, $0F
 	.loop:
 		snd_inc_freq_offset -2
 		snd_instrument INSTR_6D
@@ -4487,7 +4487,7 @@ SndData_11_Ch2:
 		snd_note $00
 		snd_inc_freq_offset 2
 		snd_inc_base_note 1
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_inc_freq_offset -2
 	snd_inc_base_note -15
 	snd_note $53, NOTELEN_03
@@ -4511,7 +4511,7 @@ SndData_11_Ch2:
 SndData_11_Ch3:
 	snd_wave WAVE_0D
 	snd_instrument INSTR_62
-	snd_var iSndChInfo_24, $0F
+	snd_var iSndChInfo_LoopTimer0, $0F
 	.loop:
 		snd_note $1C, NOTELEN_09
 		snd_note $23, NOTELEN_03
@@ -4522,7 +4522,7 @@ SndData_11_Ch3:
 		snd_note $23, NOTELEN_06
 		snd_note $17
 		snd_inc_base_note 1
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_inc_base_note -15
 	snd_note $2B, NOTELEN_09
 	snd_note $32, NOTELEN_03
@@ -4534,7 +4534,7 @@ SndData_11_Ch3:
 	snd_note $26
 	snd_jp SndData_11_Ch3
 SndData_11_Ch4:
-	snd_var iSndChInfo_24, $10
+	snd_var iSndChInfo_LoopTimer0, $10
 	.loop:
 		snd_noteex PRESET_01, NOTELEN_03
 		snd_note $00
@@ -4560,58 +4560,58 @@ SndData_11_Ch4:
 		snd_noteex PRESET_01
 		snd_noteex PRESET_01
 		snd_inc_vol 3
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_jp SndData_11_Ch4
 SndHeader_12:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT0 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -24 ; iSndChInfo_04
-	db 75 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -24 ; iSndChInfo_NoteIdBase
+	db 75 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_12_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 11 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -24 ; iSndChInfo_04
-	db 75 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -24 ; iSndChInfo_NoteIdBase
+	db 75 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_12_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -24 ; iSndChInfo_04
-	db 75 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -24 ; iSndChInfo_NoteIdBase
+	db 75 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_12_Ch3 ; Data pointer
-	db WAVE_00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 75 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 75 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_12_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_12_Ch1:
 	snd_duty SNDDUTY_25, $00
 	snd_inc_freq_offset -1
@@ -4794,52 +4794,52 @@ SndHeader_08:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT0 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 14 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 65 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 65 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_08_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -24 ; iSndChInfo_04
-	db 65 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -24 ; iSndChInfo_NoteIdBase
+	db 65 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_08_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 14 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 65 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 65 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_08_Ch3 ; Data pointer
-	db WAVE_00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 65 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 65 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_08_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_08_Ch1:
 	snd_duty SNDDUTY_50, $00
 	snd_note $00, NOTELEN_09
@@ -5107,16 +5107,16 @@ SndHeader_53:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -13 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -13 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_53_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_53_Ch2:
 	snd_note $2B, NOTELEN_01
 	snd_note $37
@@ -5130,16 +5130,16 @@ SndHeader_54:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOTPAUSE ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -13 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -13 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_54_Ch3 ; Data pointer
-	db WAVE_10 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_10 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_54_Ch3:
 	snd_sets3
 	snd_note $41, NOTELEN_01
@@ -5164,28 +5164,28 @@ SndHeader_55:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_55_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -25 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -25 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_55_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_55_Ch4:
 	snd_fade SSF_FADEOUT, 0, 144
 	.loop:
@@ -5214,28 +5214,28 @@ SndData_55_Ch4:
 		snd_jpfade .loop
 	snd_end
 SndData_55_Ch2:
-	snd_note_slide SNDB_NSDOWN, 48
-	snd_var iSndChInfo_24, $08
+	snd_note_slide SSE_NSDOWN, 48
+	snd_var iSndChInfo_LoopTimer0, $08
 	.loop:
 		snd_note $27, NOTELEN_04
 		snd_inc_base_note -1
 		snd_inc_vol -2
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_56:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -20 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -20 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_56_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_56_Ch2:
 	snd_fade SSF_FADEOUT, 0, 176
 	snd_sets3
@@ -5266,32 +5266,32 @@ SndHeader_57:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -13 ; iSndChInfo_04
-	db 255 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -13 ; iSndChInfo_NoteIdBase
+	db 255 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_57_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 4 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -13 ; iSndChInfo_04
-	db 255 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 4 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -13 ; iSndChInfo_NoteIdBase
+	db 255 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_57_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_57_Ch2:
 	snd_note $00, NOTELEN_04
 	snd_sets3
-	snd_var iSndChInfo_24, $03
+	snd_var iSndChInfo_LoopTimer0, $03
 	.loop:
 		snd_note $3B, NOTELEN_01
 		snd_note $35
@@ -5299,7 +5299,7 @@ SndData_57_Ch2:
 		snd_note $23
 		snd_note $00, NOTELEN_04
 		snd_inc_vol -4
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndData_57_Ch4:
 	snd_noise 4, 5, 0
@@ -5318,28 +5318,28 @@ SndHeader_58:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 10 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 150 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 150 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_58_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 150 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 150 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_58_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_58_Ch2:
 	snd_note $00, NOTELEN_09
 	snd_sets3
@@ -5350,71 +5350,71 @@ SndData_58_Ch2:
 	snd_note $47
 	snd_note $53
 	snd_note $47
-	snd_var iSndChInfo_24, $05
+	snd_var iSndChInfo_LoopTimer0, $05
 	.loop:
 		snd_note $4D
 		snd_note $59
 		snd_inc_vol -2
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndData_58_Ch4:
 	snd_noise 3, 2, 0
-	snd_var iSndChInfo_24, $05
+	snd_var iSndChInfo_LoopTimer0, $05
 	.loop:
 		snd_note $25, NOTELEN_CUSTOM, $06
 		snd_inc_vol -3
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_59:
 	db 4 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123|SNDX_PRIORITY|SNDX_7 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -18 ; iSndChInfo_04
-	db 157 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123|SST_PRIORITY|SST_7 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -18 ; iSndChInfo_NoteIdBase
+	db 157 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_59_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123|SNDX_7 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -6 ; iSndChInfo_04
-	db 157 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123|SST_7 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -6 ; iSndChInfo_NoteIdBase
+	db 157 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_59_Ch3 ; Data pointer
-	db $80 ; [PLACEHOLDER] ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db $80 ; [PLACEHOLDER] ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123|SNDX_7 ; iSndChInfo_Status
-	db 10 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -18 ; iSndChInfo_04
-	db 157 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123|SST_7 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -18 ; iSndChInfo_NoteIdBase
+	db 157 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_59_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH4|SNDX_7 ; iSndChInfo_Status
-	db 0 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 157 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH4|SST_7 ; iSndChInfo_Status
+	db 0 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 157 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_59_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_59_Ch2:
 	snd_note $00, NOTELEN_CUSTOM, $05
 	snd_inc_freq_offset -2
@@ -5475,16 +5475,16 @@ SndHeader_29:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -25 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -25 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_29_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_29_Ch2:
 	snd_sets3
 	snd_note $50, NOTELEN_01
@@ -5495,16 +5495,16 @@ SndHeader_2A:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
-	db 11 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123|SST_PRIORITY ; iSndChInfo_Status
+	db 11 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_2A_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_2A_Ch2:
 	snd_note $4D, NOTELEN_01
 	snd_note $40
@@ -5513,40 +5513,40 @@ SndHeader_2B:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -11 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -11 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_2B_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_2B_Ch2:
-	snd_var iSndChInfo_24, $03
+	snd_var iSndChInfo_LoopTimer0, $03
 	.loop:
 		snd_sets3
 		snd_note $4E, NOTELEN_01
 		snd_note $42, NOTELEN_06
 		snd_clrs3
 		snd_inc_vol -7
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_2C:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 11 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_2C_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_2C_Ch4:
 	snd_noise_sweep 3, 0, 0
 	snd_noise 11, 0, 0
@@ -5559,28 +5559,28 @@ SndHeader_2D:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_2D_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 13 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_2D_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_2D_Ch2:
 	snd_note $1D, NOTELEN_01
 	snd_note $19
@@ -5595,44 +5595,44 @@ SndHeader_2E:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 13 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -24 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -24 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_2E_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_2E_Ch2:
 	snd_toggle_keyhold
 	snd_fade SSF_FADEOUT, 4, 255
 	snd_note $23, NOTELEN_01
 	snd_note $20
-	snd_note_slide SNDB_NSUP, 5
+	snd_note_slide SSE_NSUP, 5
 	snd_note $20, NOTELEN_08
 	snd_end
 SndHeader_2F:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_2F_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_2F_Ch2:
 	snd_inc_vol -5
 	snd_fade SSF_FADEOUT, 1, 64
 	snd_inc_base_note -8
 	.loop:
-		snd_note_slide SNDB_NSUP, 3
+		snd_note_slide SSE_NSUP, 3
 		snd_note $44, NOTELEN_03
 		snd_note $4D
 		snd_pan SNDOUT_CHL
@@ -5648,126 +5648,126 @@ SndHeader_30:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -10 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -10 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_2F_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndHeader_31:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -8 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -8 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_2F_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndHeader_32:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -6 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -6 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_2F_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndHeader_33:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -5 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -5 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_2F_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndHeader_34:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -3 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -3 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_2F_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndHeader_35:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -1 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -1 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_2F_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndHeader_36:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
-	db 10 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -18 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123|SST_PRIORITY ; iSndChInfo_Status
+	db 10 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -18 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_36_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_36_Ch2:
-	snd_var iSndChInfo_24, $0C
+	snd_var iSndChInfo_LoopTimer0, $0C
 	.loop:
-		snd_note_slide SNDB_NSUP, 2
+		snd_note_slide SSE_NSUP, 2
 		snd_note $3D, NOTELEN_03
 		snd_inc_base_note 2
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_37:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 9 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 9 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_37_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_37_Ch2:
-	snd_note_slide SNDB_NSDOWN, 2
+	snd_note_slide SSE_NSDOWN, 2
 	snd_note $55, NOTELEN_03
-	snd_note_slide SNDB_NSUP, 2
+	snd_note_slide SSE_NSUP, 2
 	snd_inc_vol -5
 	snd_note $31
 	snd_end
@@ -5775,58 +5775,58 @@ SndHeader_38:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -22 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -22 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_38_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 6 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -22 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 6 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -22 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_38_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_38_Ch1:
 	snd_note $00, NOTELEN_0C
 	snd_inc_freq_offset -2
 SndData_38_Ch2:
 	snd_sets3
 	snd_fade SSF_FADEOUT, 1, 64
-	snd_note_slide SNDB_NSDOWN, 2
+	snd_note_slide SSE_NSDOWN, 2
 	snd_note $2E, NOTELEN_04
-	snd_note_slide SNDB_NSDOWN, 0
+	snd_note_slide SSE_NSDOWN, 0
 	snd_vibrato VIBRATO_05
-	snd_var iSndChInfo_24, $03
+	snd_var iSndChInfo_LoopTimer0, $03
 	.loop:
 		snd_note $2C, NOTELEN_0C
 		snd_inc_base_note 2
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_39:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 9 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -9 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 9 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -9 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_39_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_39_Ch2:
 	snd_inc_freq_offset -7
 	snd_fade SSF_FADEOUT, 12, 255
@@ -5838,73 +5838,73 @@ SndHeader_3A:
 	db 3 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123|SST_PRIORITY ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_3A_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123|SST_PRIORITY ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_3A_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
-	db 8 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -20 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123|SST_PRIORITY ; iSndChInfo_Status
+	db 8 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -20 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_3A_Ch3 ; Data pointer
-	db WAVE_00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3A_Ch2:
 	snd_note $00, NOTELEN_04
 SndData_3A_Ch1:
 	snd_vibrato VIBRATO_09
 	snd_note $31, NOTELEN_CUSTOM, $48
 	snd_sets3
-	snd_note_slide SNDB_NSUP, 4
+	snd_note_slide SSE_NSUP, 4
 	snd_note $49, NOTELEN_01
 	snd_note $20, NOTELEN_CUSTOM, $30
 	snd_end
 SndData_3A_Ch3:
-	snd_var iSndChInfo_24, $04
+	snd_var iSndChInfo_LoopTimer0, $04
 	.loop:
-		snd_note_slide SNDB_NSDOWN, 1
+		snd_note_slide SSE_NSDOWN, 1
 		snd_note $55, NOTELEN_0C
-		snd_note_slide SNDB_NSUP, 2
+		snd_note_slide SSE_NSUP, 2
 		snd_note $31, NOTELEN_0C
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_3B:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_3B_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3B_Ch2:
 	snd_noise_sweep 0, 7, 0
 	snd_note $33, NOTELEN_01
@@ -5915,38 +5915,38 @@ SndHeader_3C:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 10 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_3C_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 10 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -6 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -6 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_3C_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3C_Ch1:
 	snd_note $5F, NOTELEN_01
-	snd_status SNDX_CH4
+	snd_status SST_CH4
 	snd_noise_sweep 0, 7, 0
 	snd_note $60, NOTELEN_02
 	snd_note $3A, NOTELEN_01
-	snd_status SNDX_CH123
+	snd_status SST_CH123
 	snd_note $54, NOTELEN_02
 	snd_note $65, NOTELEN_01
-	snd_status SNDX_CH4
+	snd_status SST_CH4
 	snd_noise_sweep 0, 7, 0
 	snd_inc_base_note -12
 	snd_fade SSF_FADEOUT, 4, 64
@@ -5968,7 +5968,7 @@ SndData_3C_Ch2:
 	snd_inc_vol -6
 	snd_instrument INSTR_02
 	snd_inc_base_note 6
-	snd_var iSndChInfo_24, $04
+	snd_var iSndChInfo_LoopTimer0, $04
 	.loop:
 		snd_note $1D
 		snd_note $00
@@ -5977,34 +5977,34 @@ SndData_3C_Ch2:
 		snd_note $1E
 		snd_note $12
 		snd_inc_base_note -2
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_3D:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 13 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_06 ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_06 ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_3D_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 13 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_06 ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_06 ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_3D_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3D_ChUnused:
 	snd_note $00, NOTELEN_02 ;X
 	snd_inc_freq_offset -7 ;X
@@ -6021,16 +6021,16 @@ SndHeader_3E:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 11 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_07 ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_07 ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_3E_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3E_Ch2:
 	snd_note $42, NOTELEN_02
 	snd_end
@@ -6038,19 +6038,19 @@ SndHeader_3F:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_3F_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3F_Ch2:
 	snd_note $1D, NOTELEN_01
-	snd_status SNDX_CH4
+	snd_status SST_CH4
 	snd_noise_sweep 0, 7, 0
 	snd_note $55, NOTELEN_02
 	snd_inc_vol -5
@@ -6062,28 +6062,28 @@ SndHeader_40:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_40_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_40_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_40_Ch1:
 	snd_noise_sweep 0, 7, 0
 	snd_note $25, NOTELEN_01
@@ -6091,7 +6091,7 @@ SndData_40_Ch1:
 	snd_note $25
 	snd_note $49
 	snd_note $25
-	snd_status SNDX_CH123
+	snd_status SST_CH123
 .fadeOut:
 	snd_fade SSF_FADEOUT, 4, 160
 	snd_note $4D, NOTELEN_12
@@ -6108,35 +6108,35 @@ SndHeader_41:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -32 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -32 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_41_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -18 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -18 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_41_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_41_Ch2:
-	snd_var iSndChInfo_24, $0C
+	snd_var iSndChInfo_LoopTimer0, $0C
 	.loop:
 		snd_note $29, NOTELEN_01
 		snd_note $24, NOTELEN_02
 		snd_inc_vol -2
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndData_41_Ch4:
 	snd_toggle_keyhold
@@ -6150,18 +6150,18 @@ SndHeader_42:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 10 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_42_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_42_Ch2:
-	snd_note_slide SNDB_NSUP, 3
+	snd_note_slide SSE_NSUP, 3
 	snd_note $2E, NOTELEN_02
 	snd_note $31, NOTELEN_06
 	snd_end
@@ -6169,16 +6169,16 @@ SndHeader_43:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_04 ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_04 ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_43_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_43_Ch1:
 	snd_note $2E, NOTELEN_01
 	snd_note $33, NOTELEN_02
@@ -6189,16 +6189,16 @@ SndHeader_44:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123|SNDX_PRIORITY ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123|SST_PRIORITY ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_44_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_44_Ch2:
 	snd_toggle_keyhold
 	snd_note $31, NOTELEN_01
@@ -6207,7 +6207,7 @@ SndData_44_Ch2:
 	snd_note $0D
 	snd_fade SSF_FADEOUT, 2, 200
 	.loop:
-		snd_note_slide SNDB_NSDOWN, 6
+		snd_note_slide SSE_NSDOWN, 6
 		snd_note $25, NOTELEN_03
 		snd_note $2C
 		snd_note $20
@@ -6217,16 +6217,16 @@ SndHeader_45:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_08 ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_08 ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_45_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_45_Ch1:
 	snd_note $3A, NOTELEN_24
 	snd_end
@@ -6234,28 +6234,28 @@ SndHeader_46:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_46_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_46_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_46_Ch1:
 	snd_noise_sweep 1, 0, 0
 	snd_note $48, NOTELEN_02
@@ -6284,34 +6284,34 @@ SndData_46_Ch2:
 	snd_note $1B
 	snd_note $18
 	snd_inc_base_note 3
-	snd_var iSndChInfo_24, $06
+	snd_var iSndChInfo_LoopTimer0, $06
 	.loop:
 		snd_note $11
 		snd_note $14
 		snd_note $12
 		snd_note $14
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_47:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 11 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_47_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_47_Ch2:
 	snd_sets3
 	snd_note $27, NOTELEN_01
 	snd_note $33
 	snd_clrs3
-	snd_note_slide SNDB_NSUP, 6
+	snd_note_slide SSE_NSUP, 6
 	snd_fade SSF_FADEOUT, 0, 64
 	.loop:
 		snd_note $2C, NOTELEN_0C
@@ -6321,28 +6321,28 @@ SndHeader_48:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 13 ; iSndChInfo_01
-	db INSTR_03 ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -18 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_Vol
+	db INSTR_03 ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -18 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_48_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 10 ; iSndChInfo_01
-	db INSTR_03 ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -18 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_Vol
+	db INSTR_03 ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -18 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_48_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_48_Ch1:
 	snd_note $00, NOTELEN_08
 	snd_inc_freq_offset -4
@@ -6358,41 +6358,41 @@ SndHeader_49:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -14 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -14 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_49_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 11 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -14 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -14 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_49_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_49_Ch2:
 	snd_note $00, NOTELEN_09
 	snd_inc_freq_offset -2
 SndData_49_Ch1:
 	snd_inc_vol -4
-	snd_note_slide SNDB_NSDOWN, 4
+	snd_note_slide SSE_NSDOWN, 4
 	snd_sets3
 	snd_note $38, NOTELEN_02
 	snd_inc_vol 1
 	snd_note $38, NOTELEN_01
 	snd_inc_vol 2
 	snd_clrs3
-	snd_note_slide SNDB_NSUP, 3
+	snd_note_slide SSE_NSUP, 3
 	snd_inc_vol -2
 	snd_note $30, NOTELEN_08
 	snd_inc_vol -2
@@ -6405,16 +6405,16 @@ SndHeader_4A:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_4A_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4A_Ch2:
 	snd_inc_base_note -2
 	snd_note $0F, NOTELEN_01
@@ -6422,40 +6422,40 @@ SndData_4A_Ch2:
 	snd_note $11
 	snd_note $0D
 	snd_inc_base_note 2
-	snd_note_slide SNDB_NSUP, 7
-	snd_var iSndChInfo_24, $03
+	snd_note_slide SSE_NSUP, 7
+	snd_var iSndChInfo_LoopTimer0, $03
 	.loop:
 		snd_note $19, NOTELEN_06
 		snd_inc_vol -5
 		snd_inc_base_note 9
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_4B:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_4B_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 7 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 7 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_4B_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4B_Ch2:
 	snd_note $00, NOTELEN_04
 SndData_4B_Ch1:
@@ -6467,20 +6467,20 @@ SndHeader_4C:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_4C_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4C_Ch2:
 	snd_note $19, NOTELEN_01
 	snd_note $00
-	snd_status SNDX_CH4
+	snd_status SST_CH4
 	snd_note $3A, NOTELEN_03
 	snd_noise 8, 0, 0
 	snd_nrx2 8, SNDENV_DEC, 1 ; $81
@@ -6490,28 +6490,28 @@ SndHeader_4D:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123|SNDX_2 ; iSndChInfo_Status
-	db 13 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123|SST_2 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_4D_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123|SNDX_2 ; iSndChInfo_Status
-	db 10 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123|SST_2 ; iSndChInfo_Status
+	db 10 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_4D_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4D_Ch2:
 	snd_note $00, NOTELEN_03
 	snd_inc_freq_offset -1
@@ -6524,28 +6524,28 @@ SndHeader_4E:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 11 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_4E_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 8 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 8 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_4E_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4E_Ch2:
 	snd_note $00, NOTELEN_03
 	snd_inc_freq_offset -1
@@ -6553,7 +6553,7 @@ SndData_4E_Ch1:
 	snd_inc_base_note 3
 	snd_instrument INSTR_04
 	snd_vibrato VIBRATO_03
-	snd_var iSndChInfo_24, $05
+	snd_var iSndChInfo_LoopTimer0, $05
 	.loop:
 		snd_note $50, NOTELEN_04
 		snd_inc_vol 2
@@ -6564,63 +6564,63 @@ SndData_4E_Ch1:
 		snd_note $5C
 		snd_inc_base_note -1
 		snd_inc_vol -6
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_4F:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 5 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 5 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_4F_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4F_Ch2:
 	snd_noise_sweep 0, 7, 0
 	snd_sets3
 	snd_fade SSF_FADEIN, 13, 160
-	snd_var iSndChInfo_24, $19
+	snd_var iSndChInfo_LoopTimer0, $19
 	.loop:
 		snd_note $19, NOTELEN_03
 		snd_inc_base_note 2
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_50:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 14 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 14 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_50_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_50_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_50_Ch2:
 	snd_note $00, NOTELEN_03
 	snd_inc_freq_offset 1
 SndData_50_Ch1:
-	snd_note_slide SNDB_NSUP, 1
+	snd_note_slide SSE_NSUP, 1
 	snd_fade SSF_FADEOUT, 4, 48
 	.loop:
 		snd_note $31, NOTELEN_0C
@@ -6631,28 +6631,28 @@ SndHeader_51:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123|SNDX_PAUSEREST|SNDX_PRIORITY ; iSndChInfo_Status
-	db 11 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123|SST_PAUSEREST|SST_PRIORITY ; iSndChInfo_Status
+	db 11 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_51_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 11 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 11 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_51_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_51_Ch2:
 	snd_inc_freq_offset 10
 SndData_51_Ch1:
@@ -6664,18 +6664,18 @@ SndHeader_52:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_52_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_52_Ch2:
-	snd_note_slide SNDB_NSUP, 1
+	snd_note_slide SSE_NSUP, 1
 	snd_fade SSF_FADEOUT, 4, 48
 	.loop:
 		snd_note $31, NOTELEN_0C
@@ -6686,16 +6686,16 @@ SndHeader_5A:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 13 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 200 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 13 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 200 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_5A_Ch4 ; Data pointer
-	nrx1 SNDDUTY_25, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_25, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5A_Ch4:
 	snd_noise 3, 7, 0
 	snd_note $19, NOTELEN_01
@@ -6712,16 +6712,16 @@ SndHeader_5B:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_15 ; iSndChInfo_03
-	db -18 ; iSndChInfo_04
-	db 200 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_15 ; iSndChInfo_Vibrato
+	db -18 ; iSndChInfo_NoteIdBase
+	db 200 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_5B_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5B_Ch2:
 	snd_note $34, NOTELEN_03
 	snd_note $40, NOTELEN_01
@@ -6732,48 +6732,48 @@ SndHeader_5C:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH4 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_1E ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 10 ; iSndChInfo_04
-	db 220 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH4 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_1E ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 10 ; iSndChInfo_NoteIdBase
+	db 220 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_5C_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5C_Ch4:
 	snd_noise 2, 7, 0
 	snd_note $19, NOTELEN_04
 	snd_noise 0, 0, 0
-	snd_var iSndChInfo_24, $05
+	snd_var iSndChInfo_LoopTimer0, $05
 	.loop:
 		snd_note $19, NOTELEN_01
 		snd_inc_vol -3
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_5D:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 220 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 220 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_5D_Ch2 ; Data pointer
-	nrx1 SNDDUTY_25, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_25, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5D_Ch2:
-	snd_var iSndChInfo_24, $0A
+	snd_var iSndChInfo_LoopTimer0, $0A
 	.loop:
 		snd_note $19, NOTELEN_01
 		snd_note $0D
 		snd_inc_vol -2
 		snd_inc_freq_offset -24
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 	snd_noise 4, 7, 0
 	snd_noise_sweep 0, 7, SBDCH4_LFSR7 ;X
@@ -6783,20 +6783,20 @@ SndHeader_5E:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 10 ; iSndChInfo_04
-	db 220 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 10 ; iSndChInfo_NoteIdBase
+	db 220 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_5E_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5E_Ch4:
 	snd_noise 6, 7, 0
 	snd_note $19, NOTELEN_06
-	snd_var iSndChInfo_24, $04
+	snd_var iSndChInfo_LoopTimer0, $04
 	.loop:
 		snd_noise 0, 5, 0
 		snd_note $19, NOTELEN_01
@@ -6812,22 +6812,22 @@ SndData_5E_Ch4:
 		snd_noise 0, 0, 0
 		snd_note $19, NOTELEN_01
 		snd_inc_vol -2
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_5F:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123|SNDX_PAUSEREST ; iSndChInfo_Status
-	db 11 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_16 ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 90 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123|SST_PAUSEREST ; iSndChInfo_Status
+	db 11 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_16 ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 90 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_5F_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5F_Ch1:
 	snd_note $25, NOTELEN_01
 	snd_fade SSF_FADEOUT, 15, 32
@@ -6837,28 +6837,28 @@ SndHeader_60:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_17 ; iSndChInfo_03
-	db 1 ; iSndChInfo_04
-	db 100 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_17 ; iSndChInfo_Vibrato
+	db 1 ; iSndChInfo_NoteIdBase
+	db 100 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_60_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_17 ; iSndChInfo_03
-	db 1 ; iSndChInfo_04
-	db 100 ; iSndChInfo_05
-	db SNDCH_PULSE1 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_17 ; iSndChInfo_Vibrato
+	db 1 ; iSndChInfo_NoteIdBase
+	db 100 ; iSndChInfo_Speed
+	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_60_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_60_Ch2:
 	snd_note $49, NOTELEN_24
 	snd_end
@@ -6870,61 +6870,61 @@ SndHeader_61:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 220 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 220 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_61_Ch2 ; Data pointer
-	nrx1 SNDDUTY_25, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_25, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_61_Ch2:
-	snd_var iSndChInfo_24, $0F
+	snd_var iSndChInfo_LoopTimer0, $0F
 	.loop:
 		snd_note $16, NOTELEN_01
 		snd_inc_vol -1
 		snd_inc_freq_offset 8
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_62:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_62_Ch2 ; Data pointer
-	nrx1 SNDDUTY_25, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_25, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_62_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_62_Ch2:
 	snd_sets3
 	snd_note $14, NOTELEN_01
 	snd_note $24
-	snd_var iSndChInfo_24, $07
+	snd_var iSndChInfo_LoopTimer0, $07
 	.loop:
 		snd_note $42
 		snd_inc_vol -4
 		snd_note $42
 		snd_inc_vol 3
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndData_62_Ch4:
 	snd_noise 3, 7, 0
@@ -6936,16 +6936,16 @@ SndHeader_63:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -15 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -15 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_63_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_63_Ch4:
 	snd_fade SSF_FADEOUT, 0, 255
 	snd_noise 4, 7, 0
@@ -6972,78 +6972,78 @@ SndHeader_64:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT4 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -24 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -24 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_64_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_64_Ch2:
 	snd_note $45, NOTELEN_01
 	snd_note $48
 	snd_note $47
 	snd_duty SNDDUTY_25, $00
-	snd_var iSndChInfo_24, $0A
+	snd_var iSndChInfo_LoopTimer0, $0A
 	.loop:
 		snd_note $4A
 		snd_note $47
 		snd_inc_base_note -1
 		snd_inc_freq_offset -5
 		snd_inc_vol -1
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndHeader_65:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_65_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_65_Ch4:
 	snd_noise 0, 6, 0
 	snd_inc_vol -3
-	snd_var iSndChInfo_24, $02
+	snd_var iSndChInfo_LoopTimer0, $02
 	.loop0:
 		snd_note $25, NOTELEN_01
 		snd_inc_vol -4
 		snd_note $25
 		snd_inc_vol 4
-		snd_djnz iSndChInfo_24, .loop0
+		snd_djnz iSndChInfo_LoopTimer0, .loop0
 	snd_noise 0, 3, 0
 	snd_inc_vol 3
-	snd_var iSndChInfo_24, $04
+	snd_var iSndChInfo_LoopTimer0, $04
 	.loop1:
 		snd_note $25, NOTELEN_01
 		snd_inc_vol -4
 		snd_note $25
 		snd_inc_vol 4
-		snd_djnz iSndChInfo_24, .loop1
+		snd_djnz iSndChInfo_LoopTimer0, .loop1
 	snd_end
 SndHeader_66:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 12 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 12 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_66_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_66_Ch4:
 	snd_sets3
 	snd_noise 4, 2, 0
@@ -7056,28 +7056,28 @@ SndHeader_67:
 	db 2 ; Number of slots
 .slot0:
 	db SNDSLOT5 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db -12 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_PULSE2 ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db -12 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_67_Ch2 ; Data pointer
-	nrx1 SNDDUTY_25, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_25, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_67_Ch3 ; Data pointer
-	db WAVE_05 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_05 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_67_Ch3:
 	snd_note $00, NOTELEN_02
 SndData_67_Ch2:
@@ -7114,18 +7114,18 @@ SndHeader_68:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOT7 ; Slot location
-	db SNDX_CH123|SNDX_PAUSEREST ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 0 ; iSndChInfo_05
-	db SNDCH_NOISE ; iSndChInfo_06
+	db SST_CH123|SST_PAUSEREST ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 0 ; iSndChInfo_Speed
+	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_68_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_68_Ch4:
-	snd_var iSndChInfo_24, $07
+	snd_var iSndChInfo_LoopTimer0, $07
 	.loop:
 		snd_noise 3, 0, 0
 		snd_note $19, NOTELEN_01
@@ -7144,5 +7144,5 @@ SndData_68_Ch4:
 		snd_noise 4, 7, 0
 		snd_note $19
 		snd_inc_vol -2
-		snd_djnz iSndChInfo_24, .loop
+		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end

@@ -33,16 +33,16 @@ Sound_WaveTable:
 ; Table of slot presets, used by SoundDataCmd_NoteEx.
 Sound_SlotPresetTable: 
 	;  Duty | Stereo | Instrument | Vibrato/Sweep | NoiseFreq | Flags                      | Portamento Speed | Note ID | Preset ID
-	db $80,   $FF,     $10,         $00,            $50,        SNDX_CH4,                    $00,               $19     ; $C0 | PRESET_00
-	db $80,   $FF,     $0D,         $01,            $44,        SNDNPR_USECH4SWEEP|SNDX_CH4, $00,               $19     ; $C1 | PRESET_01
-	db $80,   $F0,     $0E,         $00,            $00,        SNDX_CH4,                    $00,               $19     ; $C2 | PRESET_02
-	db $80,   $F0,     $0F,         $00,            $00,        SNDX_CH4,                    $00,               $19     ; $C3 | PRESET_03
-	db $80,   $FF,     $0C,         $00,            $50,        SNDX_CH4,                    $00,               $19     ; $C4 | PRESET_04
-	db $80,   $F0,     $0C,         $00,            $50,        SNDX_CH4,                    $00,               $19     ; $C5 | PRESET_05
-	db $80,   $FF,     $0C,         $00,            $50,        SNDX_CH4,                    $00,               $19     ; $C6 | PRESET_06
-	db $80,   $0F,     $0C,         $00,            $50,        SNDX_CH4,                    $00,               $19     ; $C7 | PRESET_07
-	db $80,   $F0,     $0B,         $00,            $02,        SNDX_CH4,                    $00,               $19     ; $C8 | PRESET_08
-	db $80,   $FF,     $3A,         $00,            $02,        SNDX_CH4,                    $00,               $19     ; $C9 | PRESET_09
+	db $80,   $FF,     $10,         $00,            $50,        SST_CH4,                    $00,               $19     ; $C0 | PRESET_00
+	db $80,   $FF,     $0D,         $01,            $44,        SPR_USECH4SWEEP|SST_CH4, $00,               $19     ; $C1 | PRESET_01
+	db $80,   $F0,     $0E,         $00,            $00,        SST_CH4,                    $00,               $19     ; $C2 | PRESET_02
+	db $80,   $F0,     $0F,         $00,            $00,        SST_CH4,                    $00,               $19     ; $C3 | PRESET_03
+	db $80,   $FF,     $0C,         $00,            $50,        SST_CH4,                    $00,               $19     ; $C4 | PRESET_04
+	db $80,   $F0,     $0C,         $00,            $50,        SST_CH4,                    $00,               $19     ; $C5 | PRESET_05
+	db $80,   $FF,     $0C,         $00,            $50,        SST_CH4,                    $00,               $19     ; $C6 | PRESET_06
+	db $80,   $0F,     $0C,         $00,            $50,        SST_CH4,                    $00,               $19     ; $C7 | PRESET_07
+	db $80,   $F0,     $0B,         $00,            $02,        SST_CH4,                    $00,               $19     ; $C8 | PRESET_08
+	db $80,   $FF,     $3A,         $00,            $02,        SST_CH4,                    $00,               $19     ; $C9 | PRESET_09
 	
 ; =============== Sound_VibratoPtrTable ===============
 ; Pointers to the various Vibrato settings.
@@ -1789,16 +1789,16 @@ SndHeader_00:
 	db 1 ; Number of slots
 .slot0:
 	db SNDSLOTPAUSE ; Slot location
-	db SNDX_CH123 ; iSndChInfo_Status
-	db 15 ; iSndChInfo_01
-	db INSTR_NONE ; iSndChInfo_02
-	db VIBRATO_NONE ; iSndChInfo_03
-	db 0 ; iSndChInfo_04
-	db 160 ; iSndChInfo_05
-	db SNDCH_WAVE ; iSndChInfo_06
+	db SST_CH123 ; iSndChInfo_Status
+	db 15 ; iSndChInfo_Vol
+	db INSTR_NONE ; iSndChInfo_Instrument
+	db VIBRATO_NONE ; iSndChInfo_Vibrato
+	db 0 ; iSndChInfo_NoteIdBase
+	db 160 ; iSndChInfo_Speed
+	db SNDCH_WAVE ; iSndChInfo_ChId
 	dw SndData_00_Ch3 ; Data pointer
-	db WAVE_06 ; iSndChInfo_09
-	db SNDOUT_CHALL ; iSndChInfo_0A
+	db WAVE_06 ; iSndChInfo_DutyOrWave
+	db SNDOUT_CHALL ; iSndChInfo_Pan
 
 ; =============== Sound_SndHeaderPtrTable ===============
 ; Pointer table with sound headers, by ID.

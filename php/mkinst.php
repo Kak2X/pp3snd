@@ -30,7 +30,7 @@ foreach ($iter as $row) {
 			break;
 		case '83': // loopsh
 			$iter->next();
-			$b->w(3, "{$prefix}loop_prev_sh ".default_command($iter, $is_instrument)."{$used}");
+			$b->w(3, "{$prefix}loop_prev_cond ".default_command($iter, $is_instrument)."{$used}");
 			break;
 		case '81': // loopfar
 			$iter->next();
@@ -41,7 +41,7 @@ foreach ($iter as $row) {
 			$iter->next();
 			$offset = $iter->current();
 			$jplabel = $b->add_rel_label(-$iter->current()->as_int());
-			$b->w(4, "{$prefix}loop_far_sh {$jplabel} ".default_command($iter, $is_instrument)."{$used}");
+			$b->w(4, "{$prefix}loop_far_cond {$jplabel} ".default_command($iter, $is_instrument)."{$used}");
 			break;
 		default:
 			if ($is_instrument)

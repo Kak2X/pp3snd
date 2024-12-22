@@ -107,26 +107,26 @@ MACRO vloop_prev
 	db SNDENVCMD_LOOP
 ENDM
 
-; =============== iloop_prev_sh ===============
+; =============== iloop_prev_cond ===============
 ; Command: Sound_DoInstrument.cmdLoopCond
 ;
-; Repeats the previous command loop until the key is released.
+; Repeats the previous command until the key is released.
 ;
 ; IN (same as ivol)
 ; - 1: Length, in frames.
 ; - 2-4: nrx2 args
-MACRO iloop_prev_sh
+MACRO iloop_prev_cond
 	db SNDENVCMD_LOOPCOND
 	ivol \1,\2,\3,\4
 ENDM
 
-; =============== vloop_prev_sh ===============
+; =============== vloop_prev_cond ===============
 ; Command: Sound_DoVibrato.cmdLoopCond
 ;
-; Repeats the previous command loop until the key is released.
+; Repeats the previous command until the key is released.
 ; IN (same as vfrq)
 ; - 1: Amount (signed)
-MACRO vloop_prev_sh
+MACRO vloop_prev_cond
 	db SNDENVCMD_LOOPCOND
 	vfrq \1
 ENDM
@@ -155,7 +155,7 @@ MACRO vloop_far
 	db SNDENVCMD_LOOPFAR, (@ - \1 - 1)
 ENDM
 
-; =============== iloop_far_sh ===============
+; =============== iloop_far_cond ===============
 ; Command: Sound_DoInstrument.cmdLoopFarCond
 ;
 ; Makes the instrument loop to the specified label until the key is released.
@@ -166,12 +166,12 @@ ENDM
 ; (remaining same as ivol)
 ; - 2: Length, in frames.
 ; - 3-5: nrx2 args
-MACRO iloop_far_sh
+MACRO iloop_far_cond
 	db SNDENVCMD_LOOPFARCOND, (@ - \1 - 1)
 	ivol \2,\3,\4,\5
 ENDM
 
-; =============== vloop_far_sh ===============
+; =============== vloop_far_cond ===============
 ; Command: Sound_DoVibrato.cmdLoopFarCond
 ;
 ; Makes the vibrato loop to the specified label until the key is released.
@@ -181,380 +181,360 @@ ENDM
 ;      Must point to before current location.
 ; (remaining same as vfrq)
 ; - 2: Amount (signed)
-MACRO vloop_far_sh
+MACRO vloop_far_cond
 	db SNDENVCMD_LOOPFARCOND, (@ - \1 - 1)
 	vfrq \2
 ENDM
 
+DEF SNDSLOT0               EQU $00
+DEF SNDSLOT1               EQU $01
+DEF SNDSLOT2               EQU $02
+DEF SNDSLOT3               EQU $03
+DEF SNDSLOT4               EQU $04
+DEF SNDSLOT5               EQU $05
+DEF SNDSLOT6               EQU $06
+DEF SNDSLOT7               EQU $07
+DEF SNDSLOTPAUSE           EQU $08
 
-; h_Unk_FFE5_Flags bits (data command- related? frame specific slot flags?)
-DEF SNDDFB_KEYHOLDNEW EQU 3 ; Started holding keys this frame (first frame when SNDXB_KEYHOLD is set)
-DEF SNDDFB_TRIG EQU 5 ; Sound channel should be retriggered.
-DEF SNDDFB_NEWNOTE EQU 7 ; New note set on this frame. Used in practice to execute the Portamento setup code.
-DEF SNDDF_KEYHOLDNEW EQU 1 << SNDDFB_KEYHOLDNEW
-DEF SNDDF_TRIG EQU 1 << SNDDFB_TRIG
-DEF SNDDF_NEWNOTE EQU 1 << SNDDFB_NEWNOTE
+; NRx1
+DEF SNDDUTY_12             EQU 0
+DEF SNDDUTY_25             EQU 1
+DEF SNDDUTY_50             EQU 2
+DEF SNDDUTY_75             EQU 3
 
-DEF SNDSLOT0 EQU $00
-DEF SNDSLOT1 EQU $01
-DEF SNDSLOT2 EQU $02
-DEF SNDSLOT3 EQU $03
-DEF SNDSLOT4 EQU $04
-DEF SNDSLOT5 EQU $05
-DEF SNDSLOT6 EQU $06
-DEF SNDSLOT7 EQU $07
-DEF SNDSLOTPAUSE EQU $08
+DEF WAVE_00                EQU $00
+DEF WAVE_01                EQU $01
+DEF WAVE_02                EQU $02
+DEF WAVE_03                EQU $03
+DEF WAVE_04                EQU $04
+DEF WAVE_05                EQU $05
+DEF WAVE_06                EQU $06
+DEF WAVE_07                EQU $07
+DEF WAVE_08                EQU $08
+DEF WAVE_09                EQU $09
+DEF WAVE_0A                EQU $0A
+DEF WAVE_0B                EQU $0B
+DEF WAVE_0C                EQU $0C
+DEF WAVE_0D                EQU $0D
+DEF WAVE_0E                EQU $0E
+DEF WAVE_0F                EQU $0F
+DEF WAVE_10                EQU $10
+DEF WAVE_11                EQU $11
+DEF WAVE_12                EQU $12
+DEF WAVE_13                EQU $13
+DEF WAVE_14                EQU $14
 
-; NRx1, gb-like
-DEF SNDDUTY_12 EQU 0
-DEF SNDDUTY_25 EQU 1
-DEF SNDDUTY_50 EQU 2
-DEF SNDDUTY_75 EQU 3
+DEF VIBRATO_NONE           EQU $00
+DEF VIBRATO_01             EQU $01
+DEF VIBRATO_02             EQU $02
+DEF VIBRATO_03             EQU $03
+DEF VIBRATO_04             EQU $04
+DEF VIBRATO_05             EQU $05
+DEF VIBRATO_06             EQU $06
+DEF VIBRATO_07             EQU $07
+DEF VIBRATO_08             EQU $08
+DEF VIBRATO_09             EQU $09
+DEF VIBRATO_0A             EQU $0A
+DEF VIBRATO_0B             EQU $0B
+DEF VIBRATO_0C             EQU $0C
+DEF VIBRATO_0D             EQU $0D
+DEF VIBRATO_0E             EQU $0E
+DEF VIBRATO_0F             EQU $0F
+DEF VIBRATO_10             EQU $10
+DEF VIBRATO_11             EQU $11
+DEF VIBRATO_12             EQU $12
+DEF VIBRATO_13             EQU $13
+DEF VIBRATO_14             EQU $14
+DEF VIBRATO_15             EQU $15
+DEF VIBRATO_16             EQU $16
+DEF VIBRATO_17             EQU $17
+DEF VIBRATO_18             EQU $18
+DEF VIBRATO_19             EQU $19
+DEF VIBRATO_1A             EQU $1A
+DEF VIBRATO_1B             EQU $1B
+DEF VIBRATO_1C             EQU $1C
+DEF VIBRATO_1D             EQU $1D
+DEF VIBRATO_1E             EQU $1E
+DEF VIBRATO_1F             EQU $1F
+DEF VIBRATO_20             EQU $20
+DEF VIBRATO_21             EQU $21
+DEF VIBRATO_22             EQU $22
+DEF VIBRATO_23             EQU $23
+DEF VIBRATO_24             EQU $24
+DEF VIBRATO_25             EQU $25
+DEF VIBRATO_26             EQU $26
+DEF VIBRATO_27             EQU $27
+DEF VIBRATO_28             EQU $28
+DEF VIBRATO_29             EQU $29
+DEF VIBRATO_2A             EQU $2A
+DEF VIBRATO_2B             EQU $2B
+DEF VIBRATO_2C             EQU $2C
+DEF VIBRATO_2D             EQU $2D
+DEF VIBRATO_2E             EQU $2E
+DEF VIBRATO_2F             EQU $2F
+DEF VIBRATO_30             EQU $30
+DEF VIBRATO_31             EQU $31
+DEF VIBRATO_32             EQU $32
+DEF VIBRATO_33             EQU $33
+DEF VIBRATO_34             EQU $34
+DEF VIBRATO_35             EQU $35
+DEF VIBRATO_36             EQU $36
+DEF VIBRATO_37             EQU $37
+DEF VIBRATO_38             EQU $38
+DEF VIBRATO_39             EQU $39
+DEF VIBRATO_3A             EQU $3A
+DEF VIBRATO_3B             EQU $3B
+DEF VIBRATO_3C             EQU $3C
+DEF VIBRATO_3D             EQU $3D
+DEF VIBRATO_3E             EQU $3E
+DEF VIBRATO_3F             EQU $3F
+DEF VIBRATO_40             EQU $40
+DEF VIBRATO_41             EQU $41
+DEF VIBRATO_42             EQU $42
+DEF VIBRATO_43             EQU $43
+DEF VIBRATO_44             EQU $44
+DEF VIBRATO_45             EQU $45
+DEF VIBRATO_46             EQU $46
+DEF VIBRATO_47             EQU $47
+DEF VIBRATO_48             EQU $48
+DEF VIBRATO_49             EQU $49
+DEF VIBRATO_4A             EQU $4A
+DEF VIBRATO_4B             EQU $4B
+DEF VIBRATO_4C             EQU $4C
+DEF VIBRATO_4D             EQU $4D
+DEF VIBRATO_4E             EQU $4E
+DEF VIBRATO_4F             EQU $4F
+DEF VIBRATO_50             EQU $50
+DEF VIBRATO_51             EQU $51
+DEF VIBRATO_52             EQU $52
+DEF VIBRATO_53             EQU $53
+DEF VIBRATO_54             EQU $54
+DEF VIBRATO_55             EQU $55
+DEF VIBRATO_56             EQU $56
+DEF VIBRATO_57             EQU $57
+DEF VIBRATO_58             EQU $58
+DEF VIBRATO_59             EQU $59
+DEF VIBRATO_5A             EQU $5A
+DEF VIBRATO_5B             EQU $5B
+DEF VIBRATO_5C             EQU $5C
+DEF VIBRATO_5D             EQU $5D
+DEF VIBRATO_5E             EQU $5E
+DEF VIBRATO_5F             EQU $5F
+DEF VIBRATO_60             EQU $60
+DEF VIBRATO_61             EQU $61
+DEF VIBRATO_62             EQU $62
+DEF VIBRATO_63             EQU $63
+DEF VIBRATO_64             EQU $64
+DEF VIBRATO_65             EQU $65
+DEF VIBRATO_66             EQU $66
+DEF VIBRATO_67             EQU $67
+DEF VIBRATO_68             EQU $68
+DEF VIBRATO_69             EQU $69
+DEF VIBRATO_6A             EQU $6A
+DEF VIBRATO_6B             EQU $6B
+DEF VIBRATO_6C             EQU $6C
+DEF VIBRATO_6D             EQU $6D
+DEF VIBRATO_6E             EQU $6E
+DEF VIBRATO_6F             EQU $6F
+DEF VIBRATO_70             EQU $70
+DEF VIBRATO_71             EQU $71
+DEF VIBRATO_72             EQU $72
+DEF VIBRATO_73             EQU $73
+DEF VIBRATO_74             EQU $74
+DEF VIBRATO_75             EQU $75
+DEF VIBRATO_76             EQU $76
+DEF VIBRATO_77             EQU $77
+DEF VIBRATO_78             EQU $78
+DEF VIBRATO_79             EQU $79
+DEF VIBRATO_7A             EQU $7A
+DEF VIBRATO_7B             EQU $7B
+DEF VIBRATO_7C             EQU $7C
+DEF VIBRATO_7D             EQU $7D
+DEF VIBRATO_7E             EQU $7E
+DEF VIBRATO_7F             EQU $7F
 
-; NR32, rearranged
-DEF SNDCH3VOL_000 EQU 0
-DEF SNDCH3VOL_025 EQU 1
-DEF SNDCH3VOL_050 EQU 2
-DEF SNDCH3VOL_100 EQU 3
+;                                  ; Used in channels...
+DEF INSTR_NONE             EQU $00
+DEF INSTR_01               EQU $01 ; 3
+DEF INSTR_02               EQU $02 ; 2
+DEF INSTR_03               EQU $03 ; 1 2
+DEF INSTR_04               EQU $04 ; 1
+DEF INSTR_05               EQU $05 ; 1 2 3
+DEF INSTR_06               EQU $06 ; 1
+DEF INSTR_07               EQU $07 ; 1 2
+DEF INSTR_08               EQU $08 ; 1 3
+DEF INSTR_09               EQU $09 ; 1 2
+DEF INSTR_0A               EQU $0A ; 1 2
+DEF INSTR_0B               EQU $0B ; 1 2
+DEF INSTR_11               EQU $11 ; 1 2
+DEF INSTR_12               EQU $12 ; 1 2
+DEF INSTR_13               EQU $13 ; 2 3
+DEF INSTR_15               EQU $15 ; 1 2
+DEF INSTR_16               EQU $16 ; 2
+DEF INSTR_17               EQU $17 ; 1 2
+DEF INSTR_18               EQU $18 ; 3 2
+DEF INSTR_19               EQU $19 ; 2
+DEF INSTR_1B               EQU $1B ; 3
+DEF INSTR_1E               EQU $1E ; 4
+DEF INSTR_2E               EQU $2E ; 1 2 3
+DEF INSTR_2F               EQU $2F ; 1
+DEF INSTR_30               EQU $30 ; 1 3
+DEF INSTR_31               EQU $31 ; 1
+DEF INSTR_32               EQU $32 ; 3
+DEF INSTR_33               EQU $33 ; 1 2 3
+DEF INSTR_34               EQU $34 ; 1 2 3
+DEF INSTR_35               EQU $35 ; 1
+DEF INSTR_36               EQU $36 ; 1 2
+DEF INSTR_37               EQU $37 ; 1
+DEF INSTR_38               EQU $38 ; 1 2
+DEF INSTR_39               EQU $39 ; 1
+DEF INSTR_3B               EQU $3B ; 1
+DEF INSTR_3C               EQU $3C ; 2
+DEF INSTR_3D               EQU $3D ; 1 2 3
+DEF INSTR_3E               EQU $3E ; 1 2 3
+DEF INSTR_40               EQU $40 ; 2 3
+DEF INSTR_41               EQU $41 ; 1 2
+DEF INSTR_42               EQU $42 ; 3
+DEF INSTR_56               EQU $56 ; 1 3
+DEF INSTR_57               EQU $57 ; 2
+DEF INSTR_58               EQU $58 ; 1
+DEF INSTR_5A               EQU $5A ; 2
+DEF INSTR_5B               EQU $5B ; 1 2
+DEF INSTR_5C               EQU $5C ; 1 2
+DEF INSTR_5D               EQU $5D ; 1
+DEF INSTR_5E               EQU $5E ; 1
+DEF INSTR_5F               EQU $5F ; 1
+DEF INSTR_60               EQU $60 ; 1
+DEF INSTR_61               EQU $61 ; 2
+DEF INSTR_62               EQU $62 ; 3
+DEF INSTR_63               EQU $63 ; 3
+DEF INSTR_65               EQU $65 ; 1 2
+DEF INSTR_67               EQU $67 ; 2
+DEF INSTR_68               EQU $68 ; 1 2
+DEF INSTR_69               EQU $69 ; 1 2
+DEF INSTR_6A               EQU $6A ; 1 2
+DEF INSTR_6B               EQU $6B ; 3
+DEF INSTR_6D               EQU $6D ; 2
+DEF INSTR_6E               EQU $6E ; 1
+DEF INSTR_6F               EQU $6F ; 1
+DEF INSTR_70               EQU $70 ; 1
+DEF INSTR_71               EQU $71 ; 1
+DEF INSTR_73               EQU $73 ; 1
 
-DEF WAVE_00 EQU $00
-DEF WAVE_01 EQU $01
-DEF WAVE_02 EQU $02
-DEF WAVE_03 EQU $03
-DEF WAVE_04 EQU $04
-DEF WAVE_05 EQU $05
-DEF WAVE_06 EQU $06
-DEF WAVE_07 EQU $07
-DEF WAVE_08 EQU $08
-DEF WAVE_09 EQU $09
-DEF WAVE_0A EQU $0A
-DEF WAVE_0B EQU $0B
-DEF WAVE_0C EQU $0C
-DEF WAVE_0D EQU $0D
-DEF WAVE_0E EQU $0E
-DEF WAVE_0F EQU $0F
-DEF WAVE_10 EQU $10
-DEF WAVE_11 EQU $11
-DEF WAVE_12 EQU $12
-DEF WAVE_13 EQU $13
-DEF WAVE_14 EQU $14
+DEF PRESET_00              EQU $C0
+DEF PRESET_01              EQU $C1
+DEF PRESET_02              EQU $C2
+DEF PRESET_03              EQU $C3
+DEF PRESET_04              EQU $C4
+DEF PRESET_05              EQU $C5
+DEF PRESET_06              EQU $C6
+DEF PRESET_07              EQU $C7
+DEF PRESET_08              EQU $C8
+DEF PRESET_09              EQU $C9
 
-DEF VIBRATO_NONE EQU $00
-DEF VIBRATO_01 EQU $01
-DEF VIBRATO_02 EQU $02
-DEF VIBRATO_03 EQU $03
-DEF VIBRATO_04 EQU $04
-DEF VIBRATO_05 EQU $05
-DEF VIBRATO_06 EQU $06
-DEF VIBRATO_07 EQU $07
-DEF VIBRATO_08 EQU $08
-DEF VIBRATO_09 EQU $09
-DEF VIBRATO_0A EQU $0A
-DEF VIBRATO_0B EQU $0B
-DEF VIBRATO_0C EQU $0C
-DEF VIBRATO_0D EQU $0D
-DEF VIBRATO_0E EQU $0E
-DEF VIBRATO_0F EQU $0F
-DEF VIBRATO_10 EQU $10
-DEF VIBRATO_11 EQU $11
-DEF VIBRATO_12 EQU $12
-DEF VIBRATO_13 EQU $13
-DEF VIBRATO_14 EQU $14
-DEF VIBRATO_15 EQU $15
-DEF VIBRATO_16 EQU $16
-DEF VIBRATO_17 EQU $17
-DEF VIBRATO_18 EQU $18
-DEF VIBRATO_19 EQU $19
-DEF VIBRATO_1A EQU $1A
-DEF VIBRATO_1B EQU $1B
-DEF VIBRATO_1C EQU $1C
-DEF VIBRATO_1D EQU $1D
-DEF VIBRATO_1E EQU $1E
-DEF VIBRATO_1F EQU $1F
-DEF VIBRATO_20 EQU $20
-DEF VIBRATO_21 EQU $21
-DEF VIBRATO_22 EQU $22
-DEF VIBRATO_23 EQU $23
-DEF VIBRATO_24 EQU $24
-DEF VIBRATO_25 EQU $25
-DEF VIBRATO_26 EQU $26
-DEF VIBRATO_27 EQU $27
-DEF VIBRATO_28 EQU $28
-DEF VIBRATO_29 EQU $29
-DEF VIBRATO_2A EQU $2A
-DEF VIBRATO_2B EQU $2B
-DEF VIBRATO_2C EQU $2C
-DEF VIBRATO_2D EQU $2D
-DEF VIBRATO_2E EQU $2E
-DEF VIBRATO_2F EQU $2F
-DEF VIBRATO_30 EQU $30
-DEF VIBRATO_31 EQU $31
-DEF VIBRATO_32 EQU $32
-DEF VIBRATO_33 EQU $33
-DEF VIBRATO_34 EQU $34
-DEF VIBRATO_35 EQU $35
-DEF VIBRATO_36 EQU $36
-DEF VIBRATO_37 EQU $37
-DEF VIBRATO_38 EQU $38
-DEF VIBRATO_39 EQU $39
-DEF VIBRATO_3A EQU $3A
-DEF VIBRATO_3B EQU $3B
-DEF VIBRATO_3C EQU $3C
-DEF VIBRATO_3D EQU $3D
-DEF VIBRATO_3E EQU $3E
-DEF VIBRATO_3F EQU $3F
-DEF VIBRATO_40 EQU $40
-DEF VIBRATO_41 EQU $41
-DEF VIBRATO_42 EQU $42
-DEF VIBRATO_43 EQU $43
-DEF VIBRATO_44 EQU $44
-DEF VIBRATO_45 EQU $45
-DEF VIBRATO_46 EQU $46
-DEF VIBRATO_47 EQU $47
-DEF VIBRATO_48 EQU $48
-DEF VIBRATO_49 EQU $49
-DEF VIBRATO_4A EQU $4A
-DEF VIBRATO_4B EQU $4B
-DEF VIBRATO_4C EQU $4C
-DEF VIBRATO_4D EQU $4D
-DEF VIBRATO_4E EQU $4E
-DEF VIBRATO_4F EQU $4F
-DEF VIBRATO_50 EQU $50
-DEF VIBRATO_51 EQU $51
-DEF VIBRATO_52 EQU $52
-DEF VIBRATO_53 EQU $53
-DEF VIBRATO_54 EQU $54
-DEF VIBRATO_55 EQU $55
-DEF VIBRATO_56 EQU $56
-DEF VIBRATO_57 EQU $57
-DEF VIBRATO_58 EQU $58
-DEF VIBRATO_59 EQU $59
-DEF VIBRATO_5A EQU $5A
-DEF VIBRATO_5B EQU $5B
-DEF VIBRATO_5C EQU $5C
-DEF VIBRATO_5D EQU $5D
-DEF VIBRATO_5E EQU $5E
-DEF VIBRATO_5F EQU $5F
-DEF VIBRATO_60 EQU $60
-DEF VIBRATO_61 EQU $61
-DEF VIBRATO_62 EQU $62
-DEF VIBRATO_63 EQU $63
-DEF VIBRATO_64 EQU $64
-DEF VIBRATO_65 EQU $65
-DEF VIBRATO_66 EQU $66
-DEF VIBRATO_67 EQU $67
-DEF VIBRATO_68 EQU $68
-DEF VIBRATO_69 EQU $69
-DEF VIBRATO_6A EQU $6A
-DEF VIBRATO_6B EQU $6B
-DEF VIBRATO_6C EQU $6C
-DEF VIBRATO_6D EQU $6D
-DEF VIBRATO_6E EQU $6E
-DEF VIBRATO_6F EQU $6F
-DEF VIBRATO_70 EQU $70
-DEF VIBRATO_71 EQU $71
-DEF VIBRATO_72 EQU $72
-DEF VIBRATO_73 EQU $73
-DEF VIBRATO_74 EQU $74
-DEF VIBRATO_75 EQU $75
-DEF VIBRATO_76 EQU $76
-DEF VIBRATO_77 EQU $77
-DEF VIBRATO_78 EQU $78
-DEF VIBRATO_79 EQU $79
-DEF VIBRATO_7A EQU $7A
-DEF VIBRATO_7B EQU $7B
-DEF VIBRATO_7C EQU $7C
-DEF VIBRATO_7D EQU $7D
-DEF VIBRATO_7E EQU $7E
-DEF VIBRATO_7F EQU $7F
+;   VAL                            | ENCODED IN COMMAND's byte1
+DEF NOTELEN_CUSTOM         EQU $00
+DEF NOTELEN_01             EQU $01 ; $F0 or $DF
+DEF NOTELEN_02             EQU $02 ; $F1 or $E0
+DEF NOTELEN_03             EQU $03 ; $F2 or $E1
+DEF NOTELEN_04             EQU $04 ; $F3 or $E2
+DEF NOTELEN_06             EQU $05 ; $F4 or $E3
+DEF NOTELEN_08             EQU $06 ; $F5 or $E4
+DEF NOTELEN_0C             EQU $07 ; $F6 or $E5
+DEF NOTELEN_10             EQU $08 ; $F7 or $E6
+DEF NOTELEN_18             EQU $09 ; $F8 or $E7
+DEF NOTELEN_20             EQU $0A ; $F9 or $E8
+DEF NOTELEN_30             EQU $0B ; $FA or $E9
+DEF NOTELEN_09             EQU $0C ; $FB or $EA
+DEF NOTELEN_12             EQU $0D ; $FC or $EB
+DEF NOTELEN_1E             EQU $0E ; $FD or $EC
+DEF NOTELEN_24             EQU $0F ; $FE or $ED
+DEF NOTELEN_2A             EQU $10 ; $FF or $EE
+DEF NOTELENARG_LENGTH      EQU $11 ; Range of valid values for the note length parameter (SNDDATACMD_NOTE & supersets)
 
-;                    ; Used in channels...
-DEF INSTR_NONE EQU $00
-DEF INSTR_01 EQU $01 ; 3
-DEF INSTR_02 EQU $02 ; 2
-DEF INSTR_03 EQU $03 ; 1 2
-DEF INSTR_04 EQU $04 ; 1
-DEF INSTR_05 EQU $05 ; 1 2 3
-DEF INSTR_06 EQU $06 ; 1
-DEF INSTR_07 EQU $07 ; 1 2
-DEF INSTR_08 EQU $08 ; 1 3
-DEF INSTR_09 EQU $09 ; 1 2
-DEF INSTR_0A EQU $0A ; 1 2
-DEF INSTR_0B EQU $0B ; 1 2
-DEF INSTR_11 EQU $11 ; 1 2
-DEF INSTR_12 EQU $12 ; 1 2
-DEF INSTR_13 EQU $13 ; 2 3
-DEF INSTR_15 EQU $15 ; 1 2
-DEF INSTR_16 EQU $16 ; 2
-DEF INSTR_17 EQU $17 ; 1 2
-DEF INSTR_18 EQU $18 ; 3 2
-DEF INSTR_19 EQU $19 ; 2
-DEF INSTR_1B EQU $1B ; 3
-DEF INSTR_1E EQU $1E ; 4
-DEF INSTR_2E EQU $2E ; 1 2 3
-DEF INSTR_2F EQU $2F ; 1
-DEF INSTR_30 EQU $30 ; 1 3
-DEF INSTR_31 EQU $31 ; 1
-DEF INSTR_32 EQU $32 ; 3
-DEF INSTR_33 EQU $33 ; 1 2 3
-DEF INSTR_34 EQU $34 ; 1 2 3
-DEF INSTR_35 EQU $35 ; 1
-DEF INSTR_36 EQU $36 ; 1 2
-DEF INSTR_37 EQU $37 ; 1
-DEF INSTR_38 EQU $38 ; 1 2
-DEF INSTR_39 EQU $39 ; 1
-DEF INSTR_3B EQU $3B ; 1
-DEF INSTR_3C EQU $3C ; 2
-DEF INSTR_3D EQU $3D ; 1 2 3
-DEF INSTR_3E EQU $3E ; 1 2 3
-DEF INSTR_40 EQU $40 ; 2 3
-DEF INSTR_41 EQU $41 ; 1 2
-DEF INSTR_42 EQU $42 ; 3
-DEF INSTR_56 EQU $56 ; 1 3
-DEF INSTR_57 EQU $57 ; 2
-DEF INSTR_58 EQU $58 ; 1
-DEF INSTR_5A EQU $5A ; 2
-DEF INSTR_5B EQU $5B ; 1 2
-DEF INSTR_5C EQU $5C ; 1 2
-DEF INSTR_5D EQU $5D ; 1
-DEF INSTR_5E EQU $5E ; 1
-DEF INSTR_5F EQU $5F ; 1
-DEF INSTR_60 EQU $60 ; 1
-DEF INSTR_61 EQU $61 ; 2
-DEF INSTR_62 EQU $62 ; 3
-DEF INSTR_63 EQU $63 ; 3
-DEF INSTR_65 EQU $65 ; 1 2
-DEF INSTR_67 EQU $67 ; 2
-DEF INSTR_68 EQU $68 ; 1 2
-DEF INSTR_69 EQU $69 ; 1 2
-DEF INSTR_6A EQU $6A ; 1 2
-DEF INSTR_6B EQU $6B ; 3
-DEF INSTR_6D EQU $6D ; 2
-DEF INSTR_6E EQU $6E ; 1
-DEF INSTR_6F EQU $6F ; 1
-DEF INSTR_70 EQU $70 ; 1
-DEF INSTR_71 EQU $71 ; 1
-DEF INSTR_73 EQU $73 ; 1
+; iSndChInfo_ChId
+DEF SNDCH_PULSE1           EQU $00
+DEF SNDCH_PULSE2           EQU $01
+DEF SNDCH_WAVE             EQU $02
+DEF SNDCH_NOISE            EQU $03
 
-DEF PRESET_00 EQU $C0
-DEF PRESET_01 EQU $C1
-DEF PRESET_02 EQU $C2
-DEF PRESET_03 EQU $C3
-DEF PRESET_04 EQU $C4
-DEF PRESET_05 EQU $C5
-DEF PRESET_06 EQU $C6
-DEF PRESET_07 EQU $C7
-DEF PRESET_08 EQU $C8
-DEF PRESET_09 EQU $C9
+; iSndChInfo_Vibrato
+DEF SVBB_SET               EQU 7 ; If set, iSndChInfo_Vibrato should be treated as NR10 data. Otherwise, it's a Vibrato ID.
+DEF SVB_SET                EQU 1 << SVBB_SET
 
-	;  VAL   |  ID | ENCODED IN COMMAND's byte1
-DEF NOTELEN_CUSTOM EQU $00
-DEF NOTELEN_01 EQU $01 ;; ;;, ;;| $F0 or $DF
-DEF NOTELEN_02 EQU $02 ;; ;;, ;;| $F1 or $E0
-DEF NOTELEN_03 EQU $03 ;; ;;, ;;| $F2 or $E1
-DEF NOTELEN_04 EQU $04 ;; ;;, ;;| $F3 or $E2
-DEF NOTELEN_06 EQU $05 ;; ;;, ;;| $F4 or $E3
-DEF NOTELEN_08 EQU $06 ;; ;;, ;;| $F5 or $E4
-DEF NOTELEN_0C EQU $07 ;; ;;, ;;| $F6 or $E5
-DEF NOTELEN_10 EQU $08 ;; ;;, ;;| $F7 or $E6
-DEF NOTELEN_18 EQU $09 ;; ;;, ;;| $F8 or $E7
-DEF NOTELEN_20 EQU $0A ;; ;;, ;;| $F9 or $E8
-DEF NOTELEN_30 EQU $0B ;; ;;, ;;| $FA or $E9
-DEF NOTELEN_09 EQU $0C ;; ;;, ;;| $FB or $EA
-DEF NOTELEN_12 EQU $0D ;; ;;, ;;| $FC or $EB
-DEF NOTELEN_1E EQU $0E ;; ;;, ;;| $FD or $EC
-DEF NOTELEN_24 EQU $0F ;; ;;, ;;| $FE or $ED
-DEF NOTELEN_2A EQU $10 ;; ;;, ;;| $FF or $EE
-DEF NOTELENARG_LENGTH EQU $11 ; Range of valid values for the note length parameter (SNDDATACMD_NOTE & supersets)
+; wSndFlags - Sound driver flags
+DEF SDTB_EXEC              EQU 0 ; Marks the sound driver as being executed.
+DEF SDTB_PAUSE             EQU 1 ; Sound driver paused. Only SNDSLOTPAUSE / wSndChInfoEx0 can play.
+DEF SDTB_PCMON             EQU 2 ; PCM enabled
+DEF SDTB_FADEOUT           EQU 4 ; Fade in or out?
+DEF SDTB_FADE              EQU 5 ; Fade enabled (all slots)
+DEF SDT_EXEC               EQU 1 << SDTB_EXEC
+DEF SDT_PAUSE              EQU 1 << SDTB_PAUSE
+DEF SDT_PCMON              EQU 1 << SDTB_PCMON
+DEF SDT_FADEOUT            EQU 1 << SDTB_FADEOUT
+DEF SDT_FADE               EQU 1 << SDTB_FADE
 
-; iSndChInfo_06
-DEF SNDCH_PULSE1 EQU $00
-DEF SNDCH_PULSE2 EQU $01
-DEF SNDCH_WAVE   EQU $02
-DEF SNDCH_NOISE  EQU $03
+; hSndChInfoNewFlags - Temporary slot flags only valid this frame
+DEF SFNB_KEYHOLDNEW        EQU 3 ; Started holding keys this frame (first frame when SSTB_KEYHOLD is set)
+DEF SFNB_TRIG              EQU 5 ; Sound channel should be retriggered.
+DEF SFNB_NEWNOTE           EQU 7 ; New note set on this frame. Used in practice to execute the Portamento setup code.
+DEF SFN_KEYHOLDNEW         EQU 1 << SFNB_KEYHOLDNEW
+DEF SFN_TRIG               EQU 1 << SFNB_TRIG
+DEF SFN_NEWNOTE            EQU 1 << SFNB_NEWNOTE
 
-; iSndChInfo_03
-DEF SNDSWB_SET   EQU 7 ; If set, iSndChInfo_03 should be treated as NR10 data. Otherwise, it's a Vibrato ID.
-DEF SNDSW_SET    EQU 1 << SNDSWB_SET
+; iSndChInfo_Status - Slot status
+DEF SSTB_CH123             EQU 0 ; Slot contains channel 1-3 data
+DEF SSTB_CH4               EQU 1 ; Slot contains channel 4 data 
+DEF SSTB_2                 EQU 2 ; Unused
+DEF SSTB_3                 EQU 3 ; Unused
+DEF SSTB_KEYHOLD           EQU 4 ; Forces the key to be held (never unset SSEB_KEYON)
+DEF SSTB_PAUSEREST         EQU 5 ; Pause BGM while playing this (if set, pause lower priority slots)
+DEF SSTB_PRIORITY          EQU 6 ; Slot has high priority
+DEF SSTB_7                 EQU 7 ; Unused
+DEF SST_CH123              EQU 1 << SSTB_CH123
+DEF SST_CH4                EQU 1 << SSTB_CH4
+DEF SST_2                  EQU 1 << SSTB_2
+DEF SST_3                  EQU 1 << SSTB_3
+DEF SST_KEYHOLD            EQU 1 << SSTB_KEYHOLD
+DEF SST_PAUSEREST          EQU 1 << SSTB_PAUSEREST
+DEF SST_PRIORITY           EQU 1 << SSTB_PRIORITY
+DEF SST_7                  EQU 1 << SSTB_7
 
+; iSndChInfo_FxFlags0
+DEF SSEB_FADEDONE          EQU 1 ; Marks if the slot fade is finished
+DEF SSEB_KEYON             EQU 2 ; If set, the key is being pressed. Instrument data can loop until the key is released.
+DEF SSEB_USEFADEVOL        EQU 3 ; Use the faded volume. Must be set to actually hear the fade.
+DEF SSEB_FADEOUT           EQU 4 ; Fade in or out
+DEF SSEB_FADE              EQU 5 ; Fade enabled (current slot)
+DEF SSEB_NSUP              EQU 6 ; Portamento direction (if set, slide notes up)
+DEF SSEB_NS                EQU 7 ; Portamento enabled
 
-; wSnd_D011_Flags
-;DEF SNDYB_1 EQU 1
-;DEF SNDYB_4 EQU 4
-;DEF SNDYB_5 EQU 5
-;DEF SNDY_1 EQU 1 << SNDYB_1
-;DEF SNDY_4 EQU 1 << SNDYB_4
-;DEF SNDY_5 EQU 1 << SNDYB_5
-DEF SNDFB1_EXEC EQU 0 ; Marks the sound driver as being executed.
-DEF SNDFB1_PAUSE EQU 1
-DEF SNDFB1_PCMON EQU 2 ; PCM enabled
-DEF SNDFB1_3 EQU 3
-DEF SNDFB1_FADEOUT EQU 4 ; Fade in or out?
-DEF SNDFB1_FADE EQU 5 ; Fade enabled (all slots)
-DEF SNDFB1_6 EQU 6
-DEF SNDFB1_7 EQU 7
-DEF SNDF1_EXEC EQU 1 << SNDFB1_EXEC
-DEF SNDF1_PAUSE EQU 1 << SNDFB1_PAUSE
-DEF SNDF1_PCMON EQU 1 << SNDFB1_PCMON
-DEF SNDF1_3 EQU 1 << SNDFB1_3
-DEF SNDF1_FADEOUT EQU 1 << SNDFB1_FADEOUT
-DEF SNDF1_FADE EQU 1 << SNDFB1_FADE
-DEF SNDF1_6 EQU 1 << SNDFB1_6
-DEF SNDF1_7 EQU 1 << SNDFB1_7
+DEF SSE_FADEDONE           EQU 1 << SSEB_FADEDONE
+DEF SSE_KEYON              EQU 1 << SSEB_KEYON
+DEF SSE_USEFADEVOL         EQU 1 << SSEB_USEFADEVOL
+DEF SSE_FADEOUT            EQU 1 << SSEB_FADEOUT
+DEF SSE_FADE               EQU 1 << SSEB_FADE
+DEF SSE_NSUP               EQU 1 << SSEB_NSUP
+DEF SSE_NS                 EQU 1 << SSEB_NS
+DEF SSE_NSDOWN             EQU 0
 
-; iSndChInfo_Status flags
-DEF SNDXB_CH123 EQU 0 ; Slot contains channels 1-3 data
-DEF SNDXB_CH4 EQU 1 ; Slot contains channel 4 data 
-DEF SNDXB_2 EQU 2 ; Unused
-DEF SNDXB_3 EQU 3 ; Unused
-DEF SNDXB_KEYHOLD EQU 4 ; Forces the key to be held (never unset SNDBB_KEYON)
-DEF SNDXB_PAUSEREST EQU 5 ; Pause BGM while playing this (if set, pause lower priority slots)
-DEF SNDXB_PRIORITY EQU 6 ; Slot has high priority
-DEF SNDXB_7 EQU 7 ; Unused
-DEF SNDX_CH123 EQU 1 << SNDXB_CH123
-DEF SNDX_CH4 EQU 1 << SNDXB_CH4
-DEF SNDX_2 EQU 1 << SNDXB_2
-DEF SNDX_3 EQU 1 << SNDXB_3
-DEF SNDX_KEYHOLD EQU 1 << SNDXB_KEYHOLD
-DEF SNDX_PAUSEREST EQU 1 << SNDXB_PAUSEREST
-DEF SNDX_PRIORITY EQU 1 << SNDXB_PRIORITY
-DEF SNDX_7 EQU 1 << SNDXB_7
+; iSndChInfo_FxFlags1
+DEF SSEB_PITCHBEND         EQU 0 ; Enable pitch bend
+DEF SSEB_PCM               EQU 5 ; PCM played in slot
+DEF SSEB_MUTED             EQU 6 ; Slot is processed but won't play audio
 
-; iSndChInfo_0B flags
-DEF SNDBB_FADEDONE   EQU 1 ; Marks if the slot fade is finished
-DEF SNDBB_KEYON      EQU 2 ; If set, the key is being pressed. Instrument data can loop until the key is released.
-DEF SNDBB_USEFADEVOL EQU 3 ; Use the faded volume. Must be set to actually hear the fade.
-DEF SNDBB_FADEOUT    EQU 4 ; Fade in or out
-DEF SNDBB_FADE       EQU 5 ; Fade enabled (current slot)
-DEF SNDBB_NSUP       EQU 6 ; Portamento direction (if set, slide notes up)
-DEF SNDBB_NS         EQU 7 ; Portamento enabled
-
-DEF SNDB_FADEDONE    EQU 1 << SNDBB_FADEDONE
-DEF SNDB_KEYON       EQU 1 << SNDBB_KEYON
-DEF SNDB_USEFADEVOL  EQU 1 << SNDBB_USEFADEVOL
-DEF SNDB_FADEOUT     EQU 1 << SNDBB_FADEOUT
-DEF SNDB_FADE        EQU 1 << SNDBB_FADE
-DEF SNDB_NSUP        EQU 1 << SNDBB_NSUP
-DEF SNDB_NS          EQU 1 << SNDBB_NS
-DEF SNDB_NSDOWN      EQU 0
-
-; iSndChInfo_0C flags
-DEF SNDCB_PITCHBEND EQU 0 ; Enable pitch bend
-DEF SNDCB_PCM EQU 5 ; PCM played in slot
-DEF SNDCB_MUTED EQU 6 ; Slot is processed but won't play audio
-
-; iSndChInfo_14
-DEF SND14B_END EQU 7 ; If set, the key release timing is relative to the end of the note. Otherwise, it's to the start.
-DEF SND14_END  EQU 1 << SND14B_END
+; iSndChInfo_KeyRelTarget
+DEF STGB_END               EQU 7 ; If set, the key release timing is relative to the end of the note. Otherwise, it's to the start.
+DEF STG_END                EQU 1 << STGB_END
 
 
 ; SOUND VIBRATO/INSTRUMENT DATA COMMANDS
-DEF SECB_SPEC_START       EQU 7
-DEF SNDENVCMD_LOOP        EQU $80
-DEF SNDENVCMD_LOOPFAR     EQU $81
-DEF SNDENVCMD_RESET       EQU $82
-DEF SNDENVCMD_LOOPCOND    EQU $83
-DEF SNDENVCMD_LOOPFARCOND EQU $84
+DEF SECB_SPEC_START        EQU 7
+DEF SNDENVCMD_LOOP         EQU $80
+DEF SNDENVCMD_LOOPFAR      EQU $81
+DEF SNDENVCMD_RESET        EQU $82
+DEF SNDENVCMD_LOOPCOND     EQU $83
+DEF SNDENVCMD_LOOPFARCOND  EQU $84
 
 ; SOUND ID COMMANDS
 DEF SNDCMD_START           EQU $F0
@@ -589,7 +569,7 @@ ENDM
 ;
 ; IN
 ; - 1: Slot struct offset
-;      This contains the timer, mostly points to iSndChInfo_24
+;      This contains the timer, mostly points to iSndChInfo_LoopTimer0
 ; - 2: Target location if the jump is taken
 MACRO snd_djnz
 	db SNDDATACMD_DJNZ, \1
@@ -621,7 +601,7 @@ ENDM
 ; IN
 ; - 1: NR10 sweep data
 MACRO snd_pulse1_sweep
-	db SNDDATACMD_VIBRATO, SNDSW_SET|\1
+	db SNDDATACMD_VIBRATO, SVB_SET|\1
 ENDM
 
 ; =============== snd_pitchbend ===============
@@ -835,7 +815,7 @@ ENDM
 ; Enables/disables portamento.
 ;
 ; IN
-; - 1: Direction (SNDB_NSUP/SNDB_NSDOWN)
+; - 1: Direction (SSE_NSUP/SSE_NSDOWN)
 ;      This is shifted up by 1 compared to the internal status bit.
 ; - 2: Speed ($00-$7F)
 ;      If $00, portamento is disabled.
@@ -925,7 +905,7 @@ ENDM
 ;
 ; Alters the base note ID by the specified *values*.
 ; The one picked depends on the primary loop counter:
-; \2[\1 - iSndChInfo_24]
+; \2[\1 - iSndChInfo_LoopTimer0]
 ;
 ; IN
 ; - 1: Last Index, will be picked when the counter reaches 0.
@@ -1012,7 +992,7 @@ ENDM
 ; =============== snd_sets3 ===============
 ; Command: SoundDataCmd_SetS3
 ;
-; Sets the otherwise unused flag SNDX_3.
+; Sets the otherwise unused flag SST_3.
 MACRO snd_sets3
 	db SNDDATACMD_SETS3
 ENDM
@@ -1020,7 +1000,7 @@ ENDM
 ; =============== snd_clrs3 ===============
 ; Command: SoundDataCmd_ClrS3
 ;
-; Clears the otherwise unused flag SNDX_3.
+; Clears the otherwise unused flag SST_3.
 MACRO snd_clrs3
 	db SNDDATACMD_CLRS3
 ENDM
@@ -1139,85 +1119,85 @@ MACRO _snd_note
 	ENDC
 ENDM
 
-DEF SNDDATACMD_NOTE_START          EQU $00
-DEF SNDDATACMD_NOTE_END            EQU $7F
+DEF SNDDATACMD_NOTE_START            EQU $00
+DEF SNDDATACMD_NOTE_END              EQU $7F
 
-DEF SNDDATACMDB_SPEC_START         EQU 7
-DEF SNDDATACMD_SPEC_START          EQU $80
-DEF SNDDATACMD_JP                  EQU $80
-DEF SNDDATACMD_DJNZ                EQU $81
-DEF SNDDATACMD_END                 EQU $82
-DEF SNDDATACMD_VIBRATO             EQU $83
-DEF SNDDATACMD_PITCH_BEND          EQU $84
-DEF SNDDATACMD_PLAYSNDARG          EQU $85
-DEF SNDDATACMD_END_SAVEID          EQU $86
-DEF SNDDATACMD_VOL                 EQU $87
-DEF SNDDATACMD_INSTRUMENT          EQU $88
-DEF SNDDATACMD_INC_BASE_NOTE       EQU $89
-DEF SNDDATACMD_INC_VOL             EQU $8A
-DEF SNDDATACMD_PLAYSND             EQU $8B
-DEF SNDDATACMD_NOP                 EQU $8C
-DEF SNDDATACMD_VAR                 EQU $8D
-DEF SNDDATACMD_NOISE_SWEEP         EQU $8E
-DEF SNDDATACMD_NOISE_SWEEP_SINGLE  EQU $8F
-DEF SNDDATACMD_STATUS              EQU $90
-DEF SNDDATACMD_ORSAVEID            EQU $91
-DEF SNDDATACMD_NOISE_FREQ          EQU $92
-DEF SNDDATACMD_FADE                EQU $93
-DEF SNDDATACMD_NOTE_SLIDE          EQU $94
-DEF SNDDATACMD_JP_FADE             EQU $95
-DEF SNDDATACMD_SPEED               EQU $96
-DEF SNDDATACMD_INC_FREQ_OFFSET     EQU $97
-DEF SNDDATACMD_CH                  EQU $98
-DEF SNDDATACMD_TOGGLE_KEYHOLD      EQU $99
-DEF SNDDATACMD_CALL                EQU $9A
-DEF SNDDATACMD_RET                 EQU $9B
+DEF SNDDATACMDB_SPEC_START           EQU 7
+DEF SNDDATACMD_SPEC_START            EQU $80
+DEF SNDDATACMD_JP                    EQU $80
+DEF SNDDATACMD_DJNZ                  EQU $81
+DEF SNDDATACMD_END                   EQU $82
+DEF SNDDATACMD_VIBRATO               EQU $83
+DEF SNDDATACMD_PITCH_BEND            EQU $84
+DEF SNDDATACMD_PLAYSNDARG            EQU $85
+DEF SNDDATACMD_END_SAVEID            EQU $86
+DEF SNDDATACMD_VOL                   EQU $87
+DEF SNDDATACMD_INSTRUMENT            EQU $88
+DEF SNDDATACMD_INC_BASE_NOTE         EQU $89
+DEF SNDDATACMD_INC_VOL               EQU $8A
+DEF SNDDATACMD_PLAYSND               EQU $8B
+DEF SNDDATACMD_NOP                   EQU $8C
+DEF SNDDATACMD_VAR                   EQU $8D
+DEF SNDDATACMD_NOISE_SWEEP           EQU $8E
+DEF SNDDATACMD_NOISE_SWEEP_SINGLE    EQU $8F
+DEF SNDDATACMD_STATUS                EQU $90
+DEF SNDDATACMD_ORSAVEID              EQU $91
+DEF SNDDATACMD_NOISE_FREQ            EQU $92
+DEF SNDDATACMD_FADE                  EQU $93
+DEF SNDDATACMD_NOTE_SLIDE            EQU $94
+DEF SNDDATACMD_JP_FADE               EQU $95
+DEF SNDDATACMD_SPEED                 EQU $96
+DEF SNDDATACMD_INC_FREQ_OFFSET       EQU $97
+DEF SNDDATACMD_CH                    EQU $98
+DEF SNDDATACMD_TOGGLE_KEYHOLD        EQU $99
+DEF SNDDATACMD_CALL                  EQU $9A
+DEF SNDDATACMD_RET                   EQU $9B
 DEF SNDDATACMD_INC_BASE_NOTE_BY_LOOP EQU $9C
-DEF SNDDATACMD_KEYON               EQU $9D
-DEF SNDDATACMD_IFCH                EQU $9E
-DEF SNDDATACMD_JPCH                EQU $9F
-DEF SNDDATACMD_DUTY                EQU $A0
-DEF SNDDATACMD_PAN                 EQU $A1
-DEF SNDDATACMD_SETS3               EQU $A2
-DEF SNDDATACMD_CLRS3               EQU $A3
-DEF SNDDATACMD_PLAYPCM             EQU $A4
-DEF SNDDATACMD_PLAYSLOTPCM         EQU $A5
-DEF SNDDATACMD_SPEC_END            EQU $A5
+DEF SNDDATACMD_KEYON                 EQU $9D
+DEF SNDDATACMD_IFCH                  EQU $9E
+DEF SNDDATACMD_JPCH                  EQU $9F
+DEF SNDDATACMD_DUTY                  EQU $A0
+DEF SNDDATACMD_PAN                   EQU $A1
+DEF SNDDATACMD_SETS3                 EQU $A2
+DEF SNDDATACMD_CLRS3                 EQU $A3
+DEF SNDDATACMD_PLAYPCM               EQU $A4
+DEF SNDDATACMD_PLAYSLOTPCM           EQU $A5
+DEF SNDDATACMD_SPEC_END              EQU $A5
 
-DEF SNDDATACMD_NOTEPRESET_START    EQU $C0
-DEF SNDDATACMD_NOTEPRESET_END      EQU $C9
+DEF SNDDATACMD_NOTEPRESET_START      EQU $C0
+DEF SNDDATACMD_NOTEPRESET_END        EQU $C9
 
-DEF SNDDATACMD_SAMENOTE_START      EQU $100-(NOTELENARG_LENGTH*2) ; $DE
-DEF SNDDATACMD_SAMENOTE_END        EQU $100-1 ; $FF
-DEF SNDDATACMD_NOTELENARG_NOMID    EQU $100-(NOTELENARG_LENGTH*2)
-DEF SNDDATACMD_NOTELENARG_WITHMID  EQU $100-(NOTELENARG_LENGTH*1)
+DEF SNDDATACMD_SAMENOTE_START        EQU $100-(NOTELENARG_LENGTH*2) ; $DE
+DEF SNDDATACMD_SAMENOTE_END          EQU $100-1 ; $FF
+
+DEF SNDDATACMD_NOTELENARG_START      EQU $100-(NOTELENARG_LENGTH*2)
+DEF SNDDATACMD_NOTELENARG_NOMID      EQU SNDDATACMD_NOTELENARG_START+0
+DEF SNDDATACMD_NOTELENARG_WITHMID    EQU SNDDATACMD_NOTELENARG_START+NOTELENARG_LENGTH*1
 
 ; SoundDataCmd_SlotFade
-DEF SSFB_FADEOUT EQU 7 ; If set, it's a fade out
-DEF SSF_FADEOUT EQU 1 << SSFB_FADEOUT
-DEF SSF_FADEIN EQU 0
+DEF SSFB_FADEOUT     EQU 7 ; If set, it's a fade out
+DEF SSF_FADEOUT      EQU 1 << SSFB_FADEOUT
+DEF SSF_FADEIN       EQU 0
 
 ; SoundDataCmd_NoteSlide
-DEF SNSB_UP EQU 7 ; Portamento direction (If set, up)
-DEF SNS_UP EQU 1 << SNSB_UP
-
-
-
-
-
-
+DEF SNSB_UP          EQU 7 ; Portamento direction (If set, up)
+DEF SNS_UP           EQU 1 << SNSB_UP
 
 ; Sound Preset Flags
-DEF SNDNPRB_USECH4SWEEP EQU 7 ; Use byte3 as Noise sweep data, otherwisw it's used as Pulse 1 sweep
-DEF SNDNPR_USECH4SWEEP EQU 1 << SNDNPRB_USECH4SWEEP
+DEF SPRB_USECH4SWEEP EQU 7 ; Use byte3 as Noise sweep data, otherwisw it's used as Pulse 1 sweep
+DEF SPR_USECH4SWEEP  EQU 1 << SPRB_USECH4SWEEP
+
+; Slot loop flags
+DEF SOUNDB_PAUSED    EQU 7
+DEF SOUND_PAUSED     EQU 1 << SOUNDB_PAUSED
 
 SECTION "Sound RAM", WRAM0[$D000]
-wSndSetQueue              :ds 8   ; EQU $D000
-wSndSetQueueSec           :ds 8   ; EQU $D008
+wSndQueueId               :ds 8   ; EQU $D000 ; Sound queue - ID
+wSndQueueArg              :ds 8   ; EQU $D008 ; Sound queue - Argument
 
 wSndSavedSoundID          :db     ; EQU $D010 ; Last preserved Sound ID, when a sound slot ends with the SoundDataCmd_EndSaveID command.
-wSnd_D011_Flags           :db     ; EQU $D011
-wSndSetLength             :db     ; EQU $D012
+wSndFlags                 :db     ; EQU $D011 ; Sound driver flags
+wSndQueueLen              :db     ; EQU $D012 ; Sound queue - length
 wSndFadeIncSpeedSub       :db     ; EQU $D013 ; Global fade speed
 wSndFadeTimerSub          :db     ; EQU $D014 ; Global fade timer (low byte)
 wSndFadeVolumeTarget      :db     ; EQU $D015 ; Global fade target (high byte)
@@ -1230,7 +1210,8 @@ wSndPcmPlaying            :db     ; EQU $D01B ; If set, a PCM sample is currentl
 wSndPcmIDSet              :db     ; EQU $D01C ; PCM ID to be played, reset on every frame.
 wSndPcmSpeedSet           :db     ; EQU $D01D ; Playback speed for the above, also reset on every frame.
                                               ; Doubles as flag that, if set, marks that PCM playback can continue.
-ds 2
+											  
+SECTION "Sound Register Mirror", WRAM0[$D020]
 
 wNR51_ChMask1   :db     ; EQU $D020
 wNR11           :db     ; EQU $D021
@@ -1257,88 +1238,78 @@ wNR43           :db     ; EQU $D032
 wNR44           :db     ; EQU $D033
 
 wNR51           :db     ; EQU $D034
-
-wWaveSetId                :db     ; EQU $D035 ; Newly set waveform ID
-wWaveCurId                :db     ; EQU $D036 ; Current waveform ID
-
+wWaveSetId      :db     ; EQU $D035 ; Newly set waveform ID
+wWaveCurId      :db     ; EQU $D036 ; Current waveform ID
 wNR10           :db     ; EQU $D037
 
 SECTION "Sound Slots", WRAM0[$D040]
 
-; Normal sound slot, enough for a BGM and sound effects on each channel.
-wSndChInfo0          :ds $30 ; EQU $D040
-wSndChInfo1          :ds $30 ; EQU $D070
-wSndChInfo2          :ds $30 ; EQU $D0A0
-wSndChInfo3          :ds $30 ; EQU $D0D0
-wSndChInfo4          :ds $30 ; EQU $D100
-wSndChInfo5          :ds $30 ; EQU $D130
-wSndChInfo6          :ds $30 ; EQU $D160
-wSndChInfo7          :ds $30 ; EQU $D190
-; Additional special sound slot. Named "Exclusive" as if used the ones above get paused.
-wSndChInfoEx0        :ds $30 ; EQU $D1C0
+wSndChInfo0     :ds $30 ; EQU $D040 ; BGM 0
+wSndChInfo1     :ds $30 ; EQU $D070 ; BGM 1
+wSndChInfo2     :ds $30 ; EQU $D0A0 ; BGM 2
+wSndChInfo3     :ds $30 ; EQU $D0D0 ; BGM 3
+wSndChInfo4     :ds $30 ; EQU $D100 ; SFX 0
+wSndChInfo5     :ds $30 ; EQU $D130 ; SFX 1
+wSndChInfo6     :ds $30 ; EQU $D160 ; SFX 2
+wSndChInfo7     :ds $30 ; EQU $D190 ; SFX 3
+wSndChInfoEx0   :ds $30 ; EQU $D1C0 ; SFX w/ Pause. Can play when the driver is paused and pauses all other slots when played.
 
-DEF wSndChInfo_Size  EQU wSndChInfo1 - wSndChInfo0
-DEF wSndChInfo_Count EQU 9
-DEF iSndChInfo_Status EQU $00 ; SndInfo status bitmask
-DEF iSndChInfo_01 EQU $01 ; Volume
-DEF iSndChInfo_02 EQU $02 ; Instrument ID. If >= $80 it's treated as raw NRx2 data. [wNRx2]
-DEF iSndChInfo_03 EQU $03 ; Vibrato ID or Pulse 1 sweep data [wNR10], depending on SNDSW_SET.
-DEF iSndChInfo_04 EQU $04 ; Base note/frequency ID. Typically a negative number.
-DEF iSndChInfo_05 EQU $05 ; Playback speed (low byte)
-DEF iSndChInfo_06 EQU $06 ; Channel ID (SNDCH_*)
-DEF iSndChInfo_07 EQU $07 ; Data Pointer, Low byte
-DEF iSndChInfo_08 EQU $08 ; Data Pointer, High byte
-DEF iSndChInfo_09 EQU $09 ; Length/duty [NRx1]. The wave channel lacks wNR31 so it's instead copied to wWaveSetId.
-DEF iSndChInfo_0A EQU $0A ; Stereo Panning [NR51]
-DEF iSndChInfo_0B EQU $0B ; Effect flags #1
-DEF iSndChInfo_0C EQU $0C ; Effect Flags #2
-DEF iSndChInfo_0D EQU $0D ; Sound ID
-DEF iSndChInfo_0E EQU $0E ; Vibrato data offset.
-DEF iSndChInfo_0F EQU $0F ; Instrument data offset. [wNRx2]
-DEF iSndChInfo_10 EQU $10 ; Instrument timer. When it elapses, new wNRx2 data is fetched. [wNRx2] 
-DEF iSndChInfo_11 EQU $11 ; Instrument data. Raw NRx2 volume/envelope register data. [wNRx2]
-DEF iSndChInfo_12 EQU $12 ; Note length (high byte)
-DEF iSndChInfo_13 EQU $13 ; Slot timer (high byte)
-DEF iSndChInfo_14 EQU $14 ; Key release target
-DEF iSndChInfo_15 EQU $15 ; Slot timer (low byte)
-DEF iSndChInfo_16 EQU $16 ; Current frequency value (low byte) [wNRx3].
-DEF iSndChInfo_17 EQU $17 ; Current frequency value (high byte) [wNRx4].
-DEF iSndChInfo_18 EQU $18 ; Target frequency value (low byte), when pitch bends are enabled [wNRx3].
-DEF iSndChInfo_19 EQU $19 ; Target frequency value (high byte), when pitch bends are enabled [wNRx4].
-DEF iSndChInfo_1A EQU $1A ; Pitch bend speed. Unsigned.
-DEF iSndChInfo_1B EQU $1B ; Frequency value offset, subtracted to the value. Signed.
-DEF iSndChInfo_1C EQU $1C ; Note/frequency ID offset.
-DEF iSndChInfo_1D EQU $1D ; Portamento speed. Unsigned.
-DEF iSndChInfo_1E EQU $1E ; Portamento - Current Note/frequency ID
-DEF iSndChInfo_1F EQU $1F ; Noise sweep. 
-DEF iSndChInfo_20 EQU $20 ; Noise channel frequency. [wNR43]
-DEF iSndChInfo_21 EQU $21 ; Fade speed
-DEF iSndChInfo_22 EQU $22 ; Fade timer
-DEF iSndChInfo_23 EQU $23 ; Fade target volume
-DEF iSndChInfo_24 EQU $24 ; Loop timer #0. Loop-based frequency increases go off this.
-DEF iSndChInfo_25 EQU $25 ; Loop timer #1
-DEF iSndChInfo_26 EQU $26 ; Data Pointer return address, low byte.
-DEF iSndChInfo_27 EQU $27 ; Data Pointer return address, high byte.
-DEF iSndChInfo_28 EQU $28 ; Data Pointer, Bank Number
-DEF iSndChInfo_29 EQU $29 ; Slot-specific PCM sample ID. 
-DEF iSndChInfo_2A EQU $2A ; Free space
-DEF iSndChInfo_2B EQU $2B ; Free space
-DEF iSndChInfo_2C EQU $2C ; Free space
-DEF iSndChInfo_2D EQU $2D ; Free space
-DEF iSndChInfo_2E EQU $2E ; Free space
-DEF iSndChInfo_2F EQU $2F ; Free space
+DEF wSndChInfo_Size             EQU wSndChInfo1 - wSndChInfo0
+DEF wSndChInfo_Count            EQU 9
+DEF iSndChInfo_Status           EQU $00 ; Slot status flags
+DEF iSndChInfo_Vol              EQU $01 ; Volume
+DEF iSndChInfo_Instrument       EQU $02 ; Instrument ID. If >= $80 it's treated as raw NRx2 data. [wNRx2]
+DEF iSndChInfo_Vibrato          EQU $03 ; Vibrato ID or Pulse 1 sweep data [wNR10], depending on SVB_SET.
+DEF iSndChInfo_NoteIdBase       EQU $04 ; Base note/frequency ID. Typically a negative number.
+DEF iSndChInfo_Speed            EQU $05 ; Playback speed (low byte)
+DEF iSndChInfo_ChId             EQU $06 ; Channel ID (SNDCH_*)
+DEF iSndChInfo_DataPtr_Low      EQU $07 ; Data Pointer, Low byte
+DEF iSndChInfo_DataPtr_High     EQU $08 ; Data Pointer, High byte
+DEF iSndChInfo_DutyOrWave       EQU $09 ; Length/duty [NRx1]. The wave channel lacks wNR31 so it's instead copied to wWaveSetId.
+DEF iSndChInfo_Pan              EQU $0A ; Stereo Panning [NR51]
+DEF iSndChInfo_FxFlags0         EQU $0B ; Effect flags #1
+DEF iSndChInfo_FxFlags1         EQU $0C ; Effect Flags #2
+DEF iSndChInfo_SoundId          EQU $0D ; Sound ID
+DEF iSndChInfo_VibratoOffset    EQU $0E ; Vibrato data offset.
+DEF iSndChInfo_InstrumentOffset EQU $0F ; Instrument data offset. [wNRx2]
+DEF iSndChInfo_InstrumentTimer  EQU $10 ; Instrument timer. When it elapses, new wNRx2 data is fetched. [wNRx2] 
+DEF iSndChInfo_InstrumentData   EQU $11 ; Instrument data. Raw NRx2 volume/envelope register data. [wNRx2]
+DEF iSndChInfo_NoteLen          EQU $12 ; Note length (high byte)
+DEF iSndChInfo_Timer_High       EQU $13 ; Slot timer (high byte)
+DEF iSndChInfo_KeyRelTarget     EQU $14 ; Key release target
+DEF iSndChInfo_Timer_Low        EQU $15 ; Slot timer (low byte)
+DEF iSndChInfo_Freq_Low         EQU $16 ; Current frequency value (low byte) [wNRx3].
+DEF iSndChInfo_Freq_High        EQU $17 ; Current frequency value (high byte) [wNRx4].
+DEF iSndChInfo_FreqTarget_Low   EQU $18 ; Target frequency value (low byte), when pitch bends are enabled [wNRx3].
+DEF iSndChInfo_FreqTarget_High  EQU $19 ; Target frequency value (high byte), when pitch bends are enabled [wNRx4].
+DEF iSndChInfo_PitchBendSpeed   EQU $1A ; Pitch bend speed. Unsigned.
+DEF iSndChInfo_FreqMod          EQU $1B ; Frequency value offset, subtracted to the value. Signed.
+DEF iSndChInfo_NoteId           EQU $1C ; Relative note/frequency ID
+DEF iSndChInfo_NSSpeed          EQU $1D ; Portamento speed. Unsigned.
+DEF iSndChInfo_NSNoteId         EQU $1E ; Portamento - Current Note/frequency ID
+DEF iSndChInfo_NoiseSweep       EQU $1F ; Noise sweep. 
+DEF iSndChInfo_NoiseFreq        EQU $20 ; Noise channel frequency. [wNR43]
+DEF iSndChInfo_FadeSpeed        EQU $21 ; Fade speed
+DEF iSndChInfo_FadeTimer        EQU $22 ; Fade timer
+DEF iSndChInfo_FadeTarget       EQU $23 ; Fade target volume
+DEF iSndChInfo_LoopTimer0       EQU $24 ; Loop timer #0. Loop-based frequency increases go off this.
+DEF iSndChInfo_LoopTimer1       EQU $25 ; Loop timer #1
+DEF iSndChInfo_RetDataPtr_Low   EQU $26 ; Data Pointer return address, low byte.
+DEF iSndChInfo_RetDataPtr_High  EQU $27 ; Data Pointer return address, high byte.
+DEF iSndChInfo_Bank             EQU $28 ; Data Pointer, Bank Number
+DEF iSndChInfo_PCMId            EQU $29 ; Slot-specific PCM sample ID. 
 
 SECTION "Hardware", HRAM[$FF90]
-hROMBank                  :db     ; EQU $FF90
+hROMBank                  :db     ; EQU $FF90 ; Current ROM bank
 
 SECTION "Sound HRAM", HRAM[$FFE0]
-wNRx3Data                 :db     ; EQU $FFE0 ; Value to write to rNR*3 during sound slot processing.
-wNRx4Data                 :db     ; EQU $FFE1 ; Value to write to rNR*4 during sound slot processing.
+hNRx3Data                 :db     ; EQU $FFE0 ; Value to write to rNR*3 during sound slot processing.
+hNRx4Data                 :db     ; EQU $FFE1 ; Value to write to rNR*4 during sound slot processing.
 
-hSndChInfoStatus          :db     ; EQU $FFE2 ; Flags copied from the current SndChInfo
-h_Unk_SndChInfo_B         :db     ; EQU $FFE3 ; Low byte of pointer at SndChInfo[B]
-h_Unk_SndChInfo_C         :db     ; EQU $FFE4 ; High byte of pointer at SndChInfo[B] (C actually)
-h_Unk_FFE5_Flags          :db     ; EQU $FFE5
+hSndChInfoStatus          :db     ; EQU $FFE2 ; Status flags copied from the current slot
+hSndChInfoFxFlags0        :db     ; EQU $FFE3 ; Effect flags #0 ""
+hSndChInfoFxFlags1        :db     ; EQU $FFE4 ; Effect flags #1 ""
+hSndChInfoNewFlags        :db     ; EQU $FFE5 ; Events that happened to the currently processed slot on the current frame
 hSndChInfoPtrBakLow       :db     ; EQU $FFE6 ; Backup of the base pointer for the current sound slot.
 hNRx2Data                 :db     ; EQU $FFE7 ; Value to write to rNR*2 during sound slot processing.
 DEF hSndTmpSongPcm EQU hNRx2Data              ; Temporary location for the argument when starting a new song

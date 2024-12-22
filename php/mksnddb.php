@@ -22,47 +22,47 @@ const MAP_SNDCMD = [
 
 const MAP_STRUCT = [
 	'00' => "iSndChInfo_Status",
-	'01' => "iSndChInfo_01",
-	'02' => "iSndChInfo_02",
-	'03' => "iSndChInfo_03",
-	'04' => "iSndChInfo_04",
-	'05' => "iSndChInfo_05",
-	'06' => "iSndChInfo_06",
-	'07' => "iSndChInfo_07",
-	'08' => "iSndChInfo_08",
-	'09' => "iSndChInfo_09",
-	'0A' => "iSndChInfo_0A",
-	'0B' => "iSndChInfo_0B",
-	'0C' => "iSndChInfo_0C",
-	'0D' => "iSndChInfo_0D",
-	'0E' => "iSndChInfo_0E",
-	'0F' => "iSndChInfo_0F",
-	'10' => "iSndChInfo_10",
-	'11' => "iSndChInfo_11",
-	'12' => "iSndChInfo_12",
-	'13' => "iSndChInfo_13",
-	'14' => "iSndChInfo_14",
-	'15' => "iSndChInfo_15",
-	'16' => "iSndChInfo_16",
-	'17' => "iSndChInfo_17",
-	'18' => "iSndChInfo_18",
-	'19' => "iSndChInfo_19",
-	'1A' => "iSndChInfo_1A",
-	'1B' => "iSndChInfo_1B",
-	'1C' => "iSndChInfo_1C",
-	'1D' => "iSndChInfo_1D",
-	'1E' => "iSndChInfo_1E",
-	'1F' => "iSndChInfo_1F",
-	'20' => "iSndChInfo_20",
-	'21' => "iSndChInfo_21",
-	'22' => "iSndChInfo_22",
-	'23' => "iSndChInfo_23",
-	'24' => "iSndChInfo_24",
-	'25' => "iSndChInfo_25",
-	'26' => "iSndChInfo_26",
-	'27' => "iSndChInfo_27",
-	'28' => "iSndChInfo_28",
-	'29' => "iSndChInfo_29",
+	'01' => "iSndChInfo_Vol",
+	'02' => "iSndChInfo_Instrument",
+	'03' => "iSndChInfo_Vibrato",
+	'04' => "iSndChInfo_NoteIdBase",
+	'05' => "iSndChInfo_Speed",
+	'06' => "iSndChInfo_ChId",
+	'07' => "iSndChInfo_DataPtr_Low",
+	'08' => "iSndChInfo_DataPtr_High",
+	'09' => "iSndChInfo_DutyOrWave",
+	'0A' => "iSndChInfo_Pan",
+	'0B' => "iSndChInfo_FxFlags0",
+	'0C' => "iSndChInfo_FxFlags1",
+	'0D' => "iSndChInfo_SoundId",
+	'0E' => "iSndChInfo_VibratoOffset",
+	'0F' => "iSndChInfo_InstrumentOffset",
+	'10' => "iSndChInfo_InstrumentTimer",
+	'11' => "iSndChInfo_InstrumentData",
+	'12' => "iSndChInfo_NoteLen",
+	'13' => "iSndChInfo_Timer_High",
+	'14' => "iSndChInfo_KeyRelTarget",
+	'15' => "iSndChInfo_Timer_Low",
+	'16' => "iSndChInfo_Freq_Low",
+	'17' => "iSndChInfo_Freq_High",
+	'18' => "iSndChInfo_FreqTarget_Low",
+	'19' => "iSndChInfo_FreqTarget_High",
+	'1A' => "iSndChInfo_PitchBendSpeed",
+	'1B' => "iSndChInfo_FreqMod",
+	'1C' => "iSndChInfo_NoteId",
+	'1D' => "iSndChInfo_NSSpeed",
+	'1E' => "iSndChInfo_NSNoteId",
+	'1F' => "iSndChInfo_NoiseSweep",
+	'20' => "iSndChInfo_NoiseFreq",
+	'21' => "iSndChInfo_FadeSpeed",
+	'22' => "iSndChInfo_FadeTimer",
+	'23' => "iSndChInfo_FadeTarget",
+	'24' => "iSndChInfo_LoopTimer0",
+	'25' => "iSndChInfo_LoopTimer1",
+	'26' => "iSndChInfo_RetDataPtr_Low",
+	'27' => "iSndChInfo_RetDataPtr_High",
+	'28' => "iSndChInfo_Bank",
+	'29' => "iSndChInfo_PCMId",
 	'2A' => "iSndChInfo_2A",
 	'2B' => "iSndChInfo_2B",
 	'2C' => "iSndChInfo_2C",
@@ -84,14 +84,14 @@ $map_slot = [
 ];
 
 const MAP_STATUS = [
-	0 => "SNDX_CH123 ",
-	1 => "SNDX_CH4   ",
-	2 => "SNDX_2     ",
-	3 => "SNDX_3     ",
-	4 => "SNDX_KEYHOLD     ",
-	5 => "SNDX_PAUSEREST     ",
-	6 => "SNDX_PRIORITY     ",
-	7 => "SNDX_7     ",
+	0 => "SST_CH123 ",
+	1 => "SST_CH4   ",
+	2 => "SST_2     ",
+	3 => "SST_3     ",
+	4 => "SST_KEYHOLD     ",
+	5 => "SST_PAUSEREST     ",
+	6 => "SST_PRIORITY     ",
+	7 => "SST_7     ",
 ];
 
 const MAP_CH = [
@@ -177,7 +177,7 @@ oops_we_need_rewind_actually:
 				break;
 			case 0x83:
 				$vibrato = getnext($iter);
-				if ($vibrato->as_int() & 0x80) // SNDSW_SET
+				if ($vibrato->as_int() & 0x80) // SVB_SET
 					$vibrato = "snd_pulse1_sweep ".mknr10($vibrato->as_int() & 0x7F);
 				else
 					$vibrato = "snd_vibrato VIBRATO_".($vibrato->val != '00' ? $vibrato->val : "NONE");
@@ -277,7 +277,7 @@ oops_we_need_rewind_actually:
 				break;
 			case 0x94:
 				$arg = getnext($iter)->as_int();
-				$type = ($arg & 0x80) ? "SNDB_NSUP" : "SNDB_NSDOWN";
+				$type = ($arg & 0x80) ? "SSE_NSUP" : "SSE_NSDOWN";
 				$speed = $arg & 0x7F;
 				ww(2, "snd_note_slide {$type}, {$speed}");
 				break;

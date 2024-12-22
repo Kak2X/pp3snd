@@ -18,14 +18,14 @@ $map_slot = [
 ];
 
 $map_status = [
-	0 => "SNDX_CH123 ",
-	1 => "SNDX_CH4   ",
-	2 => "SNDX_2     ",
-	3 => "SNDX_3     ",
-	4 => "SNDX_KEYHOLD     ",
-	5 => "SNDX_PAUSEREST     ",
-	6 => "SNDX_PRIORITY     ",
-	7 => "SNDX_7     ",
+	0 => "SST_CH123 ",
+	1 => "SST_CH4   ",
+	2 => "SST_2     ",
+	3 => "SST_3     ",
+	4 => "SST_KEYHOLD     ",
+	5 => "SST_PAUSEREST     ",
+	6 => "SST_PRIORITY     ",
+	7 => "SST_7     ",
 ];
 
 $map_ch = [
@@ -81,7 +81,7 @@ foreach ($iter as $row) {
 			}
 				
 			$vibrato	= getnext($iter);
-			if ($vibrato->as_int() & 0x80) // SNDSW_SET
+			if ($vibrato->as_int() & 0x80) // SVB_SET
 				$vibrato = "nr10 ".mknr10($vibrato->as_int());
 			else
 				$vibrato = "db VIBRATO_".($vibrato->val != '00' ? $vibrato->val : "NONE");
@@ -110,15 +110,15 @@ foreach ($iter as $row) {
 			
 			$b->w(1, "db $slotid ; Slot location");
 			$b->w(1, "db $status ; iSndChInfo_Status");
-			$b->w(1, "db $vol ; iSndChInfo_01");
-			$b->w(1, "$instr ; iSndChInfo_02");
-			$b->w(1, "$vibrato ; iSndChInfo_03");
-			$b->w(1, "db $noteid ; iSndChInfo_04");
-			$b->w(1, "db $speed ; iSndChInfo_05");
-			$b->w(1, "db $chid_enum ; iSndChInfo_06");
+			$b->w(1, "db $vol ; iSndChInfo_Vol");
+			$b->w(1, "$instr ; iSndChInfo_Instrument");
+			$b->w(1, "$vibrato ; iSndChInfo_Vibrato");
+			$b->w(1, "db $noteid ; iSndChInfo_NoteIdBase");
+			$b->w(1, "db $speed ; iSndChInfo_Speed");
+			$b->w(1, "db $chid_enum ; iSndChInfo_ChId");
 			$b->w(2, "dw $data_ptr ; Data pointer");
-			$b->w(1, "$lendt ; iSndChInfo_09");
-			$b->w(1, "db $pan ; iSndChInfo_0A");
+			$b->w(1, "$lendt ; iSndChInfo_DutyOrWave");
+			$b->w(1, "db $pan ; iSndChInfo_Pan");
 			
 			// This is relegated to strtr since tempconv.txt might not have it
 			$strtrs .= "'{$data_ptr}' => \"SndData_{$sndid}_{$chid_short}\",\r\n";

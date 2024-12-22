@@ -1,1 +1,1 @@
-@_build main pp3 original.gb -nofix
+@_build config_rom pp3 original.gb -nofix

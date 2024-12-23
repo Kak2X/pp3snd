@@ -6,11 +6,10 @@ SECTION "Stub Program", HRAM[$FF80]
 hVBlankDone               :db   ; EQU $FF80 ; Marks if the VBlank loop is done
 hJoyKeys                  :db   ; EQU $FF81 ; Held keys
 hJoyNewKeys               :db   ; EQU $FF82 ; Newly pressed keys
-hCursorOpt                :db   ; EQU $FF83 ; Selected BGM ID
-hCursorOpt2               :db   ; EQU $FF84 ; Selected SFX ID
-wFontLoadBit0Col          :db   ; EQU $FF85 ; Font Color 0
-wFontLoadBit1Col          :db   ; EQU $FF86 ; Font Color 1
-wFontLoadTmpGFX           :ds 2 ; EQU $FF87 ; Line drawing buffer
+hCursorOpt                :db   ; EQU $FF83 ; Selected Sound ID
+wFontLoadBit0Col          :db   ; EQU $FF84 ; Font Color 0
+wFontLoadBit1Col          :db   ; EQU $FF85 ; Font Color 1
+wFontLoadTmpGFX           :ds 2 ; EQU $FF86 ; Line drawing buffer
 
 ; Constants
 
@@ -35,6 +34,7 @@ DEF KEY_UP           EQU 1 << KEYB_UP
 DEF KEY_DOWN         EQU 1 << KEYB_DOWN
 
 CHARMAP "►", $02
+CHARMAP "◄", $03
 
 ; Normal ASCII
 CHARMAP " ", $20
@@ -137,22 +137,182 @@ SECTION "VBlankInt", ROM0[$0040]
 ; Basic VBlank loop performing a lag check.
 VBlankInt:
 	push af
-	push bc
-	push de
-	push hl
 	ldh  a, [hVBlankDone]
 	and  a					; Did we get to the VBlank wait code yet? (which reset this)
 	jr   nz, .end			; If not, return (lag frame)
 	inc  a					; Otherwise, mark the frame as done
 	ldh  [hVBlankDone], a
 .end:
-	pop  hl
-	pop  de
-	pop  bc
 	pop  af
 	reti
 	
-; This fits here, so...
+SECTION "TimerInt", ROM0[$0050]
+IF HOOK_PCM && KEEP_PCM
+	; In Yon this pointed to RAM instead, to allow multiple modes
+	jp   Sound_PCMHandler
+ELSE
+	reti
+ENDC
+	
+SECTION "EntryPoint", ROM0[$0100]
+	nop
+	jp   EntryPoint
+
+; =============== GAME HEADER ===============
+	; logo
+	db   $CE,$ED,$66,$66,$CC,$0D,$00,$0B,$03,$73,$00,$83,$00,$0C,$00,$0D
+	db   $00,$08,$11,$1F,$88,$89,$00,$0E,$DC,$CC,$6E,$E6,$DD,$DD,$D9,$99
+	db   $BB,$BB,$67,$63,$6E,$0E,$EC,$CC,$DD,$DC,$99,$9F,$BB,$B9,$33,$3E
+
+	db   "SOUND DRV GB2",$00,$00	; title
+	db   $00      		; DMG - classic gameboy
+	db   $41,$37		; new license
+	db   $00      		; SGB flag: not capable
+	db   $01      		; cart type: MBC1
+	db   $02      		; ROM size: 128KiB
+	db   $00      		; RAM size: 0KiB
+	db   $00      		; destination code: Japanese
+	db   $33      		; old license: not SGB capable
+	db   $00      		; mask ROM version number
+	db   $FF      		; header check
+	dw   $FFFF    		; global check
+	
+SECTION "Main", ROM0	
+EntryPoint:
+	; Hide screen
+	call StopLCDOperation
+	
+	; Clear VRAM
+	ld   hl, VRAM_Begin
+	ld   bc, VRAM_End-VRAM_Begin
+	call InitMemory
+	
+	; Clear WRAM
+	ld   hl, WRAM_Begin
+	ld   bc, WRAM_End-WRAM_Begin
+	call InitMemory
+	
+	; Set the real stack ptr now that WRAM is wiped
+	ld   sp, $DF00
+	
+	; Clear HRAM
+	ld   hl, HRAM_Begin
+	ld   bc, HRAM_End-HRAM_Begin
+	call InitMemory
+	
+	; Load Font
+	call LoadGFX_1bppFont
+	
+	ld   hl, TxtDef_Title
+	call TextPrinter_Instant
+	ld   hl, TxtDef_InstLR
+	call TextPrinter_Instant
+	ld   hl, TxtDef_InstA
+	call TextPrinter_Instant
+	ld   hl, TxtDef_InstB
+	call TextPrinter_Instant
+	ld   hl, TxtDef_InstIn
+	call TextPrinter_Instant
+	ld   hl, TxtDef_InstOut
+	call TextPrinter_Instant
+	ld   hl, TxtDef_SoundId
+	call TextPrinter_Instant
+	
+	; Show screen
+	ld   a, LCDC_PRIORITY|LCDC_ENABLE
+	call StartLCDOperation
+	
+	;--
+	; Init driver
+	ld   a, BANK(Sound_BaseDataMarker) ; BANK $06
+	ld   b, BANK(Sound_PCMTable) ; BANK $0F
+	call Sound_Init
+	;--
+	
+	; Set initial cursors
+	xor  a
+	ldh  [hCursorOpt], a
+	call SetSelInTilemap
+
+MainLoop:
+	; Wait for the VBlank code to set hVBlankDone
+	xor  a					
+	ldh  [hVBlankDone], a
+.wait:
+	ldh  a, [hVBlankDone]
+	and  a					; Set yet?
+	jr   nz, .newFrame		; If so, exit out
+	halt					; Otherwise, wait till the next interrupt
+	jr   .wait
+.newFrame:
+
+	; Ever so slightly more involved song switch.
+	call JoyKeys_Get
+	ldh  a, [hJoyNewKeys]
+	bit  KEYB_LEFT, a
+	jr   nz, .decSel
+	bit  KEYB_RIGHT, a
+	jr   nz, .incSel
+	bit  KEYB_A, a
+	jr   nz, .play
+	bit  KEYB_B, a
+	jr   nz, .stop
+	bit  KEYB_START, a
+	jr   nz, .fadeIn
+	bit  KEYB_SELECT, a
+	jr   nz, .fadeOut
+	jr   .callDrv
+		
+.decSel:
+	ldh  a, [hCursorOpt]
+	and  a
+	jr   z, .callDrv
+	dec  a
+	jr   .setSel
+.incSel:
+	ldh  a, [hCursorOpt]
+	cp   a, ((Sound_SndHeaderPtrTable.end-Sound_SndHeaderPtrTable)/3)-1
+	jr   nc, .callDrv
+	inc  a
+.setSel:
+	ldh  [hCursorOpt], a
+	call SetSelInTilemap
+	jr   .callDrv
+	
+.play:
+	ldh  a, [hCursorOpt]
+	call Sound_ReqPlayId
+	jr   .callDrv
+.stop:
+	ld   a, SNDCMD_STOP
+	call Sound_ReqPlayId
+	jr   .callDrv
+	
+.fadeIn:
+	xor  a
+	ld   [wSndFadeVolume], a
+	ld   bc, (SNDCMD_FADEIN << 8)|$80
+	call Sound_ReqPlayIdWithArg
+	jr   .callDrv
+.fadeOut:
+	ld   bc, (SNDCMD_FADEOUT << 8)|$80
+	call Sound_ReqPlayIdWithArg
+	jr   .callDrv
+	
+.callDrv:
+	; Call driver
+	call Sound_Do
+	jr   MainLoop
+
+; =============== SetSelInTilemap ===============
+; Updates the Sound ID in the tilemap.
+; IN
+; - A: Sound ID
+SetSelInTilemap:
+	ld   de, $992B
+	jp   NumberPrinter_Instant
+	
+SECTION "Helpers", ROM0
 
 ; =============== InitMemory ===============
 ; Zeroes out a memory range.
@@ -264,159 +424,8 @@ JoyKeys_Get:
 	
 	ret
 	
-SECTION "EntryPoint", ROM0[$0100]
-	nop
-	jp   EntryPoint
-
-; =============== GAME HEADER ===============
-	; logo
-	db   $CE,$ED,$66,$66,$CC,$0D,$00,$0B,$03,$73,$00,$83,$00,$0C,$00,$0D
-	db   $00,$08,$11,$1F,$88,$89,$00,$0E,$DC,$CC,$6E,$E6,$DD,$DD,$D9,$99
-	db   $BB,$BB,$67,$63,$6E,$0E,$EC,$CC,$DD,$DC,$99,$9F,$BB,$B9,$33,$3E
-
-	db   "SOUND DRV GB2",$00,$00	; title
-	db   $00      		; DMG - classic gameboy
-	db   $41,$37		; new license
-	db   $00      		; SGB flag: not capable
-	db   $01      		; cart type: MBC1
-	db   $02      		; ROM size: 128KiB
-	db   $00      		; RAM size: 0KiB
-	db   $00      		; destination code: Japanese
-	db   $33      		; old license: not SGB capable
-	db   $00      		; mask ROM version number
-	db   $19      		; header check
-	dw   $FFFF    		; global check
+SECTION "Font Writer from 95", ROM0
 	
-EntryPoint:
-	; Hide screen
-	call StopLCDOperation
-	
-	; Clear VRAM
-	ld   hl, VRAM_Begin
-	ld   bc, VRAM_End-VRAM_Begin
-	call InitMemory
-	
-	; Clear WRAM
-	ld   hl, WRAM_Begin
-	ld   bc, WRAM_End-WRAM_Begin
-	call InitMemory
-	
-	; Set the real stack ptr now that WRAM is wiped
-	ld   sp, $DF00
-	
-	; Clear HRAM
-	ld   hl, HRAM_Begin
-	ld   bc, HRAM_End-HRAM_Begin
-	call InitMemory
-	
-	; Load Font
-	call LoadGFX_1bppFont
-	
-	ld   hl, TxtDef_Title
-	call TextPrinter_Instant
-	ld   hl, TxtDef_InstA
-	call TextPrinter_Instant
-	ld   hl, TxtDef_InstB
-	call TextPrinter_Instant
-	ld   hl, TxtDef_InstL
-	call TextPrinter_Instant
-	ld   hl, TxtDef_InstR
-	call TextPrinter_Instant
-	ld   hl, TxtDef_BGMId
-	call TextPrinter_Instant
-	ld   hl, TxtDef_SFXId
-	call TextPrinter_Instant
-	
-	; Show screen
-	ld   a, LCDC_PRIORITY|LCDC_ENABLE
-	call StartLCDOperation
-	
-	; Init driver
-	;call Sound_Init
-	
-	; Play stage BGM
-	ld   a, $00
-	ld   [BGM_Control], a
-	ld   [SFX_Control], a
-	ldh  [hCursorOpt], a
-	ldh  [hCursorOpt2], a
-	call SetBGMInTilemap
-	xor  a
-	call SetSFXInTilemap
-
-MainLoop:
-
-	; Wait for the VBlank code to set hVBlankDone
-	xor  a					
-	ldh  [hVBlankDone], a
-.wait:
-	ldh  a, [hVBlankDone]
-	and  a					; Set yet?
-	jr   nz, .newFrame		; If so, exit out
-	halt					; Otherwise, wait till the next interrupt
-	jr   .wait
-.newFrame:
-
-	; Simple song switch (A: Next, B, Prev)
-	call JoyKeys_Get
-	
-	ldh  a, [hJoyNewKeys]
-	bit  KEYB_A, a
-	jr   nz, .incBGM
-	bit  KEYB_B, a
-	jr   nz, .decBGM
-	bit  KEYB_RIGHT, a
-	jr   nz, .incSFX
-	bit  KEYB_LEFT, a
-	jr   nz, .decSFX
-	jr   .callDrv
-	
-.decBGM:
-	ld   hl, hCursorOpt
-	dec  [hl]
-	jr   .setBGM
-.incBGM:
-	ld   hl, hCursorOpt
-	inc  [hl]
-.setBGM:
-	ld   a, [hl]
-	ld   [BGM_Control], a
-	call SetBGMInTilemap
-	jr   .callDrv
-	
-.decSFX:
-	ld   hl, hCursorOpt2
-	dec  [hl]
-	jr   .setSFX
-.incSFX:
-	ld   hl, hCursorOpt2
-	inc  [hl]
-.setSFX:
-	ld   a, [hl]
-	ld   [SFX_Control], a
-	call SetSFXInTilemap
-	
-.callDrv:
-	; Call driver
-	call HomeCall_BGM_Update
-	jr   MainLoop
-	
-; =============== SetBGMInTilemap ===============
-; Updates the BGM ID in the tilemap.
-; IN
-; - A: BGM ID
-SetBGMInTilemap:
-	ld   de, $9909
-	jp   NumberPrinter_Instant
-	
-; =============== SetSFXInTilemap ===============
-; Updates the SFX ID in the tilemap.
-; IN
-; - A: SFX ID
-SetSFXInTilemap:
-	ld   de, $9929
-	jp   NumberPrinter_Instant
-
 ; =============== LoadGFX_1bppFont ===============
 ; Loads the font graphics depending on the specified settings.
 LoadGFX_1bppFont:
@@ -796,25 +805,28 @@ FontDef_Default:
 .gfx:
 	INCBIN "player/font.bin"
 	
+SECTION "Strings", ROM0
+	
 TxtDef_Title:
 	dw $9821
-	mTxtDef "GB2 DRIVER"
+	mTxtDef "GB2 DRIVER?"
 	
-TxtDef_InstA:
+TxtDef_InstLR:
 	dw $9861
-	mTxtDef "► A FOR NEXT BGM"
-TxtDef_InstB:
+	mTxtDef "◄► TO CHOOSE TRACK"
+TxtDef_InstA:
 	dw $9881
-	mTxtDef "► B FOR PREV BGM"
-TxtDef_InstL:
+	mTxtDef "A TO PLAY"
+TxtDef_InstB:
 	dw $98A1
-	mTxtDef "► R FOR NEXT SFX"
-TxtDef_InstR:
+	mTxtDef "B TO STOP"
+TxtDef_InstIn:
 	dw $98C1
-	mTxtDef "► L FOR PREV SFX"
-TxtDef_BGMId:
-	dw $9901
-	mTxtDef "BGM ID:"
-TxtDef_SFXId:
+	mTxtDef "SELECT TO FADE OUT"
+TxtDef_InstOut:
+	dw $98E1
+	mTxtDef "START  TO FADE IN"
+	
+TxtDef_SoundId:
 	dw $9921
-	mTxtDef "SFX ID:"
+	mTxtDef "SOUND ID:"

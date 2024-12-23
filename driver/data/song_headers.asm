@@ -107,3 +107,4 @@ Sound_SndHeaderPtrTable:
 	dp SndHeader_SFX_66 ; $66
 	dp SndHeader_SFX_67 ; $67
 	dp SndHeader_SFX_68 ; $68
+.end:

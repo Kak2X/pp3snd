@@ -525,7 +525,7 @@ L0342BA:;I
 	ld   b, $40
 	call L002225
 	ld   bc, $F380
-	call L003B83
+	call Sound_ReqPlayIdWithArg
 	ld   bc, $0020
 	call L001EE8
 L0342CB:;I

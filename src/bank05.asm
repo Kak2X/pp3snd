@@ -4385,7 +4385,7 @@ L055197: db $3B;X
 L055198:;I
 	call L05509B
 	ld   b, $F3
-	jp   L003B83
+	jp   Sound_ReqPlayIdWithArg
 L0551A0:;I
 	call L05508F
 	ld   a, $F1

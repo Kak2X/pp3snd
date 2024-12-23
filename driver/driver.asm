@@ -4181,7 +4181,6 @@ Sound_ReqPlayId:
 ; IN
 ; - B: Sound ID to play	
 ; - C: Arguments	
-L003B83:	
 Sound_ReqPlayIdWithArg:
 	push hl
 		; HL = Ptr to current queue entry
@@ -4390,7 +4389,7 @@ SoundCmd_FadeIn:
 ; IN
 ; - C: Fade speed
 SoundCmdS_EnableFade:
-	; wSndFadeIncSpeedSub = Arguments (looks like yet anither timer for how it's used, is it related though?)
+	; wSndFadeIncSpeedSub = Argument
 	ld   a, c
 	ld   [wSndFadeIncSpeedSub], a
 	; Trigger overflow check for next increase

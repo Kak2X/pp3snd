@@ -12,7 +12,7 @@ call:inStr %*
 set nofix=%ERRORLEVEL%
 
 echo Assembling...
-rgbds\rgbasm -h -L -vo -v -o %filename%.o %source%.asm
+rgbds\rgbasm -vo -v -o %filename%.o %source%.asm
 if %ERRORLEVEL% neq 0 goto assemble_fail
 
 echo Linking...

@@ -8,7 +8,6 @@ INCLUDE "driver/data/frequencies.asm"
 
 SECTION "Sound Driver Base Data", ROMX, BANK[$01]
 Sound_BaseDataMarker:
-INCLUDE "driver/data/bank6_ptrs_deleteme.asm"
 INCLUDE "driver/data/waves.asm"
 INCLUDE "driver/data/note_presets.asm"
 INCLUDE "driver/data/vibrato.asm"

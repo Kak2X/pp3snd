@@ -736,13 +736,8 @@ ENDC
 	and  $0F
 	ld   b, a
 	
-	; Read out to HL the base wave table ptr.
-	ld   hl, Sound_WaveTablePtr
-	ldi  a, [hl]
-	ld   h, [hl]
-	ld   l, a
-	
 	; Offset it
+	ld   hl, Sound_WaveTable
 	add  hl, bc
 	
 	; Copy the $10 bytes of wave data to the regs
@@ -1994,13 +1989,8 @@ SoundDataCmd_NoteEx:
 			ldh  [hROMBank], a
 			ld   [MBC1RomBank], a
 			
-			; Read out the base pointer at Sound_SlotPresetTablePtr to HL
-			ld   hl, Sound_SlotPresetTablePtr
-			ldi  a, [hl]
-			ld   h, [hl]
-			ld   l, a
-			
-			; Seek to the entry
+			; Do the indexing
+			ld   hl, Sound_SlotPresetTable ; BANK $06
 			add  hl, bc
 			
 			;--
@@ -2650,14 +2640,13 @@ Sound_DoInstrument:
 	
 	dec  l						; Seek to iSndChInfo_InstrumentOffset for later
 	
-	; First index the instrument ptr table.
-	; DE = Ptr to Sound_SndEnvTable[iSndChInfo_Instrument]
+	; DE = Ptr to Sound_InstrumentPtrTable-2[iSndChInfo_Instrument]
 	ld   e, a
-	ld   a, [Sound_InstrumentPtrTablePtr]	; Read low byte of ptr table
-	add  e									; Add iSndChInfo_Instrument, the ptr table offset
+	ld   a, LOW(Sound_InstrumentPtrTable-2)
+	add  e
 	ld   e, a
-	ld   a, [Sound_InstrumentPtrTablePtr+1]	; Read high byte ""
-	adc  a, $00								; Add carry
+	ld   a, HIGH(Sound_InstrumentPtrTable-2)
+	adc  a, $00
 	ld   d, a
 	
 	; Read out the resulting pointer, and index it by the instrument data offset.
@@ -2889,16 +2878,13 @@ Sound_DoVibrato:
 	
 	;
 	; First index the vibrato ptr table.
-	; DE = Sound_VibratoPtrTablePtr[iSndChInfo_Vibrato]
+	; DE = Sound_VibratoPtrTable-2[iSndChInfo_Vibrato]
 	;
-	ld   c, a					; BC = iSndChInfo_Vibrato
-	ld   b, $00
-	; Read out pointer at Sound_VibratoPtrTablePtr
-	ld   hl, Sound_VibratoPtrTablePtr
-	ldi  a, [hl]
-	ld   h, [hl]
-	ld   l, a
+
 	; Offset the pointer table
+	ld   hl, Sound_VibratoPtrTable-2	; HL = Table base
+	ld   c, a							; BC = iSndChInfo_Vibrato
+	ld   b, $00
 	add  hl, bc
 	; Read out the resulting ptr to DE
 	ldi  a, [hl]
@@ -4421,17 +4407,10 @@ Sound_StartNew:
 	; Index the song header pointer table.
 	;
 	
-	; BC = Song ID
-	ld   b, $00
-	
-	; Read to HL the base table pointer.
-	ld   hl, Sound_SndHeaderPtrTablePtr ; BANK $06
-	ldi  a, [hl]
-	ld   h, [hl]
-	ld   l, a
-	
 	; Offset the table
 	; Each table entry is 3 bytes long (bank number + pointer)
+	ld   hl, Sound_SndHeaderPtrTable ; BANK $06
+	ld   b, $00 ; BC = Song ID
 	add  hl, bc
 	add  hl, bc
 	add  hl, bc
@@ -4487,8 +4466,6 @@ Sound_StartNew:
 	
 	; If an high priority sound is currently playing, do not interrupt it.
 	; Only SFX use this, and when they do they mark all of their slots with it.
-	; [POI] By coincidence, this prevents memory corruption when playing an invalid
-	;       song whose header pointers to SndData_00_Ch3.
 	bit  SSTB_PRIORITY, [hl]
 	jr   nz, .end
 	

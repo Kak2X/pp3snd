@@ -12,3 +12,13 @@ SndHeader_SFXPause_00:
 	dw SndData_00_Ch3 ; Data pointer
 	db WAVE_06 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
+SndData_00_Ch3:
+	snd_note $3D, NOTELEN_01
+	snd_note $38
+	snd_note $3A
+	snd_note $3C
+	snd_note $3D
+	snd_note $38
+	snd_note $3A
+	snd_note $3C
+	snd_end

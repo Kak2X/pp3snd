@@ -2561,8 +2561,6 @@ Sound_SetFreq:
 .noNeg:
 	ldh  [hNRx4Data], a	; to hNRx4Data
 	ret
-	
-INCLUDE "driver/data/frequencies.asm"
 
 ; =============== Sound_DoInstrument ===============
 ; This subroutine prepares the volume/envelope-related fields (NRx2) for Sound_UpdateWorkRegsFromSlot.

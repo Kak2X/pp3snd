@@ -291,11 +291,11 @@ MainLoop:
 .fadeIn:
 	xor  a
 	ld   [wSndFadeVolume], a
-	ld   bc, (SNDCMD_FADEIN << 8)|$80
+	ld   bc, (SNDCMD_FADEIN << 8)|$20
 	call Sound_ReqPlayIdWithArg
 	jr   .callDrv
 .fadeOut:
-	ld   bc, (SNDCMD_FADEOUT << 8)|$80
+	ld   bc, (SNDCMD_FADEOUT << 8)|$20
 	call Sound_ReqPlayIdWithArg
 	jr   .callDrv
 	

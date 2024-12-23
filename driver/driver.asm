@@ -188,16 +188,11 @@ ENDC
 		
 	.relFromStart:
 		;
-		; [BUG] Release key if Timer <= Target.
-		;       This does not make sense. The intention was to go off Timer >= Target. 
+		; Release key if Timer >= Target.
 		;
 		cp   b
-	IF FIX_BUGS
 		jr   c, .timingHi		; iSndChInfo_KeyRelTarget  < iSndChInfo_Timer_High? If so, jump (skip)
-	ELSE
-		jr   z, .releaseKey		; iSndChInfo_KeyRelTarget == iSndChInfo_Timer_High? If so, jump (ok)
-		jr   nc, .timingHi		; iSndChInfo_KeyRelTarget  > iSndChInfo_Timer_High? If so, jump (skip)
-	ENDC
+		
 	.releaseKey:
 		;--
 		; [POI] Duplicate useless check.
@@ -2854,25 +2849,13 @@ Sound_DoInstrument:
 	; As the first command must be a standard one, the next one is 2 bytes after.
 	ld   [hl], $02	; iSndChInfo_InstrumentOffset = $02
 	
-	; [BUG] This is intended to re-read from the base instrument pointer, so that the
-	;       Timer/NRx2 data we get is from the very first command.
-	;       However, DE is currently pointing to the high byte of said pointer while
-	;       the code expects the low one, so it ends up setting a garbage address 
-	;       that will desync the channel.
-IF FIX_BUGS
+	; Use the offset from the very first command.
+	; Note that DE is currently pointing to the high byte of said pointer.
 	ld   a, [de]				; Read high byte of base instrument pointer
 	ld   b, a					; to B
 	dec  de						; Seek back to low byte
 	ld   a, [de]				; Read low byte of base instrument pointer
 	ld   c, a					; to C
-ELSE
-	ld   a, [de]
-	ld   c, a
-	inc  de
-	ld   a, [de]
-	ld   b, a
-ENDC
-
 	jr   .setNewData
 
 ; =============== Sound_DoVibrato ===============
@@ -3138,8 +3121,6 @@ Sound_DoVibrato:
 	ld   [hl], $01	; iSndChInfo_VibratoOffset = $02
 	
 	; Use the offset from the very first command.
-	; [POI] Unlike its envelope counterpart, this one doesn't have any bugs.
-	;       Which is a good thing given this one's actually used.
 	ld   a, [de]
 	jr   .setNewData
 
@@ -4424,14 +4405,11 @@ SoundCmd_Unpause:
 	and  $FF^SDT_PAUSE	
 .setFlags:
 	ld   [wSndFlags], a
-	; [POI] This is unnecessary.
-IF FIX_BUGS
+	; We don't need the baggage of playing the unpause sound here
+	;ld   c, $00
+	;jp   Sound_StartNew
 	ret
-ELSE
-	ld   c, $00
-	jp   Sound_StartNew
-ENDC
-
+	
 ;================ Sound_StartNew ================
 ; Plays a new song with an optional sample.
 ; IN

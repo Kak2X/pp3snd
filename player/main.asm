@@ -164,7 +164,7 @@ SECTION "EntryPoint", ROM0[$0100]
 	db   $00,$08,$11,$1F,$88,$89,$00,$0E,$DC,$CC,$6E,$E6,$DD,$DD,$D9,$99
 	db   $BB,$BB,$67,$63,$6E,$0E,$EC,$CC,$DD,$DC,$99,$9F,$BB,$B9,$33,$3E
 
-	db   "SOUND DRV GB2",$00,$00	; title
+	db   "SOUND DRV SUN",$00,$00	; title
 	db   $00      		; DMG - classic gameboy
 	db   $41,$37		; new license
 	db   $00      		; SGB flag: not capable
@@ -809,7 +809,7 @@ SECTION "Strings", ROM0
 	
 TxtDef_Title:
 	dw $9821
-	mTxtDef "GB2 DRIVER?"
+	mTxtDef "SUN DRIVER"
 	
 TxtDef_InstLR:
 	dw $9861

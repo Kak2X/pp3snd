@@ -71,7 +71,7 @@ ENDC
 	ld   h, d					; H = D = $D1
 	
 .slotLoop:
-	sub  a
+	xor  a
 	ldh  [hSndChInfoNewFlags], a
 	push bc
 	
@@ -668,7 +668,7 @@ IF KEEP_PCM
 	;
 .pcm_prepCh3:
 	; Disable ch3, in preparation for potentially clearing wave data
-	sub  a
+	xor  a
 	ldh  [rNR30], a
 	ldh  [rNR34], a
 	ldh  [rNR32], a
@@ -688,7 +688,7 @@ IF KEEP_PCM
 	; And save the changes with a retrigger
 	ldh  [rNR34], a
 	; Always use the longest possible length (NR31 = 0)
-	sub  a
+	xor  a
 	ldh  [rNR31], a
 
 	; Finally, enable the timer, at the max possible base frequency
@@ -753,7 +753,7 @@ ENDC
 	; Copy the $10 bytes of wave data to the regs
 	ld   c, LOW(rWave)  		; C = Destination
 	ld   b, $04					; B = Loop count
-	sub  a						; Disable ch3 during this
+	xor  a						; Disable ch3 during this
 	ldh  [rNR30], a
 .waveCpLoop:
 REPT 4
@@ -805,7 +805,7 @@ ENDR
 	ldh  [rNR34], a
 	
 	; Always use the longest possible length (NR31 = 0)
-	sub  a
+	xor  a
 	ldh  [rNR31], a
 	
 	inc  l 						; Seek to wNR41
@@ -910,7 +910,7 @@ Sound_PCMHandler:
 		
 		; Otherwise, mark PCM playback as ended.
 		; This causes Sound_UpdateWorkRegsFromSlot to tell Sound_UpdateRegs that PCM playback should end.
-		sub  a
+		xor  a
 		ld   [wSndPcmPlaying], a	
 		; And disable the timer counter.
 		; This prevents the interrupt from firing.
@@ -1160,7 +1160,7 @@ SoundDataCmd_End:
 	ldh  a, [hSndChInfoPtrBakLow]
 	ld   e, a
 	ld   h, d
-	sub  a
+	xor  a
 	ld   [de], a
 	
 	; Cleanly exit out of the command loop.
@@ -1460,7 +1460,7 @@ SoundDataCmd_IncVol:
 	;     $05 + -$04 => $05 + $FC => $01
 	add  [hl]			; Offset += iSndChInfo_Vol
 	jr   c, .end2		; Went out of range? If not, skip
-	sub  a				; Otherwise, cap it back to $00
+	xor  a				; Otherwise, cap it back to $00
 .end2:
 	ld   [hl], a		; Save back to iSndChInfo_Vol
 	ret
@@ -1613,7 +1613,7 @@ SoundDataCmd_SlotFade:
 	
 	; Reset fade timer
 	; iSndChInfo_FadeTimer = $00
-	sub  a
+	xor  a
 	ldd  [hl], a	; Seek to iSndChInfo_FadeSpeed
 	inc  bc			; Seek to byte2
 	
@@ -2082,7 +2082,7 @@ SoundDataCmd_NoteEx:
 				
 				; First, disable the noise sweep.
 				dec  e						; Seek to iSndChInfo_NoiseSweep				
-				sub  a
+				xor  a
 				ld   [de], a				; iSndChInfo_NoiseSweep = 0
 				
 			; Then, only if the preset flag is set, we copy over the sweep settings.
@@ -2127,7 +2127,7 @@ SoundDataCmd_NoteEx:
 	; Otherwise, it's a note length. (parameter skipped)
 	; Inconsistently to the earlier check at the start of the subroutine,
 	; if the first parameter is skipped, rather keeping the old Note ID...
-	sub  a							; ...it will mute the channel instead!
+	xor  a							; ...it will mute the channel instead!
 	jr   SoundDataCmd_Note.fromByte1
 	
 ; =============== SoundDataCmd_SameNote / snd_samenote ===============
@@ -2434,7 +2434,7 @@ ENDM
 	;--
 .noHeld:
 	; Rewind vibrato & instrument
-	sub  a				
+	xor  a				
 	ldi  [hl], a			; iSndChInfo_VibratoOffset = 0
 	ldi  [hl], a			; iSndChInfo_InstrumentOffset = 0
 	; Reset instrument timer
@@ -3000,7 +3000,7 @@ Sound_DoVibrato:
 		; [TCRF] This never happens with the used songs.
 		cp   HIGH($7FF+1)		; hNRx4Data < $08?
 		ret  c					; If so, return
-		sub  a
+		xor  a
 		ldh  [hNRx3Data], a
 		ldh  [hNRx4Data], a
 	ret
@@ -3350,7 +3350,7 @@ Sound_DoNoteSlide:
 	
 .endSlide:
 	; Reset the note.
-	sub  a
+	xor  a
 	ld   [de], a			; iSndChInfo_NSNoteId = 0
 	; And mute the sound channel for this frame only.
 	ldh  [hNRx3Data], a
@@ -3462,7 +3462,7 @@ Sound_DoPitchBend:
 ; =============== Sound_InitWorkRegs ===============
 ; Resets the set of sound register in the WRAM mirror at the end of the frame.
 Sound_InitWorkRegs:
-	sub  a
+	xor  a
 	ld   [wNR10], a
 	ld   [wNR32], a
 	ld   [wNR34], a
@@ -3670,7 +3670,7 @@ ENDC
 	sub  $0F
 	; If we underflowed though, cap it back to zero
 	jr   nc, .mergeVol
-	sub  a
+	xor  a
 .mergeVol:
 	; Move out of the way
 	ld   c, a
@@ -3769,7 +3769,7 @@ ENDC
 	ld   [wNR51], a				; Save everything back
 	
 	; Wipe out the mask, which doubles as a marker that the sound channel has been processed.
-	sub  a
+	xor  a
 	ldi  [hl], a				; Seek to the first register for the channel
 	;--
 	
@@ -3926,7 +3926,7 @@ ENDC
 	;
 	; $00 -> wNR44
 	;	
-	sub  a
+	xor  a
 	ld   [hl], a
 	
 .end:
@@ -4033,7 +4033,7 @@ Sound_Init:
 	ld   [wSndBankPcmDef], a
 	
 	; Clear sound queue
-	sub  a
+	xor  a
 	ld   [wSndQueueLen], a		; only the index matters
 	ld   [wSndFlags], a			; and the driver flags
 	
@@ -4058,7 +4058,7 @@ SoundCmd_ResetAll:
 	ldh  [rNR50], a
 	
 	; Mute all channels
-	sub  a
+	xor  a
 	ldh  [rNR31], a
 	ldh  [rNR41], a
 	ldh  [rNR30], a
@@ -4234,14 +4234,14 @@ Sound_DisablePCM:
 	jr   z, .clrPlay				; If not, skip
 	;--
 	; We never get here
-	sub  a					
+	xor  a					
 	ldh  [rTAC], a
 	;--
 .clrPlay:
 ; =============== Sound_DisablePCMPlayback ===============
 ; [TCRF] Marks that no PCM sample is currently playing.
 Sound_DisablePCMPlayback:
-	sub  a
+	xor  a
 	ld   [wSndPcmPlaying], a
 	ret
 ENDC
@@ -4328,7 +4328,7 @@ SoundCmd_FadeOut:
 	ld   [wSndFadeVolume], a
 	
 	; End with no volume
-	sub  a
+	xor  a
 	ld   [wSndFadeVolumeTarget], a
 	
 	; Enable fade-out
@@ -4347,7 +4347,7 @@ SoundCmd_FadeInStartNew:
 	; Start the new song
 	call Sound_StartNew
 	; Start the fade-in
-	sub  a
+	xor  a
 	ld   [wSndFadeVolume], a
 	; Since only one argument can be passed, the fade speed doesn't change from last time.
 	; Nothing prevents you from writing to wSndFadeIncSpeedSub before sending out this command though. 
@@ -4537,7 +4537,7 @@ Sound_StartNew:
 	; Initialize the rest
 	;
 	
-	sub  a
+	xor  a
 	; Zero out flags
 	ldi  [hl], a	; iSndChInfo_FxFlags0 = 0
 	ldi  [hl], a	; iSndChInfo_FxFlags1 = 0
@@ -4566,7 +4566,7 @@ Sound_StartNew:
 	
 	; No note or frequency offset by default.
 	; Song data will have to request those manually.
-	sub  a
+	xor  a
 	ldi  [hl], a	; iSndChInfo_FreqMod = 0
 	ld   [hl], a	; iSndChInfo_NoteId = 0
 	ld   a, l 
@@ -4575,7 +4575,7 @@ Sound_StartNew:
 	
 	; In case the slot handles the noise channel...
 	; ...no default sweep
-	sub  a			; iSndChInfo_NoiseSweep = 0
+	xor  a			; iSndChInfo_NoiseSweep = 0
 	ldi  [hl], a
 	; ...frequency at the base 262144 hz (shift and divider cancel themselves out)
 	ld   a, $20		; iSndChInfo_NoiseFreq = $20

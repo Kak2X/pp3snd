@@ -487,9 +487,27 @@ Sound_UpdateRegs:
 	; Pulse 1
 	;
 	
+IF CLEAN_MUTE
+	; Mute the channel if it hasn't been processed.
+	; This and other similar checks prevent unwanted noise.
+	ld   hl, wNR51_ChMask1
+	ldi  a, [hl]				; ... seek to wNR11
+	and  a						; Has the channel been processed?
+	jr   z, .ch1_onSet			; If so, jump
+	ld   l, LOW(wNR51)
+	ld   a, [hl]
+	and  a, %11101110
+	ld   [hl], a
+	ld   l, LOW(wNR51_ChMask2)
+	jr   .ch2
+	
+.ch1_onSet:
+	inc  l						; Seek to wNR12
+ELSE
+	ld   hl, wNR12
+ENDC
 	; Update NR12 only if the channel is retriggered, as those changes wouldn't do anything.
 	; Always update NR10 though.
-	ld   hl, wNR12
 	ld   a, [wNR14]
 	bit  SNDCHFB_RESTART, a		; Retriggering the channel?
 	ldi  a, [hl]				; (A = wNR12, seek to wNR13)
@@ -523,10 +541,22 @@ Sound_UpdateRegs:
 	;
 	; Pulse 2
 	;
-	
-	; Update NR22 only if the channel is retriggered.
+IF CLEAN_MUTE
+	ldi  a, [hl]				; ...seek to wNR21
+	and  a						; Has the channel been processed?
+	jr   z, .ch2_onSet			; If so, jump
+	ld   l, LOW(wNR51)
+	ld   a, [hl]
+	and  a, %11011101
+	ld   [hl], a
+	jr   .pcm
+.ch2_onSet:
+	inc  l						; (Seek to wNR22)
+ELSE
 	inc  l ; Seek to wNR21
 	inc  l ; Seek to wNR22
+ENDC
+	; Update NR22 only if the channel is retriggered.
 	ld   a, [wNR24]
 	bit  SNDCHFB_RESTART, a		; Retriggering the channel?
 	ldi  a, [hl]				; (A = wNR22, seek to wNR23)
@@ -540,9 +570,8 @@ Sound_UpdateRegs:
 	ld   a, [wNR21]
 	ldh  [rNR21], a
 	
+.pcm:	
 IF KEEP_PCM
-
-.pcm:
 	;
 	; [TCRF] Wave Channel - PCM Mode.
 	;
@@ -688,7 +717,11 @@ IF KEEP_PCM
 
 .pcm_noChange:
 	; PCM being enabled implies that the wave channel cannot be used for its normal purpose.
+IF CLEAN_MUTE
+	ld   hl, wNR51_ChMask4
+ELSE
 	ld   hl, wNR42				; So skip to ch4
+ENDC
 	jr   .ch4
 	
 .pcm_tryEnd:
@@ -767,7 +800,11 @@ ENDR
 .ch3_onClear:
 	ld   [hl], $00				; Mark the channel as processed
 	ldh  [rNR30], a				; Silence!
+IF CLEAN_MUTE
+	ld   l, LOW(wNR51_ChMask4)
+ELSE
 	ld   l, LOW(wNR42)
+ENDC
 	jr   .ch4					; Don't do anything else
 .ch3_onSet:
 
@@ -792,14 +829,27 @@ ENDR
 	xor  a
 	ldh  [rNR31], a
 	
+IF !CLEAN_MUTE
 	inc  l 						; Seek to wNR41
 	inc  l 						; Seek to wNR42
+ENDC
 	
 .ch4:
 	;
 	; Noise channel
 	;
-	
+IF CLEAN_MUTE
+	ldi  a, [hl]				; ... seek to wNR41
+	inc  l						; (Seek to wNR42)
+	and  a						; Has the channel been processed?
+	jr   z, .ch4_onSet			; If so, jump
+	ld   l, LOW(wNR51)
+	ld   a, [hl]
+	and  a, %01110111
+	ld   [hl], a
+	jr   .end
+.ch4_onSet:
+ENDC
 	; Only update rNR42 if retriggering it
 	ld   a, [wNR44]
 	bit  SNDCHFB_RESTART, a		; Retriggering the channel?
@@ -812,6 +862,8 @@ ENDR
 	ldh  [rNR43], a
 	ldi  a, [hl]
 	ldh  [rNR44], a
+	
+.end:
 	; And the bitmask with enabled channels
 	ldi  a, [hl]
 	ldh  [rNR51], a

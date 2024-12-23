@@ -212,17 +212,11 @@ ENDC
 		; Increment the high byte of the timer.
 		; If that reaches the target, process the next song data bytes.
 		;
-		
-		; BC = Ptr to iSndChInfo_Timer_High
-		ld   c, l	; #
-		inc  c		; #
-		;--
-		; Increment the timer's high byte.
-		; This could have been done before the "ld   c, l", there's no reason to insert it here.
 		inc  b					; A = iSndChInfo_Timer_High + 1
 		ld   a, b
-		;--
-		ld   b, h	; #
+		ld   c, l				; BC = Ptr to iSndChInfo_Timer_High
+		inc  c
+		ld   b, h
 		
 		ld   [bc], a				; Save back the high byte
 		cp   [hl]					; Did it reach the target note length?
@@ -2465,12 +2459,9 @@ Sound_SetFreq:
 	; Sound_UpdateWorkRegsFromSlot skips processing slots with zeroed out frequencies, 
 	; causing the channel to be silenced.
 	;
-	
-	; This write here is very misleading.
-	; For clarity, it should have been done only after the check.
-	ldh  [hNRx3Data], a		; Potentially clear NRx3
-	and  a					; Note offset != 0?
+	and  a					; Note ID != 0?
 	jr   nz, .idxFreq		; If so, jump
+	ldh  [hNRx3Data], a		; Potentially clear NRx3
 	ldh  [hNRx4Data], a		; Otherwise, also clear NRx4
 	ret
 	

@@ -1,10 +1,10 @@
 ; =============== Sound_SndHeaderPtrTable ===============
 ; Pointer table with sound headers, by ID.
-; Some of the unused entries point to SndData_00_Ch3, which is NOT a sound header.
+; Some of the unused entries point to SndHeader_SFXPause_00, which is NOT a sound header.
 Sound_SndHeaderPtrTable: 
 	dp SndHeader_SFXPause_00 ; $00
 	dp SndHeader_BGM_01 ; $01
-	dp SndData_00_Ch3 ; $02
+	dp SndHeader_SFXPause_00 ; $02
 	dp SndHeader_BGM_03 ; $03
 	dp SndHeader_BGM_04 ; $04
 	dp SndHeader_BGM_05 ; $05
@@ -30,19 +30,19 @@ Sound_SndHeaderPtrTable:
 	dp SndHeader_BGM_19 ; $19
 	dp SndHeader_BGM_1A ; $1A
 	dp SndHeader_BGM_1B ; $1B
-	dp SndData_00_Ch3 ; $1C
-	dp SndData_00_Ch3 ; $1D
-	dp SndData_00_Ch3 ; $1E
+	dp SndHeader_SFXPause_00 ; $1C
+	dp SndHeader_SFXPause_00 ; $1D
+	dp SndHeader_SFXPause_00 ; $1E
 	dp SndHeader_BGM_1F ; $1F
 	dp SndHeader_BGM_20 ; $20
 	dp SndHeader_BGM_21 ; $21
 	dp SndHeader_BGM_22 ; $22
-	dp SndData_00_Ch3 ; $23
+	dp SndHeader_SFXPause_00 ; $23
 	dp SndHeader_BGM_24 ; $24
-	dp SndData_00_Ch3 ; $25
-	dp SndData_00_Ch3 ; $26
-	dp SndData_00_Ch3 ; $27
-	dp SndData_00_Ch3 ; $28
+	dp SndHeader_SFXPause_00 ; $25
+	dp SndHeader_SFXPause_00 ; $26
+	dp SndHeader_SFXPause_00 ; $27
+	dp SndHeader_SFXPause_00 ; $28
 	dp SndHeader_SFX_29 ; $29
 	dp SndHeader_SFX_2A ; $2A
 	dp SndHeader_SFX_2B ; $2B

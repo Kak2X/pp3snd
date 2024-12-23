@@ -65,29 +65,29 @@ Sound_InstrumentPtrTable:
 	dw SndInstrument_3C   ; $3C ; INSTR_3C
 	dw SndInstrument_3D   ; $3D ; INSTR_3D
 	dw SndInstrument_3E   ; $3E ; INSTR_3E
-	dw SndVibrato_5B;X    ; $3F ; INSTR_3F
+	dw SndInstrument_3E;X ; $3F ; INSTR_3F
 	dw SndInstrument_40   ; $40 ; INSTR_40
 	dw SndInstrument_41   ; $41 ; INSTR_41
 	dw SndInstrument_42   ; $42 ; INSTR_42
-	dw SndVibrato_5B;X    ; $43 ; INSTR_43
-	dw SndVibrato_5B;X    ; $44 ; INSTR_44
-	dw SndVibrato_5B;X    ; $45 ; INSTR_45
-	dw SndVibrato_5B;X    ; $46 ; INSTR_46
-	dw SndVibrato_5B;X    ; $47 ; INSTR_47
-	dw SndVibrato_5B;X    ; $48 ; INSTR_48
-	dw SndVibrato_5B;X    ; $49 ; INSTR_49
-	dw SndVibrato_5B;X    ; $4A ; INSTR_4A
-	dw SndVibrato_5B;X    ; $4B ; INSTR_4B
-	dw SndVibrato_5B;X    ; $4C ; INSTR_4C
-	dw SndVibrato_5B;X    ; $4D ; INSTR_4D
-	dw SndVibrato_5B;X    ; $4E ; INSTR_4E
-	dw SndVibrato_5B;X    ; $4F ; INSTR_4F
-	dw SndVibrato_5B;X    ; $50 ; INSTR_50
-	dw SndVibrato_5B;X    ; $51 ; INSTR_51
-	dw SndVibrato_5B;X    ; $52 ; INSTR_52
-	dw SndVibrato_5B;X    ; $53 ; INSTR_53
-	dw SndVibrato_5B;X    ; $54 ; INSTR_54
-	dw SndVibrato_5B;X    ; $55 ; INSTR_55
+	dw SndInstrument_42;X ; $43 ; INSTR_43
+	dw SndInstrument_42;X ; $44 ; INSTR_44
+	dw SndInstrument_42;X ; $45 ; INSTR_45
+	dw SndInstrument_42;X ; $46 ; INSTR_46
+	dw SndInstrument_42;X ; $47 ; INSTR_47
+	dw SndInstrument_42;X ; $48 ; INSTR_48
+	dw SndInstrument_42;X ; $49 ; INSTR_49
+	dw SndInstrument_42;X ; $4A ; INSTR_4A
+	dw SndInstrument_42;X ; $4B ; INSTR_4B
+	dw SndInstrument_42;X ; $4C ; INSTR_4C
+	dw SndInstrument_42;X ; $4D ; INSTR_4D
+	dw SndInstrument_42;X ; $4E ; INSTR_4E
+	dw SndInstrument_42;X ; $4F ; INSTR_4F
+	dw SndInstrument_42;X ; $50 ; INSTR_50
+	dw SndInstrument_42;X ; $51 ; INSTR_51
+	dw SndInstrument_42;X ; $52 ; INSTR_52
+	dw SndInstrument_42;X ; $53 ; INSTR_53
+	dw SndInstrument_42;X ; $54 ; INSTR_54
+	dw SndInstrument_42;X ; $55 ; INSTR_55
 	dw SndInstrument_56   ; $56 ; INSTR_56
 	dw SndInstrument_57   ; $57 ; INSTR_57
 	dw SndInstrument_58   ; $58 ; INSTR_58
@@ -118,18 +118,18 @@ Sound_InstrumentPtrTable:
 	dw SndInstrument_71   ; $71 ; INSTR_71
 	dw SndInstrument_72;X ; $72 ; INSTR_72
 	dw SndInstrument_73   ; $73 ; INSTR_73
-	dw SndHeader_SFXPause_00;X     ; $74 ; INSTR_74
-	dw SndHeader_SFXPause_00;X     ; $75 ; INSTR_75
-	dw SndHeader_SFXPause_00;X     ; $76 ; INSTR_76
-	dw SndHeader_SFXPause_00;X     ; $77 ; INSTR_77
-	dw SndHeader_SFXPause_00;X     ; $78 ; INSTR_78
-	dw SndHeader_SFXPause_00;X     ; $79 ; INSTR_79
+	dw SndInstrument_73;X ; $74 ; INSTR_74
+	dw SndInstrument_73;X ; $75 ; INSTR_75
+	dw SndInstrument_73;X ; $76 ; INSTR_76
+	dw SndInstrument_73;X ; $77 ; INSTR_77
+	dw SndInstrument_73;X ; $78 ; INSTR_78
+	dw SndInstrument_73;X ; $79 ; INSTR_79
 	dw SndInstrument_70;X ; $7A ; INSTR_7A
-	dw SndHeader_SFXPause_00;X     ; $7B ; INSTR_7B
-	dw SndHeader_SFXPause_00;X     ; $7C ; INSTR_7C
-	dw SndHeader_SFXPause_00;X     ; $7D ; INSTR_7D
-	dw SndHeader_SFXPause_00;X     ; $7E ; INSTR_7E
-	dw SndHeader_SFXPause_00;X     ; $7F ; INSTR_7F
+	dw SndInstrument_70;X ; $7B ; INSTR_7B
+	dw SndInstrument_70;X ; $7C ; INSTR_7C
+	dw SndInstrument_70;X ; $7D ; INSTR_7D
+	dw SndInstrument_70;X ; $7E ; INSTR_7E
+	dw SndInstrument_70;X ; $7F ; INSTR_7F
 SndInstrument_01:
 	ivol $14, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
 	ivol $04, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100

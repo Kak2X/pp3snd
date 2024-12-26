@@ -482,30 +482,39 @@ ENDC
 ; =============== Sound_UpdateRegs ===============
 ; Copies the sound register mirror in WRAM to the changes to the hardware registers. 
 Sound_UpdateRegs:
+	ld   bc, wSndChMute
 
 	;
 	; Pulse 1
 	;
-	
-IF CLEAN_MUTE
-	; Mute the channel if it hasn't been processed.
+
+	; Mute the channel if it hasn't been processed and if it hasn't been muted before.
 	; This and other similar checks prevent unwanted noise.
 	ld   hl, wNR51_ChMask1
 	ldi  a, [hl]				; ... seek to wNR11
 	and  a						; Has the channel been processed?
 	jr   z, .ch1_onSet			; If so, jump
-	ld   l, LOW(wNR51)
-	ld   a, [hl]
-	and  a, %11101110
-	ld   [hl], a
-	ld   l, LOW(wNR51_ChMask2)
+	
+	ld   l, LOW(wNR51_ChMask2)	; Seek to the ch2 starting point for later
+	ld   a, [bc]
+	bit  SNDOUTB_CH1R, a		; Muted already?
+	jr   nz, .ch2				; If so, skip to ch2
+	
+	set  SNDOUTB_CH1R, a 		; Otherwise, flag it as muted
+	ld   [bc], a			
+	ld   a, $08					; And do mute it
+	ldh  [rNR12], a
+	ld   a, SNDCHF_RESTART
+	ldh  [rNR14], a
+	
 	jr   .ch2
 	
 .ch1_onSet:
+	res  SNDOUTB_CH1R, a		; Clear mute flag
+	ld   [bc], a
+
 	inc  l						; Seek to wNR12
-ELSE
-	ld   hl, wNR12
-ENDC
+	
 	; Update NR12 only if the channel is retriggered, as those changes wouldn't do anything.
 	; Always update NR10 though.
 	ld   a, [wNR14]
@@ -541,21 +550,28 @@ ENDC
 	;
 	; Pulse 2
 	;
-IF CLEAN_MUTE
+	; BC should not have been overwritten
+	
 	ldi  a, [hl]				; ...seek to wNR21
 	and  a						; Has the channel been processed?
 	jr   z, .ch2_onSet			; If so, jump
-	ld   l, LOW(wNR51)
-	ld   a, [hl]
-	and  a, %11011101
-	ld   [hl], a
+	
+	ld   a, [bc]
+	bit  SNDOUTB_CH2R, a		; Muted already?
+	jr   nz, .pcm				; If so, skip to pcm
+	
+	set  SNDOUTB_CH2R, a 		; Otherwise, flag it as muted
+	ld   [bc], a			
+	ld   a, $08					; And do mute it
+	ldh  [rNR22], a
+	ld   a, SNDCHF_RESTART
+	ldh  [rNR24], a
 	jr   .pcm
 .ch2_onSet:
+	res  SNDOUTB_CH2R, a		; Clear mute flag
+	ld   [bc], a
+
 	inc  l						; (Seek to wNR22)
-ELSE
-	inc  l ; Seek to wNR21
-	inc  l ; Seek to wNR22
-ENDC
 	; Update NR22 only if the channel is retriggered.
 	ld   a, [wNR24]
 	bit  SNDCHFB_RESTART, a		; Retriggering the channel?
@@ -717,11 +733,7 @@ IF KEEP_PCM
 
 .pcm_noChange:
 	; PCM being enabled implies that the wave channel cannot be used for its normal purpose.
-IF CLEAN_MUTE
-	ld   hl, wNR51_ChMask4
-ELSE
-	ld   hl, wNR42				; So skip to ch4
-ENDC
+	ld   hl, wNR51_ChMask4		; So skip to ch4
 	jr   .ch4
 	
 .pcm_tryEnd:
@@ -800,11 +812,7 @@ ENDR
 .ch3_onClear:
 	ld   [hl], $00				; Mark the channel as processed
 	ldh  [rNR30], a				; Silence!
-IF CLEAN_MUTE
 	ld   l, LOW(wNR51_ChMask4)
-ELSE
-	ld   l, LOW(wNR42)
-ENDC
 	jr   .ch4					; Don't do anything else
 .ch3_onSet:
 
@@ -829,27 +837,33 @@ ENDC
 	xor  a
 	ldh  [rNR31], a
 	
-IF !CLEAN_MUTE
-	inc  l 						; Seek to wNR41
-	inc  l 						; Seek to wNR42
-ENDC
-	
 .ch4:
 	;
 	; Noise channel
 	;
-IF CLEAN_MUTE
+	ld   bc, wSndChMute			; BC got overwritten
+	
 	ldi  a, [hl]				; ... seek to wNR41
 	inc  l						; (Seek to wNR42)
 	and  a						; Has the channel been processed?
 	jr   z, .ch4_onSet			; If so, jump
-	ld   l, LOW(wNR51)
-	ld   a, [hl]
-	and  a, %01110111
-	ld   [hl], a
+	
+	ld   l, LOW(wNR51)			; For later
+	ld   a, [bc]
+	bit  SNDOUTB_CH4R, a		; Muted already?
+	jr   nz, .end				; If so, skip channel
+	
+	set  SNDOUTB_CH4R, a 		; Otherwise, flag it as muted
+	ld   [bc], a			
+	ld   a, $08					; And do mute it
+	ldh  [rNR42], a
+	ld   a, SNDCHF_RESTART
+	ldh  [rNR44], a
 	jr   .end
 .ch4_onSet:
-ENDC
+	res  SNDOUTB_CH4R, a		; Clear mute flag
+	ld   [bc], a
+	
 	; Only update rNR42 if retriggering it
 	ld   a, [wNR44]
 	bit  SNDCHFB_RESTART, a		; Retriggering the channel?
@@ -3472,6 +3486,8 @@ Sound_DoPitchBend:
 ; =============== Sound_InitWorkRegs ===============
 ; Resets the set of sound register in the WRAM mirror at the end of the frame.
 Sound_InitWorkRegs:
+	; Default register values for asserting silence.
+	; These will be updated by sound slots when processed.
 	xor  a
 	ld   [wNR10], a
 	ld   [wNR32], a
@@ -3487,7 +3503,7 @@ ENDC
 	ld   [wNR22], a
 	ld   [wNR42], a
 	
-	ld   a, $80
+	ld   a, SNDCHF_RESTART
 	ld   [wNR14], a
 	ld   [wNR24], a
 	ld   [wNR44], a
@@ -4077,6 +4093,7 @@ SoundCmd_ResetAll:
 	ld   [wNR11], a
 	ld   [wNR21], a
 	ld   [wNR34], a
+	ld   [wSndChMute], a
 	call Sound_ClearWave
 	
 	; Fall-through

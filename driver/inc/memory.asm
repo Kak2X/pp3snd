@@ -17,7 +17,9 @@ wSndPcmPlaying            :db     ; EQU $D01B ; If set, a PCM sample is currentl
 wSndPcmIDSet              :db     ; EQU $D01C ; PCM ID to be played, reset on every frame.
 wSndPcmSpeedSet           :db     ; EQU $D01D ; Playback speed for the above, also reset on every frame.
                                               ; Doubles as flag that, if set, marks that PCM playback can continue.
-											  
+wSndChMute                :db     ; EQU $D01E ; Marks the channels which got muted last frame. (----3210)
+                                              ; Prevents constant assertion of silence.
+										  
 SECTION "Sound Register Mirror", WRAM0[$D020]
 
 wNR51_ChMask1   :db     ; EQU $D020

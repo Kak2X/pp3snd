@@ -954,22 +954,22 @@ SndData_01_Ch4:
 		snd_noteex PRESET_02
 		snd_djnz iSndChInfo_LoopTimer0, .loop2a
 	snd_var iSndChInfo_LoopTimer0, $03
-L08470B:
-	snd_noteex PRESET_01
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_00
-	snd_noteex PRESET_01, NOTELEN_06
-	snd_noteex PRESET_02, NOTELEN_03
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_00
-	snd_noteex PRESET_01, NOTELEN_06
-	snd_noteex PRESET_02, NOTELEN_03
-	snd_noteex PRESET_02
-	snd_djnz iSndChInfo_LoopTimer0, L08470B
+	.loop3:
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01, NOTELEN_06
+		snd_noteex PRESET_02, NOTELEN_03
+		snd_noteex PRESET_02
+		snd_noteex PRESET_01
+		snd_noteex PRESET_02
+		snd_noteex PRESET_02
+		snd_noteex PRESET_00
+		snd_noteex PRESET_01, NOTELEN_06
+		snd_noteex PRESET_02, NOTELEN_03
+		snd_noteex PRESET_02
+		snd_djnz iSndChInfo_LoopTimer0, .loop3
 	snd_noteex PRESET_01
 	snd_noteex PRESET_02
 	snd_noteex PRESET_02

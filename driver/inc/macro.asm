@@ -5,48 +5,6 @@ MACRO dp
 	dw \1
 ENDM
 
-; LOWERCASE nrxx macros to try avoiding conflicts
-
-; =============== nr10 ===============
-; NR10 data.
-; IN
-; - 1: Pace ($0-7)
-; - 2: Direction (SNDPRD_INC or SNDPRD_DEC)
-; - 3: Individual step
-MACRO nr10
-	db (\1 << 4)|\2|\3
-ENDM
-
-; =============== nrx1 ===============
-; NRx1 data.
-;
-; IN
-; - 1: Wave Duty (SNDDUTY_*)
-; - 2: Initial length timer
-MACRO nrx1
-	db (\1 << 6)|\2
-ENDM
-
-; =============== nrx2 ===============
-; NRx2 data.
-;
-; IN
-; - 1: Volume ($0-$F)
-; - 2: Envelope direction (SNDENV_INC or SNDENV_DEC) [non-Wave]
-; - 3: Envelope pace [non-Wave]
-MACRO nrx2
-	db (\1 << 4)|\2|\3
-ENDM
-
-; =============== nr32 ===============
-; NR32 data, in hNRx2Data format.
-;
-; IN
-; - 1: Volume (SNDCH3VOL_*)
-MACRO nr32
-	db (\1 << 6)
-ENDM
-
 ; =============== INSTRUMENT / VIBRATO DATA COMMANDS ===============
 
 ; =============== ivol ===============
@@ -57,10 +15,9 @@ ENDM
 ; IN
 ; - 1: Length, in frames. This NRx2 data is valid for that duration.
 ;      Must not be between $80-$84
-; - 2-4: nrx2 args
+; - 2: NRx2 data
 MACRO ivol
-	db \1
-	nrx2 \2,\3,\4
+	db \1, \2
 ENDM
 
 ; =============== vfrq ===============
@@ -114,10 +71,10 @@ ENDM
 ;
 ; IN (same as ivol)
 ; - 1: Length, in frames.
-; - 2-4: nrx2 args
+; - 2: NRx2 data
 MACRO iloop_prev_cond
 	db SNDENVCMD_LOOPCOND
-	ivol \1,\2,\3,\4
+	ivol \1,\2
 ENDM
 
 ; =============== vloop_prev_cond ===============
@@ -165,10 +122,10 @@ ENDM
 ;      Must point to before current location.
 ; (remaining same as ivol)
 ; - 2: Length, in frames.
-; - 3-5: nrx2 args
+; - 3: NRx2 data
 MACRO iloop_far_cond
 	db SNDENVCMD_LOOPFARCOND, (@ - \1 - 1)
-	ivol \2,\3,\4,\5
+	ivol \2,\3
 ENDM
 
 ; =============== vloop_far_cond ===============
@@ -304,12 +261,10 @@ ENDM
 ;
 ; Sets new envelope data.
 ; IN
-; - 1+: <nrx2 arguments>
+; - 1: NRx2 data
 MACRO snd_nrx2
-	db SNDDATACMD_INSTRUMENT
-	nrx2 \#
+	db SNDDATACMD_INSTRUMENT, \1
 ENDM
-
 
 ; =============== snd_inc_base_note ===============
 ; Command: SoundDataCmd_IncBaseNote
@@ -372,12 +327,9 @@ ENDM
 ; Sets a new noise sweep value.
 ;
 ; IN
-; - 1: Clock shift increment (0-2 or 8)
-; - 2: Clock divider increment (0 or 1)
-; - 3: LFSR toggle (SBDCH4_LFSR7)
-;      If set, toggles between 15-bit and 7-bit modes.
+; - 1: NR43 data
 MACRO snd_noise_sweep
-	db SNDDATACMD_NOISE_SWEEP, (\1 << 4)|\2|\3
+	db SNDDATACMD_NOISE_SWEEP, \1
 ENDM
 
 ; =============== snd_noise_sweep_single ===============
@@ -387,12 +339,9 @@ ENDM
 ; This does not alter the sweep value currently saved to the slot through snd_noise_sweep.
 ;
 ; IN
-; - 1: Clock shift increment (0-2 or 8)
-; - 2: Clock divider increment (0 or 1)
-; - 3: LFSR toggle (SBDCH4_LFSR7)
-;      If set, toggles between 15-bit and 7-bit modes.
+; - 1: NR43 data
 MACRO snd_noise_sweep_single
-	db SNDDATACMD_NOISE_SWEEP_SINGLE, (\1 << 4)|\2|\3
+	db SNDDATACMD_NOISE_SWEEP_SINGLE, \1
 ENDM
 
 ; =============== snd_status ===============
@@ -424,11 +373,9 @@ ENDM
 ; Sets a new noise frequency value.
 ;
 ; IN
-; - 1: Clock shift
-; - 2: Clock divider
-; - 3: LFSR mode (SBDCH4_LFSR7)
+; - 1: NR43 data
 MACRO snd_noise
-	db SNDDATACMD_NOISE_FREQ, (\1 << 4)|\2|\3
+	db SNDDATACMD_NOISE_FREQ, \1
 ENDM
 
 ; =============== snd_fade ===============
@@ -597,11 +544,10 @@ ENDM
 ; Do not use for the wave channel.
 ;
 ; IN
-; - 1: Duty (SNDDUTY_*)
-; - 2: Initial length timer
+; - 1: NRx1 data
 MACRO snd_duty
 	db SNDDATACMD_DUTY
-	nrx1 \1,\2
+	db \1
 ENDM
 
 ; =============== snd_wave ===============

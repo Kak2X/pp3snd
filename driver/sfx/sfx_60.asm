@@ -10,7 +10,7 @@ SndHeader_SFX_60:
 	db 100 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_60_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
@@ -22,7 +22,7 @@ SndHeader_SFX_60:
 	db 100 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_60_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_60_Ch2:
 	snd_note $49, NOTELEN_24

@@ -10,7 +10,7 @@ SndHeader_SFX_5B:
 	db 200 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_5B_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5B_Ch2:
 	snd_note $34, NOTELEN_03

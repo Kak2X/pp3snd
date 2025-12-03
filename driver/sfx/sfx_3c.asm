@@ -10,7 +10,7 @@ SndHeader_SFX_3C:
 	db 0 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_3C_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location
@@ -22,19 +22,19 @@ SndHeader_SFX_3C:
 	db 0 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_3C_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3C_Ch1:
 	snd_note $5F, NOTELEN_01
 	snd_status SST_CH4
-	snd_noise_sweep 0, 7, 0
+	snd_noise_sweep $07
 	snd_note $60, NOTELEN_02
 	snd_note $3A, NOTELEN_01
 	snd_status SST_CH123
 	snd_note $54, NOTELEN_02
 	snd_note $65, NOTELEN_01
 	snd_status SST_CH4
-	snd_noise_sweep 0, 7, 0
+	snd_noise_sweep $07
 	snd_inc_base_note -12
 	snd_fade SSF_FADEOUT, 4, 64
 	.loop:

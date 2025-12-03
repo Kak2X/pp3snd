@@ -10,7 +10,7 @@ SndHeader_SFX_3D:
 	db 0 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_3D_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
@@ -22,7 +22,7 @@ SndHeader_SFX_3D:
 	db 0 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_3D_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3D_ChUnused:
 	snd_note $00, NOTELEN_02 ;X

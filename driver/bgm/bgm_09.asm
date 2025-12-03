@@ -22,7 +22,7 @@ SndHeader_BGM_09:
 	db 109 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_09_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
@@ -34,7 +34,7 @@ SndHeader_BGM_09:
 	db 109 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_09_Ch2 ; Data pointer
-	nrx1 SNDDUTY_25, $00 ; iSndChInfo_DutyOrWave
+	db $40 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
@@ -46,7 +46,7 @@ SndHeader_BGM_09:
 	db 109 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_09_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_09_Ch3:
 	snd_wave WAVE_09
@@ -332,7 +332,7 @@ SndData_09_Ch3:
 	snd_note $2A
 	snd_jp .loop
 SndData_09_Ch1:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_note $30, NOTELEN_01
 	snd_note $31
 	snd_note $32
@@ -340,7 +340,7 @@ SndData_09_Ch1:
 	snd_note $35, NOTELEN_06
 	snd_note $36
 .loop:
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_2F
 	snd_vibrato VIBRATO_3D
 	snd_inc_base_note 12
@@ -348,14 +348,14 @@ SndData_09_Ch1:
 	snd_note $37, NOTELEN_09
 	snd_note $3E, NOTELEN_06
 	snd_note $3C
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_30
 	snd_vibrato VIBRATO_34
 	snd_inc_base_note -12
 	snd_note $35, NOTELEN_09
 	snd_note $3C, NOTELEN_06
 	snd_note $35, NOTELEN_CUSTOM, $05
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_2F
 	snd_vibrato VIBRATO_3D
 	snd_inc_base_note 12
@@ -364,14 +364,14 @@ SndData_09_Ch1:
 	snd_note $35, NOTELEN_09
 	snd_note $3C, NOTELEN_06
 	snd_note $3A
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_30
 	snd_vibrato VIBRATO_34
 	snd_inc_base_note -12
 	snd_note $33, NOTELEN_09
 	snd_note $3A, NOTELEN_06
 	snd_note $33, NOTELEN_CUSTOM, $05
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_2F
 	snd_vibrato VIBRATO_3D
 	snd_inc_base_note 12
@@ -380,7 +380,7 @@ SndData_09_Ch1:
 	snd_note $37, NOTELEN_09
 	snd_note $3E, NOTELEN_06
 	snd_note $3C
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_30
 	snd_vibrato VIBRATO_34
 	snd_inc_base_note -12
@@ -395,7 +395,7 @@ SndData_09_Ch1:
 	snd_note $3D
 	snd_note $3C
 	snd_note $3B, NOTELEN_03
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_2F
 	snd_vibrato VIBRATO_3D
 	snd_inc_base_note 12
@@ -408,14 +408,14 @@ SndData_09_Ch1:
 	snd_note $37, NOTELEN_09
 	snd_note $3E, NOTELEN_06
 	snd_note $3C
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_30
 	snd_vibrato VIBRATO_34
 	snd_inc_base_note -12
 	snd_note $35, NOTELEN_09
 	snd_note $3C, NOTELEN_06
 	snd_note $35, NOTELEN_CUSTOM, $05
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_2F
 	snd_vibrato VIBRATO_3D
 	snd_inc_base_note 12
@@ -424,14 +424,14 @@ SndData_09_Ch1:
 	snd_note $35, NOTELEN_09
 	snd_note $3C, NOTELEN_06
 	snd_note $3A
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_30
 	snd_vibrato VIBRATO_34
 	snd_inc_base_note -12
 	snd_note $33, NOTELEN_09
 	snd_note $3A, NOTELEN_06
 	snd_note $33, NOTELEN_CUSTOM, $05
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_2F
 	snd_vibrato VIBRATO_3D
 	snd_inc_base_note 12
@@ -440,7 +440,7 @@ SndData_09_Ch1:
 	snd_note $37, NOTELEN_09
 	snd_note $3E, NOTELEN_06
 	snd_note $3C
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_30
 	snd_vibrato VIBRATO_34
 	snd_inc_base_note -12
@@ -455,7 +455,7 @@ SndData_09_Ch1:
 	snd_note $3D
 	snd_note $3C
 	snd_note $3B, NOTELEN_03
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_2F
 	snd_vibrato VIBRATO_3D
 	snd_inc_base_note 12
@@ -463,7 +463,7 @@ SndData_09_Ch1:
 	snd_note $3D, NOTELEN_0C
 	snd_note $3C
 	snd_note $3A
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_38
 	snd_vibrato VIBRATO_3D
 	snd_inc_base_note -12
@@ -477,7 +477,7 @@ SndData_09_Ch1:
 	snd_note $2C, NOTELEN_CUSTOM, $15
 	snd_note $2B, NOTELEN_CUSTOM, $1B
 	snd_inc_vol 8
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_instrument INSTR_2F
 	snd_vibrato VIBRATO_3D
 	snd_inc_base_note 0
@@ -509,7 +509,7 @@ SndData_09_Ch1:
 	snd_note $31, NOTELEN_09
 	snd_note $2C, NOTELEN_06
 	snd_note $2B, NOTELEN_03
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_30
 	snd_vibrato VIBRATO_3D
 	snd_inc_base_note 0
@@ -579,7 +579,7 @@ SndData_09_Ch2:
 	snd_note $2E
 	snd_note $22
 	snd_note $1B, NOTELEN_CUSTOM, $0F
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_inc_vol -8
 	snd_instrument INSTR_38
 	snd_note $22, NOTELEN_CUSTOM, $15
@@ -591,7 +591,7 @@ SndData_09_Ch2:
 	snd_note $24, NOTELEN_CUSTOM, $15
 	snd_note $22, NOTELEN_CUSTOM, $1B
 	snd_inc_vol 8
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_2E
 	snd_note $22, NOTELEN_06
 	snd_note $27, NOTELEN_09
@@ -621,13 +621,13 @@ SndData_09_Ch2:
 	snd_note $29, NOTELEN_09
 	snd_note $2C, NOTELEN_06
 	snd_note $2B, NOTELEN_CUSTOM, $0F
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_2E
 	snd_note $16, NOTELEN_06
 	snd_note $17
 	snd_jp .loop
 SndData_09_Ch4:
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_note $00, NOTELEN_0C
 	snd_noteex PRESET_00, NOTELEN_06
 	snd_noteex PRESET_00, NOTELEN_03

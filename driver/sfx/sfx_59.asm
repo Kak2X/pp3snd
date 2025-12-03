@@ -10,7 +10,7 @@ SndHeader_SFX_59:
 	db 157 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_59_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
@@ -34,7 +34,7 @@ SndHeader_SFX_59:
 	db 157 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_59_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT7 ; Slot location
@@ -46,13 +46,13 @@ SndHeader_SFX_59:
 	db 157 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_59_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_59_Ch2:
 	snd_note $00, NOTELEN_CUSTOM, $05
 	snd_inc_freq_offset -2
 SndData_59_Ch1:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_note $2F, NOTELEN_03
 	snd_note $2C
 	snd_note $2F

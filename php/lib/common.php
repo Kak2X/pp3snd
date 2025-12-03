@@ -154,35 +154,16 @@ function fmthexnum($dec, $digits = 2) {
 }
 
 function mknr10($n) {
-	$pace	= fmthexnum($n >> 4, 1);
-	$dir	= ($n & 8) ? "SNDPRD_DEC" : "SNDPRD_INC"; // Consistency wins
-	$step	= fmthexnum($n & 7);
-	return "\${$pace}, {$dir}, \${$step}";
+	return '$'.fmthexnum($n); 
 }
-const map_nrx1duty = [
-	0 => "SNDDUTY_12",
-	1 => "SNDDUTY_25",
-	2 => "SNDDUTY_50",
-	3 => "SNDDUTY_75",
-];
 function mknrx1($n) {
-	return map_nrx1duty[$n >> 6].", \$".fmthexnum($n & 0b00111111); 
+	return '$'.fmthexnum($n); 
 }
-const map_nrx2vol = [
-	0 => "SNDCH3VOL_000",
-	1 => "SNDCH3VOL_025",
-	2 => "SNDCH3VOL_050",
-	3 => "SNDCH3VOL_100",
-];
 function mknrx2($n) {
-	$vol	= fmthexnum($n >> 4, 1);
-	$env	= ($n & 8) ? "SNDENV_INC" : "SNDENV_DEC";
-	$pace	= fmthexnum($n & 7);
-	return "\${$vol}, {$env}, \${$pace}";
+	return '$'.fmthexnum($n); 
 }
-
 function mknr32($n) {
-	return map_nrx2vol[$n >> 6]; 
+	return '$'.fmthexnum($n); 
 }
 
 //---

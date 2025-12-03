@@ -10,7 +10,7 @@ SndHeader_SFX_57:
 	db 255 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_57_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
@@ -22,7 +22,7 @@ SndHeader_SFX_57:
 	db 255 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_57_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_57_Ch2:
 	snd_note $00, NOTELEN_04
@@ -38,15 +38,15 @@ SndData_57_Ch2:
 		snd_djnz iSndChInfo_LoopTimer0, .loop
 	snd_end
 SndData_57_Ch4:
-	snd_noise 4, 5, 0
+	snd_noise $45
 	snd_note $25, NOTELEN_01
-	snd_noise 4, 3, 0
+	snd_noise $43
 	snd_inc_vol 4
 	snd_note $25
-	snd_noise 4, 1, 0
+	snd_noise $41
 	snd_inc_vol 4
 	snd_note $25
-	snd_noise 3, 1, 0
+	snd_noise $31
 	snd_inc_vol 4
 	snd_note $25
 	snd_end

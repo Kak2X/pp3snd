@@ -10,7 +10,7 @@ SndHeader_SFX_67:
 	db 0 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_67_Ch2 ; Data pointer
-	nrx1 SNDDUTY_25, $00 ; iSndChInfo_DutyOrWave
+	db $40 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT6 ; Slot location

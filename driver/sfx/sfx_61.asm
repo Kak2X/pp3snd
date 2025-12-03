@@ -10,7 +10,7 @@ SndHeader_SFX_61:
 	db 220 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_61_Ch2 ; Data pointer
-	nrx1 SNDDUTY_25, $00 ; iSndChInfo_DutyOrWave
+	db $40 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_61_Ch2:
 	snd_var iSndChInfo_LoopTimer0, $0F

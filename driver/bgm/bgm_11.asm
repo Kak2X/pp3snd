@@ -10,7 +10,7 @@ SndHeader_BGM_11:
 	db 136 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_11_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
@@ -22,7 +22,7 @@ SndHeader_BGM_11:
 	db 136 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_11_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
@@ -46,10 +46,10 @@ SndHeader_BGM_11:
 	db 136 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_11_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_11_Ch1:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_pitchbend 20
 	snd_vibrato VIBRATO_61
 	snd_var iSndChInfo_LoopTimer0, $0F
@@ -89,7 +89,7 @@ SndData_11_Ch1:
 	snd_note $47
 	snd_jp SndData_11_Ch1
 SndData_11_Ch2:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_pitchbend 20
 	snd_vibrato VIBRATO_0D
 	snd_var iSndChInfo_LoopTimer0, $0F

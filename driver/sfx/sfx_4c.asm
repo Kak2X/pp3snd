@@ -10,14 +10,14 @@ SndHeader_SFX_4C:
 	db 0 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_4C_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4C_Ch2:
 	snd_note $19, NOTELEN_01
 	snd_note $00
 	snd_status SST_CH4
 	snd_note $3A, NOTELEN_03
-	snd_noise 8, 0, 0
-	snd_nrx2 8, SNDENV_DEC, 1 ; $81
+	snd_noise $80
+	snd_nrx2 $81
 	snd_note $31, NOTELEN_12
 	snd_end

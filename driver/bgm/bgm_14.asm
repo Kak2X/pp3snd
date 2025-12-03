@@ -22,7 +22,7 @@ SndHeader_BGM_14:
 	db 108 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_14_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
@@ -34,7 +34,7 @@ SndHeader_BGM_14:
 	db 108 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_14_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
@@ -46,7 +46,7 @@ SndHeader_BGM_14:
 	db 108 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_14_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_14_Ch3:
 	snd_wave WAVE_00
@@ -270,7 +270,7 @@ SndData_14_Ch3:
 	snd_note $0E, NOTELEN_0C
 	snd_end_saveid
 SndData_14_Ch2:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_34
 	snd_note $15, NOTELEN_12
 	snd_note $15, NOTELEN_06
@@ -377,7 +377,7 @@ SndData_14_Ch2:
 	snd_note $1A, NOTELEN_CUSTOM, $60
 	snd_end
 SndData_14_Ch1:
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_34
 	snd_inc_freq_offset -2
 	snd_inc_vol -2
@@ -392,7 +392,7 @@ SndData_14_Ch1:
 	snd_note $2F, NOTELEN_06
 	snd_note $32
 	snd_note $28, NOTELEN_0C
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_33
 	snd_inc_vol -2
 	snd_note $4A, NOTELEN_02
@@ -415,7 +415,7 @@ SndData_14_Ch1:
 	snd_note $2D
 	snd_note $2B
 	snd_note $2A, NOTELEN_01
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_30
 	snd_inc_freq_offset 2
 	snd_inc_vol 4
@@ -448,7 +448,7 @@ SndData_14_Ch1:
 	snd_note $2B, NOTELEN_03
 	snd_inc_vol 5
 	snd_inc_freq_offset 1
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_inc_vol -2
 	snd_note $2A, NOTELEN_2A
 	snd_note $2B, NOTELEN_CUSTOM, $36
@@ -463,7 +463,7 @@ SndData_14_Ch1:
 	snd_note $31, NOTELEN_CUSTOM, $60
 	snd_end
 SndData_14_Ch4:
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_var iSndChInfo_LoopTimer0, $03
 	.loop0:
 		snd_noteex PRESET_01, NOTELEN_06

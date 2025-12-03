@@ -131,557 +131,557 @@ Sound_InstrumentPtrTable:
 	dw SndInstrument_70;X ; $7E ; INSTR_7E
 	dw SndInstrument_70;X ; $7F ; INSTR_7F
 SndInstrument_01:
-	ivol $14, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $04, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $06, $A, SNDENV_DEC, $03 ; SNDCH3VOL_050 ;X
-	ivol $10, $8, SNDENV_DEC, $04 ; SNDCH3VOL_050 ;X
-	ivol $08, $4, SNDENV_DEC, $02 ; SNDCH3VOL_025 ;X
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000 ;X
+	ivol $14, $F8
+	ivol $04, $F1
+	ivol $06, $A3 ;X
+	ivol $10, $84 ;X
+	ivol $08, $42 ;X
+	ivol $64, $08 ;X
 	iloop_prev ;X
 SndInstrument_02:
-	ivol $01, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $06, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100 ;X
-	ivol $04, $D, SNDENV_DEC, $01 ; SNDCH3VOL_100 ;X
-	ivol $64, $5, SNDENV_INC, $00 ; SNDCH3VOL_025 ;X
+	ivol $01, $C8
+	ivol $06, $F1 ;X
+	ivol $04, $D1 ;X
+	ivol $64, $58 ;X
 	iloop_prev ;X
 SndInstrument_03:
-	ivol $02, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $02, $8, SNDENV_DEC, $01 ; SNDCH3VOL_050
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
+	ivol $02, $F1
+	ivol $02, $81
+	ivol $64, $08
 	iloop_prev ;X
 SndInstrument_04:
-	ivol $06, $F, SNDENV_DEC, $02 ; SNDCH3VOL_100
-	ivol $10, $9, SNDENV_INC, $00 ; SNDCH3VOL_050 ;X
-	ivol $28, $8, SNDENV_DEC, $04 ; SNDCH3VOL_050 ;X
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000 ;X
+	ivol $06, $F2
+	ivol $10, $98 ;X
+	ivol $28, $84 ;X
+	ivol $64, $08 ;X
 	iloop_prev ;X
 SndInstrument_05:
-	ivol $10, $A, SNDENV_INC, $01 ; SNDCH3VOL_050
-	ivol $64, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
+	ivol $10, $A9
+	ivol $64, $F8
 	iloop_prev
 SndInstrument_06:
-	ivol $03, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0A, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $64, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $03, $F0
+	ivol $0A, $B0
+	ivol $64, $80
 	iloop_prev ;X
 SndInstrument_07:
-	ivol $04, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $3C, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $06, $A, SNDENV_INC, $03 ; SNDCH3VOL_050
-	ivol $23, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $50, $C, SNDENV_DEC, $07 ; SNDCH3VOL_100
-	ivol $64, $0, SNDENV_DEC, $00 ; SNDCH3VOL_000 ;X
+	ivol $04, $F0
+	ivol $3C, $A0
+	ivol $06, $AB
+	ivol $23, $C0
+	ivol $50, $C7
+	ivol $64, $00 ;X
 	iloop_prev ;X
 SndInstrument_08:
-	ivol $03, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $0A, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0A, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $0A, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $64, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $03, $F1
+	ivol $0A, $C0
+	ivol $0A, $B0
+	ivol $0A, $A0
+	ivol $64, $90
 	iloop_prev ;X
 SndInstrument_09:
-	ivol $02, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $64, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $02, $F1
+	ivol $64, $80
 	iloop_prev ;X
 SndInstrument_0A:
-	ivol $09, $9, SNDENV_DEC, $01 ; SNDCH3VOL_050
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
+	ivol $09, $91
+	ivol $64, $08
 	iloop_prev ;X
 SndInstrument_0B:
-	ivol $02, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $64, $4, SNDENV_DEC, $00 ; SNDCH3VOL_025
+	ivol $02, $F0
+	ivol $64, $40
 	iloop_prev ;X
 SndInstrument_0C:
-	ivol $01, $9, SNDENV_DEC, $01 ; SNDCH3VOL_050
-	ivol $08, $4, SNDENV_DEC, $02 ; SNDCH3VOL_025
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
+	ivol $01, $91
+	ivol $08, $42
+	ivol $64, $08
 	iloop_prev ;X
 SndInstrument_0D:
-	ivol $02, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
+	ivol $02, $F8
+	ivol $64, $08
 	iloop_prev ;X
 SndInstrument_0E:
-	ivol $01, $E, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
+	ivol $01, $E8
+	ivol $64, $08
 	iloop_prev ;X
 SndInstrument_0F:
-	ivol $01, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $64, $C, SNDENV_DEC, $01 ; SNDCH3VOL_100
+	ivol $01, $F8
+	ivol $64, $C1
 	iloop_prev ;X
 SndInstrument_10:
-	ivol $01, $C, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $0C, $7, SNDENV_DEC, $02 ; SNDCH3VOL_025
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
+	ivol $01, $C1
+	ivol $0C, $72
+	ivol $64, $08
 	iloop_prev
 SndInstrument_11:
-	ivol $02, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $05, $B, SNDENV_DEC, $01 ; SNDCH3VOL_050
-	ivol $64, $4, SNDENV_INC, $07 ; SNDCH3VOL_025
+	ivol $02, $F1
+	ivol $05, $B1
+	ivol $64, $4F
 	iloop_prev ;X
 SndInstrument_12:
-	ivol $04, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $64, $8, SNDENV_DEC, $02 ; SNDCH3VOL_050
+	ivol $04, $F1
+	ivol $64, $82
 	iloop_prev ;X
 SndInstrument_13:
-	ivol $01, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $01, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $01, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $01, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $01, $7, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $01, $5, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $01, $3, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $01, $1, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $64, $0, SNDENV_DEC, $00 ; SNDCH3VOL_000
+	ivol $01, $F0
+	ivol $01, $D0
+	ivol $01, $B0
+	ivol $01, $90
+	ivol $01, $70
+	ivol $01, $50
+	ivol $01, $30
+	ivol $01, $10
+	ivol $64, $00
 	iloop_prev ;X
 SndInstrument_14:
-	ivol $02, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100 ;X
-	ivol $64, $B, SNDENV_DEC, $01 ; SNDCH3VOL_050 ;X
+	ivol $02, $F1 ;X
+	ivol $64, $B1 ;X
 	iloop_prev ;X
 SndInstrument_15:
-	ivol $09, $B, SNDENV_INC, $02 ; SNDCH3VOL_050
-	ivol $02, $F, SNDENV_DEC, $02 ; SNDCH3VOL_100
-	ivol $64, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
+	ivol $09, $BA
+	ivol $02, $F2
+	ivol $64, $E0
 	iloop_prev
 SndInstrument_16:
-	ivol $02, $C, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $64, $4, SNDENV_DEC, $00 ; SNDCH3VOL_025
+	ivol $02, $C1
+	ivol $64, $40
 	iloop_prev ;X
 SndInstrument_17:
-	ivol $0A, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $0A, $4, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $64, $4, SNDENV_INC, $07 ; SNDCH3VOL_025
+	ivol $0A, $F1
+	ivol $0A, $40
+	ivol $64, $4F
 	iloop_prev ;X
 SndInstrument_18:
-	ivol $03, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $64, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $03, $F1
+	ivol $64, $A0
 	iloop_prev
 SndInstrument_19:
-	ivol $0C, $4, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $0C, $5, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $0C, $6, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $0C, $7, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $24, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $64, $8, SNDENV_DEC, $07 ; SNDCH3VOL_050
+	ivol $0C, $40
+	ivol $0C, $50
+	ivol $0C, $60
+	ivol $0C, $70
+	ivol $24, $80
+	ivol $64, $87
 	iloop_prev ;X
 SndInstrument_1A:
-	ivol $04, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100 ;X
-	ivol $04, $2, SNDENV_DEC, $00 ; SNDCH3VOL_000 ;X
+	ivol $04, $F0 ;X
+	ivol $04, $20 ;X
 	iloop_prev ;X
 SndInstrument_1B:
-	ivol $04, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $64, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
+	ivol $04, $F0
+	ivol $64, $C0
 	iloop_prev
 SndInstrument_1C:
-	ivol $0F, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000 ;X
+	ivol $0F, $F1
+	ivol $64, $08 ;X
 	iloop_prev ;X
 SndInstrument_1F:
-	ivol $00, $0, SNDENV_DEC, $00 ; SNDCH3VOL_000 ;X
+	ivol $00, $00 ;X
 	iloop_prev ;X
 SndInstrument_2E:
-	ivol $03, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0A, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $64, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $03, $F0
+	ivol $0A, $B0
+	ivol $64, $80
 	iloop_prev
 SndInstrument_2F:
-	ivol $02, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $02, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $02, $9, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $02, $5, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $02, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $02, $8, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $02, $5, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
+	ivol $02, $F8
+	ivol $02, $C8
+	ivol $02, $98
+	ivol $02, $58
+	ivol $02, $B0
+	ivol $02, $88
+	ivol $02, $58
+	ivol $64, $08
 	iloop_prev ;X
 SndInstrument_30:
-	ivol $01, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $02, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $03, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $04, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $64, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
+	ivol $01, $B0
+	ivol $02, $C0
+	ivol $03, $D0
+	ivol $04, $E0
+	ivol $64, $F0
 	iloop_prev
 SndInstrument_31:
-	ivol $02, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $02, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $04, $9, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $04, $5, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
+	ivol $02, $F8
+	ivol $02, $C8
+	ivol $04, $98
+	ivol $04, $58
+	ivol $64, $08
 	iloop_prev ;X
 SndInstrument_32:
-	ivol $01, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $01, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $01, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $01, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $01, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $01, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $01, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $01, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $01, $7, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $01, $6, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $01, $5, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $01, $4, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $01, $3, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $01, $2, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $01, $1, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $64, $0, SNDENV_DEC, $00 ; SNDCH3VOL_000
+	ivol $01, $F8
+	ivol $01, $E0
+	ivol $01, $D0
+	ivol $01, $C0
+	ivol $01, $B0
+	ivol $01, $A0
+	ivol $01, $90
+	ivol $01, $80
+	ivol $01, $78
+	ivol $01, $60
+	ivol $01, $50
+	ivol $01, $40
+	ivol $01, $30
+	ivol $01, $20
+	ivol $01, $10
+	ivol $64, $00
 	iloop_prev ;X
 SndInstrument_33:
-	ivol $02, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $02, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $02, $9, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $02, $6, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $02, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $02, $8, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $02, $5, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $02, $2, SNDENV_INC, $00 ; SNDCH3VOL_000
-	ivol $02, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $02, $6, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $02, $3, SNDENV_INC, $00 ; SNDCH3VOL_000
-	ivol $02, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
-	ivol $02, $7, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $02, $4, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $02, $1, SNDENV_INC, $00 ; SNDCH3VOL_000
-	ivol $02, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
-	ivol $02, $5, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $02, $2, SNDENV_INC, $00 ; SNDCH3VOL_000
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
+	ivol $02, $F8
+	ivol $02, $C8
+	ivol $02, $98
+	ivol $02, $68
+	ivol $02, $B0
+	ivol $02, $88
+	ivol $02, $58
+	ivol $02, $28
+	ivol $02, $90
+	ivol $02, $68
+	ivol $02, $38
+	ivol $02, $08
+	ivol $02, $70
+	ivol $02, $48
+	ivol $02, $18
+	ivol $02, $08
+	ivol $02, $50
+	ivol $02, $28
+	ivol $64, $08
 	iloop_prev ;X
 SndInstrument_34:
-	ivol $03, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $05, $E, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $02, $D, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $02, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $06, $B, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $0A, $A, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $0F, $9, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $14, $8, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $14, $7, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $14, $6, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $14, $5, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $14, $4, SNDENV_INC, $00 ; SNDCH3VOL_025 ;X
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000 ;X
+	ivol $03, $F8
+	ivol $05, $E8
+	ivol $02, $D8
+	ivol $02, $C8
+	ivol $06, $B8
+	ivol $0A, $A8
+	ivol $0F, $98
+	ivol $14, $88
+	ivol $14, $78
+	ivol $14, $68
+	ivol $14, $58
+	ivol $14, $48 ;X
+	ivol $64, $08 ;X
 	iloop_prev ;X
 SndInstrument_35:
-	ivol $01, $B, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $02, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $03, $D, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $04, $E, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $0F, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $0F, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0F, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0F, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0F, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $0F, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $0F, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $64, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $01, $B8
+	ivol $02, $C8
+	ivol $03, $D8
+	ivol $04, $E8
+	ivol $0F, $F8
+	ivol $0F, $E0
+	ivol $0F, $D0
+	ivol $0F, $C0
+	ivol $0F, $B0
+	ivol $0F, $A0
+	ivol $0F, $90
+	ivol $64, $80
 	iloop_prev ;X
 SndInstrument_36:
-	ivol $0A, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0A, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0A, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0A, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0D, $E, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $0D, $D, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $0D, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $0D, $B, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $0D, $A, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $0D, $9, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $0D, $8, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $0D, $7, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $0D, $6, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $0D, $5, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $0D, $4, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $0D, $3, SNDENV_INC, $00 ; SNDCH3VOL_000
-	ivol $0D, $2, SNDENV_INC, $00 ; SNDCH3VOL_000
-	ivol $0D, $1, SNDENV_INC, $00 ; SNDCH3VOL_000
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000
+	ivol $0A, $C0
+	ivol $0A, $D0
+	ivol $0A, $E0
+	ivol $0A, $F0
+	ivol $0D, $E8
+	ivol $0D, $D8
+	ivol $0D, $C8
+	ivol $0D, $B8
+	ivol $0D, $A8
+	ivol $0D, $98
+	ivol $0D, $88
+	ivol $0D, $78
+	ivol $0D, $68
+	ivol $0D, $58
+	ivol $0D, $48
+	ivol $0D, $38
+	ivol $0D, $28
+	ivol $0D, $18
+	ivol $64, $08
 	iloop_prev ;X
 SndInstrument_37:
-	ivol $02, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $03, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $03, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $04, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $14, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $05, $E, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $07, $D, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $09, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $09, $B, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $64, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $02, $B0
+	ivol $03, $C0
+	ivol $03, $D0
+	ivol $04, $E0
+	ivol $14, $F0
+	ivol $05, $E8
+	ivol $07, $D8
+	ivol $09, $C8
+	ivol $09, $B8
+	ivol $64, $A0
 	iloop_prev ;X
 SndInstrument_38:
-	ivol $02, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $02, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $02, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $02, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $02, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $02, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $02, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $14, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0A, $E, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $0A, $D, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $0A, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $0A, $B, SNDENV_INC, $00 ; SNDCH3VOL_050 ;X
-	ivol $0A, $A, SNDENV_INC, $00 ; SNDCH3VOL_050 ;X
-	ivol $0A, $9, SNDENV_INC, $00 ; SNDCH3VOL_050 ;X
-	ivol $0A, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050 ;X
+	ivol $02, $80
+	ivol $02, $90
+	ivol $02, $A0
+	ivol $02, $B0
+	ivol $02, $C0
+	ivol $02, $D0
+	ivol $02, $E0
+	ivol $14, $F0
+	ivol $0A, $E8
+	ivol $0A, $D8
+	ivol $0A, $C8
+	ivol $0A, $B8 ;X
+	ivol $0A, $A8 ;X
+	ivol $0A, $98 ;X
+	ivol $0A, $80 ;X
 	iloop_prev ;X
 SndInstrument_39:
-	ivol $01, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $01, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $02, $9, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $02, $6, SNDENV_INC, $00 ; SNDCH3VOL_025
-	ivol $01, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $01, $8, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $02, $5, SNDENV_INC, $00 ; SNDCH3VOL_025 ;X
-	ivol $02, $2, SNDENV_INC, $00 ; SNDCH3VOL_000 ;X
-	ivol $01, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050 ;X
-	ivol $01, $6, SNDENV_INC, $00 ; SNDCH3VOL_025 ;X
-	ivol $02, $3, SNDENV_INC, $00 ; SNDCH3VOL_000 ;X
-	ivol $02, $0, SNDENV_INC, $00 ; SNDCH3VOL_000 ;X
-	ivol $01, $7, SNDENV_DEC, $00 ; SNDCH3VOL_025 ;X
-	ivol $01, $4, SNDENV_INC, $00 ; SNDCH3VOL_025 ;X
-	ivol $02, $1, SNDENV_INC, $00 ; SNDCH3VOL_000 ;X
-	ivol $02, $0, SNDENV_INC, $00 ; SNDCH3VOL_000 ;X
-	ivol $01, $5, SNDENV_DEC, $00 ; SNDCH3VOL_025 ;X
-	ivol $01, $2, SNDENV_INC, $00 ; SNDCH3VOL_000 ;X
-	ivol $64, $0, SNDENV_INC, $00 ; SNDCH3VOL_000 ;X
+	ivol $01, $F8
+	ivol $01, $C8
+	ivol $02, $98
+	ivol $02, $68
+	ivol $01, $B0
+	ivol $01, $88
+	ivol $02, $58 ;X
+	ivol $02, $28 ;X
+	ivol $01, $90 ;X
+	ivol $01, $68 ;X
+	ivol $02, $38 ;X
+	ivol $02, $08 ;X
+	ivol $01, $70 ;X
+	ivol $01, $48 ;X
+	ivol $02, $18 ;X
+	ivol $02, $08 ;X
+	ivol $01, $50 ;X
+	ivol $01, $28 ;X
+	ivol $64, $08 ;X
 	iloop_prev ;X
 SndInstrument_3A:
-	ivol $02, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $1C, $F, SNDENV_DEC, $03 ; SNDCH3VOL_100
-	ivol $64, $0, SNDENV_DEC, $00 ; SNDCH3VOL_000 ;X
+	ivol $02, $F8
+	ivol $1C, $F3
+	ivol $64, $00 ;X
 	iloop_prev ;X
 SndInstrument_3B:
-	ivol $03, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $03, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $03, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $03, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $03, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $64, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
+	ivol $03, $A0
+	ivol $03, $B0
+	ivol $03, $C0
+	ivol $03, $D0
+	ivol $03, $E0
+	ivol $64, $F0
 	iloop_prev ;X
 SndInstrument_3C:
-	ivol $01, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $01, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $02, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $02, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $03, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $04, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $08, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $64, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $01, $F8
+	ivol $01, $E0
+	ivol $02, $D0
+	ivol $02, $C0
+	ivol $03, $B0
+	ivol $04, $A0
+	ivol $08, $90
+	ivol $64, $80
 	iloop_prev
 SndInstrument_3D:
-	ivol $01, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $02, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $03, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $04, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $05, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $06, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $08, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $64, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $01, $F0
+	ivol $02, $E0
+	ivol $03, $D0
+	ivol $04, $C0
+	ivol $05, $B0
+	ivol $06, $A0
+	ivol $08, $90
+	ivol $64, $80
 	iloop_prev
 SndInstrument_3E:
-	ivol $01, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $01, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $02, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $02, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $64, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $01, $F0
+	ivol $01, $D0
+	ivol $02, $B0
+	ivol $02, $90
+	ivol $64, $80
 	iloop_prev ;X
 SndInstrument_40:
-	ivol $02, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $01, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $01, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $01, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $01, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $01, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $04, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $04, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $04, $7, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $04, $6, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $04, $5, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $04, $4, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $04, $3, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $0A, $0, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $02, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $01, $7, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $01, $6, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $01, $5, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $01, $4, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $01, $3, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $04, $2, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $04, $1, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $64, $0, SNDENV_DEC, $00 ; SNDCH3VOL_000
+	ivol $02, $F0
+	ivol $01, $E0
+	ivol $01, $D0
+	ivol $01, $C0
+	ivol $01, $B0
+	ivol $01, $A0
+	ivol $04, $90
+	ivol $04, $80
+	ivol $04, $70
+	ivol $04, $60
+	ivol $04, $50
+	ivol $04, $40
+	ivol $04, $30
+	ivol $0A, $00
+	ivol $02, $80
+	ivol $01, $70
+	ivol $01, $60
+	ivol $01, $50
+	ivol $01, $40
+	ivol $01, $30
+	ivol $04, $20
+	ivol $04, $10
+	ivol $64, $00
 	iloop_prev ;X
 SndInstrument_41:
-	ivol $02, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $02, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $02, $7, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $02, $6, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $02, $5, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $02, $4, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $02, $3, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $64, $0, SNDENV_DEC, $00 ; SNDCH3VOL_000
+	ivol $02, $F8
+	ivol $02, $80
+	ivol $02, $70
+	ivol $02, $60
+	ivol $02, $50
+	ivol $02, $40
+	ivol $02, $30
+	ivol $64, $00
 	iloop_prev ;X
 SndInstrument_42:
-	ivol $01, $9, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $01, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $01, $E, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $04, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $02, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $02, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $02, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $0F, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $06, $9, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $06, $A, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $06, $B, SNDENV_INC, $00 ; SNDCH3VOL_050
-	ivol $06, $C, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $0F, $D, SNDENV_INC, $00 ; SNDCH3VOL_100
-	ivol $08, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100 ;X
-	ivol $08, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050 ;X
-	ivol $08, $A, SNDENV_DEC, $00 ; SNDCH3VOL_050 ;X
-	ivol $08, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050 ;X
-	ivol $64, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050 ;X
+	ivol $01, $98
+	ivol $01, $C8
+	ivol $01, $E8
+	ivol $04, $F8
+	ivol $02, $E0
+	ivol $02, $D0
+	ivol $02, $B0
+	ivol $0F, $80
+	ivol $06, $98
+	ivol $06, $A8
+	ivol $06, $B8
+	ivol $06, $C8
+	ivol $0F, $D8
+	ivol $08, $C0 ;X
+	ivol $08, $B0 ;X
+	ivol $08, $A0 ;X
+	ivol $08, $90 ;X
+	ivol $64, $80 ;X
 	iloop_prev ;X
 SndInstrument_56:
-	ivol $14, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $08, $3, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $05, $1, SNDENV_DEC, $00 ; SNDCH3VOL_000
+	ivol $14, $F1
+	ivol $08, $30
+	ivol $05, $10
 	iloop_prev
 SndInstrument_57:
-	ivol $17, $F, SNDENV_DEC, $05 ; SNDCH3VOL_100
-	ivol $1B, $B, SNDENV_INC, $07 ; SNDCH3VOL_050
+	ivol $17, $F5
+	ivol $1B, $BF
 	iloop_prev ;X
 SndInstrument_58:
-	ivol $0C, $F, SNDENV_DEC, $02 ; SNDCH3VOL_100
-	ivol $0A, $B, SNDENV_DEC, $03 ; SNDCH3VOL_050
-	ivol $1E, $7, SNDENV_DEC, $00 ; SNDCH3VOL_025
+	ivol $0C, $F2
+	ivol $0A, $B3
+	ivol $1E, $70
 	iloop_prev
 SndInstrument_59:
-	ivol $24, $8, SNDENV_INC, $07 ; SNDCH3VOL_050 ;X
-	ivol $64, $B, SNDENV_INC, $00 ; SNDCH3VOL_050 ;X
+	ivol $24, $8F ;X
+	ivol $64, $B8 ;X
 	iloop_prev ;X
 SndInstrument_5A:
-	ivol $06, $F, SNDENV_DEC, $01 ; SNDCH3VOL_100
-	ivol $01, $8, SNDENV_DEC, $01 ; SNDCH3VOL_050
+	ivol $06, $F1
+	ivol $01, $81
 	iloop_prev
 SndInstrument_5B:
-	ivol $05, $A, SNDENV_INC, $01 ; SNDCH3VOL_050
-	ivol $14, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
+	ivol $05, $A9
+	ivol $14, $F0
 	iloop_prev
 SndInstrument_5C:
-	ivol $6E, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $64, $F, SNDENV_DEC, $05 ; SNDCH3VOL_100
+	ivol $6E, $F0
+	ivol $64, $F5
 	iloop_prev ;X
 SndInstrument_5D:
-	ivol $3C, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $64, $F, SNDENV_DEC, $04 ; SNDCH3VOL_100
+	ivol $3C, $F0
+	ivol $64, $F4
 	iloop_prev ;X
 SndInstrument_5E:
-	ivol $12, $F, SNDENV_DEC, $05 ; SNDCH3VOL_100
-	ivol $68, $B, SNDENV_INC, $07 ; SNDCH3VOL_050
-	ivol $1E, $F, SNDENV_DEC, $07 ; SNDCH3VOL_100
+	ivol $12, $F5
+	ivol $68, $BF
+	ivol $1E, $F7
 	iloop_prev
 SndInstrument_5F:
-	ivol $0C, $F, SNDENV_DEC, $02 ; SNDCH3VOL_100
-	ivol $12, $B, SNDENV_DEC, $03 ; SNDCH3VOL_050
-	ivol $1E, $7, SNDENV_INC, $05 ; SNDCH3VOL_025
+	ivol $0C, $F2
+	ivol $12, $B3
+	ivol $1E, $7D
 	iloop_prev
 SndInstrument_60:
-	ivol $06, $F, SNDENV_DEC, $02 ; SNDCH3VOL_100
-	ivol $06, $8, SNDENV_DEC, $01 ; SNDCH3VOL_050
-	ivol $01, $2, SNDENV_DEC, $00 ; SNDCH3VOL_000
+	ivol $06, $F2
+	ivol $06, $81
+	ivol $01, $20
 	iloop_prev
 SndInstrument_61:
-	ivol $3C, $8, SNDENV_INC, $06 ; SNDCH3VOL_050
-	ivol $3C, $B, SNDENV_DEC, $07 ; SNDCH3VOL_050
-	ivol $01, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $3C, $8E
+	ivol $3C, $B7
+	ivol $01, $80
 SndInstrument_62:
-	ivol $0A, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $05, $E, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $05, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $05, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
+	ivol $0A, $F0
+	ivol $05, $E0
+	ivol $05, $D0
+	ivol $05, $C0
 	iloop_prev
 SndInstrument_63:
-	ivol $0A, $A, SNDENV_INC, $02 ; SNDCH3VOL_050
-	ivol $32, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
+	ivol $0A, $AA
+	ivol $32, $F8
 	iloop_prev
 SndInstrument_64:
-	ivol $06, $9, SNDENV_INC, $02 ; SNDCH3VOL_050 ;X
-	ivol $10, $A, SNDENV_DEC, $06 ; SNDCH3VOL_050 ;X
+	ivol $06, $9A ;X
+	ivol $10, $A6 ;X
 	iloop_prev ;X
 SndInstrument_65:
-	ivol $1C, $5, SNDENV_INC, $03 ; SNDCH3VOL_025
-	ivol $64, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $3C, $F, SNDENV_DEC, $04 ; SNDCH3VOL_100
+	ivol $1C, $5B
+	ivol $64, $F0
+	ivol $3C, $F4
 	iloop_prev
 SndInstrument_66:
-	ivol $6E, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100 ;X
-	ivol $64, $F, SNDENV_DEC, $05 ; SNDCH3VOL_100 ;X
+	ivol $6E, $F0 ;X
+	ivol $64, $F5 ;X
 	iloop_prev ;X
 SndInstrument_67:
-	ivol $21, $6, SNDENV_INC, $07 ; SNDCH3VOL_025
-	ivol $01, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
+	ivol $21, $6F
+	ivol $01, $B0
 	iloop_prev
 SndInstrument_68:
-	ivol $04, $9, SNDENV_INC, $02 ; SNDCH3VOL_050
-	ivol $08, $B, SNDENV_DEC, $02 ; SNDCH3VOL_050
+	ivol $04, $9A
+	ivol $08, $B2
 	iloop_prev
 SndInstrument_69:
-	ivol $27, $B, SNDENV_DEC, $06 ; SNDCH3VOL_050
-	ivol $0B, $4, SNDENV_DEC, $03 ; SNDCH3VOL_025
+	ivol $27, $B6
+	ivol $0B, $43
 	iloop_prev
 SndInstrument_6A:
-	ivol $03, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $01, $3, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $03, $3, SNDENV_DEC, $01 ; SNDCH3VOL_000
+	ivol $03, $B0
+	ivol $01, $30
+	ivol $03, $31
 	iloop_prev
 SndInstrument_6B:
-	ivol $0A, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0A, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $0A, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $0A, $9, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $0A, $7, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $0A, $5, SNDENV_DEC, $00 ; SNDCH3VOL_025
-	ivol $0A, $3, SNDENV_DEC, $00 ; SNDCH3VOL_000
-	ivol $0A, $1, SNDENV_DEC, $00 ; SNDCH3VOL_000
+	ivol $0A, $F0
+	ivol $0A, $D0
+	ivol $0A, $B0
+	ivol $0A, $90
+	ivol $0A, $70
+	ivol $0A, $50
+	ivol $0A, $30
+	ivol $0A, $10
 	iloop_prev
 SndInstrument_6C:
-	ivol $05, $3, SNDENV_DEC, $00 ; SNDCH3VOL_000 ;X
-	ivol $05, $7, SNDENV_DEC, $00 ; SNDCH3VOL_025 ;X
-	ivol $0A, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050 ;X
-	ivol $0F, $D, SNDENV_DEC, $00 ; SNDCH3VOL_100 ;X
-	ivol $14, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100 ;X
+	ivol $05, $30 ;X
+	ivol $05, $70 ;X
+	ivol $0A, $B0 ;X
+	ivol $0F, $D0 ;X
+	ivol $14, $F0 ;X
 	iloop_prev ;X
 SndInstrument_6D:
-	ivol $10, $F, SNDENV_DEC, $02 ; SNDCH3VOL_100
+	ivol $10, $F2
 	iloop_prev
 SndInstrument_6E:
-	ivol $02, $A, SNDENV_INC, $02 ; SNDCH3VOL_050
-	ivol $03, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $02, $B, SNDENV_DEC, $02 ; SNDCH3VOL_050
+	ivol $02, $AA
+	ivol $03, $B0
+	ivol $02, $B2
 	iloop_prev
 SndInstrument_6F:
-	ivol $24, $F, SNDENV_INC, $00 ; SNDCH3VOL_100
+	ivol $24, $F8
 	iloop_prev
 SndInstrument_70:
-	ivol $04, $C, SNDENV_DEC, $00 ; SNDCH3VOL_100
-	ivol $02, $B, SNDENV_DEC, $01 ; SNDCH3VOL_050
+	ivol $04, $C0
+	ivol $02, $B1
 	iloop_prev
 SndInstrument_71:
-	ivol $04, $E, SNDENV_INC, $04 ; SNDCH3VOL_100
-	ivol $01, $F, SNDENV_DEC, $00 ; SNDCH3VOL_100
+	ivol $04, $EC
+	ivol $01, $F0
 	iloop_prev
 SndInstrument_72:
-	ivol $02, $F, SNDENV_INC, $00 ; SNDCH3VOL_100 ;X
-	ivol $02, $8, SNDENV_DEC, $00 ; SNDCH3VOL_050 ;X
-	ivol $02, $7, SNDENV_DEC, $00 ; SNDCH3VOL_025 ;X
-	ivol $02, $6, SNDENV_DEC, $00 ; SNDCH3VOL_025 ;X
-	ivol $02, $5, SNDENV_DEC, $00 ; SNDCH3VOL_025 ;X
-	ivol $02, $4, SNDENV_DEC, $00 ; SNDCH3VOL_025 ;X
-	ivol $02, $3, SNDENV_DEC, $00 ; SNDCH3VOL_000 ;X
-	ivol $64, $0, SNDENV_DEC, $00 ; SNDCH3VOL_000 ;X
+	ivol $02, $F8 ;X
+	ivol $02, $80 ;X
+	ivol $02, $70 ;X
+	ivol $02, $60 ;X
+	ivol $02, $50 ;X
+	ivol $02, $40 ;X
+	ivol $02, $30 ;X
+	ivol $64, $00 ;X
 	iloop_prev ;X
 SndInstrument_73:
-	ivol $04, $9, SNDENV_INC, $02 ; SNDCH3VOL_050
-	ivol $06, $B, SNDENV_DEC, $00 ; SNDCH3VOL_050
-	ivol $0A, $B, SNDENV_DEC, $02 ; SNDCH3VOL_050
+	ivol $04, $9A
+	ivol $06, $B0
+	ivol $0A, $B2
 	iloop_prev

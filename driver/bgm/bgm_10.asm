@@ -22,7 +22,7 @@ SndHeader_BGM_10:
 	db 111 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_10_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
@@ -34,7 +34,7 @@ SndHeader_BGM_10:
 	db 111 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_10_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
@@ -46,7 +46,7 @@ SndHeader_BGM_10:
 	db 111 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_10_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_10_Ch3:
 	snd_wave WAVE_0D
@@ -429,7 +429,7 @@ SndData_10_Ch3:
 	snd_note $00
 	snd_jp SndData_10_Ch3
 SndData_10_Ch1:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_07
 	snd_note $35, NOTELEN_18
 	snd_inc_vol -11
@@ -564,7 +564,7 @@ SndData_10_Ch1:
 	snd_inc_vol 11
 	snd_var iSndChInfo_LoopTimer0, $03
 	.loop0:
-		snd_duty SNDDUTY_50, $00
+		snd_duty $80
 		snd_instrument INSTR_0B
 		snd_note $3C, NOTELEN_03
 		snd_note $00
@@ -582,7 +582,7 @@ SndData_10_Ch1:
 		snd_note $45
 		snd_note $48
 		snd_note $45
-		snd_duty SNDDUTY_25, $00
+		snd_duty $40
 		snd_note $3A
 		snd_note $41
 		snd_note $44
@@ -600,7 +600,7 @@ SndData_10_Ch1:
 		snd_note $41
 		snd_note $3A
 		snd_djnz iSndChInfo_LoopTimer0, .loop0
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_note $3C
 	snd_note $00
 	snd_note $44
@@ -617,7 +617,7 @@ SndData_10_Ch1:
 	snd_note $45
 	snd_note $48
 	snd_note $45
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_note $3A
 	snd_note $41
 	snd_note $44
@@ -634,7 +634,7 @@ SndData_10_Ch1:
 	snd_note $46
 	snd_note $4A
 	snd_note $4D
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_07
 	snd_note $35, NOTELEN_18
 	snd_inc_vol -11
@@ -929,7 +929,7 @@ SndData_10_Ch1:
 	snd_note $48
 	snd_note $43
 	snd_note $00, NOTELEN_06
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_0A
 	snd_inc_vol -2
 	snd_note $43, NOTELEN_03
@@ -940,7 +940,7 @@ SndData_10_Ch1:
 	snd_note $43
 	snd_note $00
 	snd_note $00
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_09
 	snd_inc_vol 2
 	snd_note $43, NOTELEN_03
@@ -949,7 +949,7 @@ SndData_10_Ch1:
 	snd_note $46
 	snd_note $00
 	snd_note $46
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_0A
 	snd_inc_vol -2
 	snd_note $41, NOTELEN_03
@@ -964,7 +964,7 @@ SndData_10_Ch1:
 	snd_note $46
 	snd_note $00
 	snd_note $46
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_09
 	snd_inc_vol 2
 	snd_note $41, NOTELEN_06
@@ -1002,7 +1002,7 @@ SndData_10_Ch1:
 SndData_10_Ch2:
 	snd_inc_freq_offset -1
 .loop0:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_07
 	snd_var iSndChInfo_LoopTimer0, $03
 	.loop1:
@@ -1045,7 +1045,7 @@ SndData_10_Ch2:
 	snd_inc_vol -6
 	snd_instrument INSTR_NONE
 	snd_note $3A, NOTELEN_06
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_note $4D, NOTELEN_01
 	snd_note $4C
 	snd_note $4A
@@ -1058,7 +1058,7 @@ SndData_10_Ch2:
 	snd_note $3E
 	snd_note $3D
 	snd_note $3C
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_0B
 	snd_note $00, NOTELEN_06
 	snd_inc_vol 6
@@ -1219,7 +1219,7 @@ SndData_10_Ch2:
 	snd_inc_vol 6
 	snd_instrument INSTR_07
 	snd_note $46, NOTELEN_09
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_09
 	snd_note $40, NOTELEN_03
 	snd_note $40
@@ -1386,7 +1386,7 @@ SndData_10_Ch2:
 	snd_note $3E
 	snd_note $00
 	snd_inc_vol 6
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_0A
 	snd_inc_vol -2
 	snd_note $5B, NOTELEN_03
@@ -1397,7 +1397,7 @@ SndData_10_Ch2:
 	snd_note $5B
 	snd_note $00
 	snd_note $00
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_09
 	snd_inc_vol 2
 	snd_note $3C, NOTELEN_03
@@ -1406,7 +1406,7 @@ SndData_10_Ch2:
 	snd_note $3C
 	snd_note $00
 	snd_note $3E
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_0A
 	snd_inc_vol -2
 	snd_note $59
@@ -1421,7 +1421,7 @@ SndData_10_Ch2:
 	snd_note $5E
 	snd_note $00
 	snd_note $5E
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_09
 	snd_inc_vol 2
 	snd_note $39, NOTELEN_06

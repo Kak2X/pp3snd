@@ -10,7 +10,7 @@ SndHeader_BGM_22:
 	db 107 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_22_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
@@ -34,7 +34,7 @@ SndHeader_BGM_22:
 	db 107 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_22_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
@@ -46,10 +46,10 @@ SndHeader_BGM_22:
 	db 107 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_22_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_22_Ch1:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_note $19, NOTELEN_03
 	snd_note $00, NOTELEN_06
 	snd_note $19, NOTELEN_03
@@ -447,7 +447,7 @@ SndData_22_Ch3:
 SndData_22_Ch2:
 	snd_inc_freq_offset -1
 .loop0:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_note $00, NOTELEN_0C
 	snd_note $31, NOTELEN_01
 	snd_note $00, NOTELEN_02

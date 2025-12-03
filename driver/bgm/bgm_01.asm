@@ -22,7 +22,7 @@ SndHeader_BGM_01:
 	db 113 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_01_Ch2 ; Data pointer
-	nrx1 SNDDUTY_25, $00 ; iSndChInfo_DutyOrWave
+	db $40 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
@@ -34,7 +34,7 @@ SndHeader_BGM_01:
 	db 113 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_01_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
@@ -46,7 +46,7 @@ SndHeader_BGM_01:
 	db 113 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_01_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_01_Ch3:
 	snd_wave WAVE_09
@@ -512,7 +512,7 @@ SndData_01_Ch2:
 	snd_note $1E, NOTELEN_06
 	snd_end
 SndData_01_Ch1:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_inc_freq_offset -2
 	snd_note $00, NOTELEN_09
 	snd_note $2A, NOTELEN_CUSTOM, $03
@@ -611,7 +611,7 @@ SndData_01_Ch1:
 	snd_inc_freq_offset 1
 	snd_note $00, NOTELEN_CUSTOM, $0F
 	snd_inc_freq_offset 2
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_3B
 	snd_note $2E, NOTELEN_CUSTOM, $15
 	snd_inc_vol -5
@@ -649,14 +649,14 @@ SndData_01_Ch1:
 	snd_note $29, NOTELEN_03
 	snd_inc_vol 5
 	snd_inc_freq_offset 1
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_33
 	snd_inc_base_note 12
 	snd_note $35, NOTELEN_0C
 	snd_note $34
 	snd_note $33
 	snd_note $2C
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_3B
 	snd_inc_base_note -12
 	snd_note $2E, NOTELEN_CUSTOM, $15
@@ -743,7 +743,7 @@ SndData_01_Ch1:
 	snd_note $29, NOTELEN_03
 	snd_inc_vol 5
 	snd_inc_freq_offset 1
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_instrument INSTR_NONE
 	snd_note $00, NOTELEN_02
 	snd_note $24, NOTELEN_01
@@ -789,7 +789,7 @@ SndData_01_Ch1:
 	snd_note $2B
 	snd_note $00, NOTELEN_01
 	snd_inc_vol 5
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_3B
 	snd_note $2F, NOTELEN_CUSTOM, $15
 	snd_inc_vol -5
@@ -846,7 +846,7 @@ SndData_01_Ch1:
 	snd_inc_vol 5
 	snd_inc_freq_offset 1
 	snd_note $2F, NOTELEN_06
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_2E
 	snd_note $2F, NOTELEN_03
 	snd_note $2F

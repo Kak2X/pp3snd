@@ -22,7 +22,7 @@ SndHeader_BGM_13:
 	db 99 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_13_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
@@ -34,7 +34,7 @@ SndHeader_BGM_13:
 	db 99 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_13_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
@@ -46,7 +46,7 @@ SndHeader_BGM_13:
 	db 99 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_13_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_13_Ch3:
 	snd_wave WAVE_0D
@@ -239,7 +239,7 @@ SndData_13_Ch3:
 		snd_djnz iSndChInfo_LoopTimer0, .loop0
 	snd_end_saveid
 SndData_13_Ch1:
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_instrument INSTR_11
 	snd_note $00, NOTELEN_06
 	snd_note $00, NOTELEN_02
@@ -259,7 +259,7 @@ SndData_13_Ch1:
 	snd_note $00, NOTELEN_0C
 	snd_inc_vol 10
 	snd_instrument INSTR_11
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_note $33, NOTELEN_04
 	snd_note $35, NOTELEN_03
 	snd_note $00
@@ -292,7 +292,7 @@ SndData_13_Ch1:
 	snd_note $00, NOTELEN_03
 	snd_note $00
 	snd_note $38
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_inc_vol -10
 	snd_instrument INSTR_NONE
 	snd_note $38
@@ -303,7 +303,7 @@ SndData_13_Ch1:
 	snd_note $30
 	snd_note $2E
 	snd_note $00, NOTELEN_0C
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_inc_vol 10
 	snd_instrument INSTR_11
 	snd_note $33, NOTELEN_04
@@ -336,7 +336,7 @@ SndData_13_Ch1:
 	snd_note $00, NOTELEN_03
 	snd_note $00
 	snd_note $38
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_inc_vol -10
 	snd_instrument INSTR_NONE
 	snd_note $38
@@ -347,7 +347,7 @@ SndData_13_Ch1:
 	snd_note $30
 	snd_note $2E
 	snd_note $00, NOTELEN_0C
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_inc_vol 10
 	snd_instrument INSTR_11
 	snd_note $33, NOTELEN_04
@@ -415,7 +415,7 @@ SndData_13_Ch1:
 	snd_pan SNDOUT_CHL
 	snd_note $3A, NOTELEN_08
 	snd_pan SNDOUT_CHALL
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_15
 	snd_inc_vol 8
 	snd_note $3C, NOTELEN_04
@@ -503,7 +503,7 @@ SndData_13_Ch1:
 		snd_djnz iSndChInfo_LoopTimer0, .loop0
 	snd_end
 SndData_13_Ch2:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_07
 	snd_note $2C, NOTELEN_30
 	snd_note $2E, NOTELEN_18
@@ -551,7 +551,7 @@ SndData_13_Ch2:
 	snd_inc_vol 10
 	snd_instrument INSTR_11
 	snd_note $37, NOTELEN_06
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_15
 	snd_inc_vol -5
 	snd_note $29, NOTELEN_02

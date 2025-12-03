@@ -10,10 +10,10 @@ SndHeader_SFX_3B:
 	db 0 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_3B_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3B_Ch2:
-	snd_noise_sweep 0, 7, 0
+	snd_noise_sweep $07
 	snd_note $33, NOTELEN_01
 	snd_note $6A
 	snd_note $62

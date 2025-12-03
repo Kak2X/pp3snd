@@ -10,7 +10,7 @@ SndHeader_SFX_55:
 	db 0 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_55_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT5 ; Slot location
@@ -22,32 +22,32 @@ SndHeader_SFX_55:
 	db 0 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_55_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_55_Ch4:
 	snd_fade SSF_FADEOUT, 0, 144
 	.loop:
-		snd_noise 7, 0, 0
+		snd_noise $70
 		snd_note $19, NOTELEN_03
-		snd_noise 6, 0, 0
+		snd_noise $60
 		snd_note $19
-		snd_noise 7, 1, 0
+		snd_noise $71
 		snd_note $19
-		snd_noise 6, 1, 0
+		snd_noise $61
 		snd_note $19
-		snd_noise 7, 2, 0
+		snd_noise $72
 		snd_note $19
-		snd_noise 6, 2, 0
+		snd_noise $62
 		snd_note $19
-		snd_noise 7, 3, 0
+		snd_noise $73
 		snd_note $19
-		snd_noise 6, 3, 0
+		snd_noise $63
 		snd_note $19
-		snd_noise 7, 4, 0
+		snd_noise $74
 		snd_note $19
-		snd_noise 6, 4, 0
+		snd_noise $64
 		snd_note $19
-		snd_noise 7, 5, 0
+		snd_noise $75
 		snd_note $19
 		snd_jpfade .loop
 	snd_end

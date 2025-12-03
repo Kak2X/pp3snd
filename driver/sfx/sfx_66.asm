@@ -10,13 +10,13 @@ SndHeader_SFX_66:
 	db 0 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_66_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_66_Ch4:
 	snd_sets3
-	snd_noise 4, 2, 0
+	snd_noise $42
 	snd_note $19, NOTELEN_03
 	snd_inc_vol -6
-	snd_noise 4, 4, 0
+	snd_noise $44
 	snd_note $19, NOTELEN_06
 	snd_end

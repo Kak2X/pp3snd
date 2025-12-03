@@ -10,7 +10,7 @@ SndHeader_BGM_08:
 	db 65 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_08_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot1:
 	db SNDSLOT1 ; Slot location
@@ -22,7 +22,7 @@ SndHeader_BGM_08:
 	db 65 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_08_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
@@ -46,10 +46,10 @@ SndHeader_BGM_08:
 	db 65 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_08_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_08_Ch1:
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_note $00, NOTELEN_09
 .loop:
 	snd_pitchbend 10
@@ -126,7 +126,7 @@ SndData_08_Ch1:
 	snd_inc_freq_offset 1
 	snd_ret
 SndData_08_Ch2:
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_inc_freq_offset -1
 	snd_vibrato VIBRATO_11
 	snd_instrument INSTR_13
@@ -166,7 +166,7 @@ SndData_08_Ch2:
 	snd_call .sub0
 	snd_call .sub0
 	snd_inc_base_note 2
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_vibrato VIBRATO_11
 	snd_instrument INSTR_13
 	snd_inc_vol 11
@@ -197,7 +197,7 @@ SndData_08_Ch2:
 	snd_inc_vol -18
 	snd_jp .loop
 .sub0:
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_instrument INSTR_69
 	snd_inc_vol -10
 	snd_note $3F, NOTELEN_06
@@ -206,11 +206,11 @@ SndData_08_Ch2:
 	snd_note $3C, NOTELEN_02
 	snd_inc_vol -11
 	snd_inc_freq_offset -1
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_note $3C
 	snd_inc_freq_offset 2
 	snd_inc_vol -3
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_note $3C
 	snd_inc_vol 14
 	snd_inc_freq_offset -1

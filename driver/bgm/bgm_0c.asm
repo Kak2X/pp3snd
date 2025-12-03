@@ -22,7 +22,7 @@ SndHeader_BGM_0C:
 	db 116 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_0C_Ch2 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
@@ -34,7 +34,7 @@ SndHeader_BGM_0C:
 	db 116 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_0C_Ch1 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
@@ -46,7 +46,7 @@ SndHeader_BGM_0C:
 	db 116 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_0C_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_0C_Ch3:
 	snd_wave WAVE_09
@@ -704,7 +704,7 @@ SndData_0C_Ch3:
 	snd_note $3A, NOTELEN_CUSTOM, $60
 	snd_jp SndData_0C_Ch3
 SndData_0C_Ch2:
-	snd_duty SNDDUTY_12, $01
+	snd_duty $01
 	snd_note $14, NOTELEN_09
 	snd_note $1B, NOTELEN_0C
 	snd_note $20
@@ -944,7 +944,7 @@ SndData_0C_Ch2:
 	snd_note $00
 	snd_jp SndData_0C_Ch2
 SndData_0C_Ch1:
-	snd_duty SNDDUTY_12, $02
+	snd_duty $02
 	snd_note $1B, NOTELEN_03
 	snd_note $1D
 	snd_note $1E
@@ -1000,7 +1000,7 @@ SndData_0C_Ch1:
 	snd_note $24
 	snd_note $00, NOTELEN_0C
 	snd_note $27
-	snd_duty SNDDUTY_12, $29
+	snd_duty $29
 	snd_note $2C, NOTELEN_06
 	snd_note $27, NOTELEN_03
 	snd_note $2A, NOTELEN_06
@@ -1043,7 +1043,7 @@ SndData_0C_Ch1:
 	snd_note $2A, NOTELEN_CUSTOM, $0F
 	snd_note $2A, NOTELEN_06
 	snd_note $27
-	snd_duty SNDDUTY_12, $02
+	snd_duty $02
 	snd_note $1B, NOTELEN_03
 	snd_note $1D
 	snd_note $1E
@@ -1069,7 +1069,7 @@ SndData_0C_Ch1:
 	snd_note $00
 	snd_note $27
 	snd_note $00, NOTELEN_0C
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_note $2A, NOTELEN_01
 	snd_note $2C
 	snd_note $2D
@@ -1098,7 +1098,7 @@ SndData_0C_Ch1:
 	snd_note $29, NOTELEN_06
 	snd_note $2A
 	snd_note $29
-	snd_duty SNDDUTY_12, $29
+	snd_duty $29
 	snd_note $2C
 	snd_note $27, NOTELEN_03
 	snd_note $2A, NOTELEN_06
@@ -1113,7 +1113,7 @@ SndData_0C_Ch1:
 	snd_note $2A, NOTELEN_CUSTOM, $0F
 	snd_note $2A, NOTELEN_06
 	snd_note $27
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_note $2C
 	snd_note $2E, NOTELEN_03
 	snd_note $30, NOTELEN_06
@@ -1130,7 +1130,7 @@ SndData_0C_Ch1:
 	snd_note $29, NOTELEN_06
 	snd_note $2A
 	snd_note $29
-	snd_duty SNDDUTY_12, $02
+	snd_duty $02
 	snd_note $1B, NOTELEN_03
 	snd_note $1D
 	snd_note $1E
@@ -1153,7 +1153,7 @@ SndData_0C_Ch1:
 	snd_note $22
 	snd_note $22, NOTELEN_03
 	snd_note $1E, NOTELEN_06
-	snd_duty SNDDUTY_12, $28
+	snd_duty $28
 	snd_note $31
 	snd_note $29, NOTELEN_03
 	snd_note $2C, NOTELEN_06
@@ -1297,7 +1297,7 @@ SndData_0C_Ch1:
 	snd_note $30
 	snd_jp SndData_0C_Ch1
 SndData_0C_Ch4:
-	snd_duty SNDDUTY_12, $00
+	snd_duty $00
 	snd_call .sub0
 	snd_call .sub0
 	snd_call .sub0

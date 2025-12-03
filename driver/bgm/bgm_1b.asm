@@ -22,7 +22,7 @@ SndHeader_BGM_1B:
 	db 90 ; iSndChInfo_Speed
 	db SNDCH_PULSE1 ; iSndChInfo_ChId
 	dw SndData_1B_Ch1 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot2:
 	db SNDSLOT2 ; Slot location
@@ -34,7 +34,7 @@ SndHeader_BGM_1B:
 	db 90 ; iSndChInfo_Speed
 	db SNDCH_PULSE2 ; iSndChInfo_ChId
 	dw SndData_1B_Ch2 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 .slot3:
 	db SNDSLOT3 ; Slot location
@@ -46,7 +46,7 @@ SndHeader_BGM_1B:
 	db 90 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_1B_Ch4 ; Data pointer
-	nrx1 SNDDUTY_12, $00 ; iSndChInfo_DutyOrWave
+	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_1B_Ch3:
 	snd_wave WAVE_09
@@ -99,7 +99,7 @@ SndData_1B_Ch3:
 	snd_note $5B, NOTELEN_09
 	snd_end
 SndData_1B_Ch1:
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_07
 	snd_note $00, NOTELEN_06
 	snd_inc_vol 4
@@ -147,7 +147,7 @@ SndData_1B_Ch1:
 	snd_inc_vol -8
 	snd_note $3F
 	snd_note $00
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_11
 	snd_pan SNDOUT_CHL
 	snd_inc_vol 8
@@ -156,7 +156,7 @@ SndData_1B_Ch1:
 	snd_note $3D, NOTELEN_03
 	snd_note $3C
 	snd_note $00
-	snd_duty SNDDUTY_25, $00
+	snd_duty $40
 	snd_instrument INSTR_07
 	snd_pan SNDOUT_CHALL
 	snd_note $44, NOTELEN_0C
@@ -205,7 +205,7 @@ SndData_1B_Ch1:
 	snd_note $00, NOTELEN_CUSTOM, $0F
 	snd_end
 SndData_1B_Ch2:
-	snd_duty SNDDUTY_50, $00
+	snd_duty $80
 	snd_instrument INSTR_07
 	snd_inc_freq_offset -1
 	snd_note $00, NOTELEN_06

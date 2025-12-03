@@ -10,12 +10,12 @@ SndHeader_SFX_5C:
 	db 220 ; iSndChInfo_Speed
 	db SNDCH_NOISE ; iSndChInfo_ChId
 	dw SndData_5C_Ch4 ; Data pointer
-	nrx1 SNDDUTY_50, $00 ; iSndChInfo_DutyOrWave
+	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5C_Ch4:
-	snd_noise 2, 7, 0
+	snd_noise $27
 	snd_note $19, NOTELEN_04
-	snd_noise 0, 0, 0
+	snd_noise $00
 	snd_var iSndChInfo_LoopTimer0, $05
 	.loop:
 		snd_note $19, NOTELEN_01

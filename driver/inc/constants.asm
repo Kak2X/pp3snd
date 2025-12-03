@@ -8,12 +8,6 @@ DEF SNDSLOT6               EQU $06
 DEF SNDSLOT7               EQU $07
 DEF SNDSLOTPAUSE           EQU $08
 
-; NRx1
-DEF SNDDUTY_12             EQU 0
-DEF SNDDUTY_25             EQU 1
-DEF SNDDUTY_50             EQU 2
-DEF SNDDUTY_75             EQU 3
-
 DEF WAVE_00                EQU $00
 DEF WAVE_01                EQU $01
 DEF WAVE_02                EQU $02

@@ -25,22 +25,22 @@ SndHeader_SFX_40:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_40_Ch1:
-	snd_noise_sweep $07
-	snd_note $25, NOTELEN_01
-	snd_note $49
-	snd_note $25
-	snd_note $49
-	snd_note $25
-	snd_status SST_CH123
+	noise_sweep $07
+	note $25, NOTELEN_01
+	note $49
+	note $25
+	note $49
+	note $25
+	chan_type SST_CH123
 .fadeOut:
-	snd_fade SSF_FADEOUT, 4, 160
-	snd_note $4D, NOTELEN_12
-	snd_end
+	fade SSF_FADEOUT, 4, 160
+	note $4D, NOTELEN_12
+	chan_stop
 SndData_40_Ch2:
-	snd_note $3A, NOTELEN_01
-	snd_note $00
-	snd_note $2E
-	snd_note $00
-	snd_note $22
-	snd_inc_freq_offset -5
-	snd_jp SndData_40_Ch1.fadeOut
+	note $3A, NOTELEN_01
+	note $00
+	note $2E
+	note $00
+	note $22
+	fine_tune_value -5
+	snd_loop SndData_40_Ch1.fadeOut

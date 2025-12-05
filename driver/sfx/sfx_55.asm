@@ -25,38 +25,38 @@ SndHeader_SFX_55:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_55_Ch4:
-	snd_fade SSF_FADEOUT, 0, 144
+	fade SSF_FADEOUT, 0, 144
 	.loop:
-		snd_noise $70
-		snd_note $19, NOTELEN_03
-		snd_noise $60
-		snd_note $19
-		snd_noise $71
-		snd_note $19
-		snd_noise $61
-		snd_note $19
-		snd_noise $72
-		snd_note $19
-		snd_noise $62
-		snd_note $19
-		snd_noise $73
-		snd_note $19
-		snd_noise $63
-		snd_note $19
-		snd_noise $74
-		snd_note $19
-		snd_noise $64
-		snd_note $19
-		snd_noise $75
-		snd_note $19
-		snd_jpfade .loop
-	snd_end
+		noise_freq $70
+		note $19, NOTELEN_03
+		noise_freq $60
+		note $19
+		noise_freq $71
+		note $19
+		noise_freq $61
+		note $19
+		noise_freq $72
+		note $19
+		noise_freq $62
+		note $19
+		noise_freq $73
+		note $19
+		noise_freq $63
+		note $19
+		noise_freq $74
+		note $19
+		noise_freq $64
+		note $19
+		noise_freq $75
+		note $19
+		snd_loop_fade .loop
+	chan_stop
 SndData_55_Ch2:
-	snd_note_slide SSE_NSDOWN, 48
-	snd_var iSndChInfo_LoopTimer0, $08
+	note_slide SSE_NSDOWN, 48
+	set_var iSndChInfo_LoopTimer0, $08
 	.loop:
-		snd_note $27, NOTELEN_04
-		snd_inc_base_note -1
-		snd_inc_vol -2
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_end
+		note $27, NOTELEN_04
+		fine_tune -1
+		volume_add -2
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	chan_stop

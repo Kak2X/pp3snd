@@ -13,12 +13,12 @@ SndHeader_SFXPause_00:
 	db WAVE_06 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_00_Ch3:
-	snd_note $3D, NOTELEN_01
-	snd_note $38
-	snd_note $3A
-	snd_note $3C
-	snd_note $3D
-	snd_note $38
-	snd_note $3A
-	snd_note $3C
-	snd_end
+	note $3D, NOTELEN_01
+	note $38
+	note $3A
+	note $3C
+	note $3D
+	note $38
+	note $3A
+	note $3C
+	chan_stop

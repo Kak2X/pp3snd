@@ -1127,7 +1127,7 @@ SoundDataCmdS_JpCustom:
 	ld   e, a
 	; Fall-through
 	
-; =============== SoundDataCmd_Jp / snd_jp ===============
+; =============== SoundDataCmd_Jp / snd_loop (no 2nd arg) ===============
 ; Command version of subroutine above.
 ; FORMAT:
 ; - 0: Command ID ($80)
@@ -1154,7 +1154,7 @@ SoundDataCmd_Nop:
 	dec  bc
 	ret
 	
-; =============== SoundDataCmd_JpByTimer / snd_djnz ===============
+; =============== SoundDataCmd_JpByTimer / snd_loop (with 2nd arg) ===============
 ; Conditional jump based on a loop counter, which is decremented each time we get here.
 ; Note this does not initialize the loop timer, that must be manually done through SoundDataCmd_SetVar.
 ;
@@ -1179,7 +1179,7 @@ SoundDataCmd_JpByTimer:
 	inc  bc							; Seek to byte3, the last arg
 	ret
 	
-; =============== SoundDataCmd_EndSaveID / snd_end_saveid ===============
+; =============== SoundDataCmd_EndSaveID / chan_stop ECH_SAVE ===============
 ; Like SoundDataCmd_End, except it also saves the slot's Sound ID to a fixed location,
 ; presumably so it could be restarted at a later point.
 ; However, the code that uses said fixed location is only used by an unused command.
@@ -1199,7 +1199,7 @@ SoundDataCmd_EndSaveID:
 	
 	; Fall-through
 	
-; =============== SoundDataCmd_End / snd_end ===============
+; =============== SoundDataCmd_End / chan_stop ===============
 ; Marks the end of the sound data.
 ; This one is special, as it exits the command loop immediately.
 ;
@@ -1221,7 +1221,7 @@ SoundDataCmd_End:
 	ld   [MBC1RomBank], a
 	jp   Sound_Do.eos
 	
-; =============== SoundDataCmd_SetInstrument / snd_instrument ===============
+; =============== SoundDataCmd_SetInstrument / instrument ===============
 ; Sets a new instrument ID.
 ; This changes the note's envelope and volume.
 ;
@@ -1240,7 +1240,7 @@ SoundDataCmd_SetInstrument:
 	set  SFNB_TRIG, [hl]
 	ret
 	
-; =============== SoundDataCmd_SetVol / snd_vol ===============
+; =============== SoundDataCmd_SetVol / volume ===============
 ; Sets a new slot volume.
 ;
 ; FORMAT:
@@ -1263,7 +1263,7 @@ SoundDataCmdS_SetSlotField:
 	ld   [hl], e	; and write the arg there
 	ret
 	
-; =============== SoundDataCmd_SetVibrato / snd_vibrato / snd_pulse1_sweep ===============
+; =============== SoundDataCmd_SetVibrato / vibrato / sweep ===============
 ; Sets a new Pulse 1 sweep value OR Vibrato ID.
 ;
 ; FORMAT:
@@ -1274,7 +1274,7 @@ SoundDataCmd_SetVibrato:
 	add  iSndChInfo_Vibrato
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_SetNoiseSweep / snd_pitchbend ===============
+; =============== SoundDataCmd_SetNoiseSweep / pitch_bend ===============
 ; Sets a new Noise sweep value.
 ;
 ; FORMAT:
@@ -1285,7 +1285,7 @@ SoundDataCmd_SetNoiseSweep:
 	add  iSndChInfo_NoiseSweep
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_SetNoiseFreq / snd_noise ===============
+; =============== SoundDataCmd_SetNoiseFreq / noise_freq ===============
 ; Sets a new noise channel frequency.
 ;
 ; FORMAT:
@@ -1296,7 +1296,7 @@ SoundDataCmd_SetNoiseFreq:
 	add  iSndChInfo_NoiseFreq
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_SetSpeed / snd_speed ===============
+; =============== SoundDataCmd_SetSpeed / speed ===============
 ; [TCRF] Sets a new playback speed.
 ;
 ; FORMAT:
@@ -1307,7 +1307,7 @@ SoundDataCmd_SetSpeed:
 	add  iSndChInfo_Speed
 	jr   SoundDataCmdS_SetSlotField
 
-; =============== SoundDataCmd_SetCh / snd_ch ===============
+; =============== SoundDataCmd_SetCh / chan_id ===============
 ; [TCRF] Sets a new channel ID.
 ;
 ; FORMAT:
@@ -1318,7 +1318,7 @@ SoundDataCmd_SetCh:
 	add  iSndChInfo_ChId
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_SetKeyOn / snd_keyon ===============
+; =============== SoundDataCmd_SetKeyOn / hold_for ===============
 ; [TCRF] Sets how long the key should be held.
 ; See also: Sound_Do.chkKeyRel
 ;
@@ -1330,7 +1330,7 @@ SoundDataCmd_SetKeyOn:
 	add  iSndChInfo_KeyRelTarget
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_SetDuty / snd_duty / snd_wave ===============
+; =============== SoundDataCmd_SetDuty / duty_cycle / wave_id ===============
 ; Sets a new length/duty sweep, or a wave ID.
 ;
 ; FORMAT:
@@ -1341,7 +1341,7 @@ SoundDataCmd_SetDuty:
 	add  iSndChInfo_DutyOrWave
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_StereoPan / snd_pan ===============
+; =============== SoundDataCmd_StereoPan / panning ===============
 ; Sets the stereo panning.
 ;
 ; FORMAT:
@@ -1352,7 +1352,7 @@ SoundDataCmd_StereoPan:
 	add  iSndChInfo_Pan
 	jr   SoundDataCmdS_SetSlotField
 	
-; =============== SoundDataCmd_PitchBend / snd_pitchbend ===============
+; =============== SoundDataCmd_PitchBend / pitch_bend ===============
 ; Enables/disables pitch bends.
 ;
 ; When this command is used to enable them, two more notes need to be played to start the first bend.
@@ -1393,7 +1393,7 @@ SoundDataCmd_PitchBend:
 	res  SSEB_PITCHBEND, [hl]
 	ret
 	
-; =============== SoundDataCmd_IncBaseNote / snd_inc_base_note ===============
+; =============== SoundDataCmd_IncBaseNote / fine_tune ===============
 ; Increments the base note/frequency ID by the specified value.
 ;
 ; FORMAT:
@@ -1421,7 +1421,7 @@ SoundDataCmd_IncBaseNote:
 	ld   [hl], $00
 	ret
 	
-; =============== SoundDataCmd_SetVar / snd_var ===============
+; =============== SoundDataCmd_SetVar / set_var ===============
 ; Writes a value to the specified sound slot field.
 ;
 ; FORMAT:
@@ -1440,7 +1440,7 @@ SoundDataCmd_SetVar:
 	ld   [hl], a		; Write it to the slot
 	ret
 	
-; =============== SoundDataCmd_NoiseSweepSingle / snd_noise_sweep_single ===============
+; =============== SoundDataCmd_NoiseSweepSingle / noise_sweep_single ===============
 ; [TCRF] ; Performs a single noise sweep with the specified value.
 ;
 ; FORMAT:
@@ -1465,7 +1465,7 @@ SoundDataCmd_NoiseSweepSingle:
 	pop  bc
 	ret
 	
-; =============== SoundDataCmd_SetStatus / snd_status ===============
+; =============== SoundDataCmd_SetStatus / chan_type ===============
 ; Sets a new slot status bitmask.
 ;
 ; FORMAT:
@@ -1475,7 +1475,7 @@ SoundDataCmd_SetStatus:
 	ldh  [hSndChInfoStatus], a
 	ret
 	
-; =============== SoundDataCmd_IncVol / snd_inc_vol ===============
+; =============== SoundDataCmd_IncVol / volume_add ===============
 ; Increments the slot volume by the specified amount.
 ;
 ; FORMAT:
@@ -1515,7 +1515,7 @@ SoundDataCmd_IncVol:
 	ld   [hl], a		; Save back to iSndChInfo_Vol
 	ret
 	
-; =============== SoundDataCmd_PlaySndArg / snd_playsndarg ===============
+; =============== SoundDataCmd_PlaySndArg / play_snd ===============
 ; [TCRF] ; Plays a new sound with the specified arguments.
 ;
 ; FORMAT:
@@ -1533,7 +1533,7 @@ SoundDataCmd_PlaySndArg:
 	pop  bc
 	ret
 
-; =============== SoundDataCmd_OrSnd / snd_orsaveid ===============
+; =============== SoundDataCmd_OrSnd / or_sound ===============
 ; [TCRF] Merges the specified value into wSndSavedSoundID.
 ;
 ; FORMAT:
@@ -1545,7 +1545,7 @@ SoundDataCmd_OrSnd:
 	ld   [hl], a
 	ret
 
-; =============== SoundDataCmd_IncBaseNoteByLoop / snd_inc_base_note_by_loop ===============
+; =============== SoundDataCmd_IncBaseNoteByLoop / fine_tune_by_loop ===============
 ; [TCRF] Alters the base note ID based on the loop count, given a table of offsets.
 ;        This can only be used inside conditional loops.
 ;
@@ -1553,7 +1553,7 @@ SoundDataCmd_OrSnd:
 ; iSndChInfo_NoteIdBase += OffsetTable[LastIndex - iSndChInfo_LoopTimer0]
 ;
 ; iSndChInfo_LoopTimer0 is the first loop timer.
-; It's set by sound data through snd_var and decrements when snd_djnz targets it.
+; It's set by sound data through set_var and decrements when snd_djnz targets it.
 ;
 ; Since iSndChInfo_LoopTimer0 is subtracted to LastIndex, means that the index to the offset
 ; table increments over time, until it reaches LastIndex at the last loop.
@@ -1613,7 +1613,7 @@ SoundDataCmd_IncBaseNoteByLoop:
 	ld   d, h
 	ret
 
-; =============== SoundDataCmd_SlotFade / snd_fade ===============
+; =============== SoundDataCmd_SlotFade / fade ===============
 ; Fades the volume for the current slot.
 ;
 ; FORMAT:
@@ -1686,7 +1686,7 @@ SoundDataCmd_SlotFade:
 	ldh  [hSndChInfoFxFlags0], a
 	ret
 
-; =============== SoundDataCmd_NoteSlide / snd_note_slide ===============
+; =============== SoundDataCmd_NoteSlide / note_slide ===============
 ; Enables/disables portamento.
 ;
 ; This takes effect immediately, unlike the frequency-to-frequency pitch bend.
@@ -1742,7 +1742,7 @@ SoundDataCmd_NoteSlide:
 	res  SSEB_NS, [hl]
 	ret
 	
-; =============== SoundDataCmd_JpIfFade / snd_jpfade ===============
+; =============== SoundDataCmd_JpIfFade / snd_loop_fade ===============
 ; SoundDataCmd_JpOnWaitFade
 ;
 ; Conditional jump, performed until the slot fade in/out has finished.
@@ -1758,7 +1758,7 @@ SoundDataCmd_JpIfFade:
 	jp   z, SoundDataCmd_Jp.readHi	; If not, loop
 	ret
 	
-; =============== SoundDataCmd_ToggleKeyHold / snd_toggle_keyhold ===============
+; =============== SoundDataCmd_ToggleKeyHold / toggle_hold ===============
 ; Toggles the "key held" status.
 ; When toggled on, it causes instruments to stay in the sustain phase
 ; (conditional loops enabled) until this gets toggled back off again.
@@ -1783,7 +1783,7 @@ SoundDataCmd_ToggleKeyHold:
 	dec  bc	; no args
 	ret
 	
-; =============== SoundDataCmd_SetS3 / snd_sets3 ===============
+; =============== SoundDataCmd_SetS3 / set_s3 ===============
 ; Sets the otherwise unused flag SST_3.
 ;
 ; FORMAT:
@@ -1794,7 +1794,7 @@ SoundDataCmd_SetS3:
 	ldh  [hSndChInfoStatus], a
 	jr   SoundDataCmd_ToggleKeyHold.setBit3
 	
-; =============== SoundDataCmd_ClrS3 / snd_clrs3 ===============
+; =============== SoundDataCmd_ClrS3 / clr_s3 ===============
 ; Clears the otherwise unused flag SST_3.
 ;
 ; FORMAT:
@@ -1860,7 +1860,7 @@ SoundDataCmd_Ret:
 	ld   b, [hl]	; B = iSndChInfo_RetDataPtr_High
 	ret
 	
-; =============== SoundDataCmd_IncFreqOff / snd_inc_freq_offset ===============
+; =============== SoundDataCmd_IncFreqOff / fine_tune_value ===============
 ; Alters the frequency value offset by the specified amount.
 ; The higher the offset gets, the lower the final frequency will be.
 ;
@@ -1880,7 +1880,7 @@ SoundDataCmd_IncFreqOff:
 	ld   [hl], a	; Save it back to iSndChInfo_FreqMod
 	ret
 	
-; =============== SoundDataCmd_IfCh / snd_ifch ===============
+; =============== SoundDataCmd_IfCh / if_chan ===============
 ; [TCRF] Handles the next command only if the sound channel matches the specified one.
 ;        If it isn't, it gets skipped over.
 ;        To work properly, the next command must be a 2-byte one.
@@ -1905,7 +1905,7 @@ SoundDataCmd_IfCh:
 .ret:
 	ret
 
-; =============== SoundDataCmd_JpCh / snd_jpch ===============
+; =============== SoundDataCmd_JpCh / snd_loop_if_chan ===============
 ; [TCRF] Conditional jump, taken if the slot's sound channel matches the specified one.
 ;
 ; FORMAT:
@@ -1930,7 +1930,7 @@ SoundDataCmd_JpCh:
 	jp   SoundDataCmdS_JpCustom
 
 IF KEEP_PCM
-; =============== SoundDataCmd_PlaySlotPcm / snd_playslotpcm ===============
+; =============== SoundDataCmd_PlaySlotPcm / play_slot_pcm ===============
 ; [TCRF] Plays the slot-specific PCM sample, which was passed when creating the slot.
 ;
 ; Identical to SoundDataCmd_PlayPcm otherwise.
@@ -1951,7 +1951,7 @@ SoundDataCmd_PlaySlotPcm:
 	
 	jr   SoundDataCmd_PlayPcm.setPcm
 
-; =============== SoundDataCmd_PlayPcm / snd_playpcm ===============
+; =============== SoundDataCmd_PlayPcm / play_pcm ===============
 ; [TCRF] Plays the specified PCM sample.
 ;
 ; This is the only way to play a PCM sample in Sun's driver, unlike Yon there's no special
@@ -1988,7 +1988,7 @@ SoundDataCmd_PlayPcm:
 	
 ENDC
 
-; =============== SoundDataCmd_NoteEx / snd_noteex ===============
+; =============== SoundDataCmd_NoteEx / note_ex ===============
 ; Superset of the normal SoundDataCmd_Note.
 ; It takes the same parameters, except the first one is an index to a table of preset settings.
 ;
@@ -1996,7 +1996,7 @@ ENDC
 ; so they can be a good alternative to save bytes.
 ;
 ; While these could be used by any channel, in practice, not only the included presets are made
-; for the Noise channel, but snd_noteex almost always replaces the normal snd_note there.
+; for the Noise channel, but note_ex almost always replaces the normal note there.
 ;
 ; FORMAT:
 ; - 0: Slot preset ID [Optional]
@@ -2175,7 +2175,7 @@ SoundDataCmd_NoteEx:
 	xor  a							; ...it will mute the channel instead!
 	jr   SoundDataCmd_Note.fromByte1
 	
-; =============== SoundDataCmd_SameNote / snd_samenote ===============
+; =============== SoundDataCmd_SameNote / note_repeat ===============
 ; [TCRF] Like SoundDataCmd_Note, but the relative note ID doesn't change.
 ;
 ; FORMAT:
@@ -2198,7 +2198,7 @@ SoundDataCmd_SameNote:
 		jr   SoundDataCmd_Note.withNoteId
 	;##
 
-; =============== SoundDataCmd_Note / snd_note ===============
+; =============== SoundDataCmd_Note / note ===============
 ; Sets a new note, which updates the slot's frequency.
 ;
 ; FORMAT:
@@ -2246,7 +2246,7 @@ SoundDataCmd_Note:
 		; This feature allows to smoothly fade between the old and new frequency
 		; at a specified speed, rather than instantly setting the new one.
 		;
-		; This functionality is set through the command snd_pitchbend.
+		; This functionality is set through the command pitch_bend.
 		;
 		; Notes:
 		; - We're doing this after calling Sound_SetFreq, so the new frequency data
@@ -2443,7 +2443,7 @@ ENDM
 	; 
 	; By default, every new note played should count as a new key.
 	;
-	; We can override this behaviour by using snd_toggle_keyhold, which switches
+	; We can override this behaviour by using toggle_hold, which switches
 	; between always holding keys and the default behaviour.
 	; What this does in practice is causing conditional loops inside the instrument data to always trigger.
 	;
@@ -2638,7 +2638,7 @@ Sound_DoInstrument:
 	; how long before fetching more.
 	;
 	; Sound slots keep track of both the instrument's ID and the offset to the instrument data.
-	; The ID can be altered through snd_instrument, while the instrument offset is altered on
+	; The ID can be altered through instrument, while the instrument offset is altered on
 	; its own depending on the commands in the instrument data.
 	;
 	
@@ -2734,7 +2734,7 @@ Sound_DoInstrument:
 	jr   z, .cmdLoopFarCond 	; ID == $84? If so, jump
 	;--
 	
-; --------------- .cmdSetNewData / ivol ---------------
+; --------------- .cmdSetNewData / ienv ---------------
 ; Command ID $00-$7F
 ;
 ; Sets new volume/envelope data for the current slot.
@@ -2781,7 +2781,7 @@ Sound_DoInstrument:
 	jr   c, .chkCmd81			; ID < $82? If so, jump
 								; Otherwise, it's $83
 						
-; --------------- .cmdLoopCond / iloop_prev_cond ---------------
+; --------------- .cmdLoopCond / iloop_prev_held ---------------
 ; [TCRF] Command ID $83
 ;
 ; Repeats the previous command until the key is released.
@@ -2824,7 +2824,7 @@ Sound_DoInstrument:
 	; The data offset stays untouched, since we aren't moving.
 	jr   .setNewData
 
-; --------------- .cmdLoopFarCond / iloop_far_cond ---------------
+; --------------- .cmdLoopFarCond / iloop_far_held ---------------
 ; [TCRF] Command ID $84
 ;
 ; Loops back by the specified amount of bytes when the keys are held.
@@ -2883,7 +2883,7 @@ Sound_DoInstrument:
 	dec  b						; Otherwise dec the high byte too
 	jr   .setNewData
 	
-; --------------- .cmdReset / irewind ---------------
+; --------------- .cmdReset / irestart ---------------
 ; [TCRF] Command ID $82
 ;
 ; Loops to the beginning of the data.
@@ -3038,7 +3038,7 @@ Sound_DoVibrato:
 	jr   c, .chkCmd81			; ID < $82? If so, jump
 								; Otherwise, it's $83
 						
-; --------------- .cmdLoopCond / vloop_prev_cond ---------------
+; --------------- .cmdLoopCond / vloop_prev_held ---------------
 ; [TCRF] Command ID $83
 ;
 ; Repeats the previous command until the key is released.
@@ -3085,7 +3085,7 @@ Sound_DoVibrato:
 	; The data offset stays untouched, since we aren't moving.
 	jr   .setNewData
 
-; --------------- .cmdLoopFarCond / vloop_far_cond ---------------
+; --------------- .cmdLoopFarCond / vloop_far_held ---------------
 ; [TCRF] Command ID $84
 ;
 ; Loops back by the specified amount of bytes when the keys are held.
@@ -3151,7 +3151,7 @@ Sound_DoVibrato:
 	ld   a, [bc]            	; Get the frequency offset
 	jr   .setNewData
 	
-; --------------- .cmdReset / vrewind ---------------
+; --------------- .cmdReset / vrestart ---------------
 ; Command ID $82
 ;
 ; Loops to the beginning of the data.
@@ -3878,7 +3878,7 @@ ENDC
 	;--
 	; Duty cycle + Length timer.
 	; iSndChInfo_DutyOrWave & $C0 -> wNRx1
-	; [POI] Inexplicably, the length timer is forced to $00, overriding whatever is specified in snd_duty.
+	; [POI] Inexplicably, the length timer is forced to $00, overriding whatever is specified in duty_cycle.
 	;       That said, 99% of the time what it specifies is $00 anyway.
 	ld   a, [de]				; Read iSndChInfo_DutyOrWave
 	and  $C0					; Zero out length
@@ -4534,7 +4534,7 @@ Sound_StartNew:
 	
 	; 1.2-B: Slot bytes, copied sequentially as-is to iSndChInfo_Vol-iSndChInfo_Pan
 	;        For the Wave channel, what's specified in iSndChInfo_DutyOrWave could be an invalid wave ID.
-	;        When that's the case, the song data will almost immediately contain a snd_wave command.
+	;        When that's the case, the song data will almost immediately contain a wave_id command.
 	push bc
 		ld   b, $05 ; Copy 5 times
 	.cpLoop:

@@ -13,10 +13,10 @@ SndHeader_SFX_36:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_36_Ch2:
-	snd_var iSndChInfo_LoopTimer0, $0C
+	set_var iSndChInfo_LoopTimer0, $0C
 	.loop:
-		snd_note_slide SSE_NSUP, 2
-		snd_note $3D, NOTELEN_03
-		snd_inc_base_note 2
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_end
+		note_slide SSE_NSUP, 2
+		note $3D, NOTELEN_03
+		fine_tune 2
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	chan_stop

@@ -424,3 +424,6 @@ DEF SPR_USECH4SWEEP  EQU 1 << SPRB_USECH4SWEEP
 ; Slot loop flags
 DEF SOUNDB_PAUSED    EQU 7
 DEF SOUND_PAUSED     EQU 1 << SOUNDB_PAUSED
+
+; Additional macro-specific flags
+DEF ECH_SAVE         EQU 1

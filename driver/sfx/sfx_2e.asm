@@ -13,10 +13,10 @@ SndHeader_SFX_2E:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_2E_Ch2:
-	snd_toggle_keyhold
-	snd_fade SSF_FADEOUT, 4, 255
-	snd_note $23, NOTELEN_01
-	snd_note $20
-	snd_note_slide SSE_NSUP, 5
-	snd_note $20, NOTELEN_08
-	snd_end
+	toggle_hold
+	fade SSF_FADEOUT, 4, 255
+	note $23, NOTELEN_01
+	note $20
+	note_slide SSE_NSUP, 5
+	note $20, NOTELEN_08
+	chan_stop

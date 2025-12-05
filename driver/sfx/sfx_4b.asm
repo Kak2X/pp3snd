@@ -25,9 +25,9 @@ SndHeader_SFX_4B:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4B_Ch2:
-	snd_note $00, NOTELEN_04
+	note $00, NOTELEN_04
 SndData_4B_Ch1:
-	snd_fade SSF_FADEOUT, 4, 96
-	snd_vibrato VIBRATO_02
-	snd_note $33, NOTELEN_24
-	snd_end
+	fade SSF_FADEOUT, 4, 96
+	vibrato VIBRATO_02
+	note $33, NOTELEN_24
+	chan_stop

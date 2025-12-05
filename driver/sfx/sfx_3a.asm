@@ -37,21 +37,21 @@ SndHeader_SFX_3A:
 	db WAVE_00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3A_Ch2:
-	snd_note $00, NOTELEN_04
+	note $00, NOTELEN_04
 SndData_3A_Ch1:
-	snd_vibrato VIBRATO_09
-	snd_note $31, NOTELEN_CUSTOM, $48
-	snd_sets3
-	snd_note_slide SSE_NSUP, 4
-	snd_note $49, NOTELEN_01
-	snd_note $20, NOTELEN_CUSTOM, $30
-	snd_end
+	vibrato VIBRATO_09
+	note $31, NOTELEN_CUSTOM, $48
+	set_s3
+	note_slide SSE_NSUP, 4
+	note $49, NOTELEN_01
+	note $20, NOTELEN_CUSTOM, $30
+	chan_stop
 SndData_3A_Ch3:
-	snd_var iSndChInfo_LoopTimer0, $04
+	set_var iSndChInfo_LoopTimer0, $04
 	.loop:
-		snd_note_slide SSE_NSDOWN, 1
-		snd_note $55, NOTELEN_0C
-		snd_note_slide SSE_NSUP, 2
-		snd_note $31, NOTELEN_0C
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_end
+		note_slide SSE_NSDOWN, 1
+		note $55, NOTELEN_0C
+		note_slide SSE_NSUP, 2
+		note $31, NOTELEN_0C
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	chan_stop

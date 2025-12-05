@@ -13,8 +13,8 @@ SndHeader_SFX_5B:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5B_Ch2:
-	snd_note $34, NOTELEN_03
-	snd_note $40, NOTELEN_01
-	snd_instrument INSTR_0A
-	snd_note $3A, NOTELEN_0C
-	snd_end
+	note $34, NOTELEN_03
+	note $40, NOTELEN_01
+	instrument INSTR_0A
+	note $3A, NOTELEN_0C
+	chan_stop

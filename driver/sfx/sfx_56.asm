@@ -13,28 +13,28 @@ SndHeader_SFX_56:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_56_Ch2:
-	snd_fade SSF_FADEOUT, 0, 176
-	snd_sets3
-	snd_note $3A, NOTELEN_01
-	snd_note $3C
-	snd_note $3E
-	snd_note $40
-	snd_note $3D
-	snd_note $3A
-	snd_note $37
-	snd_note $34
-	snd_note $31
-	snd_note $2F
-	snd_note $31
-	snd_note $34
-	snd_note $37
-	snd_note $3A
-	snd_note $3D
-	snd_note $40
-	snd_note $3D
-	snd_note $3A
-	snd_note $37
-	snd_note $34
-	snd_note $31
-	snd_note $2F
-	snd_end
+	fade SSF_FADEOUT, 0, 176
+	set_s3
+	note $3A, NOTELEN_01
+	note $3C
+	note $3E
+	note $40
+	note $3D
+	note $3A
+	note $37
+	note $34
+	note $31
+	note $2F
+	note $31
+	note $34
+	note $37
+	note $3A
+	note $3D
+	note $40
+	note $3D
+	note $3A
+	note $37
+	note $34
+	note $31
+	note $2F
+	chan_stop

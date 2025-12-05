@@ -25,34 +25,34 @@ SndHeader_SFX_67:
 	db WAVE_05 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_67_Ch3:
-	snd_note $00, NOTELEN_02
+	note $00, NOTELEN_02
 SndData_67_Ch2:
-	snd_note $39, NOTELEN_01
-	snd_note $3B
-	snd_note $3D
-	snd_note $3B
-	snd_note $3D
-	snd_note $3F
-	snd_note $3D
-	snd_note $3B
-	snd_note $3D
-	snd_note $41
-	snd_note $3F
-	snd_note $41
-	snd_note $43
-	snd_note $41
-	snd_note $3F
-	snd_note $45
-	snd_note $43
-	snd_note $47
-	snd_note $43
-	snd_note $41
-	snd_note $43
-	snd_note $45
-	snd_note $43
-	snd_note $49
-	snd_note $45
-	snd_note $47
-	snd_note $43
-	snd_note $45
-	snd_end
+	note $39, NOTELEN_01
+	note $3B
+	note $3D
+	note $3B
+	note $3D
+	note $3F
+	note $3D
+	note $3B
+	note $3D
+	note $41
+	note $3F
+	note $41
+	note $43
+	note $41
+	note $3F
+	note $45
+	note $43
+	note $47
+	note $43
+	note $41
+	note $43
+	note $45
+	note $43
+	note $49
+	note $45
+	note $47
+	note $43
+	note $45
+	chan_stop

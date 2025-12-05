@@ -49,138 +49,138 @@ SndHeader_BGM_11:
 	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_11_Ch1:
-	snd_duty $40
-	snd_pitchbend 20
-	snd_vibrato VIBRATO_61
-	snd_var iSndChInfo_LoopTimer0, $0F
+	duty_cycle $40
+	pitch_bend 20
+	vibrato VIBRATO_61
+	set_var iSndChInfo_LoopTimer0, $0F
 	.loop:
-		snd_note $47, NOTELEN_0C
-		snd_instrument INSTR_69
-		snd_note $44, NOTELEN_09
-		snd_note $44, NOTELEN_03
-		snd_note $00
-		snd_note $47
-		snd_note $00
-		snd_note $47
-		snd_note $44
-		snd_note $00
-		snd_note $44
-		snd_note $00
-		snd_instrument INSTR_NONE
-		snd_inc_base_note 1
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_inc_base_note -15
-	snd_instrument INSTR_69
-	snd_note $56, NOTELEN_03
-	snd_note $55
-	snd_note $54
-	snd_note $53
-	snd_note $52
-	snd_note $51
-	snd_note $50
-	snd_note $4F
-	snd_note $4E
-	snd_note $4D
-	snd_note $4C
-	snd_note $4B
-	snd_note $4A
-	snd_note $49
-	snd_note $48
-	snd_note $47
-	snd_jp SndData_11_Ch1
+		note $47, NOTELEN_0C
+		instrument INSTR_69
+		note $44, NOTELEN_09
+		note $44, NOTELEN_03
+		note $00
+		note $47
+		note $00
+		note $47
+		note $44
+		note $00
+		note $44
+		note $00
+		instrument INSTR_NONE
+		fine_tune 1
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	fine_tune -15
+	instrument INSTR_69
+	note $56, NOTELEN_03
+	note $55
+	note $54
+	note $53
+	note $52
+	note $51
+	note $50
+	note $4F
+	note $4E
+	note $4D
+	note $4C
+	note $4B
+	note $4A
+	note $49
+	note $48
+	note $47
+	snd_loop SndData_11_Ch1
 SndData_11_Ch2:
-	snd_duty $40
-	snd_pitchbend 20
-	snd_vibrato VIBRATO_0D
-	snd_var iSndChInfo_LoopTimer0, $0F
+	duty_cycle $40
+	pitch_bend 20
+	vibrato VIBRATO_0D
+	set_var iSndChInfo_LoopTimer0, $0F
 	.loop:
-		snd_inc_freq_offset -2
-		snd_instrument INSTR_6D
-		snd_note $44, NOTELEN_0C
-		snd_note $40, NOTELEN_09
-		snd_note $40, NOTELEN_03
-		snd_note $00
-		snd_note $44
-		snd_note $00
-		snd_note $44
-		snd_note $40
-		snd_note $00
-		snd_note $40
-		snd_note $00
-		snd_inc_freq_offset 2
-		snd_inc_base_note 1
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_inc_freq_offset -2
-	snd_inc_base_note -15
-	snd_note $53, NOTELEN_03
-	snd_note $52
-	snd_note $51
-	snd_note $50
-	snd_note $4F
-	snd_note $4E
-	snd_note $4D
-	snd_note $4C
-	snd_note $4B
-	snd_note $4A
-	snd_note $49
-	snd_note $48
-	snd_note $47
-	snd_note $46
-	snd_note $45
-	snd_note $44
-	snd_inc_freq_offset 2
-	snd_jp SndData_11_Ch2
+		fine_tune_value -2
+		instrument INSTR_6D
+		note $44, NOTELEN_0C
+		note $40, NOTELEN_09
+		note $40, NOTELEN_03
+		note $00
+		note $44
+		note $00
+		note $44
+		note $40
+		note $00
+		note $40
+		note $00
+		fine_tune_value 2
+		fine_tune 1
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	fine_tune_value -2
+	fine_tune -15
+	note $53, NOTELEN_03
+	note $52
+	note $51
+	note $50
+	note $4F
+	note $4E
+	note $4D
+	note $4C
+	note $4B
+	note $4A
+	note $49
+	note $48
+	note $47
+	note $46
+	note $45
+	note $44
+	fine_tune_value 2
+	snd_loop SndData_11_Ch2
 SndData_11_Ch3:
-	snd_wave WAVE_0D
-	snd_instrument INSTR_62
-	snd_var iSndChInfo_LoopTimer0, $0F
+	wave_id WAVE_0D
+	instrument INSTR_62
+	set_var iSndChInfo_LoopTimer0, $0F
 	.loop:
-		snd_note $1C, NOTELEN_09
-		snd_note $23, NOTELEN_03
-		snd_note $23, NOTELEN_06
-		snd_note $17
-		snd_note $1C, NOTELEN_09
-		snd_note $23, NOTELEN_03
-		snd_note $23, NOTELEN_06
-		snd_note $17
-		snd_inc_base_note 1
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_inc_base_note -15
-	snd_note $2B, NOTELEN_09
-	snd_note $32, NOTELEN_03
-	snd_note $32, NOTELEN_06
-	snd_note $26
-	snd_note $2B, NOTELEN_09
-	snd_note $32, NOTELEN_03
-	snd_note $32, NOTELEN_06
-	snd_note $26
-	snd_jp SndData_11_Ch3
+		note $1C, NOTELEN_09
+		note $23, NOTELEN_03
+		note $23, NOTELEN_06
+		note $17
+		note $1C, NOTELEN_09
+		note $23, NOTELEN_03
+		note $23, NOTELEN_06
+		note $17
+		fine_tune 1
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	fine_tune -15
+	note $2B, NOTELEN_09
+	note $32, NOTELEN_03
+	note $32, NOTELEN_06
+	note $26
+	note $2B, NOTELEN_09
+	note $32, NOTELEN_03
+	note $32, NOTELEN_06
+	note $26
+	snd_loop SndData_11_Ch3
 SndData_11_Ch4:
-	snd_var iSndChInfo_LoopTimer0, $10
+	set_var iSndChInfo_LoopTimer0, $10
 	.loop:
-		snd_noteex PRESET_01, NOTELEN_03
-		snd_note $00
-		snd_noteex PRESET_02
-		snd_inc_vol -3
-		snd_noteex PRESET_01
-		snd_inc_vol 3
-		snd_noteex PRESET_01
-		snd_noteex PRESET_02
-		snd_inc_vol -3
-		snd_noteex PRESET_01
-		snd_inc_vol 3
-		snd_noteex PRESET_02
-		snd_noteex PRESET_01
-		snd_note $00
-		snd_noteex PRESET_02
-		snd_inc_vol -3
-		snd_noteex PRESET_01
-		snd_inc_vol 3
-		snd_noteex PRESET_01
-		snd_noteex PRESET_02
-		snd_inc_vol -3
-		snd_noteex PRESET_01
-		snd_noteex PRESET_01
-		snd_inc_vol 3
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_jp SndData_11_Ch4
+		note_ex PRESET_01, NOTELEN_03
+		note $00
+		note_ex PRESET_02
+		volume_add -3
+		note_ex PRESET_01
+		volume_add 3
+		note_ex PRESET_01
+		note_ex PRESET_02
+		volume_add -3
+		note_ex PRESET_01
+		volume_add 3
+		note_ex PRESET_02
+		note_ex PRESET_01
+		note $00
+		note_ex PRESET_02
+		volume_add -3
+		note_ex PRESET_01
+		volume_add 3
+		note_ex PRESET_01
+		note_ex PRESET_02
+		volume_add -3
+		note_ex PRESET_01
+		note_ex PRESET_01
+		volume_add 3
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	snd_loop SndData_11_Ch4

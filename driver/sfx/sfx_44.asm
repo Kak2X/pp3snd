@@ -13,16 +13,16 @@ SndHeader_SFX_44:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_44_Ch2:
-	snd_toggle_keyhold
-	snd_note $31, NOTELEN_01
-	snd_note $25
-	snd_note $19
-	snd_note $0D
-	snd_fade SSF_FADEOUT, 2, 200
+	toggle_hold
+	note $31, NOTELEN_01
+	note $25
+	note $19
+	note $0D
+	fade SSF_FADEOUT, 2, 200
 	.loop:
-		snd_note_slide SSE_NSDOWN, 6
-		snd_note $25, NOTELEN_03
-		snd_note $2C
-		snd_note $20
-		snd_jpfade .loop
-	snd_end
+		note_slide SSE_NSDOWN, 6
+		note $25, NOTELEN_03
+		note $2C
+		note $20
+		snd_loop_fade .loop
+	chan_stop

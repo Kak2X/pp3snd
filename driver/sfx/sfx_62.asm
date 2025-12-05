@@ -25,20 +25,20 @@ SndHeader_SFX_62:
 	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_62_Ch2:
-	snd_sets3
-	snd_note $14, NOTELEN_01
-	snd_note $24
-	snd_var iSndChInfo_LoopTimer0, $07
+	set_s3
+	note $14, NOTELEN_01
+	note $24
+	set_var iSndChInfo_LoopTimer0, $07
 	.loop:
-		snd_note $42
-		snd_inc_vol -4
-		snd_note $42
-		snd_inc_vol 3
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_end
+		note $42
+		volume_add -4
+		note $42
+		volume_add 3
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	chan_stop
 SndData_62_Ch4:
-	snd_noise $37
-	snd_note $25, NOTELEN_01
-	snd_noise $31
-	snd_note $25
-	snd_end
+	noise_freq $37
+	note $25, NOTELEN_01
+	noise_freq $31
+	note $25
+	chan_stop

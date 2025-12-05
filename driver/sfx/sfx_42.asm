@@ -13,7 +13,7 @@ SndHeader_SFX_42:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_42_Ch2:
-	snd_note_slide SSE_NSUP, 3
-	snd_note $2E, NOTELEN_02
-	snd_note $31, NOTELEN_06
-	snd_end
+	note_slide SSE_NSUP, 3
+	note $2E, NOTELEN_02
+	note $31, NOTELEN_06
+	chan_stop

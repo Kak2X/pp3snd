@@ -164,28 +164,28 @@ oops_we_need_rewind_actually:
 			case 0x80:
 				$target = getptrlabel($iter);
 				$b->add_pending_label($target);
-				ww(3, "snd_jp {$target}");
+				ww(3, "snd_loop {$target}");
 				break;
 			case 0x81:
 				$slotid = "iSndChInfo_".getnext($iter)->val;
 				$target = getptrlabel($iter);
 				$b->add_pending_label($target);
-				ww(4, "snd_djnz {$slotid}, {$target}");
+				ww(4, "snd_loop {$target}, {$slotid}");
 				break;
 			case 0x82:
-				ww(1, "snd_end");
+				ww(1, "chan_stop");
 				break;
 			case 0x83:
 				$vibrato = getnext($iter);
 				if ($vibrato->as_int() & 0x80) // SVB_SET
-					$vibrato = "snd_pulse1_sweep ".mknr10($vibrato->as_int() & 0x7F);
+					$vibrato = "sweep ".mknr10($vibrato->as_int() & 0x7F);
 				else
-					$vibrato = "snd_vibrato VIBRATO_".($vibrato->val != '00' ? $vibrato->val : "NONE");
+					$vibrato = "vibrato VIBRATO_".($vibrato->val != '00' ? $vibrato->val : "NONE");
 				ww(2, $vibrato);
 				break;
 			case 0x84:
 				$speed = getnext($iter)->as_int();
-				ww(2, "snd_pitchbend {$speed}");
+				ww(2, "pitch_bend {$speed}");
 				break;
 			case 0x85:
 				$idc  = getnext($iter);
@@ -211,30 +211,30 @@ oops_we_need_rewind_actually:
 						$arg = "PCM_ID_{$argc->val}";
 						break;
 				}
-				ww(3, "snd_playsndarg {$id}".($arg ? ", {$arg}" : ""));
+				ww(3, "play_snd {$id}".($arg ? ", {$arg}" : ""));
 				break;
 			case 0x86:
-				ww(1, "snd_end_saveid");
+				ww(1, "chan_stop ECH_SAVE");
 				break;
 			case 0x87:
 				$vol = getnext($iter)->as_int(); 
-				ww(2, "snd_vol {$vol}");
+				ww(2, "volume {$vol}");
 				break;
 			case 0x88:
 				$instrd = getnext($iter);
-				ww(2, "snd_instrument INSTR_".($instrd->val != '00' ? $instrd->val : "NONE"));
+				ww(2, "instrument INSTR_".($instrd->val != '00' ? $instrd->val : "NONE"));
 				break;
 			case 0x89:
 				$val = getnext($iter);
-				ww(2, "snd_inc_base_note {$val->as_signed()}");
+				ww(2, "fine_tune {$val->as_signed()}");
 				break;
 			case 0x8A:
 				$val = getnext($iter);
-				ww(2, "snd_inc_vol {$val->as_signed()}");
+				ww(2, "volume_add {$val->as_signed()}");
 				break;
 			case 0x8B:
 				$id  = getnext($iter)->val;
-				ww(2, "snd_playsnd SND_ID_{$id}");
+				ww(2, "play_snd SND_ID_{$id}");
 				break;
 			case 0x8C:
 				ww(1, "snd_nop");
@@ -242,7 +242,7 @@ oops_we_need_rewind_actually:
 			case 0x8D:
 				$loc = getnext($iter)->as_enum(MAP_STRUCT);
 				$var = getnext($iter)->val;
-				ww(3, "snd_var {$loc}, {$var}");
+				ww(3, "set_var {$loc}, {$var}");
 				break;
 			case 0x8E:
 			case 0x8F:
@@ -253,53 +253,53 @@ oops_we_need_rewind_actually:
 				$toggle = ($arg & 0x8) ? "SBDCH4_LFSR7" : "0";
 				
 				$op = match ($cmd) {
-					0x8E => 'snd_noise_sweep',
-					0x8F => 'snd_noise_sweep_single',
-					0x92 => 'snd_noise',
+					0x8E => 'noise_sweep',
+					0x8F => 'noise_sweep_single',
+					0x92 => 'noise_freq',
 				};
 				
 				ww(2, "{$op} {$sh}, {$dv}, {$toggle}");
 				break;
 			case 0x90:
 				$arg = getnext($iter)->as_flag(MAP_STATUS);
-				ww(2, "snd_status {$arg}");
+				ww(2, "chan_type {$arg}");
 				break;
 			case 0x91:
 				$arg = getnext($iter)->val;
-				ww(2, "snd_orsaveid \${$arg}");
+				ww(2, "or_sound \${$arg}");
 				break;
 			case 0x93:
 				$arg = getnext($iter)->as_int();
 				$type = ($arg & 0x80) ? "SSF_FADEOUT" : "SSF_FADEIN";
 				$target = $arg & 0x0F;
 				$speed = getnext($iter)->as_int();
-				ww(3, "snd_fade {$type}, {$target}, {$speed}");
+				ww(3, "fade {$type}, {$target}, {$speed}");
 				break;
 			case 0x94:
 				$arg = getnext($iter)->as_int();
 				$type = ($arg & 0x80) ? "SSE_NSUP" : "SSE_NSDOWN";
 				$speed = $arg & 0x7F;
-				ww(2, "snd_note_slide {$type}, {$speed}");
+				ww(2, "note_slide {$type}, {$speed}");
 				break;
 			case 0x95:
 				$target = getptrlabel($iter);
 				$b->add_pending_label($target);
-				ww(3, "snd_jpfade {$target}");
+				ww(3, "snd_loop_fade {$target}");
 				break;
 			case 0x96:
 				$speed = getnext($iter)->as_int();
-				ww(2, "snd_speed {$speed}");
+				ww(2, "speed {$speed}");
 				break;
 			case 0x97:
 				$var = getnext($iter)->as_signed();
-				ww(2, "snd_inc_freq_offset {$var}");
+				ww(2, "fine_tune_value {$var}");
 				break;
 			case 0x98:
 				$var = getnext($iter)->as_enum(MAP_CH);
-				ww(2, "snd_ch {$var}");
+				ww(2, "chan_id {$var}");
 				break;
 			case 0x99:
-				ww(1, "snd_toggle_keyhold");
+				ww(1, "toggle_hold");
 				break;
 			case 0x9A:
 				$target = getptrlabel($iter);
@@ -314,62 +314,62 @@ oops_we_need_rewind_actually:
 			case 0x9C:
 				$id = getnext($iter)->val;
 				$var = getptr($iter);
-				ww(4, "snd_inc_base_note_by_loop \${$id}, \${$var}");
+				ww(4, "fine_tune_by_loop \${$id}, \${$var}");
 				break;
 			case 0x9D:
 				$var = getnext($iter)->val;
-				ww(2, "snd_keyon \${$var}");
+				ww(2, "hold_for \${$var}");
 				break;
 			case 0x9E:
 				$var = getnext($iter)->as_enum(MAP_CH);
-				ww(2, "snd_ifch {$var}");
+				ww(2, "if_chan {$var}");
 				break;
 			case 0x9F:
 				$var = getnext($iter)->as_enum(MAP_CH);
 				$target = getptrlabel($iter);
 				$b->add_pending_label($target);
-				ww(4, "snd_jpch {$var}, {$target}");
+				ww(4, "snd_loop_if_chan {$var}, {$target}");
 				break;
 			case 0xA0:
 				if ($sndch == 3) {
 					$var = getnext($iter)->val;
-					ww(2, "snd_wave WAVE_{$var}");
+					ww(2, "wave_id WAVE_{$var}");
 				} else {
 					$var = getnext($iter)->as_int();
-					ww(2, "snd_duty ".mknrx1($var));
+					ww(2, "duty_cycle ".mknrx1($var));
 				}
 				break;
 			case 0xA1:
 				$var = getnext($iter)->as_enum(MAP_PAN);
-				ww(2, "snd_pan {$var}");
+				ww(2, "panning {$var}");
 				break;
 			case 0xA2:
-				ww(1, "snd_sets3");
+				ww(1, "set_s3");
 				break;
 			case 0xA3:
-				ww(1, "snd_clrs3");
+				ww(1, "clr_s3");
 				break;
 			default:
 				$args = [];
 				if ($cmd >= 0xDE) {
-					$res = "snd_samenote";
+					$res = "note_repeat";
 					$bytes_used = 0;
 				} else if ($cmd >= 0xC0) {
-					$res = "snd_noteex";
+					$res = "note_ex";
 					$args[] = "PRESET_".fmthexnum($cmd - 0xC0);
 					$bytes_used = 1;
 				} else if ($cmd == 0xA4) {
 					$args[] = "PCM_ID_".getnext($iter)->val; // pcm_id
 					$args[] = getnext($iter)->as_int(); // pcm_speed
-					$res = "snd_playpcm";
+					$res = "play_pcm";
 					$bytes_used = 3;
 				} else if ($cmd == 0xA5) {
 					$args[] = getnext($iter)->as_int(); // pcm_speed
-					$res = "snd_playslotpcm";
+					$res = "play_slot_pcm";
 					$bytes_used = 2;
 				} else {
 					$args[] = '$'.$row->val; // note
-					$res = "snd_note";
+					$res = "note";
 					$bytes_used = 1;
 				}
 			

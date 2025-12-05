@@ -13,11 +13,11 @@ SndHeader_SFX_4C:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4C_Ch2:
-	snd_note $19, NOTELEN_01
-	snd_note $00
-	snd_status SST_CH4
-	snd_note $3A, NOTELEN_03
-	snd_noise $80
-	snd_nrx2 $81
-	snd_note $31, NOTELEN_12
-	snd_end
+	note $19, NOTELEN_01
+	note $00
+	chan_type SST_CH4
+	note $3A, NOTELEN_03
+	noise_freq $80
+	envelope $81
+	note $31, NOTELEN_12
+	chan_stop

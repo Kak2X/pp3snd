@@ -13,16 +13,16 @@ SndHeader_SFX_64:
 	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_64_Ch2:
-	snd_note $45, NOTELEN_01
-	snd_note $48
-	snd_note $47
-	snd_duty $40
-	snd_var iSndChInfo_LoopTimer0, $0A
+	note $45, NOTELEN_01
+	note $48
+	note $47
+	duty_cycle $40
+	set_var iSndChInfo_LoopTimer0, $0A
 	.loop:
-		snd_note $4A
-		snd_note $47
-		snd_inc_base_note -1
-		snd_inc_freq_offset -5
-		snd_inc_vol -1
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_end
+		note $4A
+		note $47
+		fine_tune -1
+		fine_tune_value -5
+		volume_add -1
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	chan_stop

@@ -13,12 +13,12 @@ SndHeader_SFX_3F:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3F_Ch2:
-	snd_note $1D, NOTELEN_01
-	snd_status SST_CH4
-	snd_noise_sweep $07
-	snd_note $55, NOTELEN_02
-	snd_inc_vol -5
-	snd_note $3D
-	snd_inc_vol -5
-	snd_note $31
-	snd_end
+	note $1D, NOTELEN_01
+	chan_type SST_CH4
+	noise_sweep $07
+	note $55, NOTELEN_02
+	volume_add -5
+	note $3D
+	volume_add -5
+	note $31
+	chan_stop

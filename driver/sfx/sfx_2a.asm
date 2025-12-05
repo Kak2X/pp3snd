@@ -13,6 +13,6 @@ SndHeader_SFX_2A:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_2A_Ch2:
-	snd_note $4D, NOTELEN_01
-	snd_note $40
-	snd_end
+	note $4D, NOTELEN_01
+	note $40
+	chan_stop

@@ -13,10 +13,10 @@ SndHeader_SFX_2C:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_2C_Ch4:
-	snd_noise_sweep $30
-	snd_noise $B0
-	snd_note $44, NOTELEN_02
-	snd_noise_sweep $10
-	snd_noise $00
-	snd_note $68, NOTELEN_03
-	snd_end
+	noise_sweep $30
+	noise_freq $B0
+	note $44, NOTELEN_02
+	noise_sweep $10
+	noise_freq $00
+	note $68, NOTELEN_03
+	chan_stop

@@ -13,12 +13,12 @@ SndHeader_SFX_5C:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5C_Ch4:
-	snd_noise $27
-	snd_note $19, NOTELEN_04
-	snd_noise $00
-	snd_var iSndChInfo_LoopTimer0, $05
+	noise_freq $27
+	note $19, NOTELEN_04
+	noise_freq $00
+	set_var iSndChInfo_LoopTimer0, $05
 	.loop:
-		snd_note $19, NOTELEN_01
-		snd_inc_vol -3
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_end
+		note $19, NOTELEN_01
+		volume_add -3
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	chan_stop

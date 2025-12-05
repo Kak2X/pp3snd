@@ -25,12 +25,12 @@ SndHeader_SFX_2D:
 	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_2D_Ch2:
-	snd_note $1D, NOTELEN_01
-	snd_note $19
-	snd_end
+	note $1D, NOTELEN_01
+	note $19
+	chan_stop
 SndData_2D_Ch4:
-	snd_note $00, NOTELEN_02
-	snd_noise $37
-	snd_note $25, NOTELEN_02
-	snd_noteex PRESET_09, NOTELEN_CUSTOM, $1E
-	snd_end
+	note $00, NOTELEN_02
+	noise_freq $37
+	note $25, NOTELEN_02
+	note_ex PRESET_09, NOTELEN_CUSTOM, $1E
+	chan_stop

@@ -13,8 +13,8 @@ SndHeader_SFX_29:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_29_Ch2:
-	snd_sets3
-	snd_note $50, NOTELEN_01
-	snd_inc_vol -5
-	snd_note $44
-	snd_end
+	set_s3
+	note $50, NOTELEN_01
+	volume_add -5
+	note $44
+	chan_stop

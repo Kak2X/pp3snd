@@ -25,13 +25,13 @@ SndHeader_SFX_50:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_50_Ch2:
-	snd_note $00, NOTELEN_03
-	snd_inc_freq_offset 1
+	note $00, NOTELEN_03
+	fine_tune_value 1
 SndData_50_Ch1:
-	snd_note_slide SSE_NSUP, 1
-	snd_fade SSF_FADEOUT, 4, 48
+	note_slide SSE_NSUP, 1
+	fade SSF_FADEOUT, 4, 48
 	.loop:
-		snd_note $31, NOTELEN_0C
-		snd_note $35
-		snd_jpfade .loop
-	snd_end
+		note $31, NOTELEN_0C
+		note $35
+		snd_loop_fade .loop
+	chan_stop

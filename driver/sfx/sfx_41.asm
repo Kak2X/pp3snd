@@ -25,18 +25,18 @@ SndHeader_SFX_41:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_41_Ch2:
-	snd_var iSndChInfo_LoopTimer0, $0C
+	set_var iSndChInfo_LoopTimer0, $0C
 	.loop:
-		snd_note $29, NOTELEN_01
-		snd_note $24, NOTELEN_02
-		snd_inc_vol -2
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_end
+		note $29, NOTELEN_01
+		note $24, NOTELEN_02
+		volume_add -2
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	chan_stop
 SndData_41_Ch4:
-	snd_toggle_keyhold
-	snd_noise $80
-	snd_fade SSF_FADEOUT, 4, 112
+	toggle_hold
+	noise_freq $80
+	fade SSF_FADEOUT, 4, 112
 	.loop:
-		snd_note $22, NOTELEN_06
-		snd_jpfade .loop
-	snd_end
+		note $22, NOTELEN_06
+		snd_loop_fade .loop
+	chan_stop

@@ -13,24 +13,24 @@ SndHeader_SFX_63:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_63_Ch4:
-	snd_fade SSF_FADEOUT, 0, 255
-	snd_noise $47
-	snd_note $25, NOTELEN_01
-	snd_note $29
-	snd_noise $36
-	snd_note $19, NOTELEN_01
-	snd_noise $30
-	snd_note $19
-	snd_noise $08
-	snd_note $3D
-	snd_noise $34
-	snd_note $19, NOTELEN_01
-	snd_noise $33
-	snd_note $19
-	snd_noise $32
-	snd_note $19
-	snd_noise $31
-	snd_note $19
-	snd_noise $30
-	snd_note $19, NOTELEN_02
-	snd_end
+	fade SSF_FADEOUT, 0, 255
+	noise_freq $47
+	note $25, NOTELEN_01
+	note $29
+	noise_freq $36
+	note $19, NOTELEN_01
+	noise_freq $30
+	note $19
+	noise_freq $08
+	note $3D
+	noise_freq $34
+	note $19, NOTELEN_01
+	noise_freq $33
+	note $19
+	noise_freq $32
+	note $19
+	noise_freq $31
+	note $19
+	noise_freq $30
+	note $19, NOTELEN_02
+	chan_stop

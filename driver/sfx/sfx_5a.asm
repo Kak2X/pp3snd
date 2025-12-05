@@ -13,14 +13,14 @@ SndHeader_SFX_5A:
 	db $40 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5A_Ch4:
-	snd_noise $37
-	snd_note $19, NOTELEN_01
-	snd_noise $17
-	snd_note $19, NOTELEN_02
-	snd_inc_vol -5
-	snd_noise $07
-	snd_note $19, NOTELEN_02
-	snd_inc_vol -8
-	snd_noise $00
-	snd_note $19, NOTELEN_03
-	snd_end
+	noise_freq $37
+	note $19, NOTELEN_01
+	noise_freq $17
+	note $19, NOTELEN_02
+	volume_add -5
+	noise_freq $07
+	note $19, NOTELEN_02
+	volume_add -8
+	noise_freq $00
+	note $19, NOTELEN_03
+	chan_stop

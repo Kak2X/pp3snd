@@ -131,557 +131,557 @@ Sound_InstrumentPtrTable:
 	dw SndInstrument_70;X ; $7E ; INSTR_7E
 	dw SndInstrument_70;X ; $7F ; INSTR_7F
 SndInstrument_01:
-	ivol $14, $F8
-	ivol $04, $F1
-	ivol $06, $A3 ;X
-	ivol $10, $84 ;X
-	ivol $08, $42 ;X
-	ivol $64, $08 ;X
+	ienv $14, $F8
+	ienv $04, $F1
+	ienv $06, $A3 ;X
+	ienv $10, $84 ;X
+	ienv $08, $42 ;X
+	ienv $64, $08 ;X
 	iloop_prev ;X
 SndInstrument_02:
-	ivol $01, $C8
-	ivol $06, $F1 ;X
-	ivol $04, $D1 ;X
-	ivol $64, $58 ;X
+	ienv $01, $C8
+	ienv $06, $F1 ;X
+	ienv $04, $D1 ;X
+	ienv $64, $58 ;X
 	iloop_prev ;X
 SndInstrument_03:
-	ivol $02, $F1
-	ivol $02, $81
-	ivol $64, $08
+	ienv $02, $F1
+	ienv $02, $81
+	ienv $64, $08
 	iloop_prev ;X
 SndInstrument_04:
-	ivol $06, $F2
-	ivol $10, $98 ;X
-	ivol $28, $84 ;X
-	ivol $64, $08 ;X
+	ienv $06, $F2
+	ienv $10, $98 ;X
+	ienv $28, $84 ;X
+	ienv $64, $08 ;X
 	iloop_prev ;X
 SndInstrument_05:
-	ivol $10, $A9
-	ivol $64, $F8
+	ienv $10, $A9
+	ienv $64, $F8
 	iloop_prev
 SndInstrument_06:
-	ivol $03, $F0
-	ivol $0A, $B0
-	ivol $64, $80
+	ienv $03, $F0
+	ienv $0A, $B0
+	ienv $64, $80
 	iloop_prev ;X
 SndInstrument_07:
-	ivol $04, $F0
-	ivol $3C, $A0
-	ivol $06, $AB
-	ivol $23, $C0
-	ivol $50, $C7
-	ivol $64, $00 ;X
+	ienv $04, $F0
+	ienv $3C, $A0
+	ienv $06, $AB
+	ienv $23, $C0
+	ienv $50, $C7
+	ienv $64, $00 ;X
 	iloop_prev ;X
 SndInstrument_08:
-	ivol $03, $F1
-	ivol $0A, $C0
-	ivol $0A, $B0
-	ivol $0A, $A0
-	ivol $64, $90
+	ienv $03, $F1
+	ienv $0A, $C0
+	ienv $0A, $B0
+	ienv $0A, $A0
+	ienv $64, $90
 	iloop_prev ;X
 SndInstrument_09:
-	ivol $02, $F1
-	ivol $64, $80
+	ienv $02, $F1
+	ienv $64, $80
 	iloop_prev ;X
 SndInstrument_0A:
-	ivol $09, $91
-	ivol $64, $08
+	ienv $09, $91
+	ienv $64, $08
 	iloop_prev ;X
 SndInstrument_0B:
-	ivol $02, $F0
-	ivol $64, $40
+	ienv $02, $F0
+	ienv $64, $40
 	iloop_prev ;X
 SndInstrument_0C:
-	ivol $01, $91
-	ivol $08, $42
-	ivol $64, $08
+	ienv $01, $91
+	ienv $08, $42
+	ienv $64, $08
 	iloop_prev ;X
 SndInstrument_0D:
-	ivol $02, $F8
-	ivol $64, $08
+	ienv $02, $F8
+	ienv $64, $08
 	iloop_prev ;X
 SndInstrument_0E:
-	ivol $01, $E8
-	ivol $64, $08
+	ienv $01, $E8
+	ienv $64, $08
 	iloop_prev ;X
 SndInstrument_0F:
-	ivol $01, $F8
-	ivol $64, $C1
+	ienv $01, $F8
+	ienv $64, $C1
 	iloop_prev ;X
 SndInstrument_10:
-	ivol $01, $C1
-	ivol $0C, $72
-	ivol $64, $08
+	ienv $01, $C1
+	ienv $0C, $72
+	ienv $64, $08
 	iloop_prev
 SndInstrument_11:
-	ivol $02, $F1
-	ivol $05, $B1
-	ivol $64, $4F
+	ienv $02, $F1
+	ienv $05, $B1
+	ienv $64, $4F
 	iloop_prev ;X
 SndInstrument_12:
-	ivol $04, $F1
-	ivol $64, $82
+	ienv $04, $F1
+	ienv $64, $82
 	iloop_prev ;X
 SndInstrument_13:
-	ivol $01, $F0
-	ivol $01, $D0
-	ivol $01, $B0
-	ivol $01, $90
-	ivol $01, $70
-	ivol $01, $50
-	ivol $01, $30
-	ivol $01, $10
-	ivol $64, $00
+	ienv $01, $F0
+	ienv $01, $D0
+	ienv $01, $B0
+	ienv $01, $90
+	ienv $01, $70
+	ienv $01, $50
+	ienv $01, $30
+	ienv $01, $10
+	ienv $64, $00
 	iloop_prev ;X
 SndInstrument_14:
-	ivol $02, $F1 ;X
-	ivol $64, $B1 ;X
+	ienv $02, $F1 ;X
+	ienv $64, $B1 ;X
 	iloop_prev ;X
 SndInstrument_15:
-	ivol $09, $BA
-	ivol $02, $F2
-	ivol $64, $E0
+	ienv $09, $BA
+	ienv $02, $F2
+	ienv $64, $E0
 	iloop_prev
 SndInstrument_16:
-	ivol $02, $C1
-	ivol $64, $40
+	ienv $02, $C1
+	ienv $64, $40
 	iloop_prev ;X
 SndInstrument_17:
-	ivol $0A, $F1
-	ivol $0A, $40
-	ivol $64, $4F
+	ienv $0A, $F1
+	ienv $0A, $40
+	ienv $64, $4F
 	iloop_prev ;X
 SndInstrument_18:
-	ivol $03, $F1
-	ivol $64, $A0
+	ienv $03, $F1
+	ienv $64, $A0
 	iloop_prev
 SndInstrument_19:
-	ivol $0C, $40
-	ivol $0C, $50
-	ivol $0C, $60
-	ivol $0C, $70
-	ivol $24, $80
-	ivol $64, $87
+	ienv $0C, $40
+	ienv $0C, $50
+	ienv $0C, $60
+	ienv $0C, $70
+	ienv $24, $80
+	ienv $64, $87
 	iloop_prev ;X
 SndInstrument_1A:
-	ivol $04, $F0 ;X
-	ivol $04, $20 ;X
+	ienv $04, $F0 ;X
+	ienv $04, $20 ;X
 	iloop_prev ;X
 SndInstrument_1B:
-	ivol $04, $F0
-	ivol $64, $C0
+	ienv $04, $F0
+	ienv $64, $C0
 	iloop_prev
 SndInstrument_1C:
-	ivol $0F, $F1
-	ivol $64, $08 ;X
+	ienv $0F, $F1
+	ienv $64, $08 ;X
 	iloop_prev ;X
 SndInstrument_1F:
-	ivol $00, $00 ;X
+	ienv $00, $00 ;X
 	iloop_prev ;X
 SndInstrument_2E:
-	ivol $03, $F0
-	ivol $0A, $B0
-	ivol $64, $80
+	ienv $03, $F0
+	ienv $0A, $B0
+	ienv $64, $80
 	iloop_prev
 SndInstrument_2F:
-	ivol $02, $F8
-	ivol $02, $C8
-	ivol $02, $98
-	ivol $02, $58
-	ivol $02, $B0
-	ivol $02, $88
-	ivol $02, $58
-	ivol $64, $08
+	ienv $02, $F8
+	ienv $02, $C8
+	ienv $02, $98
+	ienv $02, $58
+	ienv $02, $B0
+	ienv $02, $88
+	ienv $02, $58
+	ienv $64, $08
 	iloop_prev ;X
 SndInstrument_30:
-	ivol $01, $B0
-	ivol $02, $C0
-	ivol $03, $D0
-	ivol $04, $E0
-	ivol $64, $F0
+	ienv $01, $B0
+	ienv $02, $C0
+	ienv $03, $D0
+	ienv $04, $E0
+	ienv $64, $F0
 	iloop_prev
 SndInstrument_31:
-	ivol $02, $F8
-	ivol $02, $C8
-	ivol $04, $98
-	ivol $04, $58
-	ivol $64, $08
+	ienv $02, $F8
+	ienv $02, $C8
+	ienv $04, $98
+	ienv $04, $58
+	ienv $64, $08
 	iloop_prev ;X
 SndInstrument_32:
-	ivol $01, $F8
-	ivol $01, $E0
-	ivol $01, $D0
-	ivol $01, $C0
-	ivol $01, $B0
-	ivol $01, $A0
-	ivol $01, $90
-	ivol $01, $80
-	ivol $01, $78
-	ivol $01, $60
-	ivol $01, $50
-	ivol $01, $40
-	ivol $01, $30
-	ivol $01, $20
-	ivol $01, $10
-	ivol $64, $00
+	ienv $01, $F8
+	ienv $01, $E0
+	ienv $01, $D0
+	ienv $01, $C0
+	ienv $01, $B0
+	ienv $01, $A0
+	ienv $01, $90
+	ienv $01, $80
+	ienv $01, $78
+	ienv $01, $60
+	ienv $01, $50
+	ienv $01, $40
+	ienv $01, $30
+	ienv $01, $20
+	ienv $01, $10
+	ienv $64, $00
 	iloop_prev ;X
 SndInstrument_33:
-	ivol $02, $F8
-	ivol $02, $C8
-	ivol $02, $98
-	ivol $02, $68
-	ivol $02, $B0
-	ivol $02, $88
-	ivol $02, $58
-	ivol $02, $28
-	ivol $02, $90
-	ivol $02, $68
-	ivol $02, $38
-	ivol $02, $08
-	ivol $02, $70
-	ivol $02, $48
-	ivol $02, $18
-	ivol $02, $08
-	ivol $02, $50
-	ivol $02, $28
-	ivol $64, $08
+	ienv $02, $F8
+	ienv $02, $C8
+	ienv $02, $98
+	ienv $02, $68
+	ienv $02, $B0
+	ienv $02, $88
+	ienv $02, $58
+	ienv $02, $28
+	ienv $02, $90
+	ienv $02, $68
+	ienv $02, $38
+	ienv $02, $08
+	ienv $02, $70
+	ienv $02, $48
+	ienv $02, $18
+	ienv $02, $08
+	ienv $02, $50
+	ienv $02, $28
+	ienv $64, $08
 	iloop_prev ;X
 SndInstrument_34:
-	ivol $03, $F8
-	ivol $05, $E8
-	ivol $02, $D8
-	ivol $02, $C8
-	ivol $06, $B8
-	ivol $0A, $A8
-	ivol $0F, $98
-	ivol $14, $88
-	ivol $14, $78
-	ivol $14, $68
-	ivol $14, $58
-	ivol $14, $48 ;X
-	ivol $64, $08 ;X
+	ienv $03, $F8
+	ienv $05, $E8
+	ienv $02, $D8
+	ienv $02, $C8
+	ienv $06, $B8
+	ienv $0A, $A8
+	ienv $0F, $98
+	ienv $14, $88
+	ienv $14, $78
+	ienv $14, $68
+	ienv $14, $58
+	ienv $14, $48 ;X
+	ienv $64, $08 ;X
 	iloop_prev ;X
 SndInstrument_35:
-	ivol $01, $B8
-	ivol $02, $C8
-	ivol $03, $D8
-	ivol $04, $E8
-	ivol $0F, $F8
-	ivol $0F, $E0
-	ivol $0F, $D0
-	ivol $0F, $C0
-	ivol $0F, $B0
-	ivol $0F, $A0
-	ivol $0F, $90
-	ivol $64, $80
+	ienv $01, $B8
+	ienv $02, $C8
+	ienv $03, $D8
+	ienv $04, $E8
+	ienv $0F, $F8
+	ienv $0F, $E0
+	ienv $0F, $D0
+	ienv $0F, $C0
+	ienv $0F, $B0
+	ienv $0F, $A0
+	ienv $0F, $90
+	ienv $64, $80
 	iloop_prev ;X
 SndInstrument_36:
-	ivol $0A, $C0
-	ivol $0A, $D0
-	ivol $0A, $E0
-	ivol $0A, $F0
-	ivol $0D, $E8
-	ivol $0D, $D8
-	ivol $0D, $C8
-	ivol $0D, $B8
-	ivol $0D, $A8
-	ivol $0D, $98
-	ivol $0D, $88
-	ivol $0D, $78
-	ivol $0D, $68
-	ivol $0D, $58
-	ivol $0D, $48
-	ivol $0D, $38
-	ivol $0D, $28
-	ivol $0D, $18
-	ivol $64, $08
+	ienv $0A, $C0
+	ienv $0A, $D0
+	ienv $0A, $E0
+	ienv $0A, $F0
+	ienv $0D, $E8
+	ienv $0D, $D8
+	ienv $0D, $C8
+	ienv $0D, $B8
+	ienv $0D, $A8
+	ienv $0D, $98
+	ienv $0D, $88
+	ienv $0D, $78
+	ienv $0D, $68
+	ienv $0D, $58
+	ienv $0D, $48
+	ienv $0D, $38
+	ienv $0D, $28
+	ienv $0D, $18
+	ienv $64, $08
 	iloop_prev ;X
 SndInstrument_37:
-	ivol $02, $B0
-	ivol $03, $C0
-	ivol $03, $D0
-	ivol $04, $E0
-	ivol $14, $F0
-	ivol $05, $E8
-	ivol $07, $D8
-	ivol $09, $C8
-	ivol $09, $B8
-	ivol $64, $A0
+	ienv $02, $B0
+	ienv $03, $C0
+	ienv $03, $D0
+	ienv $04, $E0
+	ienv $14, $F0
+	ienv $05, $E8
+	ienv $07, $D8
+	ienv $09, $C8
+	ienv $09, $B8
+	ienv $64, $A0
 	iloop_prev ;X
 SndInstrument_38:
-	ivol $02, $80
-	ivol $02, $90
-	ivol $02, $A0
-	ivol $02, $B0
-	ivol $02, $C0
-	ivol $02, $D0
-	ivol $02, $E0
-	ivol $14, $F0
-	ivol $0A, $E8
-	ivol $0A, $D8
-	ivol $0A, $C8
-	ivol $0A, $B8 ;X
-	ivol $0A, $A8 ;X
-	ivol $0A, $98 ;X
-	ivol $0A, $80 ;X
+	ienv $02, $80
+	ienv $02, $90
+	ienv $02, $A0
+	ienv $02, $B0
+	ienv $02, $C0
+	ienv $02, $D0
+	ienv $02, $E0
+	ienv $14, $F0
+	ienv $0A, $E8
+	ienv $0A, $D8
+	ienv $0A, $C8
+	ienv $0A, $B8 ;X
+	ienv $0A, $A8 ;X
+	ienv $0A, $98 ;X
+	ienv $0A, $80 ;X
 	iloop_prev ;X
 SndInstrument_39:
-	ivol $01, $F8
-	ivol $01, $C8
-	ivol $02, $98
-	ivol $02, $68
-	ivol $01, $B0
-	ivol $01, $88
-	ivol $02, $58 ;X
-	ivol $02, $28 ;X
-	ivol $01, $90 ;X
-	ivol $01, $68 ;X
-	ivol $02, $38 ;X
-	ivol $02, $08 ;X
-	ivol $01, $70 ;X
-	ivol $01, $48 ;X
-	ivol $02, $18 ;X
-	ivol $02, $08 ;X
-	ivol $01, $50 ;X
-	ivol $01, $28 ;X
-	ivol $64, $08 ;X
+	ienv $01, $F8
+	ienv $01, $C8
+	ienv $02, $98
+	ienv $02, $68
+	ienv $01, $B0
+	ienv $01, $88
+	ienv $02, $58 ;X
+	ienv $02, $28 ;X
+	ienv $01, $90 ;X
+	ienv $01, $68 ;X
+	ienv $02, $38 ;X
+	ienv $02, $08 ;X
+	ienv $01, $70 ;X
+	ienv $01, $48 ;X
+	ienv $02, $18 ;X
+	ienv $02, $08 ;X
+	ienv $01, $50 ;X
+	ienv $01, $28 ;X
+	ienv $64, $08 ;X
 	iloop_prev ;X
 SndInstrument_3A:
-	ivol $02, $F8
-	ivol $1C, $F3
-	ivol $64, $00 ;X
+	ienv $02, $F8
+	ienv $1C, $F3
+	ienv $64, $00 ;X
 	iloop_prev ;X
 SndInstrument_3B:
-	ivol $03, $A0
-	ivol $03, $B0
-	ivol $03, $C0
-	ivol $03, $D0
-	ivol $03, $E0
-	ivol $64, $F0
+	ienv $03, $A0
+	ienv $03, $B0
+	ienv $03, $C0
+	ienv $03, $D0
+	ienv $03, $E0
+	ienv $64, $F0
 	iloop_prev ;X
 SndInstrument_3C:
-	ivol $01, $F8
-	ivol $01, $E0
-	ivol $02, $D0
-	ivol $02, $C0
-	ivol $03, $B0
-	ivol $04, $A0
-	ivol $08, $90
-	ivol $64, $80
+	ienv $01, $F8
+	ienv $01, $E0
+	ienv $02, $D0
+	ienv $02, $C0
+	ienv $03, $B0
+	ienv $04, $A0
+	ienv $08, $90
+	ienv $64, $80
 	iloop_prev
 SndInstrument_3D:
-	ivol $01, $F0
-	ivol $02, $E0
-	ivol $03, $D0
-	ivol $04, $C0
-	ivol $05, $B0
-	ivol $06, $A0
-	ivol $08, $90
-	ivol $64, $80
+	ienv $01, $F0
+	ienv $02, $E0
+	ienv $03, $D0
+	ienv $04, $C0
+	ienv $05, $B0
+	ienv $06, $A0
+	ienv $08, $90
+	ienv $64, $80
 	iloop_prev
 SndInstrument_3E:
-	ivol $01, $F0
-	ivol $01, $D0
-	ivol $02, $B0
-	ivol $02, $90
-	ivol $64, $80
+	ienv $01, $F0
+	ienv $01, $D0
+	ienv $02, $B0
+	ienv $02, $90
+	ienv $64, $80
 	iloop_prev ;X
 SndInstrument_40:
-	ivol $02, $F0
-	ivol $01, $E0
-	ivol $01, $D0
-	ivol $01, $C0
-	ivol $01, $B0
-	ivol $01, $A0
-	ivol $04, $90
-	ivol $04, $80
-	ivol $04, $70
-	ivol $04, $60
-	ivol $04, $50
-	ivol $04, $40
-	ivol $04, $30
-	ivol $0A, $00
-	ivol $02, $80
-	ivol $01, $70
-	ivol $01, $60
-	ivol $01, $50
-	ivol $01, $40
-	ivol $01, $30
-	ivol $04, $20
-	ivol $04, $10
-	ivol $64, $00
+	ienv $02, $F0
+	ienv $01, $E0
+	ienv $01, $D0
+	ienv $01, $C0
+	ienv $01, $B0
+	ienv $01, $A0
+	ienv $04, $90
+	ienv $04, $80
+	ienv $04, $70
+	ienv $04, $60
+	ienv $04, $50
+	ienv $04, $40
+	ienv $04, $30
+	ienv $0A, $00
+	ienv $02, $80
+	ienv $01, $70
+	ienv $01, $60
+	ienv $01, $50
+	ienv $01, $40
+	ienv $01, $30
+	ienv $04, $20
+	ienv $04, $10
+	ienv $64, $00
 	iloop_prev ;X
 SndInstrument_41:
-	ivol $02, $F8
-	ivol $02, $80
-	ivol $02, $70
-	ivol $02, $60
-	ivol $02, $50
-	ivol $02, $40
-	ivol $02, $30
-	ivol $64, $00
+	ienv $02, $F8
+	ienv $02, $80
+	ienv $02, $70
+	ienv $02, $60
+	ienv $02, $50
+	ienv $02, $40
+	ienv $02, $30
+	ienv $64, $00
 	iloop_prev ;X
 SndInstrument_42:
-	ivol $01, $98
-	ivol $01, $C8
-	ivol $01, $E8
-	ivol $04, $F8
-	ivol $02, $E0
-	ivol $02, $D0
-	ivol $02, $B0
-	ivol $0F, $80
-	ivol $06, $98
-	ivol $06, $A8
-	ivol $06, $B8
-	ivol $06, $C8
-	ivol $0F, $D8
-	ivol $08, $C0 ;X
-	ivol $08, $B0 ;X
-	ivol $08, $A0 ;X
-	ivol $08, $90 ;X
-	ivol $64, $80 ;X
+	ienv $01, $98
+	ienv $01, $C8
+	ienv $01, $E8
+	ienv $04, $F8
+	ienv $02, $E0
+	ienv $02, $D0
+	ienv $02, $B0
+	ienv $0F, $80
+	ienv $06, $98
+	ienv $06, $A8
+	ienv $06, $B8
+	ienv $06, $C8
+	ienv $0F, $D8
+	ienv $08, $C0 ;X
+	ienv $08, $B0 ;X
+	ienv $08, $A0 ;X
+	ienv $08, $90 ;X
+	ienv $64, $80 ;X
 	iloop_prev ;X
 SndInstrument_56:
-	ivol $14, $F1
-	ivol $08, $30
-	ivol $05, $10
+	ienv $14, $F1
+	ienv $08, $30
+	ienv $05, $10
 	iloop_prev
 SndInstrument_57:
-	ivol $17, $F5
-	ivol $1B, $BF
+	ienv $17, $F5
+	ienv $1B, $BF
 	iloop_prev ;X
 SndInstrument_58:
-	ivol $0C, $F2
-	ivol $0A, $B3
-	ivol $1E, $70
+	ienv $0C, $F2
+	ienv $0A, $B3
+	ienv $1E, $70
 	iloop_prev
 SndInstrument_59:
-	ivol $24, $8F ;X
-	ivol $64, $B8 ;X
+	ienv $24, $8F ;X
+	ienv $64, $B8 ;X
 	iloop_prev ;X
 SndInstrument_5A:
-	ivol $06, $F1
-	ivol $01, $81
+	ienv $06, $F1
+	ienv $01, $81
 	iloop_prev
 SndInstrument_5B:
-	ivol $05, $A9
-	ivol $14, $F0
+	ienv $05, $A9
+	ienv $14, $F0
 	iloop_prev
 SndInstrument_5C:
-	ivol $6E, $F0
-	ivol $64, $F5
+	ienv $6E, $F0
+	ienv $64, $F5
 	iloop_prev ;X
 SndInstrument_5D:
-	ivol $3C, $F0
-	ivol $64, $F4
+	ienv $3C, $F0
+	ienv $64, $F4
 	iloop_prev ;X
 SndInstrument_5E:
-	ivol $12, $F5
-	ivol $68, $BF
-	ivol $1E, $F7
+	ienv $12, $F5
+	ienv $68, $BF
+	ienv $1E, $F7
 	iloop_prev
 SndInstrument_5F:
-	ivol $0C, $F2
-	ivol $12, $B3
-	ivol $1E, $7D
+	ienv $0C, $F2
+	ienv $12, $B3
+	ienv $1E, $7D
 	iloop_prev
 SndInstrument_60:
-	ivol $06, $F2
-	ivol $06, $81
-	ivol $01, $20
+	ienv $06, $F2
+	ienv $06, $81
+	ienv $01, $20
 	iloop_prev
 SndInstrument_61:
-	ivol $3C, $8E
-	ivol $3C, $B7
-	ivol $01, $80
+	ienv $3C, $8E
+	ienv $3C, $B7
+	ienv $01, $80
 SndInstrument_62:
-	ivol $0A, $F0
-	ivol $05, $E0
-	ivol $05, $D0
-	ivol $05, $C0
+	ienv $0A, $F0
+	ienv $05, $E0
+	ienv $05, $D0
+	ienv $05, $C0
 	iloop_prev
 SndInstrument_63:
-	ivol $0A, $AA
-	ivol $32, $F8
+	ienv $0A, $AA
+	ienv $32, $F8
 	iloop_prev
 SndInstrument_64:
-	ivol $06, $9A ;X
-	ivol $10, $A6 ;X
+	ienv $06, $9A ;X
+	ienv $10, $A6 ;X
 	iloop_prev ;X
 SndInstrument_65:
-	ivol $1C, $5B
-	ivol $64, $F0
-	ivol $3C, $F4
+	ienv $1C, $5B
+	ienv $64, $F0
+	ienv $3C, $F4
 	iloop_prev
 SndInstrument_66:
-	ivol $6E, $F0 ;X
-	ivol $64, $F5 ;X
+	ienv $6E, $F0 ;X
+	ienv $64, $F5 ;X
 	iloop_prev ;X
 SndInstrument_67:
-	ivol $21, $6F
-	ivol $01, $B0
+	ienv $21, $6F
+	ienv $01, $B0
 	iloop_prev
 SndInstrument_68:
-	ivol $04, $9A
-	ivol $08, $B2
+	ienv $04, $9A
+	ienv $08, $B2
 	iloop_prev
 SndInstrument_69:
-	ivol $27, $B6
-	ivol $0B, $43
+	ienv $27, $B6
+	ienv $0B, $43
 	iloop_prev
 SndInstrument_6A:
-	ivol $03, $B0
-	ivol $01, $30
-	ivol $03, $31
+	ienv $03, $B0
+	ienv $01, $30
+	ienv $03, $31
 	iloop_prev
 SndInstrument_6B:
-	ivol $0A, $F0
-	ivol $0A, $D0
-	ivol $0A, $B0
-	ivol $0A, $90
-	ivol $0A, $70
-	ivol $0A, $50
-	ivol $0A, $30
-	ivol $0A, $10
+	ienv $0A, $F0
+	ienv $0A, $D0
+	ienv $0A, $B0
+	ienv $0A, $90
+	ienv $0A, $70
+	ienv $0A, $50
+	ienv $0A, $30
+	ienv $0A, $10
 	iloop_prev
 SndInstrument_6C:
-	ivol $05, $30 ;X
-	ivol $05, $70 ;X
-	ivol $0A, $B0 ;X
-	ivol $0F, $D0 ;X
-	ivol $14, $F0 ;X
+	ienv $05, $30 ;X
+	ienv $05, $70 ;X
+	ienv $0A, $B0 ;X
+	ienv $0F, $D0 ;X
+	ienv $14, $F0 ;X
 	iloop_prev ;X
 SndInstrument_6D:
-	ivol $10, $F2
+	ienv $10, $F2
 	iloop_prev
 SndInstrument_6E:
-	ivol $02, $AA
-	ivol $03, $B0
-	ivol $02, $B2
+	ienv $02, $AA
+	ienv $03, $B0
+	ienv $02, $B2
 	iloop_prev
 SndInstrument_6F:
-	ivol $24, $F8
+	ienv $24, $F8
 	iloop_prev
 SndInstrument_70:
-	ivol $04, $C0
-	ivol $02, $B1
+	ienv $04, $C0
+	ienv $02, $B1
 	iloop_prev
 SndInstrument_71:
-	ivol $04, $EC
-	ivol $01, $F0
+	ienv $04, $EC
+	ienv $01, $F0
 	iloop_prev
 SndInstrument_72:
-	ivol $02, $F8 ;X
-	ivol $02, $80 ;X
-	ivol $02, $70 ;X
-	ivol $02, $60 ;X
-	ivol $02, $50 ;X
-	ivol $02, $40 ;X
-	ivol $02, $30 ;X
-	ivol $64, $00 ;X
+	ienv $02, $F8 ;X
+	ienv $02, $80 ;X
+	ienv $02, $70 ;X
+	ienv $02, $60 ;X
+	ienv $02, $50 ;X
+	ienv $02, $40 ;X
+	ienv $02, $30 ;X
+	ienv $64, $00 ;X
 	iloop_prev ;X
 SndInstrument_73:
-	ivol $04, $9A
-	ivol $06, $B0
-	ivol $0A, $B2
+	ienv $04, $9A
+	ienv $06, $B0
+	ienv $0A, $B2
 	iloop_prev

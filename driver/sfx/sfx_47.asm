@@ -13,13 +13,13 @@ SndHeader_SFX_47:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_47_Ch2:
-	snd_sets3
-	snd_note $27, NOTELEN_01
-	snd_note $33
-	snd_clrs3
-	snd_note_slide SSE_NSUP, 6
-	snd_fade SSF_FADEOUT, 0, 64
+	set_s3
+	note $27, NOTELEN_01
+	note $33
+	clr_s3
+	note_slide SSE_NSUP, 6
+	fade SSF_FADEOUT, 0, 64
 	.loop:
-		snd_note $2C, NOTELEN_0C
-		snd_jpfade .loop
-	snd_end
+		note $2C, NOTELEN_0C
+		snd_loop_fade .loop
+	chan_stop

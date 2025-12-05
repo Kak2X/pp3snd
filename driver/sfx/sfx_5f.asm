@@ -13,7 +13,7 @@ SndHeader_SFX_5F:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_5F_Ch1:
-	snd_note $25, NOTELEN_01
-	snd_fade SSF_FADEOUT, 15, 32
-	snd_note $20, NOTELEN_04
-	snd_end
+	note $25, NOTELEN_01
+	fade SSF_FADEOUT, 15, 32
+	note $20, NOTELEN_04
+	chan_stop

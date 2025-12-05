@@ -25,18 +25,18 @@ SndHeader_SFX_38:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_38_Ch1:
-	snd_note $00, NOTELEN_0C
-	snd_inc_freq_offset -2
+	note $00, NOTELEN_0C
+	fine_tune_value -2
 SndData_38_Ch2:
-	snd_sets3
-	snd_fade SSF_FADEOUT, 1, 64
-	snd_note_slide SSE_NSDOWN, 2
-	snd_note $2E, NOTELEN_04
-	snd_note_slide SSE_NSDOWN, 0
-	snd_vibrato VIBRATO_05
-	snd_var iSndChInfo_LoopTimer0, $03
+	set_s3
+	fade SSF_FADEOUT, 1, 64
+	note_slide SSE_NSDOWN, 2
+	note $2E, NOTELEN_04
+	note_slide SSE_NSDOWN, 0
+	vibrato VIBRATO_05
+	set_var iSndChInfo_LoopTimer0, $03
 	.loop:
-		snd_note $2C, NOTELEN_0C
-		snd_inc_base_note 2
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_end
+		note $2C, NOTELEN_0C
+		fine_tune 2
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	chan_stop

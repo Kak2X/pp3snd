@@ -25,14 +25,14 @@ SndHeader_SFX_3D:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3D_ChUnused:
-	snd_note $00, NOTELEN_02 ;X
-	snd_inc_freq_offset -7 ;X
+	note $00, NOTELEN_02 ;X
+	fine_tune_value -7 ;X
 SndData_3D_Ch1:
-	snd_inc_freq_offset -4
+	fine_tune_value -4
 SndData_3D_Ch2:
-	snd_note $3F, NOTELEN_02
-	snd_instrument INSTR_NONE
-	snd_note $46
-	snd_fade SSF_FADEOUT, 3, 208
-	snd_note $4B, NOTELEN_18
-	snd_end
+	note $3F, NOTELEN_02
+	instrument INSTR_NONE
+	note $46
+	fade SSF_FADEOUT, 3, 208
+	note $4B, NOTELEN_18
+	chan_stop

@@ -49,58 +49,58 @@ SndHeader_SFX_59:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_59_Ch2:
-	snd_note $00, NOTELEN_CUSTOM, $05
-	snd_inc_freq_offset -2
+	note $00, NOTELEN_CUSTOM, $05
+	fine_tune_value -2
 SndData_59_Ch1:
-	snd_duty $40
-	snd_note $2F, NOTELEN_03
-	snd_note $2C
-	snd_note $2F
-	snd_note $34
-	snd_note $32
-	snd_note $2D
-	snd_note $32
-	snd_fade SSF_FADEOUT, 0, 72
-	snd_note $38
-	snd_note $34
-	snd_note $2C
-	snd_note $2F
-	snd_note $34
-	snd_note $38
-	snd_note $2C
-	snd_note $2F
-	snd_note $34
-	snd_note $38
-	snd_note $2C
-	snd_note $2F
-	snd_note $34
-	snd_note $38
-	snd_end
+	duty_cycle $40
+	note $2F, NOTELEN_03
+	note $2C
+	note $2F
+	note $34
+	note $32
+	note $2D
+	note $32
+	fade SSF_FADEOUT, 0, 72
+	note $38
+	note $34
+	note $2C
+	note $2F
+	note $34
+	note $38
+	note $2C
+	note $2F
+	note $34
+	note $38
+	note $2C
+	note $2F
+	note $34
+	note $38
+	chan_stop
 SndData_59_Ch3:
-	snd_wave WAVE_09
-	snd_note $34, NOTELEN_03
-	snd_note $2F
-	snd_note $34
-	snd_note $38
-	snd_note $36
-	snd_note $32
-	snd_note $36
-	snd_fade SSF_FADEOUT, 0, 72
-	snd_note $3D
-	snd_note $3B
-	snd_note $2F
-	snd_note $34
-	snd_note $38
-	snd_note $3B
-	snd_note $2F
-	snd_note $34
-	snd_note $38
-	snd_note $3B
-	snd_note $2F
-	snd_note $34
-	snd_note $38
-	snd_note $3B
-	snd_end
+	wave_id WAVE_09
+	note $34, NOTELEN_03
+	note $2F
+	note $34
+	note $38
+	note $36
+	note $32
+	note $36
+	fade SSF_FADEOUT, 0, 72
+	note $3D
+	note $3B
+	note $2F
+	note $34
+	note $38
+	note $3B
+	note $2F
+	note $34
+	note $38
+	note $3B
+	note $2F
+	note $34
+	note $38
+	note $3B
+	chan_stop
 SndData_59_Ch4:
-	snd_note $25, NOTELEN_CUSTOM, $3F
-	snd_end
+	note $25, NOTELEN_CUSTOM, $3F
+	chan_stop

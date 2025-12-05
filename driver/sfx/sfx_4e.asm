@@ -25,22 +25,22 @@ SndHeader_SFX_4E:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4E_Ch2:
-	snd_note $00, NOTELEN_03
-	snd_inc_freq_offset -1
+	note $00, NOTELEN_03
+	fine_tune_value -1
 SndData_4E_Ch1:
-	snd_inc_base_note 3
-	snd_instrument INSTR_04
-	snd_vibrato VIBRATO_03
-	snd_var iSndChInfo_LoopTimer0, $05
+	fine_tune 3
+	instrument INSTR_04
+	vibrato VIBRATO_03
+	set_var iSndChInfo_LoopTimer0, $05
 	.loop:
-		snd_note $50, NOTELEN_04
-		snd_inc_vol 2
-		snd_note $55
-		snd_inc_vol 1
-		snd_note $59
-		snd_inc_vol 1
-		snd_note $5C
-		snd_inc_base_note -1
-		snd_inc_vol -6
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_end
+		note $50, NOTELEN_04
+		volume_add 2
+		note $55
+		volume_add 1
+		note $59
+		volume_add 1
+		note $5C
+		fine_tune -1
+		volume_add -6
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	chan_stop

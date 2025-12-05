@@ -25,13 +25,13 @@ SndHeader_SFX_48:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_48_Ch1:
-	snd_note $00, NOTELEN_08
-	snd_inc_freq_offset -4
+	note $00, NOTELEN_08
+	fine_tune_value -4
 SndData_48_Ch2:
-	snd_note $49, NOTELEN_03
-	snd_note $3D
-	snd_note $41
-	snd_note $44
-	snd_note $4B
-	snd_note $50, NOTELEN_12
-	snd_end
+	note $49, NOTELEN_03
+	note $3D
+	note $41
+	note $44
+	note $4B
+	note $50, NOTELEN_12
+	chan_stop

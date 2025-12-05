@@ -49,229 +49,229 @@ SndHeader_BGM_1F:
 	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_1F_Ch1:
-	snd_duty $C0
-	snd_note $32, NOTELEN_01
-	snd_note $32
-	snd_note $2B
-	snd_note $30
-	snd_note $30
-	snd_note $29
-	snd_note $32
-	snd_note $32
-	snd_note $2B
-	snd_note $34
-	snd_note $34
-	snd_note $2D
-	snd_note $32
-	snd_note $32
-	snd_note $2B
-	snd_note $34
-	snd_note $34
-	snd_note $2D
-	snd_note $35
-	snd_note $35
-	snd_note $2E
-	snd_note $34
-	snd_note $34
-	snd_note $2D
-	snd_note $35
-	snd_note $35
-	snd_note $2E
-	snd_note $37
-	snd_note $37
-	snd_note $30
-	snd_note $35
-	snd_note $35
-	snd_note $2E
-	snd_note $37
-	snd_note $37
-	snd_note $30
-	snd_note $39
-	snd_note $39
-	snd_note $32
-	snd_note $37
-	snd_note $37
-	snd_note $30
-	snd_note $39
-	snd_note $39
-	snd_note $32
-	snd_note $3A
-	snd_note $3A
-	snd_note $34
-	snd_note $39
-	snd_note $39
-	snd_note $32
-	snd_note $3A
-	snd_note $3A
-	snd_note $34
-	snd_note $3C
-	snd_note $3C
-	snd_note $35
-	snd_note $3E
-	snd_note $3E
-	snd_note $37
-	snd_note $40
-	snd_note $40
-	snd_note $39
-	snd_note $41
-	snd_note $41
-	snd_note $3A
-	snd_note $43
-	snd_note $43
-	snd_note $3C
-	snd_note $37
-	snd_note $37
-	snd_note $30
-	snd_note $43
-	snd_note $43
-	snd_inc_vol -3
-	snd_note $3C
-	snd_note $37
-	snd_note $37
-	snd_note $30
-	snd_inc_vol -4
-	snd_note $43
-	snd_note $43
-	snd_note $3C
-	snd_note $37
-	snd_note $37
-	snd_note $30
-	snd_inc_vol -2
-	snd_note $43
-	snd_note $43
-	snd_note $3C
-	snd_note $37
-	snd_note $37
-	snd_note $30
-	snd_inc_vol -1
-	snd_note $43
-	snd_note $43
-	snd_note $3C
-	snd_note $37
-	snd_note $37
-	snd_note $30
-	snd_inc_vol -2
-	snd_note $43
-	snd_note $43
-	snd_note $3C
-	snd_note $37
-	snd_note $37
-	snd_note $30
-	snd_note $00, NOTELEN_2A
-	snd_end
+	duty_cycle $C0
+	note $32, NOTELEN_01
+	note $32
+	note $2B
+	note $30
+	note $30
+	note $29
+	note $32
+	note $32
+	note $2B
+	note $34
+	note $34
+	note $2D
+	note $32
+	note $32
+	note $2B
+	note $34
+	note $34
+	note $2D
+	note $35
+	note $35
+	note $2E
+	note $34
+	note $34
+	note $2D
+	note $35
+	note $35
+	note $2E
+	note $37
+	note $37
+	note $30
+	note $35
+	note $35
+	note $2E
+	note $37
+	note $37
+	note $30
+	note $39
+	note $39
+	note $32
+	note $37
+	note $37
+	note $30
+	note $39
+	note $39
+	note $32
+	note $3A
+	note $3A
+	note $34
+	note $39
+	note $39
+	note $32
+	note $3A
+	note $3A
+	note $34
+	note $3C
+	note $3C
+	note $35
+	note $3E
+	note $3E
+	note $37
+	note $40
+	note $40
+	note $39
+	note $41
+	note $41
+	note $3A
+	note $43
+	note $43
+	note $3C
+	note $37
+	note $37
+	note $30
+	note $43
+	note $43
+	volume_add -3
+	note $3C
+	note $37
+	note $37
+	note $30
+	volume_add -4
+	note $43
+	note $43
+	note $3C
+	note $37
+	note $37
+	note $30
+	volume_add -2
+	note $43
+	note $43
+	note $3C
+	note $37
+	note $37
+	note $30
+	volume_add -1
+	note $43
+	note $43
+	note $3C
+	note $37
+	note $37
+	note $30
+	volume_add -2
+	note $43
+	note $43
+	note $3C
+	note $37
+	note $37
+	note $30
+	note $00, NOTELEN_2A
+	chan_stop
 SndData_1F_Ch2:
-	snd_duty $40
-	snd_note $2E, NOTELEN_03
-	snd_note $2D
-	snd_note $2E
-	snd_note $30
-	snd_note $2E
-	snd_note $30
-	snd_note $32
-	snd_note $30
-	snd_note $32
-	snd_note $34
-	snd_note $32
-	snd_note $34
-	snd_note $35
-	snd_note $34
-	snd_note $35
-	snd_note $37
-	snd_note $35
-	snd_note $37
-	snd_note $39
-	snd_note $3A
-	snd_note $3C
-	snd_note $3E
-	snd_note $40
-	snd_inc_vol -2
-	snd_note $34
-	snd_inc_vol 2
-	snd_note $40
-	snd_inc_vol -4
-	snd_note $34
-	snd_inc_vol -3
-	snd_note $40
-	snd_inc_vol -1
-	snd_note $34
-	snd_inc_vol -1
-	snd_note $40
-	snd_inc_vol -1
-	snd_note $34
-	snd_note $40
-	snd_inc_vol -1
-	snd_note $34
-	snd_inc_vol -1
-	snd_note $40
-	snd_inc_vol -1
-	snd_note $34
-	snd_note $00, NOTELEN_2A
-	snd_end
+	duty_cycle $40
+	note $2E, NOTELEN_03
+	note $2D
+	note $2E
+	note $30
+	note $2E
+	note $30
+	note $32
+	note $30
+	note $32
+	note $34
+	note $32
+	note $34
+	note $35
+	note $34
+	note $35
+	note $37
+	note $35
+	note $37
+	note $39
+	note $3A
+	note $3C
+	note $3E
+	note $40
+	volume_add -2
+	note $34
+	volume_add 2
+	note $40
+	volume_add -4
+	note $34
+	volume_add -3
+	note $40
+	volume_add -1
+	note $34
+	volume_add -1
+	note $40
+	volume_add -1
+	note $34
+	note $40
+	volume_add -1
+	note $34
+	volume_add -1
+	note $40
+	volume_add -1
+	note $34
+	note $00, NOTELEN_2A
+	chan_stop
 SndData_1F_Ch3:
-	snd_wave WAVE_02
-	snd_instrument INSTR_05
-	snd_note $18, NOTELEN_30
-	snd_note $18, NOTELEN_12
-	snd_inc_vol -3
-	snd_note $18, NOTELEN_03
-	snd_note $00
-	snd_inc_vol -1
-	snd_note $18
-	snd_note $00
-	snd_inc_vol -4
-	snd_note $18
-	snd_note $00
-	snd_inc_vol -2
-	snd_note $18
-	snd_note $00
-	snd_inc_vol -3
-	snd_note $18
-	snd_note $00
-	snd_inc_vol -1
-	snd_note $18
-	snd_note $00, NOTELEN_CUSTOM, $2D
-	snd_end
+	wave_id WAVE_02
+	instrument INSTR_05
+	note $18, NOTELEN_30
+	note $18, NOTELEN_12
+	volume_add -3
+	note $18, NOTELEN_03
+	note $00
+	volume_add -1
+	note $18
+	note $00
+	volume_add -4
+	note $18
+	note $00
+	volume_add -2
+	note $18
+	note $00
+	volume_add -3
+	note $18
+	note $00
+	volume_add -1
+	note $18
+	note $00, NOTELEN_CUSTOM, $2D
+	chan_stop
 SndData_1F_Ch4:
-	snd_duty $01
-	snd_note $00, NOTELEN_30
-	snd_note $00, NOTELEN_12
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_inc_vol -2
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_inc_vol -1
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_inc_vol -1
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_inc_vol -1
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_inc_vol -2
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_inc_vol -1
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_inc_vol -1
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_inc_vol -1
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_inc_vol -2
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_inc_vol -1
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_inc_vol -1
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_01
-	snd_note $1B, NOTELEN_02
-	snd_note $00, NOTELEN_CUSTOM, $25
-	snd_end
+	duty_cycle $01
+	note $00, NOTELEN_30
+	note $00, NOTELEN_12
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	volume_add -2
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	volume_add -1
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	volume_add -1
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	volume_add -1
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	volume_add -2
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	volume_add -1
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	volume_add -1
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	volume_add -1
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	volume_add -2
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	volume_add -1
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	volume_add -1
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_01
+	note $1B, NOTELEN_02
+	note $00, NOTELEN_CUSTOM, $25
+	chan_stop

@@ -13,19 +13,19 @@ SndHeader_SFX_2F:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_2F_Ch2:
-	snd_inc_vol -5
-	snd_fade SSF_FADEOUT, 1, 64
-	snd_inc_base_note -8
+	volume_add -5
+	fade SSF_FADEOUT, 1, 64
+	fine_tune -8
 	.loop:
-		snd_note_slide SSE_NSUP, 3
-		snd_note $44, NOTELEN_03
-		snd_note $4D
-		snd_pan SNDOUT_CHL
-		snd_note $44, NOTELEN_03
-		snd_note $4D
-		snd_pan SNDOUT_CHR
-		snd_note $44, NOTELEN_03
-		snd_note $4D
-		snd_pan SNDOUT_CHALL
-		snd_jpfade .loop
-	snd_end
+		note_slide SSE_NSUP, 3
+		note $44, NOTELEN_03
+		note $4D
+		panning SNDOUT_CHL
+		note $44, NOTELEN_03
+		note $4D
+		panning SNDOUT_CHR
+		note $44, NOTELEN_03
+		note $4D
+		panning SNDOUT_CHALL
+		snd_loop_fade .loop
+	chan_stop

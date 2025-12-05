@@ -25,10 +25,10 @@ SndHeader_SFX_4D:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4D_Ch2:
-	snd_note $00, NOTELEN_03
-	snd_inc_freq_offset -1
+	note $00, NOTELEN_03
+	fine_tune_value -1
 SndData_4D_Ch1:
-	snd_instrument INSTR_05
-	snd_vibrato VIBRATO_02
-	snd_note $5C, NOTELEN_CUSTOM, $73
-	snd_end
+	instrument INSTR_05
+	vibrato VIBRATO_02
+	note $5C, NOTELEN_CUSTOM, $73
+	chan_stop

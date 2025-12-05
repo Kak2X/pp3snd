@@ -13,22 +13,22 @@ SndHeader_SFXPause_54:
 	db WAVE_10 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_54_Ch3:
-	snd_sets3
-	snd_note $41, NOTELEN_01
-	snd_note $43
-	snd_note $46
-	snd_note $00
-	snd_note $39
-	snd_note $3C
-	snd_note $3E
-	snd_note $00
-	snd_note $41, NOTELEN_01
-	snd_note $43
-	snd_note $46
-	snd_note $00
-	snd_note $39
-	snd_note $3C
-	snd_note $3E
-	snd_clrs3
-	snd_note $00
-	snd_end
+	set_s3
+	note $41, NOTELEN_01
+	note $43
+	note $46
+	note $00
+	note $39
+	note $3C
+	note $3E
+	note $00
+	note $41, NOTELEN_01
+	note $43
+	note $46
+	note $00
+	note $39
+	note $3C
+	note $3E
+	clr_s3
+	note $00
+	chan_stop

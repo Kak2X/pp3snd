@@ -1,1 +1,1 @@
-@_build config_rom pp3
+@_build config_rom pp3 original.gb

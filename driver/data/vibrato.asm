@@ -153,7 +153,7 @@ SndVibrato_03:
 	vfrq 1
 	vfrq 0
 	vfrq -1
-	vrewind ;X
+	vrestart ;X
 SndVibrato_04:
 	vfrq 4
 .jump0018:
@@ -192,7 +192,7 @@ SndVibrato_07:
 	vfrq 0
 	vfrq -7 ;X
 	vfrq 0 ;X
-	vrewind ;X
+	vrestart ;X
 SndVibrato_08:
 	vfrq 12
 	vfrq -12
@@ -209,11 +209,11 @@ SndVibrato_08:
 	vloop_far .jump0045
 SndVibrato_09:
 	vfrq -11
-	vrewind
+	vrestart
 SndVibrato_0A:
 	vfrq 0 ;X
 	vfrq 0 ;X
-	vrewind ;X
+	vrestart ;X
 SndVibrato_0B:
 	vfrq 0
 	vfrq 0
@@ -395,7 +395,7 @@ SndVibrato_10:
 	vloop_far .jump00E0 ;X
 SndVibrato_11:
 	vfrq -10
-	vrewind
+	vrestart
 SndVibrato_12:
 	vfrq 0
 	vfrq 0
@@ -463,7 +463,7 @@ SndVibrato_17:
 	vloop_far SndVibrato_17
 SndVibrato_18:
 	vfrq 0 ;X
-	vrewind ;X
+	vrestart ;X
 SndVibrato_34:
 	vfrq -16
 	vfrq 19
@@ -592,10 +592,10 @@ SndVibrato_38:
 	vfrq 50 ;X
 	vfrq 50 ;X
 	vfrq 50 ;X
-	vrewind ;X
+	vrestart ;X
 SndVibrato_39:
 	vfrq 0
-	vrewind
+	vrestart
 SndVibrato_5B:
 	vfrq 0
 	vfrq 0
@@ -1048,4 +1048,4 @@ SndVibrato_68:
 	vloop_far SndVibrato_68
 SndVibrato_69:
 	vfrq 0 ;X
-	vrewind ;X
+	vrestart ;X

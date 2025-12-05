@@ -13,9 +13,9 @@ SndHeader_SFX_37:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_37_Ch2:
-	snd_note_slide SSE_NSDOWN, 2
-	snd_note $55, NOTELEN_03
-	snd_note_slide SSE_NSUP, 2
-	snd_inc_vol -5
-	snd_note $31
-	snd_end
+	note_slide SSE_NSDOWN, 2
+	note $55, NOTELEN_03
+	note_slide SSE_NSUP, 2
+	volume_add -5
+	note $31
+	chan_stop

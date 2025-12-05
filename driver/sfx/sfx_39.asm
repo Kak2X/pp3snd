@@ -13,9 +13,9 @@ SndHeader_SFX_39:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_39_Ch2:
-	snd_inc_freq_offset -7
-	snd_fade SSF_FADEOUT, 12, 255
-	snd_note $3F, NOTELEN_01
-	snd_note $4B
-	snd_note $52, NOTELEN_04
-	snd_end
+	fine_tune_value -7
+	fade SSF_FADEOUT, 12, 255
+	note $3F, NOTELEN_01
+	note $4B
+	note $52, NOTELEN_04
+	chan_stop

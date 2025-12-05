@@ -13,12 +13,12 @@ SndHeader_SFX_4F:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4F_Ch2:
-	snd_noise_sweep $07
-	snd_sets3
-	snd_fade SSF_FADEIN, 13, 160
-	snd_var iSndChInfo_LoopTimer0, $19
+	noise_sweep $07
+	set_s3
+	fade SSF_FADEIN, 13, 160
+	set_var iSndChInfo_LoopTimer0, $19
 	.loop:
-		snd_note $19, NOTELEN_03
-		snd_inc_base_note 2
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_end
+		note $19, NOTELEN_03
+		fine_tune 2
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	chan_stop

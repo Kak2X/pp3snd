@@ -49,517 +49,517 @@ SndHeader_BGM_06:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_06_Ch3:
-	snd_wave WAVE_08
-	snd_note $2F, NOTELEN_0C
-	snd_note $2C, NOTELEN_06
-	snd_note $31, NOTELEN_0C
-	snd_note $2F, NOTELEN_06
-	snd_note $2C
-	snd_note $2F
-	snd_note $2F
-	snd_note $2C, NOTELEN_0C
-	snd_note $31
-	snd_note $2F, NOTELEN_06
-	snd_note $2C
-	snd_note $2F
-	snd_note $2D, NOTELEN_0C
-	snd_note $28, NOTELEN_06
-	snd_note $2F, NOTELEN_0C
-	snd_note $2D, NOTELEN_06
-	snd_note $28
-	snd_note $2D
-	snd_note $2D
-	snd_note $2A, NOTELEN_0C
-	snd_note $2F
-	snd_note $2D, NOTELEN_06
-	snd_note $2A
-	snd_note $2D
-	snd_note $2F, NOTELEN_0C
-	snd_note $2C, NOTELEN_06
-	snd_note $31, NOTELEN_0C
-	snd_note $2F, NOTELEN_06
-	snd_note $2C
-	snd_note $2F
-	snd_note $2F
-	snd_note $2C, NOTELEN_0C
-	snd_note $31
-	snd_note $2F, NOTELEN_06
-	snd_note $2C
-	snd_note $2F
-	snd_note $2D, NOTELEN_0C
-	snd_note $28, NOTELEN_06
-	snd_note $2F, NOTELEN_0C
-	snd_note $2D, NOTELEN_06
-	snd_note $28
-	snd_note $2D
-	snd_note $2D
-	snd_note $2A, NOTELEN_0C
-	snd_note $2F
-	snd_note $2D, NOTELEN_06
-	snd_note $2A
-	snd_note $2D
-	snd_wave WAVE_09
-	snd_inc_base_note -12
-	snd_note $00, NOTELEN_09
-	snd_note $28, NOTELEN_CUSTOM, $03
-	snd_inc_vol -5
-	snd_inc_freq_offset -1
-	snd_note $28, NOTELEN_03
-	snd_inc_vol 5
-	snd_inc_freq_offset 1
-	snd_note $00, NOTELEN_CUSTOM, $12
-	snd_note $28, NOTELEN_03
-	snd_note $2C, NOTELEN_06
-	snd_note $2F
-	snd_note $00, NOTELEN_09
-	snd_note $25, NOTELEN_CUSTOM, $03
-	snd_inc_vol -5
-	snd_inc_freq_offset -1
-	snd_note $25, NOTELEN_03
-	snd_inc_vol 5
-	snd_inc_freq_offset 1
-	snd_note $00, NOTELEN_CUSTOM, $12
-	snd_note $25, NOTELEN_03
-	snd_note $28, NOTELEN_06
-	snd_note $2C
-	snd_note $00, NOTELEN_09
-	snd_note $2A, NOTELEN_CUSTOM, $03
-	snd_inc_vol -5
-	snd_inc_freq_offset -1
-	snd_note $2A, NOTELEN_03
-	snd_inc_vol 5
-	snd_inc_freq_offset 1
-	snd_note $00, NOTELEN_CUSTOM, $12
-	snd_note $2A, NOTELEN_03
-	snd_note $2D, NOTELEN_06
-	snd_note $31
-	snd_note $00, NOTELEN_09
-	snd_note $23, NOTELEN_CUSTOM, $03
-	snd_inc_vol -5
-	snd_inc_freq_offset -1
-	snd_note $23, NOTELEN_03
-	snd_inc_vol 5
-	snd_inc_freq_offset 1
-	snd_note $00, NOTELEN_CUSTOM, $09
-	snd_note $2F, NOTELEN_09
-	snd_note $23, NOTELEN_03
-	snd_note $27, NOTELEN_06
-	snd_note $2A
-	snd_inc_base_note 12
-	snd_jp SndData_06_Ch3
+	wave_id WAVE_08
+	note $2F, NOTELEN_0C
+	note $2C, NOTELEN_06
+	note $31, NOTELEN_0C
+	note $2F, NOTELEN_06
+	note $2C
+	note $2F
+	note $2F
+	note $2C, NOTELEN_0C
+	note $31
+	note $2F, NOTELEN_06
+	note $2C
+	note $2F
+	note $2D, NOTELEN_0C
+	note $28, NOTELEN_06
+	note $2F, NOTELEN_0C
+	note $2D, NOTELEN_06
+	note $28
+	note $2D
+	note $2D
+	note $2A, NOTELEN_0C
+	note $2F
+	note $2D, NOTELEN_06
+	note $2A
+	note $2D
+	note $2F, NOTELEN_0C
+	note $2C, NOTELEN_06
+	note $31, NOTELEN_0C
+	note $2F, NOTELEN_06
+	note $2C
+	note $2F
+	note $2F
+	note $2C, NOTELEN_0C
+	note $31
+	note $2F, NOTELEN_06
+	note $2C
+	note $2F
+	note $2D, NOTELEN_0C
+	note $28, NOTELEN_06
+	note $2F, NOTELEN_0C
+	note $2D, NOTELEN_06
+	note $28
+	note $2D
+	note $2D
+	note $2A, NOTELEN_0C
+	note $2F
+	note $2D, NOTELEN_06
+	note $2A
+	note $2D
+	wave_id WAVE_09
+	fine_tune -12
+	note $00, NOTELEN_09
+	note $28, NOTELEN_CUSTOM, $03
+	volume_add -5
+	fine_tune_value -1
+	note $28, NOTELEN_03
+	volume_add 5
+	fine_tune_value 1
+	note $00, NOTELEN_CUSTOM, $12
+	note $28, NOTELEN_03
+	note $2C, NOTELEN_06
+	note $2F
+	note $00, NOTELEN_09
+	note $25, NOTELEN_CUSTOM, $03
+	volume_add -5
+	fine_tune_value -1
+	note $25, NOTELEN_03
+	volume_add 5
+	fine_tune_value 1
+	note $00, NOTELEN_CUSTOM, $12
+	note $25, NOTELEN_03
+	note $28, NOTELEN_06
+	note $2C
+	note $00, NOTELEN_09
+	note $2A, NOTELEN_CUSTOM, $03
+	volume_add -5
+	fine_tune_value -1
+	note $2A, NOTELEN_03
+	volume_add 5
+	fine_tune_value 1
+	note $00, NOTELEN_CUSTOM, $12
+	note $2A, NOTELEN_03
+	note $2D, NOTELEN_06
+	note $31
+	note $00, NOTELEN_09
+	note $23, NOTELEN_CUSTOM, $03
+	volume_add -5
+	fine_tune_value -1
+	note $23, NOTELEN_03
+	volume_add 5
+	fine_tune_value 1
+	note $00, NOTELEN_CUSTOM, $09
+	note $2F, NOTELEN_09
+	note $23, NOTELEN_03
+	note $27, NOTELEN_06
+	note $2A
+	fine_tune 12
+	snd_loop SndData_06_Ch3
 SndData_06_Ch1:
-	snd_duty $05
-	snd_note $1C, NOTELEN_09
-	snd_note $1C, NOTELEN_03
-	snd_note $20, NOTELEN_06
-	snd_note $23
-	snd_note $1C, NOTELEN_09
-	snd_note $1C, NOTELEN_03
-	snd_note $20, NOTELEN_06
-	snd_note $23
-	snd_note $19, NOTELEN_09
-	snd_note $19, NOTELEN_03
-	snd_note $1C, NOTELEN_06
-	snd_note $20
-	snd_note $19, NOTELEN_09
-	snd_note $19, NOTELEN_03
-	snd_note $1C, NOTELEN_06
-	snd_note $20
-	snd_note $1E, NOTELEN_09
-	snd_note $1E, NOTELEN_03
-	snd_note $21, NOTELEN_06
-	snd_note $25
-	snd_note $1E, NOTELEN_09
-	snd_note $1E, NOTELEN_03
-	snd_note $21, NOTELEN_06
-	snd_note $25
-	snd_note $17, NOTELEN_09
-	snd_note $17, NOTELEN_03
-	snd_note $1B, NOTELEN_06
-	snd_note $1E
-	snd_note $17, NOTELEN_09
-	snd_note $17, NOTELEN_03
-	snd_note $1B, NOTELEN_06
-	snd_note $1E
-	snd_note $1C, NOTELEN_09
-	snd_note $1C, NOTELEN_03
-	snd_note $20, NOTELEN_06
-	snd_note $23
-	snd_note $1C, NOTELEN_09
-	snd_note $1C, NOTELEN_03
-	snd_note $20, NOTELEN_06
-	snd_note $23
-	snd_note $19, NOTELEN_09
-	snd_note $19, NOTELEN_03
-	snd_note $1C, NOTELEN_06
-	snd_note $20
-	snd_note $19, NOTELEN_09
-	snd_note $19, NOTELEN_03
-	snd_note $1C, NOTELEN_06
-	snd_note $20
-	snd_note $1E, NOTELEN_09
-	snd_note $1E, NOTELEN_03
-	snd_note $21, NOTELEN_06
-	snd_note $25
-	snd_note $1E, NOTELEN_09
-	snd_note $1E, NOTELEN_03
-	snd_note $21, NOTELEN_06
-	snd_note $25
-	snd_note $17, NOTELEN_09
-	snd_note $17, NOTELEN_03
-	snd_note $1B, NOTELEN_06
-	snd_note $1E
-	snd_note $17, NOTELEN_09
-	snd_note $17, NOTELEN_03
-	snd_note $1B, NOTELEN_06
-	snd_note $1E
-	snd_duty $09
-	snd_inc_base_note 12
-	snd_note $00, NOTELEN_09
-	snd_note $1C, NOTELEN_CUSTOM, $03
-	snd_inc_vol -5
-	snd_inc_freq_offset -1
-	snd_note $1C, NOTELEN_03
-	snd_inc_vol 5
-	snd_inc_freq_offset 1
-	snd_note $00, NOTELEN_CUSTOM, $12
-	snd_note $1C, NOTELEN_03
-	snd_note $20, NOTELEN_06
-	snd_note $23
-	snd_note $00, NOTELEN_09
-	snd_note $19, NOTELEN_CUSTOM, $03
-	snd_inc_vol -5
-	snd_inc_freq_offset -1
-	snd_note $19, NOTELEN_03
-	snd_inc_vol 5
-	snd_inc_freq_offset 1
-	snd_note $00, NOTELEN_CUSTOM, $12
-	snd_note $19, NOTELEN_03
-	snd_note $1C, NOTELEN_06
-	snd_note $20
-	snd_note $00, NOTELEN_09
-	snd_note $1E, NOTELEN_CUSTOM, $03
-	snd_inc_vol -5
-	snd_inc_freq_offset -1
-	snd_note $1E, NOTELEN_03
-	snd_inc_vol 5
-	snd_inc_freq_offset 1
-	snd_note $00, NOTELEN_CUSTOM, $12
-	snd_note $1E, NOTELEN_03
-	snd_note $21, NOTELEN_06
-	snd_note $25
-	snd_note $00, NOTELEN_09
-	snd_note $17, NOTELEN_CUSTOM, $03
-	snd_inc_vol -5
-	snd_inc_freq_offset -1
-	snd_note $17, NOTELEN_03
-	snd_inc_vol 5
-	snd_inc_freq_offset 1
-	snd_note $00, NOTELEN_CUSTOM, $09
-	snd_note $23, NOTELEN_09
-	snd_note $17, NOTELEN_03
-	snd_note $1B, NOTELEN_06
-	snd_note $1E
-	snd_inc_base_note -12
-	snd_jp SndData_06_Ch1
+	duty_cycle $05
+	note $1C, NOTELEN_09
+	note $1C, NOTELEN_03
+	note $20, NOTELEN_06
+	note $23
+	note $1C, NOTELEN_09
+	note $1C, NOTELEN_03
+	note $20, NOTELEN_06
+	note $23
+	note $19, NOTELEN_09
+	note $19, NOTELEN_03
+	note $1C, NOTELEN_06
+	note $20
+	note $19, NOTELEN_09
+	note $19, NOTELEN_03
+	note $1C, NOTELEN_06
+	note $20
+	note $1E, NOTELEN_09
+	note $1E, NOTELEN_03
+	note $21, NOTELEN_06
+	note $25
+	note $1E, NOTELEN_09
+	note $1E, NOTELEN_03
+	note $21, NOTELEN_06
+	note $25
+	note $17, NOTELEN_09
+	note $17, NOTELEN_03
+	note $1B, NOTELEN_06
+	note $1E
+	note $17, NOTELEN_09
+	note $17, NOTELEN_03
+	note $1B, NOTELEN_06
+	note $1E
+	note $1C, NOTELEN_09
+	note $1C, NOTELEN_03
+	note $20, NOTELEN_06
+	note $23
+	note $1C, NOTELEN_09
+	note $1C, NOTELEN_03
+	note $20, NOTELEN_06
+	note $23
+	note $19, NOTELEN_09
+	note $19, NOTELEN_03
+	note $1C, NOTELEN_06
+	note $20
+	note $19, NOTELEN_09
+	note $19, NOTELEN_03
+	note $1C, NOTELEN_06
+	note $20
+	note $1E, NOTELEN_09
+	note $1E, NOTELEN_03
+	note $21, NOTELEN_06
+	note $25
+	note $1E, NOTELEN_09
+	note $1E, NOTELEN_03
+	note $21, NOTELEN_06
+	note $25
+	note $17, NOTELEN_09
+	note $17, NOTELEN_03
+	note $1B, NOTELEN_06
+	note $1E
+	note $17, NOTELEN_09
+	note $17, NOTELEN_03
+	note $1B, NOTELEN_06
+	note $1E
+	duty_cycle $09
+	fine_tune 12
+	note $00, NOTELEN_09
+	note $1C, NOTELEN_CUSTOM, $03
+	volume_add -5
+	fine_tune_value -1
+	note $1C, NOTELEN_03
+	volume_add 5
+	fine_tune_value 1
+	note $00, NOTELEN_CUSTOM, $12
+	note $1C, NOTELEN_03
+	note $20, NOTELEN_06
+	note $23
+	note $00, NOTELEN_09
+	note $19, NOTELEN_CUSTOM, $03
+	volume_add -5
+	fine_tune_value -1
+	note $19, NOTELEN_03
+	volume_add 5
+	fine_tune_value 1
+	note $00, NOTELEN_CUSTOM, $12
+	note $19, NOTELEN_03
+	note $1C, NOTELEN_06
+	note $20
+	note $00, NOTELEN_09
+	note $1E, NOTELEN_CUSTOM, $03
+	volume_add -5
+	fine_tune_value -1
+	note $1E, NOTELEN_03
+	volume_add 5
+	fine_tune_value 1
+	note $00, NOTELEN_CUSTOM, $12
+	note $1E, NOTELEN_03
+	note $21, NOTELEN_06
+	note $25
+	note $00, NOTELEN_09
+	note $17, NOTELEN_CUSTOM, $03
+	volume_add -5
+	fine_tune_value -1
+	note $17, NOTELEN_03
+	volume_add 5
+	fine_tune_value 1
+	note $00, NOTELEN_CUSTOM, $09
+	note $23, NOTELEN_09
+	note $17, NOTELEN_03
+	note $1B, NOTELEN_06
+	note $1E
+	fine_tune -12
+	snd_loop SndData_06_Ch1
 SndData_06_Ch2:
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $28, NOTELEN_03
-	snd_note $28
-	snd_note $23, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $34
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $28, NOTELEN_09
-	snd_note $28, NOTELEN_03
-	snd_note $23, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $34
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $28
-	snd_note $25, NOTELEN_03
-	snd_note $25
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $2F, NOTELEN_0C
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $25, NOTELEN_09
-	snd_note $25, NOTELEN_03
-	snd_note $20, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $34
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $25
-	snd_note $2A, NOTELEN_03
-	snd_note $2A
-	snd_note $25, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $31
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $2A, NOTELEN_09
-	snd_note $2A, NOTELEN_03
-	snd_note $25, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $31
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $2A
-	snd_note $23, NOTELEN_03
-	snd_note $23
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $33, NOTELEN_0C
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $23, NOTELEN_09
-	snd_note $23, NOTELEN_03
-	snd_note $1E, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $33
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $23
-	snd_note $28, NOTELEN_03
-	snd_note $28
-	snd_note $23, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $34
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $28, NOTELEN_09
-	snd_note $28, NOTELEN_03
-	snd_note $23, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $34
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $28
-	snd_note $25, NOTELEN_03
-	snd_note $25
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $2F, NOTELEN_0C
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $25, NOTELEN_09
-	snd_note $25, NOTELEN_03
-	snd_note $20, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $34
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $25
-	snd_note $2A, NOTELEN_03
-	snd_note $2A
-	snd_note $25, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $31
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $2A, NOTELEN_09
-	snd_note $2A, NOTELEN_03
-	snd_note $25, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $31
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $2A
-	snd_note $23, NOTELEN_03
-	snd_note $23
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $33, NOTELEN_0C
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $23, NOTELEN_09
-	snd_note $23, NOTELEN_03
-	snd_note $1E, NOTELEN_06
-	snd_instrument INSTR_33
-	snd_duty $40
-	snd_note $33
-	snd_instrument INSTR_2E
-	snd_duty $80
-	snd_note $23
-	snd_note $28, NOTELEN_03
-	snd_note $28
-	snd_note $23, NOTELEN_06
-	snd_note $25
-	snd_note $28, NOTELEN_09
-	snd_note $28, NOTELEN_03
-	snd_note $23, NOTELEN_06
-	snd_note $25
-	snd_note $28
-	snd_note $25, NOTELEN_03
-	snd_note $25
-	snd_note $20, NOTELEN_06
-	snd_note $23
-	snd_note $25, NOTELEN_09
-	snd_note $25, NOTELEN_03
-	snd_note $20, NOTELEN_06
-	snd_note $23
-	snd_note $25
-	snd_note $2A, NOTELEN_03
-	snd_note $2A
-	snd_note $25, NOTELEN_06
-	snd_note $28
-	snd_note $2A, NOTELEN_09
-	snd_note $2A, NOTELEN_03
-	snd_note $25, NOTELEN_06
-	snd_note $28
-	snd_note $2A
-	snd_note $23, NOTELEN_03
-	snd_note $23
-	snd_note $1E, NOTELEN_06
-	snd_note $21
-	snd_note $23
-	snd_instrument INSTR_3E
-	snd_inc_vol -2
-	snd_note $1E, NOTELEN_01
-	snd_note $20
-	snd_note $21
-	snd_note $23
-	snd_note $25
-	snd_note $27
-	snd_note $28
-	snd_note $2A
-	snd_note $2C
-	snd_note $2D
-	snd_note $2F
-	snd_note $31
-	snd_note $33
-	snd_note $34
-	snd_note $36
-	snd_note $38
-	snd_note $39
-	snd_note $3B
-	snd_note $3D
-	snd_note $3F
-	snd_note $40
-	snd_note $42
-	snd_note $44
-	snd_note $45
-	snd_inc_vol 2
-	snd_jp SndData_06_Ch2
+	instrument INSTR_2E
+	duty_cycle $80
+	note $28, NOTELEN_03
+	note $28
+	note $23, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $34
+	instrument INSTR_2E
+	duty_cycle $80
+	note $28, NOTELEN_09
+	note $28, NOTELEN_03
+	note $23, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $34
+	instrument INSTR_2E
+	duty_cycle $80
+	note $28
+	note $25, NOTELEN_03
+	note $25
+	instrument INSTR_33
+	duty_cycle $40
+	note $2F, NOTELEN_0C
+	instrument INSTR_2E
+	duty_cycle $80
+	note $25, NOTELEN_09
+	note $25, NOTELEN_03
+	note $20, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $34
+	instrument INSTR_2E
+	duty_cycle $80
+	note $25
+	note $2A, NOTELEN_03
+	note $2A
+	note $25, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $31
+	instrument INSTR_2E
+	duty_cycle $80
+	note $2A, NOTELEN_09
+	note $2A, NOTELEN_03
+	note $25, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $31
+	instrument INSTR_2E
+	duty_cycle $80
+	note $2A
+	note $23, NOTELEN_03
+	note $23
+	instrument INSTR_33
+	duty_cycle $40
+	note $33, NOTELEN_0C
+	instrument INSTR_2E
+	duty_cycle $80
+	note $23, NOTELEN_09
+	note $23, NOTELEN_03
+	note $1E, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $33
+	instrument INSTR_2E
+	duty_cycle $80
+	note $23
+	note $28, NOTELEN_03
+	note $28
+	note $23, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $34
+	instrument INSTR_2E
+	duty_cycle $80
+	note $28, NOTELEN_09
+	note $28, NOTELEN_03
+	note $23, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $34
+	instrument INSTR_2E
+	duty_cycle $80
+	note $28
+	note $25, NOTELEN_03
+	note $25
+	instrument INSTR_33
+	duty_cycle $40
+	note $2F, NOTELEN_0C
+	instrument INSTR_2E
+	duty_cycle $80
+	note $25, NOTELEN_09
+	note $25, NOTELEN_03
+	note $20, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $34
+	instrument INSTR_2E
+	duty_cycle $80
+	note $25
+	note $2A, NOTELEN_03
+	note $2A
+	note $25, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $31
+	instrument INSTR_2E
+	duty_cycle $80
+	note $2A, NOTELEN_09
+	note $2A, NOTELEN_03
+	note $25, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $31
+	instrument INSTR_2E
+	duty_cycle $80
+	note $2A
+	note $23, NOTELEN_03
+	note $23
+	instrument INSTR_33
+	duty_cycle $40
+	note $33, NOTELEN_0C
+	instrument INSTR_2E
+	duty_cycle $80
+	note $23, NOTELEN_09
+	note $23, NOTELEN_03
+	note $1E, NOTELEN_06
+	instrument INSTR_33
+	duty_cycle $40
+	note $33
+	instrument INSTR_2E
+	duty_cycle $80
+	note $23
+	note $28, NOTELEN_03
+	note $28
+	note $23, NOTELEN_06
+	note $25
+	note $28, NOTELEN_09
+	note $28, NOTELEN_03
+	note $23, NOTELEN_06
+	note $25
+	note $28
+	note $25, NOTELEN_03
+	note $25
+	note $20, NOTELEN_06
+	note $23
+	note $25, NOTELEN_09
+	note $25, NOTELEN_03
+	note $20, NOTELEN_06
+	note $23
+	note $25
+	note $2A, NOTELEN_03
+	note $2A
+	note $25, NOTELEN_06
+	note $28
+	note $2A, NOTELEN_09
+	note $2A, NOTELEN_03
+	note $25, NOTELEN_06
+	note $28
+	note $2A
+	note $23, NOTELEN_03
+	note $23
+	note $1E, NOTELEN_06
+	note $21
+	note $23
+	instrument INSTR_3E
+	volume_add -2
+	note $1E, NOTELEN_01
+	note $20
+	note $21
+	note $23
+	note $25
+	note $27
+	note $28
+	note $2A
+	note $2C
+	note $2D
+	note $2F
+	note $31
+	note $33
+	note $34
+	note $36
+	note $38
+	note $39
+	note $3B
+	note $3D
+	note $3F
+	note $40
+	note $42
+	note $44
+	note $45
+	volume_add 2
+	snd_loop SndData_06_Ch2
 SndData_06_Ch4:
 	snd_call .sub0
-	snd_noteex PRESET_01
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_00
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_00
-	snd_noteex PRESET_00
-	snd_noteex PRESET_07
-	snd_noteex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_00
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_00
+	note_ex PRESET_00
+	note_ex PRESET_07
+	note_ex PRESET_02
 	snd_call .sub0
-	snd_noteex PRESET_01
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_00
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_00
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_00
-	snd_noteex PRESET_00
-	snd_noteex PRESET_07
-	snd_noteex PRESET_00
-	snd_var iSndChInfo_LoopTimer0, $03
+	note_ex PRESET_01
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_00
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_00
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_00
+	note_ex PRESET_00
+	note_ex PRESET_07
+	note_ex PRESET_00
+	set_var iSndChInfo_LoopTimer0, $03
 	.loop:
-		snd_noteex PRESET_01, NOTELEN_09
-		snd_noteex PRESET_02, NOTELEN_03
-		snd_noteex PRESET_01, NOTELEN_0C
-		snd_noteex PRESET_00, NOTELEN_09
-		snd_noteex PRESET_00, NOTELEN_03
-		snd_noteex PRESET_02, NOTELEN_0C
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_noteex PRESET_01, NOTELEN_09
-	snd_noteex PRESET_02, NOTELEN_03
-	snd_noteex PRESET_01, NOTELEN_09
-	snd_noteex PRESET_02, NOTELEN_03
-	snd_noteex PRESET_00
-	snd_noteex PRESET_00
-	snd_noteex PRESET_02
-	snd_noteex PRESET_00
-	snd_noteex PRESET_00, NOTELEN_06
-	snd_noteex PRESET_00, NOTELEN_03
-	snd_noteex PRESET_00
-	snd_jp SndData_06_Ch4
+		note_ex PRESET_01, NOTELEN_09
+		note_ex PRESET_02, NOTELEN_03
+		note_ex PRESET_01, NOTELEN_0C
+		note_ex PRESET_00, NOTELEN_09
+		note_ex PRESET_00, NOTELEN_03
+		note_ex PRESET_02, NOTELEN_0C
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	note_ex PRESET_01, NOTELEN_09
+	note_ex PRESET_02, NOTELEN_03
+	note_ex PRESET_01, NOTELEN_09
+	note_ex PRESET_02, NOTELEN_03
+	note_ex PRESET_00
+	note_ex PRESET_00
+	note_ex PRESET_02
+	note_ex PRESET_00
+	note_ex PRESET_00, NOTELEN_06
+	note_ex PRESET_00, NOTELEN_03
+	note_ex PRESET_00
+	snd_loop SndData_06_Ch4
 .sub0:
-	snd_noteex PRESET_01, NOTELEN_03
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_00
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_00
-	snd_noteex PRESET_02
-	snd_noteex PRESET_05
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_00
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_00
-	snd_noteex PRESET_02
-	snd_noteex PRESET_07
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_00
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_02
-	snd_noteex PRESET_02
-	snd_noteex PRESET_01
-	snd_noteex PRESET_00
-	snd_noteex PRESET_02
-	snd_noteex PRESET_05
-	snd_noteex PRESET_02
+	note_ex PRESET_01, NOTELEN_03
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_00
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_00
+	note_ex PRESET_02
+	note_ex PRESET_05
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_00
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_00
+	note_ex PRESET_02
+	note_ex PRESET_07
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_00
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_02
+	note_ex PRESET_02
+	note_ex PRESET_01
+	note_ex PRESET_00
+	note_ex PRESET_02
+	note_ex PRESET_05
+	note_ex PRESET_02
 	snd_ret

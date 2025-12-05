@@ -13,10 +13,10 @@ SndHeader_SFX_66:
 	db $00 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_66_Ch4:
-	snd_sets3
-	snd_noise $42
-	snd_note $19, NOTELEN_03
-	snd_inc_vol -6
-	snd_noise $44
-	snd_note $19, NOTELEN_06
-	snd_end
+	set_s3
+	noise_freq $42
+	note $19, NOTELEN_03
+	volume_add -6
+	noise_freq $44
+	note $19, NOTELEN_06
+	chan_stop

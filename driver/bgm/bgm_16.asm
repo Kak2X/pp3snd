@@ -49,96 +49,96 @@ SndHeader_BGM_16:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_16_Ch4:
-	snd_noteex PRESET_00, NOTELEN_0C
-	snd_noteex PRESET_01, NOTELEN_06
-	snd_noteex PRESET_00, NOTELEN_0C
-	snd_noteex PRESET_01, NOTELEN_06
-	snd_noteex PRESET_00, NOTELEN_0C
-	snd_jp SndData_16_Ch4
+	note_ex PRESET_00, NOTELEN_0C
+	note_ex PRESET_01, NOTELEN_06
+	note_ex PRESET_00, NOTELEN_0C
+	note_ex PRESET_01, NOTELEN_06
+	note_ex PRESET_00, NOTELEN_0C
+	snd_loop SndData_16_Ch4
 SndData_16_Ch3:
-	snd_note $34, NOTELEN_12
-	snd_note $34
-	snd_note $34, NOTELEN_0C
-	snd_jp SndData_16_Ch3
+	note $34, NOTELEN_12
+	note $34
+	note $34, NOTELEN_0C
+	snd_loop SndData_16_Ch3
 SndData_16_Ch2:
-	snd_note $42, NOTELEN_06
-	snd_note $42
-	snd_note $3F
-	snd_note $3F
-	snd_note $42, NOTELEN_09
-	snd_note $42, NOTELEN_03
-	snd_note $3F, NOTELEN_06
-	snd_note $3F
-	snd_note $42, NOTELEN_06
-	snd_note $42
-	snd_note $3F
-	snd_note $3F, NOTELEN_03
-	snd_note $42, NOTELEN_06
-	snd_note $42
-	snd_note $42, NOTELEN_03
-	snd_note $3F, NOTELEN_06
-	snd_note $3F
-	snd_jp SndData_16_Ch2
+	note $42, NOTELEN_06
+	note $42
+	note $3F
+	note $3F
+	note $42, NOTELEN_09
+	note $42, NOTELEN_03
+	note $3F, NOTELEN_06
+	note $3F
+	note $42, NOTELEN_06
+	note $42
+	note $3F
+	note $3F, NOTELEN_03
+	note $42, NOTELEN_06
+	note $42
+	note $42, NOTELEN_03
+	note $3F, NOTELEN_06
+	note $3F
+	snd_loop SndData_16_Ch2
 SndData_16_Ch1:
 	snd_call .sub0
-	snd_note $2A
-	snd_inc_vol -6
-	snd_note $2A
-	snd_note $2A
-	snd_note $2A
-	snd_inc_vol 6
-	snd_note $2A
-	snd_inc_vol -6
-	snd_note $2A
-	snd_inc_vol 6
-	snd_note $2A
-	snd_inc_vol -6
-	snd_note $2A
-	snd_note $2A
-	snd_note $2A
-	snd_inc_vol 6
-	snd_note $2A
-	snd_inc_vol -6
-	snd_note $2A
-	snd_note $2A
-	snd_note $2A
-	snd_inc_vol 6
-	snd_note $2A
-	snd_inc_vol -6
-	snd_note $2A
-	snd_inc_vol 6
+	note $2A
+	volume_add -6
+	note $2A
+	note $2A
+	note $2A
+	volume_add 6
+	note $2A
+	volume_add -6
+	note $2A
+	volume_add 6
+	note $2A
+	volume_add -6
+	note $2A
+	note $2A
+	note $2A
+	volume_add 6
+	note $2A
+	volume_add -6
+	note $2A
+	note $2A
+	note $2A
+	volume_add 6
+	note $2A
+	volume_add -6
+	note $2A
+	volume_add 6
 	snd_call .sub0
-	snd_inc_base_note -17
-	snd_note $3A, NOTELEN_02
-	snd_note $3A
-	snd_note $3A
-	snd_note $3A, NOTELEN_03
-	snd_note $3A
-	snd_note $35, NOTELEN_02
-	snd_note $35
-	snd_note $35
-	snd_note $35, NOTELEN_03
-	snd_note $35
-	snd_note $30, NOTELEN_02
-	snd_note $30
-	snd_note $30
-	snd_note $30, NOTELEN_03
-	snd_note $30
-	snd_note $29, NOTELEN_02
-	snd_note $29
-	snd_note $29
-	snd_note $29, NOTELEN_03
-	snd_note $29
-	snd_inc_base_note 17
-	snd_jp SndData_16_Ch1
+	fine_tune -17
+	note $3A, NOTELEN_02
+	note $3A
+	note $3A
+	note $3A, NOTELEN_03
+	note $3A
+	note $35, NOTELEN_02
+	note $35
+	note $35
+	note $35, NOTELEN_03
+	note $35
+	note $30, NOTELEN_02
+	note $30
+	note $30
+	note $30, NOTELEN_03
+	note $30
+	note $29, NOTELEN_02
+	note $29
+	note $29
+	note $29, NOTELEN_03
+	note $29
+	fine_tune 17
+	snd_loop SndData_16_Ch1
 .sub0:
-	snd_var iSndChInfo_LoopTimer0, $04
+	set_var iSndChInfo_LoopTimer0, $04
 	.sub0loop:
-		snd_note $2A, NOTELEN_03
-		snd_inc_vol -6
-		snd_note $2A
-		snd_note $2A
-		snd_note $2A
-		snd_inc_vol 6
-		snd_djnz iSndChInfo_LoopTimer0, .sub0loop
+		note $2A, NOTELEN_03
+		volume_add -6
+		note $2A
+		note $2A
+		note $2A
+		volume_add 6
+		snd_loop .sub0loop, iSndChInfo_LoopTimer0
 	snd_ret

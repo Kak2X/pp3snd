@@ -13,5 +13,5 @@ SndHeader_SFX_45:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_45_Ch1:
-	snd_note $3A, NOTELEN_24
-	snd_end
+	note $3A, NOTELEN_24
+	chan_stop

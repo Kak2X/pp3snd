@@ -13,17 +13,17 @@ SndHeader_SFX_4A:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_4A_Ch2:
-	snd_inc_base_note -2
-	snd_note $0F, NOTELEN_01
-	snd_note $0E
-	snd_note $11
-	snd_note $0D
-	snd_inc_base_note 2
-	snd_note_slide SSE_NSUP, 7
-	snd_var iSndChInfo_LoopTimer0, $03
+	fine_tune -2
+	note $0F, NOTELEN_01
+	note $0E
+	note $11
+	note $0D
+	fine_tune 2
+	note_slide SSE_NSUP, 7
+	set_var iSndChInfo_LoopTimer0, $03
 	.loop:
-		snd_note $19, NOTELEN_06
-		snd_inc_vol -5
-		snd_inc_base_note 9
-		snd_djnz iSndChInfo_LoopTimer0, .loop
-	snd_end
+		note $19, NOTELEN_06
+		volume_add -5
+		fine_tune 9
+		snd_loop .loop, iSndChInfo_LoopTimer0
+	chan_stop

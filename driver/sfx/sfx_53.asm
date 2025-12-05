@@ -13,11 +13,11 @@ SndHeader_SFX_53:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_53_Ch2:
-	snd_note $2B, NOTELEN_01
-	snd_note $37
-	snd_note $43
-	snd_note $4F
-	snd_note $5B
-	snd_inc_vol -6
-	snd_note $5B
-	snd_end
+	note $2B, NOTELEN_01
+	note $37
+	note $43
+	note $4F
+	note $5B
+	volume_add -6
+	note $5B
+	chan_stop

@@ -13,5 +13,5 @@ SndHeader_SFX_3E:
 	db $80 ; iSndChInfo_DutyOrWave
 	db SNDOUT_CHALL ; iSndChInfo_Pan
 SndData_3E_Ch2:
-	snd_note $42, NOTELEN_02
-	snd_end
+	note $42, NOTELEN_02
+	chan_stop

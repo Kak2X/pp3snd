@@ -1,67 +1,67 @@
 SECTION "Sound RAM", WRAM0[$D000]
-wSndQueueId               :ds 8   ; EQU $D000 ; Sound queue - ID
-wSndQueueArg              :ds 8   ; EQU $D008 ; Sound queue - Argument
+wSndQueueId:               ds 8   ; EQU $D000 ; Sound queue - ID
+wSndQueueArg:              ds 8   ; EQU $D008 ; Sound queue - Argument
 
-wSndSavedSoundID          :db     ; EQU $D010 ; Last preserved Sound ID, when a sound slot ends with the SoundDataCmd_EndSaveID command.
-wSndFlags                 :db     ; EQU $D011 ; Sound driver flags
-wSndQueueLen              :db     ; EQU $D012 ; Sound queue - length
-wSndFadeIncSpeedSub       :db     ; EQU $D013 ; Global fade speed
-wSndFadeTimerSub          :db     ; EQU $D014 ; Global fade timer (low byte)
-wSndFadeVolumeTarget      :db     ; EQU $D015 ; Global fade target (high byte)
-wSndFadeVolume            :db     ; EQU $D016 ; Global fade timer (high byte) 
+wSndSavedSoundID:          db     ; EQU $D010 ; Last preserved Sound ID, when a sound slot ends with the SoundDataCmd_EndSaveID command.
+wSndFlags:                 db     ; EQU $D011 ; Sound driver flags
+wSndQueueLen:              db     ; EQU $D012 ; Sound queue - length
+wSndFadeIncSpeedSub:       db     ; EQU $D013 ; Global fade speed
+wSndFadeTimerSub:          db     ; EQU $D014 ; Global fade timer (low byte)
+wSndFadeVolumeTarget:      db     ; EQU $D015 ; Global fade target (high byte)
+wSndFadeVolume:            db     ; EQU $D016 ; Global fade timer (high byte) 
 ds 1
-wSndChInfoVolume          :db     ; EQU $D018 ; Volume for the currently processed sound slot
-wSndBankMain              :db     ; EQU $D019 ; Primary driver core bank
-wSndBankPcmDef            :db     ; EQU $D01A ; Secondary driver core bank
-wSndPcmPlaying            :db     ; EQU $D01B ; If set, a PCM sample is currently playing,
-wSndPcmIDSet              :db     ; EQU $D01C ; PCM ID to be played, reset on every frame.
-wSndPcmSpeedSet           :db     ; EQU $D01D ; Playback speed for the above, also reset on every frame.
+wSndChInfoVolume:          db     ; EQU $D018 ; Volume for the currently processed sound slot
+wSndBankMain:              db     ; EQU $D019 ; Primary driver core bank
+wSndBankPcmDef:            db     ; EQU $D01A ; Secondary driver core bank
+wSndPcmPlaying:            db     ; EQU $D01B ; If set, a PCM sample is currently playing,
+wSndPcmIDSet:              db     ; EQU $D01C ; PCM ID to be played, reset on every frame.
+wSndPcmSpeedSet:           db     ; EQU $D01D ; Playback speed for the above, also reset on every frame.
                                               ; Doubles as flag that, if set, marks that PCM playback can continue.
-wSndChMute                :db     ; EQU $D01E ; Marks the channels which got muted last frame. (----3210)
+wSndChMute:                db     ; EQU $D01E ; Marks the channels which got muted last frame. (----3210)
                                               ; Prevents constant assertion of silence.
 										  
 SECTION "Sound Register Mirror", WRAM0[$D020]
 
-wNR51_ChMask1   :db     ; EQU $D020
-wNR11           :db     ; EQU $D021
-wNR12           :db     ; EQU $D022
-wNR13           :db     ; EQU $D023
-wNR14           :db     ; EQU $D024
+wNR51_ChMask1:   db     ; EQU $D020
+wNR11:           db     ; EQU $D021
+wNR12:           db     ; EQU $D022
+wNR13:           db     ; EQU $D023
+wNR14:           db     ; EQU $D024
 
-wNR51_ChMask2   :db     ; EQU $D025
-wNR21           :db     ; EQU $D026
-wNR22           :db     ; EQU $D027
-wNR23           :db     ; EQU $D028
-wNR24           :db     ; EQU $D029
+wNR51_ChMask2:   db     ; EQU $D025
+wNR21:           db     ; EQU $D026
+wNR22:           db     ; EQU $D027
+wNR23:           db     ; EQU $D028
+wNR24:           db     ; EQU $D029
 
-wNR51_ChMask3   :db     ; EQU $D02A
-wNR30           :db     ; EQU $D02B
-wNR32           :db     ; EQU $D02C
-wNR33           :db     ; EQU $D02D
-wNR34           :db     ; EQU $D02E
+wNR51_ChMask3:   db     ; EQU $D02A
+wNR30:           db     ; EQU $D02B
+wNR32:           db     ; EQU $D02C
+wNR33:           db     ; EQU $D02D
+wNR34:           db     ; EQU $D02E
 
-wNR51_ChMask4   :db     ; EQU $D02F
-wNR41           :db     ; EQU $D030
-wNR42           :db     ; EQU $D031
-wNR43           :db     ; EQU $D032
-wNR44           :db     ; EQU $D033
+wNR51_ChMask4:   db     ; EQU $D02F
+wNR41:           db     ; EQU $D030
+wNR42:           db     ; EQU $D031
+wNR43:           db     ; EQU $D032
+wNR44:           db     ; EQU $D033
 
-wNR51           :db     ; EQU $D034
-wWaveSetId      :db     ; EQU $D035 ; Newly set waveform ID
-wWaveCurId      :db     ; EQU $D036 ; Current waveform ID
-wNR10           :db     ; EQU $D037
+wNR51:           db     ; EQU $D034
+wWaveSetId:      db     ; EQU $D035 ; Newly set waveform ID
+wWaveCurId:      db     ; EQU $D036 ; Current waveform ID
+wNR10:           db     ; EQU $D037
 
 SECTION "Sound Slots", WRAM0[$D040]
 
-wSndChInfo0     :ds $30 ; EQU $D040 ; BGM 0
-wSndChInfo1     :ds $30 ; EQU $D070 ; BGM 1
-wSndChInfo2     :ds $30 ; EQU $D0A0 ; BGM 2
-wSndChInfo3     :ds $30 ; EQU $D0D0 ; BGM 3
-wSndChInfo4     :ds $30 ; EQU $D100 ; SFX 0
-wSndChInfo5     :ds $30 ; EQU $D130 ; SFX 1
-wSndChInfo6     :ds $30 ; EQU $D160 ; SFX 2
-wSndChInfo7     :ds $30 ; EQU $D190 ; SFX 3
-wSndChInfoEx0   :ds $30 ; EQU $D1C0 ; SFX w/ Pause. Can play when the driver is paused and pauses all other slots when played.
+wSndChInfo0:     ds $30 ; EQU $D040 ; BGM 0
+wSndChInfo1:     ds $30 ; EQU $D070 ; BGM 1
+wSndChInfo2:     ds $30 ; EQU $D0A0 ; BGM 2
+wSndChInfo3:     ds $30 ; EQU $D0D0 ; BGM 3
+wSndChInfo4:     ds $30 ; EQU $D100 ; SFX 0
+wSndChInfo5:     ds $30 ; EQU $D130 ; SFX 1
+wSndChInfo6:     ds $30 ; EQU $D160 ; SFX 2
+wSndChInfo7:     ds $30 ; EQU $D190 ; SFX 3
+wSndChInfoEx0:   ds $30 ; EQU $D1C0 ; SFX w/ Pause. Can play when the driver is paused and pauses all other slots when played.
 
 DEF wSndChInfo_Size             EQU wSndChInfo1 - wSndChInfo0
 DEF wSndChInfo_Count            EQU 9
@@ -109,22 +109,22 @@ DEF iSndChInfo_Bank             EQU $28 ; Data Pointer, Bank Number
 DEF iSndChInfo_PCMId            EQU $29 ; Slot-specific PCM sample ID. 
 
 SECTION "Hardware", HRAM[$FF90]
-hROMBank                  :db     ; EQU $FF90 ; Current ROM bank
+hROMBank:                  db     ; EQU $FF90 ; Current ROM bank
 
 SECTION "Sound HRAM", HRAM[$FFE0]
-hNRx3Data                 :db     ; EQU $FFE0 ; Value to write to rNR*3 during sound slot processing.
-hNRx4Data                 :db     ; EQU $FFE1 ; Value to write to rNR*4 during sound slot processing.
+hNRx3Data:                 db     ; EQU $FFE0 ; Value to write to rNR*3 during sound slot processing.
+hNRx4Data:                 db     ; EQU $FFE1 ; Value to write to rNR*4 during sound slot processing.
 
-hSndChInfoStatus          :db     ; EQU $FFE2 ; Status flags copied from the current slot
-hSndChInfoFxFlags0        :db     ; EQU $FFE3 ; Effect flags #0 ""
-hSndChInfoFxFlags1        :db     ; EQU $FFE4 ; Effect flags #1 ""
-hSndChInfoNewFlags        :db     ; EQU $FFE5 ; Events that happened to the currently processed slot on the current frame
-hSndChInfoPtrBakLow       :db     ; EQU $FFE6 ; Backup of the base pointer for the current sound slot.
-hNRx2Data                 :db     ; EQU $FFE7 ; Value to write to rNR*2 during sound slot processing.
+hSndChInfoStatus:          db     ; EQU $FFE2 ; Status flags copied from the current slot
+hSndChInfoFxFlags0:        db     ; EQU $FFE3 ; Effect flags #0 ""
+hSndChInfoFxFlags1:        db     ; EQU $FFE4 ; Effect flags #1 ""
+hSndChInfoNewFlags:        db     ; EQU $FFE5 ; Events that happened to the currently processed slot on the current frame
+hSndChInfoPtrBakLow:       db     ; EQU $FFE6 ; Backup of the base pointer for the current sound slot.
+hNRx2Data:                 db     ; EQU $FFE7 ; Value to write to rNR*2 during sound slot processing.
 DEF hSndTmpSongPcm EQU hNRx2Data              ; Temporary location for the argument when starting a new song
-hPCMVolData               :db     ; EQU $FFE8 ; Current set of PCM data, as 4 pairs of 2 bits each [NR32]
-hPCMVolPairsLeft          :db     ; EQU $FFE9 ; Number of pairs left before fetching the next byte
-hPCMDataBank              :db     ; EQU $FFEA ; PCM Data pointer, Bank Number
-hPCMDataPtrHigh           :db     ; EQU $FFEB ; PCM Data pointer, High byte
-hPCMDataPtrLow            :db     ; EQU $FFEC ; PCM Data pointer, Low byte
-hPCMDataLeft              :db     ; EQU $FFED ; Remaining bytes of PCM data to fetch before the sample ends.
+hPCMVolData:               db     ; EQU $FFE8 ; Current set of PCM data, as 4 pairs of 2 bits each [NR32]
+hPCMVolPairsLeft:          db     ; EQU $FFE9 ; Number of pairs left before fetching the next byte
+hPCMDataBank:              db     ; EQU $FFEA ; PCM Data pointer, Bank Number
+hPCMDataPtrHigh:           db     ; EQU $FFEB ; PCM Data pointer, High byte
+hPCMDataPtrLow:            db     ; EQU $FFEC ; PCM Data pointer, Low byte
+hPCMDataLeft:              db     ; EQU $FFED ; Remaining bytes of PCM data to fetch before the sample ends.

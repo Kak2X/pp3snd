@@ -787,7 +787,7 @@ ENDC
 .waveCpLoop:
 REPT 4
 	ldi  a, [hl]				; Read in, next src
-	ld   [c], a					; Write out
+	ldh  [c], a					; Write out
 	inc  c						; Next dest
 ENDR
 	dec  b
